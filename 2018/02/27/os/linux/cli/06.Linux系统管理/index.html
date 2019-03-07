@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+<meta name="keywords" content="linux,command">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 系统管理">
+<meta property="og:url" content="https://dunwu.github.io/2018/02/27/os/linux/cli/06.Linux系统管理/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-06T08:43:46.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 系统管理">
+<meta name="twitter:description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2018/02/27/os/linux/cli/06.Linux系统管理/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Linux 系统管理 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/02/27/os/linux/cli/06.Linux系统管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux 系统管理<a href="https://github.com/dunwu/blog/blob/master/source/_posts/os/linux/cli/06.Linux系统管理.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-27 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-27T00:00:00+08:00">2018-02-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux-系统管理"><a href="#Linux-系统管理" class="headerlink" title="Linux 系统管理"></a>Linux 系统管理</h1><blockquote>
+<p>关键词：<code>lsb_release</code>, <code>reboot</code>, <code>exit</code>, <code>shutdown</code>, <code>date</code>, <code>mount</code>, <code>umount</code>, <code>ps</code>, <code>kill</code>, <code>systemctl</code>, <code>service</code>, <code>crontab</code></p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#linux-系统管理要点">Linux 系统管理要点</a></li>
+<li><a href="#命令常见用法">命令常见用法</a><ul>
+<li><a href="#lsb_release">lsb_release</a></li>
+<li><a href="#reboot">reboot</a></li>
+<li><a href="#exit">exit</a></li>
+<li><a href="#shutdown">shutdown</a></li>
+<li><a href="#date">date</a></li>
+<li><a href="#mount">mount</a></li>
+<li><a href="#umount">umount</a></li>
+<li><a href="#ps">ps</a></li>
+<li><a href="#kill">kill</a></li>
+<li><a href="#systemctl">systemctl</a></li>
+<li><a href="#service">service</a></li>
+<li><a href="#crontab">crontab</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="Linux-系统管理要点"><a href="#Linux-系统管理要点" class="headerlink" title="Linux 系统管理要点"></a>Linux 系统管理要点</h2><ul>
+<li>查看 Linux 系统发行版本<ul>
+<li>使用 <a href="#lsb_release">lsb_release</a>（此命令适用于所有的 Linux 发行版本）</li>
+<li>使用 <code>cat /etc/redhat-release</code>（此方法只适合 Redhat 系的 Linux）</li>
+</ul>
+</li>
+<li>查看 CPU 信息 - 使用 <code>cat /proc/cpuinfo</code></li>
+<li>重新启动 Linux 操作系统 - 使用 <a href="#reboot">reboot</a></li>
+<li>退出 shell，并返回给定值 - 使用 <a href="#exit">exit</a></li>
+<li>关闭系统 - 使用 <a href="#shutdown">shutdown</a></li>
+<li>查看或设置系统时间与日期 - 使用 <a href="#date">date</a></li>
+<li>挂载文件系统 - 使用 <a href="#mount">mount</a></li>
+<li>取消挂载文件系统 - 使用 <a href="#umount">umount</a></li>
+<li>查看系统当前进程状态 - 使用 <a href="#ps">ps</a></li>
+<li>删除当前正在运行的进程 - 使用 <a href="#kill">kill</a></li>
+<li>启动、停止、重启、关闭、显示系统服务（Centos7），使用 <a href="#systemctl">systemctl</a></li>
+<li>启动、停止、重启、关闭、显示系统服务（Centos7 以前），使用 <a href="#service">service</a></li>
+<li>管理需要周期性执行的任务，使用 <a href="#crontab">crontab</a></li>
+</ul>
+<h2 id="命令常见用法"><a href="#命令常见用法" class="headerlink" title="命令常见用法"></a>命令常见用法</h2><h3 id="lsb-release"><a href="#lsb-release" class="headerlink" title="lsb_release"></a>lsb_release</h3><p>lsb_release 不是 bash 默认命令，如果要使用，需要先安装。</p>
+<p>安装方法：</p>
+<ol>
+<li>执行 <code>yum provides lsb_release</code>，查看支持 lsb_release 命令的包。</li>
+<li>选择合适版本，执行类似这样的安装命令：<code>yum install -y redhat-lsb-core-4.1-27.el7.centos.1.x86_64</code></li>
+</ol>
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><blockquote>
+<p>reboot 命令用来重新启动正在运行的 Linux 操作系统。</p>
+<p>参考：<a href="http://man.linuxde.net/reboot" target="_blank" rel="noopener">http://man.linuxde.net/reboot</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot        <span class="comment"># 重开机。</span></span><br><span class="line">reboot -w     <span class="comment"># 做个重开机的模拟（只有纪录并不会真的重开机）。</span></span><br></pre></td></tr></table></figure>
+<h3 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h3><blockquote>
+<p>exit 命令同于退出 shell，并返回给定值。在 shell 脚本中可以终止当前脚本执行。执行 exit 可使 shell 以指定的状态值退出。若不设置状态值参数，则 shell 以预设值退出。状态值 0 代表执行成功，其他值代表执行失败。</p>
+<p>参考：<a href="http://man.linuxde.net/exit" target="_blank" rel="noopener">http://man.linuxde.net/exit</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出当前 shell</span></span><br><span class="line">[root@localhost ~]<span class="comment"># exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，进入脚本所在目录，否则退出</span></span><br><span class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>) || <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，判断参数数量，不匹配就打印使用方式，退出</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> -ne <span class="string">"2"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"usage: <span class="variable">$0</span> &lt;area&gt; &lt;hours&gt;"</span></span><br><span class="line">    <span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，退出时删除临时文件</span></span><br><span class="line"><span class="built_in">trap</span> <span class="string">"rm -f tmpfile; echo Bye."</span> EXIT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查上一命令的退出码</span></span><br><span class="line">./mycommand.sh</span><br><span class="line">EXCODE=$?</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$EXCODE</span>"</span> == <span class="string">"0"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"O.K"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><blockquote>
+<p>shutdown 命令用来系统关机命令。shutdown 指令可以关闭所有程序，并依用户的需要，进行重新开机或关机的动作。</p>
+<p>参考：<a href="http://man.linuxde.net/shutdown" target="_blank" rel="noopener">http://man.linuxde.net/shutdown</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定现在立即关机</span></span><br><span class="line">shutdown -h now</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定 5 分钟后关机，同时送出警告信息给登入用户</span></span><br><span class="line">shutdown +5 <span class="string">"System will shutdown after 5 minutes"</span></span><br></pre></td></tr></table></figure>
+<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><blockquote>
+<p>date 命令是显示或设置系统时间与日期。</p>
+<p>参考：<a href="http://man.linuxde.net/date" target="_blank" rel="noopener">http://man.linuxde.net/date</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化输出</span></span><br><span class="line">date +<span class="string">"%Y-%m-%d"</span></span><br><span class="line">2009-12-07</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出昨天日期</span></span><br><span class="line">date -d <span class="string">"1 day ago"</span> +<span class="string">"%Y-%m-%d"</span></span><br><span class="line">2012-11-19</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 秒后输出</span></span><br><span class="line">date -d <span class="string">"2 second"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2012-11-20 14:21.31</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传说中的 1234567890 秒</span></span><br><span class="line">date -d <span class="string">"1970-01-01 1234567890 seconds"</span> +<span class="string">"%Y-%m-%d %H:%m:%S"</span></span><br><span class="line">2009-02-13 23:02:30</span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通转格式</span></span><br><span class="line">date -d <span class="string">"2009-12-12"</span> +<span class="string">"%Y/%m/%d %H:%M.%S"</span></span><br><span class="line">2009/12/12 00:00.00</span><br><span class="line"></span><br><span class="line"><span class="comment"># apache 格式转换</span></span><br><span class="line">date -d <span class="string">"Dec 5, 2009 12:00:37 AM"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2009-12-05 00:00.37</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式转换后时间游走</span></span><br><span class="line">date -d <span class="string">"Dec 5, 2009 12:00:37 AM 2 year ago"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2007-12-05 00:00.37</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加减操作</span></span><br><span class="line">date +%Y%m%d                   <span class="comment"># 显示前天年月日</span></span><br><span class="line">date -d <span class="string">"+1 day"</span> +%Y%m%d       <span class="comment"># 显示前一天的日期</span></span><br><span class="line">date -d <span class="string">"-1 day"</span> +%Y%m%d       <span class="comment"># 显示后一天的日期</span></span><br><span class="line">date -d <span class="string">"-1 month"</span> +%Y%m%d     <span class="comment"># 显示上一月的日期</span></span><br><span class="line">date -d <span class="string">"+1 month"</span> +%Y%m%d     <span class="comment"># 显示下一月的日期</span></span><br><span class="line">date -d <span class="string">"-1 year"</span> +%Y%m%d      <span class="comment"># 显示前一年的日期</span></span><br><span class="line">date -d <span class="string">"+1 year"</span> +%Y%m%d      <span class="comment"># 显示下一年的日期</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定时间</span></span><br><span class="line">date -s                        <span class="comment"># 设置当前时间，只有root权限才能设置，其他只能查看</span></span><br><span class="line">date -s 20120523               <span class="comment"># 设置成20120523，这样会把具体时间设置成空00:00:00</span></span><br><span class="line">date -s 01:01:01               <span class="comment"># 设置具体时间，不会对日期做更改</span></span><br><span class="line">date -s <span class="string">"01:01:01 2012-05-23"</span>  <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"01:01:01 20120523"</span>    <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"2012-05-23 01:01:01"</span>  <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"20120523 01:01:01"</span>    <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 有时需要检查一组命令花费的时间</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">start=$(date +%s)</span><br><span class="line">nmap man.linuxde.net &amp;&gt; /dev/null</span><br><span class="line"></span><br><span class="line">end=$(date +%s)</span><br><span class="line">difference=$(( end - start ))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$difference</span> seconds.</span><br></pre></td></tr></table></figure>
+<h3 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h3><blockquote>
+<p>mount 命令用于挂载文件系统到指定的挂载点。此命令的最常用于挂载 cdrom，使我们可以访问 cdrom 中的数据，因为你将光盘插入 cdrom 中，Linux 并不会自动挂载，必须使用 Linux mount 命令来手动完成挂载。</p>
+<p>参考：<a href="http://man.linuxde.net/mount" target="_blank" rel="noopener">http://man.linuxde.net/mount</a> &gt; <a href="https://blog.csdn.net/weishujie000/article/details/76531924" target="_blank" rel="noopener">https://blog.csdn.net/weishujie000/article/details/76531924</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 /dev/hda1 挂在 /mnt 之下</span></span><br><span class="line">mount /dev/hda1 /mnt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 /dev/hda1 用唯读模式挂在 /mnt 之下</span></span><br><span class="line">mount -o ro /dev/hda1 /mnt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 /tmp/image.iso 这个光碟的 image 档使用 loop 模式挂在 /mnt/cdrom 之下</span></span><br><span class="line"><span class="comment"># 用这种方法可以将一般网络上可以找到的 Linux ISO 在不烧录成光碟的情况下检视其内容</span></span><br><span class="line">mount -o loop /tmp/image.iso /mnt/cdrom</span><br></pre></td></tr></table></figure>
+<h3 id="umount"><a href="#umount" class="headerlink" title="umount"></a>umount</h3><blockquote>
+<p>umount 命令用于卸载已经挂载的文件系统。利用设备名或挂载点都能 umount 文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。</p>
+<p>参考：<a href="http://man.linuxde.net/umount" target="_blank" rel="noopener">http://man.linuxde.net/umount</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过设备名卸载</span></span><br><span class="line">umount -v /dev/sda1</span><br><span class="line">/dev/sda1 umounted</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过挂载点卸载</span></span><br><span class="line">umount -v /mnt/mymount/</span><br><span class="line">/tmp/diskboot.img umounted</span><br></pre></td></tr></table></figure>
+<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><blockquote>
+<p>ps 命令用于报告当前系统的进程状态。可以搭配 kill 指令随时中断、删除不必要的程序。ps 命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。</p>
+<p>参考：<a href="http://man.linuxde.net/ps" target="_blank" rel="noopener">http://man.linuxde.net/ps</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按内存资源的使用量对进程进行排序</span></span><br><span class="line">ps aux | sort -rnk 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按 CPU 资源的使用量对进程进行排序</span></span><br><span class="line">ps aux | sort -nk 3</span><br></pre></td></tr></table></figure>
+<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><blockquote>
+<p>kill 命令用来删除执行中的程序或工作。kill 可将指定的信息送至程序。预设的信息为 SIGTERM(15),可将指定程序终止。若仍无法终止该程序，可使用 SIGKILL(9) 信息尝试强制删除程序。程序或工作的编号可利用 ps 指令或 job 指令查看。</p>
+<p>参考：<a href="http://man.linuxde.net/kill" target="_blank" rel="noopener">http://man.linuxde.net/kill</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有信号名称</span></span><br><span class="line"> <span class="built_in">kill</span> -l</span><br><span class="line"> 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL</span><br><span class="line"> 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE</span><br><span class="line"> 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2</span><br><span class="line">13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGSTKFLT</span><br><span class="line">17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP</span><br><span class="line">21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU</span><br><span class="line">25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH</span><br><span class="line">29) SIGIO       30) SIGPWR      31) SIGSYS      34) SIGRTMIN</span><br><span class="line">35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3  38) SIGRTMIN+4</span><br><span class="line">39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8</span><br><span class="line">43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12</span><br><span class="line">47) SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14</span><br><span class="line">51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10</span><br><span class="line">55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7  58) SIGRTMAX-6</span><br><span class="line">59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2</span><br><span class="line">63) SIGRTMAX-1  64) SIGRTMAX</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先用 ps 查找进程，然后用 kill 杀掉</span></span><br><span class="line">ps -ef | grep vim</span><br><span class="line">root      3268  2884  0 16:21 pts/1    00:00:00 vim install.log</span><br><span class="line">root      3370  2822  0 16:21 pts/0    00:00:00 grep vim</span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> 3268</span><br><span class="line"><span class="built_in">kill</span> 3268</span><br><span class="line">-bash: <span class="built_in">kill</span>: (3268) - 没有那个进程</span><br></pre></td></tr></table></figure>
+<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><blockquote>
+<p>systemctl 命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。</p>
+<p>参考：<a href="http://man.linuxde.net/systemctl" target="_blank" rel="noopener">http://man.linuxde.net/systemctl</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.启动 nfs 服务</span></span><br><span class="line">systemctl start nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.设置开机自启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.停止开机自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.查看服务当前状态</span></span><br><span class="line">systemctl status nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.重新启动某服务</span></span><br><span class="line">systemctl restart nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.查看所有已启动的服务</span></span><br><span class="line">systemctl list -units --<span class="built_in">type</span>=service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 开启防火墙 22 端口</span></span><br><span class="line">iptables -I INPUT -p tcp --dport 22 -j accept</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 彻底关闭防火墙</span></span><br><span class="line">sudo systemctl status firewalld.service</span><br><span class="line">sudo systemctl stop firewalld.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
+<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><blockquote>
+<p>service 命令是 Redhat Linux 兼容的发行版中用来控制系统服务的实用工具，它以启动、停止、重新启动和关闭系统服务，还可以显示所有系统服务的当前状态。</p>
+<p>参考：<a href="http://man.linuxde.net/service" target="_blank" rel="noopener">http://man.linuxde.net/service</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service network status</span><br><span class="line">配置设备：</span><br><span class="line">lo eth0</span><br><span class="line">当前的活跃设备：</span><br><span class="line">lo eth0</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">正在关闭接口 eth0：                                        [  确定  ]</span><br><span class="line">关闭环回接口：                                             [  确定  ]</span><br><span class="line">设置网络参数：                                             [  确定  ]</span><br><span class="line">弹出环回接口：                                             [  确定  ]</span><br><span class="line">弹出界面 eth0：                                            [  确定  ]</span><br></pre></td></tr></table></figure>
+<h3 id="crontab"><a href="#crontab" class="headerlink" title="crontab"></a>crontab</h3><blockquote>
+<p>crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动 crond 进程，crond 进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+<p>参考：<a href="http://man.linuxde.net/crontab" target="_blank" rel="noopener">http://man.linuxde.net/crontab</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 每 1 分钟执行一次 command</span></span><br><span class="line">* * * * * <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每小时的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 * * * * <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 * * * <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每隔两天的上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 */2 * * <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每个星期一的上午 8 点到 11 点的第 3 和第 15 分钟执行</span></span><br><span class="line">3,15 8-11 * * 1 <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每晚的 21:30 重启 smb</span></span><br><span class="line">30 21 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每月 1、10、22 日的 4 : 45 重启 smb</span></span><br><span class="line">45 4 1,10,22 * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每周六、周日的 1:10 重启 smb</span></span><br><span class="line">10 1 * * 6,0 /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每天 18 : 00 至 23 : 00 之间每隔 30 分钟重启 smb</span></span><br><span class="line">0,30 18-23 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每星期六的晚上 11:00 pm 重启 smb</span></span><br><span class="line">0 23 * * 6 /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每一小时重启 smb</span></span><br><span class="line">* */1 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 晚上 11 点到早上 7 点之间，每隔一小时重启 smb</span></span><br><span class="line">* 23-7/1 * * * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每月的 4 号与每周一到周三的 11 点重启 smb</span></span><br><span class="line">0 11 4 * mon-wed /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一月一号的 4 点重启 smb</span></span><br><span class="line">0 4 1 jan * /etc/init.d/smb restart</span><br><span class="line"></span><br><span class="line"><span class="comment"># 每小时执行`/etc/cron.hourly`目录内的脚本</span></span><br><span class="line">01 * * * * root run-parts /etc/cron.hourly</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2018/02/27/os/linux/cli/06.Linux系统管理/" title="Linux 系统管理">https://dunwu.github.io/2018/02/27/os/linux/cli/06.Linux系统管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/blog/tags/command/" rel="tag"># command</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/02/27/os/linux/cli/02.Linux文件目录管理/" rel="next" title="Linux 文件目录管理命令">
+                <i class="fa fa-chevron-left"></i> Linux 文件目录管理命令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/03/29/programming/java/javastack/javalib/java-log-style/" rel="prev" title="Java 日志规范">
+                Java 日志规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-系统管理"><span class="nav-text">Linux 系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-系统管理要点"><span class="nav-text">Linux 系统管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text">命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lsb-release"><span class="nav-text">lsb_release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reboot"><span class="nav-text">reboot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit"><span class="nav-text">exit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutdown"><span class="nav-text">shutdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount"><span class="nav-text">mount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#umount"><span class="nav-text">umount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill"><span class="nav-text">kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#systemctl"><span class="nav-text">systemctl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service"><span class="nav-text">service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#crontab"><span class="nav-text">crontab</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+<meta name="keywords" content="data-structure,search">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线性表的查找">
+<meta property="og:url" content="https://dunwu.github.io/2015/03/10/algorithm/data-structure/search/linear-list-search/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip">
+<meta property="og:updated_time" content="2019-03-07T02:25:17.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="线性表的查找">
+<meta name="twitter:description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2015/03/10/algorithm/data-structure/search/linear-list-search/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>线性表的查找 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/03/10/algorithm/data-structure/search/linear-list-search/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">线性表的查找<a href="https://github.com/dunwu/blog/blob/master/source/_posts/algorithm/data-structure/search/linear-list-search.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-03-10 18:29:00" itemprop="dateCreated datePublished" datetime="2015-03-10T18:29:00+08:00">2015-03-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-07 10:25:17" itemprop="dateModified" datetime="2019-03-07T10:25:17+08:00">2019-03-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="什么是查找？"><a href="#什么是查找？" class="headerlink" title="什么是查找？"></a>什么是查找？</h3><p><strong>查找</strong>是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。</p>
+<h3 id="查找算法的分类"><a href="#查找算法的分类" class="headerlink" title="查找算法的分类"></a>查找算法的分类</h3><p>若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为<strong>动态查找表</strong>；</p>
+<p>否则，称之为<strong>静态查找表</strong>。</p>
+<p>此外，如果查找的全过程都在内存中进行，称之为<strong>内查找</strong>；</p>
+<p>反之，如果查找过程中需要访问外存，称之为<strong>外查找</strong>。</p>
+<h3 id="查找算法性能比较的标准"><a href="#查找算法性能比较的标准" class="headerlink" title="查找算法性能比较的标准"></a>查找算法性能比较的标准</h3><p><strong>——平均查找长度ASL（Average Search Length）</strong></p>
+<p>由于查找算法的主要运算是关键字的比较过程，所以通常把查找过程中对关键字需要执行的<strong>平均比较长度</strong>（也称为<strong>平均比较次数</strong>）作为衡量一个查找算法效率优劣的比较标准。</p>
+<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<p><strong>选取查找算法的因素</strong></p>
+<p>(1) 使用什么数据存储结构（如线性表、树形表等）。</p>
+<p>(2) 表中的次序，即对无序表还是有序表进行查找。</p>
+<h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p><strong>要点</strong></p>
+<p>它是一种最简单的查找算法，效率也很低下。</p>
+<p><strong>存储结构</strong></p>
+<p>没有存储结构要求，可以无序，也可以有序。</p>
+<p><strong>基本思想</strong></p>
+<p>从数据结构线形表的<strong>一端</strong>开始，<strong>顺序扫描</strong>，<strong>依次</strong>将扫描到的结点关键字与给定值k相<strong>比较</strong>，若相等则表示查找成功；</p>
+<p>若扫描结束仍没有找到关键字等于k的结点，表示查找失败。</p>
+<p><strong>核心代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">orderSearch</span><span class="params">(<span class="keyword">int</span>[] list, <span class="keyword">int</span> length, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 从前往后扫描list数组，如果有元素的值与key相等，直接返回其位置</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (key == list[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 如果扫描完，说明没有元素的值匹配key，返回-1，表示查找失败</span></span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>算法分析</strong></p>
+<p>顺序查找算法<strong>最好的情况</strong>是，第一个记录即匹配关键字，则需要比较 <strong>1</strong> 次；</p>
+<p><strong>最坏的情况</strong>是，最后一个记录匹配关键字，则需要比较 <strong>N</strong> 次。</p>
+<p>所以，顺序查找算法的平均查找长度为</p>
+<p>ASL = (N + N-1 + … + 2 + 1) / N = (N+1) / 2</p>
+<p>顺序查找的<strong>平均时间复杂度</strong>为<strong>O(N)</strong>。</p>
+<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><strong>要点</strong></p>
+<p>二分查找又称<strong>折半查找</strong>，它是一种效率较高的查找方法。</p>
+<p><strong>存储结构</strong></p>
+<p>使用二分查找需要两个前提：</p>
+<p>(1) 必须是<strong>顺序</strong>存储结构。</p>
+<p>(2) 必须是<strong>有序</strong>的表。</p>
+<p><strong>基本思想</strong></p>
+<p>首先，将表<strong>中间位置</strong>记录的关键字与查找关键字比较，如果两者相等，则查找成功；</p>
+<p>否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。<br>重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。</p>
+<p><strong>核心代码</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] list, <span class="keyword">int</span> length, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>, mid = <span class="number">0</span>, high = length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">        mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (list[mid] == key) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid; <span class="comment">// 查找成功，直接返回位置</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (list[mid] &lt; key) &#123;</span><br><span class="line">            low = mid + <span class="number">1</span>; <span class="comment">// 关键字大于中间位置的值，则在大值区间[mid+1, high]继续查找</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            high = mid - <span class="number">1</span>; <span class="comment">// 关键字小于中间位置的值，则在小值区间[low, mid-1]继续查找</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>算法分析</strong></p>
+<p><strong>二分查找的过程可看成一个二叉树</strong>。</p>
+<p>把查找区间的中间位置视为树的根，左区间和右区间视为根的左子树和右子树。</p>
+<p>由此得到的二叉树，称为二分查找的判定树或比较树。</p>
+<p>由此可知，二分查找的<strong>平均查找长度</strong>实际上就是树的高度<strong>O(log<sub>2</sub>N)</strong>。</p>
+<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><p><strong>要点</strong></p>
+<p>分块查找(Blocking Search)又称<strong>索引顺序查找</strong>。它是一种性能介于顺序查找和二分查找之间的查找方法。</p>
+<p>分块查找由于只要求索引表是有序的，对块内节点没有排序要求，因此特别适合于节点动态变化的情况。</p>
+<p><strong>存储结构</strong></p>
+<p>分块查找表是由<strong>“分块有序”的线性表</strong>和<strong>索引表</strong>两部分构成的。</p>
+<p>所谓<strong>“分块有序”的线性表</strong>，是指：</p>
+<p>假设要排序的表为R[0…N-1]，<strong>将表均匀分成b块</strong>，前b-1块中记录个数为s=N/b，最后一块记录数小于等于s；</p>
+<p>每一块中的关键字不一定有序，但<strong>前一块中的最大关键字必须小于后一块中的最小关键字</strong>。</p>
+<p><strong><em>注：这是使用分块查找的前提条件。</em></strong></p>
+<p>如上将表均匀分成b块后，抽取各块中的<strong>最大关键字</strong>和<strong>起始位置</strong>构成一个索引表IDX[0…b-1]。</p>
+<p>由于表R是分块有序的，所以<strong>索引表是一个递增有序表</strong>。</p>
+<p>下图就是一个分块查找表的存储结构示意图</p>
+<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p><strong>基本思想</strong></p>
+<p>分块查找算法有两个处理步骤：</p>
+<p><strong>(1) 首先查找索引表</strong></p>
+<p>因为分块查找表是“分块有序”的，所以我们可以通过索引表来锁定关键字所在的区间。</p>
+<p>又因为索引表是递增有序的，所以查找索引可以使用顺序查找或二分查找。</p>
+<p><strong>(2) 然后在已确定的块中进行顺序查找</strong></p>
+<p>因为块中不一定是有序的，所以只能使用顺序查找。</p>
+<p><strong>代码范例</strong></p>
+<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlockSearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">IndexType</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> key; <span class="comment">// 分块中的最大值</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> link; <span class="comment">// 分块的起始位置</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建立索引方法，n 是线性表最大长度，gap是分块的最大长度</span></span><br><span class="line">    <span class="keyword">public</span> IndexType[] createIndex(<span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> gap) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = n / gap;</span><br><span class="line">        IndexType[] idxGroup = <span class="keyword">new</span> IndexType[num]; <span class="comment">// 根据步长数分配索引数组大小</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i &lt; num) &#123;</span><br><span class="line">            j = <span class="number">0</span>;</span><br><span class="line">            idxGroup[i] = <span class="keyword">new</span> IndexType();</span><br><span class="line">            idxGroup[i].link = gap * i; <span class="comment">// 确定当前索引组的第一个元素位置</span></span><br><span class="line">            max = list[gap * i]; <span class="comment">// 每次假设当前组的第一个数为最大值</span></span><br><span class="line">            <span class="comment">// 遍历这个分块，找到最大值</span></span><br><span class="line">            <span class="keyword">while</span> (j &lt; gap) &#123;</span><br><span class="line">                <span class="keyword">if</span> (max &lt; list[gap * i + j]) &#123;</span><br><span class="line">                    max = list[gap * i + j];</span><br><span class="line">                &#125;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            idxGroup[i].key = max;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> idxGroup;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 分块查找算法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">blockSearch</span><span class="params">(IndexType[] idxGroup, <span class="keyword">int</span> m, <span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = m -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> gap = n / m; <span class="comment">// 分块大小等于线性表长度除以组数</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 先在索引表中进行二分查找，找到的位置存放在 low 中</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">            mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (idxGroup[mid].key &gt;= key) &#123;</span><br><span class="line">                high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在索引表中查找成功后，再在线性表的指定块中进行顺序查找</span></span><br><span class="line">        <span class="keyword">if</span> (low &lt; m) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = idxGroup[low].link; i &lt; idxGroup[low].link + gap; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (list[i] == key)</span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印完整序列</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printAll</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> value : list) &#123;</span><br><span class="line">            System.out.print(value + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印索引表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printIDX</span><span class="params">(IndexType[] list)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造索引表如下："</span>);</span><br><span class="line">        <span class="keyword">for</span> (IndexType elem : list) &#123;</span><br><span class="line">            System.out.format(<span class="string">"key = %d, link = %d\n"</span>, elem.key, elem.link);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key = <span class="number">85</span>;</span><br><span class="line">        <span class="keyword">int</span> array[] = &#123; <span class="number">8</span>, <span class="number">14</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">31</span>, <span class="number">40</span>, <span class="number">38</span>, <span class="number">54</span>, <span class="number">66</span>, <span class="number">46</span>, <span class="number">71</span>, <span class="number">78</span>, <span class="number">68</span>, <span class="number">80</span>, <span class="number">85</span> &#125;;</span><br><span class="line">        BlockSearch search = <span class="keyword">new</span> BlockSearch();</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"线性表: "</span>);</span><br><span class="line">        search.printAll(array);</span><br><span class="line"></span><br><span class="line">        IndexType[] idxGroup = search.createIndex(array, array.length, <span class="number">5</span>);</span><br><span class="line">        search.printIDX(idxGroup);</span><br><span class="line">        <span class="keyword">int</span> pos = search.blockSearch(idxGroup, idxGroup.length, array,</span><br><span class="line">                array.length, key);</span><br><span class="line">        <span class="keyword">if</span> (-<span class="number">1</span> == pos) &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d失败"</span>, key);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d成功，位置为%d"</span>, key, pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>运行结果</strong></p>
+<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">线性表:<span class="number"> 8 </span>14<span class="number"> 6 </span>9<span class="number"> 10 </span>22<span class="number"> 34 </span>18<span class="number"> 19 </span>31<span class="number"> 40 </span>38<span class="number"> 54 </span>66<span class="number"> 46 </span>71<span class="number"> 78 </span>68<span class="number"> 80 </span>85 </span><br><span class="line">构造索引表如下：</span><br><span class="line">key = 14, link = 0</span><br><span class="line">key = 34, link = 5</span><br><span class="line">key = 66, link = 10</span><br><span class="line">key = 85, link = 15</span><br><span class="line"></span><br><span class="line">查找key = 85成功，位置为19</span><br></pre></td></tr></table></figure>
+<p><strong>算法分析</strong></p>
+<p>因为分块查找实际上是两次查找过程之和。若以二分查找来确定块，显然它的查找效率介于顺序查找和二分查找之间。</p>
+<h2 id="三种线性查找的PK"><a href="#三种线性查找的PK" class="headerlink" title="三种线性查找的PK"></a>三种线性查找的PK</h2><p>(1) 以平均查找长度而言，二分查找 &gt; 分块查找 &gt; 顺序查找。</p>
+<p>(2) 从适用性而言，顺序查找无限制条件，二分查找仅适用于有序表，分块查找要求“分块有序”。</p>
+<p>(3) 从存储结构而言，顺序查找和分块查找既可用于顺序表也可用于链表；而二分查找只适用于顺序表。</p>
+<p>(4) 分块查找综合了顺序查找和二分查找的优点，既可以较为快速，也能使用动态变化的要求。</p>
+<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>《数据结构习题与解析》（B级第3版）</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2015/03/10/algorithm/data-structure/search/linear-list-search/" title="线性表的查找">https://dunwu.github.io/2015/03/10/algorithm/data-structure/search/linear-list-search/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/data-structure/" rel="tag"># data-structure</a>
+          
+            <a href="/blog/tags/search/" rel="tag"># search</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2015/03/09/algorithm/data-structure/sort/radix-sort/" rel="next" title="基数排序">
+                <i class="fa fa-chevron-left"></i> 基数排序
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2015/03/16/algorithm/data-structure/hash/" rel="prev" title="哈希表">
+                哈希表 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的查找"><span class="nav-text">线性表的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是查找？"><span class="nav-text">什么是查找？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法的分类"><span class="nav-text">查找算法的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法性能比较的标准"><span class="nav-text">查找算法性能比较的标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序查找"><span class="nav-text">顺序查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分块查找"><span class="nav-text">分块查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种线性查找的PK"><span class="nav-text">三种线性查找的PK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

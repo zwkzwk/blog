@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kafka 安装部署">
+<meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/kafka/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-06T08:43:46.194Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Kafka 安装部署">
+<meta name="twitter:description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2019/03/06/os/linux/ops/service/kafka/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Kafka 安装部署 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/kafka/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Kafka 安装部署<a href="https://github.com/dunwu/blog/blob/master/source/_posts/os/linux/ops/service/kafka.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00 / 修改时间：16:43:46" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.6k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Kafka-安装部署"><a href="#Kafka-安装部署" class="headerlink" title="Kafka 安装部署"></a>Kafka 安装部署</h1><blockquote>
+<p>环境要求：</p>
+<ul>
+<li>JDK8</li>
+<li>ZooKeeper</li>
+</ul>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#下载解压">下载解压</a></li>
+<li><a href="#启动服务器">启动服务器</a></li>
+<li><a href="#停止服务器">停止服务器</a></li>
+<li><a href="#创建主题">创建主题</a></li>
+<li><a href="#生产者生产消息">生产者生产消息</a></li>
+<li><a href="#消费者消费消息">消费者消费消息</a></li>
+<li><a href="#集群部署">集群部署</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h2><p>进入官方下载地址：<a href="http://kafka.apache.org/downloads，选择合适版本。" target="_blank" rel="noopener">http://kafka.apache.org/downloads，选择合适版本。</a></p>
+<p>解压到本地：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&gt; <span class="selector-tag">tar</span> <span class="selector-tag">-xzf</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span><span class="selector-class">.tgz</span></span><br><span class="line">&gt; <span class="selector-tag">cd</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span></span><br></pre></td></tr></table></figure>
+<p>现在您已经在您的机器上下载了最新版本的 Kafka。</p>
+<h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>由于 Kafka 依赖于 ZooKeeper，所以运行前需要先启动 ZooKeeper</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/zookeeper-server-start<span class="selector-class">.sh</span> config/zookeeper.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">37</span>,<span class="number">495</span>] INFO Reading configuration from: config/zookeeper<span class="selector-class">.properties</span> (org<span class="selector-class">.apache</span><span class="selector-class">.zookeeper</span><span class="selector-class">.server</span><span class="selector-class">.quorum</span><span class="selector-class">.QuorumPeerConfig</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>然后，启动 Kafka</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">028</span>] INFO Verifying properties (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">051</span>] INFO Property socket<span class="selector-class">.send</span><span class="selector-class">.buffer</span><span class="selector-class">.bytes</span> is overridden to <span class="number">1048576</span> (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="停止服务器"><a href="#停止服务器" class="headerlink" title="停止服务器"></a>停止服务器</h2><p>执行所有操作后，可以使用以下命令停止服务器</p>
+<figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-<span class="built_in">server</span>-<span class="keyword">stop</span>.sh config/<span class="built_in">server</span>.properties</span><br></pre></td></tr></table></figure>
+<h2 id="创建主题"><a href="#创建主题" class="headerlink" title="创建主题"></a>创建主题</h2><p>创建一个名为 test 的 Topic，这个 Topic 只有一个分区以及一个备份：</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">test</span></span><br></pre></td></tr></table></figure>
+<h2 id="生产者生产消息"><a href="#生产者生产消息" class="headerlink" title="生产者生产消息"></a>生产者生产消息</h2><p>运行生产者，然后可以在控制台中输入一些消息，这些消息会发送到服务器：</p>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-console-producer.<span class="keyword">sh</span> --broker-<span class="keyword">list</span> localhos<span class="variable">t:9092</span> --topic test</span><br><span class="line">This <span class="keyword">is</span> <span class="keyword">a</span> message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
+<h2 id="消费者消费消息"><a href="#消费者消费消息" class="headerlink" title="消费者消费消息"></a>消费者消费消息</h2><p>启动消费者，然后获得服务器中 Topic 下的消息：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-<span class="built_in">console</span>-consumer.sh --bootstrap-server localhost:<span class="number">9092</span> --topic test --<span class="keyword">from</span>-beginning</span><br><span class="line">This <span class="keyword">is</span> a message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
+<h2 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h2><p>复制配置为多份（Windows 使用 copy 命令代理）：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">1</span>.properties</span><br><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">2</span>.properties</span><br></pre></td></tr></table></figure>
+<p>修改配置：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">config/server-1.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=1</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9093</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-1</span><br><span class="line"></span><br><span class="line">config/server-2.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=2</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9094</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-2</span><br></pre></td></tr></table></figure>
+<p>其中，broker.id 这个参数必须是唯一的。</p>
+<p>端口故意配置的不一致，是为了可以在一台机器启动多个应用节点。</p>
+<p>根据这两份配置启动三个服务器节点：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server<span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">1</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">2</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>创建一个新的 Topic 使用 三个备份：</p>
+<figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">3</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">my</span><span class="literal">-</span><span class="comment">replicated</span><span class="literal">-</span><span class="comment">topic</span></span><br></pre></td></tr></table></figure>
+<p>查看主题：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">&gt; bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic</span></span><br><span class="line"><span class="string"></span><span class="attr">Topic:</span><span class="string">my-replicated-topic</span>   <span class="attr">PartitionCount:1</span>    <span class="attr">ReplicationFactor:3</span> <span class="attr">Configs:</span></span><br><span class="line"><span class="attr">    Topic:</span> <span class="string">my-replicated-topic</span>  <span class="attr">Partition:</span> <span class="number">0</span>    <span class="attr">Leader:</span> <span class="number">1</span>   <span class="attr">Replicas:</span> <span class="number">1</span><span class="string">,2,0</span> <span class="attr">Isr:</span> <span class="number">1</span><span class="string">,2,0</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>leader - 负责指定分区的所有读取和写入的节点。每个节点将成为随机选择的分区部分的领导者。</li>
+<li>replicas - 是复制此分区日志的节点列表，无论它们是否为领导者，或者即使它们当前处于活动状态。</li>
+<li>isr - 是“同步”复制品的集合。这是副本列表的子集，该列表当前处于活跃状态并且已经被领导者捕获。</li>
+</ul>
+<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
+<li><strong>引申</strong><ul>
+<li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2019/03/06/os/linux/ops/service/kafka/" title="Kafka 安装部署">https://dunwu.github.io/2019/03/06/os/linux/ops/service/kafka/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/03/06/programming/java/javacore/appendix/resources/" rel="next" title="资源">
+                <i class="fa fa-chevron-left"></i> 资源
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/03/06/style/doc-style/" rel="prev" title="技术文档规范">
+                技术文档规范 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-安装部署"><span class="nav-text">Kafka 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载解压"><span class="nav-text">下载解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务器"><span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止服务器"><span class="nav-text">停止服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主题"><span class="nav-text">创建主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者生产消息"><span class="nav-text">生产者生产消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者消费消息"><span class="nav-text">消费者消费消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群部署"><span class="nav-text">集群部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

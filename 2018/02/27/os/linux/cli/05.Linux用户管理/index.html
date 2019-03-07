@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+<meta name="keywords" content="linux,command">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 用户管理">
+<meta property="og:url" content="https://dunwu.github.io/2018/02/27/os/linux/cli/05.Linux用户管理/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-03-06T08:43:46.114Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux 用户管理">
+<meta name="twitter:description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2018/02/27/os/linux/cli/05.Linux用户管理/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Linux 用户管理 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/02/27/os/linux/cli/05.Linux用户管理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux 用户管理<a href="https://github.com/dunwu/blog/blob/master/source/_posts/os/linux/cli/05.Linux用户管理.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-02-27 00:00:00" itemprop="dateCreated datePublished" datetime="2018-02-27T00:00:00+08:00">2018-02-27</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux-用户管理"><a href="#Linux-用户管理" class="headerlink" title="Linux 用户管理"></a>Linux 用户管理</h1><blockquote>
+<p>关键词：<code>groupadd</code>, <code>groupdel</code>, <code>groupmod</code>, <code>useradd</code>, <code>userdel</code>, <code>usermod</code>, <code>passwd</code>, <code>su</code>, <code>sudo</code></p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#linux-用户管理要点">Linux 用户管理要点</a></li>
+<li><a href="#命令常见用法">命令常见用法</a><ul>
+<li><a href="#groupadd">groupadd</a></li>
+<li><a href="#groupdel">groupdel</a></li>
+<li><a href="#groupmod">groupmod</a></li>
+<li><a href="#useradd">useradd</a></li>
+<li><a href="#userdel">userdel</a></li>
+<li><a href="#usermod">usermod</a></li>
+<li><a href="#passwd">passwd</a></li>
+<li><a href="#su">su</a></li>
+<li><a href="#sudo">sudo</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="Linux-用户管理要点"><a href="#Linux-用户管理要点" class="headerlink" title="Linux 用户管理要点"></a>Linux 用户管理要点</h2><ul>
+<li>创建用户组 - 使用 <a href="#groupadd">groupadd</a></li>
+<li>删除用户组 - 使用 <a href="#groupdel">groupdel</a></li>
+<li>修改用户组信息 - 使用 <a href="#groupmod">groupmod</a></li>
+<li>创建用户 - 使用 <a href="#useradd">useradd</a></li>
+<li>删除用户 - 使用 <a href="#userdel">userdel</a></li>
+<li>修改用户信息 - 使用 <a href="#usermod">usermod</a></li>
+<li>设置用户认证信息 - 使用 <a href="#passwd">passwd</a></li>
+<li>切换用户 - 使用 <a href="#su">su</a></li>
+<li>当前用户想执行没有权限执行的命令时，使用其他用户身份去执行 - 使用 <a href="#sudo">sudo</a></li>
+</ul>
+<h2 id="命令常见用法"><a href="#命令常见用法" class="headerlink" title="命令常见用法"></a>命令常见用法</h2><h3 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h3><blockquote>
+<p>groupadd 命令用于创建一个新的用户组，新用户组的信息将被添加到系统文件中。</p>
+<p>参考：<a href="http://man.linuxde.net/groupadd" target="_blank" rel="noopener">http://man.linuxde.net/groupadd</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立一个新组，并设置组 ID 加入系统</span></span><br><span class="line">$ groupadd -g 344 jsdigname</span><br></pre></td></tr></table></figure>
+<h3 id="groupdel"><a href="#groupdel" class="headerlink" title="groupdel"></a>groupdel</h3><blockquote>
+<p>groupdel 命令用于删除指定的用户组，本命令要修改的系统文件包括 <code>/ect/group</code> 和 <code>/ect/gshadow</code>。若该群组中仍包括某些用户，则必须先删除这些用户后，方能删除群组。</p>
+<p>参考：<a href="http://man.linuxde.net/groupdel" target="_blank" rel="noopener">http://man.linuxde.net/groupdel</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ groupadd damon  <span class="comment"># 创建damon用户组</span></span><br><span class="line">$ groupdel damon  <span class="comment"># 删除这个用户组</span></span><br></pre></td></tr></table></figure>
+<h3 id="groupmod"><a href="#groupmod" class="headerlink" title="groupmod"></a>groupmod</h3><blockquote>
+<p>groupmod 命令更改群组识别码或名称。需要更改群组的识别码或名称时，可用 groupmod 指令来完成这项工作。</p>
+<p>参考：<a href="http://man.linuxde.net/groupmod" target="_blank" rel="noopener">http://man.linuxde.net/groupmod</a></p>
+</blockquote>
+<h3 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h3><blockquote>
+<p>useradd 命令用于 Linux 中创建的新的系统用户。useradd 可用来建立用户帐号。帐号建好之后，再用 passwd 设定帐号的密码．而可用 userdel 删除帐号。使用 useradd 指令所建立的帐号，实际上是保存在 <code>/etc/passwd</code> 文本文件中。</p>
+<p>参考：<a href="http://man.linuxde.net/useradd" target="_blank" rel="noopener">http://man.linuxde.net/useradd</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建用户加入组</span></span><br><span class="line">$ useradd –g sales jack –G company,employees    <span class="comment"># -g：加入主要组、-G：加入次要组</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立一个新用户账户，并设置 ID</span></span><br><span class="line">$ useradd caojh -u 544</span><br></pre></td></tr></table></figure>
+<h3 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h3><blockquote>
+<p>userdel 命令用于删除给定的用户，以及与用户相关的文件。若不加选项，则仅删除用户帐号，而不删除相关文件。</p>
+<p>参考：<a href="http://man.linuxde.net/userdel" target="_blank" rel="noopener">http://man.linuxde.net/userdel</a></p>
+</blockquote>
+<p>示例：</p>
+<p>userdel 命令很简单，比如我们现在有个用户 linuxde，其 home 目录位于<code>/var</code>目录中，现在我们来删除这个用户：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ userdel linuxde       <span class="comment"># 删除用户linuxde，但不删除其家目录及文件；</span></span><br><span class="line">$ userdel -r linuxde    <span class="comment"># 删除用户linuxde，其 home 目录及文件一并删除；</span></span><br></pre></td></tr></table></figure>
+<h3 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h3><blockquote>
+<p>usermod 命令用于修改用户的基本信息。usermod 命令不允许你改变正在线上的使用者帐号名称。当 usermod 命令用来改变 user id，必须确认这名 user 没在电脑上执行任何程序。你需手动更改使用者的 crontab 档。也需手动更改使用者的 at 工作档。采用 NIS server 须在 server 上更动相关的 NIS 设定。</p>
+<p>参考：<a href="http://man.linuxde.net/usermod" target="_blank" rel="noopener">http://man.linuxde.net/usermod</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 newuser2 添加到组 staff 中</span></span><br><span class="line">$ usermod -G staff newuser2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 newuser 的用户名为 newuser1</span></span><br><span class="line">$ usermod -l newuser1 newuser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 锁定账号 newuser1</span></span><br><span class="line">$ usermod -L newuser1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解除对 newuser1 的锁定</span></span><br><span class="line">$ usermod -U newuser1</span><br></pre></td></tr></table></figure>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><blockquote>
+<p>passwd 命令用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。</p>
+<p>参考：<a href="http://man.linuxde.net/passwd" target="_blank" rel="noopener">http://man.linuxde.net/passwd</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果是普通用户执行 passwd 只能修改自己的密码。</span></span><br><span class="line"><span class="comment"># 如果新建用户后，要为新用户创建密码，则用 passwd 用户名，注意要以 root 用户的权限来创建。</span></span><br><span class="line">$ passwd linuxde    <span class="comment"># 更改或创建linuxde用户的密码；</span></span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">New UNIX password:          <span class="comment"># 请输入新密码；</span></span><br><span class="line">Retype new UNIX password:   <span class="comment"># 再输入一次；</span></span><br><span class="line">passwd: all authentication tokens updated successfully. <span class="comment"># 成功；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通用户如果想更改自己的密码，直接运行 passwd 即可，比如当前操作的用户是 linuxde。</span></span><br><span class="line">$ passwd</span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde. <span class="comment"># 更改linuxde用户的密码；</span></span><br><span class="line">(current) UNIX password:   <span class="comment"># 请输入当前密码；</span></span><br><span class="line">New UNIX password:         <span class="comment"># 请输入新密码；</span></span><br><span class="line">Retype new UNIX password:  <span class="comment"># 确认新密码；</span></span><br><span class="line">passwd: all authentication tokens updated successfully. <span class="comment"># 更改成功；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比如我们让某个用户不能修改密码，可以用`-l`选项来锁定：</span></span><br><span class="line">$ passwd -l linuxde    <span class="comment"># 锁定用户linuxde不能更改密码；</span></span><br><span class="line">Locking password <span class="keyword">for</span> user linuxde.</span><br><span class="line">passwd: Success           <span class="comment"># 锁定成功；</span></span><br><span class="line"></span><br><span class="line">$ su linuxde   <span class="comment"># 通过su切换到linuxde用户；</span></span><br><span class="line">$ passwd      <span class="comment"># linuxde来更改密码；</span></span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">Changing password <span class="keyword">for</span> linuxde</span><br><span class="line">(current) UNIX password:          <span class="comment"># 输入linuxde的当前密码；</span></span><br><span class="line">passwd: Authentication token manipulation error     <span class="comment"># 失败，不能更改密码；</span></span><br><span class="line"></span><br><span class="line">$ passwd -d linuxde  <span class="comment"># 清除linuxde用户密码；</span></span><br><span class="line">Removing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">passwd: Success                         <span class="comment"># 清除成功；</span></span><br><span class="line"></span><br><span class="line">$ passwd -S linuxde    <span class="comment"># 查询linuxde用户密码状态；</span></span><br><span class="line">Empty password.                         <span class="comment"># 空密码，也就是没有密码；</span></span><br></pre></td></tr></table></figure>
+<h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><blockquote>
+<p>su 命令用于切换当前用户身份到其他用户身份，变更时须输入所要变更的用户帐号与密码。</p>
+<p>参考：<a href="http://man.linuxde.net/su" target="_blank" rel="noopener">http://man.linuxde.net/su</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 变更帐号为 root 并在执行 ls 指令后退出变回原使用者：</span></span><br><span class="line">$ su -c ls root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变更帐号为 root 并传入`-f`选项给新执行的 shell：</span></span><br><span class="line">$ su root -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变更帐号为 test 并改变工作目录至 test 的家目录：</span></span><br><span class="line">$ su -<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><blockquote>
+<p>sudo 命令用来以其他身份来执行命令，预设的身份为 root。在 <code>/etc/sudoers</code> 中设置了可执行 sudo 指令的用户。若其未经授权的用户企图使用 sudo，则会发出警告的邮件给管理员。用户使用 sudo 时，必须先输入密码，之后有 5 分钟的有效期限，超过期限则必须重新输入密码。</p>
+<p>参考：<a href="http://man.linuxde.net/sudo" target="_blank" rel="noopener">http://man.linuxde.net/sudo</a></p>
+</blockquote>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定用户执行命令</span></span><br><span class="line">$ sudo -u userb ls -l</span><br><span class="line"><span class="comment"># 列出目前的权限</span></span><br><span class="line">$ sudo -l</span><br><span class="line"><span class="comment"># 显示sudo设置</span></span><br><span class="line">$ sudo -L</span><br></pre></td></tr></table></figure>
+<h4 id="给普通用户授权-sudo"><a href="#给普通用户授权-sudo" class="headerlink" title="给普通用户授权 sudo"></a>给普通用户授权 sudo</h4><p>假设要给普通用户 mary 配置 sudo 权限：</p>
+<ol>
+<li><code>/etc/sudoers</code> 文件存放了 sudo 的相关用户，但是默认是没有写权限的，所以需要设为可写：<code>chmod u+w /etc/sudoers</code></li>
+<li>在该文件中添加 <code>mary    ALL=(ALL)       ALL</code> ，保存并退出，让 mary 具有 sudo 的所有权限</li>
+<li>再将 <code>/etc/sudoers</code> 的权限恢复到默认状态：<code>chmod u-w /etc/sudoers</code></li>
+</ol>
+<h4 id="免密码授权-sudo"><a href="#免密码授权-sudo" class="headerlink" title="免密码授权 sudo"></a>免密码授权 sudo</h4><p>与给普通用户授权 sudo 类似，区别仅在于第 2 步：<code>mary    ALL=(ALL)       NOPASSWD: ALL</code>。</p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2018/02/27/os/linux/cli/05.Linux用户管理/" title="Linux 用户管理">https://dunwu.github.io/2018/02/27/os/linux/cli/05.Linux用户管理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/blog/tags/command/" rel="tag"># command</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/02/27/os/linux/cli/07.Linux网络管理/" rel="next" title="Linux 网络管理">
+                <i class="fa fa-chevron-left"></i> Linux 网络管理
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/02/27/os/linux/cli/04.Linux文件压缩和解压/" rel="prev" title="Linux 文件压缩和解压">
+                Linux 文件压缩和解压 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-用户管理"><span class="nav-text">Linux 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-用户管理要点"><span class="nav-text">Linux 用户管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text">命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#groupadd"><span class="nav-text">groupadd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupdel"><span class="nav-text">groupdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupmod"><span class="nav-text">groupmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useradd"><span class="nav-text">useradd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#userdel"><span class="nav-text">userdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usermod"><span class="nav-text">usermod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-text">passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#su"><span class="nav-text">su</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sudo"><span class="nav-text">sudo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#给普通用户授权-sudo"><span class="nav-text">给普通用户授权 sudo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#免密码授权-sudo"><span class="nav-text">免密码授权 sudo</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

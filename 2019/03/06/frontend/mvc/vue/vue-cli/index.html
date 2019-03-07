@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Vue CLI :hammer_and_wrench: Vue.js 开发的标准工具  version: 3.x   简介Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：  通过 @vue/cli 搭建交互式的项目脚手架。  通过 @vue/cli + @vue/cli-service-global 快速开始零配置原型开发。  一个运行时依赖 ( @vue/cli-serv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue CLI">
+<meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/mvc/vue/vue-cli/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Vue CLI :hammer_and_wrench: Vue.js 开发的标准工具  version: 3.x   简介Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：  通过 @vue/cli 搭建交互式的项目脚手架。  通过 @vue/cli + @vue/cli-service-global 快速开始零配置原型开发。  一个运行时依赖 ( @vue/cli-serv">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://cli.vuejs.org/ui-new-project.png">
+<meta property="og:image" content="https://cli.vuejs.org/ui-analyzer.png">
+<meta property="og:updated_time" content="2019-03-06T08:43:45.865Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue CLI">
+<meta name="twitter:description" content="Vue CLI :hammer_and_wrench: Vue.js 开发的标准工具  version: 3.x   简介Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：  通过 @vue/cli 搭建交互式的项目脚手架。  通过 @vue/cli + @vue/cli-service-global 快速开始零配置原型开发。  一个运行时依赖 ( @vue/cli-serv">
+<meta name="twitter:image" content="https://cli.vuejs.org/ui-new-project.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2019/03/06/frontend/mvc/vue/vue-cli/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Vue CLI | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/mvc/vue/vue-cli/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Vue CLI<a href="https://github.com/dunwu/blog/blob/master/source/_posts/frontend/mvc/vue/vue-cli.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00 / 修改时间：16:43:45" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.2k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Vue-CLI"><a href="#Vue-CLI" class="headerlink" title="Vue CLI"></a>Vue CLI</h1><blockquote>
+<p>:hammer_and_wrench: Vue.js 开发的标准工具</p>
+<ul>
+<li>version: 3.x</li>
+</ul>
+</blockquote>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Vue CLI 是一个基于 Vue.js 进行快速开发的完整系统，提供：</p>
+<ul>
+<li><p>通过 <code>@vue/cli</code> 搭建交互式的项目脚手架。</p>
+</li>
+<li><p>通过 <code>@vue/cli</code> + <code>@vue/cli-service-global</code> 快速开始零配置原型开发。</p>
+</li>
+<li><p>一个运行时依赖 (</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">vue</span>/<span class="keyword">cli</span>-<span class="keyword">service</span></span><br></pre></td></tr></table></figure>
+<p>)，该依赖：</p>
+<ul>
+<li>可升级；</li>
+<li>基于 webpack 构建，并带有合理的默认配置；</li>
+<li>可以通过项目内的配置文件进行配置；</li>
+<li>可以通过插件进行扩展。</li>
+</ul>
+</li>
+<li><p>一个丰富的官方插件集合，集成了前端生态中最好的工具。</p>
+</li>
+<li><p>一套完全图形化的创建和管理 Vue.js 项目的用户界面。</p>
+</li>
+</ul>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><p>安装：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">yarn global add @vue/cli</span><br></pre></td></tr></table></figure>
+<p>创建一个项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create my-project</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+<p>确认安装成功：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue --version</span><br></pre></td></tr></table></figure>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h3 id="vue-serve"><a href="#vue-serve" class="headerlink" title="vue serve"></a>vue serve</h3><p>你可以使用 <code>vue serve</code> 和 <code>vue build</code> 命令对单个 <code>*.vue</code> 文件进行快速原型开发，不过这需要先额外安装一个全局的扩展：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm install -g @vue/cli-service-global</span><br></pre></td></tr></table></figure>
+<p><code>vue serve</code> 的缺点就是它需要安装全局依赖，这使得它在不同机器上的一致性不能得到保证。因此这只适用于快速原型开发。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Usage: serve [options] [entry]</span><br><span class="line"></span><br><span class="line">在开发环境模式下零配置为 .js 或 .vue 文件启动一个服务器</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"></span><br><span class="line">  -o, --open  打开浏览器</span><br><span class="line">  -c, --copy  将本地 URL 复制到剪切板</span><br><span class="line">  -h, --help  输出用法信息</span><br></pre></td></tr></table></figure>
+<p>你所需要的仅仅是一个 <code>App.vue</code> 文件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;h1&gt;Hello!&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>然后在这个 <code>App.vue</code> 文件所在的目录下运行：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue serve</span><br></pre></td></tr></table></figure>
+<p><code>vue serve</code> 使用了和 <code>vue create</code> 创建的项目相同的默认设置 (webpack、Babel、PostCSS 和 ESLint)。它会在当前目录自动推导入口文件——入口可以是 <code>main.js</code>、<code>index.js</code>、<code>App.vue</code> 或 <code>app.vue</code> 中的一个。你也可以显式地指定入口文件：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue serve MyComponent.vue</span><br></pre></td></tr></table></figure>
+<p>如果需要，你还可以提供一个 <code>index.html</code>、<code>package.json</code>、安装并使用本地依赖、甚至通过相应的配置文件配置 Babel、PostCSS 和 ESLint。</p>
+<h3 id="vue-build"><a href="#vue-build" class="headerlink" title="vue build"></a>vue build</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Usage: build [options] [entry]</span><br><span class="line"></span><br><span class="line">在生产环境模式下零配置构建一个 .js 或 .vue 文件</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Options:</span><br><span class="line"></span><br><span class="line">  -t, --target &lt;target&gt;  构建目标 (app | lib | wc | wc-async, 默认值：app)</span><br><span class="line">  -n, --name &lt;name&gt;      库的名字或 Web Components 组件的名字 (默认值：入口文件名)</span><br><span class="line">  -d, --dest &lt;dir&gt;       输出目录 (默认值：dist)</span><br><span class="line">  -h, --help             输出用法信息</span><br></pre></td></tr></table></figure>
+<p>你也可以使用 <code>vue build</code> 将目标文件构建成一个生产环境的包并用来部署：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue build MyComponent.vue</span><br></pre></td></tr></table></figure>
+<p><code>vue build</code> 也提供了将组件构建成为一个库或一个 Web Components 组件的能力。查阅<a href="https://cli.vuejs.org/zh/guide/build-targets.html" target="_blank" rel="noopener">构建目标</a>了解更多。</p>
+<h3 id="vue-create"><a href="#vue-create" class="headerlink" title="vue create"></a>vue create</h3><p>运行以下命令来创建一个新项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create hello-world</span><br></pre></td></tr></table></figure>
+<p>你会被提示选取一个 preset。你可以选默认的包含了基本的 Babel + ESLint 设置的 preset，也可以选“手动选择特性”来选取需要的特性。</p>
+<p><code>vue create</code> 命令有一些可选项，你可以通过运行以下命令进行探索：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create --<span class="built_in">help</span></span><br><span class="line">用法：create [options] &lt;app-name&gt;</span><br><span class="line"></span><br><span class="line">创建一个由 `vue-cli-service` 提供支持的新项目</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">选项：</span><br><span class="line"></span><br><span class="line">  -p, --preset &lt;presetName&gt;       忽略提示符并使用已保存的或远程的预设选项</span><br><span class="line">  -d, --default                   忽略提示符并使用默认预设选项</span><br><span class="line">  -i, --inlinePreset &lt;json&gt;       忽略提示符并使用内联的 JSON 字符串预设选项</span><br><span class="line">  -m, --packageManager &lt;<span class="built_in">command</span>&gt;  在安装依赖时使用指定的 npm 客户端</span><br><span class="line">  -r, --registry &lt;url&gt;            在安装依赖时使用指定的 npm registry</span><br><span class="line">  -g, --git [message]             强制 / 跳过 git 初始化，并可选的指定初始化提交信息</span><br><span class="line">  -n, --no-git                    跳过 git 初始化</span><br><span class="line">  -f, --force                     覆写目标目录可能存在的配置</span><br><span class="line">  -c, --<span class="built_in">clone</span>                     使用 git <span class="built_in">clone</span> 获取远程预设选项</span><br><span class="line">  -x, --proxy                     使用指定的代理创建项目</span><br><span class="line">  -b, --bare                      创建项目时省略默认组件中的新手指导信息</span><br><span class="line">  -h, --<span class="built_in">help</span>                      输出使用帮助信息</span><br></pre></td></tr></table></figure>
+<h3 id="vue-ui"><a href="#vue-ui" class="headerlink" title="vue ui"></a>vue ui</h3><p>可以通过 <code>vue ui</code> 命令以图形化界面创建和管理项目：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue ui</span><br></pre></td></tr></table></figure>
+<p>上述命令会打开一个浏览器窗口，并以图形化界面将你引导至项目创建的流程。</p>
+<p><br><div align="center"><img src="https://cli.vuejs.org/ui-new-project.png"></div><br></p>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><p>Vue CLI 使用了一套基于插件的架构。</p>
+<p>插件可以修改 webpack 的内部配置，也可以向 <code>vue-cli-service</code> 注入命令。在项目创建的过程中，绝大部分列出的特性都是通过插件来实现的。</p>
+<h3 id="在现有的项目中安装插件"><a href="#在现有的项目中安装插件" class="headerlink" title="在现有的项目中安装插件"></a>在现有的项目中安装插件</h3><p>每个 CLI 插件都会包含一个 (用来创建文件的) 生成器和一个 (用来调整 webpack 核心配置和注入命令的) 运行时插件。当你使用 <code>vue create</code> 来创建一个新项目的时候，有些插件会根据你选择的特性被预安装好。如果你想在一个已经被创建好的项目中安装一个插件，可以使用 <code>vue add</code> 命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue add @vue/eslint</span><br></pre></td></tr></table></figure>
+<h3 id="项目本地的插件"><a href="#项目本地的插件" class="headerlink" title="项目本地的插件"></a>项目本地的插件</h3><p>如果你需要在项目里直接访问插件 API 而不需要创建一个完整的插件，你可以在 <code>package.json</code> 文件中使用 <code>vuePlugins.service</code> 选项：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"vuePlugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"service"</span>: [<span class="string">"my-commands.js"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每个文件都需要暴露一个函数，接受插件 API 作为第一个参数。关于插件 API 的更多信息可以查阅<a href="https://cli.vuejs.org/zh/dev-guide/plugin-dev.html" target="_blank" rel="noopener">插件开发指南</a>。</p>
+<p>你也可以通过 <code>vuePlugins.ui</code> 选项添加像 UI 插件一样工作的文件：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"vuePlugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"ui"</span>: [<span class="string">"my-ui.js"</span>]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>更多信息请阅读 <a href="https://cli.vuejs.org/zh/dev-guide/ui-api.html" target="_blank" rel="noopener">UI 插件 API</a>。</p>
+<h3 id="Preset"><a href="#Preset" class="headerlink" title="Preset"></a>Preset</h3><p>一个 Vue CLI preset 是一个包含创建新项目所需预定义选项和插件的 JSON 对象，让用户无需在命令提示中选择它们。</p>
+<p>在 <code>vue create</code> 过程中保存的 preset 会被放在你的 home 目录下的一个配置文件中 (<code>\~/.vuerc</code>)。你可以通过直接编辑这个文件来调整、添加、删除保存好的 preset。</p>
+<p>这里有一个 preset 的示例：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"useConfigFiles"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"router"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"vuex"</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">"cssPreprocessor"</span>: <span class="string">"sass"</span>,</span><br><span class="line">  <span class="attr">"plugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-babel"</span>: &#123;&#125;,</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-eslint"</span>: &#123;</span><br><span class="line">      <span class="attr">"config"</span>: <span class="string">"airbnb"</span>,</span><br><span class="line">      <span class="attr">"lintOn"</span>: [<span class="string">"save"</span>, <span class="string">"commit"</span>]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Preset-插件的版本管理"><a href="#Preset-插件的版本管理" class="headerlink" title="Preset 插件的版本管理"></a>Preset 插件的版本管理</h4><p>你可以显式地指定用到的插件的版本：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"plugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-eslint"</span>: &#123;</span><br><span class="line">      <span class="attr">"version"</span>: <span class="string">"^3.0.0"</span>,</span><br><span class="line">      // ... 该插件的其它选项</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意对于官方插件来说这不是必须的——当被忽略时，CLI 会自动使用 registry 中最新的版本。不过<strong>我们推荐为 preset 列出的所有第三方插件提供显式的版本范围</strong>。</p>
+<h4 id="允许插件的命令提示"><a href="#允许插件的命令提示" class="headerlink" title="允许插件的命令提示"></a>允许插件的命令提示</h4><p>每个插件在项目创建的过程中都可以注入它自己的命令提示，不过当你使用了一个 preset，这些命令提示就会被跳过，因为 Vue CLI 假设所有的插件选项都已经在 preset 中声明过了。</p>
+<p>在有些情况下你可能希望 preset 只声明需要的插件，同时让用户通过插件注入的命令提示来保留一些灵活性。</p>
+<p>对于这种场景你可以在插件选项中指定 <code>&quot;prompts&quot;: true</code> 来允许注入命令提示：</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"plugins"</span>: &#123;</span><br><span class="line">    <span class="attr">"@vue/cli-plugin-eslint"</span>: &#123;</span><br><span class="line">      // 让用户选取他们自己的 ESLint config</span><br><span class="line">      "prompts": true</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="远程-Preset"><a href="#远程-Preset" class="headerlink" title="远程 Preset"></a>远程 Preset</h4><p>你可以通过发布 git repo 将一个 preset 分享给其他开发者。这个 repo 应该包含以下文件：</p>
+<ul>
+<li><code>preset.json</code>: 包含 preset 数据的主要文件（必需）。</li>
+<li><code>generator.js</code>: 一个可以注入或是修改项目中文件的 <a href="https://cli.vuejs.org/zh/dev-guide/plugin-dev.html#generator" target="_blank" rel="noopener">Generator</a>。</li>
+<li><code>prompts.js</code> 一个可以通过命令行对话为 generator 收集选项的 <a href="https://cli.vuejs.org/zh/dev-guide/plugin-dev.html#第三方插件的对话" target="_blank" rel="noopener">prompts 文件</a>。</li>
+</ul>
+<p>发布 repo 后，你就可以在创建项目的时候通过 <code>--preset</code> 选项使用这个远程的 preset 了：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从 GitHub repo 使用 preset</span></span><br><span class="line">vue create --preset username/repo my-project</span><br></pre></td></tr></table></figure>
+<p>GitLab 和 BitBucket 也是支持的。如果要从私有 repo 获取，请确保使用 <code>--clone</code> 选项：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vue create --preset gitlab:username/repo --<span class="built_in">clone</span> my-project</span><br><span class="line">vue create --preset bitbucket:username/repo --<span class="built_in">clone</span> my-project</span><br></pre></td></tr></table></figure>
+<h4 id="加载文件系统中的-Preset"><a href="#加载文件系统中的-Preset" class="headerlink" title="加载文件系统中的 Preset"></a>加载文件系统中的 Preset</h4><p>当开发一个远程 preset 的时候，你必须不厌其烦的向远程 repo 发出 push 进行反复测试。为了简化这个流程，你也可以直接在本地测试 preset。如果 <code>--preset</code> 选项的值是一个相对或绝对文件路径，或是以 <code>.json</code> 结尾，则 Vue CLI 会加载本地的 preset：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># ./my-preset 应当是一个包含 preset.json 的文件夹</span></span><br><span class="line">vue create --preset ./my-preset my-project</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者，直接使用当前工作目录下的 json 文件：</span></span><br><span class="line">vue create --preset my-preset.json my-project</span><br></pre></td></tr></table></figure>
+<h3 id="CLI-服务"><a href="#CLI-服务" class="headerlink" title="CLI 服务"></a>CLI 服务</h3><p>在一个 Vue CLI 项目中，<code>@vue/cli-service</code> 安装了一个名为 <code>vue-cli-service</code> 的命令。你可以在 npm scripts 中以 <code>vue-cli-service</code>、或者从终端中以 <code>./node_modules/.bin/vue-cli-service</code> 访问这个命令。</p>
+<p>这是你使用默认 preset 的项目的 <code>package.json</code>：</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"serve"</span>: <span class="string">"vue-cli-service serve"</span>,</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"vue-cli-service build"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>你可以通过 npm 或 Yarn 调用这些 script：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">npm run serve</span><br><span class="line"><span class="comment"># OR</span></span><br><span class="line">yarn serve</span><br></pre></td></tr></table></figure>
+<p><br><div align="center"><img src="https://cli.vuejs.org/ui-analyzer.png"></div><br></p>
+<h2 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h2><h3 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h3><h4 id="browserslist"><a href="#browserslist" class="headerlink" title="browserslist"></a>browserslist</h4><p>你会发现有 <code>package.json</code> 文件里的 <code>browserslist</code> 字段 (或一个单独的 <code>.browserslistrc</code> 文件)，指定了项目的目标浏览器的范围。这个值会被 <a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html" target="_blank" rel="noopener">@babel/preset-env</a> 和 <a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">Autoprefixer</a> 用来确定需要转译的 JavaScript 特性和需要添加的 CSS 浏览器前缀。</p>
+<h4 id="Polyfill"><a href="#Polyfill" class="headerlink" title="Polyfill"></a>Polyfill</h4><p>一个默认的 Vue CLI 项目会使用 <a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app" target="_blank" rel="noopener">@vue/babel-preset-app</a>，它通过 <code>@babel/preset-env</code> 和 <code>browserslist</code> 配置来决定项目需要的 polyfill。</p>
+<p>默认情况下，它会把 <a href="https://new.babeljs.io/docs/en/next/babel-preset-env.html#usebuiltins-usage" target="_blank" rel="noopener"><code>useBuiltIns: &#39;usage&#39;</code></a> 传递给 <code>@babel/preset-env</code>，这样它会根据源代码中出现的语言特性自动检测需要的 polyfill。这确保了最终包里 polyfill 数量的最小化。然而，这也意味着<strong>如果其中一个依赖需要特殊的 polyfill，默认情况下 Babel 无法将其检测出来。</strong></p>
+<p>如果有依赖需要 polyfill，你有几种选择：</p>
+<ol>
+<li><p><strong>如果该依赖基于一个目标环境不支持的 ES 版本撰写:</strong> 将其添加到 <code>vue.config.js</code> 中的 <a href="https://cli.vuejs.org/zh/config/#transpiledependencies" target="_blank" rel="noopener"><code>transpileDependencies</code></a> 选项。这会为该依赖同时开启语法语法转换和根据使用情况检测 polyfill。</p>
+</li>
+<li><p><strong>如果该依赖交付了 ES5 代码并显式地列出了需要的 polyfill:</strong> 你可以使用 <code>@vue/babel-preset-app</code> 的 <a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/babel-preset-app#polyfills" target="_blank" rel="noopener">polyfills</a> 选项预包含所需要的 polyfill。<strong>注意 es6.promise 将被默认包含，因为现在的库依赖 Promise 是非常普遍的。</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// babel.config.js</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  presets: [</span><br><span class="line">    [<span class="string">'@vue/app'</span>, &#123;</span><br><span class="line">      polyfills: [</span><br><span class="line">        <span class="string">'es6.promise'</span>,</span><br><span class="line">        <span class="string">'es6.symbol'</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;]</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>提示</p>
+<p>我们推荐以这种方式添加 polyfill 而不是在源代码中直接导入它们，因为如果这里列出的 polyfill 在 <code>browserslist</code> 的目标中不需要，则它会被自动排除。</p>
+</blockquote>
+</li>
+<li><p><strong>如果该依赖交付 ES5 代码，但使用了 ES6+ 特性且没有显式地列出需要的 polyfill (例如 Vuetify)：请使用 useBuiltIns: ‘entry’ 然后在入口文件添加 import ‘@babel/polyfill’。这会根据 browserslist 目标导入所有</strong> polyfill，这样你就不用再担心依赖的 polyfill 问题了，但是因为包含了一些没有用到的 polyfill 所以最终的包大小可能会增加。</p>
+</li>
+</ol>
+<h3 id="HTML-和静态资源"><a href="#HTML-和静态资源" class="headerlink" title="HTML 和静态资源"></a>HTML 和静态资源</h3><h4 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h4><p><code>public/index.html</code> 文件是一个会被 <a href="https://github.com/jantimon/html-webpack-plugin" target="_blank" rel="noopener">html-webpack-plugin</a> 处理的模板。在构建过程中，资源链接会被自动注入。另外，Vue CLI 也会自动注入 resource hint (<code>preload/prefetch</code>、manifest 和图标链接 (当用到 PWA 插件时) 以及构建过程中处理的 JavaScript 和 CSS 文件的资源链接。</p>
+<h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><p>因为 index 文件被用作模板，所以你可以使用 <a href="https://lodash.com/docs/4.17.10#template" target="_blank" rel="noopener">lodash template</a> 语法插入内容：</p>
+<ul>
+<li><code>&lt;%= VALUE %&gt;</code> 用来做不转义插值；</li>
+<li><code>&lt;%- VALUE %&gt;</code> 用来做 HTML 转义插值；</li>
+<li><code>&lt;% expression %&gt;</code> 用来描述 JavaScript 流程控制。</li>
+</ul>
+<p>除了<a href="https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates" target="_blank" rel="noopener">被 <code>html-webpack-plugin</code> 暴露的默认值</a>之外，所有<a href="https://cli.vuejs.org/zh/guide/mode-and-env.html#using-env-variables-in-client-side-code" target="_blank" rel="noopener">客户端环境变量</a>也可以直接使用。例如，<code>BASE_URL</code> 的用法：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"icon"</span> <span class="attr">href</span>=<span class="string">"&lt;%= BASE_URL %&gt;favicon.ico"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>更多内容可以查阅：</p>
+<ul>
+<li><a href="https://cli.vuejs.org/zh/config/#baseurl" target="_blank" rel="noopener">baseUrl</a></li>
+</ul>
+<h3 id="Preload"><a href="#Preload" class="headerlink" title="Preload"></a>Preload</h3><p>CSS</p>
+<p>Webpack</p>
+<p>环境变量和模式</p>
+<p>构建目标</p>
+<p>部署</p>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>配置细节参考：<a href="https://cli.vuejs.org/zh/config/" target="_blank" rel="noopener">https://cli.vuejs.org/zh/config/</a></p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2019/03/06/frontend/mvc/vue/vue-cli/" title="Vue CLI">https://dunwu.github.io/2019/03/06/frontend/mvc/vue/vue-cli/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/03/06/os/docker/basics/docker-container/" rel="next" title="Docker 容器">
+                <i class="fa fa-chevron-left"></i> Docker 容器
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/03/06/database/sql/sqlite/README/" rel="prev" title="SQLite">
+                SQLite <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vue-CLI"><span class="nav-text">Vue CLI</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-text">入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-serve"><span class="nav-text">vue serve</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-build"><span class="nav-text">vue build</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-create"><span class="nav-text">vue create</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vue-ui"><span class="nav-text">vue ui</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在现有的项目中安装插件"><span class="nav-text">在现有的项目中安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目本地的插件"><span class="nav-text">项目本地的插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preset"><span class="nav-text">Preset</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Preset-插件的版本管理"><span class="nav-text">Preset 插件的版本管理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#允许插件的命令提示"><span class="nav-text">允许插件的命令提示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#远程-Preset"><span class="nav-text">远程 Preset</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#加载文件系统中的-Preset"><span class="nav-text">加载文件系统中的 Preset</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CLI-服务"><span class="nav-text">CLI 服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开发"><span class="nav-text">开发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#浏览器兼容性"><span class="nav-text">浏览器兼容性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#browserslist"><span class="nav-text">browserslist</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Polyfill"><span class="nav-text">Polyfill</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-和静态资源"><span class="nav-text">HTML 和静态资源</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML"><span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值"><span class="nav-text">插值</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Preload"><span class="nav-text">Preload</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Java 操作符知识点 计算机的最基本用途之一就是执行数学运算，作为一门计算机语言，Java 也提供了一套丰富的操作符来操纵变量。我们可以把操作符分成以下几组：  算术操作符 关系操作符 位操作符 逻辑操作符 赋值操作符 其他操作符  算术操作符算术操作符用在数学表达式中，它们的作用和在数学中的作用一样。下表列出了所有的算术操作符。 表格中的示例假设整数变量 A 的值为 10，变量 B 的值为 2">
+<meta name="keywords" content="javacore,basics">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java 操作符">
+<meta property="og:url" content="https://dunwu.github.io/2015/02/15/programming/java/javacore/basic/Java操作符/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Java 操作符知识点 计算机的最基本用途之一就是执行数学运算，作为一门计算机语言，Java 也提供了一套丰富的操作符来操纵变量。我们可以把操作符分成以下几组：  算术操作符 关系操作符 位操作符 逻辑操作符 赋值操作符 其他操作符  算术操作符算术操作符用在数学表达式中，它们的作用和在数学中的作用一样。下表列出了所有的算术操作符。 表格中的示例假设整数变量 A 的值为 10，变量 B 的值为 2">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-ceed021ed7c60696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-03-06T08:43:46.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java 操作符">
+<meta name="twitter:description" content="Java 操作符知识点 计算机的最基本用途之一就是执行数学运算，作为一门计算机语言，Java 也提供了一套丰富的操作符来操纵变量。我们可以把操作符分成以下几组：  算术操作符 关系操作符 位操作符 逻辑操作符 赋值操作符 其他操作符  算术操作符算术操作符用在数学表达式中，它们的作用和在数学中的作用一样。下表列出了所有的算术操作符。 表格中的示例假设整数变量 A 的值为 10，变量 B 的值为 2">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-ceed021ed7c60696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2015/02/15/programming/java/javacore/basic/Java操作符/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java 操作符 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/02/15/programming/java/javacore/basic/Java操作符/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java 操作符<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/Java操作符.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2015-02-15 00:00:00" itemprop="dateCreated datePublished" datetime="2015-02-15T00:00:00+08:00">2015-02-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">8.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Java-操作符"><a href="#Java-操作符" class="headerlink" title="Java 操作符"></a>Java 操作符</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-ceed021ed7c60696.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p>计算机的最基本用途之一就是执行数学运算，作为一门计算机语言，Java 也提供了一套丰富的操作符来操纵变量。我们可以把操作符分成以下几组：</p>
+<ul>
+<li>算术操作符</li>
+<li>关系操作符</li>
+<li>位操作符</li>
+<li>逻辑操作符</li>
+<li>赋值操作符</li>
+<li>其他操作符</li>
+</ul>
+<h2 id="算术操作符"><a href="#算术操作符" class="headerlink" title="算术操作符"></a>算术操作符</h2><p>算术操作符用在数学表达式中，它们的作用和在数学中的作用一样。下表列出了所有的算术操作符。</p>
+<p>表格中的示例假设整数变量 A 的值为 10，变量 B 的值为 20：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加法 - 相加操作符两侧的值</td>
+<td>A + B 等于 30</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法 - 左操作数减去右操作数</td>
+<td>A – B 等于-10</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法 - 相乘操作符两侧的值</td>
+<td>A * B 等于 200</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法 - 左操作数除以右操作数</td>
+<td>B / A 等于 2</td>
+</tr>
+<tr>
+<td>％</td>
+<td>取模 - 左操作数除以右操作数的余数</td>
+<td>B%A 等于 0</td>
+</tr>
+<tr>
+<td>++</td>
+<td>自增 - 操作数的值增加 1</td>
+<td>B++ 或 ++B 等于 21</td>
+</tr>
+<tr>
+<td>–</td>
+<td>自减 - 操作数的值减少 1</td>
+<td>B– 或 –B 等于 19</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong></p>
+<p>下面的简单示例程序演示了算术操作符。复制并粘贴下面的 Java 程序并保存为 Test.java 文件，然后编译并运行这个程序：</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line">     <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">     <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">     <span class="keyword">int</span> c = <span class="number">25</span>;</span><br><span class="line">     <span class="keyword">int</span> d = <span class="number">25</span>;</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a + b = "</span> + (a + b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a - b = "</span> + (a - b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a * b = "</span> + (a * b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"b / a = "</span> + (b / a) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"b % a = "</span> + (b % a) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"c % a = "</span> + (c % a) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a++   = "</span> +  (a++) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a--   = "</span> +  (a--) );</span><br><span class="line">     <span class="comment">// 查看  d++ 与 ++d 的不同</span></span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"d++   = "</span> +  (d++) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"++d   = "</span> +  (++d) );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">a + b = <span class="number">30</span></span><br><span class="line">a - b = <span class="number">-10</span></span><br><span class="line">a * b = <span class="number">200</span></span><br><span class="line">b / a = <span class="number">2</span></span><br><span class="line">b % a = <span class="number">0</span></span><br><span class="line">c % a = <span class="number">5</span></span><br><span class="line">a++   = <span class="number">10</span></span><br><span class="line">b--   = <span class="number">11</span></span><br><span class="line">d++   = <span class="number">25</span></span><br><span class="line">++d   = <span class="number">27</span></span><br></pre></td></tr></table></figure>
+<h2 id="关系操作符"><a href="#关系操作符" class="headerlink" title="关系操作符"></a>关系操作符</h2><p>下表为 Java 支持的关系操作符</p>
+<p>表格中的示例整数变量 A 的值为 10，变量 B 的值为 20：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>检查如果两个操作数的值是否相等，如果相等则条件为真。</td>
+<td>（A == B）为假(非真)。</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检查如果两个操作数的值是否相等，如果值不相等则条件为真。</td>
+<td>(A != B) 为真。</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>检查左操作数的值是否大于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; B）非真。</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>检查左操作数的值是否小于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;B）为真。</td>
+</tr>
+<tr>
+<td>&gt; =</td>
+<td>检查左操作数的值是否大于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A&gt; = B）为假。</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>检查左操作数的值是否小于或等于右操作数的值，如果是那么条件为真。</td>
+<td>（A &lt;= B）为真。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong></p>
+<p>下面的简单示例程序演示了关系操作符。复制并粘贴下面的 Java 程序并保存为 Test.java 文件，然后编译并运行这个程序：</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line">     <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">     <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a == b = "</span> + (a == b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a != b = "</span> + (a != b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a &gt; b = "</span> + (a &gt; b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a &lt; b = "</span> + (a &lt; b) );      System.<span class="keyword">out</span>.println(<span class="string">"b &gt;= a = "</span> + (b &gt;= a) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"b &lt;= a = "</span> + (b &lt;= a) );   &#125; &#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">a</span> == <span class="selector-tag">b</span> = false</span><br><span class="line"><span class="selector-tag">a</span> != <span class="selector-tag">b</span> = true</span><br><span class="line"><span class="selector-tag">a</span> &gt; <span class="selector-tag">b</span> = false</span><br><span class="line"><span class="selector-tag">a</span> &lt; <span class="selector-tag">b</span> = true <span class="selector-tag">b</span> &gt;= <span class="selector-tag">a</span> = true</span><br><span class="line"><span class="selector-tag">b</span> &lt;= <span class="selector-tag">a</span> = false</span><br></pre></td></tr></table></figure>
+<h2 id="位操作符"><a href="#位操作符" class="headerlink" title="位操作符"></a>位操作符</h2><p>Java 定义了位操作符，应用于整数类型(int)，长整型(long)，短整型(short)，字符型(char)，和字节型(byte)等类型。</p>
+<p>位操作符作用在所有的位上，并且按位运算。假设 a = 60，和 b = 13;它们的二进制格式表示将如下：</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">A = <span class="number">0011</span> <span class="number">1100</span></span><br><span class="line">B = <span class="number">0000</span> <span class="number">1101</span></span><br><span class="line">-----------------</span><br><span class="line">A&amp;b = <span class="number">0000</span> <span class="number">1100</span></span><br><span class="line">A | B = <span class="number">0011</span> <span class="number">1101</span></span><br><span class="line">A ^ B = <span class="number">0011</span> <span class="number">0001</span></span><br><span class="line">~A= <span class="number">1100</span> <span class="number">0011</span></span><br></pre></td></tr></table></figure>
+<p>下表列出了位操作符的基本运算,假设整数变量 A 的值为 60 和变量 B 的值为 13：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>＆</td>
+<td>按位与操作符，当且仅当两个操作数的某一位都非 0 时候结果的该位才为 1。</td>
+<td>（A＆B），得到 12，即 0000 1100</td>
+</tr>
+<tr>
+<td>\</td>
+<td></td>
+<td>按位或操作符，只要两个操作数的某一位有一个非 0 时候结果的该位就为 1。</td>
+<td>（A \</td>
+<td>B）得到 61，即 0011 1101</td>
+</tr>
+<tr>
+<td>^</td>
+<td>按位异或操作符，两个操作数的某一位不相同时候结果的该位就为 1。</td>
+<td>（A ^ B）得到 49，即 0011 0001</td>
+</tr>
+<tr>
+<td>〜</td>
+<td>按位补操作符翻转操作数的每一位。</td>
+<td>（〜A）得到-60，即 1100 0011</td>
+</tr>
+<tr>
+<td>&lt;&lt;</td>
+<td>按位左移操作符。左操作数按位左移右操作数指定的位数。</td>
+<td>A &lt;&lt; 2 得到 240，即 1111 0000</td>
+</tr>
+<tr>
+<td>&gt;&gt;</td>
+<td>按位右移操作符。左操作数按位右移右操作数指定的位数。</td>
+<td>A &gt;&gt; 2 得到 15 即 1111</td>
+</tr>
+<tr>
+<td>&gt;&gt;&gt;</td>
+<td>按位右移补零操作符。左操作数的值按右操作数指定的位数右移，移动得到的空位以零填充。</td>
+<td>A&gt;&gt;&gt;2 得到 15 即 0000 1111</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong></p>
+<p>下面的简单示例程序演示了位操作符。复制并粘贴下面的 Java 程序并保存为 Test.java 文件，然后编译并运行这个程序：</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="type">String</span> args[]) &#123;</span><br><span class="line">     int a = <span class="number">60</span>; <span class="comment">/* 60 = 0011 1100 */</span></span><br><span class="line">     int b = <span class="number">13</span>; <span class="comment">/* 13 = 0000 1101 */</span></span><br><span class="line">     int <span class="built_in">c</span> = <span class="number">0</span>;</span><br><span class="line">     <span class="built_in">c</span> = a &amp; b;       <span class="comment">/* 12 = 0000 1100 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a &amp; b = "</span> + <span class="built_in">c</span> );</span><br><span class="line"></span><br><span class="line">     <span class="built_in">c</span> = a | b;       <span class="comment">/* 61 = 0011 1101 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a | b = "</span> + <span class="built_in">c</span> );</span><br><span class="line"></span><br><span class="line">     <span class="built_in">c</span> = a ^ b;       <span class="comment">/* 49 = 0011 0001 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a ^ b = "</span> + <span class="built_in">c</span> );</span><br><span class="line"></span><br><span class="line">     <span class="built_in">c</span> = ~a;          <span class="comment">/*-61 = 1100 0011 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"~a = "</span> + <span class="built_in">c</span> );</span><br><span class="line"></span><br><span class="line">     <span class="built_in">c</span> = a &lt;&lt; <span class="number">2</span>;     <span class="comment">/* 240 = 1111 0000 */</span>      <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a &lt;&lt; 2 = "</span> + <span class="built_in">c</span> );       <span class="built_in">c</span> = a &gt;&gt; <span class="number">2</span>;     <span class="comment">/* 215 = 1111 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a &gt;&gt; 2  = "</span> + <span class="built_in">c</span> );</span><br><span class="line"></span><br><span class="line">     <span class="built_in">c</span> = a &gt;&gt;&gt; <span class="number">2</span>;     <span class="comment">/* 215 = 0000 1111 */</span></span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"a &gt;&gt;&gt; 2 = "</span> + <span class="built_in">c</span> );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">a &amp; b = <span class="number">12</span></span><br><span class="line">a | b = <span class="number">61</span></span><br><span class="line">a ^ b = <span class="number">49</span></span><br><span class="line">~a = <span class="number">-61</span></span><br><span class="line">a &lt;&lt; <span class="number">2</span> = <span class="number">240</span> a &gt;&gt; <span class="number">15</span></span><br><span class="line">a &gt;&gt;&gt; <span class="number">15</span></span><br></pre></td></tr></table></figure>
+<h2 id="逻辑操作符"><a href="#逻辑操作符" class="headerlink" title="逻辑操作符"></a>逻辑操作符</h2><p>下表列出了逻辑操作符的基本运算，假设布尔变量 A 为真，变量 B 为假</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&amp;&amp;</td>
+<td>称为逻辑与操作符。当且仅当两个操作数都为真，条件才为真。</td>
+<td>（A &amp;&amp; B）为假。</td>
+</tr>
+<tr>
+<td>\</td>
+<td>\</td>
+<td></td>
+<td>称为逻辑或操作符。如果任何两个操作数任何一个为真，条件为真。</td>
+<td>（A \</td>
+<td>\</td>
+<td>B）为真。</td>
+</tr>
+<tr>
+<td>！</td>
+<td>称为逻辑非操作符。用来反转操作数的逻辑状态。如果条件为 true，则逻辑非操作符将得到 false。</td>
+<td>！（A &amp;&amp; B）为真。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong></p>
+<p>下面的简单示例程序演示了逻辑操作符。复制并粘贴下面的 Java 程序并保存为 Test.java 文件，然后编译并运行这个程序：</p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span> &#123;</span><br><span class="line">     boolean a = <span class="literal">true</span>;</span><br><span class="line">     boolean b = <span class="literal">false</span>;</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a &amp;&amp; b = "</span> + (a&amp;&amp;b));</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"a || b = "</span> + (a||b) );</span><br><span class="line">     System.<span class="keyword">out</span>.println(<span class="string">"!(a &amp;&amp; b) = "</span> + !(a &amp;&amp; b));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">a</span> <span class="string">&amp;&amp;</span> <span class="string">b</span> <span class="string">=</span> <span class="literal">false</span></span><br><span class="line"><span class="string">a</span> <span class="string">||</span> <span class="string">b</span> <span class="string">=</span> <span class="literal">true</span></span><br><span class="line"><span class="string">!(a</span> <span class="string">&amp;&amp;</span> <span class="string">b)</span> <span class="string">=</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h2><p>下面是 Java 语言支持的赋值操作符：</p>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>描述</th>
+<th>例子</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>简单的赋值操作符，将右操作数的值赋给左侧操作数</td>
+<td>C = A + B 将把 A + B 得到的值赋给 C</td>
+</tr>
+<tr>
+<td>+ =</td>
+<td>加和赋值操作符，它把左操作数和右操作数相加赋值给左操作数</td>
+<td>C + = A 等价于 C = C + A</td>
+</tr>
+<tr>
+<td>- =</td>
+<td>减和赋值操作符，它把左操作数和右操作数相减赋值给左操作数</td>
+<td>C - = A 等价于 C = C - A</td>
+</tr>
+<tr>
+<td>* =</td>
+<td>乘和赋值操作符，它把左操作数和右操作数相乘赋值给左操作数</td>
+<td>C _ = A 等价于 C = C _ A</td>
+</tr>
+<tr>
+<td>/ =</td>
+<td>除和赋值操作符，它把左操作数和右操作数相除赋值给左操作数</td>
+<td>C / = A 等价于 C = C / A</td>
+</tr>
+<tr>
+<td>（％）=</td>
+<td>取模和赋值操作符，它把左操作数和右操作数取模后赋值给左操作数</td>
+<td>C％= A 等价于 C = C％A</td>
+</tr>
+<tr>
+<td>&lt;&lt; =</td>
+<td>左移位赋值操作符</td>
+<td>C &lt;&lt; = 2 等价于 C = C &lt;&lt; 2</td>
+</tr>
+<tr>
+<td>&gt;&gt; =</td>
+<td>右移位赋值操作符</td>
+<td>C &gt;&gt; = 2 等价于 C = C &gt;&gt; 2</td>
+</tr>
+<tr>
+<td>＆=</td>
+<td>按位与赋值操作符</td>
+<td>C＆= 2 等价于 C = C＆2</td>
+</tr>
+<tr>
+<td>^ =</td>
+<td>按位异或赋值操作符</td>
+<td>C ^ = 2 等价于 C = C ^ 2</td>
+</tr>
+<tr>
+<td>\</td>
+<td>=</td>
+<td>按位或赋值操作符</td>
+<td>C \</td>
+<td>= 2 等价于 C = C \</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>示例</strong></p>
+<p>面的简单示例程序演示了赋值操作符。复制并粘贴下面的 Java 程序并保存为 Test.java 文件，然后编译并运行这个程序：</p>
+<figure class="highlight swift"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="type">String</span> args[]) &#123;</span><br><span class="line">     int a = <span class="number">10</span>;</span><br><span class="line">     int b = <span class="number">20</span>;</span><br><span class="line">     int <span class="built_in">c</span> = <span class="number">0</span>;</span><br><span class="line">     <span class="built_in">c</span> = a + b;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c = a + b = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> += a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c += a  = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> -= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c -= a = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> *= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c *= a = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     a = <span class="number">10</span>;</span><br><span class="line">     <span class="built_in">c</span> = <span class="number">15</span>;</span><br><span class="line">     <span class="built_in">c</span> /= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c /= a = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     a = <span class="number">10</span>;</span><br><span class="line">     <span class="built_in">c</span> = <span class="number">15</span>;</span><br><span class="line">     <span class="built_in">c</span> %= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c %= a  = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> &lt;&lt;= <span class="number">2</span> ;      <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c &lt;&lt;= 2 = "</span> + <span class="built_in">c</span> );      <span class="built_in">c</span> &gt;&gt;= <span class="number">2</span> ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c &gt;&gt;= 2 = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> &gt;&gt;= <span class="number">2</span> ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c &gt;&gt;= a = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> &amp;= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c &amp;= 2  = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> ^= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c ^= a   = "</span> + <span class="built_in">c</span> );</span><br><span class="line">     <span class="built_in">c</span> |= a ;</span><br><span class="line">     <span class="type">System</span>.out.<span class="built_in">println</span>(<span class="string">"c |= a   = "</span> + <span class="built_in">c</span> );</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">c = a + b = <span class="number">30</span></span><br><span class="line">c += a  = <span class="number">40</span></span><br><span class="line">c -= a = <span class="number">30</span></span><br><span class="line">c *= a = <span class="number">300</span></span><br><span class="line">c /= a = <span class="number">1</span></span><br><span class="line">c %= a  = <span class="number">5</span></span><br><span class="line">c &lt;&lt;= <span class="number">2</span> = <span class="number">20</span> c &gt;&gt;= <span class="number">2</span> = <span class="number">5</span></span><br><span class="line">c &gt;&gt;= <span class="number">2</span> = <span class="number">1</span></span><br><span class="line">c &amp;= a  = <span class="number">0</span></span><br><span class="line">c ^= a   = <span class="number">10</span></span><br><span class="line">c |= a   = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<h2 id="条件操作符（-）"><a href="#条件操作符（-）" class="headerlink" title="条件操作符（?:）"></a>条件操作符（?:）</h2><p>条件操作符也被称为三元操作符。该操作符有 3 个操作数，并且需要判断布尔表达式的值。该操作符的主要是决定哪个值应该赋值给变量。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line"><span class="built_in">variable</span> x = (expression) ? <span class="built_in">value</span> <span class="keyword">if</span> <span class="literal">true</span> : <span class="built_in">value</span> <span class="keyword">if</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例</strong></p>
+<figure class="highlight cs"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">Test</span> &#123;</span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">      <span class="keyword">int</span> a , b;</span><br><span class="line">      a = <span class="number">10</span>;</span><br><span class="line">b = (a == <span class="number">1</span>) ? <span class="number">20</span>: <span class="number">30</span>;</span><br><span class="line">System.<span class="keyword">out</span>.println( <span class="string">"Value of b is : "</span> +  b );</span><br><span class="line">      b = (a == <span class="number">10</span>) ? <span class="number">20</span>: <span class="number">30</span>;</span><br><span class="line">     System.<span class="keyword">out</span>.println( <span class="string">"Value of b is : "</span> + b );</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">Value <span class="keyword">of</span> b <span class="keyword">is</span> : 30</span><br><span class="line">Value <span class="keyword">of</span> b <span class="keyword">is</span> : 20</span><br></pre></td></tr></table></figure>
+<h2 id="instanceOf-操作符"><a href="#instanceOf-操作符" class="headerlink" title="instanceOf 操作符"></a>instanceOf 操作符</h2><p>该操作符用于操作对象示例，检查该对象是否是一个特定类型（类类型或接口类型）。</p>
+<p>instanceof 操作符使用格式如下：</p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">( Object reference variable ) instanceOf  (class<span class="built_in">/interface </span>type)</span><br></pre></td></tr></table></figure>
+<p>如果操作符左侧变量所指的对象，是操作符右侧类或接口(class/interface)的一个对象，那么结果为真。</p>
+<p>下面是一个例子：</p>
+<figure class="highlight delphi"><table><tr><td class="code"><pre><span class="line"><span class="keyword">String</span> <span class="keyword">name</span> = <span class="string">'James'</span>;</span><br><span class="line">boolean result = <span class="keyword">name</span> instanceOf <span class="keyword">String</span>; <span class="comment">// 由于name是Strine类型，所以返回真</span></span><br></pre></td></tr></table></figure>
+<p>如果被比较的对象兼容于右侧类型,该操作符仍然返回 true。</p>
+<p>看下面的例子：</p>
+<figure class="highlight scala"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">   public static void main(<span class="type">String</span> args[])&#123;</span><br><span class="line">      <span class="type">Vehicle</span> a = <span class="keyword">new</span> <span class="type">Car</span>();</span><br><span class="line">      boolean result =  a instanceof <span class="type">Car</span>;</span><br><span class="line">      <span class="type">System</span>.out.println( result);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上示例编译运行结果如下：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h2 id="Java-操作符优先级"><a href="#Java-操作符优先级" class="headerlink" title="Java 操作符优先级"></a>Java 操作符优先级</h2><p>当多个操作符出现在一个表达式中，谁先谁后呢？这就涉及到操作符的优先级别的问题。在一个多操作符的表达式中，操作符优先级不同会导致最后得出的结果差别甚大。</p>
+<p>例如，（1+3）＋（3+2）*2，这个表达式如果按加号最优先计算，答案就是 18，如果按照乘号最优先，答案则是 14。</p>
+<p>再如，x = 7 + 3 _ 2;这里 x 得到 13，而不是 20，因为乘法操作符比加法操作符有较高的优先级，所以先计算 3 _ 2 得到 6，然后再加 7。</p>
+<p>下表中具有最高优先级的操作符在的表的最上面，最低优先级的在表的底部。</p>
+<table>
+<thead>
+<tr>
+<th>类别</th>
+<th>操作符</th>
+<th>关联性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>后缀</td>
+<td>() [] . (点操作符)</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>一元</td>
+<td>+ + - ！〜</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td>乘性</td>
+<td>* /％</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>加性</td>
+<td>+ -</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>移位</td>
+<td>&gt;&gt; &gt;&gt;&gt; &lt;&lt;</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>关系</td>
+<td>&gt;&gt; = &lt;&lt; =</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>相等</td>
+<td>== !=</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>按位与</td>
+<td>＆</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>按位异或</td>
+<td>^</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>按位或</td>
+<td>\</td>
+<td></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>逻辑与</td>
+<td>&amp;&amp;</td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>逻辑或</td>
+<td>\</td>
+<td>\</td>
+<td></td>
+<td>左到右</td>
+</tr>
+<tr>
+<td>条件</td>
+<td>？：</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td>= + = - = * = / =％= &gt;&gt; = &lt;&lt; =＆= ^ = \</td>
+<td>=</td>
+<td>从右到左</td>
+</tr>
+<tr>
+<td>逗号</td>
+<td>，</td>
+<td>左到右</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2015/02/15/programming/java/javacore/basic/Java操作符/" title="Java 操作符">https://dunwu.github.io/2015/02/15/programming/java/javacore/basic/Java操作符/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/javacore/" rel="tag"># javacore</a>
+          
+            <a href="/blog/tags/basics/" rel="tag"># basics</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2014/10/14/programming/java/javacore/basic/Java数组/" rel="next" title="Java 数组">
+                <i class="fa fa-chevron-left"></i> Java 数组
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2015/02/15/programming/java/javacore/basic/Java异常/" rel="prev" title="Java 异常">
+                Java 异常 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-操作符"><span class="nav-text">Java 操作符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算术操作符"><span class="nav-text">算术操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系操作符"><span class="nav-text">关系操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位操作符"><span class="nav-text">位操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑操作符"><span class="nav-text">逻辑操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值操作符"><span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件操作符（-）"><span class="nav-text">条件操作符（?:）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#instanceOf-操作符"><span class="nav-text">instanceOf 操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-操作符优先级"><span class="nav-text">Java 操作符优先级</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>

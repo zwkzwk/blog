@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Webpack 概念webpack  是一个现代的 JavaScript 应用程序的模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图表(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的  bundle - 通常只有一个，由浏览器加载。 学习 webpack，需要先了解几个核心概念，下面会一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack 概念">
+<meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/webpack/concept/index.html">
+<meta property="og:site_name" content="张鹏的博客">
+<meta property="og:description" content="Webpack 概念webpack  是一个现代的 JavaScript 应用程序的模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图表(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的  bundle - 通常只有一个，由浏览器加载。 学习 webpack，需要先了解几个核心概念，下面会一">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/frontend-tutorial/master/docs/assets/images/webpack-introduction.png">
+<meta property="og:image" content="https://camo.githubusercontent.com/afdb8057414988ac33b85eb25a225181f9efb7b1/687474703a2f2f7765627061636b2e6769746875622e696f2f6173736574732f484d522e737667">
+<meta property="og:updated_time" content="2019-03-06T08:43:45.924Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Webpack 概念">
+<meta name="twitter:description" content="Webpack 概念webpack  是一个现代的 JavaScript 应用程序的模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图表(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的  bundle - 通常只有一个，由浏览器加载。 学习 webpack，需要先了解几个核心概念，下面会一">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/frontend-tutorial/master/docs/assets/images/webpack-introduction.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2019/03/06/frontend/webpack/concept/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Webpack 概念 | 张鹏的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">张鹏的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">大道至简，知易行难</p>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/webpack/concept/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Webpack 概念<a href="https://github.com/dunwu/blog/blob/master/source/_posts/frontend/webpack/concept.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00 / 修改时间：16:43:45" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">6.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Webpack-概念"><a href="#Webpack-概念" class="headerlink" title="Webpack 概念"></a>Webpack 概念</h1><p><em>webpack</em>  是一个现代的 JavaScript 应用程序的<em>模块打包器(module bundler)</em>。当 webpack 处理应用程序时，它会递归地构建一个<em>依赖关系图表(dependency graph)</em>，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的  <em>bundle</em> - 通常只有一个，由浏览器加载。</p>
+<p>学习 webpack，需要先了解几个核心概念，下面会一一道来。</p>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/frontend-tutorial/master/docs/assets/images/webpack-introduction.png"></div><br></p>
+<h2 id="模块化-module"><a href="#模块化-module" class="headerlink" title="模块化(module)"></a>模块化(module)</h2><p>在<a href="https://en.wikipedia.org/wiki/Modular_programming" target="_blank" rel="noopener">模块化编程</a>中，开发者将程序分解相对独立的代码块，并称之为<em>模块</em>。</p>
+<p>每个模块具有比完整程序更小的接触面，使得校验、调试、测试轻而易举。 精心编写的<em>模块</em>提供了可靠的抽象和封装界限，使得应用程序中每个模块都具有条理清楚的设计和明确的目的。</p>
+<p>Node.js 从最一开始就支持模块化编程。然而，在 web，<em>模块化</em>的支持正缓慢到来。在 web 存在多种支持 JavaScript 模块化的工具，这些工具各有优势和限制。webpack 基于从这些系统获得的经验教训，并将<em>模块</em>的概念应用于项目中的任何文件。</p>
+<h3 id="什么是-webpack-模块"><a href="#什么是-webpack-模块" class="headerlink" title="什么是 webpack 模块"></a>什么是 webpack 模块</h3><p>对比  <a href="https://nodejs.org/api/modules.html" target="_blank" rel="noopener">Node.js 模块</a>，webpack <em>模块</em>能够以各种方式表达它们的依赖关系，几个例子如下：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import" target="_blank" rel="noopener">ES2015 <code>import</code></a>  语句</li>
+<li><a href="http://www.commonjs.org/specs/modules/1.0/" target="_blank" rel="noopener">CommonJS</a> <code>require()</code>  语句</li>
+<li><a href="https://github.com/amdjs/amdjs-api/blob/master/AMD.md" target="_blank" rel="noopener">AMD</a> <code>define</code>  和  <code>require</code>  语句</li>
+<li>css/sass/less 文件中的  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@import" target="_blank" rel="noopener"><code>@import</code>  语句</a>。</li>
+<li>样式(<code>url(...)</code>)或 HTML 文件(<code></code>)中的图片链接(image url)</li>
+</ul>
+<blockquote>
+<p>webpack 1 需要特定的 loader 来转换 ES 2015 <code>import</code>，然而 webpack 2 天然支持。</p>
+</blockquote>
+<h3 id="支持的模块类型"><a href="#支持的模块类型" class="headerlink" title="支持的模块类型"></a>支持的模块类型</h3><p>webpack 通过  <em>loader</em>  可以支持各种语言和预处理器编写模块。<em>loader</em>  描述了 webpack <strong>如何</strong>处理 非 JavaScript(non-JavaScript) <em>模块</em>，并且在<em>bundle</em>中引入这些<em>依赖</em>。 webpack 社区已经为各种流行语言和语言处理器构建了  <em>loader</em>，包括：</p>
+<ul>
+<li><a href="http://coffeescript.org/" target="_blank" rel="noopener">CoffeeScript</a></li>
+<li><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener">TypeScript</a></li>
+<li><a href="https://babeljs.io/" target="_blank" rel="noopener">ESNext (Babel)</a></li>
+<li><a href="http://sass-lang.com/" target="_blank" rel="noopener">Sass</a></li>
+<li><a href="http://lesscss.org/" target="_blank" rel="noopener">Less</a></li>
+<li><a href="http://stylus-lang.com/" target="_blank" rel="noopener">Stylus</a></li>
+</ul>
+<p>总的来说，webpack 提供了可定制的、强大和丰富的 API，允许<strong>任何技术栈</strong>使用 webpack，保持了在你的开发、测试和生成流程中<strong>无侵入性(non-opinionated)</strong>。</p>
+<h2 id="配置文件-webpack-config-js"><a href="#配置文件-webpack-config-js" class="headerlink" title="配置文件 - webpack.config.js"></a>配置文件 - webpack.config.js</h2><blockquote>
+<p>webpack 是高度可配置的，如何模块化打包、加载都可以基于配置文件定制。</p>
+<p>webpack 的默认配置文件是 <code>webpack.config.js</code>。</p>
+</blockquote>
+<p>因为 webpack 配置是标准的 Node.js CommonJS 模块，你可以使用<strong>如下特性</strong>：</p>
+<ul>
+<li>通过  <code>require(...)</code>  导入其他文件</li>
+<li>通过  <code>require(...)</code>  使用 npm 的工具函数</li>
+<li>使用 JavaScript 控制流表达式，例如  <code>?:</code>  操作符</li>
+<li>对常用值使用常量或变量</li>
+<li>编写并执行函数来生成部分配置</li>
+</ul>
+<h2 id="依赖图表-Dependency-Graph"><a href="#依赖图表-Dependency-Graph" class="headerlink" title="依赖图表(Dependency Graph)"></a>依赖图表(Dependency Graph)</h2><p>任何时候，一个文件依赖于另一个文件，webpack 就把此视为文件之间有<em>依赖关系</em>。这使得 webpack 可以接收非代码资源(non-code asset)（例如图像或 web 字体），并且可以把它们作为<em>依赖</em>提供给你的应用程序。</p>
+<p>webpack 从命令行或配置文件中定义的一个模块列表开始，处理你的应用程序。 从这些<em>入口起点</em>开始，webpack 递归地构建一个<em>依赖图表</em>，这个依赖图表包含着应用程序所需的每个模块，然后将所有这些模块打包为少量的  <em>bundle</em>- 通常只有一个 - 可由浏览器加载。</p>
+<blockquote>
+<p>对于  <em>HTTP/1.1</em>  客户端，由 webpack 打包你的应用程序会尤其强大，因为在浏览器发起一个新请求时，它能够减少应用程序必须等待的时间。对于  <em>HTTP/2</em>，你还可以使用代码拆分(Code Splitting)以及通过 webpack 打包来实现<a href="https://medium.com/webpack/webpack-http-2-7083ec3f3ce6#.7y5d3hz59" target="_blank" rel="noopener">最佳优化</a>。</p>
+</blockquote>
+<h2 id="入口-entry"><a href="#入口-entry" class="headerlink" title="入口(entry)"></a>入口(entry)</h2><p>webpack 将创建所有应用程序的<strong>依赖关系图表(dependency graph)</strong>。图表的起点被称之为<em>入口起点(entry point)</em>。<em>入口起点</em>告诉 webpack <em>从哪里开始</em>，并遵循着依赖关系图表知道<em>要打包什么</em>。可以将您应用程序的<em>入口起点</em>认为是<strong>根上下文(contextual root)</strong>或  <strong>app 第一个启动文件</strong>。</p>
+<p>在 webpack 中，我们使用  <a href="https://doc.webpack-china.org/configuration" target="_blank" rel="noopener">webpack 配置对象(webpack configuration object)</a>  中的  <code>entry</code>  属性来定义<em>入口</em>。</p>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./path/to/my/entry/file.js"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="输出-output"><a href="#输出-output" class="headerlink" title="输出(output)"></a>输出(output)</h2><p>将所有的资源(assets)归拢在一起后，还需要告诉 webpack <strong>在哪里</strong>打包应用程序。webpack 的  <code>output</code>  属性描述了<strong>如何处理归拢在一起的代码</strong>(bundled code)。</p>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  entry: <span class="string">"./path/to/my/entry/file.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line">    filename: <span class="string">"my-first-webpack.bundle.js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="加载-loader"><a href="#加载-loader" class="headerlink" title="加载(loader)"></a>加载(loader)</h2><p>webpack 的目标是，让  <strong>webpack</strong>  聚焦于项目中的所有资源(asset)，而浏览器不需要关注考虑这些（这并不意味着资源(asset)都必须打包在一起）。webpack 把<a href="https://doc.webpack-china.org/concepts/modules" target="_blank" rel="noopener">每个文件(.css, .html, .scss, .jpg, etc.) 都作为模块</a>处理。然而 webpack <strong>只理解 JavaScript</strong>。</p>
+<p><strong>webpack loader 会将这些文件转换为模块，而转换后的文件会被添加到依赖图表中。</strong></p>
+<p>在更高层面，webpack 的配置有两个目标。</p>
+<ol>
+<li><p>识别出(identify)应该被对应的 loader 进行转换(transform)的那些文件</p>
+</li>
+<li><p>由于进行过文件转换，所以能够将被转换的文件添加到依赖图表（并且最终添加到 bundle 中）(<code>use</code>  属性)</p>
+</li>
+</ol>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">"./path/to/my/entry/file.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line">    filename: <span class="string">"my-first-webpack.bundle.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [&#123; <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)$/</span>, <span class="attr">use</span>: <span class="string">"babel-loader"</span> &#125;]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+<h2 id="插件-plugins"><a href="#插件-plugins" class="headerlink" title="插件(plugins)"></a>插件(plugins)</h2><p>由于 loader 仅在每个文件的基础上执行转换，而  <code>插件(plugins)</code>  最常用于（但不限于）在打包模块的“compilation”和“chunk”生命周期执行操作和自定义功能<a href="https://doc.webpack-china.org/concepts/plugins" target="_blank" rel="noopener">（查看更多）</a>。webpack 的插件系统<a href="https://doc.webpack-china.org/api/plugins" target="_blank" rel="noopener">极其强大和可定制化</a>。</p>
+<p>想要使用一个插件，你只需要  <code>require()</code>  它，然后把它添加到  <code>plugins</code>  数组中。多数插件可以通过选项(option)自定义。你也可以在一个配置文件中因为不同目的而多次使用同一个插件，你需要使用  <code>new</code>  创建实例来调用它。</p>
+<p>例：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">"html-webpack-plugin"</span>); <span class="comment">//installed via npm</span></span><br><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">"webpack"</span>); <span class="comment">//to access built-in plugins</span></span><br><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> config = &#123;</span><br><span class="line">  entry: <span class="string">"./path/to/my/entry/file.js"</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line">    filename: <span class="string">"my-first-webpack.bundle.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [&#123; <span class="attr">test</span>: <span class="regexp">/\.(js|jsx)$/</span>, <span class="attr">use</span>: <span class="string">"babel-loader"</span> &#125;]</span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="keyword">new</span> webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">    <span class="keyword">new</span> HtmlWebpackPlugin(&#123; <span class="attr">template</span>: <span class="string">"./src/index.html"</span> &#125;)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = config;</span><br></pre></td></tr></table></figure>
+<h2 id="热替换-Hot-Module-Replacement"><a href="#热替换-Hot-Module-Replacement" class="headerlink" title="热替换(Hot Module Replacement)"></a>热替换(Hot Module Replacement)</h2><p>模块热替换功能会在应用程序运行过程中替换、添加或删除<a href="https://doc.webpack-china.org/concepts/modules/" target="_blank" rel="noopener">模块</a>，而无需重新加载页面。这使得你可以在独立模块变更后，无需刷新整个页面，就可以更新这些模块，极大地加速了开发时间。</p>
+<h3 id="这一切是如何运行的？"><a href="#这一切是如何运行的？" class="headerlink" title="这一切是如何运行的？"></a>这一切是如何运行的？</h3><h3 id="站在-App-的角度"><a href="#站在-App-的角度" class="headerlink" title="站在 App 的角度"></a>站在 App 的角度</h3><ol>
+<li>app 代码要求 HMR runtime 检查更新。</li>
+<li>HMR runtime （异步）下载更新，然后通知 app 代码更新可用。</li>
+<li>app 代码要求 HMR runtime 应用更新。</li>
+<li>HMR runtime （异步）应用更新。</li>
+</ol>
+<p>你可以设置 HMR，使此进程自动触发更新，或者你可以选择要求在用户交互后进行更新。</p>
+<h4 id="站在编译器-webpack-的角度"><a href="#站在编译器-webpack-的角度" class="headerlink" title="站在编译器(webpack) 的角度"></a>站在编译器(webpack) 的角度</h4><p>除了普通资源，编译器(compiler)需要发出 “update”，以允许更新之前的版本到新的版本。”update” 由两部分组成：</p>
+<ol>
+<li>待更新 manifest (JSON)</li>
+<li>一个或多个待更新 chunk (JavaScript)</li>
+</ol>
+<p>manifest 包括新的编译 hash 和所有的待更新 chunk 目录。</p>
+<p>每个待更新 chunk 包括用于与所有被更新模块相对应 chunk 的代码（或一个 flag 用于表明模块要被移除）。</p>
+<p>编译器确保模块 ID 和 chunk ID 在这些构建之间保持一致。通常将这些 ID 存储在内存中（例如，当使用  <a href="https://doc.webpack-china.org/configuration/dev-server/" target="_blank" rel="noopener">webpack-dev-server</a>  时），但是也可能将它们存储在一个 JSON 文件中。</p>
+<h4 id="站在模块的角度"><a href="#站在模块的角度" class="headerlink" title="站在模块的角度"></a>站在模块的角度</h4><p>HMR 是可选功能，只会影响包含 HMR 代码的模块。举个例子，通过  <a href="https://github.com/webpack/style-loader" target="_blank" rel="noopener"><code>style-loader</code></a>  为 style 样式追加补丁。 为了运行追加补丁，<code>style-loader</code>  实现了 HMR 接口；当它通过 HMR 接收到更新，它会使用新的样式替换旧的样式。</p>
+<p>类似的，当在一个模块中实现了 HMR 接口，你可以描述出当模块被更新后发生了什么。然而在多数情况下，不需要强制在每个模块中写入 HMR 代码。如果一个模块没有 HMR 处理函数，更新就会冒泡。这意味着一个简单的处理函数能够对整个模块树(complete module tree)进行处理。如果在这个模块树中，一个单独的模块被更新，那么整个模块树都会被重新加载（只会重新加载，不会迁移）。</p>
+<h4 id="站在-HMR-Runtime-的角度-Technical"><a href="#站在-HMR-Runtime-的角度-Technical" class="headerlink" title="站在 HMR Runtime 的角度 (Technical)"></a>站在 HMR Runtime 的角度 (Technical)</h4><p>对于模块系统的 runtime，附加的代码被发送到  <code>parents</code>  和  <code>children</code>  跟踪模块。</p>
+<p>在管理方面，runtime 支持两个方法  <code>check</code>  和  <code>apply</code>。</p>
+<p><code>check</code>  发送 HTTP 请求来更新 manifest。如果请求失败，说明没有可用更新。如果请求成功，待更新 chunk 会和当前加载过的 chunk 进行比较。对每个加载过的 chunk，会下载相对应的待更新 chunk。当所有待更新 chunk 完成下载，就会准备切换到  <code>ready</code>  状态。</p>
+<p><code>apply</code>  方法将所有被更新模块标记为无效。对于每个无效模块，都需要在模块中有一个更新处理函数，或者在它的父级模块们中有更新处理函数。否则，无效标记冒泡，并将父级也标记为无效。每个冒泡继续直到到达应用程序入口起点，或者到达带有更新处理函数的模块（以最先到达为准）。如果它从入口起点开始冒泡，则此过程失败。</p>
+<p>之后，所有无效模块都被（通过 dispose 处理函数）处理和解除加载。然后更新当前 hash，并且调用所有 “accept” 处理函数。runtime 切换回<code>闲置</code>状态，一切照常继续。</p>
+<h3 id="产生的文件-Technical"><a href="#产生的文件-Technical" class="headerlink" title="产生的文件 (Technical)"></a>产生的文件 (Technical)</h3><p>左侧表示初始编译器通过。右侧表示更新了模块 4 和 9 。</p>
+<p><br><div align="center"><img src="https://camo.githubusercontent.com/afdb8057414988ac33b85eb25a225181f9efb7b1/687474703a2f2f7765627061636b2e6769746875622e696f2f6173736574732f484d522e737667"></div><br></p>
+<h3 id="它能够用于？"><a href="#它能够用于？" class="headerlink" title="它能够用于？"></a>它能够用于？</h3><p>你可以在开发过程中将 HMR 作为 LiveReload 的替代。<a href="https://doc.webpack-china.org/configuration/dev-server/" target="_blank" rel="noopener">webpack-dev-server</a>  支持热模式，在试图重新加载整个页面之前，热模式会尝试使用 HMR 来更新。查看如何实现<a href="https://doc.webpack-china.org/guides/hmr-react" target="_blank" rel="noopener">在 React 项目中使用 HMR</a>  为例。</p>
+<p>一些 loader 已经生成可热更新的模块。例如，<code>style-loader</code>  能够置换出页面的样式表。对于这样的模块，你不需要做任何特殊处理。</p>
+<p>webpack 的强大之处在于它的可定制化，取决于特定项目需求，这里有<em>许多</em>配置 HMR 的方式。</p>
+<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
+<p>:books: 拓展阅读</p>
+<ul>
+<li><a href="webpack.md">Webpack 入门</a></li>
+<li><a href="concept.md">Webpack 概念</a></li>
+<li><a href="asset-management.md">Webpack 资源管理</a></li>
+<li><a href="code-splitting.md">Webpack 代码分离</a></li>
+<li><a href="development.md">Webpack 开发工具</a></li>
+</ul>
+<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+</blockquote>
+<ul>
+<li><strong>官方资料</strong><ul>
+<li><a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 官网</a></li>
+<li><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">Webpack 中文网</a></li>
+<li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener">webpack Github</a></li>
+<li><a href="https://github.com/webpack/webpack-dev-server" target="_blank" rel="noopener">webpack-dev-server Github</a></li>
+<li><a href="http://webpack.github.io/docs/webpack-dev-server.html" target="_blank" rel="noopener">webpack-dev-server 官方文档</a></li>
+</ul>
+</li>
+<li><strong>入门资料</strong><ul>
+<li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="noopener">webpack-demos</a></li>
+<li><a href="https://github.com/petehunt/webpack-howto/blob/master/README-zh.md" target="_blank" rel="noopener">webpack-howto</a></li>
+<li><a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="noopener">webpack-handbook</a></li>
+</ul>
+</li>
+<li><strong>教程</strong><ul>
+<li><a href="webpack-howto.md">如何学习 Webpack</a></li>
+<li><a href="concept.md">Webpack 概念</a></li>
+<li><a href="webpack.md">Webpack 入门</a></li>
+<li><a href="asset-management.md">Webpack 资源管理</a></li>
+<li><a href="code-splitting.md">Webpack 代码分离</a></li>
+<li><a href="development.md">Webpack 开发工具</a></li>
+</ul>
+</li>
+<li><strong>文章</strong><ul>
+<li><a href="http://huangxuan.me/2015/07/09/js-module-7day/" target="_blank" rel="noopener">JavaScript 模块化七日谈</a></li>
+<li><a href="https://github.com/seajs/seajs/issues/588" target="_blank" rel="noopener">前端模块化开发那点历史</a></li>
+</ul>
+</li>
+<li><strong>更多资源</strong><ul>
+<li><a href="https://github.com/webpack-china/awesome-webpack-cn" target="_blank" rel="noopener">awesome-webpack-cn</a></li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Zhang Peng</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://dunwu.github.io/2019/03/06/frontend/webpack/concept/" title="Webpack 概念">https://dunwu.github.io/2019/03/06/frontend/webpack/concept/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/03/06/frontend/webpack/development/" rel="next" title="Webpack 开发工具">
+                <i class="fa fa-chevron-left"></i> Webpack 开发工具
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/03/06/frontend/webpack/code-splitting/" rel="prev" title="Webpack 代码分离">
+                Webpack 代码分离 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">26</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">103</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Webpack-概念"><span class="nav-text">Webpack 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块化-module"><span class="nav-text">模块化(module)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-webpack-模块"><span class="nav-text">什么是 webpack 模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持的模块类型"><span class="nav-text">支持的模块类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件-webpack-config-js"><span class="nav-text">配置文件 - webpack.config.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依赖图表-Dependency-Graph"><span class="nav-text">依赖图表(Dependency Graph)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入口-entry"><span class="nav-text">入口(entry)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出-output"><span class="nav-text">输出(output)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载-loader"><span class="nav-text">加载(loader)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件-plugins"><span class="nav-text">插件(plugins)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#热替换-Hot-Module-Replacement"><span class="nav-text">热替换(Hot Module Replacement)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#这一切是如何运行的？"><span class="nav-text">这一切是如何运行的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站在-App-的角度"><span class="nav-text">站在 App 的角度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#站在编译器-webpack-的角度"><span class="nav-text">站在编译器(webpack) 的角度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站在模块的角度"><span class="nav-text">站在模块的角度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#站在-HMR-Runtime-的角度-Technical"><span class="nav-text">站在 HMR Runtime 的角度 (Technical)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产生的文件-Technical"><span class="nav-text">产生的文件 (Technical)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#它能够用于？"><span class="nav-text">它能够用于？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:16</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      
+        background-color: #eee;
+        background-image: linear-gradient(#fcfcfc, #eee);
+        border: 1px solid #d5d5d5;
+        border-radius: 3px;
+      
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      
+        right: 4px;
+        top: 8px;
+      
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1;
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function(i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap');
+      $(e).after($wrap);
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
+        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
+          return $(e).text();
+        }).toArray().join('\n');
+        var ta = document.createElement('textarea');
+        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
+        ta.style.top = yPosition + 'px'; // Prevent page scroll
+        ta.style.position = 'absolute';
+        ta.style.opacity = '0';
+        ta.readOnly = true;
+        ta.value = code;
+        document.body.appendChild(ta);
+        ta.select();
+        ta.setSelectionRange(0, code.length);
+        ta.readOnly = false;
+        var result = document.execCommand('copy');
+        
+          if (result) $(this).text('复制成功');
+          else $(this).text('复制失败');
+        
+        ta.blur(); // For iOS
+        $(this).blur();
+      })).on('mouseleave', function(e) {
+        var $b = $(this).find('.copy-btn');
+        setTimeout(function() {
+          $b.text('复制');
+        }, 300);
+      }).append(e);
+    })
+  </script>
+
+
+</body>
+</html>
