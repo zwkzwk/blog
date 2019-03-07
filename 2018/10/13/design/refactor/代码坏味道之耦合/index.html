@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="坏味道之耦合 耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链   不完美的库类 不完美的库类(Incomplete Library Class) 当一个类库已经不能满足实际需要时，你就不得不改变这个库（如果这个库是只读的，那就没辙了）。  问题原因许多编程技术都建立在库类的基础上。库类的作者没用未卜先知的能力，不能因">
+  <meta name="description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
 <meta name="keywords" content="design,refactor,code-smell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="坏味道之耦合">
-<meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之耦合/index.html">
+<meta property="og:title" content="代码坏味道之耦合">
+<meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之耦合/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="坏味道之耦合 耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链   不完美的库类 不完美的库类(Incomplete Library Class) 当一个类库已经不能满足实际需要时，你就不得不改变这个库（如果这个库是只读的，那就没辙了）。  问题原因许多编程技术都建立在库类的基础上。库类的作者没用未卜先知的能力，不能因">
+<meta property="og:description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-before.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-after.png">
@@ -148,10 +148,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/hide-delegate-after.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-before.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-after.png">
-<meta property="og:updated_time" content="2019-03-07T11:33:47.455Z">
+<meta property="og:updated_time" content="2019-03-07T13:55:17.322Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="坏味道之耦合">
-<meta name="twitter:description" content="坏味道之耦合 耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链   不完美的库类 不完美的库类(Incomplete Library Class) 当一个类库已经不能满足实际需要时，你就不得不改变这个库（如果这个库是只读的，那就没辙了）。  问题原因许多编程技术都建立在库类的基础上。库类的作者没用未卜先知的能力，不能因">
+<meta name="twitter:title" content="代码坏味道之耦合">
+<meta name="twitter:description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-before.png">
 
 
@@ -161,7 +161,7 @@
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之耦合/">
+  <link rel="canonical" href="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之耦合/">
 
 
 
@@ -171,7 +171,7 @@
   };
 </script>
 
-  <title>坏味道之耦合 | 张鹏的博客</title>
+  <title>代码坏味道之耦合 | 张鹏的博客</title>
   
 
 
@@ -402,7 +402,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/refactor/坏味道之耦合/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/refactor/代码坏味道之耦合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -419,7 +419,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">坏味道之耦合<a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/坏味道之耦合.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">代码坏味道之耦合<a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 19:33:47" itemprop="dateModified" datetime="2019-03-07T19:33:47+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-07 21:55:17" itemprop="dateModified" datetime="2019-03-07T21:55:17+08:00">2019-03-07</time>
               
             
           </span>
@@ -515,7 +515,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.9k</span>
+                <span title="本文字数">5.1k</span>
               
 
               
@@ -529,7 +529,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -549,7 +549,11 @@
       
 
       
-        <h1 id="坏味道之耦合"><a href="#坏味道之耦合" class="headerlink" title="坏味道之耦合"></a>坏味道之耦合</h1><blockquote>
+        <h1 id="代码坏味道之耦合"><a href="#代码坏味道之耦合" class="headerlink" title="代码坏味道之耦合"></a>代码坏味道之耦合</h1><blockquote>
+<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+<p>翻译自：<a href="https://sourcemaking.com/refactoring/smells/couplers" target="_blank" rel="noopener">https://sourcemaking.com/refactoring/smells/couplers</a></p>
+</blockquote>
+<blockquote>
 <p><strong>耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。</strong></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
@@ -559,6 +563,8 @@
 <li><a href="#依恋情结">依恋情结</a></li>
 <li><a href="#狎昵关系">狎昵关系</a></li>
 <li><a href="#过度耦合的消息链">过度耦合的消息链</a></li>
+<li><a href="#扩展阅读">扩展阅读</a></li>
+<li><a href="#参考资料">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <h2 id="不完美的库类"><a href="#不完美的库类" class="headerlink" title="不完美的库类"></a>不完美的库类</h2><blockquote>
@@ -741,6 +747,18 @@
 <p><strong>解决</strong></p>
 <p>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是旧函数完全移除。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-after.png"></div><br></p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码的坏味道和重构.md" target="_blank" rel="noopener">代码的坏味道和重构</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" target="_blank" rel="noopener">代码坏味道之代码臃肿</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md" target="_blank" rel="noopener">代码坏味道之滥用面向对象</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md" target="_blank" rel="noopener">代码坏味道之变革的障碍</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md" target="_blank" rel="noopener">代码坏味道之非必要的</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" target="_blank" rel="noopener">代码坏味道之耦合</a></li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">重构——改善既有代码的设计</a> - by Martin Fowler</li>
+<li><a href="https://sourcemaking.com/refactoring" target="_blank" rel="noopener">https://sourcemaking.com/refactoring</a></li>
+</ul>
 
       
     </div>
@@ -779,7 +797,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之耦合/" title="坏味道之耦合">https://dunwu.github.io/2018/10/13/design/refactor/坏味道之耦合/</a>
+    <a href="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之耦合/" title="代码坏味道之耦合">https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之耦合/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -809,8 +827,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/README/" rel="next" title="代码的坏味道和重构">
-                <i class="fa fa-chevron-left"></i> 代码的坏味道和重构
+              <a href="/blog/2018/09/28/os/linux/ops/samba使用详解/" rel="next" title="samba 使用详解">
+                <i class="fa fa-chevron-left"></i> samba 使用详解
               </a>
             
           </div>
@@ -819,8 +837,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/坏味道之代码臃肿/" rel="prev" title="坏味道之代码臃肿">
-                坏味道之代码臃肿 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之变革的障碍/" rel="prev" title="代码坏味道之变革的障碍">
+                代码坏味道之变革的障碍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -892,7 +910,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-count">358</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1255,7 +1273,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#坏味道之耦合"><span class="nav-text">坏味道之耦合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不完美的库类"><span class="nav-text">不完美的库类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入外加函数-Introduce-Foreign-Method"><span class="nav-text">引入外加函数(Introduce Foreign Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入本地扩展-Introduce-Local-Extension"><span class="nav-text">引入本地扩展(Introduce Local Extension)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人"><span class="nav-text">中间人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-1"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-1"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-1"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移除中间人-Remove-Middle-Man"><span class="nav-text">移除中间人(Remove Middle Man)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依恋情结"><span class="nav-text">依恋情结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-2"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method"><span class="nav-text">提炼函数(Extract Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狎昵关系"><span class="nav-text">狎昵关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-3"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-1"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移字段-Move-Field"><span class="nav-text">搬移字段(Move Field)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将双向关联改为单向关联-Change-Bidirectional-Association-to-Unidirectional"><span class="nav-text">将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以委托取代继承-Replace-Inheritance-with-Delegation"><span class="nav-text">以委托取代继承(Replace Inheritance with Delegation)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度耦合的消息链"><span class="nav-text">过度耦合的消息链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-4"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-4"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-3"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate-1"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method-1"><span class="nav-text">提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-2"><span class="nav-text">搬移函数(Move Method)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码坏味道之耦合"><span class="nav-text">代码坏味道之耦合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不完美的库类"><span class="nav-text">不完美的库类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入外加函数-Introduce-Foreign-Method"><span class="nav-text">引入外加函数(Introduce Foreign Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入本地扩展-Introduce-Local-Extension"><span class="nav-text">引入本地扩展(Introduce Local Extension)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人"><span class="nav-text">中间人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-1"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-1"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-1"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移除中间人-Remove-Middle-Man"><span class="nav-text">移除中间人(Remove Middle Man)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依恋情结"><span class="nav-text">依恋情结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-2"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method"><span class="nav-text">提炼函数(Extract Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狎昵关系"><span class="nav-text">狎昵关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-3"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-1"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移字段-Move-Field"><span class="nav-text">搬移字段(Move Field)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将双向关联改为单向关联-Change-Bidirectional-Association-to-Unidirectional"><span class="nav-text">将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以委托取代继承-Replace-Inheritance-with-Delegation"><span class="nav-text">以委托取代继承(Replace Inheritance with Delegation)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度耦合的消息链"><span class="nav-text">过度耦合的消息链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-4"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-4"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-3"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate-1"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method-1"><span class="nav-text">提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-2"><span class="nav-text">搬移函数(Move Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1297,7 +1315,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:16</span>
+    <span title="站点阅读时长">31:17</span>
   
 </div>
 

@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="代码的坏味道和重构  症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 坏味道之代码臃肿 坏味道之滥用面向对象 坏味道之变革的障碍 坏味道之非必要的 坏味道之耦合     第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计》。过程中，萌发了认真总结、整理重构方法的冲动，于是有了这系列文字。 代码的坏味道还有">
+  <meta name="description" content="代码的坏味道和重构 :notebook: 本文已归档到：「blog」    症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 代码坏味道之代码臃肿 代码坏味道之滥用面向对象 代码坏味道之变革的障碍 代码坏味道之非必要的 代码坏味道之耦合   扩展阅读 参考资料   第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代">
 <meta name="keywords" content="design,refactor,code-smell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码的坏味道和重构">
 <meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/README/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="代码的坏味道和重构  症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 坏味道之代码臃肿 坏味道之滥用面向对象 坏味道之变革的障碍 坏味道之非必要的 坏味道之耦合     第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计》。过程中，萌发了认真总结、整理重构方法的冲动，于是有了这系列文字。 代码的坏味道还有">
+<meta property="og:description" content="代码的坏味道和重构 :notebook: 本文已归档到：「blog」    症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 代码坏味道之代码臃肿 代码坏味道之滥用面向对象 代码坏味道之变革的障碍 代码坏味道之非必要的 代码坏味道之耦合   扩展阅读 参考资料   第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png">
-<meta property="og:updated_time" content="2019-03-07T11:43:08.445Z">
+<meta property="og:updated_time" content="2019-03-07T13:55:17.373Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码的坏味道和重构">
-<meta name="twitter:description" content="代码的坏味道和重构  症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 坏味道之代码臃肿 坏味道之滥用面向对象 坏味道之变革的障碍 坏味道之非必要的 坏味道之耦合     第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计》。过程中，萌发了认真总结、整理重构方法的冲动，于是有了这系列文字。 代码的坏味道还有">
+<meta name="twitter:description" content="代码的坏味道和重构 :notebook: 本文已归档到：「blog」    症与药 对代码的坏味道的思考 重构的原则   代码的坏味道 代码坏味道之代码臃肿 代码坏味道之滥用面向对象 代码坏味道之变革的障碍 代码坏味道之非必要的 代码坏味道之耦合   扩展阅读 参考资料   第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png">
 
 
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 19:43:08" itemprop="dateModified" datetime="2019-03-07T19:43:08+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-07 21:55:17" itemprop="dateModified" datetime="2019-03-07T21:55:17+08:00">2019-03-07</time>
               
             
           </span>
@@ -483,7 +483,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">3.4k</span>
               
 
               
@@ -517,7 +517,10 @@
       
 
       
-        <h1 id="代码的坏味道和重构"><a href="#代码的坏味道和重构" class="headerlink" title="代码的坏味道和重构"></a>代码的坏味道和重构</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="代码的坏味道和重构"><a href="#代码的坏味道和重构" class="headerlink" title="代码的坏味道和重构"></a>代码的坏味道和重构</h1><blockquote>
+<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#症与药">症与药</a><ul>
 <li><a href="#对代码的坏味道的思考">对代码的坏味道的思考</a></li>
@@ -525,13 +528,15 @@
 </ul>
 </li>
 <li><a href="#代码的坏味道">代码的坏味道</a><ul>
-<li><a href="#坏味道之代码臃肿">坏味道之代码臃肿</a></li>
-<li><a href="#坏味道之滥用面向对象">坏味道之滥用面向对象</a></li>
-<li><a href="#坏味道之变革的障碍">坏味道之变革的障碍</a></li>
-<li><a href="#坏味道之非必要的">坏味道之非必要的</a></li>
-<li><a href="#坏味道之耦合">坏味道之耦合</a></li>
+<li><a href="#代码坏味道之代码臃肿">代码坏味道之代码臃肿</a></li>
+<li><a href="#代码坏味道之滥用面向对象">代码坏味道之滥用面向对象</a></li>
+<li><a href="#代码坏味道之变革的障碍">代码坏味道之变革的障碍</a></li>
+<li><a href="#代码坏味道之非必要的">代码坏味道之非必要的</a></li>
+<li><a href="#代码坏味道之耦合">代码坏味道之耦合</a></li>
 </ul>
 </li>
+<li><a href="#扩展阅读">扩展阅读</a></li>
+<li><a href="#参考资料">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <p>第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计》。过程中，萌发了认真总结、整理重构方法的冲动，于是有了这系列文字。</p>
@@ -551,7 +556,7 @@
 <li><p><strong>忌猛药</strong><br>—— 医病用猛药容易产生副作用。换一句俗语：步子大了容易扯着蛋。重构如果大刀阔斧的干，那你就要有随时可能扑街的心理准备。推倒重来不是重构，而是重写。重构应该是循序渐进，步步为营的过程。当你发现重写代码比重构代码更简单，往往说明你早就该重构了。</p>
 </li>
 </ul>
-<h3 id="重构的原则"><a href="#重构的原则" class="headerlink" title="重构的原则"></a>重构的原则</h3><p>前面把代码质量问题比作病症，而把重构比作药。<br>这里，我们再进一步讨论一下重构的原则。我将采用 5W2H 分析法来说明。</p>
+<h3 id="重构的原则"><a href="#重构的原则" class="headerlink" title="重构的原则"></a>重构的原则</h3><p>前面把代码质量问题比作病症，而把重构比作药。这里，我们再进一步讨论一下重构的原则。</p>
 <h4 id="何谓重构-What"><a href="#何谓重构-What" class="headerlink" title="何谓重构(What)"></a>何谓重构(What)</h4><p><code>重构（Refactoring）</code> 的常见定义是：不改变软件系统外部行为的前提下，改善它的内部结构。</p>
 <p>个人觉得这个定义有点生涩。不妨理解为：重构是给代码治病的行为。而代码有病是指代码的质量（可靠性、安全性、可复用性、可维护性）和性能有问题。</p>
 <p><strong>重构的目的是为了提高代码的质量和性能</strong>。</p>
@@ -609,52 +614,64 @@
 <p><u><strong><em>此处为分割线。下面是代码的坏味道系列。。。</em></strong></u></p>
 <h2 id="代码的坏味道"><a href="#代码的坏味道" class="headerlink" title="代码的坏味道"></a>代码的坏味道</h2><p>《重构:改善既有代码的设计》中介绍了 22 种代码的坏味道以及重构手法。这些坏味道可以进一步归类。我总觉得将事物分类有助于理解和记忆。所以本系列将坏味道按照特性分类，然后逐一讲解。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png"></div><br></p>
-<h3 id="坏味道之代码臃肿"><a href="#坏味道之代码臃肿" class="headerlink" title="坏味道之代码臃肿"></a>坏味道之代码臃肿</h3><blockquote>
-<p><strong>代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。</strong></p>
+<h3 id="代码坏味道之代码臃肿"><a href="#代码坏味道之代码臃肿" class="headerlink" title="代码坏味道之代码臃肿"></a>代码坏味道之代码臃肿</h3><blockquote>
+<p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" target="_blank" rel="noopener">代码臃肿(Bloated)</a>这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。</strong></p>
 </blockquote>
 <ul>
-<li><a href="坏味道之代码臃肿.md#过长函数">过长函数</a></li>
-<li><a href="坏味道之代码臃肿.md#过大的类">过大的类</a></li>
-<li><a href="坏味道之代码臃肿.md#基本类型偏执">基本类型偏执</a></li>
-<li><a href="坏味道之代码臃肿.md#过长参数列">过长参数列</a></li>
-<li><a href="坏味道之代码臃肿.md#数据泥团">数据泥团</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md#过长函数" target="_blank" rel="noopener">过长函数</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md#过大的类" target="_blank" rel="noopener">过大的类</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md#基本类型偏执" target="_blank" rel="noopener">基本类型偏执</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md#过长参数列" target="_blank" rel="noopener">过长参数列</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md#数据泥团" target="_blank" rel="noopener">数据泥团</a></li>
 </ul>
-<h3 id="坏味道之滥用面向对象"><a href="#坏味道之滥用面向对象" class="headerlink" title="坏味道之滥用面向对象"></a>坏味道之滥用面向对象</h3><blockquote>
-<p><strong>滥用面向对象(Object-Orientation Abusers)这组坏味道意味着：代码部分或完全地违背了面向对象编程原则。</strong></p>
+<h3 id="代码坏味道之滥用面向对象"><a href="#代码坏味道之滥用面向对象" class="headerlink" title="代码坏味道之滥用面向对象"></a>代码坏味道之滥用面向对象</h3><blockquote>
+<p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md" target="_blank" rel="noopener">滥用面向对象(Object-Orientation Abusers)</a>这组坏味道意味着：代码部分或完全地违背了面向对象编程原则。</strong></p>
 </blockquote>
 <ul>
-<li><a href="坏味道之滥用面向对象.md#switch-声明">switch 声明</a></li>
-<li><a href="坏味道之滥用面向对象.md#临时字段">临时字段</a></li>
-<li><a href="坏味道之滥用面向对象.md#被拒绝的馈赠">被拒绝的馈赠</a></li>
-<li><a href="坏味道之滥用面向对象.md#异曲同工的类">异曲同工的类</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md#switch-声明" target="_blank" rel="noopener">switch 声明</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md#临时字段" target="_blank" rel="noopener">临时字段</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md#被拒绝的馈赠" target="_blank" rel="noopener">被拒绝的馈赠</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md#异曲同工的类" target="_blank" rel="noopener">异曲同工的类</a></li>
 </ul>
-<h3 id="坏味道之变革的障碍"><a href="#坏味道之变革的障碍" class="headerlink" title="坏味道之变革的障碍"></a>坏味道之变革的障碍</h3><blockquote>
-<p><strong>变革的障碍(Change Preventers)这组坏味道意味着：当你需要改变一处代码时，却发现不得不改变其他的地方。这使得程序开发变得复杂、代价高昂。</strong></p>
+<h3 id="代码坏味道之变革的障碍"><a href="#代码坏味道之变革的障碍" class="headerlink" title="代码坏味道之变革的障碍"></a>代码坏味道之变革的障碍</h3><blockquote>
+<p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md" target="_blank" rel="noopener">变革的障碍(Change Preventers)</a>这组坏味道意味着：当你需要改变一处代码时，却发现不得不改变其他的地方。这使得程序开发变得复杂、代价高昂。</strong></p>
 </blockquote>
 <ul>
-<li><a href="坏味道之变革的障碍.md#发散式变化">发散式变化</a></li>
-<li><a href="坏味道之变革的障碍.md#霰弹式修改">霰弹式修改</a></li>
-<li><a href="坏味道之变革的障碍.md#平行继承体系">平行继承体系</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md#发散式变化" target="_blank" rel="noopener">发散式变化</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md#霰弹式修改" target="_blank" rel="noopener">霰弹式修改</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md#平行继承体系" target="_blank" rel="noopener">平行继承体系</a></li>
 </ul>
-<h3 id="坏味道之非必要的"><a href="#坏味道之非必要的" class="headerlink" title="坏味道之非必要的"></a>坏味道之非必要的</h3><blockquote>
-<p><strong>非必要的(Dispensables)这组坏味道意味着：这样的代码可有可无，它的存在反而影响整体代码的整洁和可读性。</strong></p>
+<h3 id="代码坏味道之非必要的"><a href="#代码坏味道之非必要的" class="headerlink" title="代码坏味道之非必要的"></a>代码坏味道之非必要的</h3><blockquote>
+<p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md" target="_blank" rel="noopener">非必要的(Dispensables)</a>这组坏味道意味着：这样的代码可有可无，它的存在反而影响整体代码的整洁和可读性。</strong></p>
 </blockquote>
 <ul>
-<li><a href="坏味道之非必要的.md#过多的注释">过多的注释</a></li>
-<li><a href="坏味道之非必要的.md#重复代码">重复代码</a></li>
-<li><a href="坏味道之非必要的.md#冗余类">冗余类</a></li>
-<li><a href="坏味道之非必要的.md#纯稚的数据类">纯稚的数据类</a></li>
-<li><a href="坏味道之非必要的.md#夸夸其谈未来性">夸夸其谈未来性</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md#过多的注释" target="_blank" rel="noopener">过多的注释</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md#重复代码" target="_blank" rel="noopener">重复代码</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md#冗余类" target="_blank" rel="noopener">冗余类</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md#纯稚的数据类" target="_blank" rel="noopener">纯稚的数据类</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md#夸夸其谈未来性" target="_blank" rel="noopener">夸夸其谈未来性</a></li>
 </ul>
-<h3 id="坏味道之耦合"><a href="#坏味道之耦合" class="headerlink" title="坏味道之耦合"></a>坏味道之耦合</h3><blockquote>
-<p><strong>耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。</strong></p>
+<h3 id="代码坏味道之耦合"><a href="#代码坏味道之耦合" class="headerlink" title="代码坏味道之耦合"></a>代码坏味道之耦合</h3><blockquote>
+<p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" target="_blank" rel="noopener">耦合(Couplers)</a>这组坏味道意味着：不同类之间过度耦合。</strong></p>
 </blockquote>
 <ul>
-<li><a href="坏味道之耦合.md#依恋情结">依恋情结</a></li>
-<li><a href="坏味道之耦合.md#狎昵关系">狎昵关系</a></li>
-<li><a href="坏味道之耦合.md#过度耦合的消息链">过度耦合的消息链</a></li>
-<li><a href="坏味道之耦合.md#中间人">中间人</a></li>
-<li><a href="坏味道之耦合.md#不完美的库类">不完美的库类</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md#依恋情结" target="_blank" rel="noopener">依恋情结</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md#狎昵关系" target="_blank" rel="noopener">狎昵关系</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md#过度耦合的消息链" target="_blank" rel="noopener">过度耦合的消息链</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md#中间人" target="_blank" rel="noopener">中间人</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md#不完美的库类" target="_blank" rel="noopener">不完美的库类</a></li>
+</ul>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码的坏味道和重构.md" target="_blank" rel="noopener">代码的坏味道和重构</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" target="_blank" rel="noopener">代码坏味道之代码臃肿</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md" target="_blank" rel="noopener">代码坏味道之滥用面向对象</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md" target="_blank" rel="noopener">代码坏味道之变革的障碍</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md" target="_blank" rel="noopener">代码坏味道之非必要的</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" target="_blank" rel="noopener">代码坏味道之耦合</a></li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">重构——改善既有代码的设计</a> - by Martin Fowler</li>
+<li><a href="https://sourcemaking.com/refactoring" target="_blank" rel="noopener">https://sourcemaking.com/refactoring</a></li>
 </ul>
 
       
@@ -724,8 +741,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/坏味道之变革的障碍/" rel="next" title="坏味道之变革的障碍">
-                <i class="fa fa-chevron-left"></i> 坏味道之变革的障碍
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之非必要的/" rel="next" title="代码坏味道之非必要的">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之非必要的
               </a>
             
           </div>
@@ -734,8 +751,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/坏味道之耦合/" rel="prev" title="坏味道之耦合">
-                坏味道之耦合 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/02/19/algorithm/algorithm/README/" rel="prev" title="算法">
+                算法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,7 +824,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-count">358</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1170,7 +1187,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码的坏味道和重构"><span class="nav-text">代码的坏味道和重构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#症与药"><span class="nav-text">症与药</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对代码的坏味道的思考"><span class="nav-text">对代码的坏味道的思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的原则"><span class="nav-text">重构的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#何谓重构-What"><span class="nav-text">何谓重构(What)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何重构-Why"><span class="nav-text">为何重构(Why)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#何时重构-When"><span class="nav-text">何时重构(When)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何重构-How"><span class="nav-text">如何重构(How)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的坏味道"><span class="nav-text">代码的坏味道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#坏味道之代码臃肿"><span class="nav-text">坏味道之代码臃肿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坏味道之滥用面向对象"><span class="nav-text">坏味道之滥用面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坏味道之变革的障碍"><span class="nav-text">坏味道之变革的障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坏味道之非必要的"><span class="nav-text">坏味道之非必要的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坏味道之耦合"><span class="nav-text">坏味道之耦合</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码的坏味道和重构"><span class="nav-text">代码的坏味道和重构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#症与药"><span class="nav-text">症与药</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#对代码的坏味道的思考"><span class="nav-text">对代码的坏味道的思考</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构的原则"><span class="nav-text">重构的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#何谓重构-What"><span class="nav-text">何谓重构(What)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#为何重构-Why"><span class="nav-text">为何重构(Why)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#何时重构-When"><span class="nav-text">何时重构(When)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何重构-How"><span class="nav-text">如何重构(How)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的坏味道"><span class="nav-text">代码的坏味道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#代码坏味道之代码臃肿"><span class="nav-text">代码坏味道之代码臃肿</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码坏味道之滥用面向对象"><span class="nav-text">代码坏味道之滥用面向对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码坏味道之变革的障碍"><span class="nav-text">代码坏味道之变革的障碍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码坏味道之非必要的"><span class="nav-text">代码坏味道之非必要的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码坏味道之耦合"><span class="nav-text">代码坏味道之耦合</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1212,7 +1229,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:16</span>
+    <span title="站点阅读时长">31:17</span>
   
 </div>
 

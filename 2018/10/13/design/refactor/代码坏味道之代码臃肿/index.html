@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="坏味道之代码臃肿 代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。    基本类型偏执 数据泥团 过大的类 过长函数 过长参数列   基本类型偏执 基本类型偏执(Primitive Obsession)  使用基本类型而不是小对象来实">
+  <meta name="description" content="代码坏味道之代码臃肿 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/bloaters   代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时">
 <meta name="keywords" content="design,refactor,code-smell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="坏味道之代码臃肿">
-<meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之代码臃肿/index.html">
+<meta property="og:title" content="代码坏味道之代码臃肿">
+<meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之代码臃肿/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="坏味道之代码臃肿 代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。    基本类型偏执 数据泥团 过大的类 过长函数 过长参数列   基本类型偏执 基本类型偏执(Primitive Obsession)  使用基本类型而不是小对象来实">
+<meta property="og:description" content="代码坏味道之代码臃肿 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/bloaters   代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/primitive-obsession-1.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/primitive-obsession-2.png">
@@ -152,10 +152,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/long-parameter-list-2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-parameter-object-before.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-parameter-object-after.png">
-<meta property="og:updated_time" content="2019-03-07T11:33:36.047Z">
+<meta property="og:updated_time" content="2019-03-07T13:55:17.284Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="坏味道之代码臃肿">
-<meta name="twitter:description" content="坏味道之代码臃肿 代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。    基本类型偏执 数据泥团 过大的类 过长函数 过长参数列   基本类型偏执 基本类型偏执(Primitive Obsession)  使用基本类型而不是小对象来实">
+<meta name="twitter:title" content="代码坏味道之代码臃肿">
+<meta name="twitter:description" content="代码坏味道之代码臃肿 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/bloaters   代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/primitive-obsession-1.png">
 
 
@@ -165,7 +165,7 @@
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之代码臃肿/">
+  <link rel="canonical" href="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之代码臃肿/">
 
 
 
@@ -175,7 +175,7 @@
   };
 </script>
 
-  <title>坏味道之代码臃肿 | 张鹏的博客</title>
+  <title>代码坏味道之代码臃肿 | 张鹏的博客</title>
   
 
 
@@ -406,7 +406,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/refactor/坏味道之代码臃肿/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/refactor/代码坏味道之代码臃肿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -423,7 +423,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">坏味道之代码臃肿<a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/坏味道之代码臃肿.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">代码坏味道之代码臃肿<a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 19:33:36" itemprop="dateModified" datetime="2019-03-07T19:33:36+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-07 21:55:17" itemprop="dateModified" datetime="2019-03-07T21:55:17+08:00">2019-03-07</time>
               
             
           </span>
@@ -519,7 +519,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.7k</span>
+                <span title="本文字数">8.9k</span>
               
 
               
@@ -553,7 +553,11 @@
       
 
       
-        <h1 id="坏味道之代码臃肿"><a href="#坏味道之代码臃肿" class="headerlink" title="坏味道之代码臃肿"></a>坏味道之代码臃肿</h1><blockquote>
+        <h1 id="代码坏味道之代码臃肿"><a href="#代码坏味道之代码臃肿" class="headerlink" title="代码坏味道之代码臃肿"></a>代码坏味道之代码臃肿</h1><blockquote>
+<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+<p>翻译自：<a href="https://sourcemaking.com/refactoring/smells/bloaters" target="_blank" rel="noopener">https://sourcemaking.com/refactoring/smells/bloaters</a></p>
+</blockquote>
+<blockquote>
 <p><strong>代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。</strong></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
@@ -563,6 +567,8 @@
 <li><a href="#过大的类">过大的类</a></li>
 <li><a href="#过长函数">过长函数</a></li>
 <li><a href="#过长参数列">过长参数列</a></li>
+<li><a href="#扩展阅读">扩展阅读</a></li>
+<li><a href="#参考资料">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <h2 id="基本类型偏执"><a href="#基本类型偏执" class="headerlink" title="基本类型偏执"></a>基本类型偏执</h2><blockquote>
@@ -805,6 +811,18 @@
 <p><strong>解决</strong></p>
 <p>以一个对象来取代这些参数。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-parameter-object-after.png"></div><br></p>
+<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码的坏味道和重构.md" target="_blank" rel="noopener">代码的坏味道和重构</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" target="_blank" rel="noopener">代码坏味道之代码臃肿</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md" target="_blank" rel="noopener">代码坏味道之滥用面向对象</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md" target="_blank" rel="noopener">代码坏味道之变革的障碍</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md" target="_blank" rel="noopener">代码坏味道之非必要的</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" target="_blank" rel="noopener">代码坏味道之耦合</a></li>
+</ul>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">重构——改善既有代码的设计</a> - by Martin Fowler</li>
+<li><a href="https://sourcemaking.com/refactoring" target="_blank" rel="noopener">https://sourcemaking.com/refactoring</a></li>
+</ul>
 
       
     </div>
@@ -843,7 +861,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2018/10/13/design/refactor/坏味道之代码臃肿/" title="坏味道之代码臃肿">https://dunwu.github.io/2018/10/13/design/refactor/坏味道之代码臃肿/</a>
+    <a href="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之代码臃肿/" title="代码坏味道之代码臃肿">https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之代码臃肿/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -873,8 +891,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/坏味道之耦合/" rel="next" title="坏味道之耦合">
-                <i class="fa fa-chevron-left"></i> 坏味道之耦合
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之滥用面向对象/" rel="next" title="代码坏味道之滥用面向对象">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之滥用面向对象
               </a>
             
           </div>
@@ -883,8 +901,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/坏味道之滥用面向对象/" rel="prev" title="坏味道之滥用面向对象">
-                坏味道之滥用面向对象 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之非必要的/" rel="prev" title="代码坏味道之非必要的">
+                代码坏味道之非必要的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -956,7 +974,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">359</span>
+                    <span class="site-state-item-count">358</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1319,7 +1337,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#坏味道之代码臃肿"><span class="nav-text">坏味道之代码臃肿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型偏执"><span class="nav-text">基本类型偏执</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以类取代类型码-Replace-Type-Code-with-Class"><span class="nav-text">以类取代类型码(Replace Type Code with Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以子类取代类型码-Replace-Type-Code-with-Subclass"><span class="nav-text">以子类取代类型码(Replace Type Code with Subclass)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以状态-策略模式取代类型码-Replace-Type-Code-with-State-Strategy"><span class="nav-text">以状态/策略模式取代类型码(Replace Type Code with State/Strategy)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以对象取代数组-Replace-Array-with-Object"><span class="nav-text">以对象取代数组(Replace Array with Object)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据泥团"><span class="nav-text">数据泥团</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-1"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-1"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-1"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-1"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过大的类"><span class="nav-text">过大的类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class-1"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼子类-Extract-Subclass"><span class="nav-text">提炼子类(Extract Subclass)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼接口-Extract-Interface"><span class="nav-text">提炼接口(Extract Interface)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制被监视数据-Duplicate-Observed-Data"><span class="nav-text">复制被监视数据(Duplicate Observed Data)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过长函数"><span class="nav-text">过长函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题的原因"><span class="nav-text">问题的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决函数"><span class="nav-text">解决函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-text">性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method"><span class="nav-text">提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以查询取代临时变量-Replace-Temp-with-Query"><span class="nav-text">以查询取代临时变量(Replace Temp with Query)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-2"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-2"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以函数对象取代函数-Replace-Method-with-Method-Object"><span class="nav-text">以函数对象取代函数(Replace Method with Method Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分解条件表达式-Decompose-Conditional"><span class="nav-text">分解条件表达式(Decompose Conditional)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过长参数列"><span class="nav-text">过长参数列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-1"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以函数取代参数-Replace-Parameter-with-Methods"><span class="nav-text">以函数取代参数(Replace Parameter with Methods)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-3"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-3"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码坏味道之代码臃肿"><span class="nav-text">代码坏味道之代码臃肿</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本类型偏执"><span class="nav-text">基本类型偏执</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以类取代类型码-Replace-Type-Code-with-Class"><span class="nav-text">以类取代类型码(Replace Type Code with Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以子类取代类型码-Replace-Type-Code-with-Subclass"><span class="nav-text">以子类取代类型码(Replace Type Code with Subclass)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以状态-策略模式取代类型码-Replace-Type-Code-with-State-Strategy"><span class="nav-text">以状态/策略模式取代类型码(Replace Type Code with State/Strategy)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以对象取代数组-Replace-Array-with-Object"><span class="nav-text">以对象取代数组(Replace Array with Object)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据泥团"><span class="nav-text">数据泥团</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-1"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-1"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-1"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-1"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过大的类"><span class="nav-text">过大的类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class-1"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼子类-Extract-Subclass"><span class="nav-text">提炼子类(Extract Subclass)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼接口-Extract-Interface"><span class="nav-text">提炼接口(Extract Interface)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制被监视数据-Duplicate-Observed-Data"><span class="nav-text">复制被监视数据(Duplicate Observed Data)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过长函数"><span class="nav-text">过长函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题的原因"><span class="nav-text">问题的原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决函数"><span class="nav-text">解决函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-text">性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method"><span class="nav-text">提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以查询取代临时变量-Replace-Temp-with-Query"><span class="nav-text">以查询取代临时变量(Replace Temp with Query)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-2"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-2"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以函数对象取代函数-Replace-Method-with-Method-Object"><span class="nav-text">以函数对象取代函数(Replace Method with Method Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分解条件表达式-Decompose-Conditional"><span class="nav-text">分解条件表达式(Decompose Conditional)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过长参数列"><span class="nav-text">过长参数列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方案"><span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-1"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以函数取代参数-Replace-Parameter-with-Methods"><span class="nav-text">以函数取代参数(Replace Parameter with Methods)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#保持对象完整-Preserve-Whole-Object-3"><span class="nav-text">保持对象完整(Preserve Whole Object)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入参数对象-Introduce-Parameter-Object-3"><span class="nav-text">引入参数对象(Introduce Parameter Object)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1361,7 +1379,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:16</span>
+    <span title="站点阅读时长">31:17</span>
   
 </div>
 
