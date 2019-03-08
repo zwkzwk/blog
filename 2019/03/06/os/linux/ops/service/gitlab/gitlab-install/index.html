@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="Gitlab 安装 环境： OS: CentOS7    安装 gitlab 常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner 常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书 创建证书   gitlab 配置 更多内容   安装 gitlab常规">
+  <meta name="description" content="Gitlab 安装  环境： OS: CentOS7    安装 gitlab  常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner  常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书  创建证书   gitlab 配置 更多内容    安装 gi">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Gitlab 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/gitlab/gitlab-install/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Gitlab 安装 环境： OS: CentOS7    安装 gitlab 常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner 常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书 创建证书   gitlab 配置 更多内容   安装 gitlab常规">
+<meta property="og:description" content="Gitlab 安装  环境： OS: CentOS7    安装 gitlab  常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner  常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书  创建证书   gitlab 配置 更多内容    安装 gi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png">
@@ -120,7 +120,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitlab 安装">
-<meta name="twitter:description" content="Gitlab 安装 环境： OS: CentOS7    安装 gitlab 常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner 常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书 创建证书   gitlab 配置 更多内容   安装 gitlab常规">
+<meta name="twitter:description" content="Gitlab 安装  环境： OS: CentOS7    安装 gitlab  常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner  常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书  创建证书   gitlab 配置 更多内容    安装 gi">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png">
 
 
@@ -447,7 +447,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.5k</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -481,56 +481,73 @@
       
 
       
-        <h1 id="Gitlab-安装"><a href="#Gitlab-安装" class="headerlink" title="Gitlab 安装"></a>Gitlab 安装</h1><blockquote>
+        <h1 id="gitlab-安装"><a class="markdownIt-Anchor" href="#gitlab-安装"></a> Gitlab 安装</h1>
+<blockquote>
 <p>环境：</p>
 <p>OS: CentOS7</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装-gitlab">安装 gitlab</a><ul>
-<li><a href="#常规安装-gitlab">常规安装 gitlab</a></li>
-<li><a href="#docker-安装-gitlab">Docker 安装 gitlab</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-gitlab">安装 gitlab</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E5%AE%89%E8%A3%85-gitlab">常规安装 gitlab</a></li>
+<li><a href="#docker-%E5%AE%89%E8%A3%85-gitlab">Docker 安装 gitlab</a></li>
 </ul>
 </li>
-<li><a href="#安装-gitlab-ci-multi-runner">安装 gitlab-ci-multi-runner</a><ul>
-<li><a href="#常规安装-gitlab-ci-multi-runner">常规安装 gitlab-ci-multi-runner</a></li>
-<li><a href="#docker-安装-gitlab-ci-multi-runner">Docker 安装 gitlab-ci-multi-runner</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-gitlab-ci-multi-runner">安装 gitlab-ci-multi-runner</a>
+<ul>
+<li><a href="#%E5%B8%B8%E8%A7%84%E5%AE%89%E8%A3%85-gitlab-ci-multi-runner">常规安装 gitlab-ci-multi-runner</a></li>
+<li><a href="#docker-%E5%AE%89%E8%A3%85-gitlab-ci-multi-runner">Docker 安装 gitlab-ci-multi-runner</a></li>
 </ul>
 </li>
-<li><a href="#自签名证书">自签名证书</a><ul>
-<li><a href="#创建证书">创建证书</a></li>
+<li><a href="#%E8%87%AA%E7%AD%BE%E5%90%8D%E8%AF%81%E4%B9%A6">自签名证书</a>
+<ul>
+<li><a href="#%E5%88%9B%E5%BB%BA%E8%AF%81%E4%B9%A6">创建证书</a></li>
 </ul>
 </li>
-<li><a href="#gitlab-配置">gitlab 配置</a></li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#gitlab-%E9%85%8D%E7%BD%AE">gitlab 配置</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装-gitlab"><a href="#安装-gitlab" class="headerlink" title="安装 gitlab"></a>安装 gitlab</h2><h3 id="常规安装-gitlab"><a href="#常规安装-gitlab" class="headerlink" title="常规安装 gitlab"></a>常规安装 gitlab</h3><p>进入官方下载地址：<a href="https://about.gitlab.com/install/" target="_blank" rel="noopener">https://about.gitlab.com/install/</a> ，如下图，选择合适的版本。</p>
+<h2 id="安装-gitlab"><a class="markdownIt-Anchor" href="#安装-gitlab"></a> 安装 gitlab</h2>
+<h3 id="常规安装-gitlab"><a class="markdownIt-Anchor" href="#常规安装-gitlab"></a> 常规安装 gitlab</h3>
+<p>进入官方下载地址：<a href="https://about.gitlab.com/install/" target="_blank" rel="noopener">https://about.gitlab.com/install/</a> ，如下图，选择合适的版本。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png"></div><br></p>
 <p>以 CentOS7 为例：</p>
-<h4 id="安装和配置必要依赖"><a href="#安装和配置必要依赖" class="headerlink" title="安装和配置必要依赖"></a>安装和配置必要依赖</h4><p>在系统防火墙中启用 HTTP 和 SSH</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> -y curl policycoreutils-python openssh-<span class="keyword">server</span></span><br><span class="line">sudo systemctl <span class="keyword">enable</span> sshd</span><br><span class="line">sudo systemctl <span class="keyword">start</span> sshd</span><br><span class="line">sudo firewall-cmd <span class="comment">--permanent --add-service=http</span></span><br><span class="line">sudo systemctl reload firewalld</span><br></pre></td></tr></table></figure>
+<h4 id="安装和配置必要依赖"><a class="markdownIt-Anchor" href="#安装和配置必要依赖"></a> 安装和配置必要依赖</h4>
+<p>在系统防火墙中启用 HTTP 和 SSH</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">sudo</span> <span class="string">yum install -y curl policycoreutils-python openssh-server</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">systemctl enable sshd</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">systemctl start sshd</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">firewall-cmd --permanent --add-service=http</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">systemctl reload firewalld</span></span><br></pre></td></tr></table></figure>
 <p>安装 Postfix ，使得 Gitlab 可以发送通知邮件</p>
 <figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">sudo yum install <span class="built_in">postfix</span></span><br><span class="line">sudo systemctl enable <span class="built_in">postfix</span></span><br><span class="line">sudo systemctl start <span class="built_in">postfix</span></span><br></pre></td></tr></table></figure>
-<h4 id="添加-Gitlab-yum-仓库并安装包"><a href="#添加-Gitlab-yum-仓库并安装包" class="headerlink" title="添加 Gitlab yum 仓库并安装包"></a>添加 Gitlab yum 仓库并安装包</h4><p>添加 Gitlab yum 仓库</p>
+<h4 id="添加-gitlab-yum-仓库并安装包"><a class="markdownIt-Anchor" href="#添加-gitlab-yum-仓库并安装包"></a> 添加 Gitlab yum 仓库并安装包</h4>
+<p>添加 Gitlab yum 仓库</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl http<span class="variable">s:</span>//packages.gitlab.<span class="keyword">com</span>/install/repositories/gitlab/gitlab-<span class="keyword">ce</span>/script.rpm.<span class="keyword">sh</span> | sudo bash</span><br></pre></td></tr></table></figure>
 <p>通过 yum 安装 gitlab-ce</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">sudo EXTERNAL_URL=<span class="string">"http://gitlab.example.com"</span> yum <span class="keyword">install</span> -y gitlab-ce</span><br></pre></td></tr></table></figure>
 <p>安装完成后，即可通过默认的 root 账户进行登录。更多细节可以参考：<a href="https://docs.gitlab.com/omnibus/README.html#installation-and-configuration-using-omnibus-package" target="_blank" rel="noopener">documentation for detailed instructions on installing and configuration</a></p>
-<h3 id="Docker-安装-gitlab"><a href="#Docker-安装-gitlab" class="headerlink" title="Docker 安装 gitlab"></a>Docker 安装 gitlab</h3><p>拉取镜像</p>
+<h3 id="docker-安装-gitlab"><a class="markdownIt-Anchor" href="#docker-安装-gitlab"></a> Docker 安装 gitlab</h3>
+<p>拉取镜像</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker pull docker.io<span class="regexp">/gitlab/gi</span>tlab-ce</span><br></pre></td></tr></table></figure>
 <p>启动</p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    <span class="params">--hostname</span> gitlab.zp.io \</span><br><span class="line">    <span class="params">--publish</span> 8443<span class="function">:443</span> <span class="params">--publish</span> 80<span class="function">:80</span> <span class="params">--publish</span> 2222<span class="function">:22</span> \</span><br><span class="line">    <span class="params">--name</span> gitlab \</span><br><span class="line">    <span class="params">--restart</span> always \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/config:<span class="string">/etc/gitlab</span> \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/logs:<span class="string">/var/log/gitlab</span> \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/data:<span class="string">/var/opt/gitlab</span> \</span><br><span class="line">    gitlab/gitlab-ce</span><br></pre></td></tr></table></figure>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png"></div><br></p>
-<h2 id="安装-gitlab-ci-multi-runner"><a href="#安装-gitlab-ci-multi-runner" class="headerlink" title="安装 gitlab-ci-multi-runner"></a>安装 gitlab-ci-multi-runner</h2><blockquote>
+<h2 id="安装-gitlab-ci-multi-runner"><a class="markdownIt-Anchor" href="#安装-gitlab-ci-multi-runner"></a> 安装 gitlab-ci-multi-runner</h2>
+<blockquote>
 <p>参考：<a href="https://docs.gitlab.com/runner/install/" target="_blank" rel="noopener">https://docs.gitlab.com/runner/install/</a></p>
 </blockquote>
-<h3 id="常规安装-gitlab-ci-multi-runner"><a href="#常规安装-gitlab-ci-multi-runner" class="headerlink" title="常规安装 gitlab-ci-multi-runner"></a>常规安装 gitlab-ci-multi-runner</h3><h4 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/usr/</span>local<span class="regexp">/bin/gi</span>tlab-runner https:<span class="regexp">//gi</span>tlab-runner-downloads.s3.amazonaws.com<span class="regexp">/latest/</span>binaries<span class="regexp">/gitlab-runner-linux-amd64</span></span><br></pre></td></tr></table></figure>
-<h4 id="配置执行权限"><a href="#配置执行权限" class="headerlink" title="配置执行权限"></a>配置执行权限</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo chmod +x <span class="regexp">/usr/</span>local<span class="regexp">/bin/gi</span>tlab-runner</span><br></pre></td></tr></table></figure>
-<h4 id="如果想使用-Docker，安装-Docker（可选的）"><a href="#如果想使用-Docker，安装-Docker（可选的）" class="headerlink" title="如果想使用 Docker，安装 Docker（可选的）"></a>如果想使用 Docker，安装 Docker（可选的）</h4><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
-<h4 id="创建-CI-用户"><a href="#创建-CI-用户" class="headerlink" title="创建 CI 用户"></a>创建 CI 用户</h4><figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">sudo </span><span class="string">useradd </span><span class="built_in">--comment</span> <span class="string">'GitLab Runner'</span> <span class="built_in">--create-home</span> <span class="string">gitlab-runner </span><span class="built_in">--shell</span> /<span class="string">bin/</span><span class="string">bash</span></span><br></pre></td></tr></table></figure>
-<h4 id="安装并启动服务"><a href="#安装并启动服务" class="headerlink" title="安装并启动服务"></a>安装并启动服务</h4><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo gitlab-runner install <span class="attribute">--user</span>=gitlab-runner <span class="attribute">--working-directory</span>=/home/gitlab-runner</span><br><span class="line">sudo gitlab-runner start</span><br></pre></td></tr></table></figure>
-<h4 id="注册-Runner"><a href="#注册-Runner" class="headerlink" title="注册 Runner"></a>注册 Runner</h4><p>（1）执行命令：</p>
+<h3 id="常规安装-gitlab-ci-multi-runner"><a class="markdownIt-Anchor" href="#常规安装-gitlab-ci-multi-runner"></a> 常规安装 gitlab-ci-multi-runner</h3>
+<h4 id="下载"><a class="markdownIt-Anchor" href="#下载"></a> 下载</h4>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo wget -O <span class="regexp">/usr/</span>local<span class="regexp">/bin/gi</span>tlab-runner https:<span class="regexp">//gi</span>tlab-runner-downloads.s3.amazonaws.com<span class="regexp">/latest/</span>binaries<span class="regexp">/gitlab-runner-linux-amd64</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置执行权限"><a class="markdownIt-Anchor" href="#配置执行权限"></a> 配置执行权限</h4>
+<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo chmod +x <span class="regexp">/usr/</span>local<span class="regexp">/bin/gi</span>tlab-runner</span><br></pre></td></tr></table></figure>
+<h4 id="如果想使用-docker安装-docker可选的"><a class="markdownIt-Anchor" href="#如果想使用-docker安装-docker可选的"></a> 如果想使用 Docker，安装 Docker（可选的）</h4>
+<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">curl -sSL http<span class="variable">s:</span>//<span class="built_in">get</span>.docker.<span class="keyword">com</span>/ | <span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建-ci-用户"><a class="markdownIt-Anchor" href="#创建-ci-用户"></a> 创建 CI 用户</h4>
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><span class="line"><span class="string">sudo </span><span class="string">useradd </span><span class="built_in">--comment</span> <span class="string">'GitLab Runner'</span> <span class="built_in">--create-home</span> <span class="string">gitlab-runner </span><span class="built_in">--shell</span> /<span class="string">bin/</span><span class="string">bash</span></span><br></pre></td></tr></table></figure>
+<h4 id="安装并启动服务"><a class="markdownIt-Anchor" href="#安装并启动服务"></a> 安装并启动服务</h4>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">sudo gitlab-runner install <span class="attribute">--user</span>=gitlab-runner <span class="attribute">--working-directory</span>=/home/gitlab-runner</span><br><span class="line">sudo gitlab-runner start</span><br></pre></td></tr></table></figure>
+<h4 id="注册-runner"><a class="markdownIt-Anchor" href="#注册-runner"></a> 注册 Runner</h4>
+<p>（1）执行命令：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">sudo gitlab-runner <span class="keyword">register</span></span><br></pre></td></tr></table></figure>
 <p>（2）输入 Gitlab URL 和 令牌</p>
 <p>URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：</p>
@@ -544,28 +561,44 @@
 <figure class="highlight dockerfile"><table><tr><td class="code"><pre><span class="line">Please enter the executor: ssh, docker+machine, docker-ssh+machine, kubernetes, docker, parallels, virtualbox, docker-ssh, <span class="keyword">shell</span><span class="bash">:</span></span><br><span class="line">docker</span><br></pre></td></tr></table></figure>
 <p>如果想选择 Docker 作为执行器，你需要指定默认镜像（ <code>.gitlab-ci.yml</code> 中没有此配置）</p>
 <figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">Please</span> <span class="selector-tag">enter</span> <span class="selector-tag">the</span> <span class="selector-tag">Docker</span> <span class="selector-tag">image</span> (eg. <span class="attribute">ruby</span>:<span class="number">2.1</span>):</span><br><span class="line"><span class="selector-tag">alpine</span><span class="selector-pseudo">:latest</span></span><br></pre></td></tr></table></figure>
-<h3 id="Docker-安装-gitlab-ci-multi-runner"><a href="#Docker-安装-gitlab-ci-multi-runner" class="headerlink" title="Docker 安装 gitlab-ci-multi-runner"></a>Docker 安装 gitlab-ci-multi-runner</h3><p>拉取镜像</p>
+<h3 id="docker-安装-gitlab-ci-multi-runner"><a class="markdownIt-Anchor" href="#docker-安装-gitlab-ci-multi-runner"></a> Docker 安装 gitlab-ci-multi-runner</h3>
+<p>拉取镜像</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker pull docker.io<span class="regexp">/gitlab/gi</span>tlab-runner</span><br></pre></td></tr></table></figure>
 <p>启动</p>
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker run -d --name gitlab-runner --restart always \</span><br><span class="line">   -v <span class="regexp">/srv/gi</span>tlab-runner<span class="regexp">/config:/</span>etc<span class="regexp">/gitlab-runner \</span></span><br><span class="line"><span class="regexp">   -v /</span>var<span class="regexp">/run/</span>docker.sock:<span class="regexp">/var/</span>run<span class="regexp">/docker.sock \</span></span><br><span class="line"><span class="regexp">   gitlab/gi</span>tlab-runner:latest</span><br></pre></td></tr></table></figure>
-<h2 id="自签名证书"><a href="#自签名证书" class="headerlink" title="自签名证书"></a>自签名证书</h2><p>首先，创建认证目录</p>
+<h2 id="自签名证书"><a class="markdownIt-Anchor" href="#自签名证书"></a> 自签名证书</h2>
+<p>首先，创建认证目录</p>
 <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">sudo mkdir -p <span class="meta-keyword">/etc/</span>gitlab/ssl</span><br><span class="line">sudo chmod <span class="number">700</span> <span class="meta-keyword">/etc/</span>gitlab/ssl</span><br></pre></td></tr></table></figure>
-<h3 id="创建证书"><a href="#创建证书" class="headerlink" title="创建证书"></a>创建证书</h3><h4 id="创建-Private-Key"><a href="#创建-Private-Key" class="headerlink" title="创建 Private Key"></a>创建 Private Key</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl genrsa -des3 -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> <span class="number">2048</span></span><br></pre></td></tr></table></figure>
+<h3 id="创建证书"><a class="markdownIt-Anchor" href="#创建证书"></a> 创建证书</h3>
+<h4 id="创建-private-key"><a class="markdownIt-Anchor" href="#创建-private-key"></a> 创建 Private Key</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl genrsa -des3 -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> <span class="number">2048</span></span><br></pre></td></tr></table></figure>
 <p>会提示输入密码，请记住</p>
-<h4 id="生成-Certificate-Request"><a href="#生成-Certificate-Request" class="headerlink" title="生成 Certificate Request"></a>生成 Certificate Request</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl req -new -key /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span></span><br></pre></td></tr></table></figure>
+<h4 id="生成-certificate-request"><a class="markdownIt-Anchor" href="#生成-certificate-request"></a> 生成 Certificate Request</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl req -new -key /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span></span><br></pre></td></tr></table></figure>
 <p>根据提示，输入信息</p>
-<figure class="highlight delphi"><table><tr><td class="code"><pre><span class="line">Country <span class="keyword">Name</span> (<span class="number">2</span> letter code) [XX]:CN</span><br><span class="line">State <span class="keyword">or</span> Province <span class="keyword">Name</span> (full <span class="keyword">name</span>) []:JS</span><br><span class="line">Locality <span class="keyword">Name</span> (eg, city) [<span class="keyword">Default</span> City]:NJ</span><br><span class="line">Organization <span class="keyword">Name</span> (eg, company) [<span class="keyword">Default</span> Company Ltd]:xxxxx</span><br><span class="line">Organizational <span class="keyword">Unit</span> <span class="keyword">Name</span> (eg, section) []:</span><br><span class="line">Common <span class="keyword">Name</span> (eg, your <span class="keyword">name</span> <span class="keyword">or</span> your server<span class="string">'s hostname) []:gitlab.xxxx.io</span></span><br><span class="line"><span class="string">Email Address []:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please enter the following '</span>extra<span class="string">' attributes</span></span><br><span class="line"><span class="string">to be sent with your certificate request</span></span><br><span class="line"><span class="string">A challenge password []:</span></span><br><span class="line"><span class="string">An optional company name []:</span></span><br></pre></td></tr></table></figure>
-<h4 id="移除-Private-Key-中的密码短语"><a href="#移除-Private-Key-中的密码短语" class="headerlink" title="移除 Private Key 中的密码短语"></a>移除 Private Key 中的密码短语</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo cp -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span>.&#123;key,original&#125;</span><br><span class="line">sudo openssl rsa -<span class="keyword">in</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.original</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span></span><br><span class="line">sudo rm -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.original</span></span><br></pre></td></tr></table></figure>
-<h4 id="创建证书-1"><a href="#创建证书-1" class="headerlink" title="创建证书"></a>创建证书</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl x509 -req -days <span class="number">1460</span> -<span class="keyword">in</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span> -signkey /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.crt</span></span><br></pre></td></tr></table></figure>
-<h4 id="移除证书请求文件"><a href="#移除证书请求文件" class="headerlink" title="移除证书请求文件"></a>移除证书请求文件</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo rm -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span></span><br></pre></td></tr></table></figure>
-<h4 id="设置文件权限"><a href="#设置文件权限" class="headerlink" title="设置文件权限"></a>设置文件权限</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo chmod <span class="number">600</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span>.*</span><br></pre></td></tr></table></figure>
-<h2 id="gitlab-配置"><a href="#gitlab-配置" class="headerlink" title="gitlab 配置"></a>gitlab 配置</h2><figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/gitlab/gitlab.rb</span><br><span class="line">external_url <span class="string">'https://gitlab.domain.com'</span></span><br></pre></td></tr></table></figure>
-<h4 id="gitlab-网站-https："><a href="#gitlab-网站-https：" class="headerlink" title="gitlab 网站 https："></a>gitlab 网站 https：</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">nginx[<span class="string">'redirect_http_to_https'</span>] = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="gitlab-ci-网站-https："><a href="#gitlab-ci-网站-https：" class="headerlink" title="gitlab ci 网站 https："></a>gitlab ci 网站 https：</h4><figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">ci_nginx[<span class="string">'redirect_http_to_https'</span>] = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<h4 id="复制证书到-gitlab-目录："><a href="#复制证书到-gitlab-目录：" class="headerlink" title="复制证书到 gitlab 目录："></a>复制证书到 gitlab 目录：</h4><figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">sudo cp <span class="regexp">/etc/gi</span>tlab<span class="regexp">/ssl/gi</span>tlab.domain.com.crt <span class="regexp">/etc/gi</span>tlab<span class="regexp">/trusted-certs/</span></span><br></pre></td></tr></table></figure>
-<h4 id="gitlab-重新配置-更新："><a href="#gitlab-重新配置-更新：" class="headerlink" title="gitlab 重新配置+更新："></a>gitlab 重新配置+更新：</h4><figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo gitlab-ctl reconfigure</span></span><br><span class="line"><span class="attribute">sudo gitlab-ctl restart</span></span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">Country <span class="type">Name</span> (<span class="number">2</span> letter code) [XX]:CN</span><br><span class="line">State <span class="keyword">or</span> Province <span class="type">Name</span> (<span class="keyword">full</span> <span class="type">name</span>) []:JS</span><br><span class="line">Locality <span class="type">Name</span> (eg, city) [<span class="keyword">Default</span> City]:NJ</span><br><span class="line">Organization <span class="type">Name</span> (eg, company) [<span class="keyword">Default</span> Company Ltd]:xxxxx</span><br><span class="line">Organizational Unit <span class="type">Name</span> (eg, section) []:</span><br><span class="line">Common <span class="type">Name</span> (eg, your <span class="type">name</span> <span class="keyword">or</span> your <span class="keyword">server</span><span class="string">'s hostname) []:gitlab.xxxx.io</span></span><br><span class="line"><span class="string">Email Address []:</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">Please enter the following '</span>extra<span class="string">' attributes</span></span><br><span class="line"><span class="string">to be sent with your certificate request</span></span><br><span class="line"><span class="string">A challenge password []:</span></span><br><span class="line"><span class="string">An optional company name []:</span></span><br></pre></td></tr></table></figure>
+<h4 id="移除-private-key-中的密码短语"><a class="markdownIt-Anchor" href="#移除-private-key-中的密码短语"></a> 移除 Private Key 中的密码短语</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo cp -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span>.&#123;key,original&#125;</span><br><span class="line">sudo openssl rsa -<span class="keyword">in</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.original</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span></span><br><span class="line">sudo rm -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.original</span></span><br></pre></td></tr></table></figure>
+<h4 id="创建证书-2"><a class="markdownIt-Anchor" href="#创建证书-2"></a> 创建证书</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo openssl x509 -req -days <span class="number">1460</span> -<span class="keyword">in</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span> -signkey /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.key</span> -out /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.crt</span></span><br></pre></td></tr></table></figure>
+<h4 id="移除证书请求文件"><a class="markdownIt-Anchor" href="#移除证书请求文件"></a> 移除证书请求文件</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo rm -v /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span><span class="selector-class">.csr</span></span><br></pre></td></tr></table></figure>
+<h4 id="设置文件权限"><a class="markdownIt-Anchor" href="#设置文件权限"></a> 设置文件权限</h4>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo chmod <span class="number">600</span> /etc/gitlab/ssl/gitlab<span class="selector-class">.domain</span><span class="selector-class">.com</span>.*</span><br></pre></td></tr></table></figure>
+<h2 id="gitlab-配置"><a class="markdownIt-Anchor" href="#gitlab-配置"></a> gitlab 配置</h2>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/gitlab/gitlab.rb</span><br><span class="line">external_url <span class="string">'https://gitlab.domain.com'</span></span><br></pre></td></tr></table></figure>
+<h4 id="gitlab-网站-https"><a class="markdownIt-Anchor" href="#gitlab-网站-https"></a> gitlab 网站 https：</h4>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">nginx[<span class="string">'redirect_http_to_https'</span>] = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="gitlab-ci-网站-https"><a class="markdownIt-Anchor" href="#gitlab-ci-网站-https"></a> gitlab ci 网站 https：</h4>
+<figure class="highlight actionscript"><table><tr><td class="code"><pre><span class="line">ci_nginx[<span class="string">'redirect_http_to_https'</span>] = <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<h4 id="复制证书到-gitlab-目录"><a class="markdownIt-Anchor" href="#复制证书到-gitlab-目录"></a> 复制证书到 gitlab 目录：</h4>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">sudo cp /etc/gitlab/ssl/gitlab.<span class="keyword">domain</span>.com.crt /etc/gitlab/<span class="keyword">trusted</span>-certs/</span><br></pre></td></tr></table></figure>
+<h4 id="gitlab-重新配置更新"><a class="markdownIt-Anchor" href="#gitlab-重新配置更新"></a> gitlab 重新配置+更新：</h4>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">sudo</span> <span class="string">gitlab-ctl reconfigure</span></span><br><span class="line"><span class="attr">sudo</span> <span class="string">gitlab-ctl restart</span></span><br></pre></td></tr></table></figure>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
@@ -628,8 +661,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/sql/mysql/README/" rel="next" title="Mysql 教程">
-                <i class="fa fa-chevron-left"></i> Mysql 教程
+              <a href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-ci/" rel="next" title="Gitlab">
+                <i class="fa fa-chevron-left"></i> Gitlab
               </a>
             
           </div>
@@ -638,8 +671,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/redis/Redis配置/" rel="prev" title="Redis 配置">
-                Redis 配置 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-quickstart/" rel="prev" title="Gitlab 快速教程">
+                Gitlab 快速教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -711,7 +744,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -776,7 +809,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1074,7 +1109,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Gitlab-安装"><span class="nav-text">Gitlab 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-gitlab"><span class="nav-text">安装 gitlab</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规安装-gitlab"><span class="nav-text">常规安装 gitlab</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装和配置必要依赖"><span class="nav-text">安装和配置必要依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加-Gitlab-yum-仓库并安装包"><span class="nav-text">添加 Gitlab yum 仓库并安装包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-安装-gitlab"><span class="nav-text">Docker 安装 gitlab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-gitlab-ci-multi-runner"><span class="nav-text">安装 gitlab-ci-multi-runner</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规安装-gitlab-ci-multi-runner"><span class="nav-text">常规安装 gitlab-ci-multi-runner</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-text">下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置执行权限"><span class="nav-text">配置执行权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果想使用-Docker，安装-Docker（可选的）"><span class="nav-text">如果想使用 Docker，安装 Docker（可选的）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-CI-用户"><span class="nav-text">创建 CI 用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装并启动服务"><span class="nav-text">安装并启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册-Runner"><span class="nav-text">注册 Runner</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-安装-gitlab-ci-multi-runner"><span class="nav-text">Docker 安装 gitlab-ci-multi-runner</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自签名证书"><span class="nav-text">自签名证书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建证书"><span class="nav-text">创建证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-Private-Key"><span class="nav-text">创建 Private Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成-Certificate-Request"><span class="nav-text">生成 Certificate Request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除-Private-Key-中的密码短语"><span class="nav-text">移除 Private Key 中的密码短语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建证书-1"><span class="nav-text">创建证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除证书请求文件"><span class="nav-text">移除证书请求文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置文件权限"><span class="nav-text">设置文件权限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitlab-配置"><span class="nav-text">gitlab 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-网站-https："><span class="nav-text">gitlab 网站 https：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-ci-网站-https："><span class="nav-text">gitlab ci 网站 https：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制证书到-gitlab-目录："><span class="nav-text">复制证书到 gitlab 目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-重新配置-更新："><span class="nav-text">gitlab 重新配置+更新：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#gitlab-安装"><span class="nav-text"> Gitlab 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-gitlab"><span class="nav-text"> 安装 gitlab</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规安装-gitlab"><span class="nav-text"> 常规安装 gitlab</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装和配置必要依赖"><span class="nav-text"> 安装和配置必要依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加-gitlab-yum-仓库并安装包"><span class="nav-text"> 添加 Gitlab yum 仓库并安装包</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-安装-gitlab"><span class="nav-text"> Docker 安装 gitlab</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装-gitlab-ci-multi-runner"><span class="nav-text"> 安装 gitlab-ci-multi-runner</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规安装-gitlab-ci-multi-runner"><span class="nav-text"> 常规安装 gitlab-ci-multi-runner</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载"><span class="nav-text"> 下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置执行权限"><span class="nav-text"> 配置执行权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如果想使用-docker安装-docker可选的"><span class="nav-text"> 如果想使用 Docker，安装 Docker（可选的）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-ci-用户"><span class="nav-text"> 创建 CI 用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装并启动服务"><span class="nav-text"> 安装并启动服务</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注册-runner"><span class="nav-text"> 注册 Runner</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-安装-gitlab-ci-multi-runner"><span class="nav-text"> Docker 安装 gitlab-ci-multi-runner</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自签名证书"><span class="nav-text"> 自签名证书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建证书"><span class="nav-text"> 创建证书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-private-key"><span class="nav-text"> 创建 Private Key</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成-certificate-request"><span class="nav-text"> 生成 Certificate Request</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除-private-key-中的密码短语"><span class="nav-text"> 移除 Private Key 中的密码短语</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建证书-2"><span class="nav-text"> 创建证书</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移除证书请求文件"><span class="nav-text"> 移除证书请求文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#设置文件权限"><span class="nav-text"> 设置文件权限</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitlab-配置"><span class="nav-text"> gitlab 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-网站-https"><span class="nav-text"> gitlab 网站 https：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-ci-网站-https"><span class="nav-text"> gitlab ci 网站 https：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制证书到-gitlab-目录"><span class="nav-text"> 复制证书到 gitlab 目录：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gitlab-重新配置更新"><span class="nav-text"> gitlab 重新配置+更新：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></div>
             
 
           </div>
@@ -1116,7 +1151,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

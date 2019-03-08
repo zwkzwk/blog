@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="Elastic 技术栈之 Filebeat简介Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  Packetbeat：网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 Filebeat：从您的服务器发送日志文件">
+  <meta name="description" content="Elastic 技术栈之 Filebeat  简介 Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  **Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 **Filebeat：**">
 <meta name="keywords" content="java,log,javatool,elastic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elastic 技术栈之 Filebeat">
 <meta property="og:url" content="https://dunwu.github.io/2017/01/03/os/linux/ops/service/elastic/elastic-beats/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Elastic 技术栈之 Filebeat简介Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  Packetbeat：网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 Filebeat：从您的服务器发送日志文件">
+<meta property="og:description" content="Elastic 技术栈之 Filebeat  简介 Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  **Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 **Filebeat：**">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png">
 <meta property="og:image" content="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.161Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elastic 技术栈之 Filebeat">
-<meta name="twitter:description" content="Elastic 技术栈之 Filebeat简介Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  Packetbeat：网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 Filebeat：从您的服务器发送日志文件">
+<meta name="twitter:description" content="Elastic 技术栈之 Filebeat  简介 Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  **Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 **Filebeat：**">
 <meta name="twitter:image" content="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png">
 
 
@@ -511,16 +511,18 @@
       
 
       
-        <h1 id="Elastic-技术栈之-Filebeat"><a href="#Elastic-技术栈之-Filebeat" class="headerlink" title="Elastic 技术栈之 Filebeat"></a>Elastic 技术栈之 Filebeat</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Beats 是安装在服务器上的数据中转代理。</p>
+        <h1 id="elastic-技术栈之-filebeat"><a class="markdownIt-Anchor" href="#elastic-技术栈之-filebeat"></a> Elastic 技术栈之 Filebeat</h1>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>Beats 是安装在服务器上的数据中转代理。</p>
 <p>Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。</p>
 <p><br><div align="center"><img src="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png"></div><br></p>
 <p>Beats 有多种类型，可以根据实际应用需要选择合适的类型。</p>
 <p>常用的类型有：</p>
 <ul>
-<li><strong>Packetbeat：</strong>网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。</li>
-<li><strong>Filebeat：</strong>从您的服务器发送日志文件。</li>
-<li><strong>Metricbeat：</strong>是一个服务器监视代理程序，它定期从服务器上运行的操作系统和服务收集指标。</li>
-<li><strong>Winlogbeat：</strong>提供Windows事件日志。</li>
+<li>**Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。</li>
+<li>**Filebeat：**从您的服务器发送日志文件。</li>
+<li>**Metricbeat：**是一个服务器监视代理程序，它定期从服务器上运行的操作系统和服务收集指标。</li>
+<li>**Winlogbeat：**提供Windows事件日志。</li>
 </ul>
 <blockquote>
 <p><strong>参考</strong></p>
@@ -528,18 +530,22 @@
 <p><strong>说明</strong></p>
 <p>由于本人工作中只应用了 FileBeat，所以后面内容仅介绍 FileBeat 。</p>
 </blockquote>
-<h3 id="FileBeat-的作用"><a href="#FileBeat-的作用" class="headerlink" title="FileBeat 的作用"></a>FileBeat 的作用</h3><p>相比 Logstash，FileBeat 更加轻量化。</p>
+<h3 id="filebeat-的作用"><a class="markdownIt-Anchor" href="#filebeat-的作用"></a> FileBeat 的作用</h3>
+<p>相比 Logstash，FileBeat 更加轻量化。</p>
 <p>在任何环境下，应用程序都有停机的可能性。 Filebeat 读取并转发日志行，如果中断，则会记住所有事件恢复联机状态时所在位置。</p>
 <p>Filebeat带有内部模块（auditd，Apache，Nginx，System和MySQL），可通过一个指定命令来简化通用日志格式的收集，解析和可视化。</p>
 <p>FileBeat 不会让你的管道超负荷。FileBeat 如果是向 Logstash 传输数据，当 Logstash 忙于处理数据，会通知 FileBeat 放慢读取速度。一旦拥塞得到解决，FileBeat 将恢复到原来的速度并继续传播。</p>
 <p><br><div align="center"><img src="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png"></div><br></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Unix / Linux 系统建议使用下面方式安装，因为比较通用。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>Unix / Linux 系统建议使用下面方式安装，因为比较通用。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget https:<span class="comment">//artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.1.1-linux-x86_64.tar.gz</span></span><br><span class="line">tar -zxf filebeat-<span class="number">6.1</span>.<span class="number">1</span>-linux-x86_64<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>参考</strong></p>
 <p>更多内容可以参考：<a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-installation.html" target="_blank" rel="noopener">filebeat-installation</a></p>
 </blockquote>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>首先，需要知道的是：<code>filebeat.yml</code> 是 filebeat 的配置文件。配置文件的路径会因为你安装方式的不同而变化。</p>
+<h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2>
+<h3 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h3>
+<p>首先，需要知道的是：<code>filebeat.yml</code> 是 filebeat 的配置文件。配置文件的路径会因为你安装方式的不同而变化。</p>
 <p>Beat 所有系列产品的配置文件都基于 <a href="http://www.yaml.org/" target="_blank" rel="noopener">YAML</a> 格式，FileBeat 当然也不例外。</p>
 <p>filebeat.yml 部分配置示例：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">filebeat:</span></span><br><span class="line"><span class="attr">  prospectors:</span></span><br><span class="line"><span class="attr">    - type:</span> <span class="string">log</span></span><br><span class="line"><span class="attr">      paths:</span></span><br><span class="line"><span class="bullet">        -</span> <span class="string">/var/log/*.log</span></span><br><span class="line"><span class="attr">      multiline:</span></span><br><span class="line"><span class="attr">        pattern:</span> <span class="string">'^['</span></span><br><span class="line"><span class="attr">        match:</span> <span class="string">after</span></span><br></pre></td></tr></table></figure>
@@ -548,13 +554,17 @@
 <p>更多 filebeat 配置内容可以参考：<a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuring-howto-filebeat.html" target="_blank" rel="noopener">配置 filebeat</a></p>
 <p>更多 filebeat.yml 文件格式内容可以参考：<a href="https://www.elastic.co/guide/en/beats/libbeat/6.1/config-file-format.html" target="_blank" rel="noopener">filebeat.yml 文件格式</a></p>
 </blockquote>
-<h3 id="重要配置项"><a href="#重要配置项" class="headerlink" title="重要配置项"></a>重要配置项</h3><h4 id="filebeat-prospectors"><a href="#filebeat-prospectors" class="headerlink" title="filebeat.prospectors"></a>filebeat.prospectors</h4><p>（文件监视器）用于指定需要关注的文件。</p>
+<h3 id="重要配置项"><a class="markdownIt-Anchor" href="#重要配置项"></a> 重要配置项</h3>
+<h4 id="filebeatprospectors"><a class="markdownIt-Anchor" href="#filebeatprospectors"></a> filebeat.prospectors</h4>
+<p>（文件监视器）用于指定需要关注的文件。</p>
 <p><strong>示例</strong></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">filebeat.prospectors:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">log</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  paths:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">/var/log/*.log</span></span><br></pre></td></tr></table></figure>
-<h4 id="output-elasticsearch"><a href="#output-elasticsearch" class="headerlink" title="output.elasticsearch"></a>output.elasticsearch</h4><p>如果你希望使用 filebeat 直接向 elasticsearch 输出数据，需要配置 output.elasticsearch 。</p>
+<h4 id="outputelasticsearch"><a class="markdownIt-Anchor" href="#outputelasticsearch"></a> output.elasticsearch</h4>
+<p>如果你希望使用 filebeat 直接向 elasticsearch 输出数据，需要配置 output.elasticsearch 。</p>
 <p><strong>示例</strong></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">output.elasticsearch:</span></span><br><span class="line"><span class="attr">  hosts:</span> <span class="string">["192.168.1.42:9200"]</span></span><br></pre></td></tr></table></figure>
-<h4 id="output-logstash"><a href="#output-logstash" class="headerlink" title="output.logstash"></a>output.logstash</h4><p>如果你希望使用 filebeat 向 logstash输出数据，然后由 logstash 再向elasticsearch 输出数据，需要配置 output.logstash。</p>
+<h4 id="outputlogstash"><a class="markdownIt-Anchor" href="#outputlogstash"></a> output.logstash</h4>
+<p>如果你希望使用 filebeat 向 logstash输出数据，然后由 logstash 再向elasticsearch 输出数据，需要配置 output.logstash。</p>
 <blockquote>
 <p><strong>注意</strong></p>
 <p>相比于向 elasticsearch 输出数据，个人更推荐向 logstash 输出数据。</p>
@@ -564,10 +574,12 @@
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">output.logstash:</span></span><br><span class="line"><span class="attr">  hosts:</span> <span class="string">["127.0.0.1:5044"]</span></span><br></pre></td></tr></table></figure>
 <p>此外，还需要在 logstash 的配置文件（如 logstash.conf）中指定 beats input 插件：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">input</span> <span class="string">&#123;</span></span><br><span class="line">  <span class="string">beats</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="string">port</span> <span class="string">=&gt;</span> <span class="number">5044</span> <span class="comment"># 此端口需要与 filebeat.yml 中的端口相同</span></span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The filter part of this file is commented out to indicate that it is</span></span><br><span class="line"><span class="comment"># optional.</span></span><br><span class="line"><span class="comment"># filter &#123;</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="string">output</span> <span class="string">&#123;</span></span><br><span class="line">  <span class="string">elasticsearch</span> <span class="string">&#123;</span></span><br><span class="line">    <span class="string">hosts</span> <span class="string">=&gt;</span> <span class="string">"localhost:9200"</span></span><br><span class="line">    <span class="string">manage_template</span> <span class="string">=&gt;</span> <span class="literal">false</span></span><br><span class="line">    <span class="string">index</span> <span class="string">=&gt;</span> <span class="string">"<span class="template-variable">%&#123;[@metadata][beat]&#125;</span>-<span class="template-variable">%&#123;[@metadata][version]&#125;</span>-<span class="template-variable">%&#123;+YYYY.MM.dd&#125;</span>"</span> </span><br><span class="line">    <span class="string">document_type</span> <span class="string">=&gt;</span> <span class="string">"<span class="template-variable">%&#123;[@metadata][type]&#125;</span>"</span> </span><br><span class="line">  <span class="string">&#125;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="setup-kibana"><a href="#setup-kibana" class="headerlink" title="setup.kibana"></a>setup.kibana</h4><p>如果打算使用 Filebeat 提供的 Kibana 仪表板，需要配置 setup.kibana 。</p>
+<h4 id="setupkibana"><a class="markdownIt-Anchor" href="#setupkibana"></a> setup.kibana</h4>
+<p>如果打算使用 Filebeat 提供的 Kibana 仪表板，需要配置 setup.kibana 。</p>
 <p><strong>示例</strong></p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">setup.kibana:</span></span><br><span class="line"><span class="attr">  host:</span> <span class="string">"localhost:5601"</span></span><br></pre></td></tr></table></figure>
-<h4 id="setup-template-settings"><a href="#setup-template-settings" class="headerlink" title="setup.template.settings"></a>setup.template.settings</h4><p>在 Elasticsearch 中，<a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/indices-templates.html" target="_blank" rel="noopener">索引模板</a>用于定义设置和映射，以确定如何分析字段。</p>
+<h4 id="setuptemplatesettings"><a class="markdownIt-Anchor" href="#setuptemplatesettings"></a> setup.template.settings</h4>
+<p>在 Elasticsearch 中，<a href="https://www.elastic.co/guide/en/elasticsearch/reference/6.1/indices-templates.html" target="_blank" rel="noopener">索引模板</a>用于定义设置和映射，以确定如何分析字段。</p>
 <p>在 Filebeat 中，setup.template.settings 用于配置索引模板。</p>
 <p>Filebeat 推荐的索引模板文件由 Filebeat 软件包安装。如果您接受 filebeat.yml 配置文件中的默认配置，Filebeat在成功连接到 Elasticsearch 后自动加载模板。</p>
 <p>您可以通过在 Filebeat 配置文件中配置模板加载选项来禁用自动模板加载，或加载自己的模板。您还可以设置选项来更改索引和索引模板的名称。</p>
@@ -577,14 +589,16 @@
 <p><strong>说明</strong></p>
 <p>如无必要，使用 Filebeat 配置文件中的默认索引模板即可。</p>
 </blockquote>
-<h4 id="setup-dashboards"><a href="#setup-dashboards" class="headerlink" title="setup.dashboards"></a>setup.dashboards</h4><p>Filebeat 附带了示例 Kibana 仪表板。在使用仪表板之前，您需要创建索引模式 <code>filebeat- *</code>，并将仪表板加载到Kibana 中。为此，您可以运行 <code>setup</code> 命令或在 <code>filebeat.yml</code> 配置文件中配置仪表板加载。</p>
+<h4 id="setupdashboards"><a class="markdownIt-Anchor" href="#setupdashboards"></a> setup.dashboards</h4>
+<p>Filebeat 附带了示例 Kibana 仪表板。在使用仪表板之前，您需要创建索引模式 <code>filebeat- *</code>，并将仪表板加载到Kibana 中。为此，您可以运行 <code>setup</code> 命令或在 <code>filebeat.yml</code> 配置文件中配置仪表板加载。</p>
 <p>为了在 Kibana 中加载 Filebeat 的仪表盘，需要在 <code>filebeat.yml</code> 配置中启动开关：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">setup<span class="selector-class">.dashboards</span><span class="selector-class">.enabled</span>: true</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>参考</strong></p>
 <p>更多内容可以参考：<a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuration-dashboards.html" target="_blank" rel="noopener">configuration-dashboards</a></p>
 </blockquote>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>filebeat 提供了一系列命令来完成各种功能。</p>
+<h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2>
+<p>filebeat 提供了一系列命令来完成各种功能。</p>
 <p>执行命令方式：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">./filebeat COMMAND</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -596,8 +610,10 @@
 <p><strong>示例</strong> 指定配置文件启动</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; ./filebeat run -e -c filebeat.yml -d <span class="string">"publish"</span></span><br><span class="line">&gt; ./filebeat -e -c filebeat.yml -d <span class="string">"publish"</span> <span class="comment"># run 可以省略</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><p>Filebeat 提供了一套预构建的模块，让您可以快速实施和部署日志监视解决方案，并附带示例仪表板和数据可视化。这些模块支持常见的日志格式，例如Nginx，Apache2和MySQL 等。</p>
-<h3 id="运行模块的步骤"><a href="#运行模块的步骤" class="headerlink" title="运行模块的步骤"></a>运行模块的步骤</h3><ul>
+<h2 id="模块"><a class="markdownIt-Anchor" href="#模块"></a> 模块</h2>
+<p>Filebeat 提供了一套预构建的模块，让您可以快速实施和部署日志监视解决方案，并附带示例仪表板和数据可视化。这些模块支持常见的日志格式，例如Nginx，Apache2和MySQL 等。</p>
+<h3 id="运行模块的步骤"><a class="markdownIt-Anchor" href="#运行模块的步骤"></a> 运行模块的步骤</h3>
+<ul>
 <li>配置 elasticsearch 和 kibana</li>
 </ul>
 <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line">output.elasticsearch:</span><br><span class="line"><span class="symbol">  hosts:</span> [<span class="string">"myEShost:9200"</span>]</span><br><span class="line"><span class="symbol">  username:</span> <span class="string">"elastic"</span></span><br><span class="line"><span class="symbol">  password:</span> <span class="string">"elastic"</span></span><br><span class="line">setup.kibana:</span><br><span class="line"><span class="symbol">  host:</span> <span class="string">"mykibanahost:5601"</span></span><br><span class="line"><span class="symbol">  username:</span> <span class="string">"elastic"</span> </span><br><span class="line"><span class="symbol">  password:</span> <span class="string">"elastic</span></span><br></pre></td></tr></table></figure>
@@ -618,13 +634,15 @@
 <p><strong>参考</strong></p>
 <p>更多内容可以参考： <a href="https://www.elastic.co/guide/en/beats/filebeat/current/configuration-filebeat-modules.html" target="_blank" rel="noopener">配置 filebeat 模块</a> | <a href="https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-modules.html" target="_blank" rel="noopener">filebeat 支持模块</a></p>
 </blockquote>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>Filebeat 有两个主要组件：</p>
+<h2 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h2>
+<p>Filebeat 有两个主要组件：</p>
 <p>harvester：负责读取一个文件的内容。它会逐行读取文件内容，并将内容发送到输出目的地。</p>
 <p>prospector：负责管理 harvester 并找到所有需要读取的文件源。比如类型是日志，prospector 就会遍历制定路径下的所有匹配要求的文件。</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">filebeat.prospectors:</span></span><br><span class="line"><span class="attr">- type:</span> <span class="string">log</span></span><br><span class="line"><span class="attr">  paths:</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">/var/log/*.log</span></span><br><span class="line"><span class="bullet">    -</span> <span class="string">/var/path2/*.log</span></span><br></pre></td></tr></table></figure>
 <p>Filebeat保持每个文件的状态，并经常刷新注册表文件中的磁盘状态。状态用于记住 harvester 正在读取的最后偏移量，并确保发送所有日志行。</p>
 <p>Filebeat 将每个事件的传递状态存储在注册表文件中。所以它能保证事件至少传递一次到配置的输出，没有数据丢失。</p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><a href="https://www.elastic.co/guide/en/beats/libbeat/current/index.html" target="_blank" rel="noopener">Beats 官方文档</a></p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<p><a href="https://www.elastic.co/guide/en/beats/libbeat/current/index.html" target="_blank" rel="noopener">Beats 官方文档</a></p>
 
       
     </div>
@@ -778,7 +796,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -843,7 +861,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1141,7 +1161,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Elastic-技术栈之-Filebeat"><span class="nav-text">Elastic 技术栈之 Filebeat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FileBeat-的作用"><span class="nav-text">FileBeat 的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重要配置项"><span class="nav-text">重要配置项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#filebeat-prospectors"><span class="nav-text">filebeat.prospectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#output-elasticsearch"><span class="nav-text">output.elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#output-logstash"><span class="nav-text">output.logstash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setup-kibana"><span class="nav-text">setup.kibana</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setup-template-settings"><span class="nav-text">setup.template.settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setup-dashboards"><span class="nav-text">setup.dashboards</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text">命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行模块的步骤"><span class="nav-text">运行模块的步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#elastic-技术栈之-filebeat"><span class="nav-text"> Elastic 技术栈之 Filebeat</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#filebeat-的作用"><span class="nav-text"> FileBeat 的作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text"> 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text"> 配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重要配置项"><span class="nav-text"> 重要配置项</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#filebeatprospectors"><span class="nav-text"> filebeat.prospectors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#outputelasticsearch"><span class="nav-text"> output.elasticsearch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#outputlogstash"><span class="nav-text"> output.logstash</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setupkibana"><span class="nav-text"> setup.kibana</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setuptemplatesettings"><span class="nav-text"> setup.template.settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#setupdashboards"><span class="nav-text"> setup.dashboards</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text"> 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-text"> 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运行模块的步骤"><span class="nav-text"> 运行模块的步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text"> 原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1183,7 +1203,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

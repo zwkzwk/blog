@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Webpack 入门 Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装 本地安装 全局安装   创建一个 bundl">
+  <meta name="description" content="Webpack 入门  Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装  本地安装 全局安装   创建一个 bu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack 入门">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/webpack/webpack/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Webpack 入门 Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装 本地安装 全局安装   创建一个 bundl">
+<meta property="og:description" content="Webpack 入门  Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装  本地安装 全局安装   创建一个 bu">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.934Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack 入门">
-<meta name="twitter:description" content="Webpack 入门 Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装 本地安装 全局安装   创建一个 bundl">
+<meta name="twitter:description" content="Webpack 入门  Webpack  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。 Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。 当前版本：4.x 关键词： webpack, loader    安装  本地安装 全局安装   创建一个 bu">
 
 
 
@@ -477,7 +477,8 @@
       
 
       
-        <h1 id="Webpack-入门"><a href="#Webpack-入门" class="headerlink" title="Webpack 入门"></a>Webpack 入门</h1><blockquote>
+        <h1 id="webpack-入门"><a class="markdownIt-Anchor" href="#webpack-入门"></a> Webpack 入门</h1>
+<blockquote>
 <p><a href="https://webpack.github.io/" target="_blank" rel="noopener">Webpack</a>  是一个模组打包工具（module bundler）。其主要目的是将 JavaScript 文件捆绑在浏览器中，但它也能够转换，捆绑或打包任何资源文件。</p>
 <p>Webpack 可以按需加载应用程序的组件。使得 Javascript 应用可以高度复用。</p>
 <p>当前版本：4.x</p>
@@ -485,30 +486,36 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装">安装</a><ul>
-<li><a href="#本地安装">本地安装</a></li>
-<li><a href="#全局安装">全局安装</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#%E6%9C%AC%E5%9C%B0%E5%AE%89%E8%A3%85">本地安装</a></li>
+<li><a href="#%E5%85%A8%E5%B1%80%E5%AE%89%E8%A3%85">全局安装</a></li>
 </ul>
 </li>
-<li><a href="#创建一个-bundle-文件">创建一个 bundle 文件</a></li>
-<li><a href="#webpackconfigjs">webpack.config.js</a><ul>
-<li><a href="#单入口entry">单入口(Entry)</a></li>
-<li><a href="#多入口entry">多入口(Entry)</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA-bundle-%E6%96%87%E4%BB%B6">创建一个 bundle 文件</a></li>
+<li><a href="#webpackconfigjs">webpack.config.js</a>
+<ul>
+<li><a href="#%E5%8D%95%E5%85%A5%E5%8F%A3entry">单入口(Entry)</a></li>
+<li><a href="#%E5%A4%9A%E5%85%A5%E5%8F%A3entry">多入口(Entry)</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><h3 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save-dev webpack</span><br><span class="line">$ npm install --save-dev webpack@&lt;version&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<h3 id="本地安装"><a class="markdownIt-Anchor" href="#本地安装"></a> 本地安装</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save-dev webpack</span><br><span class="line">$ npm install --save-dev webpack@&lt;version&gt;</span><br></pre></td></tr></table></figure>
 <p>如果你在项目中使用了 <code>npm</code> ，<code>npm</code> 首先会在本地模块中寻找 <code>webpack</code>。这是一个实用的小技巧。</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">"scripts": &#123;</span><br><span class="line">    "start": "webpack --config mywebpack.config.js"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面是 <code>npm</code> 的标准配置，也是我们推荐的实践。</p>
 <blockquote>
 <p>当你在本地安装 webpack 后，你能够从  <code>node_modules/.bin/webpack</code>  访问它的 bin 版本。</p>
 </blockquote>
-<h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --global webpack</span><br></pre></td></tr></table></figure>
+<h3 id="全局安装"><a class="markdownIt-Anchor" href="#全局安装"></a> 全局安装</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --global webpack</span><br></pre></td></tr></table></figure>
 <p><code>webpack</code>  命令现在可以全局执行了。</p>
-<h2 id="创建一个-bundle-文件"><a href="#创建一个-bundle-文件" class="headerlink" title="创建一个 bundle 文件"></a>创建一个 bundle 文件</h2><p>创建一个 <code>app/index.js</code> 文件。</p>
+<h2 id="创建一个-bundle-文件"><a class="markdownIt-Anchor" href="#创建一个-bundle-文件"></a> 创建一个 bundle 文件</h2>
+<p>创建一个 <code>app/index.js</code> 文件。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h1&gt;Hello World&lt;/h1&gt;"</span>);</span><br></pre></td></tr></table></figure>
 <p>创建一个 <code>index.html</code> 文件。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -518,18 +525,21 @@
 <p>会在目录下生成一个 <code>dist/bundle.js</code> 文件，它已打包所需的所有代码的输出文件。</p>
 <p>在浏览器中打开 <code>index.html</code> 文件。</p>
 <blockquote>
-<p>:flashlight: <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo00" target="_blank" rel="noopener"><strong>DEMO00</strong></a>)</p>
+<p>🔦 <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo00" target="_blank" rel="noopener"><strong>DEMO00</strong></a>)</p>
 </blockquote>
-<h2 id="webpack-config-js"><a href="#webpack-config-js" class="headerlink" title="webpack.config.js"></a>webpack.config.js</h2><p><code>webpack.config.js</code> 为 <code>webpack</code> 默认的配置文件，当执行 <code>webpack</code> 命令时，<code>webpack</code> 会在当前目录下自动搜索 <code>webpack.config.js</code> 文件。</p>
-<h3 id="单入口-Entry"><a href="#单入口-Entry" class="headerlink" title="单入口(Entry)"></a>单入口(Entry)</h3><p>基于 (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo00" target="_blank" rel="noopener"><strong>DEMO00</strong></a>) 的代码，新建一个 <code>webpack.config.js</code> 文件，内容如下：</p>
+<h2 id="webpackconfigjs"><a class="markdownIt-Anchor" href="#webpackconfigjs"></a> webpack.config.js</h2>
+<p><code>webpack.config.js</code> 为 <code>webpack</code> 默认的配置文件，当执行 <code>webpack</code> 命令时，<code>webpack</code> 会在当前目录下自动搜索 <code>webpack.config.js</code> 文件。</p>
+<h3 id="单入口entry"><a class="markdownIt-Anchor" href="#单入口entry"></a> 单入口(Entry)</h3>
+<p>基于 (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo00" target="_blank" rel="noopener"><strong>DEMO00</strong></a>) 的代码，新建一个 <code>webpack.config.js</code> 文件，内容如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">"path"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 这里应用程序开始执行</span></span><br><span class="line">  <span class="comment">// webpack 开始打包</span></span><br><span class="line">  entry: <span class="string">"./app/index.js"</span>,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// webpack 如何输出结果的相关选项</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// 所有输出文件的目标路径</span></span><br><span class="line">    <span class="comment">// 必须是绝对路径（使用 Node.js 的 path 模块）</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">"dist"</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 「入口分块(entry chunk)」的文件名模板（出口分块？）</span></span><br><span class="line">    filename: <span class="string">"bundle.js"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>执行命令</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ webpack</span><br></pre></td></tr></table></figure>
 <p>在浏览器中打开 <code>index.html</code> 文件。</p>
 <blockquote>
-<p>:flashlight: <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo01" target="_blank" rel="noopener"><strong>DEMO01</strong></a>)</p>
+<p>🔦 <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo01" target="_blank" rel="noopener"><strong>DEMO01</strong></a>)</p>
 </blockquote>
-<h3 id="多入口-Entry"><a href="#多入口-Entry" class="headerlink" title="多入口(Entry)"></a>多入口(Entry)</h3><p>如果有多个入口文件怎么办？很简单，我们来看一个示例：</p>
+<h3 id="多入口entry"><a class="markdownIt-Anchor" href="#多入口entry"></a> 多入口(Entry)</h3>
+<p>如果有多个入口文件怎么办？很简单，我们来看一个示例：</p>
 <p>新建 app/about.js 文件</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h2&gt;ABOUT&lt;/h2&gt;"</span>);</span><br></pre></td></tr></table></figure>
 <p>新建 app/home.js 文件</p>
@@ -542,10 +552,11 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ webpack</span><br></pre></td></tr></table></figure>
 <p>在浏览器中打开 <code>index.html</code> 文件。</p>
 <blockquote>
-<p>:flashlight: <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo02" target="_blank" rel="noopener"><strong>DEMO02</strong></a>)</p>
+<p>🔦 <strong>示例：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo02" target="_blank" rel="noopener"><strong>DEMO02</strong></a>)</p>
 </blockquote>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="webpack.md">Webpack 入门</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
@@ -553,10 +564,11 @@
 <li><a href="code-splitting.md">Webpack 代码分离</a></li>
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
-<li><strong>官方资料</strong><ul>
+<li><strong>官方资料</strong>
+<ul>
 <li><a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 官网</a></li>
 <li><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">Webpack 中文网</a></li>
 <li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener">webpack Github</a></li>
@@ -564,13 +576,15 @@
 <li><a href="http://webpack.github.io/docs/webpack-dev-server.html" target="_blank" rel="noopener">webpack-dev-server 官方文档</a></li>
 </ul>
 </li>
-<li><strong>入门资料</strong><ul>
+<li><strong>入门资料</strong>
+<ul>
 <li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="noopener">webpack-demos</a></li>
 <li><a href="https://github.com/petehunt/webpack-howto/blob/master/README-zh.md" target="_blank" rel="noopener">webpack-howto</a></li>
 <li><a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="noopener">webpack-handbook</a></li>
 </ul>
 </li>
-<li><strong>教程</strong><ul>
+<li><strong>教程</strong>
+<ul>
 <li><a href="webpack-howto.md">如何学习 Webpack</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
 <li><a href="webpack.md">Webpack 入门</a></li>
@@ -579,12 +593,14 @@
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
 </li>
-<li><strong>文章</strong><ul>
+<li><strong>文章</strong>
+<ul>
 <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/" target="_blank" rel="noopener">JavaScript 模块化七日谈</a></li>
 <li><a href="https://github.com/seajs/seajs/issues/588" target="_blank" rel="noopener">前端模块化开发那点历史</a></li>
 </ul>
 </li>
-<li><strong>更多资源</strong><ul>
+<li><strong>更多资源</strong>
+<ul>
 <li><a href="https://github.com/webpack-china/awesome-webpack-cn" target="_blank" rel="noopener">awesome-webpack-cn</a></li>
 </ul>
 </li>
@@ -647,8 +663,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/network/physical/README/" rel="next" title="物理层">
-                <i class="fa fa-chevron-left"></i> 物理层
+              <a href="/blog/2019/03/06/design/design-patterns/设计模式/" rel="next" title="设计模式">
+                <i class="fa fa-chevron-left"></i> 设计模式
               </a>
             
           </div>
@@ -730,7 +746,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -795,7 +811,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1093,7 +1111,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Webpack-入门"><span class="nav-text">Webpack 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地安装"><span class="nav-text">本地安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局安装"><span class="nav-text">全局安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个-bundle-文件"><span class="nav-text">创建一个 bundle 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-config-js"><span class="nav-text">webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单入口-Entry"><span class="nav-text">单入口(Entry)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多入口-Entry"><span class="nav-text">多入口(Entry)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-入门"><span class="nav-text"> Webpack 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地安装"><span class="nav-text"> 本地安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局安装"><span class="nav-text"> 全局安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个-bundle-文件"><span class="nav-text"> 创建一个 bundle 文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpackconfigjs"><span class="nav-text"> webpack.config.js</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单入口entry"><span class="nav-text"> 单入口(Entry)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多入口entry"><span class="nav-text"> 多入口(Entry)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1135,7 +1153,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

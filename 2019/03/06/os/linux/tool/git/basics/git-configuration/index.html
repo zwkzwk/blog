@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Git 配置配置 GitGit 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以传递 -">
+  <meta name="description" content="Git 配置  配置 Git Git 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 配置">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/tool/git/basics/git-configuration/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Git 配置配置 GitGit 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以传递 -">
+<meta property="og:description" content="Git 配置  配置 Git Git 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 配置">
-<meta name="twitter:description" content="Git 配置配置 GitGit 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以传递 -">
+<meta name="twitter:description" content="Git 配置  配置 Git Git 使用一系列配置文件来保存你自定义的行为。 它首先会查找 /etc/gitconfig 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 --system 选项给 git config，它就会读写该文件。 接下来 Git 会查找每个用户的 \~/.gitconfig 文件（或者 \~/.config/git/config 文件）。 你可以">
 
 
 
@@ -477,39 +477,50 @@
       
 
       
-        <h1 id="Git-配置"><a href="#Git-配置" class="headerlink" title="Git 配置"></a>Git 配置</h1><h2 id="配置-Git"><a href="#配置-Git" class="headerlink" title="配置 Git"></a>配置 Git</h2><p>Git 使用一系列配置文件来保存你自定义的行为。 它首先会查找 <code>/etc/gitconfig</code> 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 <code>--system</code> 选项给 <code>git config</code>，它就会读写该文件。</p>
+        <h1 id="git-配置"><a class="markdownIt-Anchor" href="#git-配置"></a> Git 配置</h1>
+<h2 id="配置-git"><a class="markdownIt-Anchor" href="#配置-git"></a> 配置 Git</h2>
+<p>Git 使用一系列配置文件来保存你自定义的行为。 它首先会查找 <code>/etc/gitconfig</code> 文件，该文件含有系统里每位用户及他们所拥有的仓库的配置值。 如果你传递 <code>--system</code> 选项给 <code>git config</code>，它就会读写该文件。</p>
 <p>接下来 Git 会查找每个用户的 <code>\~/.gitconfig</code> 文件（或者 <code>\~/.config/git/config</code> 文件）。 你可以传递 <code>--global</code> 选项让 Git 读写该文件。</p>
 <p>最后 Git 会查找你正在操作的版本库所对应的 Git 目录下的配置文件（<code>.git/config</code>）。 这个文件中的值只对该版本库有效。</p>
 <p>以上三个层次中每层的配置（系统、全局、本地）都会覆盖掉上一层次的配置，所以 <code>.git/config</code> 中的值会覆盖掉 <code>/etc/gitconfig</code> 中所对应的值。</p>
-<h2 id="客户端基本配置"><a href="#客户端基本配置" class="headerlink" title="客户端基本配置"></a>客户端基本配置</h2><h3 id="core-editor"><a href="#core-editor" class="headerlink" title="core.editor"></a><code>core.editor</code></h3><p>默认情况下，Git 会调用环境变量（<code>$VISUAL</code> 或 <code>$EDITOR</code>）设置的任意文本编辑器，如果没有设置，会调用 <code>vi</code> 来创建和编辑你的提交以及标签信息。 你可以使用 <code>core.editor</code> 选项来修改默认的编辑器：</p>
+<h2 id="客户端基本配置"><a class="markdownIt-Anchor" href="#客户端基本配置"></a> 客户端基本配置</h2>
+<h3 id="coreeditor"><a class="markdownIt-Anchor" href="#coreeditor"></a> <code>core.editor</code></h3>
+<p>默认情况下，Git 会调用环境变量（<code>$VISUAL</code> 或 <code>$EDITOR</code>）设置的任意文本编辑器，如果没有设置，会调用 <code>vi</code> 来创建和编辑你的提交以及标签信息。 你可以使用 <code>core.editor</code> 选项来修改默认的编辑器：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global core.editor emacs</span><br></pre></td></tr></table></figure>
 <p>现在，无论你定义了什么终端编辑器，Git 都会调用 Emacs 编辑信息。</p>
-<h3 id="commit-template"><a href="#commit-template" class="headerlink" title="commit.template"></a><code>commit.template</code></h3><p>如果把此项指定为你的系统上某个文件的路径，当你提交的时候， Git 会使用该文件的内容作为提交的默认信息。 例如：假设你创建了一个叫 <code>\~/.gitmessage.txt</code> 的模板文件，类似这样：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line">subject line</span><br><span class="line"></span><br><span class="line">what happened</span><br><span class="line"></span><br><span class="line"><span class="selector-attr">[ticket: X]</span></span><br></pre></td></tr></table></figure>
+<h3 id="committemplate"><a class="markdownIt-Anchor" href="#committemplate"></a> <code>commit.template</code></h3>
+<p>如果把此项指定为你的系统上某个文件的路径，当你提交的时候， Git 会使用该文件的内容作为提交的默认信息。 例如：假设你创建了一个叫 <code>\~/.gitmessage.txt</code> 的模板文件，类似这样：</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">subject</span> <span class="string">line</span></span><br><span class="line"></span><br><span class="line"><span class="attr">what</span> <span class="string">happened</span></span><br><span class="line"></span><br><span class="line"><span class="meta">[ticket</span>: <span class="string">X]</span></span><br></pre></td></tr></table></figure>
 <p>要想让 Git 把它作为运行 <code>git commit</code> 时显示在你的编辑器中的默认信息， 如下设置 <code>commit.template</code>：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global commit.template ~/.gitmessage.txt</span><br><span class="line">$ git commit</span><br></pre></td></tr></table></figure>
 <p>然后当你提交时，编辑器中就会显示如下的提交信息占位符：</p>
 <figure class="highlight vala"><table><tr><td class="code"><pre><span class="line">subject line</span><br><span class="line"></span><br><span class="line">what happened</span><br><span class="line"></span><br><span class="line">[ticket: X]</span><br><span class="line"><span class="meta"># Please enter the commit message for your changes. Lines starting</span></span><br><span class="line"><span class="meta"># with '#' will be ignored, and an empty message aborts the commit.</span></span><br><span class="line"><span class="meta"># On branch master</span></span><br><span class="line"><span class="meta"># Changes to be committed:</span></span><br><span class="line"><span class="meta">#   (use "git reset HEAD &lt;file&gt;..." to unstage)</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line"><span class="meta"># modified:   lib/test.rb</span></span><br><span class="line"><span class="meta">#</span></span><br><span class="line">~</span><br><span class="line">~</span><br><span class="line"><span class="string">".git/COMMIT_EDITMSG"</span> <span class="number">14</span>L, <span class="number">297</span>C</span><br></pre></td></tr></table></figure>
 <p>如果你的团队对提交信息有格式要求，可以在系统上创建一个文件，并配置 Git 把它作为默认的模板，这样可以更加容易地使提交信息遵循格式。</p>
-<h3 id="core-pager"><a href="#core-pager" class="headerlink" title="core.pager"></a><code>core.pager</code></h3><p>该配置项指定 Git 运行诸如 <code>log</code> 和 <code>diff</code> 等命令所使用的分页器。 你可以把它设置成用 <code>more</code> 或者任何你喜欢的分页器（默认用的是 <code>less</code>），当然也可以设置成空字符串，关闭该选项：</p>
+<h3 id="corepager"><a class="markdownIt-Anchor" href="#corepager"></a> <code>core.pager</code></h3>
+<p>该配置项指定 Git 运行诸如 <code>log</code> 和 <code>diff</code> 等命令所使用的分页器。 你可以把它设置成用 <code>more</code> 或者任何你喜欢的分页器（默认用的是 <code>less</code>），当然也可以设置成空字符串，关闭该选项：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ git config --global core<span class="selector-class">.pager</span> <span class="string">''</span></span><br></pre></td></tr></table></figure>
 <p>这样不管命令的输出量多少，Git 都会在一页显示所有内容。</p>
-<h3 id="user-signingkey"><a href="#user-signingkey" class="headerlink" title="user.signingkey"></a><code>user.signingkey</code></h3><p>如果你要创建经签署的含附注的标签（正如 <a href="https://git-scm.com/book/zh/v2/ch00/r_signing" target="_blank" rel="noopener">签署工作</a> 所述），那么把你的 GPG 签署密钥设置为配置项会更好。 如下设置你的密钥 ID：</p>
+<h3 id="usersigningkey"><a class="markdownIt-Anchor" href="#usersigningkey"></a> <code>user.signingkey</code></h3>
+<p>如果你要创建经签署的含附注的标签（正如 <a href="https://git-scm.com/book/zh/v2/ch00/r_signing" target="_blank" rel="noopener">签署工作</a> 所述），那么把你的 GPG 签署密钥设置为配置项会更好。 如下设置你的密钥 ID：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.signingkey &lt;gpg-key-id&gt;</span><br></pre></td></tr></table></figure>
 <p>现在，你每次运行 <code>git tag</code> 命令时，即可直接签署标签，而无需定义密钥：</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ git <span class="keyword">tag</span> <span class="title">-s</span> <span class="tag">&lt;tag-name&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="core-excludesfile"><a href="#core-excludesfile" class="headerlink" title="core.excludesfile"></a><code>core.excludesfile</code></h3><p>正如 <a href="https://git-scm.com/book/zh/v2/ch00/r_ignoring" target="_blank" rel="noopener">忽略文件</a> 所述，你可以在你的项目的 <code>.gitignore</code> 文件里面规定无需纳入 Git 管理的文件的模板，这样它们既不会出现在未跟踪列表，也不会在你运行 <code>git add</code> 后被暂存。</p>
+<h3 id="coreexcludesfile"><a class="markdownIt-Anchor" href="#coreexcludesfile"></a> <code>core.excludesfile</code></h3>
+<p>正如 <a href="https://git-scm.com/book/zh/v2/ch00/r_ignoring" target="_blank" rel="noopener">忽略文件</a> 所述，你可以在你的项目的 <code>.gitignore</code> 文件里面规定无需纳入 Git 管理的文件的模板，这样它们既不会出现在未跟踪列表，也不会在你运行 <code>git add</code> 后被暂存。</p>
 <p>不过有些时候，你想要在你所有的版本库中忽略掉某一类文件。 如果你的操作系统是 OS X，很可能就是指<code>.DS_Store</code>。 如果你把 Emacs 或 Vim 作为首选的编辑器，你肯定知道以 <code>\~</code> 结尾的临时文件。</p>
 <p>这个配置允许你设置类似于全局生效的 <code>.gitignore</code> 文件。 如果你按照下面的内容创建一个<code>\~/.gitignore_global</code> 文件：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">*~</span><br><span class="line"><span class="selector-class">.DS_Store</span></span><br></pre></td></tr></table></figure>
 <p>……然后运行 <code>git config --global core.excludesfile \~/.gitignore_global</code>，Git 将把那些文件永远地拒之门外。</p>
-<h3 id="help-autocorrect"><a href="#help-autocorrect" class="headerlink" title="help.autocorrect"></a><code>help.autocorrect</code></h3><p>假如你打错了一条命令，会显示：</p>
+<h3 id="helpautocorrect"><a class="markdownIt-Anchor" href="#helpautocorrect"></a> <code>help.autocorrect</code></h3>
+<p>假如你打错了一条命令，会显示：</p>
 <figure class="highlight ada"><table><tr><td class="code"><pre><span class="line">$ git chekcout master</span><br><span class="line">git：<span class="symbol">'chekcout</span>' 不是一个 git 命令。参见 <span class="symbol">'git</span> <span class="comment">--help'。</span></span><br><span class="line"></span><br><span class="line">您指的是这个么？</span><br><span class="line">  checkout</span><br></pre></td></tr></table></figure>
 <p>Git 会尝试猜测你的意图，但是它不会越俎代庖。 如果你把 <code>help.autocorrect</code> 设置成 1，那么只要有一个命令被模糊匹配到了，Git 会自动运行该命令。</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ git chekcout <span class="literal">master</span></span><br><span class="line">警告：您运行一个不存在的 Git 命令 'chekcout'。继续执行假定您要要运行的</span><br><span class="line">是 'checkout'</span><br><span class="line">在 <span class="number">0.1</span> 秒钟后自动运行...</span><br></pre></td></tr></table></figure>
 <p>注意提示信息中的“0.1 秒”。<code>help.autocorrect</code> 接受一个代表十分之一秒的整数。 所以如果你把它设置为 50, Git 将在自动执行命令前给你 5 秒的时间改变主意。</p>
-<h2 id="格式化与多余的空白字符"><a href="#格式化与多余的空白字符" class="headerlink" title="格式化与多余的空白字符"></a>格式化与多余的空白字符</h2><p>格式化与多余的空白字符是许多开发人员在协作时，特别是在跨平台情况下，不时会遇到的令人头疼的琐碎的问题。 由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交的补丁或其它协作成果中。 不用怕，Git 提供了一些配置项来帮助你解决这些问题。</p>
-<h3 id="core-autocrlf"><a href="#core-autocrlf" class="headerlink" title="core.autocrlf"></a><code>core.autocrlf</code></h3><p>假如你正在 Windows 上写程序，而你的同伴用的是其他系统（或相反），你可能会遇到 CRLF 问题。 这是因为 Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 Mac 和 Linux 只使用换行（LF）一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。许多 Windows 上的编辑器会悄悄把行尾的换行字符转换成回车和换行，或在用户按下 Enter 键时，插入回车和换行两个字符。</p>
+<h2 id="格式化与多余的空白字符"><a class="markdownIt-Anchor" href="#格式化与多余的空白字符"></a> 格式化与多余的空白字符</h2>
+<p>格式化与多余的空白字符是许多开发人员在协作时，特别是在跨平台情况下，不时会遇到的令人头疼的琐碎的问题。 由于编辑器的不同或者文件行尾的换行符在 Windows 下被替换了，一些细微的空格变化会不经意地混入提交的补丁或其它协作成果中。 不用怕，Git 提供了一些配置项来帮助你解决这些问题。</p>
+<h3 id="coreautocrlf"><a class="markdownIt-Anchor" href="#coreautocrlf"></a> <code>core.autocrlf</code></h3>
+<p>假如你正在 Windows 上写程序，而你的同伴用的是其他系统（或相反），你可能会遇到 CRLF 问题。 这是因为 Windows 使用回车（CR）和换行（LF）两个字符来结束一行，而 Mac 和 Linux 只使用换行（LF）一个字符。 虽然这是小问题，但它会极大地扰乱跨平台协作。许多 Windows 上的编辑器会悄悄把行尾的换行字符转换成回车和换行，或在用户按下 Enter 键时，插入回车和换行两个字符。</p>
 <p>Git 可以在你提交时自动地把回车和换行转换成换行，而在检出代码时把换行转换成回车和换行。 你可以用 <code>core.autocrlf</code> 来打开此项功能。 如果是在 Windows 系统上，把它设置成 <code>true</code>，这样在检出代码时，换行会被转换成回车和换行：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global core.autocrlf <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>如果使用以换行作为行结束符的 Linux 或 Mac，你不需要 Git 在检出文件时进行自动的转换；然而当一个以回车加换行作为行结束符的文件不小心被引入时，你肯定想让 Git 修正。 你可以把 <code>core.autocrlf</code> 设置成 input 来告诉 Git 在提交时把回车和换行转换成换行，检出时不转换：</p>
@@ -517,7 +528,8 @@
 <p>这样在 Windows 上的检出文件中会保留回车和换行，而在 Mac 和 Linux 上，以及版本库中会保留换行。</p>
 <p>如果你是 Windows 程序员，且正在开发仅运行在 Windows 上的项目，可以设置 <code>false</code> 取消此功能，把回车保留在版本库中：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h3 id="core-whitespace"><a href="#core-whitespace" class="headerlink" title="core.whitespace"></a><code>core.whitespace</code></h3><p>Git 预先设置了一些选项来探测和修正多余空白字符问题。 它提供了六种处理多余空白字符的主要选项 —— 其中三个默认开启，另外三个默认关闭，不过你可以自由地设置它们。</p>
+<h3 id="corewhitespace"><a class="markdownIt-Anchor" href="#corewhitespace"></a> <code>core.whitespace</code></h3>
+<p>Git 预先设置了一些选项来探测和修正多余空白字符问题。 它提供了六种处理多余空白字符的主要选项 —— 其中三个默认开启，另外三个默认关闭，不过你可以自由地设置它们。</p>
 <p>默认被打开的三个选项是：<code>blank-at-eol</code>，查找行尾的空格；<code>blank-at-eof</code>，盯住文件底部的空行；<code>space-before-tab</code>，警惕行头 tab 前面的空格。</p>
 <p>默认被关闭的三个选项是：<code>indent-with-non-tab</code>，揪出以空格而非 tab 开头的行（你可以用 <code>tabwidth</code>选项控制它）；<code>tab-in-indent</code>，监视在行头表示缩进的 tab；<code>cr-at-eol</code>，告诉 Git 忽略行尾的回车。</p>
 <p>通过设置 <code>core.whitespace</code>，你可以让 Git 按照你的意图来打开或关闭以逗号分割的选项。 要想关闭某个选项，你可以在输入设置选项时不指定它或在它前面加个 <code>-</code>。 例如，如果你想要打开除 <code>cr-at-eol</code> 之外的所有选项：</p>
@@ -527,15 +539,19 @@
 <p>或者让 Git 在打上补丁前自动修正此问题：</p>
 <figure class="highlight coq"><table><tr><td class="code"><pre><span class="line">$ git <span class="built_in">apply</span> --whitespace=<span class="built_in">fix</span> &lt;patch&gt;</span><br></pre></td></tr></table></figure>
 <p>这些选项也能运用于 <code>git rebase</code>。 如果提交了有空白问题的文件，但还没推送到上游，你可以运行 <code>git rebase --whitespace=fix</code> 来让 Git 在重写补丁时自动修正它们。</p>
-<h2 id="服务器端配置"><a href="#服务器端配置" class="headerlink" title="服务器端配置"></a>服务器端配置</h2><p>Git 服务器端的配置项相对来说并不多，但仍有一些饶有生趣的选项值得你一看。</p>
-<h3 id="receive-fsckObjects"><a href="#receive-fsckObjects" class="headerlink" title="receive.fsckObjects"></a><code>receive.fsckObjects</code></h3><p>Git 能够确认每个对象的有效性以及 SHA-1 检验和是否保持一致。 但 Git 不会在每次推送时都这么做。这个操作很耗时间，很有可能会拖慢提交的过程，特别是当库或推送的文件很大的情况下。 如果想在每次推送时都要求 Git 检查一致性，设置 <code>receive.fsckObjects</code> 为 true 来强迫它这么做：</p>
+<h2 id="服务器端配置"><a class="markdownIt-Anchor" href="#服务器端配置"></a> 服务器端配置</h2>
+<p>Git 服务器端的配置项相对来说并不多，但仍有一些饶有生趣的选项值得你一看。</p>
+<h3 id="receivefsckobjects"><a class="markdownIt-Anchor" href="#receivefsckobjects"></a> <code>receive.fsckObjects</code></h3>
+<p>Git 能够确认每个对象的有效性以及 SHA-1 检验和是否保持一致。 但 Git 不会在每次推送时都这么做。这个操作很耗时间，很有可能会拖慢提交的过程，特别是当库或推送的文件很大的情况下。 如果想在每次推送时都要求 Git 检查一致性，设置 <code>receive.fsckObjects</code> 为 true 来强迫它这么做：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--system receive.fsckObjects <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>现在 Git 会在每次推送生效前检查库的完整性，确保没有被有问题的客户端引入破坏性数据。</p>
-<h3 id="receive-denyNonFastForwards"><a href="#receive-denyNonFastForwards" class="headerlink" title="receive.denyNonFastForwards"></a><code>receive.denyNonFastForwards</code></h3><p>如果你变基已经被推送的提交，继而再推送，又或者推送一个提交到远程分支，而这个远程分支当前指向的提交不在该提交的历史中，这样的推送会被拒绝。 这通常是个很好的策略，但有时在变基的过程中，你确信自己需要更新远程分支，可以在 push 命令后加 <code>-f</code> 标志来强制更新（force-update）。</p>
+<h3 id="receivedenynonfastforwards"><a class="markdownIt-Anchor" href="#receivedenynonfastforwards"></a> <code>receive.denyNonFastForwards</code></h3>
+<p>如果你变基已经被推送的提交，继而再推送，又或者推送一个提交到远程分支，而这个远程分支当前指向的提交不在该提交的历史中，这样的推送会被拒绝。 这通常是个很好的策略，但有时在变基的过程中，你确信自己需要更新远程分支，可以在 push 命令后加 <code>-f</code> 标志来强制更新（force-update）。</p>
 <p>要禁用这样的强制更新推送（force-pushes），可以设置 <code>receive.denyNonFastForwards</code>：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--system receive.denyNonFastForwards <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>稍后我们会提到，用服务器端的接收钩子也能达到同样的目的。 那种方法可以做到更细致的控制，例如禁止某一类用户做非快进（non-fast-forwards）推送。</p>
-<h3 id="receive-denyDeletes"><a href="#receive-denyDeletes" class="headerlink" title="receive.denyDeletes"></a><code>receive.denyDeletes</code></h3><p>有一些方法可以绕过 <code>denyNonFastForwards</code> 策略。其中一种是先删除某个分支，再连同新的引用一起推送回该分支。 把 <code>receive.denyDeletes</code> 设置为 true 可以把这个漏洞补上：</p>
+<h3 id="receivedenydeletes"><a class="markdownIt-Anchor" href="#receivedenydeletes"></a> <code>receive.denyDeletes</code></h3>
+<p>有一些方法可以绕过 <code>denyNonFastForwards</code> 策略。其中一种是先删除某个分支，再连同新的引用一起推送回该分支。 把 <code>receive.denyDeletes</code> 设置为 true 可以把这个漏洞补上：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--system receive.denyDeletes <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <p>这样会禁止通过推送删除分支和标签 — 没有用户可以这么做。 要删除远程分支，必须从服务器手动删除引用文件。 通过用户访问控制列表（ACL）也能够在用户级的粒度上实现同样的功能，你将在 <a href="https://git-scm.com/book/zh/v2/ch00/r_an_example_git_enforced_policy" target="_blank" rel="noopener">使用强制策略的一个例子</a> 一节学到具体的做法。</p>
 
@@ -596,8 +612,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/sql/关系型数据库面试题/" rel="next" title="关系型数据库面试题">
-                <i class="fa fa-chevron-left"></i> 关系型数据库面试题
+              <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis-generator/" rel="next" title="1. MyBatis Generator (MBG) 指南">
+                <i class="fa fa-chevron-left"></i> 1. MyBatis Generator (MBG) 指南
               </a>
             
           </div>
@@ -606,8 +622,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/web/nginx/install-nginx/" rel="prev" title="Nginx 安装">
-                Nginx 安装 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/style/doc-style/" rel="prev" title="技术文档规范">
+                技术文档规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -679,7 +695,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -744,7 +760,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1042,7 +1060,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-配置"><span class="nav-text">Git 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-Git"><span class="nav-text">配置 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端基本配置"><span class="nav-text">客户端基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#core-editor"><span class="nav-text">core.editor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit-template"><span class="nav-text">commit.template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-pager"><span class="nav-text">core.pager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#user-signingkey"><span class="nav-text">user.signingkey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-excludesfile"><span class="nav-text">core.excludesfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#help-autocorrect"><span class="nav-text">help.autocorrect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化与多余的空白字符"><span class="nav-text">格式化与多余的空白字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#core-autocrlf"><span class="nav-text">core.autocrlf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#core-whitespace"><span class="nav-text">core.whitespace</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端配置"><span class="nav-text">服务器端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-fsckObjects"><span class="nav-text">receive.fsckObjects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-denyNonFastForwards"><span class="nav-text">receive.denyNonFastForwards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receive-denyDeletes"><span class="nav-text">receive.denyDeletes</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#git-配置"><span class="nav-text"> Git 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置-git"><span class="nav-text"> 配置 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端基本配置"><span class="nav-text"> 客户端基本配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#coreeditor"><span class="nav-text"> core.editor</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#committemplate"><span class="nav-text"> commit.template</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#corepager"><span class="nav-text"> core.pager</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usersigningkey"><span class="nav-text"> user.signingkey</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#coreexcludesfile"><span class="nav-text"> core.excludesfile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#helpautocorrect"><span class="nav-text"> help.autocorrect</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#格式化与多余的空白字符"><span class="nav-text"> 格式化与多余的空白字符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#coreautocrlf"><span class="nav-text"> core.autocrlf</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#corewhitespace"><span class="nav-text"> core.whitespace</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端配置"><span class="nav-text"> 服务器端配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#receivefsckobjects"><span class="nav-text"> receive.fsckObjects</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receivedenynonfastforwards"><span class="nav-text"> receive.denyNonFastForwards</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#receivedenydeletes"><span class="nav-text"> receive.denyDeletes</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1084,7 +1102,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

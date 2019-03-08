@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="Hash 表的查找要点哈希表和哈希函数在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注：哈希查找与">
+  <meta name="description" content="Hash 表的查找  要点  哈希表和哈希函数 在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注">
 <meta name="keywords" content="data-structure,search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hash 表的查找">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/16/algorithm/data-structure/search/hash-search/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Hash 表的查找要点哈希表和哈希函数在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注：哈希查找与">
+<meta property="og:description" content="Hash 表的查找  要点  哈希表和哈希函数 在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-c14e03882e8a0f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-03-07T02:25:31.040Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash 表的查找">
-<meta name="twitter:description" content="Hash 表的查找要点哈希表和哈希函数在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注：哈希查找与">
+<meta name="twitter:description" content="Hash 表的查找  要点  哈希表和哈希函数 在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -518,31 +518,44 @@
       
 
       
-        <h1 id="Hash-表的查找"><a href="#Hash-表的查找" class="headerlink" title="Hash 表的查找"></a>Hash 表的查找</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><h3 id="哈希表和哈希函数"><a href="#哈希表和哈希函数" class="headerlink" title="哈希表和哈希函数"></a>哈希表和哈希函数</h3><p>在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能<strong>唯一对应</strong>。这个映射函数称为<strong>哈希函数</strong>，根据这个原则建立的表称为<strong>哈希表(Hash Table)</strong>，也叫<strong>散列表</strong>。</p>
+        <h1 id="hash-表的查找"><a class="markdownIt-Anchor" href="#hash-表的查找"></a> Hash 表的查找</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<h3 id="哈希表和哈希函数"><a class="markdownIt-Anchor" href="#哈希表和哈希函数"></a> 哈希表和哈希函数</h3>
+<p>在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能<strong>唯一对应</strong>。这个映射函数称为<strong>哈希函数</strong>，根据这个原则建立的表称为<strong>哈希表(Hash Table)</strong>，也叫<strong>散列表</strong>。</p>
 <p>以上描述，如果通过数学形式来描述就是：</p>
 <p>若查找关键字为 <strong>key</strong>，则其值存放在 <strong>f(key)</strong> 的存储位置上。由此，<strong>不需比较便可直接取得所查记录</strong>。</p>
-<p><strong><em>注：哈希查找与线性表查找和树表查找最大的区别在于，不用数值比较。</em></strong></p>
-<h3 id="冲突"><a href="#冲突" class="headerlink" title="冲突"></a>冲突</h3><p>若 key1 ≠ key2 ，而 f(key1) = f(key2)，这种情况称为<strong>冲突(Collision)</strong>。</p>
+<p><em><strong>注：哈希查找与线性表查找和树表查找最大的区别在于，不用数值比较。</strong></em></p>
+<h3 id="冲突"><a class="markdownIt-Anchor" href="#冲突"></a> 冲突</h3>
+<p>若 key1 ≠ key2 ，而 f(key1) = f(key2)，这种情况称为<strong>冲突(Collision)</strong>。</p>
 <p>根据哈希函数f(key)和处理冲突的方法将一组关键字映射到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“像”作为记录在表中的存储位置，这一映射过程称为<strong>构造哈希表</strong>。</p>
 <p>构造哈希表这个场景就像汽车找停车位，如果车位被人占了，只能找空的地方停。</p>
-<p><br><div align="center">&lt;img src=”<a href="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240</a> “点击查看源网页””/&gt;</div><br></p>
-<h2 id="构造哈希表"><a href="#构造哈希表" class="headerlink" title="构造哈希表"></a>构造哈希表</h2><p>由以上内容可知，哈希查找本身其实不费吹灰之力，问题的关键在于如何构造哈希表和处理冲突。</p>
+<p><br><div align="center">&lt;img src=“<a href="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240</a> “点击查看源网页””/&gt;</div><br></p>
+<h2 id="构造哈希表"><a class="markdownIt-Anchor" href="#构造哈希表"></a> 构造哈希表</h2>
+<p>由以上内容可知，哈希查找本身其实不费吹灰之力，问题的关键在于如何构造哈希表和处理冲突。</p>
 <p>常见的构造哈希表的方法有 <code>5</code> 种：</p>
-<h3 id="直接定址法"><a href="#直接定址法" class="headerlink" title="直接定址法"></a>直接定址法</h3><p>说白了，就是小学时学过的<strong>一元一次方程</strong>。</p>
+<h3 id="直接定址法"><a class="markdownIt-Anchor" href="#直接定址法"></a> 直接定址法</h3>
+<p>说白了，就是小学时学过的<strong>一元一次方程</strong>。</p>
 <p>即 f(key) = a * key + b。其中，a和b 是常数。</p>
-<h3 id="数字分析法"><a href="#数字分析法" class="headerlink" title="数字分析法"></a>数字分析法</h3><p>假设关键字是R进制数（如十进制）。并且哈希表中<strong>可能出现的关键字都是事先知道的</strong>，则可选取关键字的若干数位组成哈希地址。</p>
+<h3 id="数字分析法"><a class="markdownIt-Anchor" href="#数字分析法"></a> 数字分析法</h3>
+<p>假设关键字是R进制数（如十进制）。并且哈希表中<strong>可能出现的关键字都是事先知道的</strong>，则可选取关键字的若干数位组成哈希地址。</p>
 <p>选取的原则是使得到的哈希地址尽量避免冲突，即所选数位上的数字尽可能是随机的。</p>
-<h3 id="平方取中法"><a href="#平方取中法" class="headerlink" title="平方取中法"></a>平方取中法</h3><p>取关键字平方后的中间几位为哈希地址。通常在选定哈希函数时不一定能知道关键字的全部情况，仅取其中的几位为地址不一定合适；</p>
+<h3 id="平方取中法"><a class="markdownIt-Anchor" href="#平方取中法"></a> 平方取中法</h3>
+<p>取关键字平方后的中间几位为哈希地址。通常在选定哈希函数时不一定能知道关键字的全部情况，仅取其中的几位为地址不一定合适；</p>
 <p>而一个数平方后的中间几位数和数的每一位都相关， 由此得到的哈希地址随机性更大。取的位数由表长决定。</p>
-<h3 id="除留余数法"><a href="#除留余数法" class="headerlink" title="除留余数法"></a>除留余数法</h3><p>取关键字被某个<strong>不大于哈希表表长</strong> m 的数 p 除后所得的余数为哈希地址。</p>
+<h3 id="除留余数法"><a class="markdownIt-Anchor" href="#除留余数法"></a> 除留余数法</h3>
+<p>取关键字被某个<strong>不大于哈希表表长</strong> m 的数 p 除后所得的余数为哈希地址。</p>
 <p>即 f(key) = key % p (p ≤ m)</p>
 <p>这是一种<strong>最简单、最常用</strong>的方法，它不仅可以对关键字直接取模，也可在折叠、平方取中等运算之后取模。</p>
 <p>注意：p的选择很重要，如果选的不好，容易产生冲突。根据经验，<strong>一般情况下可以选p为素数</strong>。</p>
-<h3 id="随机数法"><a href="#随机数法" class="headerlink" title="随机数法"></a>随机数法</h3><p>选择一个随机函数，取关键字的随机函数值为它的哈希地址，即 f(key) = random(key)。</p>
+<h3 id="随机数法"><a class="markdownIt-Anchor" href="#随机数法"></a> 随机数法</h3>
+<p>选择一个随机函数，取关键字的随机函数值为它的哈希地址，即 f(key) = random(key)。</p>
 <p>通常，在关键字长度不等时采用此法构造哈希函数较为恰当。</p>
-<h2 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h2><p>设计合理的哈希函数可以减少冲突，但不能完全避免冲突。</p>
+<h2 id="解决冲突"><a class="markdownIt-Anchor" href="#解决冲突"></a> 解决冲突</h2>
+<p>设计合理的哈希函数可以减少冲突，但不能完全避免冲突。</p>
 <p>所以需要有解决冲突的方法，常见有两类：</p>
-<h3 id="开放定址法"><a href="#开放定址法" class="headerlink" title="开放定址法"></a>开放定址法</h3><p>如果两个数据元素的哈希值相同，则在哈希表中为后插入的数据元素另外选择一个表项。<br>当程序查找哈希表时，如果没有在第一个对应的哈希表项中找到符合查找要求的数据元素，程序就会继续往后查找，直到找到一个符合查找要求的数据元素，或者遇到一个空的表项。</p>
+<h3 id="开放定址法"><a class="markdownIt-Anchor" href="#开放定址法"></a> 开放定址法</h3>
+<p>如果两个数据元素的哈希值相同，则在哈希表中为后插入的数据元素另外选择一个表项。<br>
+当程序查找哈希表时，如果没有在第一个对应的哈希表项中找到符合查找要求的数据元素，程序就会继续往后查找，直到找到一个符合查找要求的数据元素，或者遇到一个空的表项。</p>
 <p><strong>示例</strong></p>
 <p>若要将一组关键字序列 {1, 9, 25, 11, 12, 35, 17, 29} 存放到哈希表中。</p>
 <p>采用除留余数法构造哈希表；采用开放定址法处理冲突。</p>
@@ -554,12 +567,14 @@
 <p>我们使用开放定址法 (12 + 1) % 13 = 0，没有冲突，完成。</p>
 <p>b. 35 % 13 结果是 9，而它的前面有个 9，9 % 13也是 9，存在冲突。</p>
 <p>我们使用开放定址法 (9 + 1) % 13 = 10，没有冲突，完成。</p>
-<h3 id="拉链法"><a href="#拉链法" class="headerlink" title="拉链法"></a>拉链法</h3><p>将哈希值相同的数据元素存放在一个链表中，在查找哈希表的过程中，当查找到这个链表时，必须采用线性查找方法。</p>
+<h3 id="拉链法"><a class="markdownIt-Anchor" href="#拉链法"></a> 拉链法</h3>
+<p>将哈希值相同的数据元素存放在一个链表中，在查找哈希表的过程中，当查找到这个链表时，必须采用线性查找方法。</p>
 <p>在这种方法中，哈希表中每个单元存放的不再是记录本身，而是相应同义词单链表的头指针。</p>
 <p><strong>示例</strong></p>
 <p>如果对开放定址法示例中提到的序列使用拉链法，得到的结果如下图所示：</p>
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-c14e03882e8a0f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="实现一个哈希表"><a href="#实现一个哈希表" class="headerlink" title="实现一个哈希表"></a>实现一个哈希表</h2><p>假设要实现一个哈希表，要求</p>
+<h2 id="实现一个哈希表"><a class="markdownIt-Anchor" href="#实现一个哈希表"></a> 实现一个哈希表</h2>
+<p>假设要实现一个哈希表，要求</p>
 <p>a. 哈希函数采用<strong>除留余数法</strong>，即 f(key) = key % p (p ≤ m)</p>
 <p>b. 解决冲突采用<strong>开放定址法</strong>，即 f<sub>2</sub>(key) = (f(key)+i) % size (p ≤ m)</p>
 <p>（1）定义哈希表的数据结构</p>
@@ -573,13 +588,17 @@
 <p>找到要删除的记录，将关键字置为删除标记DELKEY。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">deleteHashTable</span><span class="params">(HashTable[] ha, <span class="keyword">int</span> p, <span class="keyword">int</span> size, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> addr = <span class="number">0</span>;</span><br><span class="line">    addr = searchHashTable(ha, p, size, key);</span><br><span class="line">    <span class="keyword">if</span> (FAILED != addr) &#123; <span class="comment">// 找到记录</span></span><br><span class="line">        ha[addr].key = DELKEY; <span class="comment">// 将该位置的关键字置为DELKEY</span></span><br><span class="line">        <span class="keyword">return</span> SUCCESS;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> NULLKEY; <span class="comment">// 查找不到记录，直接返回NULLKEY</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>（4）插入关键字为key的记录</p>
-<p>将待插入的关键字key插入哈希表<br>先调用查找算法，若在表中找到待插入的关键字，则插入失败；<br>若在表中找到一个开放地址，则将待插入的结点插入到其中，则插入成功。</p>
+<p>将待插入的关键字key插入哈希表<br>
+先调用查找算法，若在表中找到待插入的关键字，则插入失败；<br>
+若在表中找到一个开放地址，则将待插入的结点插入到其中，则插入成功。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertHashTable</span><span class="params">(HashTable[] ha, <span class="keyword">int</span> p, <span class="keyword">int</span> size, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> addr = <span class="number">0</span>;</span><br><span class="line">    addr = key % p; <span class="comment">// 通过哈希函数获取哈希地址</span></span><br><span class="line">    <span class="keyword">if</span> (ha[addr].key == NULLKEY || ha[addr].key == DELKEY) &#123; <span class="comment">// 如果没有冲突，直接插入</span></span><br><span class="line">        ha[addr].key = key;</span><br><span class="line">        ha[addr].count = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果有冲突，使用开放定址法处理冲突</span></span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            addr = (addr + <span class="number">1</span>) % size; <span class="comment">// 寻找下一个哈希地址</span></span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">while</span> (ha[addr].key != NULLKEY &amp;&amp; ha[addr].key != DELKEY);</span><br><span class="line"></span><br><span class="line">        ha[addr].key = key;</span><br><span class="line">        ha[addr].count = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>（5）建立哈希表</p>
 <p>先将哈希表中各关键字清空，使其地址为开放的，然后调用插入算法将给定的关键字序列依次插入。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertHashTable</span><span class="params">(HashTable[] ha, <span class="keyword">int</span> p, <span class="keyword">int</span> size, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> addr = <span class="number">0</span>;</span><br><span class="line">    addr = key % p; <span class="comment">// 通过哈希函数获取哈希地址</span></span><br><span class="line">    <span class="keyword">if</span> (ha[addr].key == NULLKEY || ha[addr].key == DELKEY) &#123; <span class="comment">// 如果没有冲突，直接插入</span></span><br><span class="line">        ha[addr].key = key;</span><br><span class="line">        ha[addr].count = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123; <span class="comment">// 如果有冲突，使用开放定址法处理冲突</span></span><br><span class="line">        <span class="keyword">do</span> &#123;</span><br><span class="line">            addr = (addr + <span class="number">1</span>) % size; <span class="comment">// 寻找下一个哈希地址</span></span><br><span class="line">            i++;</span><br><span class="line">        &#125; <span class="keyword">while</span> (ha[addr].key != NULLKEY &amp;&amp; ha[addr].key != DELKEY);</span><br><span class="line"></span><br><span class="line">        ha[addr].key = key;</span><br><span class="line">        ha[addr].count = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><p><a href="https://github.com/dunwu/algorithm/blob/master/codes/src/main/java/io/github/dunwu/algorithm/search/HashDemo.java" target="_blank" rel="noopener">示例代码</a></p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>《数据结构习题与解析》（B级第3版）</p>
+<h3 id="完整示例"><a class="markdownIt-Anchor" href="#完整示例"></a> 完整示例</h3>
+<p><a href="https://github.com/dunwu/algorithm/blob/master/codes/src/main/java/io/github/dunwu/algorithm/search/HashDemo.java" target="_blank" rel="noopener">示例代码</a></p>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<p>《数据结构习题与解析》（B级第3版）</p>
 
       
     </div>
@@ -729,7 +748,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -794,7 +813,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1092,7 +1113,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hash-表的查找"><span class="nav-text">Hash 表的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表和哈希函数"><span class="nav-text">哈希表和哈希函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冲突"><span class="nav-text">冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造哈希表"><span class="nav-text">构造哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接定址法"><span class="nav-text">直接定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字分析法"><span class="nav-text">数字分析法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平方取中法"><span class="nav-text">平方取中法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除留余数法"><span class="nav-text">除留余数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数法"><span class="nav-text">随机数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决冲突"><span class="nav-text">解决冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开放定址法"><span class="nav-text">开放定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉链法"><span class="nav-text">拉链法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个哈希表"><span class="nav-text">实现一个哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完整示例"><span class="nav-text">完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hash-表的查找"><span class="nav-text"> Hash 表的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表和哈希函数"><span class="nav-text"> 哈希表和哈希函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#冲突"><span class="nav-text"> 冲突</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造哈希表"><span class="nav-text"> 构造哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#直接定址法"><span class="nav-text"> 直接定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字分析法"><span class="nav-text"> 数字分析法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平方取中法"><span class="nav-text"> 平方取中法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#除留余数法"><span class="nav-text"> 除留余数法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数法"><span class="nav-text"> 随机数法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决冲突"><span class="nav-text"> 解决冲突</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开放定址法"><span class="nav-text"> 开放定址法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉链法"><span class="nav-text"> 拉链法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现一个哈希表"><span class="nav-text"> 实现一个哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完整示例"><span class="nav-text"> 完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1134,7 +1155,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

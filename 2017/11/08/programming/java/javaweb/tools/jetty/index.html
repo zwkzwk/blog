@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Jetty 使用小结  概述 jetty 的嵌入式启动 API 方式 Maven 插件方式   参考   概述jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。 官方网址">
+  <meta name="description" content="Jetty 使用小结   概述 jetty 的嵌入式启动  API 方式 Maven 插件方式   参考    概述 jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。">
 <meta name="keywords" content="java,javatool,server">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jetty 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/tools/jetty/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Jetty 使用小结  概述 jetty 的嵌入式启动 API 方式 Maven 插件方式   参考   概述jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。 官方网址">
+<meta property="og:description" content="Jetty 使用小结   概述 jetty 的嵌入式启动  API 方式 Maven 插件方式   参考    概述 jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.954Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jetty 使用小结">
-<meta name="twitter:description" content="Jetty 使用小结  概述 jetty 的嵌入式启动 API 方式 Maven 插件方式   参考   概述jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。 官方网址">
+<meta name="twitter:description" content="Jetty 使用小结   概述 jetty 的嵌入式启动  API 方式 Maven 插件方式   参考    概述 jetty 是什么？ jetty 是轻量级的 web 服务器和 servlet 引擎。 它的最大特点是：可以很方便的作为嵌入式服务器。 它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。 它是使用 Java 开发的，所以天然对 Java 支持良好。">
 
 
 
@@ -508,18 +508,21 @@
       
 
       
-        <h1 id="Jetty-使用小结"><a href="#Jetty-使用小结" class="headerlink" title="Jetty 使用小结"></a>Jetty 使用小结</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="jetty-使用小结"><a class="markdownIt-Anchor" href="#jetty-使用小结"></a> Jetty 使用小结</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#概述">概述</a></li>
-<li><a href="#jetty-的嵌入式启动">jetty 的嵌入式启动</a><ul>
-<li><a href="#api-方式">API 方式</a></li>
-<li><a href="#maven-插件方式">Maven 插件方式</a></li>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#jetty-%E7%9A%84%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%90%AF%E5%8A%A8">jetty 的嵌入式启动</a>
+<ul>
+<li><a href="#api-%E6%96%B9%E5%BC%8F">API 方式</a></li>
+<li><a href="#maven-%E6%8F%92%E4%BB%B6%E6%96%B9%E5%BC%8F">Maven 插件方式</a></li>
 </ul>
 </li>
-<li><a href="#参考">参考</a></li>
+<li><a href="#%E5%8F%82%E8%80%83">参考</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><strong>jetty 是什么？</strong></p>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p><strong>jetty 是什么？</strong></p>
 <p>jetty 是轻量级的 web 服务器和 servlet 引擎。</p>
 <p>它的最大特点是：可以很方便的作为<strong>嵌入式服务器</strong>。</p>
 <p>它是 eclipse 的一个开源项目。不用怀疑，就是你常用的那个 eclipse。</p>
@@ -530,11 +533,13 @@
 <p>以 jetty 来说明，就是只要引入 jetty 的 jar 包，可以通过直接调用其 API 的方式来启动 web 服务。</p>
 <p>用过 Tomcat、Resin 等服务器的朋友想必不会陌生那一套安装、配置、部署的流程吧，还是挺繁琐的。使用 jetty，就不需要这些过程了。</p>
 <p>jetty 非常适用于项目的开发、测试，因为非常快捷。如果想用于生产环境，则需要谨慎考虑，它不一定能像成熟的 Tomcat、Resin 等服务器一样支持企业级 Java EE 的需要。</p>
-<h2 id="jetty-的嵌入式启动"><a href="#jetty-的嵌入式启动" class="headerlink" title="jetty 的嵌入式启动"></a>jetty 的嵌入式启动</h2><p>我觉得嵌入式启动方式的一个好处在于：可以直接运行项目，无需每次部署都得再配置服务器。</p>
+<h2 id="jetty-的嵌入式启动"><a class="markdownIt-Anchor" href="#jetty-的嵌入式启动"></a> jetty 的嵌入式启动</h2>
+<p>我觉得嵌入式启动方式的一个好处在于：可以直接运行项目，无需每次部署都得再配置服务器。</p>
 <p>jetty 的嵌入式启动使用有两种方式：</p>
 <p>API 方式</p>
 <p>maven 插件方式</p>
-<h3 id="API-方式"><a href="#API-方式" class="headerlink" title="API 方式"></a>API 方式</h3><p>添加 maven 依赖</p>
+<h3 id="api-方式"><a class="markdownIt-Anchor" href="#api-方式"></a> API 方式</h3>
+<p>添加 maven 依赖</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jetty-webapp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.2.v20150730<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jetty-annotations<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.2.v20150730<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>apache-jsp<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.2.v20150730<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>apache-jstl<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.2.v20150730<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>官方的启动代码</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SplitFileServer</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String[] args )</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 创建Server对象，并绑定端口</span></span><br><span class="line">        Server server = <span class="keyword">new</span> Server();</span><br><span class="line">        ServerConnector connector = <span class="keyword">new</span> ServerConnector(server);</span><br><span class="line">        connector.setPort(<span class="number">8090</span>);</span><br><span class="line">        server.setConnectors(<span class="keyword">new</span> Connector[] &#123; connector &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 创建上下文句柄，绑定上下文路径。这样启动后的url就会是:http://host:port/context</span></span><br><span class="line">        ResourceHandler rh0 = <span class="keyword">new</span> ResourceHandler();</span><br><span class="line">        ContextHandler context0 = <span class="keyword">new</span> ContextHandler();</span><br><span class="line">        context0.setContextPath(<span class="string">"/"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绑定测试资源目录（在本例的配置目录dir0的路径是src/test/resources/dir0）</span></span><br><span class="line">        File dir0 = MavenTestingUtils.getTestResourceDir(<span class="string">"dir0"</span>);</span><br><span class="line">        context0.setBaseResource(Resource.newResource(dir0));</span><br><span class="line">        context0.setHandler(rh0);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 和上面的例子一样</span></span><br><span class="line">        ResourceHandler rh1 = <span class="keyword">new</span> ResourceHandler();</span><br><span class="line">        ContextHandler context1 = <span class="keyword">new</span> ContextHandler();</span><br><span class="line">        context1.setContextPath(<span class="string">"/"</span>);</span><br><span class="line">        File dir1 = MavenTestingUtils.getTestResourceDir(<span class="string">"dir1"</span>);</span><br><span class="line">        context1.setBaseResource(Resource.newResource(dir1));</span><br><span class="line">        context1.setHandler(rh1);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 绑定两个资源句柄</span></span><br><span class="line">        ContextHandlerCollection contexts = <span class="keyword">new</span> ContextHandlerCollection();</span><br><span class="line">        contexts.setHandlers(<span class="keyword">new</span> Handler[] &#123; context0, context1 &#125;);</span><br><span class="line">        server.setHandler(contexts);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 启动</span></span><br><span class="line">        server.start();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 打印dump时的信息</span></span><br><span class="line">        System.out.println(server.dump());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// join当前线程</span></span><br><span class="line">        server.join();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -544,7 +549,8 @@
 <p>我的实现也是参考 springside 的方式。</p>
 <p>代码行数有点多，不在这里贴代码了。</p>
 <p><a href="https://github.com/dunwu/spring-notes" target="_blank" rel="noopener">完整参考代码</a></p>
-<h3 id="Maven-插件方式"><a href="#Maven-插件方式" class="headerlink" title="Maven 插件方式"></a>Maven 插件方式</h3><p>如果你熟悉 maven，那么实在太简单了</p>
+<h3 id="maven-插件方式"><a class="markdownIt-Anchor" href="#maven-插件方式"></a> Maven 插件方式</h3>
+<p>如果你熟悉 maven，那么实在太简单了</p>
 <p><strong><em>注： Maven 版本必须在 3.3 及以上版本。</em></strong></p>
 <p>(1) 添加 maven 插件</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jetty-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.12.v20160915<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -555,7 +561,8 @@
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.eclipse.jetty<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jetty-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>9.3.12.v20160915<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">webAppSourceDirectory</span>&gt;</span>$&#123;project.basedir&#125;/src/staticfiles<span class="tag">&lt;/<span class="name">webAppSourceDirectory</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置webapp --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">webApp</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">contextPath</span>&gt;</span>/<span class="tag">&lt;/<span class="name">contextPath</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">descriptor</span>&gt;</span>$&#123;project.basedir&#125;/src/over/here/web.xml<span class="tag">&lt;/<span class="name">descriptor</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">jettyEnvXml</span>&gt;</span>$&#123;project.basedir&#125;/src/over/here/jetty-env.xml<span class="tag">&lt;/<span class="name">jettyEnvXml</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">webApp</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置classes --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">classesDirectory</span>&gt;</span>$&#123;project.basedir&#125;/somewhere/else<span class="tag">&lt;/<span class="name">classesDirectory</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">scanClassesPattern</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">excludes</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclude</span>&gt;</span>**/Foo.class<span class="tag">&lt;/<span class="name">exclude</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">excludes</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">scanClassesPattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">scanTargets</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">scanTarget</span>&gt;</span>src/mydir<span class="tag">&lt;/<span class="name">scanTarget</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">scanTarget</span>&gt;</span>src/myfile.txt<span class="tag">&lt;/<span class="name">scanTarget</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">scanTargets</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 扫描target目录下的资源文件 --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">scanTargetPatterns</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">scanTargetPattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/other-resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.xml<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*.properties<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">excludes</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">exclude</span>&gt;</span>**/myspecial.xml<span class="tag">&lt;/<span class="name">exclude</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">exclude</span>&gt;</span>**/myspecial.properties<span class="tag">&lt;/<span class="name">exclude</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">excludes</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;/<span class="name">scanTargetPattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">scanTargetPatterns</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>官方给的 jetty-env.xml 范例</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE Configure PUBLIC "-//Mort Bay Consulting//DTD Configure//EN" "http://jetty.mortbay.org/configure.dtd"&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">Configure</span> <span class="attr">class</span>=<span class="string">"org.eclipse.jetty.webapp.WebAppContext"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Add an EnvEntry only valid for this webapp               --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">New</span> <span class="attr">id</span>=<span class="string">"gargle"</span>  <span class="attr">class</span>=<span class="string">"org.eclipse.jetty.plus.jndi.EnvEntry"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span>&gt;</span>gargle<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span> <span class="attr">type</span>=<span class="string">"java.lang.Double"</span>&gt;</span>100<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span> <span class="attr">type</span>=<span class="string">"boolean"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">New</span>&gt;</span></span><br><span class="line"></span><br><span class="line"> <span class="comment">&lt;!-- Add an override for a global EnvEntry                           --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">New</span> <span class="attr">id</span>=<span class="string">"wiggle"</span>  <span class="attr">class</span>=<span class="string">"org.eclipse.jetty.plus.jndi.EnvEntry"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span>&gt;</span>wiggle<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span> <span class="attr">type</span>=<span class="string">"java.lang.Double"</span>&gt;</span>55.0<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span> <span class="attr">type</span>=<span class="string">"boolean"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">New</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- an XADataSource                                                --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">New</span> <span class="attr">id</span>=<span class="string">"mydatasource99"</span> <span class="attr">class</span>=<span class="string">"org.eclipse.jetty.plus.jndi.Resource"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span>&gt;</span>jdbc/mydatasource99<span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Arg</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">New</span> <span class="attr">class</span>=<span class="string">"com.atomikos.jdbc.SimpleDataSourceBean"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Set</span> <span class="attr">name</span>=<span class="string">"xaDataSourceClassName"</span>&gt;</span>org.apache.derby.jdbc.EmbeddedXADataSource<span class="tag">&lt;/<span class="name">Set</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Set</span> <span class="attr">name</span>=<span class="string">"xaDataSourceProperties"</span>&gt;</span>databaseName=testdb99;createDatabase=create<span class="tag">&lt;/<span class="name">Set</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">Set</span> <span class="attr">name</span>=<span class="string">"UniqueResourceName"</span>&gt;</span>mydatasource99<span class="tag">&lt;/<span class="name">Set</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">New</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">Arg</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">New</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">Configure</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
 <li><a href="http://wiki.eclipse.org/Jetty/Reference/jetty-env.xml" target="_blank" rel="noopener">jetty wiki</a></li>
 <li><a href="http://www.eclipse.org/jetty/documentation/current/" target="_blank" rel="noopener">jetty 官方文档</a></li>
 </ul>
@@ -627,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-action/" rel="next" title="JSP 行为">
-                <i class="fa fa-chevron-left"></i> JSP 行为
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-format/" rel="next" title="JSTL 格式化标签">
+                <i class="fa fa-chevron-left"></i> JSTL 格式化标签
               </a>
             
           </div>
@@ -637,8 +644,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie-and-sesion/" rel="prev" title="JavaEE Cookie vs. Session">
-                JavaEE Cookie vs. Session <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/" rel="prev" title="JavaEE 监听器">
+                JavaEE 监听器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -710,7 +717,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -775,7 +782,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1073,7 +1082,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jetty-使用小结"><span class="nav-text">Jetty 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jetty-的嵌入式启动"><span class="nav-text">jetty 的嵌入式启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#API-方式"><span class="nav-text">API 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven-插件方式"><span class="nav-text">Maven 插件方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jetty-使用小结"><span class="nav-text"> Jetty 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jetty-的嵌入式启动"><span class="nav-text"> jetty 的嵌入式启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#api-方式"><span class="nav-text"> API 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven-插件方式"><span class="nav-text"> Maven 插件方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text"> 参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1115,7 +1124,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

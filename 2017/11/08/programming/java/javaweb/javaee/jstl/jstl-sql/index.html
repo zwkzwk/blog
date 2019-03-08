@@ -544,9 +544,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-sql-setDataSource-gt-标签"><a href="#lt-sql-setDataSource-gt-标签" class="headerlink" title="&lt;sql:setDataSource&gt; 标签"></a><code>&lt;sql:setDataSource&gt;</code> 标签</h2><p><code>&lt;sql:setDataSource&gt;</code>标签用来配置数据源或者将数据源信息存储在某作用域的变量中，用来作为其它 JSTL 数据库操作的数据源。</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:setDataSource</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  dataSource=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  driver=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  url=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  user=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  password=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;sql:setDataSource&gt;</code>标签有如下属性：</p>
+<h2 id="sqlsetdatasource-标签"><a class="markdownIt-Anchor" href="#sqlsetdatasource-标签"></a> <code>&lt;sql:setDataSource&gt;</code> 标签</h2>
+<p><code>&lt;sql:setDataSource&gt;</code>标签用来配置数据源或者将数据源信息存储在某作用域的变量中，用来作为其它 JSTL 数据库操作的数据源。</p>
+<h3 id="语法格式"><a class="markdownIt-Anchor" href="#语法格式"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:setDataSource</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  dataSource=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  driver=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  url=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  user=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  password=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<p><code>&lt;sql:setDataSource&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -601,9 +604,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-sql-update-gt-标签"><a href="#lt-sql-update-gt-标签" class="headerlink" title="&lt;sql:update&gt; 标签"></a><code>&lt;sql:update&gt;</code> 标签</h2><p><code>&lt;sql:update&gt;</code>标签用来执行一个没有返回值的 SQL 语句，比如 SQL INSERT，UPDATE，DELETE 语句。</p>
-<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:update <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span> sql=<span class="string">"&lt;string&gt;"</span> dataSource=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;sql:update&gt;</code>标签有如下属性：</p>
+<h2 id="sqlupdate-标签"><a class="markdownIt-Anchor" href="#sqlupdate-标签"></a> <code>&lt;sql:update&gt;</code> 标签</h2>
+<p><code>&lt;sql:update&gt;</code>标签用来执行一个没有返回值的 SQL 语句，比如 SQL INSERT，UPDATE，DELETE 语句。</p>
+<h3 id="语法格式-2"><a class="markdownIt-Anchor" href="#语法格式-2"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:update <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span> sql=<span class="string">"&lt;string&gt;"</span> dataSource=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-2"><a class="markdownIt-Anchor" href="#属性-2"></a> 属性</h3>
+<p><code>&lt;sql:update&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -640,9 +646,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-sql-param-gt-标签"><a href="#lt-sql-param-gt-标签" class="headerlink" title="&lt;sql:param&gt; 标签"></a><code>&lt;sql:param&gt;</code> 标签</h2><p><code>&lt;sql:param&gt;</code>标签与<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签嵌套使用，用来提供一个值占位符。如果是一个 null 值，则将占位符设为 SQL NULL。</p>
-<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:param value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;sql:param&gt;</code>标签有如下属性：</p>
+<h2 id="sqlparam-标签"><a class="markdownIt-Anchor" href="#sqlparam-标签"></a> <code>&lt;sql:param&gt;</code> 标签</h2>
+<p><code>&lt;sql:param&gt;</code>标签与<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签嵌套使用，用来提供一个值占位符。如果是一个 null 值，则将占位符设为 SQL NULL。</p>
+<h3 id="语法格式-3"><a class="markdownIt-Anchor" href="#语法格式-3"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:param value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-3"><a class="markdownIt-Anchor" href="#属性-3"></a> 属性</h3>
+<p><code>&lt;sql:param&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -661,9 +670,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-sql-dateParam-gt-标签"><a href="#lt-sql-dateParam-gt-标签" class="headerlink" title="&lt;sql:dateParam&gt; 标签"></a><code>&lt;sql:dateParam&gt;</code> 标签</h2><p><code>&lt;sql:dateParam&gt;</code>标签与<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签嵌套使用，用来提供日期和时间的占位符。如果是一个 null 值，则将占位符设为 SQL NULL。</p>
-<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:dateParam value=<span class="string">"&lt;string&gt;"</span> type=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;sql:dateParam&gt;</code>标签有如下属性：</p>
+<h2 id="sqldateparam-标签"><a class="markdownIt-Anchor" href="#sqldateparam-标签"></a> <code>&lt;sql:dateParam&gt;</code> 标签</h2>
+<p><code>&lt;sql:dateParam&gt;</code>标签与<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签嵌套使用，用来提供日期和时间的占位符。如果是一个 null 值，则将占位符设为 SQL NULL。</p>
+<h3 id="语法格式-4"><a class="markdownIt-Anchor" href="#语法格式-4"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:dateParam value=<span class="string">"&lt;string&gt;"</span> type=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-4"><a class="markdownIt-Anchor" href="#属性-4"></a> 属性</h3>
+<p><code>&lt;sql:dateParam&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -688,10 +700,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-sql-transaction-gt-标签"><a href="#lt-sql-transaction-gt-标签" class="headerlink" title="&lt;sql:transaction&gt; 标签"></a><code>&lt;sql:transaction&gt;</code> 标签</h2><p><code>&lt;sql:transaction&gt;</code>标签用来将<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签封装至事务中。可以将大量的<code>&lt;sql:query&gt;</code>和<code>&lt;sql:update&gt;</code>操作装入<code>&lt;sql:transaction&gt;</code>中，使它们成为单一的事务。</p>
+<h2 id="sqltransaction-标签"><a class="markdownIt-Anchor" href="#sqltransaction-标签"></a> <code>&lt;sql:transaction&gt;</code> 标签</h2>
+<p><code>&lt;sql:transaction&gt;</code>标签用来将<code>&lt;sql:query&gt;</code>标签和<code>&lt;sql:update&gt;</code>标签封装至事务中。可以将大量的<code>&lt;sql:query&gt;</code>和<code>&lt;sql:update&gt;</code>操作装入<code>&lt;sql:transaction&gt;</code>中，使它们成为单一的事务。</p>
 <p>它确保对数据库的修改不是被提交就是被回滚。</p>
-<h3 id="语法格式-4"><a href="#语法格式-4" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:transaction dataSource=<span class="string">"&lt;string&gt;"</span> isolation=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;sql:transaction&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-5"><a class="markdownIt-Anchor" href="#语法格式-5"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;sql:transaction dataSource=<span class="string">"&lt;string&gt;"</span> isolation=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-5"><a class="markdownIt-Anchor" href="#属性-5"></a> 属性</h3>
+<p><code>&lt;sql:transaction&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -782,8 +797,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/" rel="next" title="JavaEE 监听器">
-                <i class="fa fa-chevron-left"></i> JavaEE 监听器
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-function/" rel="next" title="JSTL 函数">
+                <i class="fa fa-chevron-left"></i> JSTL 函数
               </a>
             
           </div>
@@ -792,8 +807,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-function/" rel="prev" title="JSTL 函数">
-                JSTL 函数 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-xml/" rel="prev" title="JSTL XML标签">
+                JSTL XML标签 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -865,7 +880,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -930,7 +945,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1228,7 +1245,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-sql-setDataSource-gt-标签"><span class="nav-text">&lt;sql:setDataSource&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-sql-update-gt-标签"><span class="nav-text">&lt;sql:update&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-1"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-sql-param-gt-标签"><span class="nav-text">&lt;sql:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-sql-dateParam-gt-标签"><span class="nav-text">&lt;sql:dateParam&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-sql-transaction-gt-标签"><span class="nav-text">&lt;sql:transaction&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text">属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlsetdatasource-标签"><span class="nav-text"> &lt;sql:setDataSource&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlupdate-标签"><span class="nav-text"> &lt;sql:update&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqlparam-标签"><span class="nav-text"> &lt;sql:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqldateparam-标签"><span class="nav-text"> &lt;sql:dateParam&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqltransaction-标签"><span class="nav-text"> &lt;sql:transaction&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text"> 属性</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1270,7 +1287,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

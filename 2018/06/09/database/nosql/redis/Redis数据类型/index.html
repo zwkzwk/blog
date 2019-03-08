@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Redis 数据类型  STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一个元">
+  <meta name="description" content="Redis 数据类型   STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一">
 <meta name="keywords" content="database,nosql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 数据类型">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/09/database/nosql/redis/Redis数据类型/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 数据类型  STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一个元">
+<meta property="og:description" content="Redis 数据类型   STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png">
@@ -123,7 +123,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.368Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 数据类型">
-<meta name="twitter:description" content="Redis 数据类型  STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一个元">
+<meta name="twitter:description" content="Redis 数据类型   STRING LIST SET HASH ZSET      数据类型 可以存储的值 操作     STRING 字符串、整数或者浮点数 对整个字符串或者字符串的其中一部分执行操作 对整数和浮点数执行自增或者自减操作   LIST 列表 从两端压入或者弹出元素 读取单个或者多个元素 进行修剪，只保留一个范围内的元素   SET 无序集合 添加、获取、移除单个元素 检查一">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png">
 
 
@@ -514,7 +514,8 @@
       
 
       
-        <h1 id="Redis-数据类型"><a href="#Redis-数据类型" class="headerlink" title="Redis 数据类型"></a>Redis 数据类型</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="redis-数据类型"><a class="markdownIt-Anchor" href="#redis-数据类型"></a> Redis 数据类型</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#string">STRING</a></li>
 <li><a href="#list">LIST</a></li>
@@ -559,8 +560,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="STRING"><a href="#STRING" class="headerlink" title="STRING"></a>STRING</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png" width="400"><br></div>
-
+<h2 id="string"><a class="markdownIt-Anchor" href="#string"></a> STRING</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -586,8 +589,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; set name jack</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name</span><br><span class="line"><span class="string">"jack"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="keyword">del</span> name</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
-<h2 id="LIST"><a href="#LIST" class="headerlink" title="LIST"></a>LIST</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png" width="400"><br></div>
-
+<h2 id="list"><a class="markdownIt-Anchor" href="#list"></a> LIST</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -617,8 +622,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item2</span><br><span class="line">(integer) <span class="number">2</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item3</span><br><span class="line">(integer) <span class="number">3</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lrange list <span class="number">0</span> <span class="number">-1</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"item1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lindex list <span class="number">1</span></span><br><span class="line"><span class="string">"item2"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lpop list</span><br><span class="line"><span class="string">"item1"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lrange list <span class="number">0</span> <span class="number">-1</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item3"</span></span><br></pre></td></tr></table></figure>
-<h2 id="SET"><a href="#SET" class="headerlink" title="SET"></a>SET</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-set.png" width="400"><br></div>
-
+<h2 id="set"><a class="markdownIt-Anchor" href="#set"></a> SET</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-set.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -648,8 +655,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item3</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item3</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; smembers set</span><br><span class="line"><span class="number">1</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"item1"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sismember set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sismember set item6</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; srem set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; srem set item2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; smembers set</span><br><span class="line"><span class="number">1</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item1"</span></span><br></pre></td></tr></table></figure>
-<h2 id="HASH"><a href="#HASH" class="headerlink" title="HASH"></a>HASH</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-hash.png" width="400"><br></div>
-
+<h2 id="hash"><a class="markdownIt-Anchor" href="#hash"></a> HASH</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-hash.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -679,8 +688,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key1 value1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key2 value2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key3 value3</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key3 value2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hgetall myhash</span><br><span class="line"><span class="number">1</span>) <span class="string">"key1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"value1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"key2"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"value2"</span></span><br><span class="line"><span class="number">5</span>) <span class="string">"key3"</span></span><br><span class="line"><span class="number">6</span>) <span class="string">"value2"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hdel myhash key2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hdel myhash key2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hget myhash key2</span><br><span class="line">(nil)</span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hgetall myhash</span><br><span class="line"><span class="number">1</span>) <span class="string">"key1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"value1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"key3"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"value2"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="ZSET"><a href="#ZSET" class="headerlink" title="ZSET"></a>ZSET</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-zset.png" width="400"><br></div>
-
+<h2 id="zset"><a class="markdownIt-Anchor" href="#zset"></a> ZSET</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-zset.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -776,8 +787,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/09/programming/java/javaweb/distributed/cache/redis/" rel="next" title="Redis">
-                <i class="fa fa-chevron-left"></i> Redis
+              <a href="/blog/2018/06/05/programming/java/javacore/advanced/Java反射和动态代理/" rel="next" title="Java 反射">
+                <i class="fa fa-chevron-left"></i> Java 反射
               </a>
             
           </div>
@@ -786,8 +797,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/" rel="prev" title="Redis 发布订阅">
-                Redis 发布订阅 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/09/programming/java/javaweb/distributed/cache/redis/" rel="prev" title="Redis">
+                Redis <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -859,7 +870,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -924,7 +935,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1222,7 +1235,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-数据类型"><span class="nav-text">Redis 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#STRING"><span class="nav-text">STRING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIST"><span class="nav-text">LIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SET"><span class="nav-text">SET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HASH"><span class="nav-text">HASH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ZSET"><span class="nav-text">ZSET</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-数据类型"><span class="nav-text"> Redis 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#string"><span class="nav-text"> STRING</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-text"> LIST</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-text"> SET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash"><span class="nav-text"> HASH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zset"><span class="nav-text"> ZSET</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1264,7 +1277,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

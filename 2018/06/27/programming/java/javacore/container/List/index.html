@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 容器之 List :notebook: 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料   List 概述List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主">
+  <meta name="description" content="Java 容器之 List  📓 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料    List 概述 List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主要方法：">
 <meta name="keywords" content="programming,javacore,java,container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 容器之 List">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/27/programming/java/javacore/container/List/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 容器之 List :notebook: 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料   List 概述List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主">
+<meta property="og:description" content="Java 容器之 List  📓 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料    List 概述 List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主要方法：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/list-api.png">
 <meta property="og:updated_time" content="2019-03-07T05:19:00.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 容器之 List">
-<meta name="twitter:description" content="Java 容器之 List :notebook: 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料   List 概述List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主">
+<meta name="twitter:description" content="Java 容器之 List  📓 本文已归档到：「blog」 List 是 Collection 的子接口，其中可以保存各个重复的内容。    List 概述 ArrayList LinkedList 小结 资料    List 概述 List 接口定义： public interface List&amp;lt;E&amp;gt; extends Collection&amp;lt;E&amp;gt; List 主要方法：">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/list-api.png">
 
 
@@ -531,30 +531,35 @@
       
 
       
-        <h1 id="Java-容器之-List"><a href="#Java-容器之-List" class="headerlink" title="Java 容器之 List"></a>Java 容器之 List</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-容器之-list"><a class="markdownIt-Anchor" href="#java-容器之-list"></a> Java 容器之 List</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 <p><code>List</code> 是 <code>Collection</code> 的子接口，其中可以保存各个重复的内容。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#list-概述">List 概述</a></li>
+<li><a href="#list-%E6%A6%82%E8%BF%B0">List 概述</a></li>
 <li><a href="#arraylist">ArrayList</a></li>
 <li><a href="#linkedlist">LinkedList</a></li>
-<li><a href="#小结">小结</a></li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%93">小结</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="List-概述"><a href="#List-概述" class="headerlink" title="List 概述"></a>List 概述</h2><p><code>List</code> 接口定义：</p>
+<h2 id="list-概述"><a class="markdownIt-Anchor" href="#list-概述"></a> List 概述</h2>
+<p><code>List</code> 接口定义：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><code>List</code> 主要方法：</p>
-<div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/list-api.png" width="400"><br></div>
-
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/list-api.png" width="400">
+</div>
 <p><code>List</code> 常见子类：</p>
 <ul>
 <li><code>ArrayList</code> - 动态数组。</li>
 <li><code>LinkedList</code> - 双链表。</li>
 </ul>
-<h2 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h2><h3 id="ArrayList-要点"><a href="#ArrayList-要点" class="headerlink" title="ArrayList 要点"></a>ArrayList 要点</h3><p><code>ArrayList</code> 是一个数组队列，相当于动态数组。与 Java 中的数组相比，<code>ArrayList</code> 的容量可以动态增长。</p>
+<h2 id="arraylist"><a class="markdownIt-Anchor" href="#arraylist"></a> ArrayList</h2>
+<h3 id="arraylist-要点"><a class="markdownIt-Anchor" href="#arraylist-要点"></a> ArrayList 要点</h3>
+<p><code>ArrayList</code> 是一个数组队列，相当于动态数组。与 Java 中的数组相比，<code>ArrayList</code> 的容量可以动态增长。</p>
 <p><code>ArrayList</code> 定义：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayList</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">RandomAccess</span>, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
 <p>从 ArrayList 的定义，不难看出 ArrayList 的一些基本特性：</p>
@@ -565,23 +570,31 @@
 <li>ArrayList 实现 java.io.Serializable 接口，这意味着 ArrayList 支持序列化，能通过序列化去传输。</li>
 <li>ArrayList 是非线程安全的。</li>
 </ul>
-<h3 id="ArrayList-原理"><a href="#ArrayList-原理" class="headerlink" title="ArrayList 原理"></a>ArrayList 原理</h3><h4 id="1-概览"><a href="#1-概览" class="headerlink" title="1. 概览"></a>1. 概览</h4><p>ArrayList 包含了两个重要的元素：elementData 和 size。</p>
+<h3 id="arraylist-原理"><a class="markdownIt-Anchor" href="#arraylist-原理"></a> ArrayList 原理</h3>
+<h4 id="1-概览"><a class="markdownIt-Anchor" href="#1-概览"></a> 1. 概览</h4>
+<p>ArrayList 包含了两个重要的元素：elementData 和 size。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">transient</span> Object[] elementData;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> size;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>elementData 它保存了添加到 ArrayList 中的元素。这个数组的默认大小为 10。</li>
 <li>size 则是动态数组的实际大小。</li>
 </ol>
 <p>ArrayList 实现了 RandomAccess 接口，因此支持随机访问。这是理所当然的，因为 ArrayList 是基于数组实现的。</p>
-<h4 id="2-序列化"><a href="#2-序列化" class="headerlink" title="2. 序列化"></a>2. 序列化</h4><p>ArrayList 具有动态扩容特性，因此保存元素的数组不一定都会被使用，那么就没必要全部进行序列化。ArrayList 重写了 <code>writeObject()</code> 和 <code>readObject()</code> 来控制只序列化数组中有元素填充那部分内容。</p>
-<h4 id="3-扩容"><a href="#3-扩容" class="headerlink" title="3. 扩容"></a>3. 扩容</h4><p>添加元素时使用 <code>ensureCapacityInternal()</code> 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</p>
+<h4 id="2-序列化"><a class="markdownIt-Anchor" href="#2-序列化"></a> 2. 序列化</h4>
+<p>ArrayList 具有动态扩容特性，因此保存元素的数组不一定都会被使用，那么就没必要全部进行序列化。ArrayList 重写了 <code>writeObject()</code> 和 <code>readObject()</code> 来控制只序列化数组中有元素填充那部分内容。</p>
+<h4 id="3-扩容"><a class="markdownIt-Anchor" href="#3-扩容"></a> 3. 扩容</h4>
+<p>添加元素时使用 <code>ensureCapacityInternal()</code> 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容，新容量的大小为 <code>oldCapacity + (oldCapacity &gt;&gt; 1)</code>，也就是旧容量的 1.5 倍。</p>
 <p>扩容操作需要调用 <code>Arrays.copyOf()</code> 把原数组整个复制到新数组中，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">add</span><span class="params">(E e)</span> </span>&#123;</span><br><span class="line">    ensureCapacityInternal(size + <span class="number">1</span>);  <span class="comment">// Increments modCount!!</span></span><br><span class="line">    elementData[size++] = e;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureCapacityInternal</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) &#123;</span><br><span class="line">        minCapacity = Math.max(DEFAULT_CAPACITY, minCapacity);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    ensureExplicitCapacity(minCapacity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">ensureExplicitCapacity</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">    modCount++;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// overflow-conscious code</span></span><br><span class="line">    <span class="keyword">if</span> (minCapacity - elementData.length &gt; <span class="number">0</span>)</span><br><span class="line">        grow(minCapacity);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">grow</span><span class="params">(<span class="keyword">int</span> minCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// overflow-conscious code</span></span><br><span class="line">    <span class="keyword">int</span> oldCapacity = elementData.length;</span><br><span class="line">    <span class="keyword">int</span> newCapacity = oldCapacity + (oldCapacity &gt;&gt; <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (newCapacity - minCapacity &lt; <span class="number">0</span>)</span><br><span class="line">        newCapacity = minCapacity;</span><br><span class="line">    <span class="keyword">if</span> (newCapacity - MAX_ARRAY_SIZE &gt; <span class="number">0</span>)</span><br><span class="line">        newCapacity = hugeCapacity(minCapacity);</span><br><span class="line">    <span class="comment">// minCapacity is usually close to size, so this is a win:</span></span><br><span class="line">    elementData = Arrays.copyOf(elementData, newCapacity);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-删除元素"><a href="#4-删除元素" class="headerlink" title="4. 删除元素"></a>4. 删除元素</h4><p>需要调用 System.arraycopy() 将 index+1 后面的元素都复制到 index 位置上，复制的代价很高。</p>
+<h4 id="4-删除元素"><a class="markdownIt-Anchor" href="#4-删除元素"></a> 4. 删除元素</h4>
+<p>需要调用 System.arraycopy() 将 index+1 后面的元素都复制到 index 位置上，复制的代价很高。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> E <span class="title">remove</span><span class="params">(<span class="keyword">int</span> index)</span> </span>&#123;</span><br><span class="line">    rangeCheck(index);</span><br><span class="line"></span><br><span class="line">    modCount++;</span><br><span class="line">    E oldValue = elementData(index);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> numMoved = size - index - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (numMoved &gt; <span class="number">0</span>)</span><br><span class="line">        System.arraycopy(elementData, index+<span class="number">1</span>, elementData, index, numMoved);</span><br><span class="line">    elementData[--size] = <span class="keyword">null</span>; <span class="comment">// clear to let GC do its work</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> oldValue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-Fail-Fast"><a href="#5-Fail-Fast" class="headerlink" title="5. Fail-Fast"></a>5. Fail-Fast</h4><p>modCount 用来记录 ArrayList 结构发生变化的次数。结构发生变化是指添加或者删除至少一个元素的所有操作，或者是调整内部数组的大小，仅仅只是设置元素的值不算结构发生变化。</p>
+<h4 id="5-fail-fast"><a class="markdownIt-Anchor" href="#5-fail-fast"></a> 5. Fail-Fast</h4>
+<p>modCount 用来记录 ArrayList 结构发生变化的次数。结构发生变化是指添加或者删除至少一个元素的所有操作，或者是调整内部数组的大小，仅仅只是设置元素的值不算结构发生变化。</p>
 <p>在进行序列化或者迭代等操作时，需要比较操作前后 modCount 是否改变，如果改变了需要抛出 ConcurrentModificationException。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">writeObject</span><span class="params">(java.io.ObjectOutputStream s)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">throws</span> java.io.IOException</span>&#123;</span><br><span class="line">    <span class="comment">// Write out element count, and any hidden stuff</span></span><br><span class="line">    <span class="keyword">int</span> expectedModCount = modCount;</span><br><span class="line">    s.defaultWriteObject();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write out size as capacity for behavioural compatibility with clone()</span></span><br><span class="line">    s.writeInt(size);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Write out all elements in the proper order.</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;size; i++) &#123;</span><br><span class="line">        s.writeObject(elementData[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (modCount != expectedModCount) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> ConcurrentModificationException();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="LinkedList"><a href="#LinkedList" class="headerlink" title="LinkedList"></a>LinkedList</h2><h3 id="LinkedList-要点"><a href="#LinkedList-要点" class="headerlink" title="LinkedList 要点"></a>LinkedList 要点</h3><p>LinkedList 基于双向链表实现。由于是双向链表，那么它的<strong>顺序访问会非常高效，而随机访问效率比较低。</strong></p>
+<h2 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h2>
+<h3 id="linkedlist-要点"><a class="markdownIt-Anchor" href="#linkedlist-要点"></a> LinkedList 要点</h3>
+<p>LinkedList 基于双向链表实现。由于是双向链表，那么它的<strong>顺序访问会非常高效，而随机访问效率比较低。</strong></p>
 <p>LinkedList 定义：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractSequentialList</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">List</span>&lt;<span class="title">E</span>&gt;, <span class="title">Deque</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span></span></span><br></pre></td></tr></table></figure>
 <p>从 LinkedList 的定义，可以得出 LinkedList 的一些基本特性：</p>
@@ -593,7 +606,9 @@
 <li>LinkedList 实现 java.io.Serializable 接口，这意味着 LinkedList 支持序列化。</li>
 <li>LinkedList 是非线程安全的。</li>
 </ul>
-<h3 id="LinkedList-原理"><a href="#LinkedList-原理" class="headerlink" title="LinkedList 原理"></a>LinkedList 原理</h3><h4 id="1-概览-1"><a href="#1-概览-1" class="headerlink" title="1. 概览"></a>1. 概览</h4><p>LinkedList 包含两个重要的成员：first 和 last。</p>
+<h3 id="linkedlist-原理"><a class="markdownIt-Anchor" href="#linkedlist-原理"></a> LinkedList 原理</h3>
+<h4 id="1-概览-2"><a class="markdownIt-Anchor" href="#1-概览-2"></a> 1. 概览</h4>
+<p>LinkedList 包含两个重要的成员：first 和 last。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 链表长度</span></span><br><span class="line"><span class="keyword">transient</span> <span class="keyword">int</span> size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链表头节点</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;E&gt; first;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链表尾节点</span></span><br><span class="line"><span class="keyword">transient</span> Node&lt;E&gt; last;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>size 表示双链表中节点的个数，初始为 0。</li>
@@ -601,13 +616,15 @@
 </ul>
 <p>Node 则表示链表中的实例。Node 中包含三个元素：prev, next, item。其中，prev 是该节点的上一个节点，next 是该节点的下一个节点，item 是该节点所包含的值。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Node</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">    E item;</span><br><span class="line">    Node&lt;E&gt; next;</span><br><span class="line">    Node&lt;E&gt; prev;</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<ul>
 <li>ArrayList 基于动态数组实现，LinkedList 基于双向链表实现；</li>
 <li>ArrayList 支持随机访问，所以访问速度更快；LinkedList 在任意位置添加删除元素更快；</li>
 <li>ArrayList 基于数组实现，存在容量限制，当元素数超过最大容量时，会自动扩容；LinkedList 基于双链表实现，不存在容量限制；</li>
 <li>ArrayList 和 LinkedList 都不是线程安全的。</li>
 </ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://item.jd.com/10058164.html" target="_blank" rel="noopener">Java 编程思想（第 4 版）</a></li>
 <li><a href="https://www.cnblogs.com/skywang12345/p/3308556.html" target="_blank" rel="noopener">https://www.cnblogs.com/skywang12345/p/3308556.html</a></li>
 <li><a href="http://www.cnblogs.com/skywang12345/p/3308807.html" target="_blank" rel="noopener">http://www.cnblogs.com/skywang12345/p/3308807.html</a></li>
@@ -682,8 +699,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/19/database/nosql/redis/Redis复制/" rel="next" title="Redis 复制">
-                <i class="fa fa-chevron-left"></i> Redis 复制
+              <a href="/blog/2018/06/19/database/nosql/redis/Redis哨兵/" rel="next" title="Redis 哨兵">
+                <i class="fa fa-chevron-left"></i> Redis 哨兵
               </a>
             
           </div>
@@ -765,7 +782,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -830,7 +847,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1128,7 +1147,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-容器之-List"><span class="nav-text">Java 容器之 List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#List-概述"><span class="nav-text">List 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayList"><span class="nav-text">ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-要点"><span class="nav-text">ArrayList 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayList-原理"><span class="nav-text">ArrayList 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-概览"><span class="nav-text">1. 概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-序列化"><span class="nav-text">2. 序列化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-扩容"><span class="nav-text">3. 扩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-删除元素"><span class="nav-text">4. 删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-Fail-Fast"><span class="nav-text">5. Fail-Fast</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedList"><span class="nav-text">LinkedList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList-要点"><span class="nav-text">LinkedList 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedList-原理"><span class="nav-text">LinkedList 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-概览-1"><span class="nav-text">1. 概览</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-text">小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-容器之-list"><span class="nav-text"> Java 容器之 List</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#list-概述"><span class="nav-text"> List 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arraylist"><span class="nav-text"> ArrayList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist-要点"><span class="nav-text"> ArrayList 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist-原理"><span class="nav-text"> ArrayList 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-概览"><span class="nav-text"> 1. 概览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-序列化"><span class="nav-text"> 2. 序列化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-扩容"><span class="nav-text"> 3. 扩容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-删除元素"><span class="nav-text"> 4. 删除元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-fail-fast"><span class="nav-text"> 5. Fail-Fast</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linkedlist"><span class="nav-text"> LinkedList</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist-要点"><span class="nav-text"> LinkedList 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist-原理"><span class="nav-text"> LinkedList 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-概览-2"><span class="nav-text"> 1. 概览</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-text"> 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1170,7 +1189,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

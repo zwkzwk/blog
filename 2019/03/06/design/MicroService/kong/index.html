@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Kong Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介 为什么选择 Kong   Quickstart 安装配置 使用 Kong 配置服务   参考资料   简介为什么选择 Kong Quickstart安装配置 本文仅以 Centos7 为例。  Kong 支持在多种环境下安装。 官方安装">
+  <meta name="description" content="Kong  Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介  为什么选择 Kong   Quickstart  安装配置 使用 Kong 配置服务   参考资料    简介  为什么选择 Kong   Quickstart  安装配置  本文仅以 Centos7 为例。  Kong 支持在多">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kong">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/design/MicroService/kong/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Kong Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介 为什么选择 Kong   Quickstart 安装配置 使用 Kong 配置服务   参考资料   简介为什么选择 Kong Quickstart安装配置 本文仅以 Centos7 为例。  Kong 支持在多种环境下安装。 官方安装">
+<meta property="og:description" content="Kong  Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介  为什么选择 Kong   Quickstart  安装配置 使用 Kong 配置服务   参考资料    简介  为什么选择 Kong   Quickstart  安装配置  本文仅以 Centos7 为例。  Kong 支持在多">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/microservices/kong/why-kong.png">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com/images/20180920181011104339.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.555Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kong">
-<meta name="twitter:description" content="Kong Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介 为什么选择 Kong   Quickstart 安装配置 使用 Kong 配置服务   参考资料   简介为什么选择 Kong Quickstart安装配置 本文仅以 Centos7 为例。  Kong 支持在多种环境下安装。 官方安装">
+<meta name="twitter:description" content="Kong  Kong 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。 关键词：nginx,api网关,微服务    简介  为什么选择 Kong   Quickstart  安装配置 使用 Kong 配置服务   参考资料    简介  为什么选择 Kong   Quickstart  安装配置  本文仅以 Centos7 为例。  Kong 支持在多">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/microservices/kong/why-kong.png">
 
 
@@ -480,27 +480,34 @@
       
 
       
-        <h1 id="Kong"><a href="#Kong" class="headerlink" title="Kong"></a>Kong</h1><blockquote>
+        <h1 id="kong"><a class="markdownIt-Anchor" href="#kong"></a> Kong</h1>
+<blockquote>
 <p><a href="https://github.com/Kong/kong" target="_blank" rel="noopener">Kong</a> 是一个云原生、快速、可扩展和分布式的微服务抽象层（也称为 API 网关，API 中间件）。</p>
 <p>关键词：<code>nginx</code>,<code>api网关</code>,<code>微服务</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#为什么选择-kong">为什么选择 Kong</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89%E6%8B%A9-kong">为什么选择 Kong</a></li>
 </ul>
 </li>
-<li><a href="#quickstart">Quickstart</a><ul>
-<li><a href="#安装配置">安装配置</a></li>
-<li><a href="#使用-kong">使用 Kong</a></li>
-<li><a href="#配置服务">配置服务</a></li>
+<li><a href="#quickstart">Quickstart</a>
+<ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">安装配置</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-kong">使用 Kong</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%9C%8D%E5%8A%A1">配置服务</a></li>
 </ul>
 </li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="为什么选择-Kong"><a href="#为什么选择-Kong" class="headerlink" title="为什么选择 Kong"></a>为什么选择 Kong</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/microservices/kong/why-kong.png"></div><br></p>
-<h2 id="Quickstart"><a href="#Quickstart" class="headerlink" title="Quickstart"></a>Quickstart</h2><h3 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h3><blockquote>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="为什么选择-kong"><a class="markdownIt-Anchor" href="#为什么选择-kong"></a> 为什么选择 Kong</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/microservices/kong/why-kong.png"></div><br></p>
+<h2 id="quickstart"><a class="markdownIt-Anchor" href="#quickstart"></a> Quickstart</h2>
+<h3 id="安装配置"><a class="markdownIt-Anchor" href="#安装配置"></a> 安装配置</h3>
+<blockquote>
 <p>本文仅以 Centos7 为例。</p>
 </blockquote>
 <p>Kong 支持在多种环境下安装。</p>
@@ -512,7 +519,7 @@
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ sudo yum <span class="keyword">install</span> epel-<span class="keyword">release</span></span><br><span class="line">$ sudo yum <span class="keyword">install</span> kong-community-<span class="keyword">edition</span><span class="number">-0.14</span><span class="number">.1</span>.*.noarch.rpm <span class="comment">--nogpgcheck</span></span><br></pre></td></tr></table></figure>
 <p>（3）准备数据库</p>
 <p>Kong 需要存储数据，支持两种数据库：<a href="http://www.postgresql.org/" target="_blank" rel="noopener">PostgreSQL 9.5+</a> 和 <a href="http://cassandra.apache.org/" target="_blank" rel="noopener">Cassandra 3.x.x</a></p>
-<p>本人选择了 PostgreSQL，安装方法可以参考 —— <a href="https://github.com/dunwu/database/blob/master/docs/postgresql.md#安装" target="_blank" rel="noopener">PostgreSQL 安装</a></p>
+<p>本人选择了 PostgreSQL，安装方法可以参考 —— <a href="https://github.com/dunwu/database/blob/master/docs/postgresql.md#%E5%AE%89%E8%A3%85" target="_blank" rel="noopener">PostgreSQL 安装</a></p>
 <p>安装 PostgreSQL 后，配置一个数据库和数据库用户：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> kong;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> kong OWNER kong;</span><br></pre></td></tr></table></figure>
 <p>（4）执行 Kong 迁移</p>
@@ -520,19 +527,22 @@
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">$ kong migrations <span class="keyword">up</span> [-<span class="keyword">c</span> /path/<span class="keyword">to</span>/kong.<span class="keyword">conf</span>]</span><br></pre></td></tr></table></figure>
 <p>注意：永远不应同时运行迁移；一个 Kong 节点应该只执行一次迁移。</p>
 <p>（5）启动 Kong</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ kong <span class="keyword">start</span> [-c /<span class="keyword">path</span>/<span class="keyword">to</span>/kong.conf]</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">$ kong <span class="keyword">start</span> [-c /<span class="type">path</span>/<span class="keyword">to</span>/kong.conf]</span><br></pre></td></tr></table></figure>
 <p>（6）测试启动成功</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ curl -<span class="selector-tag">i</span> http:<span class="comment">//localhost:8001/</span></span><br></pre></td></tr></table></figure>
 <p>至此，安装配置完成。</p>
-<h3 id="使用-Kong"><a href="#使用-Kong" class="headerlink" title="使用 Kong"></a>使用 Kong</h3><ul>
-<li>启动（必须确保执行过 <code>kong migrations up</code>） - <code>kong start [-c /path/to/kong.conf]</code><ul>
+<h3 id="使用-kong"><a class="markdownIt-Anchor" href="#使用-kong"></a> 使用 Kong</h3>
+<ul>
+<li>启动（必须确保执行过 <code>kong migrations up</code>） - <code>kong start [-c /path/to/kong.conf]</code>
+<ul>
 <li><code>-c /path/to/kong.conf</code> 参数用来指定用户的配置</li>
 </ul>
 </li>
 <li>停止 - <code>kong stop</code></li>
 <li>重启 - <code>kong reload</code></li>
 </ul>
-<h3 id="配置服务"><a href="#配置服务" class="headerlink" title="配置服务"></a>配置服务</h3><p>（1）添加第一个服务</p>
+<h3 id="配置服务"><a class="markdownIt-Anchor" href="#配置服务"></a> 配置服务</h3>
+<p>（1）添加第一个服务</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ curl -i -X POST \</span><br><span class="line">  --url http://localhost:8001/services/ \</span><br><span class="line">  --data <span class="string">'name=example-service'</span> \</span><br><span class="line">  --data <span class="string">'url=http://mockbin.org'</span></span><br></pre></td></tr></table></figure>
 <p>应答类似下面形式：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">HTTP/1.1 <span class="number">201</span> Created</span><br><span class="line"><span class="attribute">Content-Type</span>: application/json</span><br><span class="line"><span class="attribute">Connection</span>: keep-alive</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">   "host":"mockbin.org",</span><br><span class="line">   "created_at":1519130509,</span><br><span class="line">   "connect_timeout":60000,</span><br><span class="line">   "id":"92956672-f5ea-4e9a-b096-667bf55bc40c",</span><br><span class="line">   "protocol":"http",</span><br><span class="line">   "name":"example-service",</span><br><span class="line">   "read_timeout":60000,</span><br><span class="line">   "port":80,</span><br><span class="line">   "path":null,</span><br><span class="line">   "updated_at":1519130509,</span><br><span class="line">   "retries":5,</span><br><span class="line">   "write_timeout":60000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -543,7 +553,8 @@
 <p>此时，Kong 已经关注这个服务，并准备代理请求。</p>
 <p>（3）通过 Kong 转发请求</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ curl -i -X GET \</span><br><span class="line">  --url http://localhost:8000/ \</span><br><span class="line">  --header <span class="string">'Host: example.com'</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.itcodemonkey.com/article/5980.html" target="_blank" rel="noopener">https://www.itcodemonkey.com/article/5980.html</a></p>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<p><a href="https://www.itcodemonkey.com/article/5980.html" target="_blank" rel="noopener">https://www.itcodemonkey.com/article/5980.html</a></p>
 
       
     </div>
@@ -602,8 +613,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/design/design-patterns/设计模式/" rel="next" title="设计模式">
-                <i class="fa fa-chevron-left"></i> 设计模式
+              <a href="/blog/2019/03/06/programming/java/javacore/appendix/resources/" rel="next" title="资源">
+                <i class="fa fa-chevron-left"></i> 资源
               </a>
             
           </div>
@@ -685,7 +696,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -750,7 +761,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1048,7 +1061,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kong"><span class="nav-text">Kong</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择-Kong"><span class="nav-text">为什么选择 Kong</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quickstart"><span class="nav-text">Quickstart</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-text">安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-Kong"><span class="nav-text">使用 Kong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置服务"><span class="nav-text">配置服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kong"><span class="nav-text"> Kong</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择-kong"><span class="nav-text"> 为什么选择 Kong</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#quickstart"><span class="nav-text"> Quickstart</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装配置"><span class="nav-text"> 安装配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-kong"><span class="nav-text"> 使用 Kong</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置服务"><span class="nav-text"> 配置服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1090,7 +1103,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

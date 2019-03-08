@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Sqoop Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介 提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理 导入 导出     Sqoop 简介Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbase 面向大数">
+  <meta name="description" content="Sqoop  Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介  提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理  导入 导出      Sqoop 简介 Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbas">
 <meta name="keywords" content="bigdata,hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Sqoop">
 <meta property="og:url" content="https://dunwu.github.io/2018/09/04/bigdata/Sqoop/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Sqoop Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介 提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理 导入 导出     Sqoop 简介Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbase 面向大数">
+<meta property="og:description" content="Sqoop  Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介  提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理  导入 导出      Sqoop 简介 Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbas">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-architecture.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-v2-architecture.png">
@@ -122,7 +122,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.215Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Sqoop">
-<meta name="twitter:description" content="Sqoop Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介 提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理 导入 导出     Sqoop 简介Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbase 面向大数">
+<meta name="twitter:description" content="Sqoop  Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。    Sqoop 简介  提供多种 Sqoop 连接器 Sqoop 版本   Sqoop 原理  导入 导出      Sqoop 简介 Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。  Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbas">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-architecture.png">
 
 
@@ -479,7 +479,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">602</span>
+                <span title="本文字数">626</span>
               
 
               
@@ -513,39 +513,48 @@
       
 
       
-        <h1 id="Sqoop"><a href="#Sqoop" class="headerlink" title="Sqoop"></a>Sqoop</h1><blockquote>
+        <h1 id="sqoop"><a class="markdownIt-Anchor" href="#sqoop"></a> Sqoop</h1>
+<blockquote>
 <p><strong>Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。</strong></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#sqoop-简介">Sqoop 简介</a><ul>
-<li><a href="#提供多种-sqoop-连接器">提供多种 Sqoop 连接器</a></li>
-<li><a href="#sqoop-版本">Sqoop 版本</a></li>
+<li><a href="#sqoop-%E7%AE%80%E4%BB%8B">Sqoop 简介</a>
+<ul>
+<li><a href="#%E6%8F%90%E4%BE%9B%E5%A4%9A%E7%A7%8D-sqoop-%E8%BF%9E%E6%8E%A5%E5%99%A8">提供多种 Sqoop 连接器</a></li>
+<li><a href="#sqoop-%E7%89%88%E6%9C%AC">Sqoop 版本</a></li>
 </ul>
 </li>
-<li><a href="#sqoop-原理">Sqoop 原理</a><ul>
-<li><a href="#导入">导入</a></li>
-<li><a href="#导出">导出</a></li>
+<li><a href="#sqoop-%E5%8E%9F%E7%90%86">Sqoop 原理</a>
+<ul>
+<li><a href="#%E5%AF%BC%E5%85%A5">导入</a></li>
+<li><a href="#%E5%AF%BC%E5%87%BA">导出</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="Sqoop-简介"><a href="#Sqoop-简介" class="headerlink" title="Sqoop 简介"></a>Sqoop 简介</h2><p><strong>Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。</strong></p>
+<h2 id="sqoop-简介"><a class="markdownIt-Anchor" href="#sqoop-简介"></a> Sqoop 简介</h2>
+<p><strong>Sqoop 是一个主要在 Hadoop 和关系数据库之间进行批量数据迁移的工具。</strong></p>
 <ul>
 <li>Hadoop：HDFS、Hive、HBase、Inceptor、Hyperbase</li>
 <li>面向大数据集的批量导入导出</li>
 <li>将输入数据集分为 N 个切片，然后启动 N 个 Map 任务并行传输</li>
 <li>支持全量、增量两种传输方式</li>
 </ul>
-<h3 id="提供多种-Sqoop-连接器"><a href="#提供多种-Sqoop-连接器" class="headerlink" title="提供多种 Sqoop 连接器"></a>提供多种 Sqoop 连接器</h3><h4 id="内置连接器"><a href="#内置连接器" class="headerlink" title="内置连接器"></a>内置连接器</h4><ul>
+<h3 id="提供多种-sqoop-连接器"><a class="markdownIt-Anchor" href="#提供多种-sqoop-连接器"></a> 提供多种 Sqoop 连接器</h3>
+<h4 id="内置连接器"><a class="markdownIt-Anchor" href="#内置连接器"></a> 内置连接器</h4>
+<ul>
 <li>经过优化的专用 RDBMS 连接器：MySQL、PostgreSQL、Oracle、DB2、SQL Server、Netzza 等</li>
 <li>通用的 JDBC 连接器：支持 JDBC 协议的数据库</li>
 </ul>
-<h4 id="第三方连接器"><a href="#第三方连接器" class="headerlink" title="第三方连接器"></a>第三方连接器</h4><ul>
+<h4 id="第三方连接器"><a class="markdownIt-Anchor" href="#第三方连接器"></a> 第三方连接器</h4>
+<ul>
 <li>数据仓库：Teradata</li>
 <li>NoSQL 数据库：Couchbase</li>
 </ul>
-<h3 id="Sqoop-版本"><a href="#Sqoop-版本" class="headerlink" title="Sqoop 版本"></a>Sqoop 版本</h3><h4 id="Sqoop-1-优缺点"><a href="#Sqoop-1-优缺点" class="headerlink" title="Sqoop 1 优缺点"></a>Sqoop 1 优缺点</h4><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-architecture.png"></div><br></p>
+<h3 id="sqoop-版本"><a class="markdownIt-Anchor" href="#sqoop-版本"></a> Sqoop 版本</h3>
+<h4 id="sqoop-1-优缺点"><a class="markdownIt-Anchor" href="#sqoop-1-优缺点"></a> Sqoop 1 优缺点</h4>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-architecture.png"></div><br></p>
 <p>优点</p>
 <ul>
 <li>架构简单</li>
@@ -560,7 +569,8 @@
 <li>命令行方式容易出错，格式紧耦合</li>
 <li>安全机制不够完善，存在密码泄露风险</li>
 </ul>
-<h4 id="Sqoop-2-优缺点"><a href="#Sqoop-2-优缺点" class="headerlink" title="Sqoop 2 优缺点"></a>Sqoop 2 优缺点</h4><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-v2-architecture.png"></div><br></p>
+<h4 id="sqoop-2-优缺点"><a class="markdownIt-Anchor" href="#sqoop-2-优缺点"></a> Sqoop 2 优缺点</h4>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-v2-architecture.png"></div><br></p>
 <p>优点</p>
 <ul>
 <li>访问方式多样</li>
@@ -575,8 +585,11 @@
 <li>稳定性一般</li>
 <li>速度一般</li>
 </ul>
-<h2 id="Sqoop-原理"><a href="#Sqoop-原理" class="headerlink" title="Sqoop 原理"></a>Sqoop 原理</h2><h3 id="导入"><a href="#导入" class="headerlink" title="导入"></a>导入</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-import.png"></div><br></p>
-<h3 id="导出"><a href="#导出" class="headerlink" title="导出"></a>导出</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-export.png"></div><br></p>
+<h2 id="sqoop-原理"><a class="markdownIt-Anchor" href="#sqoop-原理"></a> Sqoop 原理</h2>
+<h3 id="导入"><a class="markdownIt-Anchor" href="#导入"></a> 导入</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-import.png"></div><br></p>
+<h3 id="导出"><a class="markdownIt-Anchor" href="#导出"></a> 导出</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/Sqoop/sqoop-export.png"></div><br></p>
 
       
     </div>
@@ -643,8 +656,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/09/03/bigdata/Spark/" rel="next" title="Spark">
-                <i class="fa fa-chevron-left"></i> Spark
+              <a href="/blog/2018/09/03/bigdata/overview/" rel="next" title="大数据简介">
+                <i class="fa fa-chevron-left"></i> 大数据简介
               </a>
             
           </div>
@@ -726,7 +739,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -791,7 +804,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1089,7 +1104,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Sqoop"><span class="nav-text">Sqoop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sqoop-简介"><span class="nav-text">Sqoop 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提供多种-Sqoop-连接器"><span class="nav-text">提供多种 Sqoop 连接器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置连接器"><span class="nav-text">内置连接器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方连接器"><span class="nav-text">第三方连接器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sqoop-版本"><span class="nav-text">Sqoop 版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sqoop-1-优缺点"><span class="nav-text">Sqoop 1 优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Sqoop-2-优缺点"><span class="nav-text">Sqoop 2 优缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sqoop-原理"><span class="nav-text">Sqoop 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入"><span class="nav-text">导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出"><span class="nav-text">导出</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sqoop"><span class="nav-text"> Sqoop</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#sqoop-简介"><span class="nav-text"> Sqoop 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#提供多种-sqoop-连接器"><span class="nav-text"> 提供多种 Sqoop 连接器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置连接器"><span class="nav-text"> 内置连接器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第三方连接器"><span class="nav-text"> 第三方连接器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sqoop-版本"><span class="nav-text"> Sqoop 版本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sqoop-1-优缺点"><span class="nav-text"> Sqoop 1 优缺点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sqoop-2-优缺点"><span class="nav-text"> Sqoop 2 优缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sqoop-原理"><span class="nav-text"> Sqoop 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#导入"><span class="nav-text"> 导入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导出"><span class="nav-text"> 导出</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1131,7 +1146,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

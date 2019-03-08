@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="jsoup 使用小结概述jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器来取出数">
+  <meta name="description" content="jsoup 使用小结  概述 jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器">
 <meta name="keywords" content="java,javalib,html">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jsoup 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2017/08/18/programming/java/javastack/javalib/jsoup/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="jsoup 使用小结概述jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器来取出数">
+<meta property="og:description" content="jsoup 使用小结  概述 jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.568Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jsoup 使用小结">
-<meta name="twitter:description" content="jsoup 使用小结概述jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器来取出数">
+<meta name="twitter:description" content="jsoup 使用小结  概述 jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。 jsoup 工作的流程主要如下：  从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。 使用 DOM 或 CSS 选择器">
 
 
 
@@ -508,7 +508,9 @@
       
 
       
-        <h1 id="jsoup-使用小结"><a href="#jsoup-使用小结" class="headerlink" title="jsoup 使用小结"></a>jsoup 使用小结</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。</p>
+        <h1 id="jsoup-使用小结"><a class="markdownIt-Anchor" href="#jsoup-使用小结"></a> jsoup 使用小结</h1>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p>jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。</p>
 <p>jsoup 工作的流程主要如下：</p>
 <ol>
 <li>从一个 URL，文件或字符串中解析 HTML，并加载为一个 <code>Document</code> 对象。</li>
@@ -516,7 +518,9 @@
 <li>可操作 HTML 元素、属性、文本。</li>
 </ol>
 <p>jsoup 是基于 MIT 协议发布的，可放心使用于商业项目。</p>
-<h2 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h2><h3 id="从HTML字符串加载一个文档"><a href="#从HTML字符串加载一个文档" class="headerlink" title="从HTML字符串加载一个文档"></a>从HTML字符串加载一个文档</h3><p>使用静态 <code>Jsoup.parse(String html)</code> 方法或 <code>Jsoup.parse(String html, String baseUri)</code> 示例代码：</p>
+<h2 id="加载"><a class="markdownIt-Anchor" href="#加载"></a> 加载</h2>
+<h3 id="从html字符串加载一个文档"><a class="markdownIt-Anchor" href="#从html字符串加载一个文档"></a> 从HTML字符串加载一个文档</h3>
+<p>使用静态 <code>Jsoup.parse(String html)</code> 方法或 <code>Jsoup.parse(String html, String baseUri)</code> 示例代码：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String html = <span class="string">"&lt;html&gt;&lt;head&gt;&lt;title&gt;First parse&lt;/title&gt;&lt;/head&gt;"</span></span><br><span class="line">  + <span class="string">"&lt;body&gt;&lt;p&gt;Parsed HTML into a doc.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;"</span>;</span><br><span class="line">Document doc = Jsoup.parse(html);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>说明</strong></p>
@@ -524,7 +528,8 @@
 <p>只要解析的不是空字符串，就能返回一个结构合理的文档，其中包含(至少) 一个head和一个body元素。</p>
 <p>一旦拥有了一个Document，你就可以使用Document中适当的方法或它父类 <code>Element</code>和<code>Node</code>中的方法来取得相关数据。</p>
 </blockquote>
-<h3 id="解析一个body片断"><a href="#解析一个body片断" class="headerlink" title="解析一个body片断"></a>解析一个body片断</h3><p><strong>问题</strong></p>
+<h3 id="解析一个body片断"><a class="markdownIt-Anchor" href="#解析一个body片断"></a> 解析一个body片断</h3>
+<p><strong>问题</strong></p>
 <p>假如你有一个HTML片断 (比如. 一个 <code>div</code> 包含一对 <code>p</code> 标签; 一个不完整的HTML文档) 想对它进行解析。这个HTML片断可以是用户提交的一条评论或在一个CMS页面中编辑body部分。</p>
 <p><strong>办法</strong></p>
 <p>使用<code>Jsoup.parseBodyFragment(String html)</code>方法.</p>
@@ -534,8 +539,10 @@
 <p><code>parseBodyFragment</code> 方法创建一个空壳的文档，并插入解析过的HTML到<code>body</code>元素中。假如你使用正常的 <code>Jsoup.parse(String html)</code> 方法，通常你也可以得到相同的结果，但是明确将用户输入作为 body片段处理，以确保用户所提供的任何糟糕的HTML都将被解析成body元素。</p>
 <p><code>Document.body()</code> 方法能够取得文档body元素的所有子元素，与 <code>doc.getElementsByTag(&quot;body&quot;)</code>相同。</p>
 </blockquote>
-<h4 id="保证安全Stay-safe"><a href="#保证安全Stay-safe" class="headerlink" title="保证安全Stay safe"></a>保证安全Stay safe</h4><p>假如你可以让用户输入HTML内容，那么要小心避免跨站脚本攻击。利用基于 <code>Whitelist</code> 的清除器和 <code>clean(String bodyHtml, Whitelist whitelist)</code>方法来清除用户输入的恶意内容。</p>
-<h3 id="从URL加载一个文档"><a href="#从URL加载一个文档" class="headerlink" title="从URL加载一个文档"></a>从URL加载一个文档</h3><p>使用 <code>Jsoup.connect(String url)</code>方法</p>
+<h4 id="保证安全stay-safe"><a class="markdownIt-Anchor" href="#保证安全stay-safe"></a> 保证安全Stay safe</h4>
+<p>假如你可以让用户输入HTML内容，那么要小心避免跨站脚本攻击。利用基于 <code>Whitelist</code> 的清除器和 <code>clean(String bodyHtml, Whitelist whitelist)</code>方法来清除用户输入的恶意内容。</p>
+<h3 id="从url加载一个文档"><a class="markdownIt-Anchor" href="#从url加载一个文档"></a> 从URL加载一个文档</h3>
+<p>使用 <code>Jsoup.connect(String url)</code>方法</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Document doc = Jsoup.connect(<span class="string">"http://example.com/"</span>).get();</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>说明</strong></p>
@@ -543,7 +550,8 @@
 </blockquote>
 <p><code>Connection</code> 接口还提供一个方法链来解决特殊请求，具体如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Document doc = Jsoup.connect(<span class="string">"http://example.com"</span>)</span><br><span class="line">  .data(<span class="string">"query"</span>, <span class="string">"Java"</span>)</span><br><span class="line">  .userAgent(<span class="string">"Mozilla"</span>)</span><br><span class="line">  .cookie(<span class="string">"auth"</span>, <span class="string">"token"</span>)</span><br><span class="line">  .timeout(<span class="number">3000</span>)</span><br><span class="line">  .post();</span><br></pre></td></tr></table></figure>
-<h3 id="从一个文件加载一个文档"><a href="#从一个文件加载一个文档" class="headerlink" title="从一个文件加载一个文档"></a>从一个文件加载一个文档</h3><p>可以使用静态 <code>Jsoup.parse(File in, String charsetName, String baseUri)</code> 方法</p>
+<h3 id="从一个文件加载一个文档"><a class="markdownIt-Anchor" href="#从一个文件加载一个文档"></a> 从一个文件加载一个文档</h3>
+<p>可以使用静态 <code>Jsoup.parse(File in, String charsetName, String baseUri)</code> 方法</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File input = <span class="keyword">new</span> File(<span class="string">"/tmp/input.html"</span>);</span><br><span class="line">Document doc = Jsoup.parse(input, <span class="string">"UTF-8"</span>, <span class="string">"http://example.com/"</span>);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>说明</strong></p>
@@ -551,7 +559,9 @@
 <p><code>baseUri</code> 参数用于解决文件中URLs是相对路径的问题。如果不需要可以传入一个空的字符串。</p>
 <p>另外还有一个方法<code>parse(File in, String charsetName)</code> ，它使用文件的路径做为 <code>baseUri</code>。 这个方法适用于如果被解析文件位于网站的本地文件系统，且相关链接也指向该文件系统。</p>
 </blockquote>
-<h2 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h2><h3 id="使用DOM方法来遍历一个文档"><a href="#使用DOM方法来遍历一个文档" class="headerlink" title="使用DOM方法来遍历一个文档"></a>使用DOM方法来遍历一个文档</h3><p><strong>问题</strong></p>
+<h2 id="解析"><a class="markdownIt-Anchor" href="#解析"></a> 解析</h2>
+<h3 id="使用dom方法来遍历一个文档"><a class="markdownIt-Anchor" href="#使用dom方法来遍历一个文档"></a> 使用DOM方法来遍历一个文档</h3>
+<p><strong>问题</strong></p>
 <p>你有一个HTML文档要从中提取数据，并了解这个HTML文档的结构。</p>
 <p><strong>方法</strong></p>
 <p>将HTML解析成一个<code>Document</code>之后，就可以使用类似于DOM的方法进行操作。示例代码：</p>
@@ -586,7 +596,8 @@
 <li><code>appendElement(String tagName)</code>, <code>prependElement(String tagName)</code></li>
 <li><code>html(String value)</code></li>
 </ul>
-<h3 id="使用选择器语法来查找元素"><a href="#使用选择器语法来查找元素" class="headerlink" title="使用选择器语法来查找元素"></a>使用选择器语法来查找元素</h3><p><strong>问题</strong></p>
+<h3 id="使用选择器语法来查找元素"><a class="markdownIt-Anchor" href="#使用选择器语法来查找元素"></a> 使用选择器语法来查找元素</h3>
+<p><strong>问题</strong></p>
 <p>你想使用类似于CSS或jQuery的语法来查找和操作元素。</p>
 <p><strong>方法</strong></p>
 <p>可以使用<code>Element.select(String selector)</code> 和 <code>Elements.select(String selector)</code> 方法实现：</p>
@@ -600,7 +611,7 @@
 <p>####Selector选择器概述</p>
 <ul>
 <li><code>tagname</code>: 通过标签查找元素，比如：<code>a</code></li>
-<li><code>ns|tag</code>: 通过标签在命名空间查找元素，比如：可以用 <code>fb|name</code> 语法来查找 <code></code> 元素</li>
+<li><code>ns|tag</code>: 通过标签在命名空间查找元素，比如：可以用 <code>fb|name</code> 语法来查找 `` 元素</li>
 <li><code>#id</code>: 通过ID查找元素，比如：<code>#logo</code></li>
 <li><code>.class</code>: 通过class名称查找元素，比如：<code>.masthead</code></li>
 <li><code>[attribute]</code>: 利用属性查找元素，比如：<code>[href]</code></li>
@@ -616,7 +627,7 @@
 <li><code>el.class</code>: 元素+class，比如： <code>div.masthead</code></li>
 <li><code>el[attr]</code>: 元素+class，比如： <code>a[href]</code></li>
 <li>任意组合，比如：<code>a[href].highlight</code></li>
-<li><code>ancestor child</code>: 查找某个元素下子元素，比如：可以用<code>.body p</code> 查找在”body”元素下的所有<code>p</code>元素</li>
+<li><code>ancestor child</code>: 查找某个元素下子元素，比如：可以用<code>.body p</code> 查找在&quot;body&quot;元素下的所有<code>p</code>元素</li>
 <li><code>parent &gt; child</code>: 查找某个父元素下的直接子元素，比如：可以用<code>div.content &gt; p</code> 查找 <code>p</code> 元素，也可以用<code>body &gt; *</code> 查找body标签下所有直接子元素</li>
 <li><code>siblingA + siblingB</code>: 查找在A元素之前第一个同级元素B，比如：<code>div.head + div</code></li>
 <li><code>siblingA \~ siblingX</code>: 查找A元素之前的同级X元素，比如：<code>h1 \~ p</code></li>
@@ -625,7 +636,7 @@
 <p>####伪选择器selectors</p>
 <ul>
 <li><code>:lt(n)</code>: 查找哪些元素的同级索引值（它的位置在DOM树中是相对于它的父节点）小于n，比如：<code>td:lt(3)</code> 表示小于三列的元素</li>
-<li><code>:gt(n)</code>:查找哪些元素的同级索引值大于<code>n`</code>，比如<code>：</code>div p:gt(2)`表示哪些div中有包含2个以上的p元素</li>
+<li><code>:gt(n)</code>:查找哪些元素的同级索引值大于<code>n``，比如</code>： <code>div p:gt(2)</code>表示哪些div中有包含2个以上的p元素</li>
 <li><code>:eq(n)</code>: 查找哪些元素的同级索引值与<code>n</code>相等，比如：<code>form input:eq(1)</code>表示包含一个input标签的Form元素</li>
 <li><code>:has(seletor)</code>: 查找匹配选择器包含元素的元素，比如：<code>div:has(p)</code>表示哪些div包含了p元素</li>
 <li><code>:not(selector)</code>: 查找与选择器不匹配的元素，比如： <code>div:not(.logo)</code> 表示不包含 class=logo 元素的所有 div 列表</li>
@@ -636,7 +647,8 @@
 <li>注意：上述伪选择器索引是从0开始的，也就是说第一个元素索引值为0，第二个元素index为1等</li>
 </ul>
 <p>可以查看<code>Selector</code> API参考来了解更详细的内容</p>
-<h3 id="从元素抽取属性，文本和HTML"><a href="#从元素抽取属性，文本和HTML" class="headerlink" title="从元素抽取属性，文本和HTML"></a>从元素抽取属性，文本和HTML</h3><p><strong>问题</strong></p>
+<h3 id="从元素抽取属性文本和html"><a class="markdownIt-Anchor" href="#从元素抽取属性文本和html"></a> 从元素抽取属性，文本和HTML</h3>
+<p><strong>问题</strong></p>
 <p>在解析获得一个Document实例对象，并查找到一些元素之后，你希望取得在这些元素中的数据。</p>
 <p><strong>方法</strong></p>
 <ul>
@@ -662,12 +674,13 @@
 <li><a href="http://www.open-open.com/jsoup/working-with-urls.htm" target="_blank" rel="noopener">URLs处理</a></li>
 <li><a href="http://www.open-open.com/jsoup/selector-syntax.htm" target="_blank" rel="noopener">使用CSS选择器语法来查找元素</a></li>
 </ul>
-<h3 id="处理URLs"><a href="#处理URLs" class="headerlink" title="处理URLs"></a>处理URLs</h3><p><strong>问题</strong></p>
+<h3 id="处理urls"><a class="markdownIt-Anchor" href="#处理urls"></a> 处理URLs</h3>
+<p><strong>问题</strong></p>
 <p>你有一个包含相对URLs路径的HTML文档，需要将这些相对路径转换成绝对路径的URLs。</p>
 <p><strong>方法</strong></p>
 <ol>
 <li>在你解析文档时确保有指定<code>base URI</code>，然后</li>
-<li>使用 <code>abs:</code> 属性前缀来取得包含<code>base URI</code>的绝对路径。代码如下： </li>
+<li>使用 <code>abs:</code> 属性前缀来取得包含<code>base URI</code>的绝对路径。代码如下：</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Document doc = Jsoup.connect(<span class="string">"http://www.open-open.com"</span>).get();</span><br><span class="line"></span><br><span class="line">Element link = doc.select(<span class="string">"a"</span>).first();</span><br><span class="line">String relHref = link.attr(<span class="string">"href"</span>); <span class="comment">// == "/"</span></span><br><span class="line">String absHref = link.attr(<span class="string">"abs:href"</span>); <span class="comment">// "http://www.open-open.com/"</span></span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -677,7 +690,9 @@
 <p>因此，在解析HTML文档时，定义base URI非常重要。</p>
 <p>如果你不想使用<code>abs:</code> 前缀，还有一个方法能够实现同样的功能 <code>Node.absUrl(String key)</code>。</p>
 </blockquote>
-<h2 id="数据修改"><a href="#数据修改" class="headerlink" title="数据修改"></a>数据修改</h2><h3 id="设置属性的值"><a href="#设置属性的值" class="headerlink" title="设置属性的值"></a>设置属性的值</h3><p><strong>问题</strong></p>
+<h2 id="数据修改"><a class="markdownIt-Anchor" href="#数据修改"></a> 数据修改</h2>
+<h3 id="设置属性的值"><a class="markdownIt-Anchor" href="#设置属性的值"></a> 设置属性的值</h3>
+<p><strong>问题</strong></p>
 <p>在你解析一个 <code>Document</code> 之后可能想修改其中的某些属性值，然后再保存到磁盘或都输出到前台页面。</p>
 <p><strong>方法</strong></p>
 <p>可以使用属性设置方法 <code>Element.attr(String key, String value)</code>, 和 <code>Elements.attr(String key, String value)</code>.</p>
@@ -689,9 +704,9 @@
 <p>与<code>Element</code>中的其它方法一样，<code>attr</code> 方法也是返回当 <code>Element</code> (或在使用选择器是返回 <code>Elements</code>集合)。这样能够很方便使用方法连用的书写方式。比如：</p>
 <figure class="highlight less"><table><tr><td class="code"><pre><span class="line">&gt; <span class="selector-tag">doc</span><span class="selector-class">.select</span>(<span class="string">"div.masthead"</span>)<span class="selector-class">.attr</span>(<span class="string">"title"</span>, <span class="string">"jsoup"</span>)<span class="selector-class">.addClass</span>(<span class="string">"round-box"</span>);</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
-<blockquote>
-</blockquote>
-<h3 id="设置一个元素的HTML内容"><a href="#设置一个元素的HTML内容" class="headerlink" title="设置一个元素的HTML内容"></a>设置一个元素的HTML内容</h3><p><strong>问题</strong></p>
+<blockquote></blockquote>
+<h3 id="设置一个元素的html内容"><a class="markdownIt-Anchor" href="#设置一个元素的html内容"></a> 设置一个元素的HTML内容</h3>
+<p><strong>问题</strong></p>
 <p>你需要一个元素中的HTML内容</p>
 <p><strong>方法</strong></p>
 <p>可以使用<code>Element</code>中的HTML设置方法具体如下：</p>
@@ -706,7 +721,8 @@
 <p><strong>参见</strong></p>
 <p>可以查看API参考文档中 <code>Element.prependElement(String tag)</code>和<code>Element.appendElement(String tag)</code> 方法来创建新的元素并作为文档的子元素插入其中。</p>
 </blockquote>
-<h3 id="设置元素的文本内容"><a href="#设置元素的文本内容" class="headerlink" title="设置元素的文本内容"></a>设置元素的文本内容</h3><p><strong>问题</strong></p>
+<h3 id="设置元素的文本内容"><a class="markdownIt-Anchor" href="#设置元素的文本内容"></a> 设置元素的文本内容</h3>
+<p><strong>问题</strong></p>
 <p>你需要修改一个HTML文档中的文本内容</p>
 <p><strong>方法</strong></p>
 <p>可以使用<code>Element</code>的设置方法：:</p>
@@ -720,7 +736,9 @@
 </ul>
 <p>对于传入的文本如果含有像 <code>&lt;</code>, <code>&gt;</code> 等这样的字符，将以文本处理，而非HTML。</p>
 </blockquote>
-<h2 id="HTML清理"><a href="#HTML清理" class="headerlink" title="HTML清理"></a>HTML清理</h2><h3 id="消除不受信任的HTML-来防止XSS攻击"><a href="#消除不受信任的HTML-来防止XSS攻击" class="headerlink" title="消除不受信任的HTML (来防止XSS攻击)"></a>消除不受信任的HTML (来防止XSS攻击)</h3><p><strong>问题</strong></p>
+<h2 id="html清理"><a class="markdownIt-Anchor" href="#html清理"></a> HTML清理</h2>
+<h3 id="消除不受信任的html-来防止xss攻击"><a class="markdownIt-Anchor" href="#消除不受信任的html-来防止xss攻击"></a> 消除不受信任的HTML (来防止XSS攻击)</h3>
+<p><strong>问题</strong></p>
 <p>在做网站的时候，经常会提供用户评论的功能。有些不怀好意的用户，会搞一些脚本到评论内容中，而这些脚本可能会破坏整个页面的行为，更严重的是获取一些机要信息，此时需要清理该HTML，以避免跨站脚本<a href="http://en.wikipedia.org/wiki/Cross-site_scripting" target="_blank" rel="noopener">cross-site scripting</a>攻击（XSS）。</p>
 <p><strong>方法</strong></p>
 <p>使用jsoup HTML <code>Cleaner</code> 方法进行清除，但需要指定一个可配置的 <code>Whitelist</code>。</p>
@@ -738,14 +756,19 @@
 <li>参阅<code>Whitelist</code>，了解如何创建一个自定义的whitelist</li>
 <li><a href="http://en.wikipedia.org/wiki/Nofollow" target="_blank" rel="noopener">nofollow</a> 链接属性了解</li>
 </ul>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
-<li><p><a href="https://github.com/jhy/jsoup" target="_blank" rel="noopener">jsoup github托管代码</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<ul>
+<li>
+<p><a href="https://github.com/jhy/jsoup" target="_blank" rel="noopener">jsoup github托管代码</a></p>
 </li>
-<li><p><a href="https://jsoup.org/cookbook/" target="_blank" rel="noopener">jsoup Cookbook</a></p>
+<li>
+<p><a href="https://jsoup.org/cookbook/" target="_blank" rel="noopener">jsoup Cookbook</a></p>
 </li>
-<li><p><a href="http://www.open-open.com/jsoup/" target="_blank" rel="noopener">jsoup Cookbook(中文版)</a></p>
+<li>
+<p><a href="http://www.open-open.com/jsoup/" target="_blank" rel="noopener">jsoup Cookbook(中文版)</a></p>
 </li>
-<li><p><a href="https://github.com/code4craft/jsoup-learning" target="_blank" rel="noopener">不错的jsoup学习笔记</a></p>
+<li>
+<p><a href="https://github.com/code4craft/jsoup-learning" target="_blank" rel="noopener">不错的jsoup学习笔记</a></p>
 </li>
 </ul>
 
@@ -816,8 +839,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/01/17/programming/java/javastack/javalib/zxing/" rel="next" title="ZXing 使用小结">
-                <i class="fa fa-chevron-left"></i> ZXing 使用小结
+              <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" rel="next" title="ActiveMQ">
+                <i class="fa fa-chevron-left"></i> ActiveMQ
               </a>
             
           </div>
@@ -826,8 +849,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" rel="prev" title="ActiveMQ">
-                ActiveMQ <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" rel="prev" title="JSP 国际化">
+                JSP 国际化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -899,7 +922,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -964,7 +987,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1262,7 +1287,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jsoup-使用小结"><span class="nav-text">jsoup 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载"><span class="nav-text">加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从HTML字符串加载一个文档"><span class="nav-text">从HTML字符串加载一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析一个body片断"><span class="nav-text">解析一个body片断</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#保证安全Stay-safe"><span class="nav-text">保证安全Stay safe</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从URL加载一个文档"><span class="nav-text">从URL加载一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从一个文件加载一个文档"><span class="nav-text">从一个文件加载一个文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-text">解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用DOM方法来遍历一个文档"><span class="nav-text">使用DOM方法来遍历一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用选择器语法来查找元素"><span class="nav-text">使用选择器语法来查找元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从元素抽取属性，文本和HTML"><span class="nav-text">从元素抽取属性，文本和HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理URLs"><span class="nav-text">处理URLs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据修改"><span class="nav-text">数据修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置属性的值"><span class="nav-text">设置属性的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置一个元素的HTML内容"><span class="nav-text">设置一个元素的HTML内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置元素的文本内容"><span class="nav-text">设置元素的文本内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML清理"><span class="nav-text">HTML清理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消除不受信任的HTML-来防止XSS攻击"><span class="nav-text">消除不受信任的HTML (来防止XSS攻击)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jsoup-使用小结"><span class="nav-text"> jsoup 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#加载"><span class="nav-text"> 加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#从html字符串加载一个文档"><span class="nav-text"> 从HTML字符串加载一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析一个body片断"><span class="nav-text"> 解析一个body片断</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#保证安全stay-safe"><span class="nav-text"> 保证安全Stay safe</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从url加载一个文档"><span class="nav-text"> 从URL加载一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从一个文件加载一个文档"><span class="nav-text"> 从一个文件加载一个文档</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-text"> 解析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用dom方法来遍历一个文档"><span class="nav-text"> 使用DOM方法来遍历一个文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用选择器语法来查找元素"><span class="nav-text"> 使用选择器语法来查找元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从元素抽取属性文本和html"><span class="nav-text"> 从元素抽取属性，文本和HTML</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理urls"><span class="nav-text"> 处理URLs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据修改"><span class="nav-text"> 数据修改</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置属性的值"><span class="nav-text"> 设置属性的值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置一个元素的html内容"><span class="nav-text"> 设置一个元素的HTML内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置元素的文本内容"><span class="nav-text"> 设置元素的文本内容</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#html清理"><span class="nav-text"> HTML清理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#消除不受信任的html-来防止xss攻击"><span class="nav-text"> 消除不受信任的HTML (来防止XSS攻击)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text"> 参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1304,7 +1329,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

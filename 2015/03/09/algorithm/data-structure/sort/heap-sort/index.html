@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="堆排序要点在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：  Ri &amp;lt;= R2i+1 且 Ri &amp;lt;=">
+  <meta name="description" content="堆排序  要点 在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：   Ri &amp;lt;= R2i+1 且 Ri &amp;">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="堆排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/09/algorithm/data-structure/sort/heap-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="堆排序要点在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：  Ri &amp;lt;= R2i+1 且 Ri &amp;lt;=">
+<meta property="og:description" content="堆排序  要点 在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：   Ri &amp;lt;= R2i+1 且 Ri &amp;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/heap-sort.png">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/heap-sort-02.png">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-07T02:24:46.648Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="堆排序">
-<meta name="twitter:description" content="堆排序要点在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：  Ri &amp;lt;= R2i+1 且 Ri &amp;lt;=">
+<meta name="twitter:description" content="堆排序  要点 在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。 堆是一棵顺序存储的完全二叉树。 其中每个结点的关键字都不大于其孩子结点的关键字，这样的堆称为小根堆。 其中每个结点的关键字都不小于其孩子结点的关键字，这样的堆称为大根堆。 举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：   Ri &amp;lt;= R2i+1 且 Ri &amp;">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/heap-sort.png">
 
 
@@ -485,7 +485,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -519,18 +519,22 @@
       
 
       
-        <h1 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p>在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。</p>
+        <h1 id="堆排序"><a class="markdownIt-Anchor" href="#堆排序"></a> 堆排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<p>在介绍堆排序之前，首先需要说明一下，堆是个什么玩意儿。</p>
 <p><strong>堆</strong>是一棵<strong>顺序存储</strong>的<strong>完全二叉树</strong>。</p>
 <p>其中每个结点的关键字都<strong>不大于</strong>其孩子结点的关键字，这样的堆称为<strong>小根堆</strong>。</p>
 <p>其中每个结点的关键字都<strong>不小于</strong>其孩子结点的关键字，这样的堆称为<strong>大根堆</strong>。</p>
 <p>举例来说，对于 n 个元素的序列 {R0, R1, … , Rn} 当且仅当满足下列关系之一时，称之为堆：</p>
 <ul>
-<li><p><strong>Ri &lt;= R2i+1 且 Ri &lt;= R2i+2 （小根堆）</strong></p>
+<li>
+<p><strong>Ri &lt;= R2i+1 且 Ri &lt;= R2i+2 （小根堆）</strong></p>
 </li>
-<li><p><strong>Ri &gt;= R2i+1 且 Ri &gt;= R2i+2 （大根堆）</strong></p>
+<li>
+<p><strong>Ri &gt;= R2i+1 且 Ri &gt;= R2i+2 （大根堆）</strong></p>
 </li>
 </ul>
-<p>其中 i=1,2,…,n/2 向下取整; </p>
+<p>其中 i=1,2,…,n/2 向下取整;</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/heap-sort.png"></div><br></p>
 <p>如上图所示，序列 R{3, 8,15, 31, 25} 是一个典型的小根堆。</p>
 <p>堆中有两个父结点，元素 3 和元素 8。</p>
@@ -538,28 +542,38 @@
 <p>元素 8 在数组中以 R[1] 表示，它的左孩子结点是 R[3]，右孩子结点是 R[4]，它的父结点是 R[0]。可以看出，它们<strong>满足以下规律</strong>：</p>
 <p>设当前元素在数组中以 <strong>R[i]</strong> 表示，那么，</p>
 <ul>
-<li><p>它的<strong>左孩子结点</strong>是：<strong>R[2*i+1]</strong>;</p>
+<li>
+<p>它的<strong>左孩子结点</strong>是：<strong>R[2*i+1]</strong>;</p>
 </li>
-<li><p>它的<strong>右孩子结点</strong>是：<strong>R[2*i+2]</strong>;</p>
+<li>
+<p>它的<strong>右孩子结点</strong>是：<strong>R[2*i+2]</strong>;</p>
 </li>
-<li><p>(3) 它的<strong>父结点</strong>是：<strong>R[(i-1)/2]</strong>;</p>
+<li>
+<p>(3) 它的<strong>父结点</strong>是：<strong>R[(i-1)/2]</strong>;</p>
 </li>
-<li><p>R[i] &lt;= R[2*i+1] 且 R[i] &lt;= R[2i+2]。</p>
+<li>
+<p>R[i] &lt;= R[2*i+1] 且 R[i] &lt;= R[2i+2]。</p>
 </li>
 </ul>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><ul>
-<li><p>首先，按堆的定义将数组R[0..n]调整为堆（这个过程称为创建初始堆），交换R[0]和R[n]；</p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<ul>
+<li>
+<p>首先，按堆的定义将数组R[0…n]调整为堆（这个过程称为创建初始堆），交换R[0]和R[n]；</p>
 </li>
-<li><p>然后，将R[0..n-1]调整为堆，交换R[0]和R[n-1]；</p>
+<li>
+<p>然后，将R[0…n-1]调整为堆，交换R[0]和R[n-1]；</p>
 </li>
-<li><p>如此反复，直到交换了R[0]和R[1]为止。</p>
+<li>
+<p>如此反复，直到交换了R[0]和R[1]为止。</p>
 </li>
 </ul>
 <p>以上思想可归纳为两个操作：</p>
 <ol>
-<li><p>根据初始数组去<strong>构造初始堆</strong>（构建一个完全二叉树，保证所有的父结点都比它的孩子结点数值大）。</p>
+<li>
+<p>根据初始数组去<strong>构造初始堆</strong>（构建一个完全二叉树，保证所有的父结点都比它的孩子结点数值大）。</p>
 </li>
-<li><p>每次<strong>交换第一个和最后一个元素，输出最后一个元素</strong>（最大值），然后把剩下元素<strong>重新调整</strong>为大根堆。 </p>
+<li>
+<p>每次<strong>交换第一个和最后一个元素，输出最后一个元素</strong>（最大值），然后把剩下元素<strong>重新调整</strong>为大根堆。</p>
 </li>
 </ol>
 <p>当输出完最后一个元素后，这个数组已经是按照从小到大的顺序排列了。</p>
@@ -569,10 +583,11 @@
 <p>构造了初始堆后，我们来看一下完整的堆排序处理：</p>
 <p>还是针对前面提到的无序序列 { 1,3, 4, 5, 2, 6, 9, 7, 8, 0 } 来加以说明。</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/heap-sort-03.png"></div><br></p>
-<p>相信，通过以上两幅图，应该能很直观的演示堆排序的操作处理。 </p>
+<p>相信，通过以上两幅图，应该能很直观的演示堆排序的操作处理。</p>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">HeapAdjust</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> parent, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = array[parent]; <span class="comment">// temp保存当前父节点</span></span><br><span class="line">    <span class="keyword">int</span> child = <span class="number">2</span> * parent + <span class="number">1</span>; <span class="comment">// 先获得左孩子</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (child &lt; length) &#123;</span><br><span class="line">        <span class="comment">// 如果有右孩子结点，并且右孩子结点的值大于左孩子结点，则选取右孩子结点</span></span><br><span class="line">        <span class="keyword">if</span> (child + <span class="number">1</span> &lt; length &amp;&amp; array[child] &lt; array[child + <span class="number">1</span>]) &#123;</span><br><span class="line">            child++;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 如果父结点的值已经大于孩子结点的值，则直接结束</span></span><br><span class="line">        <span class="keyword">if</span> (temp &gt;= array[child])</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 把孩子结点的值赋给父结点</span></span><br><span class="line">        array[parent] = array[child];</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 选取孩子结点的左孩子结点,继续向下筛选</span></span><br><span class="line">        parent = child;</span><br><span class="line">        child = <span class="number">2</span> * child + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    array[parent] = temp;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 循环建立初始堆</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = list.length / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        HeapAdjust(list, i, list.length);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 进行n-1次循环，完成排序</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = list.length - <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="comment">// 最后一个元素和第一元素进行交换</span></span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[<span class="number">0</span>];</span><br><span class="line">        list[<span class="number">0</span>] = temp;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 筛选 R[0] 结点，得到i-1个结点的堆</span></span><br><span class="line">        HeapAdjust(list, <span class="number">0</span>, i);</span><br><span class="line">        System.out.format(<span class="string">"第 %d 趟: \t"</span>, list.length - i);</span><br><span class="line">        printPart(list, <span class="number">0</span>, list.length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>堆排序算法的总体情况</strong></p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p><strong>堆排序算法的总体情况</strong></p>
 <table>
 <thead>
 <tr>
@@ -615,13 +630,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>堆的存储表示是<strong>顺序的</strong>。因为堆所对应的二叉树为完全二叉树，而完全二叉树通常采用顺序存储方式。</p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>堆的存储表示是<strong>顺序的</strong>。因为堆所对应的二叉树为完全二叉树，而完全二叉树通常采用顺序存储方式。</p>
 <p>当想得到一个序列中第 <strong>k</strong> 个最小的元素之前的部分排序序列，最好采用堆排序。</p>
 <p>因为堆排序的时间复杂度是 <strong>O(n+klog2n)</strong>，若 <strong>k ≤ n/log2n</strong>，则可得到的时间复杂度为 <strong>O(n)</strong>。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>堆排序是一种<strong>不稳定</strong>的排序方法。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>堆排序是一种<strong>不稳定</strong>的排序方法。</p>
 <p>因为在堆的调整过程中，关键字进行比较和交换所走的是该结点到叶子结点的一条路径，</p>
-<p>因此对于相同的关键字就可能出现排在后面的关键字被交换到前面来的情况。 </p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<p>因此对于相同的关键字就可能出现排在后面的关键字被交换到前面来的情况。</p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -772,7 +790,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -837,7 +855,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1135,7 +1155,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#堆排序"><span class="nav-text">堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#堆排序"><span class="nav-text"> 堆排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1177,7 +1197,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Redis  1. 概述 1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型 2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化 7.1. 快照持久化 7.2. AOF 持久化">
+  <meta name="description" content="Redis   1. 概述  1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型  2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化  7.1. 快照持久化 7.2. AOF">
 <meta name="keywords" content="database,key-value,cache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/09/programming/java/javaweb/distributed/cache/redis/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis  1. 概述 1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型 2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化 7.1. 快照持久化 7.2. AOF 持久化">
+<meta property="og:description" content="Redis   1. 概述  1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型  2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化  7.1. 快照持久化 7.2. AOF">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png">
@@ -123,7 +123,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.769Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis">
-<meta name="twitter:description" content="Redis  1. 概述 1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型 2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化 7.1. 快照持久化 7.2. AOF 持久化">
+<meta name="twitter:description" content="Redis   1. 概述  1.1. Redis 简介 1.2. Redis 的优势 1.3. Redis 与 Memcached   2. 数据类型  2.1. STRING 2.2. LIST 2.3. SET 2.4. HASH 2.5. ZSET   3. 使用场景 4. Redis 管道 5. 键的过期时间 6. 数据淘汰策略 7. 持久化  7.1. 快照持久化 7.2. AOF">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png">
 
 
@@ -514,15 +514,18 @@
       
 
       
-        <h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="redis"><a class="markdownIt-Anchor" href="#redis"></a> Redis</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-概述">1. 概述</a><ul>
-<li><a href="#11-redis-简介">1.1. Redis 简介</a></li>
-<li><a href="#12-redis-的优势">1.2. Redis 的优势</a></li>
-<li><a href="#13-redis-与-memcached">1.3. Redis 与 Memcached</a></li>
+<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a>
+<ul>
+<li><a href="#11-redis-%E7%AE%80%E4%BB%8B">1.1. Redis 简介</a></li>
+<li><a href="#12-redis-%E7%9A%84%E4%BC%98%E5%8A%BF">1.2. Redis 的优势</a></li>
+<li><a href="#13-redis-%E4%B8%8E-memcached">1.3. Redis 与 Memcached</a></li>
 </ul>
 </li>
-<li><a href="#2-数据类型">2. 数据类型</a><ul>
+<li><a href="#2-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">2. 数据类型</a>
+<ul>
 <li><a href="#21-string">2.1. STRING</a></li>
 <li><a href="#22-list">2.2. LIST</a></li>
 <li><a href="#23-set">2.3. SET</a></li>
@@ -530,43 +533,50 @@
 <li><a href="#25-zset">2.5. ZSET</a></li>
 </ul>
 </li>
-<li><a href="#3-使用场景">3. 使用场景</a></li>
-<li><a href="#4-redis-管道">4. Redis 管道</a></li>
-<li><a href="#5-键的过期时间">5. 键的过期时间</a></li>
-<li><a href="#6-数据淘汰策略">6. 数据淘汰策略</a></li>
-<li><a href="#7-持久化">7. 持久化</a><ul>
-<li><a href="#71-快照持久化">7.1. 快照持久化</a></li>
-<li><a href="#72-aof-持久化">7.2. AOF 持久化</a></li>
+<li><a href="#3-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF">3. 使用场景</a></li>
+<li><a href="#4-redis-%E7%AE%A1%E9%81%93">4. Redis 管道</a></li>
+<li><a href="#5-%E9%94%AE%E7%9A%84%E8%BF%87%E6%9C%9F%E6%97%B6%E9%97%B4">5. 键的过期时间</a></li>
+<li><a href="#6-%E6%95%B0%E6%8D%AE%E6%B7%98%E6%B1%B0%E7%AD%96%E7%95%A5">6. 数据淘汰策略</a></li>
+<li><a href="#7-%E6%8C%81%E4%B9%85%E5%8C%96">7. 持久化</a>
+<ul>
+<li><a href="#71-%E5%BF%AB%E7%85%A7%E6%8C%81%E4%B9%85%E5%8C%96">7.1. 快照持久化</a></li>
+<li><a href="#72-aof-%E6%8C%81%E4%B9%85%E5%8C%96">7.2. AOF 持久化</a></li>
 </ul>
 </li>
-<li><a href="#8-发布与订阅">8. 发布与订阅</a></li>
-<li><a href="#9-事务">9. 事务</a><ul>
+<li><a href="#8-%E5%8F%91%E5%B8%83%E4%B8%8E%E8%AE%A2%E9%98%85">8. 发布与订阅</a></li>
+<li><a href="#9-%E4%BA%8B%E5%8A%A1">9. 事务</a>
+<ul>
 <li><a href="#91-exec">9.1. EXEC</a></li>
 <li><a href="#92-multi">9.2. MULTI</a></li>
 <li><a href="#93-discard">9.3. DISCARD</a></li>
 <li><a href="#94-watch">9.4. WATCH</a></li>
 </ul>
 </li>
-<li><a href="#10-事件">10. 事件</a><ul>
-<li><a href="#101-文件事件">10.1. 文件事件</a></li>
-<li><a href="#102-时间事件">10.2. 时间事件</a></li>
-<li><a href="#103-事件的调度与执行">10.3. 事件的调度与执行</a></li>
+<li><a href="#10-%E4%BA%8B%E4%BB%B6">10. 事件</a>
+<ul>
+<li><a href="#101-%E6%96%87%E4%BB%B6%E4%BA%8B%E4%BB%B6">10.1. 文件事件</a></li>
+<li><a href="#102-%E6%97%B6%E9%97%B4%E4%BA%8B%E4%BB%B6">10.2. 时间事件</a></li>
+<li><a href="#103-%E4%BA%8B%E4%BB%B6%E7%9A%84%E8%B0%83%E5%BA%A6%E4%B8%8E%E6%89%A7%E8%A1%8C">10.3. 事件的调度与执行</a></li>
 </ul>
 </li>
-<li><a href="#11-集群">11. 集群</a><ul>
-<li><a href="#111-复制">11.1. 复制</a></li>
-<li><a href="#112-哨兵">11.2. 哨兵</a></li>
-<li><a href="#113-分片">11.3. 分片</a></li>
+<li><a href="#11-%E9%9B%86%E7%BE%A4">11. 集群</a>
+<ul>
+<li><a href="#111-%E5%A4%8D%E5%88%B6">11.1. 复制</a></li>
+<li><a href="#112-%E5%93%A8%E5%85%B5">11.2. 哨兵</a></li>
+<li><a href="#113-%E5%88%86%E7%89%87">11.3. 分片</a></li>
 </ul>
 </li>
 <li><a href="#12-redis-client">12. Redis Client</a></li>
-<li><a href="#13-资料">13. 资料</a></li>
+<li><a href="#13-%E8%B5%84%E6%96%99">13. 资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="1-1-Redis-简介"><a href="#1-1-Redis-简介" class="headerlink" title="1.1. Redis 简介"></a>1.1. Redis 简介</h3><p>Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。</p>
+<h2 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述"></a> 1. 概述</h2>
+<h3 id="11-redis-简介"><a class="markdownIt-Anchor" href="#11-redis-简介"></a> 1.1. Redis 简介</h3>
+<p>Redis 是速度非常快的非关系型（NoSQL）内存键值数据库，可以存储键和五种不同类型的值之间的映射。</p>
 <p>键的类型只能为字符串，值支持的五种类型数据类型为：字符串、列表、集合、有序集合、散列表。</p>
 <p>Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，使用复制来扩展读性能，使用分片来扩展写性能。</p>
-<h3 id="1-2-Redis-的优势"><a href="#1-2-Redis-的优势" class="headerlink" title="1.2. Redis 的优势"></a>1.2. Redis 的优势</h3><ul>
+<h3 id="12-redis-的优势"><a class="markdownIt-Anchor" href="#12-redis-的优势"></a> 1.2. Redis 的优势</h3>
+<ul>
 <li>性能极高 – Redis 能读的速度是 110000 次/s,写的速度是 81000 次/s。</li>
 <li>丰富的数据类型 - 支持字符串、列表、集合、有序集合、散列表。</li>
 <li>原子 - Redis 的所有操作都是原子性的。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC 指令包起来。</li>
@@ -574,7 +584,8 @@
 <li>备份 - Redis 支持数据的备份，即 master-slave 模式的数据备份。</li>
 <li>丰富的特性 - Redis 还支持发布订阅, 通知, key 过期等等特性。</li>
 </ul>
-<h3 id="1-3-Redis-与-Memcached"><a href="#1-3-Redis-与-Memcached" class="headerlink" title="1.3. Redis 与 Memcached"></a>1.3. Redis 与 Memcached</h3><p>Redis 与 Memcached 因为都可以用于缓存，所以常常被拿来做比较，二者主要有以下区别：</p>
+<h3 id="13-redis-与-memcached"><a class="markdownIt-Anchor" href="#13-redis-与-memcached"></a> 1.3. Redis 与 Memcached</h3>
+<p>Redis 与 Memcached 因为都可以用于缓存，所以常常被拿来做比较，二者主要有以下区别：</p>
 <p><strong>数据类型</strong></p>
 <ul>
 <li>Memcached 仅支持字符串类型；</li>
@@ -595,7 +606,8 @@
 <li>Memcached 将内存分割成特定长度的块来存储数据，以完全解决内存碎片的问题，但是这种方式会使得内存的利用率不高，例如块的大小为 128 bytes，只存储 100 bytes 的数据，那么剩下的 28 bytes 就浪费掉了。</li>
 <li>在 Redis 中，并不是所有数据都一直存储在内存中，可以将一些很久没用的 value 交换到磁盘。而 Memcached 的数据则会一直在内存中。</li>
 </ul>
-<h2 id="2-数据类型"><a href="#2-数据类型" class="headerlink" title="2. 数据类型"></a>2. 数据类型</h2><table>
+<h2 id="2-数据类型"><a class="markdownIt-Anchor" href="#2-数据类型"></a> 2. 数据类型</h2>
+<table>
 <thead>
 <tr>
 <th>数据类型</th>
@@ -634,8 +646,10 @@
 <blockquote>
 <p><a href="https://redislabs.com/ebook/part-1-getting-started/chapter-1-getting-to-know-redis/1-2-what-redis-data-structures-look-like/" target="_blank" rel="noopener">What Redis data structures look like</a></p>
 </blockquote>
-<h3 id="2-1-STRING"><a href="#2-1-STRING" class="headerlink" title="2.1. STRING"></a>2.1. STRING</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png" width="400"><br></div>
-
+<h3 id="21-string"><a class="markdownIt-Anchor" href="#21-string"></a> 2.1. STRING</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-string.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -661,8 +675,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; set name jack</span><br><span class="line">OK</span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name</span><br><span class="line"><span class="string">"jack"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; <span class="keyword">del</span> name</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; get name</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-LIST"><a href="#2-2-LIST" class="headerlink" title="2.2. LIST"></a>2.2. LIST</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png" width="400"><br></div>
-
+<h3 id="22-list"><a class="markdownIt-Anchor" href="#22-list"></a> 2.2. LIST</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-list.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -692,8 +708,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item2</span><br><span class="line">(integer) <span class="number">2</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; rpush list item3</span><br><span class="line">(integer) <span class="number">3</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lrange list <span class="number">0</span> <span class="number">-1</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"item1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lindex list <span class="number">1</span></span><br><span class="line"><span class="string">"item2"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lpop list</span><br><span class="line"><span class="string">"item1"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; lrange list <span class="number">0</span> <span class="number">-1</span></span><br><span class="line"><span class="number">1</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item3"</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-3-SET"><a href="#2-3-SET" class="headerlink" title="2.3. SET"></a>2.3. SET</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-set.png" width="400"><br></div>
-
+<h3 id="23-set"><a class="markdownIt-Anchor" href="#23-set"></a> 2.3. SET</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-set.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -723,8 +741,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item3</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sadd set item3</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; smembers set</span><br><span class="line"><span class="number">1</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item2"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"item1"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sismember set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; sismember set item6</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; srem set item2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; srem set item2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; smembers set</span><br><span class="line"><span class="number">1</span>) <span class="string">"item3"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"item1"</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-4-HASH"><a href="#2-4-HASH" class="headerlink" title="2.4. HASH"></a>2.4. HASH</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-hash.png" width="400"><br></div>
-
+<h3 id="24-hash"><a class="markdownIt-Anchor" href="#24-hash"></a> 2.4. HASH</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-hash.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -754,8 +774,10 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key1 value1</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key2 value2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key3 value3</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hset myhash key3 value2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hgetall myhash</span><br><span class="line"><span class="number">1</span>) <span class="string">"key1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"value1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"key2"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"value2"</span></span><br><span class="line"><span class="number">5</span>) <span class="string">"key3"</span></span><br><span class="line"><span class="number">6</span>) <span class="string">"value2"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hdel myhash key2</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hdel myhash key2</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hget myhash key2</span><br><span class="line">(nil)</span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; hgetall myhash</span><br><span class="line"><span class="number">1</span>) <span class="string">"key1"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"value1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"key3"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"value2"</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="2-5-ZSET"><a href="#2-5-ZSET" class="headerlink" title="2.5. ZSET"></a>2.5. ZSET</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-zset.png" width="400"><br></div>
-
+<h3 id="25-zset"><a class="markdownIt-Anchor" href="#25-zset"></a> 2.5. ZSET</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/redis-datatype-zset.png" width="400">
+</div>
 <p>命令：</p>
 <table>
 <thead>
@@ -785,7 +807,8 @@
 </table>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zadd zset <span class="number">1</span> redis</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zadd zset <span class="number">2</span> mongodb</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zadd zset <span class="number">3</span> mysql</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zadd zset <span class="number">3</span> mysql</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zadd zset <span class="number">4</span> mysql</span><br><span class="line">(integer) <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrange zset <span class="number">0</span> <span class="number">-1</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"redis"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"mongodb"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"2"</span></span><br><span class="line"><span class="number">5</span>) <span class="string">"mysql"</span></span><br><span class="line"><span class="number">6</span>) <span class="string">"4"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrangebyscore zset <span class="number">0</span> <span class="number">2</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"redis"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"mongodb"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"2"</span></span><br><span class="line"></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrem zset mysql</span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line"><span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; zrange zset <span class="number">0</span> <span class="number">-1</span> withscores</span><br><span class="line"><span class="number">1</span>) <span class="string">"redis"</span></span><br><span class="line"><span class="number">2</span>) <span class="string">"1"</span></span><br><span class="line"><span class="number">3</span>) <span class="string">"mongodb"</span></span><br><span class="line"><span class="number">4</span>) <span class="string">"2"</span></span><br></pre></td></tr></table></figure>
-<h2 id="3-使用场景"><a href="#3-使用场景" class="headerlink" title="3. 使用场景"></a>3. 使用场景</h2><ul>
+<h2 id="3-使用场景"><a class="markdownIt-Anchor" href="#3-使用场景"></a> 3. 使用场景</h2>
+<ul>
 <li><strong>缓存</strong> - 将热点数据放到内存中，设置内存的最大使用量以及过期淘汰策略来保证缓存的命中率。</li>
 <li><strong>计数器</strong> - Redis 这种内存数据库能支持计数器频繁的读写操作。</li>
 <li><strong>应用限流</strong> - 限制一个网站访问流量。</li>
@@ -796,10 +819,12 @@
 <li><strong>分布式 Session</strong> - 多个应用服务器的 Session 都存储到 Redis 中来保证 Session 的一致性。</li>
 <li><strong>分布式锁</strong> - 除了可以使用 SETNX 实现分布式锁之外，还可以使用官方提供的 RedLock 分布式锁实现。</li>
 </ul>
-<h2 id="4-Redis-管道"><a href="#4-Redis-管道" class="headerlink" title="4. Redis 管道"></a>4. Redis 管道</h2><p>Redis 是一种基于 C/S 模型以及请求/响应协议的 TCP 服务。</p>
+<h2 id="4-redis-管道"><a class="markdownIt-Anchor" href="#4-redis-管道"></a> 4. Redis 管道</h2>
+<p>Redis 是一种基于 C/S 模型以及请求/响应协议的 TCP 服务。</p>
 <p>Redis 支持管道技术。管道技术允许请求以异步方式发送，即旧请求的应答还未返回的情况下，允许发送新请求。这种方式可以大大提高传输效率。</p>
 <p>使用管道发送命令时，服务器将被迫回复一个队列答复，占用很多内存。所以，如果你需要发送大量的命令，最好是把他们按照合理数量分批次的处理。</p>
-<h2 id="5-键的过期时间"><a href="#5-键的过期时间" class="headerlink" title="5. 键的过期时间"></a>5. 键的过期时间</h2><p>Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。</p>
+<h2 id="5-键的过期时间"><a class="markdownIt-Anchor" href="#5-键的过期时间"></a> 5. 键的过期时间</h2>
+<p>Redis 可以为每个键设置过期时间，当键过期时，会自动删除该键。</p>
 <p>对于散列表这种容器，只能为整个键设置过期时间（整个散列表），而不能为键里面的单个元素设置过期时间。</p>
 <p>可以使用 <code>EXPIRE</code> 或 <code>EXPIREAT</code> 来为 key 设置过期时间。</p>
 <blockquote>
@@ -807,7 +832,8 @@
 </blockquote>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">redis&gt; SET mykey <span class="string">"Hello"</span></span><br><span class="line"><span class="string">"OK"</span></span><br><span class="line">redis&gt; EXPIRE mykey <span class="number">10</span></span><br><span class="line">(integer) <span class="number">1</span></span><br><span class="line">redis&gt; TTL mykey</span><br><span class="line">(integer) <span class="number">10</span></span><br><span class="line">redis&gt; SET mykey <span class="string">"Hello World"</span></span><br><span class="line"><span class="string">"OK"</span></span><br><span class="line">redis&gt; TTL mykey</span><br><span class="line">(integer) <span class="number">-1</span></span><br><span class="line">redis&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="6-数据淘汰策略"><a href="#6-数据淘汰策略" class="headerlink" title="6. 数据淘汰策略"></a>6. 数据淘汰策略</h2><p>可以设置内存最大使用量，当内存使用量超过时施行淘汰策略，具体有 6 种淘汰策略。</p>
+<h2 id="6-数据淘汰策略"><a class="markdownIt-Anchor" href="#6-数据淘汰策略"></a> 6. 数据淘汰策略</h2>
+<p>可以设置内存最大使用量，当内存使用量超过时施行淘汰策略，具体有 6 种淘汰策略。</p>
 <table>
 <thead>
 <tr>
@@ -844,12 +870,15 @@
 </table>
 <p>如果使用 Redis 来缓存数据时，要保证所有数据都是热点数据，可以将内存最大使用量设置为热点数据占用的内存量，然后启用 allkeys-lru 淘汰策略，将最近最少使用的数据淘汰。</p>
 <p>作为内存数据库，出于对性能和内存消耗的考虑，Redis 的淘汰算法（LRU、TTL）实际实现上并非针对所有 key，而是抽样一小部分 key 从中选出被淘汰 key，抽样数量可通过 maxmemory-samples 配置。</p>
-<h2 id="7-持久化"><a href="#7-持久化" class="headerlink" title="7. 持久化"></a>7. 持久化</h2><p>Redis 是内存型数据库，为了保证数据在断电后不会丢失，需要将内存中的数据持久化到硬盘上。</p>
-<h3 id="7-1-快照持久化"><a href="#7-1-快照持久化" class="headerlink" title="7.1. 快照持久化"></a>7.1. 快照持久化</h3><p>将某个时间点的所有数据都存放到硬盘上。</p>
+<h2 id="7-持久化"><a class="markdownIt-Anchor" href="#7-持久化"></a> 7. 持久化</h2>
+<p>Redis 是内存型数据库，为了保证数据在断电后不会丢失，需要将内存中的数据持久化到硬盘上。</p>
+<h3 id="71-快照持久化"><a class="markdownIt-Anchor" href="#71-快照持久化"></a> 7.1. 快照持久化</h3>
+<p>将某个时间点的所有数据都存放到硬盘上。</p>
 <p>可以将快照复制到其它服务器从而创建具有相同数据的服务器副本。</p>
 <p>如果系统发生故障，将会丢失最后一次创建快照之后的数据。</p>
 <p>如果数据量很大，保存快照的时间会很长。</p>
-<h3 id="7-2-AOF-持久化"><a href="#7-2-AOF-持久化" class="headerlink" title="7.2. AOF 持久化"></a>7.2. AOF 持久化</h3><p>将写命令添加到 AOF 文件（Append Only File）的末尾。</p>
+<h3 id="72-aof-持久化"><a class="markdownIt-Anchor" href="#72-aof-持久化"></a> 7.2. AOF 持久化</h3>
+<p>将写命令添加到 AOF 文件（Append Only File）的末尾。</p>
 <p>对硬盘的文件进行写入时，写入的内容首先会被存储到缓冲区，然后由操作系统决定什么时候将该内容同步到硬盘，用户可以调用 file.flush() 方法请求操作系统尽快将缓冲区存储的数据同步到硬盘。可以看出写入文件的数据不会立即同步到硬盘上，在将写命令添加到 AOF 文件时，要根据需求来保证何时同步到硬盘上。</p>
 <p>有以下同步选项：</p>
 <table>
@@ -880,29 +909,35 @@
 <li>no 选项并不能给服务器性能带来多大的提升，而且也会增加系统奔溃时数据丢失的数量。</li>
 </ul>
 <p>随着服务器写请求的增多，AOF 文件会越来越大。Redis 提供了一种将 AOF 重写的特性，能够去除 AOF 文件中的冗余写命令。</p>
-<h2 id="8-发布与订阅"><a href="#8-发布与订阅" class="headerlink" title="8. 发布与订阅"></a>8. 发布与订阅</h2><p>订阅者订阅了频道之后，发布者向频道发送字符串消息会被所有订阅者接收到。</p>
+<h2 id="8-发布与订阅"><a class="markdownIt-Anchor" href="#8-发布与订阅"></a> 8. 发布与订阅</h2>
+<p>订阅者订阅了频道之后，发布者向频道发送字符串消息会被所有订阅者接收到。</p>
 <p>某个客户端使用 SUBSCRIBE 订阅一个频道，其它客户端可以使用 PUBLISH 向这个频道发送消息。</p>
 <p>发布与订阅模式和观察者模式有以下不同：</p>
 <ul>
 <li>观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。</li>
 <li>观察者模式是同步的，当事件触发时，主题会去调用观察者的方法；而发布与订阅模式是异步的；</li>
 </ul>
-<h2 id="9-事务"><a href="#9-事务" class="headerlink" title="9. 事务"></a>9. 事务</h2><p>MULTI 、 EXEC 、 DISCARD 和 WATCH 是 Redis 事务相关的命令。</p>
+<h2 id="9-事务"><a class="markdownIt-Anchor" href="#9-事务"></a> 9. 事务</h2>
+<p>MULTI 、 EXEC 、 DISCARD 和 WATCH 是 Redis 事务相关的命令。</p>
 <p>事务可以一次执行多个命令， 并且有以下两个重要的保证：</p>
 <ul>
 <li>事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</li>
 <li>事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</li>
 </ul>
-<h3 id="9-1-EXEC"><a href="#9-1-EXEC" class="headerlink" title="9.1. EXEC"></a>9.1. EXEC</h3><p>EXEC 命令负责触发并执行事务中的所有命令：</p>
+<h3 id="91-exec"><a class="markdownIt-Anchor" href="#91-exec"></a> 9.1. EXEC</h3>
+<p>EXEC 命令负责触发并执行事务中的所有命令：</p>
 <ul>
 <li>如果客户端在使用 MULTI 开启了一个事务之后，却因为断线而没有成功执行 EXEC ，那么事务中的所有命令都不会被执行。</li>
 <li>另一方面，如果客户端成功在开启事务之后执行 EXEC ，那么事务中的所有命令都会被执行。</li>
 </ul>
-<h3 id="9-2-MULTI"><a href="#9-2-MULTI" class="headerlink" title="9.2. MULTI"></a>9.2. MULTI</h3><p>MULTI 命令用于开启一个事务，它总是返回 OK 。 MULTI 执行之后， 客户端可以继续向服务器发送任意多条命令， 这些命令不会立即被执行， 而是被放到一个队列中， 当 EXEC 命令被调用时， 所有队列中的命令才会被执行。</p>
-<h3 id="9-3-DISCARD"><a href="#9-3-DISCARD" class="headerlink" title="9.3. DISCARD"></a>9.3. DISCARD</h3><p>当执行 DISCARD 命令时， 事务会被放弃， 事务队列会被清空， 并且客户端会从事务状态中退出。</p>
+<h3 id="92-multi"><a class="markdownIt-Anchor" href="#92-multi"></a> 9.2. MULTI</h3>
+<p>MULTI 命令用于开启一个事务，它总是返回 OK 。 MULTI 执行之后， 客户端可以继续向服务器发送任意多条命令， 这些命令不会立即被执行， 而是被放到一个队列中， 当 EXEC 命令被调用时， 所有队列中的命令才会被执行。</p>
+<h3 id="93-discard"><a class="markdownIt-Anchor" href="#93-discard"></a> 9.3. DISCARD</h3>
+<p>当执行 DISCARD 命令时， 事务会被放弃， 事务队列会被清空， 并且客户端会从事务状态中退出。</p>
 <p>示例：</p>
 <figure class="highlight py"><table><tr><td class="code"><pre><span class="line">&gt; SET foo <span class="number">1</span></span><br><span class="line">OK</span><br><span class="line">&gt; MULTI</span><br><span class="line">OK</span><br><span class="line">&gt; INCR foo</span><br><span class="line">QUEUED</span><br><span class="line">&gt; DISCARD</span><br><span class="line">OK</span><br><span class="line">&gt; GET foo</span><br><span class="line"><span class="string">"1"</span></span><br></pre></td></tr></table></figure>
-<h3 id="9-4-WATCH"><a href="#9-4-WATCH" class="headerlink" title="9.4. WATCH"></a>9.4. WATCH</h3><p>WATCH 命令可以为 Redis 事务提供 check-and-set （CAS）行为。</p>
+<h3 id="94-watch"><a class="markdownIt-Anchor" href="#94-watch"></a> 9.4. WATCH</h3>
+<p>WATCH 命令可以为 Redis 事务提供 check-and-set （CAS）行为。</p>
 <p>被 WATCH 的键会被监视，并会发觉这些键是否被改动过了。 如果有至少一个被监视的键在 EXEC 执行之前被修改了， 那么整个事务都会被取消， EXEC 返回 nil-reply 来表示事务已经失败。</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">WATCH mykey</span><br><span class="line">val = <span class="builtin-name">GET</span> mykey</span><br><span class="line">val = val + 1</span><br><span class="line">MULTI</span><br><span class="line"><span class="builtin-name">SET</span> mykey <span class="variable">$val</span></span><br><span class="line">EXEC</span><br></pre></td></tr></table></figure>
 <p>使用上面的代码， 如果在 WATCH 执行之后， EXEC 执行之前， 有其他客户端修改了 mykey 的值， 那么当前客户端的事务就会失败。 程序需要做的， 就是不断重试这个操作， 直到没有发生碰撞为止。</p>
@@ -914,35 +949,48 @@
 <p>当 EXEC 被调用时， 不管事务是否成功执行， 对所有键的监视都会被取消。</p>
 <p>另外， 当客户端断开连接时， 该客户端对键的监视也会被取消。</p>
 <p>使用无参数的 UNWATCH 命令可以手动取消对所有键的监视。 对于一些需要改动多个键的事务， 有时候程序需要同时对多个键进行加锁， 然后检查这些键的当前值是否符合程序的要求。 当值达不到要求时， 就可以使用 UNWATCH 命令来取消目前对键的监视， 中途放弃这个事务， 并等待事务的下次尝试。</p>
-<h2 id="10-事件"><a href="#10-事件" class="headerlink" title="10. 事件"></a>10. 事件</h2><p>Redis 服务器是一个事件驱动程序。</p>
-<h3 id="10-1-文件事件"><a href="#10-1-文件事件" class="headerlink" title="10.1. 文件事件"></a>10.1. 文件事件</h3><p>服务器通过套接字与客户端或者其它服务器进行通信，文件事件就是对套接字操作的抽象。</p>
+<h2 id="10-事件"><a class="markdownIt-Anchor" href="#10-事件"></a> 10. 事件</h2>
+<p>Redis 服务器是一个事件驱动程序。</p>
+<h3 id="101-文件事件"><a class="markdownIt-Anchor" href="#101-文件事件"></a> 10.1. 文件事件</h3>
+<p>服务器通过套接字与客户端或者其它服务器进行通信，文件事件就是对套接字操作的抽象。</p>
 <p>Redis 基于 Reactor 模式开发了自己的网络时间处理器，使用 I/O 多路复用程序来同时监听多个套接字，并将到达的时间传送给文件事件分派器，分派器会根据套接字产生的事件类型调用响应的时间处理器。</p>
-<h3 id="10-2-时间事件"><a href="#10-2-时间事件" class="headerlink" title="10.2. 时间事件"></a>10.2. 时间事件</h3><p>服务器有一些操作需要在给定的时间点执行，时间事件是对这类定时操作的抽象。</p>
+<h3 id="102-时间事件"><a class="markdownIt-Anchor" href="#102-时间事件"></a> 10.2. 时间事件</h3>
+<p>服务器有一些操作需要在给定的时间点执行，时间事件是对这类定时操作的抽象。</p>
 <p>时间事件又分为：</p>
 <ul>
 <li>定时事件：是让一段程序在指定的时间之内执行一次；</li>
 <li>周期性事件：是让一段程序每隔指定时间就执行一次。</li>
 </ul>
 <p>Redis 将所有时间事件都放在一个无序链表中，通过遍历整个链表查找出已到达的时间事件，并调用响应的事件处理器。</p>
-<h3 id="10-3-事件的调度与执行"><a href="#10-3-事件的调度与执行" class="headerlink" title="10.3. 事件的调度与执行"></a>10.3. 事件的调度与执行</h3><p>服务器需要不断监听文件事件的套接字才能得到待处理的文件事件，但是不能监听太久，否则时间事件无法在规定的时间内执行，因此监听时间应该根据距离现在最近的时间事件来决定。</p>
+<h3 id="103-事件的调度与执行"><a class="markdownIt-Anchor" href="#103-事件的调度与执行"></a> 10.3. 事件的调度与执行</h3>
+<p>服务器需要不断监听文件事件的套接字才能得到待处理的文件事件，但是不能监听太久，否则时间事件无法在规定的时间内执行，因此监听时间应该根据距离现在最近的时间事件来决定。</p>
 <p>事件调度与执行由 aeProcessEvents 函数负责，伪代码如下：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">aeProcessEvents</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">## 获取到达时间离当前时间最接近的时间事件</span></span><br><span class="line">    time_event = aeSearchNearestTimer()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 计算最接近的时间事件距离到达还有多少毫秒</span></span><br><span class="line">    remaind_ms = time_event.when - unix_ts_now()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 如果事件已到达，那么 remaind_ms 的值可能为负数，将它设为 0</span></span><br><span class="line">    <span class="keyword">if</span> remaind_ms &lt; <span class="number">0</span>:</span><br><span class="line">        remaind_ms = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">## 根据 remaind_ms 的值，创建 timeval</span></span><br><span class="line">    timeval = create_timeval_with_ms(remaind_ms)</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 阻塞并等待文件事件产生，最大阻塞时间由传入的 timeval 决定</span></span><br><span class="line">    aeApiPoll(timeval)</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 处理所有已产生的文件事件</span></span><br><span class="line">    procesFileEvents()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 处理所有已到达的时间事件</span></span><br><span class="line">    processTimeEvents()</span><br></pre></td></tr></table></figure>
 <p>将 aeProcessEvents 函数置于一个循环里面，加上初始化和清理函数，就构成了 Redis 服务器的主函数，伪代码如下：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">## 初始化服务器</span></span><br><span class="line">    init_server()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 一直处理事件，直到服务器关闭为止</span></span><br><span class="line">    <span class="keyword">while</span> server_is_not_shutdown():</span><br><span class="line">        aeProcessEvents()</span><br><span class="line"></span><br><span class="line">    <span class="comment">## 服务器关闭，执行清理操作</span></span><br><span class="line">    clean_server()</span><br></pre></td></tr></table></figure>
 <p>从事件处理的角度来看，服务器运行流程如下：</p>
-<h2 id="11-集群"><a href="#11-集群" class="headerlink" title="11. 集群"></a>11. 集群</h2><h3 id="11-1-复制"><a href="#11-1-复制" class="headerlink" title="11.1. 复制"></a>11.1. 复制</h3><p>通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。</p>
+<h2 id="11-集群"><a class="markdownIt-Anchor" href="#11-集群"></a> 11. 集群</h2>
+<h3 id="111-复制"><a class="markdownIt-Anchor" href="#111-复制"></a> 11.1. 复制</h3>
+<p>通过使用 slaveof host port 命令来让一个服务器成为另一个服务器的从服务器。</p>
 <p>一个从服务器只能有一个主服务器，并且不支持主主复制。</p>
-<h4 id="12-1-连接过程"><a href="#12-1-连接过程" class="headerlink" title="12.1. 连接过程"></a>12.1. 连接过程</h4><ol>
-<li><p>主服务器创建快照文件，发送给从服务器，并在发送期间使用缓冲区记录执行的写命令。快照文件发送完毕之后，开始向从服务器发送存储在缓冲区中的写命令；</p>
+<h4 id="121-连接过程"><a class="markdownIt-Anchor" href="#121-连接过程"></a> 12.1. 连接过程</h4>
+<ol>
+<li>
+<p>主服务器创建快照文件，发送给从服务器，并在发送期间使用缓冲区记录执行的写命令。快照文件发送完毕之后，开始向从服务器发送存储在缓冲区中的写命令；</p>
 </li>
-<li><p>从服务器丢弃所有旧数据，载入主服务器发来的快照文件，之后从服务器开始接受主服务器发来的写命令；</p>
+<li>
+<p>从服务器丢弃所有旧数据，载入主服务器发来的快照文件，之后从服务器开始接受主服务器发来的写命令；</p>
 </li>
-<li><p>主服务器每执行一次写命令，就向从服务器发送相同的写命令。</p>
+<li>
+<p>主服务器每执行一次写命令，就向从服务器发送相同的写命令。</p>
 </li>
 </ol>
-<h4 id="12-2-主从链"><a href="#12-2-主从链" class="headerlink" title="12.2. 主从链"></a>12.2. 主从链</h4><p>随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。</p>
-<h3 id="11-2-哨兵"><a href="#11-2-哨兵" class="headerlink" title="11.2. 哨兵"></a>11.2. 哨兵</h3><p>Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。</p>
-<h3 id="11-3-分片"><a href="#11-3-分片" class="headerlink" title="11.3. 分片"></a>11.3. 分片</h3><p>分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，这种方法在解决某些问题时可以获得线性级别的性能提升。</p>
+<h4 id="122-主从链"><a class="markdownIt-Anchor" href="#122-主从链"></a> 12.2. 主从链</h4>
+<p>随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。</p>
+<h3 id="112-哨兵"><a class="markdownIt-Anchor" href="#112-哨兵"></a> 11.2. 哨兵</h3>
+<p>Sentinel（哨兵）可以监听主服务器，并在主服务器进入下线状态时，自动从从服务器中选举出新的主服务器。</p>
+<h3 id="113-分片"><a class="markdownIt-Anchor" href="#113-分片"></a> 11.3. 分片</h3>
+<p>分片是将数据划分为多个部分的方法，可以将数据存储到多台机器里面，也可以从多台机器里面获取数据，这种方法在解决某些问题时可以获得线性级别的性能提升。</p>
 <p>假设有 4 个 Reids 实例 R0，R1，R2，R3，还有很多表示用户的键 user:1，user:2，… 等等，有不同的方式来选择一个指定的键存储在哪个实例中。最简单的方式是范围分片，例如用户 id 从 0~1000 的存储到实例 R0 中，用户 id 从 1001~2000 的存储到实例 R1 中，等等。但是这样需要维护一张映射范围表，维护操作代价很高。还有一种方式是哈希分片，使用 CRC32 哈希函数将键转换为一个数字，再对实例数量求模就能知道应该存储的实例。</p>
 <p>主要有三种分片方式：</p>
 <ul>
@@ -950,14 +998,16 @@
 <li>代理分片：将客户端请求发送到代理上，由代理转发请求到正确的节点上。</li>
 <li>服务器分片：Redis Cluster。</li>
 </ul>
-<h2 id="12-Redis-Client"><a href="#12-Redis-Client" class="headerlink" title="12. Redis Client"></a>12. Redis Client</h2><p>Redis 社区中有多种编程语言的客户端，可以在这里查找合适的客户端：<a href="https://redis.io/clients" target="_blank" rel="noopener">https://redis.io/clients</a></p>
+<h2 id="12-redis-client"><a class="markdownIt-Anchor" href="#12-redis-client"></a> 12. Redis Client</h2>
+<p>Redis 社区中有多种编程语言的客户端，可以在这里查找合适的客户端：<a href="https://redis.io/clients" target="_blank" rel="noopener">https://redis.io/clients</a></p>
 <p>redis 官方推荐的 Java Redis Client：</p>
 <ul>
 <li><a href="https://github.com/xetorthio/jedis" target="_blank" rel="noopener">jedis</a></li>
 <li><a href="https://github.com/redisson/redisson" target="_blank" rel="noopener">redisson</a></li>
 <li><a href="https://github.com/lettuce-io/lettuce-core" target="_blank" rel="noopener">lettuce</a></li>
 </ul>
-<h2 id="13-资料"><a href="#13-资料" class="headerlink" title="13. 资料"></a>13. 资料</h2><ul>
+<h2 id="13-资料"><a class="markdownIt-Anchor" href="#13-资料"></a> 13. 资料</h2>
+<ul>
 <li><a href="https://redis.io/" target="_blank" rel="noopener">Redis 官网</a></li>
 <li><a href="https://github.com/JamzyWang/awesome-redis" target="_blank" rel="noopener">awesome-redis</a></li>
 <li><a href="https://item.jd.com/11791607.html" target="_blank" rel="noopener">Redis 实战</a></li>
@@ -1030,8 +1080,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/05/programming/java/javacore/advanced/Java反射和动态代理/" rel="next" title="Java 反射">
-                <i class="fa fa-chevron-left"></i> Java 反射
+              <a href="/blog/2018/06/09/database/nosql/redis/Redis数据类型/" rel="next" title="Redis 数据类型">
+                <i class="fa fa-chevron-left"></i> Redis 数据类型
               </a>
             
           </div>
@@ -1040,8 +1090,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/09/database/nosql/redis/Redis数据类型/" rel="prev" title="Redis 数据类型">
-                Redis 数据类型 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/" rel="prev" title="Redis 发布订阅">
+                Redis 发布订阅 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1113,7 +1163,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1178,7 +1228,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1476,7 +1528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-Redis-简介"><span class="nav-text">1.1. Redis 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-Redis-的优势"><span class="nav-text">1.2. Redis 的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-Redis-与-Memcached"><span class="nav-text">1.3. Redis 与 Memcached</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据类型"><span class="nav-text">2. 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-STRING"><span class="nav-text">2.1. STRING</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-LIST"><span class="nav-text">2.2. LIST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-SET"><span class="nav-text">2.3. SET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-HASH"><span class="nav-text">2.4. HASH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-ZSET"><span class="nav-text">2.5. ZSET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用场景"><span class="nav-text">3. 使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Redis-管道"><span class="nav-text">4. Redis 管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-键的过期时间"><span class="nav-text">5. 键的过期时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-数据淘汰策略"><span class="nav-text">6. 数据淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-持久化"><span class="nav-text">7. 持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-快照持久化"><span class="nav-text">7.1. 快照持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-AOF-持久化"><span class="nav-text">7.2. AOF 持久化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-发布与订阅"><span class="nav-text">8. 发布与订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-事务"><span class="nav-text">9. 事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-1-EXEC"><span class="nav-text">9.1. EXEC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-2-MULTI"><span class="nav-text">9.2. MULTI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-DISCARD"><span class="nav-text">9.3. DISCARD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-4-WATCH"><span class="nav-text">9.4. WATCH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-事件"><span class="nav-text">10. 事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#10-1-文件事件"><span class="nav-text">10.1. 文件事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-2-时间事件"><span class="nav-text">10.2. 时间事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-3-事件的调度与执行"><span class="nav-text">10.3. 事件的调度与执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-集群"><span class="nav-text">11. 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-1-复制"><span class="nav-text">11.1. 复制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#12-1-连接过程"><span class="nav-text">12.1. 连接过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12-2-主从链"><span class="nav-text">12.2. 主从链</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-2-哨兵"><span class="nav-text">11.2. 哨兵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-3-分片"><span class="nav-text">11.3. 分片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-Redis-Client"><span class="nav-text">12. Redis Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-资料"><span class="nav-text">13. 资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis"><span class="nav-text"> Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text"> 1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-redis-简介"><span class="nav-text"> 1.1. Redis 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-redis-的优势"><span class="nav-text"> 1.2. Redis 的优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-redis-与-memcached"><span class="nav-text"> 1.3. Redis 与 Memcached</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-数据类型"><span class="nav-text"> 2. 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-string"><span class="nav-text"> 2.1. STRING</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-list"><span class="nav-text"> 2.2. LIST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-set"><span class="nav-text"> 2.3. SET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-hash"><span class="nav-text"> 2.4. HASH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-zset"><span class="nav-text"> 2.5. ZSET</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-使用场景"><span class="nav-text"> 3. 使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-redis-管道"><span class="nav-text"> 4. Redis 管道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-键的过期时间"><span class="nav-text"> 5. 键的过期时间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-数据淘汰策略"><span class="nav-text"> 6. 数据淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-持久化"><span class="nav-text"> 7. 持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#71-快照持久化"><span class="nav-text"> 7.1. 快照持久化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-aof-持久化"><span class="nav-text"> 7.2. AOF 持久化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-发布与订阅"><span class="nav-text"> 8. 发布与订阅</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-事务"><span class="nav-text"> 9. 事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#91-exec"><span class="nav-text"> 9.1. EXEC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#92-multi"><span class="nav-text"> 9.2. MULTI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#93-discard"><span class="nav-text"> 9.3. DISCARD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#94-watch"><span class="nav-text"> 9.4. WATCH</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-事件"><span class="nav-text"> 10. 事件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#101-文件事件"><span class="nav-text"> 10.1. 文件事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#102-时间事件"><span class="nav-text"> 10.2. 时间事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#103-事件的调度与执行"><span class="nav-text"> 10.3. 事件的调度与执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-集群"><span class="nav-text"> 11. 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#111-复制"><span class="nav-text"> 11.1. 复制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#121-连接过程"><span class="nav-text"> 12.1. 连接过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#122-主从链"><span class="nav-text"> 12.2. 主从链</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#112-哨兵"><span class="nav-text"> 11.2. 哨兵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#113-分片"><span class="nav-text"> 11.3. 分片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-redis-client"><span class="nav-text"> 12. Redis Client</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13-资料"><span class="nav-text"> 13. 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1518,7 +1570,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

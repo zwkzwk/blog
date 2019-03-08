@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="应用层  HTTP DNS FTP DHCP TELNET 电子邮件协议 1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程 1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面     HTTP 超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式">
+  <meta name="description" content="应用层   HTTP DNS FTP DHCP TELNET 电子邮件协议  1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程  1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面      HTTP  超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一">
 <meta property="og:type" content="article">
 <meta property="og:title" content="应用层">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/network/application/README/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="应用层  HTTP DNS FTP DHCP TELNET 电子邮件协议 1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程 1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面     HTTP 超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式">
+<meta property="og:description" content="应用层   HTTP DNS FTP DHCP TELNET 电子邮件协议  1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程  1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面      HTTP  超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094759786.png">
@@ -122,7 +122,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="应用层">
-<meta name="twitter:description" content="应用层  HTTP DNS FTP DHCP TELNET 电子邮件协议 1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程 1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面     HTTP 超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式">
+<meta name="twitter:description" content="应用层   HTTP DNS FTP DHCP TELNET 电子邮件协议  1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程  1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面      HTTP  超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png">
 
 
@@ -483,37 +483,42 @@
       
 
       
-        <h1 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="应用层"><a class="markdownIt-Anchor" href="#应用层"></a> 应用层</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#http">HTTP</a></li>
 <li><a href="#dns">DNS</a></li>
 <li><a href="#ftp">FTP</a></li>
 <li><a href="#dhcp">DHCP</a></li>
 <li><a href="#telnet">TELNET</a></li>
-<li><a href="#电子邮件协议">电子邮件协议</a><ul>
+<li><a href="#%E7%94%B5%E5%AD%90%E9%82%AE%E4%BB%B6%E5%8D%8F%E8%AE%AE">电子邮件协议</a>
+<ul>
 <li><a href="#1-smtp">1. SMTP</a></li>
 <li><a href="#2-pop3">2. POP3</a></li>
 <li><a href="#3-imap">3. IMAP</a></li>
 </ul>
 </li>
-<li><a href="#常用端口">常用端口</a></li>
-<li><a href="#web-页面请求过程">Web 页面请求过程</a><ul>
-<li><a href="#1-dhcp-配置主机信息">1. DHCP 配置主机信息</a></li>
-<li><a href="#2-arp-解析-mac-地址">2. ARP 解析 MAC 地址</a></li>
-<li><a href="#3-dns-解析域名">3. DNS 解析域名</a></li>
-<li><a href="#4-http-请求页面">4. HTTP 请求页面</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E7%AB%AF%E5%8F%A3">常用端口</a></li>
+<li><a href="#web-%E9%A1%B5%E9%9D%A2%E8%AF%B7%E6%B1%82%E8%BF%87%E7%A8%8B">Web 页面请求过程</a>
+<ul>
+<li><a href="#1-dhcp-%E9%85%8D%E7%BD%AE%E4%B8%BB%E6%9C%BA%E4%BF%A1%E6%81%AF">1. DHCP 配置主机信息</a></li>
+<li><a href="#2-arp-%E8%A7%A3%E6%9E%90-mac-%E5%9C%B0%E5%9D%80">2. ARP 解析 MAC 地址</a></li>
+<li><a href="#3-dns-%E8%A7%A3%E6%9E%90%E5%9F%9F%E5%90%8D">3. DNS 解析域名</a></li>
+<li><a href="#4-http-%E8%AF%B7%E6%B1%82%E9%A1%B5%E9%9D%A2">4. HTTP 请求页面</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png"></div><br></p>
+<h2 id="http"><a class="markdownIt-Anchor" href="#http"></a> HTTP</h2>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png"></div><br></p>
 <p>超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP 是万维网的数据通信的基础。</p>
 <p>设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。通过 HTTP 或者 HTTPS 协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。</p>
 <p>安全套接字层超文本传输协议 HTTPS 为了数据传输的安全，HTTPS 在 HTTP 的基础上加入了 SSL 协议，SSL 依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
 <blockquote>
-<p>:point_right: 扩展阅读：<a href="HTTP.md">HTTP</a></p>
+<p>👉 扩展阅读：<a href="HTTP.md">HTTP</a></p>
 </blockquote>
-<h2 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h2><p>域名服务器 DNS 是一个分布式数据库，提供了主机名和 IP 地址之间相互转换的服务。这里的分布式数据库是指，每个站点只保留它自己的那部分数据。</p>
+<h2 id="dns"><a class="markdownIt-Anchor" href="#dns"></a> DNS</h2>
+<p>域名服务器 DNS 是一个分布式数据库，提供了主机名和 IP 地址之间相互转换的服务。这里的分布式数据库是指，每个站点只保留它自己的那部分数据。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094759786.png"></div><br></p>
 <p>域名具有层次结构，从上到下依次为：根域名、顶级域名、二级域名。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094954067.png"></div><br></p>
@@ -523,9 +528,10 @@
 <li>区域传送（区域传送是主域名服务器向辅助域名服务器传送变化的那部分数据）。</li>
 </ul>
 <blockquote>
-<p>:point_right: 扩展阅读：<a href="DNS.md">DNS</a></p>
+<p>👉 扩展阅读：<a href="DNS.md">DNS</a></p>
 </blockquote>
-<h2 id="FTP"><a href="#FTP" class="headerlink" title="FTP"></a>FTP</h2><p>文件传送协议 FTP 使用 TCP 进行连接，它需要两个连接来传送一个文件：</p>
+<h2 id="ftp"><a class="markdownIt-Anchor" href="#ftp"></a> FTP</h2>
+<p>文件传送协议 FTP 使用 TCP 进行连接，它需要两个连接来传送一个文件：</p>
 <ul>
 <li>控制连接：服务器打开端口号 21 等待客户端的连接，客户端主动建立连接后，使用这个连接将客户端的命令传送给服务器，并传回服务器的应答。</li>
 <li>数据连接：用来传送一个文件数据。</li>
@@ -538,7 +544,8 @@
 </ul>
 <p>主动模式要求客户端开放端口号给服务器端，需要去配置客户端的防火墙。被动模式只需要服务器端开放端口号即可，无需客户端配置防火墙。但是被动模式会导致服务器端的安全性减弱，因为开放了过多的端口号。</p>
 <p>FTPS 是一种对常用的文件传输协议（FTP）添加传输层安全（TLS）和安全套接层（SSL）加密协议支持的扩展协议。</p>
-<h2 id="DHCP"><a href="#DHCP" class="headerlink" title="DHCP"></a>DHCP</h2><p>动态主机配置协议 DHCP (Dynamic Host Configuration Protocol) 提供了即插即用的连网方式，用户不再需要去手动配置 IP 地址等信息。</p>
+<h2 id="dhcp"><a class="markdownIt-Anchor" href="#dhcp"></a> DHCP</h2>
+<p>动态主机配置协议 DHCP (Dynamic Host Configuration Protocol) 提供了即插即用的连网方式，用户不再需要去手动配置 IP 地址等信息。</p>
 <p>DHCP 配置的内容不仅是 IP 地址，还包括子网掩码、网关 IP 地址。</p>
 <p>DHCP 工作过程如下：</p>
 <ol>
@@ -548,14 +555,20 @@
 <li>DHCP 服务器发送 Ack 报文，表示客户端此时可以使用提供给它的信息。</li>
 </ol>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095610521.png"></div><br></p>
-<h2 id="TELNET"><a href="#TELNET" class="headerlink" title="TELNET"></a>TELNET</h2><p>远程登录协议 TELNET 用于登录到远程主机上，并且远程主机上的输出也会返回。</p>
+<h2 id="telnet"><a class="markdownIt-Anchor" href="#telnet"></a> TELNET</h2>
+<p>远程登录协议 TELNET 用于登录到远程主机上，并且远程主机上的输出也会返回。</p>
 <p>TELNET 可以适应许多计算机和操作系统的差异，例如不同操作系统系统的换行符定义。</p>
-<h2 id="电子邮件协议"><a href="#电子邮件协议" class="headerlink" title="电子邮件协议"></a>电子邮件协议</h2><p>一个电子邮件系统由三部分组成：用户代理、邮件服务器以及邮件协议。</p>
+<h2 id="电子邮件协议"><a class="markdownIt-Anchor" href="#电子邮件协议"></a> 电子邮件协议</h2>
+<p>一个电子邮件系统由三部分组成：用户代理、邮件服务器以及邮件协议。</p>
 <p>邮件协议包含发送协议和读取协议，发送协议常用 SMTP，读取协议常用 POP3 和 IMAP。</p>
-<h3 id="1-SMTP"><a href="#1-SMTP" class="headerlink" title="1. SMTP"></a>1. SMTP</h3><p>SMTP 只能发送 ASCII 码，而互联网邮件扩充 MIME 可以发送二进制文件。MIME 并没有改动或者取代 SMTP，而是增加邮件主体的结构，定义了非 ASCII 码的编码规则。</p>
-<h3 id="2-POP3"><a href="#2-POP3" class="headerlink" title="2. POP3"></a>2. POP3</h3><p>POP3 的特点是只要用户从服务器上读取了邮件，就把该邮件删除。</p>
-<h3 id="3-IMAP"><a href="#3-IMAP" class="headerlink" title="3. IMAP"></a>3. IMAP</h3><p>IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删除邮件，那么服务器上的邮件也不会被删除。IMAP 这种做法可以让用户随时随地去访问服务器上的邮件。</p>
-<h2 id="常用端口"><a href="#常用端口" class="headerlink" title="常用端口"></a>常用端口</h2><table>
+<h3 id="1-smtp"><a class="markdownIt-Anchor" href="#1-smtp"></a> 1. SMTP</h3>
+<p>SMTP 只能发送 ASCII 码，而互联网邮件扩充 MIME 可以发送二进制文件。MIME 并没有改动或者取代 SMTP，而是增加邮件主体的结构，定义了非 ASCII 码的编码规则。</p>
+<h3 id="2-pop3"><a class="markdownIt-Anchor" href="#2-pop3"></a> 2. POP3</h3>
+<p>POP3 的特点是只要用户从服务器上读取了邮件，就把该邮件删除。</p>
+<h3 id="3-imap"><a class="markdownIt-Anchor" href="#3-imap"></a> 3. IMAP</h3>
+<p>IMAP 协议中客户端和服务器上的邮件保持同步，如果不手动删除邮件，那么服务器上的邮件也不会被删除。IMAP 这种做法可以让用户随时随地去访问服务器上的邮件。</p>
+<h2 id="常用端口"><a class="markdownIt-Anchor" href="#常用端口"></a> 常用端口</h2>
+<table>
 <thead>
 <tr>
 <th style="text-align:center">应用</th>
@@ -627,10 +640,13 @@
 <td style="text-align:center">IMAP</td>
 <td style="text-align:center">143</td>
 <td style="text-align:center">TCP</td>
+<td style="text-align:center"></td>
 </tr>
 </tbody>
 </table>
-<h2 id="Web-页面请求过程"><a href="#Web-页面请求过程" class="headerlink" title="Web 页面请求过程"></a>Web 页面请求过程</h2><h3 id="1-DHCP-配置主机信息"><a href="#1-DHCP-配置主机信息" class="headerlink" title="1. DHCP 配置主机信息"></a>1. DHCP 配置主机信息</h3><ul>
+<h2 id="web-页面请求过程"><a class="markdownIt-Anchor" href="#web-页面请求过程"></a> Web 页面请求过程</h2>
+<h3 id="1-dhcp-配置主机信息"><a class="markdownIt-Anchor" href="#1-dhcp-配置主机信息"></a> 1. DHCP 配置主机信息</h3>
+<ul>
 <li>假设主机最开始没有 IP 地址以及其它信息，那么就需要先使用 DHCP 来获取。</li>
 <li>主机生成一个 DHCP 请求报文，并将这个报文放入具有目的端口 67 和源端口 68 的 UDP 报文段中。</li>
 <li>该报文段则被放入在一个具有广播 IP 目的地址(255.255.255.255) 和源 IP 地址（0.0.0.0）的 IP 数据报中。</li>
@@ -639,7 +655,8 @@
 <li>该帧的目的地址是请求主机的 MAC 地址，因为交换机具有自学习能力，之前主机发送了广播帧之后就记录了 MAC 地址到其转发接口的交换表项，因此现在交换机就可以直接知道应该向哪个接口发送该帧。</li>
 <li>主机收到该帧后，不断分解得到 DHCP 报文。之后就配置它的 IP 地址、子网掩码和 DNS 服务器的 IP 地址，并在其 IP 转发表中安装默认网关。</li>
 </ul>
-<h3 id="2-ARP-解析-MAC-地址"><a href="#2-ARP-解析-MAC-地址" class="headerlink" title="2. ARP 解析 MAC 地址"></a>2. ARP 解析 MAC 地址</h3><ul>
+<h3 id="2-arp-解析-mac-地址"><a class="markdownIt-Anchor" href="#2-arp-解析-mac-地址"></a> 2. ARP 解析 MAC 地址</h3>
+<ul>
 <li>主机通过浏览器生成一个 TCP 套接字，套接字向 HTTP 服务器发送 HTTP 请求。为了生成该套接字，主机需要知道网站的域名对应的 IP 地址。</li>
 <li>主机生成一个 DNS 查询报文，该报文具有 53 号端口，因为 DNS 服务器的端口号是 53。</li>
 <li>该 DNS 查询报文被放入目的地址为 DNS 服务器 IP 地址的 IP 数据报中。</li>
@@ -648,14 +665,16 @@
 <li>主机生成一个包含目的地址为网关路由器 IP 地址的 ARP 查询报文，将该 ARP 查询报文放入一个具有广播目的地址（FF:FF:FF:FF:FF:FF）的以太网帧中，并向交换机发送该以太网帧，交换机将该帧转发给所有的连接设备，包括网关路由器。</li>
 <li>网关路由器接收到该帧后，不断向上分解得到 ARP 报文，发现其中的 IP 地址与其接口的 IP 地址匹配，因此就发送一个 ARP 回答报文，包含了它的 MAC 地址，发回给主机。</li>
 </ul>
-<h3 id="3-DNS-解析域名"><a href="#3-DNS-解析域名" class="headerlink" title="3. DNS 解析域名"></a>3. DNS 解析域名</h3><ul>
+<h3 id="3-dns-解析域名"><a class="markdownIt-Anchor" href="#3-dns-解析域名"></a> 3. DNS 解析域名</h3>
+<ul>
 <li>知道了网关路由器的 MAC 地址之后，就可以继续 DNS 的解析过程了。</li>
 <li>网关路由器接收到包含 DNS 查询报文的以太网帧后，抽取出 IP 数据报，并根据转发表决定该 IP 数据报应该转发的路由器。</li>
 <li>因为路由器具有内部网关协议（RIP、OSPF）和外部网关协议（BGP）这两种路由选择协议，因此路由表中已经配置了网关路由器到达 DNS 服务器的路由表项。</li>
 <li>到达 DNS 服务器之后，DNS 服务器抽取出 DNS 查询报文，并在 DNS 数据库中查找待解析的域名。</li>
 <li>找到 DNS 记录之后，发送 DNS 回答报文，将该回答报文放入 UDP 报文段中，然后放入 IP 数据报中，通过路由器反向转发回网关路由器，并经过以太网交换机到达主机。</li>
 </ul>
-<h3 id="4-HTTP-请求页面"><a href="#4-HTTP-请求页面" class="headerlink" title="4. HTTP 请求页面"></a>4. HTTP 请求页面</h3><ul>
+<h3 id="4-http-请求页面"><a class="markdownIt-Anchor" href="#4-http-请求页面"></a> 4. HTTP 请求页面</h3>
+<ul>
 <li>有了 HTTP 服务器的 IP 地址之后，主机就能够生成 TCP 套接字，该套接字将用于向 Web 服务器发送 HTTP GET 报文。</li>
 <li>在生成 TCP 套接字之前，必须先与 HTTP 服务器进行三次握手来建立连接。生成一个具有目的端口 80 的 TCP SYN 报文段，并向 HTTP 服务器发送该报文段。</li>
 <li>HTTP 服务器收到该报文段之后，生成 TCP SYN ACK 报文段，发回给主机。</li>
@@ -721,8 +740,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/network/network/ICMP/" rel="next" title="ICMP">
-                <i class="fa fa-chevron-left"></i> ICMP
+              <a href="/blog/2019/03/06/network/network/README/" rel="next" title="网络层">
+                <i class="fa fa-chevron-left"></i> 网络层
               </a>
             
           </div>
@@ -804,7 +823,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -869,7 +888,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1167,7 +1188,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-text">应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-text">HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DNS"><span class="nav-text">DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FTP"><span class="nav-text">FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DHCP"><span class="nav-text">DHCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TELNET"><span class="nav-text">TELNET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件协议"><span class="nav-text">电子邮件协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-SMTP"><span class="nav-text">1. SMTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-POP3"><span class="nav-text">2. POP3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-IMAP"><span class="nav-text">3. IMAP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用端口"><span class="nav-text">常用端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-页面请求过程"><span class="nav-text">Web 页面请求过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-DHCP-配置主机信息"><span class="nav-text">1. DHCP 配置主机信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-ARP-解析-MAC-地址"><span class="nav-text">2. ARP 解析 MAC 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-DNS-解析域名"><span class="nav-text">3. DNS 解析域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-HTTP-请求页面"><span class="nav-text">4. HTTP 请求页面</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#应用层"><span class="nav-text"> 应用层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#http"><span class="nav-text"> HTTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dns"><span class="nav-text"> DNS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ftp"><span class="nav-text"> FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dhcp"><span class="nav-text"> DHCP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#telnet"><span class="nav-text"> TELNET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#电子邮件协议"><span class="nav-text"> 电子邮件协议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-smtp"><span class="nav-text"> 1. SMTP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-pop3"><span class="nav-text"> 2. POP3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-imap"><span class="nav-text"> 3. IMAP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用端口"><span class="nav-text"> 常用端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#web-页面请求过程"><span class="nav-text"> Web 页面请求过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-dhcp-配置主机信息"><span class="nav-text"> 1. DHCP 配置主机信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-arp-解析-mac-地址"><span class="nav-text"> 2. ARP 解析 MAC 地址</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-dns-解析域名"><span class="nav-text"> 3. DNS 解析域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-http-请求页面"><span class="nav-text"> 4. HTTP 请求页面</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1209,7 +1230,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

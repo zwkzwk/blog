@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Yarn 入门 Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令 初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容   简介Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个包，所以无">
+  <meta name="description" content="Yarn 入门  Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令  初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容    简介 Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Yarn 入门">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/nodejs/yarn/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Yarn 入门 Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令 初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容   简介Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个包，所以无">
+<meta property="og:description" content="Yarn 入门  Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令  初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容    简介 Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Yarn 入门">
-<meta name="twitter:description" content="Yarn 入门 Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令 初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容   简介Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个包，所以无">
+<meta name="twitter:description" content="Yarn 入门  Yarn 是快速、可靠、安全的 js 包管理器。 关键词： nodejs, 包管理, yarn, yarn.lock    简介 安装 Yarn 工作流 Yarn 常用命令  初始化新项目 添加依赖包 更新依赖包 删除依赖包 安装依赖项   创建一个新项目 配置文件 更多内容    简介 Yarn 是快速、可靠、安全的 js 包管理器。  快速 - Yarn 会缓存它下载的每个">
 
 
 
@@ -477,38 +477,43 @@
       
 
       
-        <h1 id="Yarn-入门"><a href="#Yarn-入门" class="headerlink" title="Yarn 入门"></a>Yarn 入门</h1><blockquote>
+        <h1 id="yarn-入门"><a class="markdownIt-Anchor" href="#yarn-入门"></a> Yarn 入门</h1>
+<blockquote>
 <p>Yarn 是快速、可靠、安全的 js 包管理器。</p>
 <p>关键词： <code>nodejs</code>, <code>包管理</code>, <code>yarn</code>, <code>yarn.lock</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#yarn-工作流">Yarn 工作流</a></li>
-<li><a href="#yarn-常用命令">Yarn 常用命令</a><ul>
-<li><a href="#初始化新项目">初始化新项目</a></li>
-<li><a href="#添加依赖包">添加依赖包</a></li>
-<li><a href="#更新依赖包">更新依赖包</a></li>
-<li><a href="#删除依赖包">删除依赖包</a></li>
-<li><a href="#安装依赖项">安装依赖项</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#yarn-%E5%B7%A5%E4%BD%9C%E6%B5%81">Yarn 工作流</a></li>
+<li><a href="#yarn-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">Yarn 常用命令</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B0%E9%A1%B9%E7%9B%AE">初始化新项目</a></li>
+<li><a href="#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96%E5%8C%85">添加依赖包</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E4%BE%9D%E8%B5%96%E5%8C%85">更新依赖包</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E4%BE%9D%E8%B5%96%E5%8C%85">删除依赖包</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E9%A1%B9">安装依赖项</a></li>
 </ul>
 </li>
-<li><a href="#创建一个新项目">创建一个新项目</a></li>
-<li><a href="#配置文件">配置文件</a></li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE">创建一个新项目</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>Yarn 是快速、可靠、安全的 js 包管理器。</strong></p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p><strong>Yarn 是快速、可靠、安全的 js 包管理器。</strong></p>
 <ul>
 <li><strong>快速</strong> - Yarn 会缓存它下载的每个包，所以无需重复下载。它还能并行化操作以最大化资源利用率，安装速度之快前所未有。</li>
 <li><strong>安全</strong> - Yarn 会在每个安装包被执行前校验其完整性。</li>
 <li><strong>可靠</strong> - Yarn 使用格式详尽而又简洁的 lockfile 文件和确定性算法来安装依赖，能够保证在一个系统上的运行的安装过程也会以同样的方式运行在其他系统上。</li>
 </ul>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>先决条件：已安装 Nodejs。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>先决条件：已安装 Nodejs。</p>
 <p>执行命令：<code>npm i -g yarn</code></p>
 <p>虽然还有其他安装方式，但并不推荐。</p>
-<h2 id="Yarn-工作流"><a href="#Yarn-工作流" class="headerlink" title="Yarn 工作流"></a>Yarn 工作流</h2><p>Yarn 工作流：</p>
+<h2 id="yarn-工作流"><a class="markdownIt-Anchor" href="#yarn-工作流"></a> Yarn 工作流</h2>
+<p>Yarn 工作流：</p>
 <ol>
 <li>创建一个新项目</li>
 <li>增加／更新／删除依赖</li>
@@ -516,9 +521,12 @@
 <li>引入版本控制系统（例如 git）</li>
 <li>持续集成</li>
 </ol>
-<h2 id="Yarn-常用命令"><a href="#Yarn-常用命令" class="headerlink" title="Yarn 常用命令"></a>Yarn 常用命令</h2><p><strong>每个命令都会更新 <code>package.json</code> 和 <code>yarn.lock</code> 文件。</strong></p>
-<h3 id="初始化新项目"><a href="#初始化新项目" class="headerlink" title="初始化新项目"></a>初始化新项目</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
-<h3 id="添加依赖包"><a href="#添加依赖包" class="headerlink" title="添加依赖包"></a>添加依赖包</h3><p>在使用一个包之前，你需要执行以下命令将其加入依赖项列表：</p>
+<h2 id="yarn-常用命令"><a class="markdownIt-Anchor" href="#yarn-常用命令"></a> Yarn 常用命令</h2>
+<p><strong>每个命令都会更新 <code>package.json</code> 和 <code>yarn.lock</code> 文件。</strong></p>
+<h3 id="初始化新项目"><a class="markdownIt-Anchor" href="#初始化新项目"></a> 初始化新项目</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
+<h3 id="添加依赖包"><a class="markdownIt-Anchor" href="#添加依赖包"></a> 添加依赖包</h3>
+<p>在使用一个包之前，你需要执行以下命令将其加入依赖项列表：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add [package]</span><br></pre></td></tr></table></figure>
 <p><code>[package]</code>会被加入到<code>package.json</code>文件中的依赖列表，同时<code>yarn.lock</code>也会被更新。</p>
 <figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">  &#123;</span><br><span class="line">    "name": "my-package",</span><br><span class="line">    "dependencies": &#123;</span><br><span class="line"><span class="addition">+     "package-1": "^1.0.0"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
@@ -536,12 +544,15 @@
 <p><strong>将依赖项添加到不同依赖项类别</strong></p>
 <p>分别添加到 <code>devDependencies</code>、<code>peerDependencies</code> 和 <code>optionalDependencies</code>：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn add [package] --dev</span><br><span class="line">yarn add [package] --peer</span><br><span class="line">yarn add [package] --optional</span><br></pre></td></tr></table></figure>
-<h3 id="更新依赖包"><a href="#更新依赖包" class="headerlink" title="更新依赖包"></a>更新依赖包</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[tag]</span><br></pre></td></tr></table></figure>
+<h3 id="更新依赖包"><a class="markdownIt-Anchor" href="#更新依赖包"></a> 更新依赖包</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn upgrade [package]</span><br><span class="line">yarn upgrade [package]@[version]</span><br><span class="line">yarn upgrade [package]@[tag]</span><br></pre></td></tr></table></figure>
 <p>这会更新<code>package.json</code>和<code>yarn.lock</code> 文件。</p>
 <figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">  &#123;</span><br><span class="line">    "name": "my-package",</span><br><span class="line">    "dependencies": &#123;</span><br><span class="line"><span class="deletion">-     "package-1": "^1.0.0"</span></span><br><span class="line"><span class="addition">+     "package-1": "^2.0.0"</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="删除依赖包"><a href="#删除依赖包" class="headerlink" title="删除依赖包"></a>删除依赖包</h3><figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">yarn <span class="built_in">remove</span> [<span class="built_in">package</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="删除依赖包"><a class="markdownIt-Anchor" href="#删除依赖包"></a> 删除依赖包</h3>
+<figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">yarn <span class="built_in">remove</span> [<span class="built_in">package</span>]</span><br></pre></td></tr></table></figure>
 <p>这会更新<code>package.json</code>和<code>yarn.lock</code> 文件。</p>
-<h3 id="安装依赖项"><a href="#安装依赖项" class="headerlink" title="安装依赖项"></a>安装依赖项</h3><p><code>yarn install</code> 是用于安装一个项目的所有依赖。 Yarn 会从 <code>package.json</code> 中读取依赖，并将依赖信息存储到 <code>yarn.lock</code> 中。</p>
+<h3 id="安装依赖项"><a class="markdownIt-Anchor" href="#安装依赖项"></a> 安装依赖项</h3>
+<p><code>yarn install</code> 是用于安装一个项目的所有依赖。 Yarn 会从 <code>package.json</code> 中读取依赖，并将依赖信息存储到 <code>yarn.lock</code> 中。</p>
 <p>如果你正在开发一个包，通常你会在以下情况之后进行依赖安装：</p>
 <ul>
 <li>你刚检出需要这些依赖项的项目代码。</li>
@@ -550,20 +561,22 @@
 <p>有很多参数可以控制依赖安装的过程，包括：</p>
 <ul>
 <li>安装所有依赖 - yarn 或 yarn install</li>
-<li>安装一个包的单一版本 - yarn install –flat</li>
-<li>强制重新下载所有包 - yarn install –force</li>
-<li>只安装生产环境依赖 - yarn install –production</li>
+<li>安装一个包的单一版本 - yarn install --flat</li>
+<li>强制重新下载所有包 - yarn install --force</li>
+<li>只安装生产环境依赖 - yarn install --production</li>
 </ul>
 <blockquote>
 <p>参考：<code>yarn install</code> 的 <a href="https://yarnpkg.com/zh-Hans/docs/cli/install" target="_blank" rel="noopener">完整参数列表</a>。</p>
 </blockquote>
-<h2 id="创建一个新项目"><a href="#创建一个新项目" class="headerlink" title="创建一个新项目"></a>创建一个新项目</h2><p>不论是已经有了现成的代码仓库（目录），还是正着手启动一个全新项目，你都可以使用同样的方法引入 Yarn。</p>
+<h2 id="创建一个新项目"><a class="markdownIt-Anchor" href="#创建一个新项目"></a> 创建一个新项目</h2>
+<p>不论是已经有了现成的代码仓库（目录），还是正着手启动一个全新项目，你都可以使用同样的方法引入 Yarn。</p>
 <p>在命令行终端里，跳转到准备引入 Yarn 的目录（通常是一个项目的根目录），执行以下命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">yarn init</span><br></pre></td></tr></table></figure>
 <p>这将打开一个用于创建 Yarn 项目的交互式表单，其中包含以下问题：</p>
-<figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">name</span> (your-project):</span><br><span class="line"><span class="selector-tag">version</span> (<span class="number">1.0</span>.<span class="number">0</span>):</span><br><span class="line"><span class="selector-tag">description</span>:</span><br><span class="line"><span class="selector-tag">entry</span> <span class="selector-tag">point</span> (index.js):</span><br><span class="line"><span class="selector-tag">git</span> <span class="selector-tag">repository</span>:</span><br><span class="line"><span class="selector-tag">author</span>:</span><br><span class="line"><span class="selector-tag">license</span> (MIT):</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">name</span> <span class="string">(your-project):</span></span><br><span class="line"><span class="attr">version</span> <span class="string">(1.0.0):</span></span><br><span class="line"><span class="attr">description</span>:<span class="string"></span></span><br><span class="line"><span class="attr">entry</span> <span class="string">point (index.js):</span></span><br><span class="line"><span class="attr">git</span> <span class="string">repository:</span></span><br><span class="line"><span class="attr">author</span>:<span class="string"></span></span><br><span class="line"><span class="attr">license</span> <span class="string">(MIT):</span></span><br></pre></td></tr></table></figure>
 <p>你既可以回答这些问题，也可以直接敲回车键（enter/return）使用默认配置或者留空。</p>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>为了别人能使用你的包，以下文件必须被提交进版本控制系统：</p>
+<h2 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h2>
+<p>为了别人能使用你的包，以下文件必须被提交进版本控制系统：</p>
 <ul>
 <li><code>package.json</code> - 包含包的所有依赖信息；</li>
 <li><code>yarn.lock</code> - 记录每一个依赖项的确切版本信息；</li>
@@ -576,14 +589,15 @@
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"my-new-project"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"My New Project description."</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</span><br><span class="line">  <span class="attr">"repository"</span>: &#123;</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"https://example.com/your-username/my-new-project"</span>,</span><br><span class="line">    <span class="attr">"type"</span>: <span class="string">"git"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"Your Name &lt;you@example.com&gt;"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>执行<code>yarn init</code>之后，除了以上文件被创建之外，没有任何副作用。你可以随意编辑此文件。</p>
 <p><code>package.json</code>文件里存储了项目的有关信息。 包括项目名称、维护者信息、代码托管地址，以及最重要的：项目依赖。</p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="nodejs.md">Node.js</a></li>
 <li><a href="npm.md">Npm</a></li>
 <li><a href="yarn.md">Yarn</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
 <li><a href="https://github.com/yarnpkg/yarn" target="_blank" rel="noopener">Yarn Github</a></li>
@@ -730,7 +744,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -795,7 +809,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1093,7 +1109,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Yarn-入门"><span class="nav-text">Yarn 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn-工作流"><span class="nav-text">Yarn 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yarn-常用命令"><span class="nav-text">Yarn 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化新项目"><span class="nav-text">初始化新项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖包"><span class="nav-text">添加依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新依赖包"><span class="nav-text">更新依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除依赖包"><span class="nav-text">删除依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖项"><span class="nav-text">安装依赖项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个新项目"><span class="nav-text">创建一个新项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#yarn-入门"><span class="nav-text"> Yarn 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-工作流"><span class="nav-text"> Yarn 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yarn-常用命令"><span class="nav-text"> Yarn 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化新项目"><span class="nav-text"> 初始化新项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加依赖包"><span class="nav-text"> 添加依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新依赖包"><span class="nav-text"> 更新依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除依赖包"><span class="nav-text"> 删除依赖包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装依赖项"><span class="nav-text"> 安装依赖项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个新项目"><span class="nav-text"> 创建一个新项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-text"> 配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1135,7 +1151,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

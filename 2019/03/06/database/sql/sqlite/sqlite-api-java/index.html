@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="SQLite Java API :point_right: 完整示例源码  Quick Start（1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sql">
+  <meta name="description" content="SQLite Java API  👉 完整示例源码   Quick Start （1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sqlite-jdb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLite Java API">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/sql/sqlite/sqlite-api-java/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SQLite Java API :point_right: 完整示例源码  Quick Start（1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sql">
+<meta property="og:description" content="SQLite Java API  👉 完整示例源码   Quick Start （1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sqlite-jdb">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLite Java API">
-<meta name="twitter:description" content="SQLite Java API :point_right: 完整示例源码  Quick Start（1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sql">
+<meta name="twitter:description" content="SQLite Java API  👉 完整示例源码   Quick Start （1）在官方下载地址下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。 （2）通过 API 打开一个 SQLite 数据库连接。 执行方法： &amp;gt; javac Sample.java&amp;gt; java -classpath &quot;.;sqlite-jdb">
 
 
 
@@ -477,21 +477,27 @@
       
 
       
-        <h1 id="SQLite-Java-API"><a href="#SQLite-Java-API" class="headerlink" title="SQLite Java API"></a>SQLite Java API</h1><blockquote>
-<p>:point_right: <a href="https://github.com/dunwu/db-tutorial/tree/master/codes/javadb/javadb-sqlite" target="_blank" rel="noopener">完整示例源码</a></p>
+        <h1 id="sqlite-java-api"><a class="markdownIt-Anchor" href="#sqlite-java-api"></a> SQLite Java API</h1>
+<blockquote>
+<p>👉 <a href="https://github.com/dunwu/db-tutorial/tree/master/codes/javadb/javadb-sqlite" target="_blank" rel="noopener">完整示例源码</a></p>
 </blockquote>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><p>（1）在<a href="https://bitbucket.org/xerial/sqlite-jdbc/downloads" target="_blank" rel="noopener">官方下载地址</a>下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。</p>
+<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
+<p>（1）在<a href="https://bitbucket.org/xerial/sqlite-jdbc/downloads" target="_blank" rel="noopener">官方下载地址</a>下载 sqlite-jdbc-(VERSION).jar ，然后将 jar 包放在项目中的 classpath。</p>
 <p>（2）通过 API 打开一个 SQLite 数据库连接。</p>
 <p>执行方法：</p>
 <figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">&gt; javac Sample.java</span><br><span class="line">&gt; java -classpath <span class="string">".;sqlite-jdbc-(VERSION).jar"</span> Sample   <span class="comment"># in Windows</span></span><br><span class="line">or</span><br><span class="line">&gt; java -classpath <span class="string">".:sqlite-jdbc-(VERSION).jar"</span> Sample   <span class="comment"># in Mac or Linux</span></span><br><span class="line">name = leo</span><br><span class="line">id = 1</span><br><span class="line">name = yui</span><br><span class="line">id = 2</span><br></pre></td></tr></table></figure>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sample</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Connection connection = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 创建数据库连接</span></span><br><span class="line">            connection = DriverManager.getConnection(<span class="string">"jdbc:sqlite:sample.db"</span>);</span><br><span class="line">            Statement statement = connection.createStatement();</span><br><span class="line">            statement.setQueryTimeout(<span class="number">30</span>);  <span class="comment">// 设置 sql 执行超时时间为 30s</span></span><br><span class="line"></span><br><span class="line">            statement.executeUpdate(<span class="string">"drop table if exists person"</span>);</span><br><span class="line">            statement.executeUpdate(<span class="string">"create table person (id integer, name string)"</span>);</span><br><span class="line">            statement.executeUpdate(<span class="string">"insert into person values(1, 'leo')"</span>);</span><br><span class="line">            statement.executeUpdate(<span class="string">"insert into person values(2, 'yui')"</span>);</span><br><span class="line">            ResultSet rs = statement.executeQuery(<span class="string">"select * from person"</span>);</span><br><span class="line">            <span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">                <span class="comment">// 读取结果集</span></span><br><span class="line">                System.out.println(<span class="string">"name = "</span> + rs.getString(<span class="string">"name"</span>));</span><br><span class="line">                System.out.println(<span class="string">"id = "</span> + rs.getInt(<span class="string">"id"</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">            <span class="comment">// 如果错误信息是 "out of memory"，可能是找不到数据库文件</span></span><br><span class="line">            System.err.println(e.getMessage());</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (connection != <span class="keyword">null</span>) &#123;</span><br><span class="line">                    connection.close();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">catch</span> (SQLException e) &#123;</span><br><span class="line">                <span class="comment">// 关闭连接失败</span></span><br><span class="line">                System.err.println(e.getMessage());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="如何指定数据库文件"><a href="#如何指定数据库文件" class="headerlink" title="如何指定数据库文件"></a>如何指定数据库文件</h3><p>Windows</p>
+<h3 id="如何指定数据库文件"><a class="markdownIt-Anchor" href="#如何指定数据库文件"></a> 如何指定数据库文件</h3>
+<p>Windows</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">Connection<span class="built_in"> connection </span>= DriverManager.getConnection(<span class="string">"jdbc:sqlite:C:/work/mydatabase.db"</span>);</span><br></pre></td></tr></table></figure>
-<p>Unix (Linux, Mac OS X, etc) </p>
+<p>Unix (Linux, Mac OS X, etc)</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">Connection<span class="built_in"> connection </span>= DriverManager.getConnection(<span class="string">"jdbc:sqlite:/home/leo/work/mydatabase.db"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="如何使用内存数据库"><a href="#如何使用内存数据库" class="headerlink" title="如何使用内存数据库"></a>如何使用内存数据库</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">Connection<span class="built_in"> connection </span>= DriverManager.getConnection(<span class="string">"jdbc:sqlite::memory:"</span>);</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/xerial/sqlite-jdbc" target="_blank" rel="noopener">https://github.com/xerial/sqlite-jdbc</a><br><a href="http://www.runoob.com/sqlite/sqlite-java.html" target="_blank" rel="noopener">http://www.runoob.com/sqlite/sqlite-java.html</a></p>
+<h3 id="如何使用内存数据库"><a class="markdownIt-Anchor" href="#如何使用内存数据库"></a> 如何使用内存数据库</h3>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">Connection<span class="built_in"> connection </span>= DriverManager.getConnection(<span class="string">"jdbc:sqlite::memory:"</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<p><a href="https://github.com/xerial/sqlite-jdbc" target="_blank" rel="noopener">https://github.com/xerial/sqlite-jdbc</a><br>
+<a href="http://www.runoob.com/sqlite/sqlite-java.html" target="_blank" rel="noopener">http://www.runoob.com/sqlite/sqlite-java.html</a></p>
 
       
     </div>
@@ -633,7 +639,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -698,7 +704,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -996,7 +1004,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLite-Java-API"><span class="nav-text">SQLite Java API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何指定数据库文件"><span class="nav-text">如何指定数据库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用内存数据库"><span class="nav-text">如何使用内存数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sqlite-java-api"><span class="nav-text"> SQLite Java API</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#quick-start"><span class="nav-text"> Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何指定数据库文件"><span class="nav-text"> 如何指定数据库文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何使用内存数据库"><span class="nav-text"> 如何使用内存数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1038,7 +1046,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

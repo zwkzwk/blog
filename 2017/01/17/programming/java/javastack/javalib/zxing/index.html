@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="ZXing 使用小结概述ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。  官网：ZXing github仓库 实战本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。 安装ma">
+  <meta name="description" content="ZXing 使用小结  概述 ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。 官网：ZXing github仓库  实战 本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。">
 <meta name="keywords" content="java,javalib,barcode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ZXing 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2017/01/17/programming/java/javastack/javalib/zxing/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="ZXing 使用小结概述ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。  官网：ZXing github仓库 实战本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。 安装ma">
+<meta property="og:description" content="ZXing 使用小结  概述 ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。 官网：ZXing github仓库  实战 本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-26b73730088f0ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.591Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ZXing 使用小结">
-<meta name="twitter:description" content="ZXing 使用小结概述ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。  官网：ZXing github仓库 实战本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。 安装ma">
+<meta name="twitter:description" content="ZXing 使用小结  概述 ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。 官网：ZXing github仓库  实战 本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101171-26b73730088f0ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -510,32 +510,42 @@
       
 
       
-        <h1 id="ZXing-使用小结"><a href="#ZXing-使用小结" class="headerlink" title="ZXing 使用小结"></a>ZXing 使用小结</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>ZXing</code> 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。 </p>
+        <h1 id="zxing-使用小结"><a class="markdownIt-Anchor" href="#zxing-使用小结"></a> ZXing 使用小结</h1>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p><code>ZXing</code> 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。</p>
 <p>官网：<a href="https://github.com/zxing/zxing" target="_blank" rel="noopener"><u>ZXing github仓库</u></a></p>
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p><strong><em>本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。</em></strong></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>maven项目只需引入依赖：</p>
+<h2 id="实战"><a class="markdownIt-Anchor" href="#实战"></a> 实战</h2>
+<p><em><strong>本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。</strong></em></p>
+<h3 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h3>
+<p>maven项目只需引入依赖：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.google.zxing<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.google.zxing<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javase<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果非maven项目，就去官网下载发布版本：<a href="https://github.com/zxing/zxing/releases" target="_blank" rel="noopener"><u>下载地址</u></a></p>
-<h3 id="生成二维码图片"><a href="#生成二维码图片" class="headerlink" title="生成二维码图片"></a>生成二维码图片</h3><p>ZXing 生成二维码图片有以下步骤：</p>
+<h3 id="生成二维码图片"><a class="markdownIt-Anchor" href="#生成二维码图片"></a> 生成二维码图片</h3>
+<p>ZXing 生成二维码图片有以下步骤：</p>
 <ol>
 <li><code>com.google.zxing.MultiFormatWriter</code> 根据内容以及图像编码参数生成图像2D矩阵。</li>
 <li>​ <code>com.google.zxing.client.j2se.MatrixToImageWriter</code> 根据图像矩阵生成图片文件或图片缓存 <code>BufferedImage</code> 。</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">encode</span><span class="params">(String content, String filepath)</span> <span class="keyword">throws</span> WriterException, IOException </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> width = <span class="number">100</span>;</span><br><span class="line">	<span class="keyword">int</span> height = <span class="number">100</span>;</span><br><span class="line">	Map&lt;EncodeHintType, Object&gt; encodeHints = <span class="keyword">new</span> HashMap&lt;EncodeHintType, Object&gt;();</span><br><span class="line">	encodeHints.put(EncodeHintType.CHARACTER_SET, <span class="string">"UTF-8"</span>);</span><br><span class="line">	BitMatrix bitMatrix = <span class="keyword">new</span> MultiFormatWriter().encode(content, BarcodeFormat.QR_CODE, width, height, encodeHints);</span><br><span class="line">	Path path = FileSystems.getDefault().getPath(filepath);</span><br><span class="line">	MatrixToImageWriter.writeToPath(bitMatrix, <span class="string">"png"</span>, path);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="解析二维码图片"><a href="#解析二维码图片" class="headerlink" title="解析二维码图片"></a>解析二维码图片</h3><p>ZXing 解析二维码图片有以下步骤：</p>
+<h3 id="解析二维码图片"><a class="markdownIt-Anchor" href="#解析二维码图片"></a> 解析二维码图片</h3>
+<p>ZXing 解析二维码图片有以下步骤：</p>
 <ol>
-<li><p>使用 <code>javax.imageio.ImageIO</code> 读取图片文件，并存为一个 <code>java.awt.image.BufferedImage</code> 对象。</p>
+<li>
+<p>使用 <code>javax.imageio.ImageIO</code> 读取图片文件，并存为一个 <code>java.awt.image.BufferedImage</code> 对象。</p>
 </li>
-<li><p>将 <code>java.awt.image.BufferedImage</code> 转换为 ZXing 能识别的 <code>com.google.zxing.BinaryBitmap</code> 对象。</p>
+<li>
+<p>将 <code>java.awt.image.BufferedImage</code> 转换为 ZXing 能识别的 <code>com.google.zxing.BinaryBitmap</code> 对象。</p>
 </li>
-<li><p><code>com.google.zxing.MultiFormatReader</code> 根据图像解码参数来解析 <code>com.google.zxing.BinaryBitmap</code> 。</p>
+<li>
+<p><code>com.google.zxing.MultiFormatReader</code> 根据图像解码参数来解析 <code>com.google.zxing.BinaryBitmap</code> 。</p>
 </li>
 </ol>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">decode</span><span class="params">(String filepath)</span> <span class="keyword">throws</span> IOException, NotFoundException </span>&#123;</span><br><span class="line">	BufferedImage bufferedImage = ImageIO.read(<span class="keyword">new</span> FileInputStream(filepath));</span><br><span class="line">	LuminanceSource source = <span class="keyword">new</span> BufferedImageLuminanceSource(bufferedImage);</span><br><span class="line">	Binarizer binarizer = <span class="keyword">new</span> HybridBinarizer(source);</span><br><span class="line">	BinaryBitmap bitmap = <span class="keyword">new</span> BinaryBitmap(binarizer);</span><br><span class="line">	HashMap&lt;DecodeHintType, Object&gt; decodeHints = <span class="keyword">new</span> HashMap&lt;DecodeHintType, Object&gt;();</span><br><span class="line">	decodeHints.put(DecodeHintType.CHARACTER_SET, <span class="string">"UTF-8"</span>);</span><br><span class="line">	Result result = <span class="keyword">new</span> MultiFormatReader().decode(bitmap, decodeHints);</span><br><span class="line">	<span class="keyword">return</span> result.getText();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>完整参考示例：<a href="https://github.com/dunwu/JavaParty/blob/master/toolbox/image/src/test/java/org/zp/image/QRCodeUtilTest.java" target="_blank" rel="noopener"><u>测试例代码</u></a></p>
 <p>以下是一个生成的二维码图片示例：</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-26b73730088f0ab8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/zxing/zxing" target="_blank" rel="noopener">ZXing github仓库</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a href="https://github.com/zxing/zxing" target="_blank" rel="noopener">ZXing github仓库</a></p>
 
       
     </div>
@@ -614,8 +624,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/08/18/programming/java/javastack/javalib/jsoup/" rel="prev" title="jsoup 使用小结">
-                jsoup 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" rel="prev" title="ActiveMQ">
+                ActiveMQ <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -687,7 +697,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -752,7 +762,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1050,7 +1062,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ZXing-使用小结"><span class="nav-text">ZXing 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成二维码图片"><span class="nav-text">生成二维码图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析二维码图片"><span class="nav-text">解析二维码图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zxing-使用小结"><span class="nav-text"> ZXing 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text"> 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成二维码图片"><span class="nav-text"> 生成二维码图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析二维码图片"><span class="nav-text"> 解析二维码图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text"> 参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1092,7 +1104,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

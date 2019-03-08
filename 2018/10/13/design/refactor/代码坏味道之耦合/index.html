@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
+  <meta name="description" content="代码坏味道之耦合  📓 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料    不完美的库类  不完美的库类(Incomplete Library C">
 <meta name="keywords" content="design,refactor,code-smell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="代码坏味道之耦合">
 <meta property="og:url" content="https://dunwu.github.io/2018/10/13/design/refactor/代码坏味道之耦合/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
+<meta property="og:description" content="代码坏味道之耦合  📓 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料    不完美的库类  不完美的库类(Incomplete Library C">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-before.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-after.png">
@@ -151,7 +151,7 @@
 <meta property="og:updated_time" content="2019-03-07T13:55:17.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码坏味道之耦合">
-<meta name="twitter:description" content="代码坏味道之耦合 :notebook: 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料   不完美的库类 不完美的库类(Incomplete Libra">
+<meta name="twitter:description" content="代码坏味道之耦合  📓 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/couplers   耦合(Couplers)这组坏味道意味着：不同类之间过度耦合。    不完美的库类 中间人 依恋情结 狎昵关系 过度耦合的消息链 扩展阅读 参考资料    不完美的库类  不完美的库类(Incomplete Library C">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-before.png">
 
 
@@ -515,7 +515,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.1k</span>
+                <span title="本文字数">5.2k</span>
               
 
               
@@ -549,8 +549,9 @@
       
 
       
-        <h1 id="代码坏味道之耦合"><a href="#代码坏味道之耦合" class="headerlink" title="代码坏味道之耦合"></a>代码坏味道之耦合</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="代码坏味道之耦合"><a class="markdownIt-Anchor" href="#代码坏味道之耦合"></a> 代码坏味道之耦合</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 <p>翻译自：<a href="https://sourcemaking.com/refactoring/smells/couplers" target="_blank" rel="noopener">https://sourcemaking.com/refactoring/smells/couplers</a></p>
 </blockquote>
 <blockquote>
@@ -558,71 +559,89 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#不完美的库类">不完美的库类</a></li>
-<li><a href="#中间人">中间人</a></li>
-<li><a href="#依恋情结">依恋情结</a></li>
-<li><a href="#狎昵关系">狎昵关系</a></li>
-<li><a href="#过度耦合的消息链">过度耦合的消息链</a></li>
-<li><a href="#扩展阅读">扩展阅读</a></li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E4%B8%8D%E5%AE%8C%E7%BE%8E%E7%9A%84%E5%BA%93%E7%B1%BB">不完美的库类</a></li>
+<li><a href="#%E4%B8%AD%E9%97%B4%E4%BA%BA">中间人</a></li>
+<li><a href="#%E4%BE%9D%E6%81%8B%E6%83%85%E7%BB%93">依恋情结</a></li>
+<li><a href="#%E7%8B%8E%E6%98%B5%E5%85%B3%E7%B3%BB">狎昵关系</a></li>
+<li><a href="#%E8%BF%87%E5%BA%A6%E8%80%A6%E5%90%88%E7%9A%84%E6%B6%88%E6%81%AF%E9%93%BE">过度耦合的消息链</a></li>
+<li><a href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB">扩展阅读</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="不完美的库类"><a href="#不完美的库类" class="headerlink" title="不完美的库类"></a>不完美的库类</h2><blockquote>
+<h2 id="不完美的库类"><a class="markdownIt-Anchor" href="#不完美的库类"></a> 不完美的库类</h2>
+<blockquote>
 <p>不完美的库类(Incomplete Library Class)</p>
 <p>当一个类库已经不能满足实际需要时，你就不得不改变这个库（如果这个库是只读的，那就没辙了）。</p>
 </blockquote>
-<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>许多编程技术都建立在库类的基础上。库类的作者没用未卜先知的能力，不能因此责怪他们。麻烦的是库往往构造的不够好，而且往往不可能让我们修改其中的类以满足我们的需要。</p>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<h3 id="问题原因"><a class="markdownIt-Anchor" href="#问题原因"></a> 问题原因</h3>
+<p>许多编程技术都建立在库类的基础上。库类的作者没用未卜先知的能力，不能因此责怪他们。麻烦的是库往往构造的不够好，而且往往不可能让我们修改其中的类以满足我们的需要。</p>
+<h3 id="解决方法"><a class="markdownIt-Anchor" href="#解决方法"></a> 解决方法</h3>
+<ul>
 <li>如果你只想修改类库的一两个函数，可以运用 <code>引入外加函数(Introduce Foreign Method)</code>；</li>
 <li>如果想要添加一大堆额外行为，就得运用 <code>引入本地扩展(Introduce Local Extension)</code> 。</li>
 </ul>
-<h3 id="收益"><a href="#收益" class="headerlink" title="收益"></a>收益</h3><ul>
+<h3 id="收益"><a class="markdownIt-Anchor" href="#收益"></a> 收益</h3>
+<ul>
 <li>减少代码重复（你不用一言不合就自己动手实现一个库的全部功能，代价太高）</li>
 </ul>
-<h3 id="何时忽略"><a href="#何时忽略" class="headerlink" title="何时忽略"></a>何时忽略</h3><ul>
+<h3 id="何时忽略"><a class="markdownIt-Anchor" href="#何时忽略"></a> 何时忽略</h3>
+<ul>
 <li>如果扩展库会带来额外的工作量。</li>
 </ul>
-<h3 id="重构方法说明"><a href="#重构方法说明" class="headerlink" title="重构方法说明"></a>重构方法说明</h3><h4 id="引入外加函数-Introduce-Foreign-Method"><a href="#引入外加函数-Introduce-Foreign-Method" class="headerlink" title="引入外加函数(Introduce Foreign Method)"></a>引入外加函数(Introduce Foreign Method)</h4><p><strong>问题</strong></p>
+<h3 id="重构方法说明"><a class="markdownIt-Anchor" href="#重构方法说明"></a> 重构方法说明</h3>
+<h4 id="引入外加函数introduce-foreign-method"><a class="markdownIt-Anchor" href="#引入外加函数introduce-foreign-method"></a> 引入外加函数(Introduce Foreign Method)</h4>
+<p><strong>问题</strong></p>
 <p>你需要为提供服务的类增加一个函数，但你无法修改这个类。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Report</span> </span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">sendReport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Date nextDay = <span class="keyword">new</span> Date(previousEnd.getYear(),</span><br><span class="line">      previousEnd.getMonth(), previousEnd.getDate() + <span class="number">1</span>);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>解决</strong></p>
 <p>在客户类中建立一个函数，并一个第一个参数形式传入一个服务类实例。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Report</span> </span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">sendReport</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Date newStart = nextDay(previousEnd);</span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> Date <span class="title">nextDay</span><span class="params">(Date arg)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Date(arg.getYear(), arg.getMonth(), arg.getDate() + <span class="number">1</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="引入本地扩展-Introduce-Local-Extension"><a href="#引入本地扩展-Introduce-Local-Extension" class="headerlink" title="引入本地扩展(Introduce Local Extension)"></a>引入本地扩展(Introduce Local Extension)</h4><p><strong>问题</strong></p>
+<h4 id="引入本地扩展introduce-local-extension"><a class="markdownIt-Anchor" href="#引入本地扩展introduce-local-extension"></a> 引入本地扩展(Introduce Local Extension)</h4>
+<p><strong>问题</strong></p>
 <p>你需要为服务类提供一些额外函数，但你无法修改这个类。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>建立一个新类，使它包含这些额外函数，让这个扩展品成为源类的子类或包装类。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-local-extension-after.png"></div><br></p>
-<h2 id="中间人"><a href="#中间人" class="headerlink" title="中间人"></a>中间人</h2><blockquote>
+<h2 id="中间人"><a class="markdownIt-Anchor" href="#中间人"></a> 中间人</h2>
+<blockquote>
 <p>中间人(Middle Man)</p>
 <p>如果一个类的作用仅仅是指向另一个类的委托，为什么要存在呢？</p>
 </blockquote>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/middle-man-1.png"></div><br></p>
-<h3 id="问题原因-1"><a href="#问题原因-1" class="headerlink" title="问题原因"></a>问题原因</h3><p>对象的基本特征之一就是封装：对外部世界隐藏其内部细节。封装往往伴随委托。但是人们可能过度运用委托。比如，你也许会看到一个类的大部分有用工作都委托给了其他类，类本身成了一个空壳，除了委托之外不做任何事情。</p>
-<h3 id="解决方法-1"><a href="#解决方法-1" class="headerlink" title="解决方法"></a>解决方法</h3><p>应该运用 <code>移除中间人(Remove Middle Man)</code>，直接和真正负责的对象打交道。</p>
-<h3 id="收益-1"><a href="#收益-1" class="headerlink" title="收益"></a>收益</h3><ul>
+<h3 id="问题原因-2"><a class="markdownIt-Anchor" href="#问题原因-2"></a> 问题原因</h3>
+<p>对象的基本特征之一就是封装：对外部世界隐藏其内部细节。封装往往伴随委托。但是人们可能过度运用委托。比如，你也许会看到一个类的大部分有用工作都委托给了其他类，类本身成了一个空壳，除了委托之外不做任何事情。</p>
+<h3 id="解决方法-2"><a class="markdownIt-Anchor" href="#解决方法-2"></a> 解决方法</h3>
+<p>应该运用 <code>移除中间人(Remove Middle Man)</code>，直接和真正负责的对象打交道。</p>
+<h3 id="收益-2"><a class="markdownIt-Anchor" href="#收益-2"></a> 收益</h3>
+<ul>
 <li>减少笨重的代码。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/middle-man-2.png"></div><br></p>
-<h3 id="何时忽略-1"><a href="#何时忽略-1" class="headerlink" title="何时忽略"></a>何时忽略</h3><p>如果是以下情况，不要删除已创建的中间人：</p>
+<h3 id="何时忽略-2"><a class="markdownIt-Anchor" href="#何时忽略-2"></a> 何时忽略</h3>
+<p>如果是以下情况，不要删除已创建的中间人：</p>
 <ul>
 <li>添加中间人是为了避免类之间依赖关系。</li>
 <li>一些设计模式有目的地创建中间人（例如代理模式和装饰器模式）。</li>
 </ul>
-<h3 id="重构方法说明-1"><a href="#重构方法说明-1" class="headerlink" title="重构方法说明"></a>重构方法说明</h3><h4 id="移除中间人-Remove-Middle-Man"><a href="#移除中间人-Remove-Middle-Man" class="headerlink" title="移除中间人(Remove Middle Man)"></a>移除中间人(Remove Middle Man)</h4><p><strong>问题</strong></p>
+<h3 id="重构方法说明-2"><a class="markdownIt-Anchor" href="#重构方法说明-2"></a> 重构方法说明</h3>
+<h4 id="移除中间人remove-middle-man"><a class="markdownIt-Anchor" href="#移除中间人remove-middle-man"></a> 移除中间人(Remove Middle Man)</h4>
+<p><strong>问题</strong></p>
 <p>某个类做了过多的简单委托动作。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/remove-middle-man-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>让客户直接调用委托类。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/remove-middle-man-after.png"></div><br></p>
-<h2 id="依恋情结"><a href="#依恋情结" class="headerlink" title="依恋情结"></a>依恋情结</h2><blockquote>
+<h2 id="依恋情结"><a class="markdownIt-Anchor" href="#依恋情结"></a> 依恋情结</h2>
+<blockquote>
 <p>依恋情结(Feature Envy)</p>
 <p>一个函数访问其它对象的数据比访问自己的数据更多。</p>
 </blockquote>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/feature-envy-1.png"></div><br></p>
-<h3 id="问题原因-2"><a href="#问题原因-2" class="headerlink" title="问题原因"></a>问题原因</h3><p>这种气味可能发生在字段移动到数据类之后。如果是这种情况，你可能想将数据类的操作移动到这个类中。</p>
-<h3 id="解决方法-2"><a href="#解决方法-2" class="headerlink" title="解决方法"></a>解决方法</h3><p>As a basic rule, if things change at the same time, you should keep them in the same place. Usually data and functions that use this data are changed together (although exceptions are possible).</p>
+<h3 id="问题原因-3"><a class="markdownIt-Anchor" href="#问题原因-3"></a> 问题原因</h3>
+<p>这种气味可能发生在字段移动到数据类之后。如果是这种情况，你可能想将数据类的操作移动到这个类中。</p>
+<h3 id="解决方法-3"><a class="markdownIt-Anchor" href="#解决方法-3"></a> 解决方法</h3>
+<p>As a basic rule, if things change at the same time, you should keep them in the same place. Usually data and functions that use this data are changed together (although exceptions are possible).</p>
 <p>有一个基本原则：同时会发生改变的事情应该被放在同一个地方。通常，数据和使用这些数据的函数是一起改变的。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/feature-envy-2.png"></div><br></p>
 <ul>
@@ -630,132 +649,163 @@
 <li>如果仅仅是函数的部分代码访问另一个对象的数据，运用 <code>提炼函数(Extract Method)</code> 将这部分代码移到独立的函数中。</li>
 <li>如果一个方法使用来自其他几个类的函数，首先确定哪个类包含大多数使用的数据。然后，将该方法与其他数据一起放在此类中。或者，使用 <code>提炼函数(Extract Method)</code> 将方法拆分为几个部分，可以放置在不同类中的不同位置。</li>
 </ul>
-<h3 id="收益-2"><a href="#收益-2" class="headerlink" title="收益"></a>收益</h3><ul>
+<h3 id="收益-3"><a class="markdownIt-Anchor" href="#收益-3"></a> 收益</h3>
+<ul>
 <li>减少重复代码（如果数据处理的代码放在中心位置）。</li>
 <li>更好的代码组织性（处理数据的函数靠近实际数据）。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/feature-envy-3.png"></div><br></p>
-<h3 id="何时忽略-2"><a href="#何时忽略-2" class="headerlink" title="何时忽略"></a>何时忽略</h3><ul>
+<h3 id="何时忽略-3"><a class="markdownIt-Anchor" href="#何时忽略-3"></a> 何时忽略</h3>
+<ul>
 <li>有时，行为被有意地与保存数据的类分开。这通常的优点是能够动态地改变行为（见策略设计模式，访问者设计模式和其他模式）。</li>
 </ul>
-<h3 id="重构方法说明-2"><a href="#重构方法说明-2" class="headerlink" title="重构方法说明"></a>重构方法说明</h3><h4 id="搬移函数-Move-Method"><a href="#搬移函数-Move-Method" class="headerlink" title="搬移函数(Move Method)"></a>搬移函数(Move Method)</h4><p><strong>问题</strong></p>
+<h3 id="重构方法说明-3"><a class="markdownIt-Anchor" href="#重构方法说明-3"></a> 重构方法说明</h3>
+<h4 id="搬移函数move-method"><a class="markdownIt-Anchor" href="#搬移函数move-method"></a> 搬移函数(Move Method)</h4>
+<p><strong>问题</strong></p>
 <p>你的程序中，有个函数与其所驻类之外的另一个类进行更多交流：调用后者，或被后者调用。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是旧函数完全移除。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-after.png"></div><br></p>
-<h4 id="提炼函数-Extract-Method"><a href="#提炼函数-Extract-Method" class="headerlink" title="提炼函数(Extract Method)"></a>提炼函数(Extract Method)</h4><p><strong>问题</strong></p>
+<h4 id="提炼函数extract-method"><a class="markdownIt-Anchor" href="#提炼函数extract-method"></a> 提炼函数(Extract Method)</h4>
+<p><strong>问题</strong></p>
 <p>你有一段代码可以组织在一起。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printOwing</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  printBanner();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//print details</span></span><br><span class="line">  System.out.println(<span class="string">"name: "</span> + name);</span><br><span class="line">  System.out.println(<span class="string">"amount: "</span> + getOutstanding());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>解决</strong></p>
 <p>移动这段代码到一个新的函数中，使用函数的调用来替代老代码。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printOwing</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  printBanner();</span><br><span class="line">  printDetails(getOutstanding());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printDetails</span><span class="params">(<span class="keyword">double</span> outstanding)</span> </span>&#123;</span><br><span class="line">  System.out.println(<span class="string">"name: "</span> + name);</span><br><span class="line">  System.out.println(<span class="string">"amount: "</span> + outstanding);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="狎昵关系"><a href="#狎昵关系" class="headerlink" title="狎昵关系"></a>狎昵关系</h2><blockquote>
+<h2 id="狎昵关系"><a class="markdownIt-Anchor" href="#狎昵关系"></a> 狎昵关系</h2>
+<blockquote>
 <p>狎昵关系(Inappropriate Intimacy)</p>
 <p>一个类大量使用另一个类的内部字段和方法。</p>
 </blockquote>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/inappropriate-intimacy-1.png"></div><br></p>
-<h3 id="问题原因-3"><a href="#问题原因-3" class="headerlink" title="问题原因"></a>问题原因</h3><p>类和类之间应该尽量少的感知彼此（减少耦合）。这样的类更容易维护和复用。</p>
-<h3 id="解决方法-3"><a href="#解决方法-3" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<h3 id="问题原因-4"><a class="markdownIt-Anchor" href="#问题原因-4"></a> 问题原因</h3>
+<p>类和类之间应该尽量少的感知彼此（减少耦合）。这样的类更容易维护和复用。</p>
+<h3 id="解决方法-4"><a class="markdownIt-Anchor" href="#解决方法-4"></a> 解决方法</h3>
+<ul>
 <li>最简单的解决方法是运用 <code>搬移函数(Move Method)</code> 和 <code>搬移字段(Move Field)</code> 来让类之间斩断羁绊。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/inappropriate-intimacy-2.png"></div><br></p>
 <ul>
-<li><p>你也可以看看是否能运用 <code>将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</code> 让其中一个类对另一个说分手。</p>
+<li>
+<p>你也可以看看是否能运用 <code>将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</code> 让其中一个类对另一个说分手。</p>
 </li>
-<li><p>如果这两个类实在是情比金坚，难分难舍，可以运用 <code>提炼类(Extract Class)</code> 把二者共同点提炼到一个新类中，让它们产生爱的结晶。或者，可以尝试运用 <code>隐藏委托关系(Hide Delegate)</code> 让另一个类来为它们牵线搭桥。</p>
+<li>
+<p>如果这两个类实在是情比金坚，难分难舍，可以运用 <code>提炼类(Extract Class)</code> 把二者共同点提炼到一个新类中，让它们产生爱的结晶。或者，可以尝试运用 <code>隐藏委托关系(Hide Delegate)</code> 让另一个类来为它们牵线搭桥。</p>
 </li>
-<li>继承往往造成类之间过分紧密，因为子类对超类的了解总是超过后者的主观愿望，如果你觉得该让这个子类自己闯荡，请运用 <code>以委托取代继承(Replace Inheritance with Delegation)</code> 来让超类和子类分家。</li>
+<li>
+<p>继承往往造成类之间过分紧密，因为子类对超类的了解总是超过后者的主观愿望，如果你觉得该让这个子类自己闯荡，请运用 <code>以委托取代继承(Replace Inheritance with Delegation)</code> 来让超类和子类分家。</p>
+</li>
 </ul>
-<h3 id="收益-3"><a href="#收益-3" class="headerlink" title="收益"></a>收益</h3><ul>
+<h3 id="收益-4"><a class="markdownIt-Anchor" href="#收益-4"></a> 收益</h3>
+<ul>
 <li>提高代码组织性。</li>
 <li>提高代码复用性。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/inappropriate-intimacy-3.png"></div><br></p>
-<h3 id="重构方法说明-3"><a href="#重构方法说明-3" class="headerlink" title="重构方法说明"></a>重构方法说明</h3><h4 id="搬移函数-Move-Method-1"><a href="#搬移函数-Move-Method-1" class="headerlink" title="搬移函数(Move Method)"></a>搬移函数(Move Method)</h4><p><strong>问题</strong></p>
+<h3 id="重构方法说明-4"><a class="markdownIt-Anchor" href="#重构方法说明-4"></a> 重构方法说明</h3>
+<h4 id="搬移函数move-method-2"><a class="markdownIt-Anchor" href="#搬移函数move-method-2"></a> 搬移函数(Move Method)</h4>
+<p><strong>问题</strong></p>
 <p>你的程序中，有个函数与其所驻类之外的另一个类进行更多交流：调用后者，或被后者调用。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是旧函数完全移除。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-after.png"></div><br></p>
-<h4 id="搬移字段-Move-Field"><a href="#搬移字段-Move-Field" class="headerlink" title="搬移字段(Move Field)"></a>搬移字段(Move Field)</h4><p><strong>问题</strong></p>
+<h4 id="搬移字段move-field"><a class="markdownIt-Anchor" href="#搬移字段move-field"></a> 搬移字段(Move Field)</h4>
+<p><strong>问题</strong></p>
 <p>在你的程序中，某个字段被其所驻类之外的另一个类更多地用到。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-field-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在目标类新建一个字段，修改源字段的所有用户，令他们改用新字段。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-field-after.png"></div><br></p>
-<h4 id="将双向关联改为单向关联-Change-Bidirectional-Association-to-Unidirectional"><a href="#将双向关联改为单向关联-Change-Bidirectional-Association-to-Unidirectional" class="headerlink" title="将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)"></a>将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</h4><p><strong>问题</strong></p>
+<h4 id="将双向关联改为单向关联change-bidirectional-association-to-unidirectional"><a class="markdownIt-Anchor" href="#将双向关联改为单向关联change-bidirectional-association-to-unidirectional"></a> 将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</h4>
+<p><strong>问题</strong></p>
 <p>两个类之间有双向关联，但其中一个类如今不再需要另一个类的特性。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/change-bidirectional-association-to-unidirectional-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>去除不必要的关联。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/change-bidirectional-association-to-unidirectional-after.png"></div><br></p>
-<h4 id="提炼类-Extract-Class"><a href="#提炼类-Extract-Class" class="headerlink" title="提炼类(Extract Class)"></a>提炼类(Extract Class)</h4><p><strong>问题</strong></p>
+<h4 id="提炼类extract-class"><a class="markdownIt-Anchor" href="#提炼类extract-class"></a> 提炼类(Extract Class)</h4>
+<p><strong>问题</strong></p>
 <p>某个类做了不止一件事。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/extract-class-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>建立一个新类，将相关的字段和函数从旧类搬移到新类。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/extract-class-after.png"></div><br></p>
-<h4 id="隐藏委托关系-Hide-Delegate"><a href="#隐藏委托关系-Hide-Delegate" class="headerlink" title="隐藏委托关系(Hide Delegate)"></a>隐藏委托关系(Hide Delegate)</h4><p><strong>问题</strong></p>
+<h4 id="隐藏委托关系hide-delegate"><a class="markdownIt-Anchor" href="#隐藏委托关系hide-delegate"></a> 隐藏委托关系(Hide Delegate)</h4>
+<p><strong>问题</strong></p>
 <p>客户通过一个委托类来调用另一个对象。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/hide-delegate-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在服务类上建立客户所需的所有函数，用以隐藏委托关系。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/hide-delegate-after.png"></div><br></p>
-<h4 id="以委托取代继承-Replace-Inheritance-with-Delegation"><a href="#以委托取代继承-Replace-Inheritance-with-Delegation" class="headerlink" title="以委托取代继承(Replace Inheritance with Delegation)"></a>以委托取代继承(Replace Inheritance with Delegation)</h4><p><strong>问题</strong></p>
+<h4 id="以委托取代继承replace-inheritance-with-delegation"><a class="markdownIt-Anchor" href="#以委托取代继承replace-inheritance-with-delegation"></a> 以委托取代继承(Replace Inheritance with Delegation)</h4>
+<p><strong>问题</strong></p>
 <p>某个子类只使用超类接口中的一部分，或是根本不需要继承而来的数据。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/replace-delegation-with-inheritance-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在子类中新建一个字段用以保存超类；调整子类函数，令它改而委托超类；然后去掉两者之间的继承关系。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/replace-delegation-with-inheritance-after.png"></div><br></p>
-<h2 id="过度耦合的消息链"><a href="#过度耦合的消息链" class="headerlink" title="过度耦合的消息链"></a>过度耦合的消息链</h2><blockquote>
+<h2 id="过度耦合的消息链"><a class="markdownIt-Anchor" href="#过度耦合的消息链"></a> 过度耦合的消息链</h2>
+<blockquote>
 <p>过度耦合的消息链(Message Chains)</p>
 <p>消息链的形式类似于：<code>obj.getA().getB().getC()</code>。</p>
 </blockquote>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/message-chains-1.png"></div><br></p>
-<h3 id="问题原因-4"><a href="#问题原因-4" class="headerlink" title="问题原因"></a>问题原因</h3><p>如果你看到用户向一个对象请求另一个对象，然后再向后者请求另一个对象，然后再请求另一个对象……这就是消息链。实际代码中你看到的可能是一长串 getThis()或一长串临时变量。采取这种方式，意味客户代码将与查找过程中的导航紧密耦合。一旦对象间关系发生任何变化，客户端就不得不做出相应的修改。</p>
-<h3 id="解决方法-4"><a href="#解决方法-4" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<h3 id="问题原因-5"><a class="markdownIt-Anchor" href="#问题原因-5"></a> 问题原因</h3>
+<p>如果你看到用户向一个对象请求另一个对象，然后再向后者请求另一个对象，然后再请求另一个对象……这就是消息链。实际代码中你看到的可能是一长串 getThis()或一长串临时变量。采取这种方式，意味客户代码将与查找过程中的导航紧密耦合。一旦对象间关系发生任何变化，客户端就不得不做出相应的修改。</p>
+<h3 id="解决方法-5"><a class="markdownIt-Anchor" href="#解决方法-5"></a> 解决方法</h3>
+<ul>
 <li>可以运用 <code>隐藏委托关系(Hide Delegate)</code> 删除一个消息链。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/message-chains-2.png"></div><br></p>
 <ul>
 <li>有时更好的选择是：先观察消息链最终得到的对象是用来干什么的。看看能否以 <code>提炼函数(Extract Method)</code>把使用该对象的代码提炼到一个独立函数中，再运用 <code>搬移函数(Move Method)</code> 把这个函数推入消息链。</li>
 </ul>
-<h3 id="收益-4"><a href="#收益-4" class="headerlink" title="收益"></a>收益</h3><ul>
+<h3 id="收益-5"><a class="markdownIt-Anchor" href="#收益-5"></a> 收益</h3>
+<ul>
 <li>能减少链中类之间的依赖。</li>
 <li>能减少代码量。</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/message-chains-3.png"></div><br></p>
-<h3 id="何时忽略-3"><a href="#何时忽略-3" class="headerlink" title="何时忽略"></a>何时忽略</h3><ul>
+<h3 id="何时忽略-4"><a class="markdownIt-Anchor" href="#何时忽略-4"></a> 何时忽略</h3>
+<ul>
 <li>过于侵略性的委托可能会使程序员难以理解功能是如何触发的。</li>
 </ul>
-<h3 id="重构方法说明-4"><a href="#重构方法说明-4" class="headerlink" title="重构方法说明"></a>重构方法说明</h3><h4 id="隐藏委托关系-Hide-Delegate-1"><a href="#隐藏委托关系-Hide-Delegate-1" class="headerlink" title="隐藏委托关系(Hide Delegate)"></a>隐藏委托关系(Hide Delegate)</h4><p><strong>问题</strong></p>
+<h3 id="重构方法说明-5"><a class="markdownIt-Anchor" href="#重构方法说明-5"></a> 重构方法说明</h3>
+<h4 id="隐藏委托关系hide-delegate-2"><a class="markdownIt-Anchor" href="#隐藏委托关系hide-delegate-2"></a> 隐藏委托关系(Hide Delegate)</h4>
+<p><strong>问题</strong></p>
 <p>客户通过一个委托类来调用另一个对象。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/hide-delegate-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在服务类上建立客户所需的所有函数，用以隐藏委托关系。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/hide-delegate-after.png"></div><br></p>
-<h4 id="提炼函数-Extract-Method-1"><a href="#提炼函数-Extract-Method-1" class="headerlink" title="提炼函数(Extract Method)"></a>提炼函数(Extract Method)</h4><p><strong>问题</strong></p>
+<h4 id="提炼函数extract-method-2"><a class="markdownIt-Anchor" href="#提炼函数extract-method-2"></a> 提炼函数(Extract Method)</h4>
+<p><strong>问题</strong></p>
 <p>你有一段代码可以组织在一起。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printOwing</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  printBanner();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//print details</span></span><br><span class="line">  System.out.println(<span class="string">"name: "</span> + name);</span><br><span class="line">  System.out.println(<span class="string">"amount: "</span> + getOutstanding());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>解决</strong></p>
 <p>移动这段代码到一个新的函数中，使用函数的调用来替代老代码。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printOwing</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  printBanner();</span><br><span class="line">  printDetails(getOutstanding());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printDetails</span><span class="params">(<span class="keyword">double</span> outstanding)</span> </span>&#123;</span><br><span class="line">  System.out.println(<span class="string">"name: "</span> + name);</span><br><span class="line">  System.out.println(<span class="string">"amount: "</span> + outstanding);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="搬移函数-Move-Method-2"><a href="#搬移函数-Move-Method-2" class="headerlink" title="搬移函数(Move Method)"></a>搬移函数(Move Method)</h4><p><strong>问题</strong></p>
+<h4 id="搬移函数move-method-3"><a class="markdownIt-Anchor" href="#搬移函数move-method-3"></a> 搬移函数(Move Method)</h4>
+<p><strong>问题</strong></p>
 <p>你的程序中，有个函数与其所驻类之外的另一个类进行更多交流：调用后者，或被后者调用。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-before.png"></div><br></p>
 <p><strong>解决</strong></p>
 <p>在该函数最常引用的类中建立一个有着类似行为的新函数。将旧函数变成一个单纯的委托函数，或是旧函数完全移除。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/move-method-after.png"></div><br></p>
-<h2 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h2><ul>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码的坏味道和重构.md" target="_blank" rel="noopener">代码的坏味道和重构</a></li>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之代码臃肿.md" target="_blank" rel="noopener">代码坏味道之代码臃肿</a></li>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之滥用面向对象.md" target="_blank" rel="noopener">代码坏味道之滥用面向对象</a></li>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之变革的障碍.md" target="_blank" rel="noopener">代码坏味道之变革的障碍</a></li>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之非必要的.md" target="_blank" rel="noopener">代码坏味道之非必要的</a></li>
-<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/代码坏味道之耦合.md" target="_blank" rel="noopener">代码坏味道之耦合</a></li>
+<h2 id="扩展阅读"><a class="markdownIt-Anchor" href="#扩展阅读"></a> 扩展阅读</h2>
+<ul>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E7%9A%84%E5%9D%8F%E5%91%B3%E9%81%93%E5%92%8C%E9%87%8D%E6%9E%84.md" target="_blank" rel="noopener">代码的坏味道和重构</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E4%BB%A3%E7%A0%81%E8%87%83%E8%82%BF.md" target="_blank" rel="noopener">代码坏味道之代码臃肿</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E6%BB%A5%E7%94%A8%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1.md" target="_blank" rel="noopener">代码坏味道之滥用面向对象</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E5%8F%98%E9%9D%A9%E7%9A%84%E9%9A%9C%E7%A2%8D.md" target="_blank" rel="noopener">代码坏味道之变革的障碍</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E9%9D%9E%E5%BF%85%E8%A6%81%E7%9A%84.md" target="_blank" rel="noopener">代码坏味道之非必要的</a></li>
+<li><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E8%80%A6%E5%90%88.md" target="_blank" rel="noopener">代码坏味道之耦合</a></li>
 </ul>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
 <li><a href="https://book.douban.com/subject/4262627/" target="_blank" rel="noopener">重构——改善既有代码的设计</a> - by Martin Fowler</li>
 <li><a href="https://sourcemaking.com/refactoring" target="_blank" rel="noopener">https://sourcemaking.com/refactoring</a></li>
 </ul>
@@ -827,8 +877,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/09/28/os/linux/ops/samba使用详解/" rel="next" title="samba 使用详解">
-                <i class="fa fa-chevron-left"></i> samba 使用详解
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之代码臃肿/" rel="next" title="代码坏味道之代码臃肿">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之代码臃肿
               </a>
             
           </div>
@@ -837,8 +887,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/代码坏味道之变革的障碍/" rel="prev" title="代码坏味道之变革的障碍">
-                代码坏味道之变革的障碍 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之非必要的/" rel="prev" title="代码坏味道之非必要的">
+                代码坏味道之非必要的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -910,7 +960,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -975,7 +1025,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1273,7 +1325,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码坏味道之耦合"><span class="nav-text">代码坏味道之耦合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不完美的库类"><span class="nav-text">不完美的库类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入外加函数-Introduce-Foreign-Method"><span class="nav-text">引入外加函数(Introduce Foreign Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入本地扩展-Introduce-Local-Extension"><span class="nav-text">引入本地扩展(Introduce Local Extension)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人"><span class="nav-text">中间人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-1"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-1"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-1"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-1"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-1"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移除中间人-Remove-Middle-Man"><span class="nav-text">移除中间人(Remove Middle Man)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依恋情结"><span class="nav-text">依恋情结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-2"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method"><span class="nav-text">提炼函数(Extract Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狎昵关系"><span class="nav-text">狎昵关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-3"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-1"><span class="nav-text">搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移字段-Move-Field"><span class="nav-text">搬移字段(Move Field)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将双向关联改为单向关联-Change-Bidirectional-Association-to-Unidirectional"><span class="nav-text">将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类-Extract-Class"><span class="nav-text">提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以委托取代继承-Replace-Inheritance-with-Delegation"><span class="nav-text">以委托取代继承(Replace Inheritance with Delegation)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度耦合的消息链"><span class="nav-text">过度耦合的消息链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-4"><span class="nav-text">问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-4"><span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text">收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-3"><span class="nav-text">何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text">重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系-Hide-Delegate-1"><span class="nav-text">隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数-Extract-Method-1"><span class="nav-text">提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数-Move-Method-2"><span class="nav-text">搬移函数(Move Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#代码坏味道之耦合"><span class="nav-text"> 代码坏味道之耦合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#不完美的库类"><span class="nav-text"> 不完美的库类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因"><span class="nav-text"> 问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法"><span class="nav-text"> 解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益"><span class="nav-text"> 收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略"><span class="nav-text"> 何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明"><span class="nav-text"> 重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#引入外加函数introduce-foreign-method"><span class="nav-text"> 引入外加函数(Introduce Foreign Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#引入本地扩展introduce-local-extension"><span class="nav-text"> 引入本地扩展(Introduce Local Extension)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人"><span class="nav-text"> 中间人</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-2"><span class="nav-text"> 问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-2"><span class="nav-text"> 解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-2"><span class="nav-text"> 收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-2"><span class="nav-text"> 何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-2"><span class="nav-text"> 重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#移除中间人remove-middle-man"><span class="nav-text"> 移除中间人(Remove Middle Man)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#依恋情结"><span class="nav-text"> 依恋情结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-3"><span class="nav-text"> 问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-3"><span class="nav-text"> 解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-3"><span class="nav-text"> 收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-3"><span class="nav-text"> 何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-3"><span class="nav-text"> 重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数move-method"><span class="nav-text"> 搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数extract-method"><span class="nav-text"> 提炼函数(Extract Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狎昵关系"><span class="nav-text"> 狎昵关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-4"><span class="nav-text"> 问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-4"><span class="nav-text"> 解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-4"><span class="nav-text"> 收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-4"><span class="nav-text"> 重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数move-method-2"><span class="nav-text"> 搬移函数(Move Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移字段move-field"><span class="nav-text"> 搬移字段(Move Field)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将双向关联改为单向关联change-bidirectional-association-to-unidirectional"><span class="nav-text"> 将双向关联改为单向关联(Change Bidirectional Association to Unidirectional)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼类extract-class"><span class="nav-text"> 提炼类(Extract Class)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系hide-delegate"><span class="nav-text"> 隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#以委托取代继承replace-inheritance-with-delegation"><span class="nav-text"> 以委托取代继承(Replace Inheritance with Delegation)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过度耦合的消息链"><span class="nav-text"> 过度耦合的消息链</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题原因-5"><span class="nav-text"> 问题原因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决方法-5"><span class="nav-text"> 解决方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收益-5"><span class="nav-text"> 收益</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何时忽略-4"><span class="nav-text"> 何时忽略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重构方法说明-5"><span class="nav-text"> 重构方法说明</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏委托关系hide-delegate-2"><span class="nav-text"> 隐藏委托关系(Hide Delegate)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#提炼函数extract-method-2"><span class="nav-text"> 提炼函数(Extract Method)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#搬移函数move-method-3"><span class="nav-text"> 搬移函数(Move Method)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展阅读"><span class="nav-text"> 扩展阅读</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1315,7 +1367,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

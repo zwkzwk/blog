@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Nodejs 安装  安装方法 先安装 nvm 安装 Nodejs   脚本   安装方法先安装 nvm推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/ins">
+  <meta name="description" content="Nodejs 安装   安装方法  先安装 nvm 安装 Nodejs   脚本    安装方法  先安装 nvm 推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.3">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nodejs 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/nodejs/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Nodejs 安装  安装方法 先安装 nvm 安装 Nodejs   脚本   安装方法先安装 nvm推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/ins">
+<meta property="og:description" content="Nodejs 安装   安装方法  先安装 nvm 安装 Nodejs   脚本    安装方法  先安装 nvm 推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.3">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nodejs 安装">
-<meta name="twitter:description" content="Nodejs 安装  安装方法 先安装 nvm 安装 Nodejs   脚本   安装方法先安装 nvm推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/ins">
+<meta name="twitter:description" content="Nodejs 安装   安装方法  先安装 nvm 安装 Nodejs   脚本    安装方法  先安装 nvm 推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。 安装步骤如下： （1）执行安装脚本 rm -rf ~/.nvmcurl -o- https://raw.githubusercontent.com/creationix/nvm/v0.3">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">511</span>
+                <span title="本文字数">525</span>
               
 
               
@@ -477,33 +477,41 @@
       
 
       
-        <h1 id="Nodejs-安装"><a href="#Nodejs-安装" class="headerlink" title="Nodejs 安装"></a>Nodejs 安装</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="nodejs-安装"><a class="markdownIt-Anchor" href="#nodejs-安装"></a> Nodejs 安装</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装方法">安装方法</a><ul>
-<li><a href="#先安装-nvm">先安装 nvm</a></li>
-<li><a href="#安装-nodejs">安装 Nodejs</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95">安装方法</a>
+<ul>
+<li><a href="#%E5%85%88%E5%AE%89%E8%A3%85-nvm">先安装 nvm</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85-nodejs">安装 Nodejs</a></li>
 </ul>
 </li>
-<li><a href="#脚本">脚本</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC">脚本</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><h3 id="先安装-nvm"><a href="#先安装-nvm" class="headerlink" title="先安装 nvm"></a>先安装 nvm</h3><p>推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。</p>
+<h2 id="安装方法"><a class="markdownIt-Anchor" href="#安装方法"></a> 安装方法</h2>
+<h3 id="先安装-nvm"><a class="markdownIt-Anchor" href="#先安装-nvm"></a> 先安装 nvm</h3>
+<p>推荐安装 nvm(Node Version Manager) ，来管理 node.js 版本。</p>
 <p>安装步骤如下：</p>
 <p>（1）执行安装脚本</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">rm -rf ~<span class="regexp">/.nvm</span></span><br><span class="line"><span class="regexp">curl -o- https:/</span><span class="regexp">/raw.githubusercontent.com/creationix</span><span class="regexp">/nvm/v</span>0.<span class="number">33.8</span>/install.sh | bash</span><br><span class="line">. ~<span class="regexp">/.nvm/nvm</span>.sh</span><br></pre></td></tr></table></figure>
 <p>（2）检验是否安装成功</p>
 <p>执行 <code>nvm --version</code> 命令。</p>
 <p>注意：如果出现 <code>nvm: command not found</code> ，关闭终端，然后再打开终端试试。</p>
-<h3 id="安装-Nodejs"><a href="#安装-Nodejs" class="headerlink" title="安装 Nodejs"></a>安装 Nodejs</h3><p>安装步骤如下：</p>
+<h3 id="安装-nodejs"><a class="markdownIt-Anchor" href="#安装-nodejs"></a> 安装 Nodejs</h3>
+<p>安装步骤如下：</p>
 <p>（1）使用 nvm 安装 nodejs 指定版本</p>
 <p>执行以下命令：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">nvm</span> <span class="selector-tag">install</span> 8<span class="selector-class">.9</span><span class="selector-class">.4</span></span><br><span class="line"><span class="selector-tag">nvm</span> <span class="selector-tag">use</span> 8<span class="selector-class">.9</span><span class="selector-class">.4</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">nvm install <span class="number">8.9</span><span class="number">.4</span></span><br><span class="line">nvm use <span class="number">8.9</span><span class="number">.4</span></span><br></pre></td></tr></table></figure>
 <p>（2）检验是否安装成功</p>
 <p>执行 <code>node --version</code> 命令。</p>
 <p>注意：如果出现 <code>node: command not found</code> ，关闭终端，然后再打开终端试试。</p>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/nodejs" target="_blank" rel="noopener">安装脚本</a> |</p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/nodejs" target="_blank" rel="noopener">安装脚本</a> |</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
@@ -576,8 +584,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/ops/service/kafka/" rel="prev" title="Kafka 安装部署">
-                Kafka 安装部署 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/nexus/" rel="prev" title="Nexus 安装">
+                Nexus 安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +657,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -714,7 +722,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1012,7 +1022,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Nodejs-安装"><span class="nav-text">Nodejs 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装方法"><span class="nav-text">安装方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先安装-nvm"><span class="nav-text">先安装 nvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Nodejs"><span class="nav-text">安装 Nodejs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs-安装"><span class="nav-text"> Nodejs 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装方法"><span class="nav-text"> 安装方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#先安装-nvm"><span class="nav-text"> 先安装 nvm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-nodejs"><span class="nav-text"> 安装 Nodejs</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1054,7 +1064,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="大数据简介  简介 什么是大数据 应用场景 Hadoop 编年史   技术体系 HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源   简介什么是大数据大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计算芯片增长速度的">
+  <meta name="description" content="大数据简介   简介  什么是大数据 应用场景 Hadoop 编年史   技术体系  HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源    简介  什么是大数据 大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计">
 <meta name="keywords" content="bigdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大数据简介">
 <meta property="og:url" content="https://dunwu.github.io/2018/09/03/bigdata/overview/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="大数据简介  简介 什么是大数据 应用场景 Hadoop 编年史   技术体系 HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源   简介什么是大数据大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计算芯片增长速度的">
+<meta property="og:description" content="大数据简介   简介  什么是大数据 应用场景 Hadoop 编年史   技术体系  HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源    简介  什么是大数据 大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.201Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大数据简介">
-<meta name="twitter:description" content="大数据简介  简介 什么是大数据 应用场景 Hadoop 编年史   技术体系 HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源   简介什么是大数据大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计算芯片增长速度的">
+<meta name="twitter:description" content="大数据简介   简介  什么是大数据 应用场景 Hadoop 编年史   技术体系  HDFS MapReduce Spark YARN Hive HBase ElasticSearch   术语 资源    简介  什么是大数据 大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计">
 
 
 
@@ -508,15 +508,18 @@
       
 
       
-        <h1 id="大数据简介"><a href="#大数据简介" class="headerlink" title="大数据简介"></a>大数据简介</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="大数据简介"><a class="markdownIt-Anchor" href="#大数据简介"></a> 大数据简介</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#什么是大数据">什么是大数据</a></li>
-<li><a href="#应用场景">应用场景</a></li>
-<li><a href="#hadoop-编年史">Hadoop 编年史</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%A7%E6%95%B0%E6%8D%AE">什么是大数据</a></li>
+<li><a href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">应用场景</a></li>
+<li><a href="#hadoop-%E7%BC%96%E5%B9%B4%E5%8F%B2">Hadoop 编年史</a></li>
 </ul>
 </li>
-<li><a href="#技术体系">技术体系</a><ul>
+<li><a href="#%E6%8A%80%E6%9C%AF%E4%BD%93%E7%B3%BB">技术体系</a>
+<ul>
 <li><a href="#hdfs">HDFS</a></li>
 <li><a href="#mapreduce">MapReduce</a></li>
 <li><a href="#spark">Spark</a></li>
@@ -526,20 +529,24 @@
 <li><a href="#elasticsearch">ElasticSearch</a></li>
 </ul>
 </li>
-<li><a href="#术语">术语</a></li>
-<li><a href="#资源">资源</a></li>
+<li><a href="#%E6%9C%AF%E8%AF%AD">术语</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="什么是大数据"><a href="#什么是大数据" class="headerlink" title="什么是大数据"></a>什么是大数据</h3><p>大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计算芯片增长速度的摩尔定律一样。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="什么是大数据"><a class="markdownIt-Anchor" href="#什么是大数据"></a> 什么是大数据</h3>
+<p>大数据是指超出传统数据库工具收集、存储、管理和分析能力的数据集。与此同时，及时采集、存储、聚合、管理数据，以及对数据深度分析的新技术和新能力，正在快速增长，就像预测计算芯片增长速度的摩尔定律一样。</p>
 <ul>
 <li><strong>Volume</strong> - 数据规模巨大</li>
 <li><strong>Velocity</strong> - 生成和处理速度极快</li>
 <li><strong>Variety</strong> - 数据规模巨大</li>
 <li><strong>Value</strong> - 生成和处理速度极快</li>
 </ul>
-<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><p>基于大数据的数据仓库</p>
+<h3 id="应用场景"><a class="markdownIt-Anchor" href="#应用场景"></a> 应用场景</h3>
+<p>基于大数据的数据仓库</p>
 <p>基于大数据的实时流处理</p>
-<h3 id="Hadoop-编年史"><a href="#Hadoop-编年史" class="headerlink" title="Hadoop 编年史"></a>Hadoop 编年史</h3><table>
+<h3 id="hadoop-编年史"><a class="markdownIt-Anchor" href="#hadoop-编年史"></a> Hadoop 编年史</h3>
+<table>
 <thead>
 <tr>
 <th style="text-align:left">时间</th>
@@ -581,7 +588,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="技术体系"><a href="#技术体系" class="headerlink" title="技术体系"></a>技术体系</h2><h3 id="HDFS"><a href="#HDFS" class="headerlink" title="HDFS"></a>HDFS</h3><p><strong>概念</strong></p>
+<h2 id="技术体系"><a class="markdownIt-Anchor" href="#技术体系"></a> 技术体系</h2>
+<h3 id="hdfs"><a class="markdownIt-Anchor" href="#hdfs"></a> HDFS</h3>
+<p><strong>概念</strong></p>
 <ul>
 <li>Hadoop 分布式文件系统（Hadoop Distributed File System）</li>
 <li>在开源大数据技术体系中，地位无可替代</li>
@@ -596,7 +605,8 @@
 <li>大规模数据集：典型文件大小 GB~TB 级，百万以上文件数量， PB 以上数据规模</li>
 <li>构建成本低且安全可靠：运行在大量的廉价商用机器上，硬件错误是常态，提供容错机制</li>
 </ul>
-<h3 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h3><p><strong>概念</strong></p>
+<h3 id="mapreduce"><a class="markdownIt-Anchor" href="#mapreduce"></a> MapReduce</h3>
+<p><strong>概念</strong></p>
 <ul>
 <li>面向批处理的分布式计算框架</li>
 <li>编程模型：将 MapReduce 程序分为 Map、Reduce 两个阶段</li>
@@ -613,7 +623,8 @@
 <li>适用于海量数据的离线批处理</li>
 <li>降低了分布式编程的门槛</li>
 </ul>
-<h3 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h3><p>高性能分布式通用计算引擎</p>
+<h3 id="spark"><a class="markdownIt-Anchor" href="#spark"></a> Spark</h3>
+<p>高性能分布式通用计算引擎</p>
 <ul>
 <li>Spark Core - 基础计算框架（批处理、交互式分析）</li>
 <li>Spark SQL - SQL 引擎（海量结构化数据的高性能查询）</li>
@@ -628,7 +639,8 @@
 <li>通用易用 - 适用于批处理、交互式计算、流处理、机器学习、图计算等多种场景</li>
 <li>运行模式多样 - Local、Standalone、YARN/Mesos</li>
 </ul>
-<h3 id="YARN"><a href="#YARN" class="headerlink" title="YARN"></a>YARN</h3><p><strong>概念</strong></p>
+<h3 id="yarn"><a class="markdownIt-Anchor" href="#yarn"></a> YARN</h3>
+<p><strong>概念</strong></p>
 <ul>
 <li>Yet Another Resource Negotiator，另一种资源管理器</li>
 <li>为了解决 Hadoop 1.x 中 MapReduce 的先天缺陷</li>
@@ -643,7 +655,8 @@
 <li>高可用 - ResourceManager 高可用、HDFS 高可用</li>
 <li>高扩展</li>
 </ul>
-<h3 id="Hive"><a href="#Hive" class="headerlink" title="Hive"></a>Hive</h3><p><strong>概念</strong></p>
+<h3 id="hive"><a class="markdownIt-Anchor" href="#hive"></a> Hive</h3>
+<p><strong>概念</strong></p>
 <ul>
 <li>Hadoop 数据仓库 - 企业决策支持</li>
 <li>SQL 引擎 - 对海量结构化数据进行高性能的 SQL 查询</li>
@@ -657,7 +670,8 @@
 <li>提供灵活的扩展性</li>
 <li>提供复杂数据类型、扩展函数、脚本等</li>
 </ul>
-<h3 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h3><p><strong>概念</strong></p>
+<h3 id="hbase"><a class="markdownIt-Anchor" href="#hbase"></a> HBase</h3>
+<p><strong>概念</strong></p>
 <ul>
 <li>Hadoop Database</li>
 <li>Google BigTable 的开源实现</li>
@@ -672,15 +686,18 @@
 <li>高扩展 - 数据自动切分和分布，可动态扩容，无需停机</li>
 <li>海量存储 - 单表可容纳数十亿行，上百万列</li>
 </ul>
-<h3 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch"></a>ElasticSearch</h3><ul>
+<h3 id="elasticsearch"><a class="markdownIt-Anchor" href="#elasticsearch"></a> ElasticSearch</h3>
+<ul>
 <li>开源的分布式全文检索引擎</li>
 <li>基于 Lucene 实现全文数据的快速存储、搜索和分析</li>
 <li>处理大规模数据 - PB 级以上</li>
 <li>具有较强的扩展性，集群规模可达上百台</li>
 <li>首选的分布式搜索引擎</li>
 </ul>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><p><strong>数据仓库（Data Warehouse）</strong> - 数据仓库，是为企业所有级别的决策制定过程，提供所有类型数据支持的战略集合。它是单个数据存储，出于分析性报告和决策支持目的而创建。 为需要业务智能的企业，提供指导业务流程改进、监视时间、成本、质量以及控制。</p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<h2 id="术语"><a class="markdownIt-Anchor" href="#术语"></a> 术语</h2>
+<p><strong>数据仓库（Data Warehouse）</strong> - 数据仓库，是为企业所有级别的决策制定过程，提供所有类型数据支持的战略集合。它是单个数据存储，出于分析性报告和决策支持目的而创建。 为需要业务智能的企业，提供指导业务流程改进、监视时间、成本、质量以及控制。</p>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<ul>
 <li><a href="https://github.com/onurakpolat/awesome-bigdata" target="_blank" rel="noopener">awesome-bigdata</a></li>
 <li><a href="http://hadoop.apache.org/" target="_blank" rel="noopener">Hadoop</a></li>
 <li><a href="http://hbase.apache.org/" target="_blank" rel="noopener">HBase</a></li>
@@ -756,8 +773,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/08/29/programming/java/javacore/basic/1-Java简介/" rel="next" title="Java 简介">
-                <i class="fa fa-chevron-left"></i> Java 简介
+              <a href="/blog/2018/09/03/bigdata/MapReduce/" rel="next" title="MapReduce">
+                <i class="fa fa-chevron-left"></i> MapReduce
               </a>
             
           </div>
@@ -766,8 +783,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/09/03/bigdata/YARN/" rel="prev" title="YARN">
-                YARN <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/09/04/bigdata/Sqoop/" rel="prev" title="Sqoop">
+                Sqoop <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -839,7 +856,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -904,7 +921,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1202,7 +1221,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据简介"><span class="nav-text">大数据简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是大数据"><span class="nav-text">什么是大数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-text">应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hadoop-编年史"><span class="nav-text">Hadoop 编年史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术体系"><span class="nav-text">技术体系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS"><span class="nav-text">HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MapReduce"><span class="nav-text">MapReduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark"><span class="nav-text">Spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#YARN"><span class="nav-text">YARN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hive"><span class="nav-text">Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase"><span class="nav-text">HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ElasticSearch"><span class="nav-text">ElasticSearch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#大数据简介"><span class="nav-text"> 大数据简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是大数据"><span class="nav-text"> 什么是大数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用场景"><span class="nav-text"> 应用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop-编年史"><span class="nav-text"> Hadoop 编年史</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#技术体系"><span class="nav-text"> 技术体系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hdfs"><span class="nav-text"> HDFS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapreduce"><span class="nav-text"> MapReduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark"><span class="nav-text"> Spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yarn"><span class="nav-text"> YARN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hive"><span class="nav-text"> Hive</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hbase"><span class="nav-text"> HBase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elasticsearch"><span class="nav-text"> ElasticSearch</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-text"> 术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1244,7 +1263,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

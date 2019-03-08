@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 仓库仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，ub">
+  <meta name="description" content="Docker 仓库 仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 仓库">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/basics/docker-repository/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 仓库仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，ub">
+<meta property="og:description" content="Docker 仓库 仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 仓库">
-<meta name="twitter:description" content="Docker 仓库仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，ub">
+<meta name="twitter:description" content="Docker 仓库 仓库（Repository）是集中存放镜像的地方。 一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -477,13 +477,18 @@
       
 
       
-        <h1 id="Docker-仓库"><a href="#Docker-仓库" class="headerlink" title="Docker 仓库"></a>Docker 仓库</h1><p>仓库（Repository）是集中存放镜像的地方。</p>
-<p>一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 dl.dockerpool.com/ubuntu 来说，dl.dockerpool.com 是注册服务器地址，ubuntu 是仓库名。</p>
-<h2 id="Docker-Hub"><a href="#Docker-Hub" class="headerlink" title="Docker Hub"></a>Docker Hub</h2><p>目前 Docker 官方维护了一个公共仓库 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，其中已经包括了数量超过 15,000 的镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。</p>
-<h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>你可以在 <a href="https://cloud.docker.com/" target="_blank" rel="noopener">https://cloud.docker.com</a> 免费注册一个 Docker 账号。</p>
-<h3 id="登录"><a href="#登录" class="headerlink" title="登录"></a>登录</h3><p>可以通过执行 <code>docker login</code> 命令交互式的输入用户名及密码来完成在命令行界面登录 Docker Hub。</p>
+        <h1 id="docker-仓库"><a class="markdownIt-Anchor" href="#docker-仓库"></a> Docker 仓库</h1>
+<p>仓库（Repository）是集中存放镜像的地方。</p>
+<p>一个容易混淆的概念是注册服务器（Registry）。实际上注册服务器是管理仓库的具体服务器，每个服务器上可以有多个仓库，而每个仓库下面有多个镜像。从这方面来说，仓库可以被认为是一个具体的项目或目录。例如对于仓库地址 <a href="http://dl.dockerpool.com/ubuntu" target="_blank" rel="noopener">dl.dockerpool.com/ubuntu</a> 来说，<a href="http://dl.dockerpool.com" target="_blank" rel="noopener">dl.dockerpool.com</a> 是注册服务器地址，ubuntu 是仓库名。</p>
+<h2 id="docker-hub"><a class="markdownIt-Anchor" href="#docker-hub"></a> Docker Hub</h2>
+<p>目前 Docker 官方维护了一个公共仓库 <a href="https://hub.docker.com/" target="_blank" rel="noopener">Docker Hub</a>，其中已经包括了数量超过 15,000 的镜像。大部分需求都可以通过在 Docker Hub 中直接下载镜像来实现。</p>
+<h3 id="注册"><a class="markdownIt-Anchor" href="#注册"></a> 注册</h3>
+<p>你可以在 <a href="https://cloud.docker.com/" target="_blank" rel="noopener">https://cloud.docker.com</a> 免费注册一个 Docker 账号。</p>
+<h3 id="登录"><a class="markdownIt-Anchor" href="#登录"></a> 登录</h3>
+<p>可以通过执行 <code>docker login</code> 命令交互式的输入用户名及密码来完成在命令行界面登录 Docker Hub。</p>
 <p>你可以通过 <code>docker logout</code> 退出登录。</p>
-<h3 id="拉取镜像"><a href="#拉取镜像" class="headerlink" title="拉取镜像"></a>拉取镜像</h3><p>你可以通过 <code>docker search</code> 命令来查找官方仓库中的镜像，并利用 <code>docker pull</code> 命令来将它下载到本地。</p>
+<h3 id="拉取镜像"><a class="markdownIt-Anchor" href="#拉取镜像"></a> 拉取镜像</h3>
+<p>你可以通过 <code>docker search</code> 命令来查找官方仓库中的镜像，并利用 <code>docker pull</code> 命令来将它下载到本地。</p>
 <p>例如以 <code>centos</code> 为关键词进行搜索：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker search centos</span><br><span class="line">NAME                                            DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</span><br><span class="line">centos                                          The official build of CentOS.                   465       [OK]</span><br><span class="line">tianon/centos                                   CentOS 5 and 6, created using rinse instea...   28</span><br><span class="line">blalor/centos                                   Bare-bones base CentOS 6.5 image                6                    [OK]</span><br><span class="line">saltstack/centos-6-minimal                                                                      6                    [OK]</span><br><span class="line">tutum/centos-6.4                                DEPRECATED. Use tutum/centos:6.4 instead. ...   5                    [OK]</span><br></pre></td></tr></table></figure>
 <p>可以看到返回了很多包含关键字的镜像，其中包括镜像名字、描述、收藏数（表示该镜像的受关注程度）、是否官方创建、是否自动创建。</p>
@@ -494,10 +499,12 @@
 <p>另外，在查找的时候通过 <code>--filter=stars=N</code> 参数可以指定仅显示收藏数量为 <code>N</code> 以上的镜像。</p>
 <p>下载官方 <code>centos</code> 镜像到本地。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker pull centos</span><br><span class="line">Pulling repository centos</span><br><span class="line">0b443ba03958: Download complete</span><br><span class="line">539c0211cd76: Download complete</span><br><span class="line">511136ea3c5a: Download complete</span><br><span class="line">7064731afe90: Download complete</span><br></pre></td></tr></table></figure>
-<h3 id="推送镜像"><a href="#推送镜像" class="headerlink" title="推送镜像"></a>推送镜像</h3><p>用户也可以在登录后通过 <code>docker push</code> 命令来将自己的镜像推送到 Docker Hub。</p>
+<h3 id="推送镜像"><a class="markdownIt-Anchor" href="#推送镜像"></a> 推送镜像</h3>
+<p>用户也可以在登录后通过 <code>docker push</code> 命令来将自己的镜像推送到 Docker Hub。</p>
 <p>以下命令中的 <code>username</code> 请替换为你的 Docker 账号用户名。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ docker tag ubuntu:18.04 username/ubuntu:18.04</span><br><span class="line"></span><br><span class="line">$ docker image ls</span><br><span class="line"></span><br><span class="line">REPOSITORY                                               TAG                    IMAGE ID            CREATED             SIZE</span><br><span class="line">ubuntu                                                   18.04                  275d79972a86        6 days ago          94.6MB</span><br><span class="line">username/ubuntu                                          18.04                  275d79972a86        6 days ago          94.6MB</span><br><span class="line"></span><br><span class="line">$ docker push username/ubuntu:18.04</span><br><span class="line"></span><br><span class="line">$ docker search username</span><br><span class="line"></span><br><span class="line">NAME                      DESCRIPTION                                     STARS               OFFICIAL            AUTOMATED</span><br><span class="line">username/ubuntu</span><br></pre></td></tr></table></figure>
-<h3 id="自动创建"><a href="#自动创建" class="headerlink" title="自动创建"></a>自动创建</h3><p>自动创建（Automated Builds）功能对于需要经常升级镜像内程序来说，十分方便。</p>
+<h3 id="自动创建"><a class="markdownIt-Anchor" href="#自动创建"></a> 自动创建</h3>
+<p>自动创建（Automated Builds）功能对于需要经常升级镜像内程序来说，十分方便。</p>
 <p>有时候，用户创建了镜像，安装了某个软件，如果软件发布新版本则需要手动更新镜像。</p>
 <p>而自动创建允许用户通过 Docker Hub 指定跟踪一个目标网站（目前支持 <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a> 或 <a href="https://bitbucket.org/" target="_blank" rel="noopener">BitBucket</a>）上的项目，一旦项目发生新的提交或者创建新的标签（tag），Docker Hub 会自动构建镜像并推送到 Docker Hub 中。</p>
 <p>要配置自动创建，包括如下的步骤：</p>
@@ -650,7 +657,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -715,7 +722,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1013,7 +1022,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-仓库"><span class="nav-text">Docker 仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-Hub"><span class="nav-text">Docker Hub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-text">登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取镜像"><span class="nav-text">拉取镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送镜像"><span class="nav-text">推送镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动创建"><span class="nav-text">自动创建</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-仓库"><span class="nav-text"> Docker 仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-hub"><span class="nav-text"> Docker Hub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-text"> 注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#登录"><span class="nav-text"> 登录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拉取镜像"><span class="nav-text"> 拉取镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#推送镜像"><span class="nav-text"> 推送镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动创建"><span class="nav-text"> 自动创建</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1055,7 +1064,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

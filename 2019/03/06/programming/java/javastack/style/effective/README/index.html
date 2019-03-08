@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Effective Java 规则一览第2章 创建、销毁对象第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法 第3章 对于所有对象都通用的方法第8条：覆盖equals时请遵守通用约">
+  <meta name="description" content="Effective Java 规则一览  第2章 创建、销毁对象 第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法  第3章 对于所有对象都通用的方法 第8条：覆盖equals时">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Effective Java 规则一览">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/style/effective/README/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Effective Java 规则一览第2章 创建、销毁对象第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法 第3章 对于所有对象都通用的方法第8条：覆盖equals时请遵守通用约">
+<meta property="og:description" content="Effective Java 规则一览  第2章 创建、销毁对象 第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法  第3章 对于所有对象都通用的方法 第8条：覆盖equals时">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Effective Java 规则一览">
-<meta name="twitter:description" content="Effective Java 规则一览第2章 创建、销毁对象第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法 第3章 对于所有对象都通用的方法第8条：覆盖equals时请遵守通用约">
+<meta name="twitter:description" content="Effective Java 规则一览  第2章 创建、销毁对象 第1条：考虑用静态工厂方法代替构造器 第2条：遇到多个构造器参数时要考虑用构建器 第3条：用私有构造器或者枚举类型强化Singleton属性 第4条：通过私有构造器强化不可实例化的能力 第5条：避免创建不必要的对象 第6条：消除过期的对象引用 第7条：避免使用终结方法  第3章 对于所有对象都通用的方法 第8条：覆盖equals时">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.5k</span>
+                <span title="本文字数">1.6k</span>
               
 
               
@@ -477,19 +477,23 @@
       
 
       
-        <h1 id="Effective-Java-规则一览"><a href="#Effective-Java-规则一览" class="headerlink" title="Effective Java 规则一览"></a>Effective Java 规则一览</h1><h2 id="第2章-创建、销毁对象"><a href="#第2章-创建、销毁对象" class="headerlink" title="第2章 创建、销毁对象"></a><a href="effective/chapter02.html">第2章 创建、销毁对象</a></h2><p>第1条：考虑用静态工厂方法代替构造器</p>
+        <h1 id="effective-java-规则一览"><a class="markdownIt-Anchor" href="#effective-java-规则一览"></a> Effective Java 规则一览</h1>
+<h2 id="第2章-创建-销毁对象"><a class="markdownIt-Anchor" href="#第2章-创建-销毁对象"></a> <a href="effective/chapter02.html">第2章 创建、销毁对象</a></h2>
+<p>第1条：考虑用静态工厂方法代替构造器</p>
 <p>第2条：遇到多个构造器参数时要考虑用构建器</p>
 <p>第3条：用私有构造器或者枚举类型强化Singleton属性</p>
 <p>第4条：通过私有构造器强化不可实例化的能力</p>
 <p>第5条：避免创建不必要的对象</p>
 <p>第6条：消除过期的对象引用</p>
 <p>第7条：避免使用终结方法</p>
-<h2 id="第3章-对于所有对象都通用的方法"><a href="#第3章-对于所有对象都通用的方法" class="headerlink" title="第3章 对于所有对象都通用的方法"></a><a href="effective/chapter03.html">第3章 对于所有对象都通用的方法</a></h2><p>第8条：覆盖equals时请遵守通用约定</p>
+<h2 id="第3章-对于所有对象都通用的方法"><a class="markdownIt-Anchor" href="#第3章-对于所有对象都通用的方法"></a> <a href="effective/chapter03.html">第3章 对于所有对象都通用的方法</a></h2>
+<p>第8条：覆盖equals时请遵守通用约定</p>
 <p>第9条：覆盖equals时总要覆盖hashCode</p>
 <p>第10条：始终要覆盖toString</p>
 <p>第11条：谨慎地覆盖clone</p>
 <p>第12条：考虑实现Comparable接口</p>
-<h2 id="第4章-类和接口"><a href="#第4章-类和接口" class="headerlink" title="第4章 类和接口"></a><a href="effective/chapter04.html">第4章 类和接口</a></h2><p>第13条：使类和成员的可访问性最小化</p>
+<h2 id="第4章-类和接口"><a class="markdownIt-Anchor" href="#第4章-类和接口"></a> <a href="effective/chapter04.html">第4章 类和接口</a></h2>
+<p>第13条：使类和成员的可访问性最小化</p>
 <p>第14条：在公有类中使用访问方法而非公有域</p>
 <p>第15条：使可变性最小化</p>
 <p>第16条：复合优先于继承</p>
@@ -499,14 +503,16 @@
 <p>第20条：类层次优于标签类</p>
 <p>第21条：用函数对象表示策略</p>
 <p>第22条：优先考虑静态成员类</p>
-<h2 id="第5章-泛型"><a href="#第5章-泛型" class="headerlink" title="第5章 泛型"></a>第5章 泛型</h2><p>第23条：请不要在新代码中使用原生态类型</p>
+<h2 id="第5章-泛型"><a class="markdownIt-Anchor" href="#第5章-泛型"></a> 第5章 泛型</h2>
+<p>第23条：请不要在新代码中使用原生态类型</p>
 <p>第24条：消除非受检警告</p>
 <p>第25条：列表优先于数组</p>
 <p>第26条：优先考虑泛型</p>
 <p>第27条：优先考虑泛型方法</p>
 <p>第28条：利用有限制通配符来提升API的灵活性</p>
 <p>第29条：优先考虑类型安全的异构容器</p>
-<h2 id="第6章-枚举和注解"><a href="#第6章-枚举和注解" class="headerlink" title="第6章 枚举和注解"></a>第6章 枚举和注解</h2><p>第30条：用enum代替int常量</p>
+<h2 id="第6章-枚举和注解"><a class="markdownIt-Anchor" href="#第6章-枚举和注解"></a> 第6章 枚举和注解</h2>
+<p>第30条：用enum代替int常量</p>
 <p>第31条：用实例域代替序数</p>
 <p>第32条：用EnumSet代替位域</p>
 <p>第33条：用EnumMap代替序数索引</p>
@@ -514,14 +520,16 @@
 <p>第35条：注解优先于命名模式</p>
 <p>第36条：坚持使用Override注解</p>
 <p>第37条：用标记接口定义类型</p>
-<h2 id="第7章-方法"><a href="#第7章-方法" class="headerlink" title="第7章 方法"></a>第7章 方法</h2><p>第38条：检查参数的有效性</p>
+<h2 id="第7章-方法"><a class="markdownIt-Anchor" href="#第7章-方法"></a> 第7章 方法</h2>
+<p>第38条：检查参数的有效性</p>
 <p>第39条：必要时进行保护性拷贝</p>
 <p>第40条：谨慎设计方法签名</p>
 <p>第41条：慎用重载</p>
 <p>第42条：慎用可变参数</p>
 <p>第43条：返回零长度的数组或者集合，而不是：null</p>
 <p>第44条：为所有导出的API元素编写文档注释</p>
-<h2 id="第8章-通用程序设计"><a href="#第8章-通用程序设计" class="headerlink" title="第8章 通用程序设计"></a>第8章 通用程序设计</h2><p>第45条：将局部变量的作用域最小化</p>
+<h2 id="第8章-通用程序设计"><a class="markdownIt-Anchor" href="#第8章-通用程序设计"></a> 第8章 通用程序设计</h2>
+<p>第45条：将局部变量的作用域最小化</p>
 <p>第46条：for-each循环优先于传统的for循环</p>
 <p>第47条：了解和使用类库</p>
 <p>第48条：如果需要精确的答案，请避免使用float和double</p>
@@ -533,7 +541,8 @@
 <p>第54条：谨慎地使用本地方法</p>
 <p>第55条：谨慎地进行优化</p>
 <p>第56条：遵守普遍接受的命名惯例</p>
-<h2 id="第9章-异常"><a href="#第9章-异常" class="headerlink" title="第9章 异常"></a>第9章 异常</h2><p>第57条：只针对异常的情况才使用异常</p>
+<h2 id="第9章-异常"><a class="markdownIt-Anchor" href="#第9章-异常"></a> 第9章 异常</h2>
+<p>第57条：只针对异常的情况才使用异常</p>
 <p>第58条：对可恢复的情况使用受检异常，对编程错误使用运行时异常</p>
 <p>第59条：避免不必要地使用受检的异常</p>
 <p>第60条：优先使用标准的异常</p>
@@ -542,7 +551,8 @@
 <p>第63条：在细节消息中包含能捕获失败的信息</p>
 <p>第64条：努力使失败保持原子性</p>
 <p>第65条：不要忽略异常</p>
-<h2 id="第10章-并发"><a href="#第10章-并发" class="headerlink" title="第10章 并发"></a>第10章 并发</h2><p>第66条：同步访问共享的可变数据</p>
+<h2 id="第10章-并发"><a class="markdownIt-Anchor" href="#第10章-并发"></a> 第10章 并发</h2>
+<p>第66条：同步访问共享的可变数据</p>
 <p>第67条：避免过度同步</p>
 <p>第68条：executor和task优先干线程</p>
 <p>第69条：并发工具优先于wait和notify</p>
@@ -550,7 +560,8 @@
 <p>第71条：慎用延迟初始化</p>
 <p>第72条：不要依赖于线程调度器</p>
 <p>第73条：避免使用线程组</p>
-<h2 id="第11章-序列化"><a href="#第11章-序列化" class="headerlink" title="第11章 序列化"></a>第11章 序列化</h2><p>第74条：谨慎地实现Serializable接口</p>
+<h2 id="第11章-序列化"><a class="markdownIt-Anchor" href="#第11章-序列化"></a> 第11章 序列化</h2>
+<p>第74条：谨慎地实现Serializable接口</p>
 <p>第75条：考虑使用自定义的序列化形式</p>
 <p>第76条：保护性地编写readObject方法</p>
 <p>第77条：对于实例控制，枚举类型优先于readResolve</p>
@@ -696,7 +707,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -761,7 +772,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1059,7 +1072,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Effective-Java-规则一览"><span class="nav-text">Effective Java 规则一览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第2章-创建、销毁对象"><span class="nav-text">第2章 创建、销毁对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3章-对于所有对象都通用的方法"><span class="nav-text">第3章 对于所有对象都通用的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4章-类和接口"><span class="nav-text">第4章 类和接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章-泛型"><span class="nav-text">第5章 泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章-枚举和注解"><span class="nav-text">第6章 枚举和注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章-方法"><span class="nav-text">第7章 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第8章-通用程序设计"><span class="nav-text">第8章 通用程序设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9章-异常"><span class="nav-text">第9章 异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章-并发"><span class="nav-text">第10章 并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第11章-序列化"><span class="nav-text">第11章 序列化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#effective-java-规则一览"><span class="nav-text"> Effective Java 规则一览</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第2章-创建-销毁对象"><span class="nav-text"> 第2章 创建、销毁对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第3章-对于所有对象都通用的方法"><span class="nav-text"> 第3章 对于所有对象都通用的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第4章-类和接口"><span class="nav-text"> 第4章 类和接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第5章-泛型"><span class="nav-text"> 第5章 泛型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第6章-枚举和注解"><span class="nav-text"> 第6章 枚举和注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第7章-方法"><span class="nav-text"> 第7章 方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第8章-通用程序设计"><span class="nav-text"> 第8章 通用程序设计</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第9章-异常"><span class="nav-text"> 第9章 异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第10章-并发"><span class="nav-text"> 第10章 并发</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第11章-序列化"><span class="nav-text"> 第11章 序列化</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1101,7 +1114,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

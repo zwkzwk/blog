@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 异常知识点ThrowableThrowable 家族在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Throwable 的">
+  <meta name="description" content="Java 异常  知识点  Throwable  Throwable 家族 在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Thr">
 <meta name="keywords" content="javacore,basics">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 异常">
 <meta property="og:url" content="https://dunwu.github.io/2015/02/15/programming/java/javacore/basic/Java异常/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 异常知识点ThrowableThrowable 家族在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Throwable 的">
+<meta property="og:description" content="Java 异常  知识点  Throwable  Throwable 家族 在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Thr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-5783f3592a2327f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.384Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 异常">
-<meta name="twitter:description" content="Java 异常知识点ThrowableThrowable 家族在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Throwable 的">
+<meta name="twitter:description" content="Java 异常  知识点  Throwable  Throwable 家族 在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。  Throwable 是 Java 中所有错误或异常的祖先（超类）。 Error 是 Throwable 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。 Exception 是 Thr">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-5783f3592a2327f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">535</span>
+                <span title="本文字数">545</span>
               
 
               
@@ -510,14 +510,19 @@
       
 
       
-        <h1 id="Java-异常"><a href="#Java-异常" class="headerlink" title="Java 异常"></a>Java 异常</h1><h2 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h2><h2 id="Throwable"><a href="#Throwable" class="headerlink" title="Throwable"></a>Throwable</h2><h3 id="Throwable-家族"><a href="#Throwable-家族" class="headerlink" title="Throwable 家族"></a>Throwable 家族</h3><p>在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。</p>
+        <h1 id="java-异常"><a class="markdownIt-Anchor" href="#java-异常"></a> Java 异常</h1>
+<h2 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h2>
+<h2 id="throwable"><a class="markdownIt-Anchor" href="#throwable"></a> Throwable</h2>
+<h3 id="throwable-家族"><a class="markdownIt-Anchor" href="#throwable-家族"></a> Throwable 家族</h3>
+<p>在 Java 中，根据错误性质将运行错误分为两类：错误（Error）和异常（Exception）。</p>
 <ul>
 <li><code>Throwable</code> 是 Java 中所有错误或异常的祖先（超类）。</li>
 <li><code>Error</code> 是 <code>Throwable</code> 的一个子类。表示合理的应用程序不应该尝试捕获的严重问题。大多数此类错误都是异常情况。</li>
 <li><code>Exception</code> 是 <code>Throwable</code> 的一个子类。表示合理的应用程序可能想要捕获的条件。</li>
 </ul>
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-5783f3592a2327f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h3 id="主要方法"><a href="#主要方法" class="headerlink" title="主要方法"></a>主要方法</h3><ul>
+<h3 id="主要方法"><a class="markdownIt-Anchor" href="#主要方法"></a> 主要方法</h3>
+<ul>
 <li>fillInStackTrace：用当前的调用栈层次填充 Throwable 对象栈层次，添加到栈层次任何先前信息中。</li>
 <li>getMessage：返回关于发生的异常的详细信息。这个消息在 Throwable 类的构造函数中初始化了。</li>
 <li>getCause：返回一个 Throwable 对象代表异常原因。</li>
@@ -674,7 +679,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -739,7 +744,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1037,7 +1044,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-异常"><span class="nav-text">Java 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Throwable"><span class="nav-text">Throwable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Throwable-家族"><span class="nav-text">Throwable 家族</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要方法"><span class="nav-text">主要方法</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-异常"><span class="nav-text"> Java 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text"> 知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#throwable"><span class="nav-text"> Throwable</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#throwable-家族"><span class="nav-text"> Throwable 家族</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主要方法"><span class="nav-text"> 主要方法</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1079,7 +1086,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 容器之 Set :notebook: 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料   Set 架构   Set 继承了 Collection 的接口。实际上 Set 就是 Collec">
+  <meta name="description" content="Java 容器之 Set  📓 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料    Set 架构     Set 继承了 Collection 的接口。实际上 Set 就是 Collectio">
 <meta name="keywords" content="programming,javacore,java,container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 容器之 Set">
 <meta property="og:url" content="https://dunwu.github.io/2018/05/31/programming/java/javacore/container/Set/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 容器之 Set :notebook: 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料   Set 架构   Set 继承了 Collection 的接口。实际上 Set 就是 Collec">
+<meta property="og:description" content="Java 容器之 Set  📓 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料    Set 架构     Set 继承了 Collection 的接口。实际上 Set 就是 Collectio">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Set-diagrams.png">
 <meta property="og:updated_time" content="2019-03-07T05:19:00.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 容器之 Set">
-<meta name="twitter:description" content="Java 容器之 Set :notebook: 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料   Set 架构   Set 继承了 Collection 的接口。实际上 Set 就是 Collec">
+<meta name="twitter:description" content="Java 容器之 Set  📓 本文已归档到：「blog」    Set 架构 Set 接口 SortedSet 接口 NavigableSet 接口 AbstractSet 抽象类 HashSet 类 TreeSet 类 LinkedHashSet 类 EnumSet 类 资料    Set 架构     Set 继承了 Collection 的接口。实际上 Set 就是 Collectio">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Set-diagrams.png">
 
 
@@ -531,39 +531,44 @@
       
 
       
-        <h1 id="Java-容器之-Set"><a href="#Java-容器之-Set" class="headerlink" title="Java 容器之 Set"></a>Java 容器之 Set</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-容器之-set"><a class="markdownIt-Anchor" href="#java-容器之-set"></a> Java 容器之 Set</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#set-架构">Set 架构</a></li>
-<li><a href="#set-接口">Set 接口</a></li>
-<li><a href="#sortedset-接口">SortedSet 接口</a></li>
-<li><a href="#navigableset-接口">NavigableSet 接口</a></li>
-<li><a href="#abstractset-抽象类">AbstractSet 抽象类</a></li>
-<li><a href="#hashset-类">HashSet 类</a></li>
-<li><a href="#treeset-类">TreeSet 类</a></li>
-<li><a href="#linkedhashset-类">LinkedHashSet 类</a></li>
-<li><a href="#enumset-类">EnumSet 类</a></li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#set-%E6%9E%B6%E6%9E%84">Set 架构</a></li>
+<li><a href="#set-%E6%8E%A5%E5%8F%A3">Set 接口</a></li>
+<li><a href="#sortedset-%E6%8E%A5%E5%8F%A3">SortedSet 接口</a></li>
+<li><a href="#navigableset-%E6%8E%A5%E5%8F%A3">NavigableSet 接口</a></li>
+<li><a href="#abstractset-%E6%8A%BD%E8%B1%A1%E7%B1%BB">AbstractSet 抽象类</a></li>
+<li><a href="#hashset-%E7%B1%BB">HashSet 类</a></li>
+<li><a href="#treeset-%E7%B1%BB">TreeSet 类</a></li>
+<li><a href="#linkedhashset-%E7%B1%BB">LinkedHashSet 类</a></li>
+<li><a href="#enumset-%E7%B1%BB">EnumSet 类</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="Set-架构"><a href="#Set-架构" class="headerlink" title="Set 架构"></a>Set 架构</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Set-diagrams.png" width="400"><br></div>
-
+<h2 id="set-架构"><a class="markdownIt-Anchor" href="#set-架构"></a> Set 架构</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Set-diagrams.png" width="400">
+</div>
 <ul>
 <li>Set 继承了 Collection 的接口。实际上 Set 就是 Collection，只是行为略有不同：Set 集合不允许有重复元素。</li>
 <li>SortedSet 继承了 Set 的接口。SortedSet 中的内容是排序的唯一值，排序的方法是通过比较器(Comparator)。</li>
-<li>NavigableSet 继承了 SortedSet 的接口。相比于 NavigableSet 有一系列的导航方法；如”获取大于/等于某值的元素”、“获取小于/等于某值的元素”等等。</li>
+<li>NavigableSet 继承了 SortedSet 的接口。相比于 NavigableSet 有一系列的导航方法；如&quot;获取大于/等于某值的元素&quot;、“获取小于/等于某值的元素”等等。</li>
 <li>AbstractSet 是一个抽象类，它继承于 AbstractCollection，AbstractCollection 实现了 Set 中的绝大部分函数，为 Set 的实现类提供了便利。</li>
 <li>HashSet 类依赖于 HashMap，它实际上是通过 HashMap 实现的。HashSet 中的元素是无序的。</li>
 <li>TreeSet 类依赖于 TreeMap，它实际上是通过 TreeMap 实现的。TreeSet 中的元素是有序的。</li>
 <li>LinkedHashSet 类具有 HashSet 的查找效率，且内部使用链表维护元素的插入顺序。</li>
 <li>EnumSet 中所有元素都必须是指定枚举类型的枚举值。</li>
 </ul>
-<h2 id="Set-接口"><a href="#Set-接口" class="headerlink" title="Set 接口"></a>Set 接口</h2><p>Set 接口定义如下：</p>
+<h2 id="set-接口"><a class="markdownIt-Anchor" href="#set-接口"></a> Set 接口</h2>
+<p>Set 接口定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>Set 继承了 Collection 的接口。实际上，Set 就是 Collection，二者提供的方法完全相同。</p>
-<h2 id="SortedSet-接口"><a href="#SortedSet-接口" class="headerlink" title="SortedSet 接口"></a>SortedSet 接口</h2><p>SortedSet 接口定义如下：</p>
+<h2 id="sortedset-接口"><a class="markdownIt-Anchor" href="#sortedset-接口"></a> SortedSet 接口</h2>
+<p>SortedSet 接口定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">SortedSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>SortedSet 接口新扩展的方法：</p>
 <ul>
@@ -575,7 +580,8 @@
 <li>last - 返回最后一个元素</li>
 <li>spliterator</li>
 </ul>
-<h2 id="NavigableSet-接口"><a href="#NavigableSet-接口" class="headerlink" title="NavigableSet 接口"></a>NavigableSet 接口</h2><p>NavigableSet 接口定义如下：</p>
+<h2 id="navigableset-接口"><a class="markdownIt-Anchor" href="#navigableset-接口"></a> NavigableSet 接口</h2>
+<p>NavigableSet 接口定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">NavigableSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">SortedSet</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>NavigableSet 接口新扩展的方法：</p>
 <ul>
@@ -591,13 +597,16 @@
 <li>headSet - 返回小于指定元素的子集</li>
 <li>tailSet - 返回大于指定元素的子集</li>
 </ul>
-<h2 id="AbstractSet-抽象类"><a href="#AbstractSet-抽象类" class="headerlink" title="AbstractSet 抽象类"></a>AbstractSet 抽象类</h2><p>AbstractSet 抽象类定义如下：</p>
+<h2 id="abstractset-抽象类"><a class="markdownIt-Anchor" href="#abstractset-抽象类"></a> AbstractSet 抽象类</h2>
+<p>AbstractSet 抽象类定义如下：</p>
 <figure class="highlight scala"><table><tr><td class="code"><pre><span class="line">public <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractSet&lt;E&gt;</span> <span class="keyword">extends</span> <span class="title">AbstractCollection&lt;E&gt;</span> <span class="title">implements</span> <span class="title">Set&lt;E&gt;</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>AbstractSet 类提供 Set 接口的骨干实现，以最大限度地减少实现 Set 接口所需的工作。</p>
 <p>事实上，主要的实现已经在 AbstractCollection 中完成。</p>
-<h2 id="HashSet-类"><a href="#HashSet-类" class="headerlink" title="HashSet 类"></a>HashSet 类</h2><p>HashSet 类定义如下：</p>
+<h2 id="hashset-类"><a class="markdownIt-Anchor" href="#hashset-类"></a> HashSet 类</h2>
+<p>HashSet 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HashSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="HashSet-要点"><a href="#HashSet-要点" class="headerlink" title="HashSet 要点"></a>HashSet 要点</h3><ol>
+<h3 id="hashset-要点"><a class="markdownIt-Anchor" href="#hashset-要点"></a> HashSet 要点</h3>
+<ol>
 <li>HashSet 类通过继承 AbstractSet 实现了 Set 接口中的骨干方法。</li>
 <li>HashSet 实现了 Cloneable，所以支持克隆。</li>
 <li>HashSet 实现了 Serializable，所以支持序列化。</li>
@@ -605,42 +614,51 @@
 <li>HashSet 允许 null 值的元素。</li>
 <li>HashSet 不是线程安全的。</li>
 </ol>
-<h3 id="HashSet-原理"><a href="#HashSet-原理" class="headerlink" title="HashSet 原理"></a>HashSet 原理</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// HashSet 的核心，通过维护一个 HashMap 实体来实现 HashSet 方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> HashMap&lt;E,Object&gt; map;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PRESENT 是用于关联 map 中当前操作元素的一个虚拟值</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="hashset-原理"><a class="markdownIt-Anchor" href="#hashset-原理"></a> HashSet 原理</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// HashSet 的核心，通过维护一个 HashMap 实体来实现 HashSet 方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> HashMap&lt;E,Object&gt; map;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PRESENT 是用于关联 map 中当前操作元素的一个虚拟值</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>HashSet 是基于 HashMap 实现的。</strong></p>
 <p>HashSet 中维护了一个 HashMap 对象 map，HashSet 的重要方法，如 add、remove、iterator、clear、size 等都是围绕 map 实现的。</p>
 <p>PRESENT 是用于关联 map 中当前操作元素的一个虚拟值。</p>
 <p>HashSet 类中通过定义 <code>writeObject()</code> 和 <code>readObject()</code> 方法确定了其序列化和反序列化的机制。</p>
-<h2 id="TreeSet-类"><a href="#TreeSet-类" class="headerlink" title="TreeSet 类"></a>TreeSet 类</h2><p>TreeSet 类定义如下：</p>
+<h2 id="treeset-类"><a class="markdownIt-Anchor" href="#treeset-类"></a> TreeSet 类</h2>
+<p>TreeSet 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TreeSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">NavigableSet</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="TreeSet-要点"><a href="#TreeSet-要点" class="headerlink" title="TreeSet 要点"></a>TreeSet 要点</h3><ol>
+<h3 id="treeset-要点"><a class="markdownIt-Anchor" href="#treeset-要点"></a> TreeSet 要点</h3>
+<ol>
 <li>TreeSet 类通过继承 AbstractSet 实现了 NavigableSet 接口中的骨干方法。</li>
 <li>TreeSet 实现了 Cloneable，所以支持克隆。</li>
 <li>TreeSet 实现了 Serializable，所以支持序列化。</li>
 <li>TreeSet 中存储的元素是有序的。排序规则是自然顺序或比较器（Comparator）中提供的顺序规则。</li>
 <li>TreeSet 不是线程安全的。</li>
 </ol>
-<h3 id="TreeSet-源码"><a href="#TreeSet-源码" class="headerlink" title="TreeSet 源码"></a>TreeSet 源码</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TreeSet 的核心，通过维护一个 NavigableMap 实体来实现 TreeSet 方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> NavigableMap&lt;E,Object&gt; m;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PRESENT 是用于关联 map 中当前操作元素的一个虚拟值</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br></pre></td></tr></table></figure>
+<h3 id="treeset-源码"><a class="markdownIt-Anchor" href="#treeset-源码"></a> TreeSet 源码</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// TreeSet 的核心，通过维护一个 NavigableMap 实体来实现 TreeSet 方法</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> NavigableMap&lt;E,Object&gt; m;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PRESENT 是用于关联 map 中当前操作元素的一个虚拟值</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Object PRESENT = <span class="keyword">new</span> Object();</span><br></pre></td></tr></table></figure>
 <p><strong>TreeSet 是基于 TreeMap 实现的。</strong></p>
 <p>TreeSet 中维护了一个 NavigableMap 对象 map（实际上是一个 TreeMap 实例），TreeSet 的重要方法，如 add、remove、iterator、clear、size 等都是围绕 map 实现的。</p>
 <p>PRESENT 是用于关联 map 中当前操作元素的一个虚拟值。TreeSet 中的元素都被当成 TreeMap 的 key 存储，而 value 都填的是 PRESENT。</p>
-<h2 id="LinkedHashSet-类"><a href="#LinkedHashSet-类" class="headerlink" title="LinkedHashSet 类"></a>LinkedHashSet 类</h2><p>LinkedHashSet 类定义如下：</p>
+<h2 id="linkedhashset-类"><a class="markdownIt-Anchor" href="#linkedhashset-类"></a> LinkedHashSet 类</h2>
+<p>LinkedHashSet 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedHashSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">HashSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt;, <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="LinkedHashSet-要点"><a href="#LinkedHashSet-要点" class="headerlink" title="LinkedHashSet 要点"></a>LinkedHashSet 要点</h3><ol>
+<h3 id="linkedhashset-要点"><a class="markdownIt-Anchor" href="#linkedhashset-要点"></a> LinkedHashSet 要点</h3>
+<ol>
 <li>LinkedHashSet 类通过继承 HashSet 实现了 Set 接口中的骨干方法。</li>
 <li>LinkedHashSet 实现了 Cloneable，所以支持克隆。</li>
 <li>LinkedHashSet 实现了 Serializable，所以支持序列化。</li>
 <li>LinkedHashSet 中存储的元素是按照插入顺序保存的。</li>
 <li>LinkedHashSet 不是线程安全的。</li>
 </ol>
-<h3 id="LinkedHashSet-原理"><a href="#LinkedHashSet-原理" class="headerlink" title="LinkedHashSet 原理"></a>LinkedHashSet 原理</h3><p>LinkedHashSet 有三个构造方法，无一例外，都是调用父类 HashSet 的构造方法。</p>
+<h3 id="linkedhashset-原理"><a class="markdownIt-Anchor" href="#linkedhashset-原理"></a> LinkedHashSet 原理</h3>
+<p>LinkedHashSet 有三个构造方法，无一例外，都是调用父类 HashSet 的构造方法。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">LinkedHashSet</span><span class="params">(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(initialCapacity, loadFactor, <span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">LinkedHashSet</span><span class="params">(<span class="keyword">int</span> initialCapacity)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(initialCapacity, .<span class="number">75f</span>, <span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">LinkedHashSet</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(<span class="number">16</span>, .<span class="number">75f</span>, <span class="keyword">true</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>需要强调的是：<strong>LinkedHashSet 构造方法实际上调用的是父类 HashSet 的非 public 构造方法。</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">HashSet(<span class="keyword">int</span> initialCapacity, <span class="keyword">float</span> loadFactor, <span class="keyword">boolean</span> dummy) &#123;</span><br><span class="line">    map = <span class="keyword">new</span> LinkedHashMap&lt;&gt;(initialCapacity, loadFactor);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>不同于 HashSet public 构造方法中初始化的 HashMap 实例，这个构造方法中，初始化了 LinkedHashMap 实例。</p>
 <p>也就是说，实际上，LinkedHashSet 维护了一个双链表。由双链表的特性可以知道，它是按照元素的插入顺序保存的。所以，这就是 LinkedHashSet 中存储的元素是按照插入顺序保存的原理。</p>
-<h2 id="EnumSet-类"><a href="#EnumSet-类" class="headerlink" title="EnumSet 类"></a>EnumSet 类</h2><p>EnumSet 类定义如下：</p>
+<h2 id="enumset-类"><a class="markdownIt-Anchor" href="#enumset-类"></a> EnumSet 类</h2>
+<p>EnumSet 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">EnumSet</span>&lt;<span class="title">E</span> <span class="keyword">extends</span> <span class="title">Enum</span>&lt;<span class="title">E</span>&gt;&gt; <span class="keyword">extends</span> <span class="title">AbstractSet</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Cloneable</span>, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="EnumSet-要点"><a href="#EnumSet-要点" class="headerlink" title="EnumSet 要点"></a>EnumSet 要点</h3><ol>
+<h3 id="enumset-要点"><a class="markdownIt-Anchor" href="#enumset-要点"></a> EnumSet 要点</h3>
+<ol>
 <li>EnumSet 类继承了 AbstractSet，所以有 Set 接口中的骨干方法。</li>
 <li>EnumSet 实现了 Cloneable，所以支持克隆。</li>
 <li>EnumSet 实现了 Serializable，所以支持序列化。</li>
@@ -649,7 +667,8 @@
 <li>EnumSet 是有序的。以枚举值在 EnumSet 类中的定义顺序来决定集合元素的顺序。</li>
 <li>EnumSet 不是线程安全的。</li>
 </ol>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://item.jd.com/10058164.html" target="_blank" rel="noopener">Java 编程思想（Thinking in java）</a></li>
 </ul>
 
@@ -722,8 +741,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/运行时数据区域/" rel="next" title="运行时数据区域">
-                <i class="fa fa-chevron-left"></i> 运行时数据区域
+              <a href="/blog/2018/05/31/programming/java/javacore/container/Map/" rel="next" title="Java 容器之 Map">
+                <i class="fa fa-chevron-left"></i> Java 容器之 Map
               </a>
             
           </div>
@@ -732,8 +751,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/31/programming/java/javacore/container/Map/" rel="prev" title="Java 容器之 Map">
-                Java 容器之 Map <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/01/algorithm/data-structure/tree/red-black-tree/" rel="prev" title="红黑树">
+                红黑树 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -805,7 +824,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -870,7 +889,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1168,7 +1189,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-容器之-Set"><span class="nav-text">Java 容器之 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-架构"><span class="nav-text">Set 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-接口"><span class="nav-text">Set 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SortedSet-接口"><span class="nav-text">SortedSet 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NavigableSet-接口"><span class="nav-text">NavigableSet 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractSet-抽象类"><span class="nav-text">AbstractSet 抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HashSet-类"><span class="nav-text">HashSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet-要点"><span class="nav-text">HashSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashSet-原理"><span class="nav-text">HashSet 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TreeSet-类"><span class="nav-text">TreeSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet-要点"><span class="nav-text">TreeSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeSet-源码"><span class="nav-text">TreeSet 源码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedHashSet-类"><span class="nav-text">LinkedHashSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashSet-要点"><span class="nav-text">LinkedHashSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedHashSet-原理"><span class="nav-text">LinkedHashSet 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EnumSet-类"><span class="nav-text">EnumSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#EnumSet-要点"><span class="nav-text">EnumSet 要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-容器之-set"><span class="nav-text"> Java 容器之 Set</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#set-架构"><span class="nav-text"> Set 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-接口"><span class="nav-text"> Set 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sortedset-接口"><span class="nav-text"> SortedSet 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigableset-接口"><span class="nav-text"> NavigableSet 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#abstractset-抽象类"><span class="nav-text"> AbstractSet 抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashset-类"><span class="nav-text"> HashSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hashset-要点"><span class="nav-text"> HashSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashset-原理"><span class="nav-text"> HashSet 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#treeset-类"><span class="nav-text"> TreeSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#treeset-要点"><span class="nav-text"> TreeSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#treeset-源码"><span class="nav-text"> TreeSet 源码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linkedhashset-类"><span class="nav-text"> LinkedHashSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedhashset-要点"><span class="nav-text"> LinkedHashSet 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedhashset-原理"><span class="nav-text"> LinkedHashSet 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumset-类"><span class="nav-text"> EnumSet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#enumset-要点"><span class="nav-text"> EnumSet 要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1210,7 +1231,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

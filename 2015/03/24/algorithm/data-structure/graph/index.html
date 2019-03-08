@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="图在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。  术语 阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spannin">
+  <meta name="description" content="图 在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。   术语  阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spa">
 <meta name="keywords" content="data-structure,graph">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/24/algorithm/data-structure/graph/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="图在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。  术语 阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spannin">
+<meta property="og:description" content="图 在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。   术语  阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spa">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/graph/graph.png">
 <meta property="og:updated_time" content="2019-03-07T02:27:42.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="图">
-<meta name="twitter:description" content="图在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。  术语 阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spannin">
+<meta name="twitter:description" content="图 在计算机科学中，一个图就是一些顶点的集合，这些顶点通过一系列边结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。   术语  阶（Order） - 图 G 中点集 V 的大小称作图 G 的阶。 子图（Sub-Graph） - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。 生成子图（Spa">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/graph/graph.png">
 
 
@@ -517,9 +517,11 @@
       
 
       
-        <h1 id="图"><a href="#图" class="headerlink" title="图"></a>图</h1><p>在计算机科学中，一个图就是一些<em>顶点</em>的集合，这些顶点通过一系列<em>边</em>结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。</p>
+        <h1 id="图"><a class="markdownIt-Anchor" href="#图"></a> 图</h1>
+<p>在计算机科学中，一个图就是一些<em>顶点</em>的集合，这些顶点通过一系列<em>边</em>结对（连接）。顶点用圆圈表示，边就是这些圆圈之间的连线。顶点之间通过边连接。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/graph/graph.png"></div><br></p>
-<h2 id="术语"><a href="#术语" class="headerlink" title="术语"></a>术语</h2><ul>
+<h2 id="术语"><a class="markdownIt-Anchor" href="#术语"></a> 术语</h2>
+<ul>
 <li><strong>阶（Order）</strong> - 图 G 中点集 V 的大小称作图 G 的阶。</li>
 <li><strong>子图（Sub-Graph）</strong> - 当图 G’=(V’,E’)其中 V‘包含于 V，E’包含于 E，则 G’称作图 G=(V,E)的子图。每个图都是本身的子图。</li>
 <li>生成子图（Spanning Sub-Graph） - 指满足条件 V(G’) = V(G)的 G 的子图 G’。</li>
@@ -527,14 +529,15 @@
 <li><strong>有向图</strong> - 如果给图的每条边规定一个方向，那么得到的图称为有向图。</li>
 <li><strong>无向图</strong> - 边没有方向的图称为无向图。</li>
 <li><strong>度（Degree）</strong> - 一个顶点的度是指与该顶点相关联的边的条数，顶点 v 的度记作 d(v)。</li>
-<li><strong>入度（In-degree）</strong>和<strong>出度（Out-degree）</strong> - 对于有向图来说，一个顶点的度可细分为入度和出度。一个顶点的入度是指与其关联的各边之中，以其为终点的边数；出度则是相对的概念，指以该顶点为起点的边数。</li>
+<li><strong>入度（In-degree）<strong>和</strong>出度（Out-degree）</strong> - 对于有向图来说，一个顶点的度可细分为入度和出度。一个顶点的入度是指与其关联的各边之中，以其为终点的边数；出度则是相对的概念，指以该顶点为起点的边数。</li>
 <li><strong>自环（Loop）</strong> - 若一条边的两个顶点为同一顶点，则此边称作自环。</li>
 <li>路径（Path） - 从 u 到 v 的一条路径是指一个序列 v0,e1,v1,e2,v2,…ek,vk，其中 ei 的顶点为 vi 及 vi - 1，k 称作路径的长度。如果它的起止顶点相同，该路径是“闭”的，反之，则称为“开”的。一条路径称为一简单路径(simple path)，如果路径中除起始与终止<a href="https://baike.baidu.com/item/%E9%A1%B6%E7%82%B9" target="_blank" rel="noopener">顶点</a>可以重合外，所有顶点两两不等。</li>
 <li><strong>行迹（Trace）</strong> - 如果路径 P(u,v)中的边各不相同，则该路径称为 u 到 v 的一条行迹。闭的行迹称作回路（Circuit）。</li>
 <li><strong>轨迹（Track）</strong> - 如果路径 P(u,v)中的顶点各不相同，则该路径称为 u 到 v 的一条轨迹。闭的轨迹称作圈（Cycle）。</li>
 <li><strong>桥（Bridge）</strong> - 若去掉一条边，便会使得整个图不连通，该边称为<a href="https://baike.baidu.com/item/%E6%A1%A5" target="_blank" rel="noopener">桥</a>。</li>
 </ul>
-<h2 id="图的基本操作"><a href="#图的基本操作" class="headerlink" title="图的基本操作"></a>图的基本操作</h2><ul>
+<h2 id="图的基本操作"><a class="markdownIt-Anchor" href="#图的基本操作"></a> 图的基本操作</h2>
+<ul>
 <li>创建一个图结构 - CreateGraph(G)</li>
 <li>检索给定顶点 - LocateVex(G,elem)</li>
 <li>获取图中某个顶点 - GetVex(G,v)</li>
@@ -696,7 +699,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -761,7 +764,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1059,7 +1064,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-text">图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-text">术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的基本操作"><span class="nav-text">图的基本操作</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#图"><span class="nav-text"> 图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#术语"><span class="nav-text"> 术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图的基本操作"><span class="nav-text"> 图的基本操作</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1101,7 +1106,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

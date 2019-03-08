@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Java 常用 IO 类 :notebook: 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner   FileFile 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。 常用方法createNewFille可以使用 cr">
+  <meta name="description" content="Java 常用 IO 类  📓 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner    File File 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。  常用方法  createNewFille 可以使用 cr">
 <meta name="keywords" content="programming,javacore,java,io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 常用 IO 类">
 <meta property="og:url" content="https://dunwu.github.io/2018/08/06/programming/java/javacore/io/Java常用IO类/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 常用 IO 类 :notebook: 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner   FileFile 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。 常用方法createNewFille可以使用 cr">
+<meta property="og:description" content="Java 常用 IO 类  📓 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner    File File 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。  常用方法  createNewFille 可以使用 cr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-07T05:14:31.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 常用 IO 类">
-<meta name="twitter:description" content="Java 常用 IO 类 :notebook: 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner   FileFile 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。 常用方法createNewFille可以使用 cr">
+<meta name="twitter:description" content="Java 常用 IO 类  📓 本文已归档到：「blog」 关键词：File、RandomAccessFile、System、Scanner    File RandomAccessFile System Scanner    File File 类是 java.io 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。  常用方法  createNewFille 可以使用 cr">
 
 
 
@@ -529,8 +529,9 @@
       
 
       
-        <h1 id="Java-常用-IO-类"><a href="#Java-常用-IO-类" class="headerlink" title="Java 常用 IO 类"></a>Java 常用 IO 类</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-常用-io-类"><a class="markdownIt-Anchor" href="#java-常用-io-类"></a> Java 常用 IO 类</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 <p>关键词：<code>File</code>、<code>RandomAccessFile</code>、<code>System</code>、<code>Scanner</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
@@ -541,23 +542,29 @@
 <li><a href="#scanner">Scanner</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="File"><a href="#File" class="headerlink" title="File"></a>File</h2><p><code>File</code> 类是 <code>java.io</code> 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。</p>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="createNewFille"><a href="#createNewFille" class="headerlink" title="createNewFille"></a>createNewFille</h4><p>可以使用 <code>createNewFille()</code> 方法创建一个新文件。</p>
+<h2 id="file"><a class="markdownIt-Anchor" href="#file"></a> File</h2>
+<p><code>File</code> 类是 <code>java.io</code> 包中唯一对文件本身进行操作的类。它可以对文件、目录进行增删查操作。</p>
+<h3 id="常用方法"><a class="markdownIt-Anchor" href="#常用方法"></a> 常用方法</h3>
+<h4 id="createnewfille"><a class="markdownIt-Anchor" href="#createnewfille"></a> createNewFille</h4>
+<p>可以使用 <code>createNewFille()</code> 方法创建一个新文件。</p>
 <p>注：</p>
 <p>Windows 中使用反斜杠表示目录的分隔符 <code>\</code>。</p>
 <p>Linux 中使用正斜杠表示目录的分隔符 <code>/</code>。</p>
 <p>最好的做法是使用 <code>File.separator</code> 静态常量，可以根据所在操作系统选取对应的分隔符。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(filename);</span><br><span class="line"><span class="keyword">boolean</span> flag = f.createNewFile();</span><br></pre></td></tr></table></figure>
-<h4 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h4><p>可以使用 <code>mkdir()</code> 来创建文件夹，但是如果要创建的目录的父路径不存在，则无法创建成功。</p>
+<h4 id="mkdir"><a class="markdownIt-Anchor" href="#mkdir"></a> mkdir</h4>
+<p>可以使用 <code>mkdir()</code> 来创建文件夹，但是如果要创建的目录的父路径不存在，则无法创建成功。</p>
 <p>如果要解决这个问题，可以使用 <code>mkdirs()</code>，当父路径不存在时，会连同上级目录都一并创建。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(filename);</span><br><span class="line"><span class="keyword">boolean</span> flag = f.mkdir();</span><br></pre></td></tr></table></figure>
-<h4 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h4><p>可以使用 <code>delete()</code> 来删除文件或目录。</p>
+<h4 id="delete"><a class="markdownIt-Anchor" href="#delete"></a> delete</h4>
+<p>可以使用 <code>delete()</code> 来删除文件或目录。</p>
 <p>需要注意的是，如果删除的是目录，且目录不为空，直接用 <code>delete()</code> 删除会失败。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(filename);</span><br><span class="line"><span class="keyword">boolean</span> flag = f.delete();</span><br></pre></td></tr></table></figure>
-<h4 id="list-和-listFiles"><a href="#list-和-listFiles" class="headerlink" title="list 和 listFiles"></a>list 和 listFiles</h4><p><code>File</code> 中给出了两种列出文件夹内容的方法：</p>
+<h4 id="list-和-listfiles"><a class="markdownIt-Anchor" href="#list-和-listfiles"></a> list 和 listFiles</h4>
+<p><code>File</code> 中给出了两种列出文件夹内容的方法：</p>
 <ul>
 <li><code>list()</code>: 列出全部名称，返回一个字符串数组。</li>
 <li><code>listFiles()</code>: 列出完整的路径，返回一个 File 对象数组。</li>
@@ -566,24 +573,28 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(filename);</span><br><span class="line">String str[] = f.list();</span><br></pre></td></tr></table></figure>
 <p><code>listFiles()</code> 示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f = <span class="keyword">new</span> File(filename);</span><br><span class="line">File files[] = f.listFiles();</span><br></pre></td></tr></table></figure>
-<h2 id="RandomAccessFile"><a href="#RandomAccessFile" class="headerlink" title="RandomAccessFile"></a>RandomAccessFile</h2><blockquote>
+<h2 id="randomaccessfile"><a class="markdownIt-Anchor" href="#randomaccessfile"></a> RandomAccessFile</h2>
+<blockquote>
 <p>注：<code>RandomAccessFile</code> 类虽然可以实现对文件内容的读写操作，但是比较复杂。所以一般操作文件内容往往会使用字节流或字符流方式。</p>
 </blockquote>
 <p><code>RandomAccessFile</code> 类是随机读取类，它是一个完全独立的类。</p>
 <p>它适用于由大小已知的记录组成的文件，所以我们可以使用 <code>seek()</code> 将记录从一处转移到另一处，然后读取或者修改记录。</p>
 <p>文件中记录的大小不一定都相同，只要能够确定哪些记录有多大以及它们在文件中的位置即可。</p>
-<h3 id="写操作"><a href="#写操作" class="headerlink" title="写操作"></a>写操作</h3><p>当用 <code>rw</code> 方式声明 <code>RandomAccessFile</code> 对象时，如果要写入的文件不存在，系统将自行创建。</p>
+<h3 id="写操作"><a class="markdownIt-Anchor" href="#写操作"></a> 写操作</h3>
+<p>当用 <code>rw</code> 方式声明 <code>RandomAccessFile</code> 对象时，如果要写入的文件不存在，系统将自行创建。</p>
 <p><code>r</code> 为只读；<code>w</code> 为只写；<code>rw</code> 为读写。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomAccessFileDemo01</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"d:"</span> + File.separator + <span class="string">"test.txt"</span>); <span class="comment">// 指定要操作的文件</span></span><br><span class="line">        RandomAccessFile rdf = <span class="keyword">null</span>; <span class="comment">// 声明RandomAccessFile类的对象</span></span><br><span class="line">        rdf = <span class="keyword">new</span> RandomAccessFile(f, <span class="string">"rw"</span>);<span class="comment">// 读写模式，如果文件不存在，会自动创建</span></span><br><span class="line">        String name = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">        name = <span class="string">"zhangsan"</span>; <span class="comment">// 字符串长度为8</span></span><br><span class="line">        age = <span class="number">30</span>; <span class="comment">// 数字的长度为4</span></span><br><span class="line">        rdf.writeBytes(name); <span class="comment">// 将姓名写入文件之中</span></span><br><span class="line">        rdf.writeInt(age); <span class="comment">// 将年龄写入文件之中</span></span><br><span class="line">        name = <span class="string">"lisi    "</span>; <span class="comment">// 字符串长度为8</span></span><br><span class="line">        age = <span class="number">31</span>; <span class="comment">// 数字的长度为4</span></span><br><span class="line">        rdf.writeBytes(name); <span class="comment">// 将姓名写入文件之中</span></span><br><span class="line">        rdf.writeInt(age); <span class="comment">// 将年龄写入文件之中</span></span><br><span class="line">        name = <span class="string">"wangwu  "</span>; <span class="comment">// 字符串长度为8</span></span><br><span class="line">        age = <span class="number">32</span>; <span class="comment">// 数字的长度为4</span></span><br><span class="line">        rdf.writeBytes(name); <span class="comment">// 将姓名写入文件之中</span></span><br><span class="line">        rdf.writeInt(age); <span class="comment">// 将年龄写入文件之中</span></span><br><span class="line">        rdf.close(); <span class="comment">// 关闭</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="读操作"><a href="#读操作" class="headerlink" title="读操作"></a>读操作</h3><p>读取是直接使用 <code>r</code> 的模式即可，以只读的方式打开文件。</p>
+<h3 id="读操作"><a class="markdownIt-Anchor" href="#读操作"></a> 读操作</h3>
+<p>读取是直接使用 <code>r</code> 的模式即可，以只读的方式打开文件。</p>
 <p>读取时所有的字符串只能按照 byte 数组方式读取出来，而且长度必须和写入时的固定大小相匹配。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RandomAccessFileDemo02</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        File f = <span class="keyword">new</span> File(<span class="string">"d:"</span> + File.separator + <span class="string">"test.txt"</span>);    <span class="comment">// 指定要操作的文件</span></span><br><span class="line">        RandomAccessFile rdf = <span class="keyword">null</span>;        <span class="comment">// 声明RandomAccessFile类的对象</span></span><br><span class="line">        rdf = <span class="keyword">new</span> RandomAccessFile(f, <span class="string">"r"</span>);<span class="comment">// 以只读的方式打开文件</span></span><br><span class="line">        String name = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> age = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">byte</span> b[] = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">8</span>];    <span class="comment">// 开辟byte数组</span></span><br><span class="line">        <span class="comment">// 读取第二个人的信息，意味着要空出第一个人的信息</span></span><br><span class="line">        rdf.skipBytes(<span class="number">12</span>);        <span class="comment">// 跳过第一个人的信息</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">            b[i] = rdf.readByte();    <span class="comment">// 读取一个字节</span></span><br><span class="line">        &#125;</span><br><span class="line">        name = <span class="keyword">new</span> String(b);    <span class="comment">// 将读取出来的byte数组变为字符串</span></span><br><span class="line">        age = rdf.readInt();    <span class="comment">// 读取数字</span></span><br><span class="line">        System.out.println(<span class="string">"第二个人的信息 --&gt; 姓名："</span> + name + <span class="string">"；年龄："</span> + age);</span><br><span class="line">        <span class="comment">// 读取第一个人的信息</span></span><br><span class="line">        rdf.seek(<span class="number">0</span>);    <span class="comment">// 指针回到文件的开头</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">            b[i] = rdf.readByte();    <span class="comment">// 读取一个字节</span></span><br><span class="line">        &#125;</span><br><span class="line">        name = <span class="keyword">new</span> String(b);    <span class="comment">// 将读取出来的byte数组变为字符串</span></span><br><span class="line">        age = rdf.readInt();    <span class="comment">// 读取数字</span></span><br><span class="line">        System.out.println(<span class="string">"第一个人的信息 --&gt; 姓名："</span> + name + <span class="string">"；年龄："</span> + age);</span><br><span class="line">        rdf.skipBytes(<span class="number">12</span>);    <span class="comment">// 空出第二个人的信息</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; b.length; i++) &#123;</span><br><span class="line">            b[i] = rdf.readByte();    <span class="comment">// 读取一个字节</span></span><br><span class="line">        &#125;</span><br><span class="line">        name = <span class="keyword">new</span> String(b);    <span class="comment">// 将读取出来的byte数组变为字符串</span></span><br><span class="line">        age = rdf.readInt();    <span class="comment">// 读取数字</span></span><br><span class="line">        System.out.println(<span class="string">"第三个人的信息 --&gt; 姓名："</span> + name + <span class="string">"；年龄："</span> + age);</span><br><span class="line">        rdf.close();                <span class="comment">// 关闭</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="System"><a href="#System" class="headerlink" title="System"></a>System</h2><p>System 中提供了三个常用于 IO 的静态成员：</p>
+<h2 id="system"><a class="markdownIt-Anchor" href="#system"></a> System</h2>
+<p>System 中提供了三个常用于 IO 的静态成员：</p>
 <ul>
 <li>System.out</li>
 <li>System.err</li>
-<li>System.in</li>
+<li><a href="http://System.in" target="_blank" rel="noopener">System.in</a></li>
 </ul>
 <p>示例：重定向 System.out 输出流</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemOutDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        OutputStream out = <span class="keyword">new</span> FileOutputStream(<span class="string">"d:\\test.txt"</span>);</span><br><span class="line">        PrintStream ps = <span class="keyword">new</span> PrintStream(out);</span><br><span class="line">        System.setOut(ps);</span><br><span class="line">        System.out.println(<span class="string">"人生若只如初见，何事秋风悲画扇"</span>);</span><br><span class="line">        ps.close();</span><br><span class="line">        out.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -591,7 +602,8 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemErrDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        OutputStream bos = <span class="keyword">new</span> ByteArrayOutputStream();        <span class="comment">// 实例化</span></span><br><span class="line">        PrintStream ps = <span class="keyword">new</span> PrintStream(bos);        <span class="comment">// 实例化</span></span><br><span class="line">        System.setErr(ps);    <span class="comment">// 输出重定向</span></span><br><span class="line">        System.err.print(<span class="string">"此处有误"</span>);</span><br><span class="line">        System.out.println(bos);    <span class="comment">// 输出内存中的数据</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>示例：接受控制台输入信息</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SystemInDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">        InputStream input = System.in;</span><br><span class="line">        StringBuffer buf = <span class="keyword">new</span> StringBuffer();</span><br><span class="line">        System.out.print(<span class="string">"请输入内容："</span>);</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((temp = input.read()) != -<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">char</span> c = (<span class="keyword">char</span>) temp;</span><br><span class="line">            <span class="keyword">if</span> (c == <span class="string">'\n'</span>) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            buf.append(c);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">"输入的内容为："</span> + buf);</span><br><span class="line">        input.close();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Scanner"><a href="#Scanner" class="headerlink" title="Scanner"></a>Scanner</h2><p>Scanner 可以完成输入数据操作，并对数据进行验证。</p>
+<h2 id="scanner"><a class="markdownIt-Anchor" href="#scanner"></a> Scanner</h2>
+<p>Scanner 可以完成输入数据操作，并对数据进行验证。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ScannerDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line">        Scanner scan = <span class="keyword">new</span> Scanner(System.in);    <span class="comment">// 从键盘接收数据</span></span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">float</span> f = <span class="number">0.0f</span>;</span><br><span class="line">        System.out.print(<span class="string">"输入整数："</span>);</span><br><span class="line">        <span class="keyword">if</span> (scan.hasNextInt()) &#123;    <span class="comment">// 判断输入的是否是整数</span></span><br><span class="line">            i = scan.nextInt();    <span class="comment">// 接收整数</span></span><br><span class="line">            System.out.println(<span class="string">"整数数据："</span> + i);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入的不是整数！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"输入小数："</span>);</span><br><span class="line">        <span class="keyword">if</span> (scan.hasNextFloat()) &#123;    <span class="comment">// 判断输入的是否是小数</span></span><br><span class="line">            f = scan.nextFloat();    <span class="comment">// 接收小数</span></span><br><span class="line">            System.out.println(<span class="string">"小数数据："</span> + f);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入的不是小数！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        Date date = <span class="keyword">null</span>;</span><br><span class="line">        String str = <span class="keyword">null</span>;</span><br><span class="line">        System.out.print(<span class="string">"输入日期（yyyy-MM-dd）："</span>);</span><br><span class="line">        <span class="keyword">if</span> (scan.hasNext(<span class="string">"^\\d&#123;4&#125;-\\d&#123;2&#125;-\\d&#123;2&#125;$"</span>)) &#123;    <span class="comment">// 判断</span></span><br><span class="line">            str = scan.next(<span class="string">"^\\d&#123;4&#125;-\\d&#123;2&#125;-\\d&#123;2&#125;$"</span>);    <span class="comment">// 接收</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                date = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd"</span>).parse(str);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;&#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">"输入的日期格式错误！"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(date);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -664,8 +676,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/08/06/programming/java/javaweb/architecture/网站的安全架构/" rel="next" title="网站的安全架构">
-                <i class="fa fa-chevron-left"></i> 网站的安全架构
+              <a href="/blog/2018/08/06/programming/java/javacore/io/Java网络编程/" rel="next" title="Java 网络编程">
+                <i class="fa fa-chevron-left"></i> Java 网络编程
               </a>
             
           </div>
@@ -674,8 +686,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/08/06/programming/java/javacore/io/Java网络编程/" rel="prev" title="Java 网络编程">
-                Java 网络编程 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/08/06/programming/java/javacore/io/JavaNIO/" rel="prev" title="Java NIO">
+                Java NIO <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -747,7 +759,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -812,7 +824,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1110,7 +1124,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-常用-IO-类"><span class="nav-text">Java 常用 IO 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#File"><span class="nav-text">File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-text">常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#createNewFille"><span class="nav-text">createNewFille</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir"><span class="nav-text">mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete"><span class="nav-text">delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list-和-listFiles"><span class="nav-text">list 和 listFiles</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RandomAccessFile"><span class="nav-text">RandomAccessFile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写操作"><span class="nav-text">写操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读操作"><span class="nav-text">读操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#System"><span class="nav-text">System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scanner"><span class="nav-text">Scanner</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-常用-io-类"><span class="nav-text"> Java 常用 IO 类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#file"><span class="nav-text"> File</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用方法"><span class="nav-text"> 常用方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#createnewfille"><span class="nav-text"> createNewFille</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mkdir"><span class="nav-text"> mkdir</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#delete"><span class="nav-text"> delete</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#list-和-listfiles"><span class="nav-text"> list 和 listFiles</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#randomaccessfile"><span class="nav-text"> RandomAccessFile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#写操作"><span class="nav-text"> 写操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#读操作"><span class="nav-text"> 读操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#system"><span class="nav-text"> System</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scanner"><span class="nav-text"> Scanner</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1152,7 +1166,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

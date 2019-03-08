@@ -384,6 +384,226 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/spring/web/spring-mvc-introduction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2017/11/08/programming/java/spring/web/spring-mvc-introduction/" class="post-title-link" itemprop="url">SpringMVC 简介</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2017-11-08T00:00:00+08:00">2017-11-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 16:43:47" itemprop="dateModified" datetime="2019-03-06T16:43:47+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">886</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               SpringMVC 工作流程描述
+Spring MVC的工作流程可以用一幅图来说明：
+
+
+向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。
+DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2017/11/08/programming/java/spring/web/spring-mvc-introduction/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -529,7 +749,8 @@
         
           
             <p>
-              HTTP 状态码HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：
+               HTTP 状态码
+HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：
 
 初始状态行 + 回车换行符（回车+换行）
 零个或多个标题行+回车换行符
@@ -537,233 +758,13 @@
 一个可选的消息主体，比如文件、查询数据或查询输出
 
 例如，服务器的响应头如下所示：
-HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...  (
+HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ... 
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
               <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张鹏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/" class="post-title-link" itemprop="url">JavaEE Cookie</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2017-11-08T00:00:00+08:00">2017-11-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaee/" itemprop="url" rel="index"><span itemprop="name">javaee</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">11k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">10 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。
-会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。
-Cookie 是什么？Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。
-Cookie 工作步骤：
-
-客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向客户
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -935,7 +936,7 @@ Cookie 工作步骤：
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.4k</span>
+                <span title="本文字数">6.5k</span>
               
 
               
@@ -972,9 +973,10 @@ Cookie 工作步骤：
         
           
             <p>
-              Session 是什么？不同于 Cookie 保存在客户端浏览器中，Session 保存在服务器上。
+               Session 是什么？
+不同于 Cookie 保存在客户端浏览器中，Session 保存在服务器上。
 如果说 Cookie 机制是通过检查客户身上的“通行证”来确定客户身份的话，那么 Session 机制就是通过检查服务器上的“客户明细表”来确认客户身份。
-Session 对应的类为 javax.servlet.http.HttpSession 类。Session 对象是在客户第一次请求服务器时创
+Session 对应的类为 javax.servlet.http.HttpSession 类。Session 对象是在客户第一次请求服务器
               ...
             </p>
           <!--noindex-->
@@ -1189,13 +1191,14 @@ Session 对应的类为 javax.servlet.http.HttpSession 类。Session 对象是�
         
           
             <p>
-              ZooKeeperZooKeeper 可以作为 Dubbo 的注册中心。
+               ZooKeeper
+ZooKeeper 可以作为 Dubbo 的注册中心。
 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。
 安装
 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。
 配置
 vi conf/zoo.cfg
-如果不需要集群，zoo.cfg 的内
+如果不需要集群，zoo.cfg 
               ...
             </p>
           <!--noindex-->
@@ -1265,7 +1268,7 @@ vi conf/zoo.cfg
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1285,7 +1288,7 @@ vi conf/zoo.cfg
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/" class="post-title-link" itemprop="url">JDK8 升级常见问题</a>
+                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" class="post-title-link" itemprop="url">JSP 国际化</a>
               
             
           </h1>
@@ -1344,7 +1347,7 @@ vi conf/zoo.cfg
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaee/" itemprop="url" rel="index"><span itemprop="name">javaee</span></a></span>
 
                 
                 
@@ -1373,7 +1376,7 @@ vi conf/zoo.cfg
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4k</span>
+                <span title="本文字数">1.3k</span>
               
 
               
@@ -1387,7 +1390,7 @@ vi conf/zoo.cfg
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -1410,243 +1413,19 @@ vi conf/zoo.cfg
         
           
             <p>
-              JDK8 升级常见问题
-JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。
-如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。
-近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结一下
+              在开始前，需要解释几个重要的概念：
+
+国际化（i18n）：表明一个页面根据访问者的语言或国家来呈现不同的翻译版本。
+本地化（l10n）：向网站添加资源，以使它适应不同的地区和文化。比如网站的印度语版本。
+区域：这是一个特定的区域或文化，通常认为是一个语言标志和国家标志通过下划线连接起来。比如&quot;en_US&quot;代表美国英语地区。
+
+如果想要建立一个全球化的网站，就需要关心一系列项目。
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张鹏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" class="post-title-link" itemprop="url">ActiveMQ</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-08-18 00:00:00" itemprop="dateCreated datePublished" datetime="2017-08-18T00:00:00+08:00">2017-08-18</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaweb/" itemprop="url" rel="index"><span itemprop="name">javaweb</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">7.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">7 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              ActiveMQ
-
-1. JMS 基本概念
-1.1. 消息模型
-1.2. JMS 编程模型
-
-
-2. 安装
-3. 项目中的应用
-4. 资源
-
-
-1. JMS 基本概念JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/#more" rel="contents">
+              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1855,17 +1634,249 @@ JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编
         
           
             <p>
-              jsoup 使用小结概述jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。
+               jsoup 使用小结
+ 概述
+jsoup 是一款 Java 的 HTML 解析器，可直接解析某个 URL 地址、HTML 文本内容。它提供了一套非常省力的 API，可通过 DOM，CSS 以及类似于 JQuery 的操作方法来取出和操作数据。
 jsoup 工作的流程主要如下：
 
 从一个 URL，文件或字符串中解析 HTML，并加载为一个 Document 对象。
-使用 DOM 或 CSS 选择器来取出数
+使用 DOM 或 CSS 选择器
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
               <a class="btn" href="/blog/2017/08/18/programming/java/javastack/javalib/jsoup/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" class="post-title-link" itemprop="url">ActiveMQ</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-08-18 00:00:00" itemprop="dateCreated datePublished" datetime="2017-08-18T00:00:00+08:00">2017-08-18</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaweb/" itemprop="url" rel="index"><span itemprop="name">javaweb</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">7 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               ActiveMQ
+
+
+1. JMS 基本概念
+
+1.1. 消息模型
+1.2. JMS 编程模型
+
+
+2. 安装
+3. 项目中的应用
+4. 资源
+
+
+ 1. JMS 基本概念
+JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2074,10 +2085,12 @@ jsoup 工作的流程主要如下：
         
           
             <p>
-              ZXing 使用小结概述ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。 
+               ZXing 使用小结
+ 概述
+ZXing 是一个开源 Java 类库用于解析多种格式的 1D/2D 条形码。目标是能够对QR编码、Data Matrix、UPC的1D条形码进行解码。 其提供了多种平台下的客户端包括：J2ME、J2SE和Android。
 官网：ZXing github仓库
-实战本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。
-安装ma
+ 实战
+本例演示如何在一个非 android 的 Java 项目中使用 ZXing 来生成、解析二维码图片。
               ...
             </p>
           <!--noindex-->
@@ -2292,9 +2305,11 @@ jsoup 工作的流程主要如下：
         
           
             <p>
-              Thumbnailator 使用小结概述Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。
+               Thumbnailator 使用小结
+ 概述
+Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。
 有多简单呢？简单到一行代码就可以完成图片处理。形式如下：
-Thumbnails.of(new File("path/to/directory").listFiles())    .size(640, 480)    .outputF
+Thumbnails.of(new File("path/to/directory").listFiles())    .size(640, 480)    .out
               ...
             </p>
           <!--noindex-->
@@ -2509,14 +2524,16 @@ Thumbnails.of(new File("path/to/directory").listFiles())    .size(640, 480)    .
         
           
             <p>
-              Elastic 技术栈之 Filebeat简介Beats 是安装在服务器上的数据中转代理。
+               Elastic 技术栈之 Filebeat
+ 简介
+Beats 是安装在服务器上的数据中转代理。
 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。
 
 Beats 有多种类型，可以根据实际应用需要选择合适的类型。
 常用的类型有：
 
-Packetbeat：网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。
-Filebeat：从您的服务器发送日志文件
+**Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。
+**Filebeat：**
               ...
             </p>
           <!--noindex-->
@@ -2619,7 +2636,7 @@ Filebeat：从您的服务器发送日志文件
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2684,7 +2701,9 @@ Filebeat：从您的服务器发送日志文件
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3007,7 +3026,7 @@ Filebeat：从您的服务器发送日志文件
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

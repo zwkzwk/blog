@@ -550,18 +550,21 @@
         
           
             <p>
-              JVM 调优
-:notebook: 本文已归档到：「blog」
+               JVM 调优
+
+📓 本文已归档到：「blog」
 
 
 
 1. JVM 调优概述
+
 1.1. 性能定义
 1.2. 调优原则
 1.3. GC 优化的过程
 
 
 2. 命令
+
 2.1. jmap
 2.2. jstack
 2.3. jps
@@ -571,9 +574,10 @@
 
 
 3. HotSpot VM 参数
+
 3.1. JVM 内存配置
 3.2. GC 类型配置
-3.
+3.3. 
               ...
             </p>
           <!--noindex-->
@@ -809,8 +813,9 @@
         
           
             <p>
-              原子变量类
-:notebook: 本文已归档到：「blog」
+               原子变量类
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 
 
@@ -824,7 +829,7 @@
 
 原子变量比锁的粒度更细，量级更轻，并且对于在多处理器系统上实现高性能的并发代码来说是非常关键的。
 原子变量类相当于一种泛化的 volatile 变量，能够支持原子的和有条件的读-改-写操作。
-原子类在内部使用现代 CPU 支持
+原子类在内部使用现代 CPU 支持的 CAS 
               ...
             </p>
           <!--noindex-->
@@ -1060,17 +1065,20 @@
         
           
             <p>
-              线程基础
-:notebook: 本文已归档到：「blog」
+               线程基础
+
+📓 本文已归档到：「blog」
 
 
 
 线程简介
+
 什么是线程
 线程生命周期
 
 
 启动和终止线程
+
 构造线程
 中断线程
 终止线程
@@ -1078,6 +1086,7 @@ Thread 中的重要方法
 
 
 线程间通信
+
 wait/notify/notifyAll
 线程的礼让
 ThreadLocal
@@ -1085,7 +1094,8 @@ ThreadLocal
 
 
 FAQ
-start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方法
+
+start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方法么？
               ...
             </p>
           <!--noindex-->
@@ -1321,12 +1331,14 @@ start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方�
         
           
             <p>
-              并发简介
-:notebook: 本文已归档到：「blog」
+               并发简介
+
+📓 本文已归档到：「blog」
 
 
 
 并发术语
+
 并发和并行
 同步和异步
 阻塞和非阻塞
@@ -1334,12 +1346,14 @@ start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方�
 
 
 多线程的优点
+
 更好的资源利用
 程序设计更简单
 程序响应更快
 
 
 多线程的风险
+
 安全性问题
 活跃性问题
 性能问题
@@ -1348,10 +1362,13 @@ start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方�
 资料
 
 
-并发术语学习并发编程，免不了大量接触一些术语。其中，有些术语经常容易被混淆或分不清它们的差异，这里汇总一下。
-并发和并行
+ 并发术语
+学习并发编程，免不了大量接触一些术语。其中，有些术语经常容易被混淆或分不清它们的差异，这里汇总一下。
+ 并发和并行
+
 例子
-你吃饭吃到一半，
+
+你吃饭吃到一
               ...
             </p>
           <!--noindex-->
@@ -1587,8 +1604,9 @@ start() 和 run() 有什么区别？可以直接调用 Thread 类的 run() 方�
         
           
             <p>
-              内存模型
-:notebook: 本文已归档到：「blog」
+               内存模型
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 Java 内存模型（Java Memory Model），以下简称 JMM。
 
@@ -1596,12 +1614,14 @@ Java 内存模型（Java Memory Model），以下简称 JMM。
 
 内部原理
 内存模型结构
+
 线程栈
 堆
 
 
 硬件内存架构
 JMM 和硬件内存架构之间的桥接
+
 共享对象可见性
 竞态条件
 
@@ -1610,7 +1630,8 @@ Happens-Before
 资料
 
 
-内部原理JVM 中试图定义一种 JMM 来屏蔽各种硬件和操作系统的内
+ 内部原理
+JVM 中试图定义一种 JMM 来屏蔽各种硬件和操作系统的内存访
               ...
             </p>
           <!--noindex-->
@@ -1846,25 +1867,29 @@ Happens-Before
         
           
             <p>
-              并发机制的底层实现
-:notebook: 本文已归档到：「blog」
+               并发机制的底层实现
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 
 
 
 concurrent 包的实现
 synchronized
+
 synchronized 的要点
 synchronized 的原理
 
 
 volatile
+
 volatile 的要点
 volatile 的原理
 volatile 的应用场景
 
 
 CAS
+
 简介
 操作
 应用
@@ -1876,7 +1901,7 @@ CAS
 资料
 
 
-c
+ con
               ...
             </p>
           <!--noindex-->
@@ -2112,17 +2137,20 @@ c
         
           
             <p>
-              同步容器和并发容器
-:notebook: 本文已归档到：「blog」
+               同步容器和并发容器
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 
 
 
 同步容器
+
 同步容器的缺陷
 
 
 并发容器
+
 ConcurrentHashMap
 CopyOnWriteArrayList
 资料
@@ -2130,10 +2158,12 @@ CopyOnWriteArrayList
 
 
 
-同步容器在 Java 中，同步容器主要包括 2 类：
+ 同步容器
+在 Java 中，同步容器主要包括 2 类：
 
 Vector、Stack、HashTable
-Vector 实现了 List 接口，Vector 实际上就
+
+Vector 实现了 List 接口，Vector 实际上就是
               ...
             </p>
           <!--noindex-->
@@ -2369,25 +2399,29 @@ Vector 实现了 List 接口，Vector 实际上就
         
           
             <p>
-              并发工具类
-:notebook: 本文已归档到：「blog」
+               并发工具类
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 
 
 
 CountDownLatch
+
 要点
 源码
 示例
 
 
 CyclicBarrier
+
 要点
 源码
 示例
 
 
 Semaphore
+
 要点
 源码
 示例
@@ -2397,8 +2431,10 @@ Semaphore
 
 
 JDK 的 java.util.concurrent 包（即 juc）中提供了几个非常有用的并发工具类。
-CountDownLatch要点
-作用：字
+ CountDownLatch
+ 要点
+
+作用：
               ...
             </p>
           <!--noindex-->
@@ -2634,30 +2670,35 @@ CountDownLatch要点
         
           
             <p>
-              锁
-:notebook: 本文已归档到：「blog」
+               锁
+
+📓 本文已归档到：「blog」
 本文内容基于 JDK1.8。
 
 
 
 概述
+
 概念
 为什么用 Lock、ReadWriteLock
 
 
 Lock 和 ReentrantLock
+
 要点
 源码
 示例
 
 
 ReadWriteLock 和 ReentrantReadWriteLock
+
 要点
 源码
 示例
 
 
 AQS
+
 要点
 源码
 
@@ -2665,7 +2706,10 @@ AQS
 资料
 
 
-概述概念公平锁/非公平锁公平锁是指多个线程按照申
+ 概述
+ 概念
+ 公平锁/非公平锁
+公平锁是指多个线
               ...
             </p>
           <!--noindex-->
@@ -2901,17 +2945,19 @@ AQS
         
           
             <p>
-              Java 并发面试题总结
-:notebook: 本文已归档到：「blog」
+               Java 并发面试题总结
+
+📓 本文已归档到：「blog」
 
 
 
 1. 并发简介
+
 1.1. 什么是进程？什么是线程？进程和线程的区别？
 1.2. 多线程编程的好处是什么？
 1.3. 如何让正在运行的线程暂停一段时间？
 1.4. 什么是线程调度器(Thread Scheduler)和时间分片(Time Slicing)？
-1.5. 在多线程中，什么是上下文切换(context-swi
+1.5. 在多线程中，什么是上下文切换(context-switchin
               ...
             </p>
           <!--noindex-->
@@ -3014,7 +3060,7 @@ AQS
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -3079,7 +3125,9 @@ AQS
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3402,7 +3450,7 @@ AQS
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

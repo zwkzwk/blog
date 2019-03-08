@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="Flyway Flyway 是一个数据迁移工具。 关键词：    简介 什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手 命令行 JAVA API Maven Gradle   入门篇 概念 命令 支持的数据库   资料   简介什么是 Flyway？Flyway 是一个开源的数据库迁移工具。 为什么要使用数据迁移？为了说明数据迁移的作用，我们来举一个示例：">
+  <meta name="description" content="Flyway  Flyway 是一个数据迁移工具。 关键词：    简介  什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手  命令行 JAVA API Maven Gradle   入门篇  概念 命令 支持的数据库   资料    简介  什么是 Flyway？ Flyway 是一个开源的数据库迁移工具。  为什么要使用数据迁移？ 为了说明数据迁移的作用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Flyway">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/sql/middleware/flyway/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Flyway Flyway 是一个数据迁移工具。 关键词：    简介 什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手 命令行 JAVA API Maven Gradle   入门篇 概念 命令 支持的数据库   资料   简介什么是 Flyway？Flyway 是一个开源的数据库迁移工具。 为什么要使用数据迁移？为了说明数据迁移的作用，我们来举一个示例：">
+<meta property="og:description" content="Flyway  Flyway 是一个数据迁移工具。 关键词：    简介  什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手  命令行 JAVA API Maven Gradle   入门篇  概念 命令 支持的数据库   资料    简介  什么是 Flyway？ Flyway 是一个开源的数据库迁移工具。  为什么要使用数据迁移？ 为了说明数据迁移的作用">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://flywaydb.org/assets/balsamiq/Environments.png">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-bb6e9f39e56ebbda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -125,7 +125,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Flyway">
-<meta name="twitter:description" content="Flyway Flyway 是一个数据迁移工具。 关键词：    简介 什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手 命令行 JAVA API Maven Gradle   入门篇 概念 命令 支持的数据库   资料   简介什么是 Flyway？Flyway 是一个开源的数据库迁移工具。 为什么要使用数据迁移？为了说明数据迁移的作用，我们来举一个示例：">
+<meta name="twitter:description" content="Flyway  Flyway 是一个数据迁移工具。 关键词：    简介  什么是 Flyway？ 为什么要使用数据迁移？ Flyway 如何工作？   快速上手  命令行 JAVA API Maven Gradle   入门篇  概念 命令 支持的数据库   资料    简介  什么是 Flyway？ Flyway 是一个开源的数据库迁移工具。  为什么要使用数据迁移？ 为了说明数据迁移的作用">
 <meta name="twitter:image" content="https://flywaydb.org/assets/balsamiq/Environments.png">
 
 
@@ -452,7 +452,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.9k</span>
+                <span title="本文字数">9k</span>
               
 
               
@@ -486,36 +486,43 @@
       
 
       
-        <h1 id="Flyway"><a href="#Flyway" class="headerlink" title="Flyway"></a>Flyway</h1><blockquote>
+        <h1 id="flyway"><a class="markdownIt-Anchor" href="#flyway"></a> Flyway</h1>
+<blockquote>
 <p>Flyway 是一个数据迁移工具。</p>
 <p>关键词：</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#什么是-flyway">什么是 Flyway？</a></li>
-<li><a href="#为什么要使用数据迁移">为什么要使用数据迁移？</a></li>
-<li><a href="#flyway-如何工作">Flyway 如何工作？</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-flyway">什么是 Flyway？</a></li>
+<li><a href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E8%BF%81%E7%A7%BB">为什么要使用数据迁移？</a></li>
+<li><a href="#flyway-%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C">Flyway 如何工作？</a></li>
 </ul>
 </li>
-<li><a href="#快速上手">快速上手</a><ul>
-<li><a href="#命令行">命令行</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B">快速上手</a>
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C">命令行</a></li>
 <li><a href="#java-api">JAVA API</a></li>
 <li><a href="#maven">Maven</a></li>
 <li><a href="#gradle">Gradle</a></li>
 </ul>
 </li>
-<li><a href="#入门篇">入门篇</a><ul>
-<li><a href="#概念">概念</a></li>
-<li><a href="#命令">命令</a></li>
-<li><a href="#支持的数据库">支持的数据库</a></li>
+<li><a href="#%E5%85%A5%E9%97%A8%E7%AF%87">入门篇</a>
+<ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4">命令</a></li>
+<li><a href="#%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93">支持的数据库</a></li>
 </ul>
 </li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="什么是-Flyway？"><a href="#什么是-Flyway？" class="headerlink" title="什么是 Flyway？"></a>什么是 Flyway？</h3><p><strong>Flyway 是一个开源的数据库迁移工具。</strong></p>
-<h3 id="为什么要使用数据迁移？"><a href="#为什么要使用数据迁移？" class="headerlink" title="为什么要使用数据迁移？"></a>为什么要使用数据迁移？</h3><p>为了说明数据迁移的作用，我们来举一个示例：</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="什么是-flyway"><a class="markdownIt-Anchor" href="#什么是-flyway"></a> 什么是 Flyway？</h3>
+<p><strong>Flyway 是一个开源的数据库迁移工具。</strong></p>
+<h3 id="为什么要使用数据迁移"><a class="markdownIt-Anchor" href="#为什么要使用数据迁移"></a> 为什么要使用数据迁移？</h3>
+<p>为了说明数据迁移的作用，我们来举一个示例：</p>
 <p>（1）假设，有一个叫做 Shiny 的项目，它的架构是一个叫做 Shiny Soft 的 App 连接叫做 Shiny DB 的数据库。</p>
 <p>（2）对于大多数项目而言，最简单的持续集成场景如下所示：</p>
 <p><br><div align="center"><img src="https://flywaydb.org/assets/balsamiq/Environments.png"></div><br></p>
@@ -541,10 +548,11 @@
 <li>在任何时候都可以清楚的了解数据库的状态。</li>
 <li>以一种明确的方式将数据库从当前版本迁移到一个新版本。</li>
 </ul>
-<h3 id="Flyway-如何工作？"><a href="#Flyway-如何工作？" class="headerlink" title="Flyway 如何工作？"></a>Flyway 如何工作？</h3><p>最简单的场景是指定 Flyway 迁移到一个空的数据库。</p>
+<h3 id="flyway-如何工作"><a class="markdownIt-Anchor" href="#flyway-如何工作"></a> Flyway 如何工作？</h3>
+<p>最简单的场景是指定 Flyway 迁移到一个空的数据库。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-bb6e9f39e56ebbda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>Flyway 会尝试查找它的 schema 历史表，如果数据库是空的，Flyway 就不再查找，而是直接创建数据库。</p>
-<p>现再你就有了一个仅包含一张空表的数据库，默认情况下，这张表叫 _flyway_schema_history_。</p>
+<p>现再你就有了一个仅包含一张空表的数据库，默认情况下，这张表叫 <em>flyway_schema_history</em>。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-410eb31c6313b389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>这张表将被用于追踪数据库的状态。</p>
 <p>然后，Flyway 将开始扫描文件系统或应用 classpath 中的 <strong>migrations</strong>。这些 <strong>migrations</strong> 可以是 sql 或 java。</p>
@@ -555,20 +563,22 @@
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-99a88fea7a31a070.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>migrations 将根据版本号排序并按序执行。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b444fef6e5c13b71.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="快速上手"><a href="#快速上手" class="headerlink" title="快速上手"></a>快速上手</h2><p>Flyway 有 4 种使用方式：</p>
+<h2 id="快速上手"><a class="markdownIt-Anchor" href="#快速上手"></a> 快速上手</h2>
+<p>Flyway 有 4 种使用方式：</p>
 <ul>
 <li>命令行</li>
 <li>JAVA API</li>
 <li>Maven</li>
 <li>Gradle</li>
 </ul>
-<h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>适用于非 Java 用户，无需构建。</p>
+<h3 id="命令行"><a class="markdownIt-Anchor" href="#命令行"></a> 命令行</h3>
+<p>适用于非 Java 用户，无需构建。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> flyway migrate -url=... -user=... -password=...</span></span><br></pre></td></tr></table></figure>
 <p>（1）<strong>下载解压</strong></p>
 <p>进入<a href="https://flywaydb.org/download/" target="_blank" rel="noopener">官方下载页面</a>，选择合适版本，下载并解压到本地。</p>
 <p>（2）<strong>配置 flyway</strong></p>
 <p>编辑 <code>/conf/flyway.conf</code>：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">flyway.url=jdbc:h2:file:./foobardb</span><br><span class="line">flyway.user=SA</span><br><span class="line">flyway.password=</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">flyway.url</span>=<span class="string">jdbc:h2:file:./foobardb</span></span><br><span class="line"><span class="meta">flyway.user</span>=<span class="string">SA</span></span><br><span class="line"><span class="meta">flyway.password</span>=<span class="string"></span></span><br></pre></td></tr></table></figure>
 <p>（3）<strong>创建第一个 migration</strong></p>
 <p>在 <code>/sql</code> 目录下创建 <code>V1__Create_person_table.sql</code> 文件，内容如下：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> PERSON (</span><br><span class="line">    <span class="keyword">ID</span> <span class="built_in">int</span> <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">    <span class="keyword">NAME</span> <span class="built_in">varchar</span>(<span class="number">100</span>) <span class="keyword">not</span> <span class="literal">null</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
@@ -576,15 +586,16 @@
 <p>运行 Flyway 来迁移数据库：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flyway-5.1.4&gt; flyway migrate</span><br></pre></td></tr></table></figure>
 <p>运行正常的情况下，应该可以看到如下结果：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Database: jdbc:<span class="selector-tag">h2</span>:file:./foobardb (H2 <span class="number">1.4</span>)</span><br><span class="line">Successfully validated <span class="number">1</span> migration (execution <span class="selector-tag">time</span> <span class="number">00</span>:<span class="number">00.008s</span>)</span><br><span class="line">Creating Schema History <span class="selector-tag">table</span>: <span class="string">"PUBLIC"</span>.<span class="string">"flyway_schema_history"</span></span><br><span class="line">Current version of schema <span class="string">"PUBLIC"</span>: &lt;&lt; Empty Schema &gt;&gt;</span><br><span class="line">Migrating schema <span class="string">"PUBLIC"</span> to version <span class="number">1</span> - Create person table</span><br><span class="line">Successfully applied <span class="number">1</span> migration to schema <span class="string">"PUBLIC"</span> (execution <span class="selector-tag">time</span> <span class="number">00</span>:<span class="number">00.033s</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Database</span>: jdbc:h2:file:./foobardb (H2 <span class="number">1.4</span>)</span><br><span class="line">Successfully validated <span class="number">1</span> migration (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.008</span>s)</span><br><span class="line">Creating <span class="keyword">Schema</span> History <span class="keyword">table</span>: "PUBLIC"."flyway_schema_history"</span><br><span class="line"><span class="keyword">Current</span> <span class="keyword">version</span> <span class="keyword">of</span> <span class="keyword">schema</span> "PUBLIC": &lt;&lt; Empty <span class="keyword">Schema</span> &gt;&gt;</span><br><span class="line">Migrating <span class="keyword">schema</span> "PUBLIC" <span class="keyword">to</span> <span class="keyword">version</span> <span class="number">1</span> - <span class="keyword">Create</span> person <span class="keyword">table</span></span><br><span class="line">Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> <span class="keyword">schema</span> "PUBLIC" (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.033</span>s)</span><br></pre></td></tr></table></figure>
 <p>（5）<strong>添加第二个 migration</strong></p>
 <p>在 <code>/sql</code> 目录下创建 <code>V2__Add_people.sql</code> 文件，内容如下：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">'Axel'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">2</span>, <span class="string">'Mr. Foo'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">3</span>, <span class="string">'Ms. Bar'</span>);</span><br></pre></td></tr></table></figure>
 <p>运行 Flyway</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">flyway-5.1.4&gt; flyway migrate</span><br></pre></td></tr></table></figure>
 <p>运行正常的情况下，应该可以看到如下结果：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">Database: jdbc:h2:<span class="built_in">file</span>:./foobardb (H2 <span class="number">1.4</span>)</span><br><span class="line">Successfully validated <span class="number">2</span> migrations (execution <span class="built_in">time</span> <span class="number">00</span>:<span class="number">00.018</span>s)</span><br><span class="line">Current <span class="built_in">version</span> <span class="keyword">of</span> schema <span class="string">"PUBLIC"</span>: <span class="number">1</span></span><br><span class="line">Migrating schema <span class="string">"PUBLIC"</span> <span class="keyword">to</span> <span class="built_in">version</span> <span class="number">2</span> - Add people</span><br><span class="line">Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> schema <span class="string">"PUBLIC"</span> (execution <span class="built_in">time</span> <span class="number">00</span>:<span class="number">00.016</span>s)</span><br></pre></td></tr></table></figure>
-<h3 id="JAVA-API"><a href="#JAVA-API" class="headerlink" title="JAVA API"></a>JAVA API</h3><p>（1）<strong>准备</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Database</span>: jdbc:h2:file:./foobardb (H2 <span class="number">1.4</span>)</span><br><span class="line">Successfully validated <span class="number">2</span> migrations (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.018</span>s)</span><br><span class="line"><span class="keyword">Current</span> <span class="keyword">version</span> <span class="keyword">of</span> <span class="keyword">schema</span> "PUBLIC": <span class="number">1</span></span><br><span class="line">Migrating <span class="keyword">schema</span> "PUBLIC" <span class="keyword">to</span> <span class="keyword">version</span> <span class="number">2</span> - <span class="keyword">Add</span> people</span><br><span class="line">Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> <span class="keyword">schema</span> "PUBLIC" (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.016</span>s)</span><br></pre></td></tr></table></figure>
+<h3 id="java-api"><a class="markdownIt-Anchor" href="#java-api"></a> JAVA API</h3>
+<p>（1）<strong>准备</strong></p>
 <ul>
 <li>Java8+</li>
 <li>Maven 3.x</li>
@@ -601,26 +612,32 @@
 <p>（5）<strong>执行程序</strong></p>
 <p>执行 <code>App#main</code>：</p>
 <p>运行正常的情况下，应该可以看到如下结果：</p>
-<figure class="highlight xquery"><table><tr><td class="code"><pre><span class="line">INFO: Creating <span class="keyword">schema</span> history table: <span class="string">"PUBLIC"</span>.<span class="string">"flyway_schema_history"</span></span><br><span class="line">INFO: Current version <span class="keyword">of</span> <span class="keyword">schema</span> <span class="string">"PUBLIC"</span>: &lt;&lt; Empty Schema &gt;&gt;</span><br><span class="line">INFO: Migrating <span class="keyword">schema</span> <span class="string">"PUBLIC"</span> <span class="keyword">to</span> version <span class="number">1</span> - Create person table</span><br><span class="line">INFO: Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> <span class="keyword">schema</span> <span class="string">"PUBLIC"</span> (execution time <span class="number">00</span>:<span class="number">00</span>.<span class="number">062</span>s).</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INFO</span>: Creating <span class="keyword">schema</span> history <span class="keyword">table</span>: "PUBLIC"."flyway_schema_history"</span><br><span class="line"><span class="keyword">INFO</span>: <span class="keyword">Current</span> <span class="keyword">version</span> <span class="keyword">of</span> <span class="keyword">schema</span> "PUBLIC": &lt;&lt; Empty <span class="keyword">Schema</span> &gt;&gt;</span><br><span class="line"><span class="keyword">INFO</span>: Migrating <span class="keyword">schema</span> "PUBLIC" <span class="keyword">to</span> <span class="keyword">version</span> <span class="number">1</span> - <span class="keyword">Create</span> person <span class="keyword">table</span></span><br><span class="line"><span class="keyword">INFO</span>: Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> <span class="keyword">schema</span> "PUBLIC" (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.062</span>s).</span><br></pre></td></tr></table></figure>
 <p>（6）<strong>添加第二个 migration</strong></p>
 <p>添加 src/main/resources/db/migration/V2__Add_people.sql 文件，内容如下：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">'Axel'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">2</span>, <span class="string">'Mr. Foo'</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> PERSON (<span class="keyword">ID</span>, <span class="keyword">NAME</span>) <span class="keyword">values</span> (<span class="number">3</span>, <span class="string">'Ms. Bar'</span>);</span><br></pre></td></tr></table></figure>
 <p>运行正常的情况下，应该可以看到如下结果：</p>
-<figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">INFO: Current <span class="built_in">version</span> <span class="keyword">of</span> schema <span class="string">"PUBLIC"</span>: <span class="number">1</span></span><br><span class="line">INFO: Migrating schema <span class="string">"PUBLIC"</span> <span class="keyword">to</span> <span class="built_in">version</span> <span class="number">2</span> - Add people</span><br><span class="line">INFO: Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> schema <span class="string">"PUBLIC"</span> (execution <span class="built_in">time</span> <span class="number">00</span>:<span class="number">00.090</span>s).</span><br></pre></td></tr></table></figure>
-<h3 id="Maven"><a href="#Maven" class="headerlink" title="Maven"></a>Maven</h3><p>与 Java API 方式大体相同，区别在 <strong>集成 Flyway</strong> 步骤：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">INFO</span>: <span class="keyword">Current</span> <span class="keyword">version</span> <span class="keyword">of</span> <span class="keyword">schema</span> "PUBLIC": <span class="number">1</span></span><br><span class="line"><span class="keyword">INFO</span>: Migrating <span class="keyword">schema</span> "PUBLIC" <span class="keyword">to</span> <span class="keyword">version</span> <span class="number">2</span> - <span class="keyword">Add</span> people</span><br><span class="line"><span class="keyword">INFO</span>: Successfully applied <span class="number">1</span> migration <span class="keyword">to</span> <span class="keyword">schema</span> "PUBLIC" (execution <span class="type">time</span> <span class="number">00</span>:<span class="number">00.090</span>s).</span><br></pre></td></tr></table></figure>
+<h3 id="maven"><a class="markdownIt-Anchor" href="#maven"></a> Maven</h3>
+<p>与 Java API 方式大体相同，区别在 <strong>集成 Flyway</strong> 步骤：</p>
 <p>Maven 方式使用插件来集成 Flyway：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">    ...</span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.flywaydb<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>flyway-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.1.4<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">url</span>&gt;</span>jdbc:h2:file:./target/foobar<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">user</span>&gt;</span>sa<span class="tag">&lt;/<span class="name">user</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.h2database<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>h2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.191<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>因为用的是插件，所以执行方式不再是运行 Java 类，而是执行 maven 插件：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&gt; mvn flyway:migrate</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>:point_right: 参考：<a href="https://github.com/dunwu/Database/tree/master/codes/middleware/flyway" target="_blank" rel="noopener">示例源码</a></p>
+<p>👉 参考：<a href="https://github.com/dunwu/Database/tree/master/codes/middleware/flyway" target="_blank" rel="noopener">示例源码</a></p>
 </blockquote>
-<h3 id="Gradle"><a href="#Gradle" class="headerlink" title="Gradle"></a>Gradle</h3><p>本人不用 Gradle，略。</p>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><h4 id="Migrations"><a href="#Migrations" class="headerlink" title="Migrations"></a>Migrations</h4><p>在 Flyway 中，对于数据库的任何改变都称之为 <strong>Migrations</strong>。</p>
+<h3 id="gradle"><a class="markdownIt-Anchor" href="#gradle"></a> Gradle</h3>
+<p>本人不用 Gradle，略。</p>
+<h2 id="入门篇"><a class="markdownIt-Anchor" href="#入门篇"></a> 入门篇</h2>
+<h3 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h3>
+<h4 id="migrations"><a class="markdownIt-Anchor" href="#migrations"></a> Migrations</h4>
+<p>在 Flyway 中，对于数据库的任何改变都称之为 <strong>Migrations</strong>。</p>
 <p>Migrations 可以分为 Versioned migrations 和 Repeatable migrations。</p>
 <p>Versioned migrations 有 2 种形式：regular 和 undo。</p>
 <p>Versioned migrations 和 Repeatable migrations 都可以使用 SQL 或 JAVA 来编写。</p>
-<h5 id="Versioned-migrations"><a href="#Versioned-migrations" class="headerlink" title="Versioned migrations"></a>Versioned migrations</h5><p>由一个版本号（version）、一段描述（description）、一个校验（checksum）组成。版本号必须是惟一的。Versioned migrations 只能按顺序执行一次。</p>
+<h5 id="versioned-migrations"><a class="markdownIt-Anchor" href="#versioned-migrations"></a> Versioned migrations</h5>
+<p>由一个版本号（version）、一段描述（description）、一个校验（checksum）组成。版本号必须是惟一的。Versioned migrations 只能按顺序执行一次。</p>
 <p>一般用于：</p>
 <ul>
 <li>增删改 tables/indexes/foreign keys/enums/UDTs。</li>
@@ -629,13 +646,15 @@
 </ul>
 <p>Regular 示例：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> car (</span><br><span class="line">    <span class="keyword">id</span> <span class="built_in">INT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">    license_plate <span class="built_in">VARCHAR</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">    color <span class="built_in">VARCHAR</span> <span class="keyword">NOT</span> <span class="literal">NULL</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> owner <span class="keyword">ADD</span> driver_license_id <span class="built_in">VARCHAR</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> brand (<span class="keyword">name</span>) <span class="keyword">VALUES</span> (<span class="string">'DeLorean'</span>);</span><br></pre></td></tr></table></figure>
-<h5 id="Undo-migrations"><a href="#Undo-migrations" class="headerlink" title="Undo migrations"></a>Undo migrations</h5><blockquote>
+<h5 id="undo-migrations"><a class="markdownIt-Anchor" href="#undo-migrations"></a> Undo migrations</h5>
+<blockquote>
 <p>注：仅专业版支持</p>
 </blockquote>
 <p>Undo Versioned Migrations 负责撤销 Regular Versioned migrations 的影响。</p>
 <p>Undo 示例：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> brand <span class="keyword">WHERE</span> <span class="keyword">name</span>=<span class="string">'DeLorean'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> owner <span class="keyword">DROP</span> driver_license_id;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> car;</span><br></pre></td></tr></table></figure>
-<h5 id="Repeatable-migrations"><a href="#Repeatable-migrations" class="headerlink" title="Repeatable migrations"></a>Repeatable migrations</h5><p>由一段描述（description）、一个校验（checksum）组成。Versioned migrations 每次执行后，校验（checksum）会更新。</p>
+<h5 id="repeatable-migrations"><a class="markdownIt-Anchor" href="#repeatable-migrations"></a> Repeatable migrations</h5>
+<p>由一段描述（description）、一个校验（checksum）组成。Versioned migrations 每次执行后，校验（checksum）会更新。</p>
 <p>Repeatable migrations 用于管理可以通过一个文件来维护版本控制的数据库对象。</p>
 <p>一般用于：</p>
 <ul>
@@ -644,7 +663,8 @@
 </ul>
 <p>示例：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">OR</span> <span class="keyword">REPLACE</span> <span class="keyword">VIEW</span> blue_cars <span class="keyword">AS</span></span><br><span class="line">    <span class="keyword">SELECT</span> <span class="keyword">id</span>, license_plate <span class="keyword">FROM</span> cars <span class="keyword">WHERE</span> color=<span class="string">'blue'</span>;</span><br></pre></td></tr></table></figure>
-<h5 id="基于-SQL-的-migrations"><a href="#基于-SQL-的-migrations" class="headerlink" title="基于 SQL 的 migrations"></a>基于 SQL 的 migrations</h5><p>migrations 最常用的编写形式就是 SQL。</p>
+<h5 id="基于-sql-的-migrations"><a class="markdownIt-Anchor" href="#基于-sql-的-migrations"></a> 基于 SQL 的 migrations</h5>
+<p>migrations 最常用的编写形式就是 SQL。</p>
 <p>基于 SQL 的 migrations 一般用于：</p>
 <ul>
 <li>DDL 变更（针对 TABLES,VIEWS,TRIGGERS,SEQUENCES 等的 CREATE/ALTER/DROP 操作）</li>
@@ -661,7 +681,8 @@
 <li><strong>Description</strong> - 下划线或空格分隔的单词</li>
 <li><strong>Suffix</strong> - <code>.sql</code> (可配置)</li>
 </ul>
-<h5 id="基于-JAVA-的-migrations"><a href="#基于-JAVA-的-migrations" class="headerlink" title="基于 JAVA 的 migrations"></a>基于 JAVA 的 migrations</h5><p>基于 JAVA 的 migrations 适用于使用 SQL 不容易表达的场景：</p>
+<h5 id="基于-java-的-migrations"><a class="markdownIt-Anchor" href="#基于-java-的-migrations"></a> 基于 JAVA 的 migrations</h5>
+<p>基于 JAVA 的 migrations 适用于使用 SQL 不容易表达的场景：</p>
 <ul>
 <li>BLOB 和 CLOB 变更</li>
 <li>大量数据的高级变更（重新计算、高级格式变更）</li>
@@ -676,22 +697,25 @@
 <li><strong>Description</strong> - 下划线或空格分隔的单词</li>
 </ul>
 <blockquote>
-<p>:point_right: 更多细节请参考：<a href="https://flywaydb.org/documentation/migrations" target="_blank" rel="noopener">https://flywaydb.org/documentation/migrations</a></p>
+<p>👉 更多细节请参考：<a href="https://flywaydb.org/documentation/migrations" target="_blank" rel="noopener">https://flywaydb.org/documentation/migrations</a></p>
 </blockquote>
-<h4 id="Callbacks"><a href="#Callbacks" class="headerlink" title="Callbacks"></a>Callbacks</h4><blockquote>
+<h4 id="callbacks"><a class="markdownIt-Anchor" href="#callbacks"></a> Callbacks</h4>
+<blockquote>
 <p>注：部分 events 仅专业版支持。</p>
 </blockquote>
 <p>尽管 Migrations 可能已经满足绝大部分场景的需要，但是某些情况下需要你一遍又一遍的执行相同的行为。这可能会重新编译存储过程，更新视图以及许多其他类型的开销。</p>
 <p>因为以上原因，Flyway 提供了 Callbacks，用于在 Migrations 生命周期中添加钩子。</p>
 <p>Callbacks 可以用 SQL 或 JAVA 来实现。</p>
-<h5 id="SQL-Callbacks"><a href="#SQL-Callbacks" class="headerlink" title="SQL Callbacks"></a>SQL Callbacks</h5><p>SQL Callbacks 的命名规则为：event 名 + SQL migration。</p>
+<h5 id="sql-callbacks"><a class="markdownIt-Anchor" href="#sql-callbacks"></a> SQL Callbacks</h5>
+<p>SQL Callbacks 的命名规则为：event 名 + SQL migration。</p>
 <p>如： <code>beforeMigrate.sql</code>, <code>beforeEachMigrate.sql</code>, <code>afterEachMigrate.sql</code> 等。</p>
 <p>SQL Callbacks 也可以包含描述（description）。这种情况下，SQL Callbacks 文件名 = event 名 + 分隔符 + 描述 + 后缀。例：<code>beforeRepair__vacuum.sql</code></p>
 <p>当同一个 event 有多个 SQL callbacks，将按照它们描述（description）的顺序执行。</p>
 <blockquote>
 <p><strong>注：</strong> Flyway 也支持你配置的  <code>sqlMigrationSuffixes</code>。</p>
 </blockquote>
-<h5 id="JAVA-Callbacks"><a href="#JAVA-Callbacks" class="headerlink" title="JAVA Callbacks"></a>JAVA Callbacks</h5><blockquote>
+<h5 id="java-callbacks"><a class="markdownIt-Anchor" href="#java-callbacks"></a> JAVA Callbacks</h5>
+<blockquote>
 <p>当 SQL Callbacks 不够方便时，才应考虑 JAVA Callbacks。</p>
 </blockquote>
 <p>JAVA Callbacks 有 3 种形式：</p>
@@ -701,19 +725,23 @@
 <li><strong>自定义 Migration resolvers 和 executors</strong> -  实现 MigrationResolver、MigrationExecutor、ConfigurationAware、FlywayConfiguration 接口。</li>
 </ol>
 <blockquote>
-<p>:point_right: 更多细节请参考：<a href="https://flywaydb.org/documentation/callbacks" target="_blank" rel="noopener">https://flywaydb.org/documentation/callbacks</a></p>
+<p>👉 更多细节请参考：<a href="https://flywaydb.org/documentation/callbacks" target="_blank" rel="noopener">https://flywaydb.org/documentation/callbacks</a></p>
 </blockquote>
-<h4 id="Error-Handlers"><a href="#Error-Handlers" class="headerlink" title="Error Handlers"></a>Error Handlers</h4><blockquote>
+<h4 id="error-handlers"><a class="markdownIt-Anchor" href="#error-handlers"></a> Error Handlers</h4>
+<blockquote>
 <p>注：仅专业版支持。</p>
 </blockquote>
 <p>（略）</p>
-<h4 id="Dry-Runs"><a href="#Dry-Runs" class="headerlink" title="Dry Runs"></a>Dry Runs</h4><blockquote>
+<h4 id="dry-runs"><a class="markdownIt-Anchor" href="#dry-runs"></a> Dry Runs</h4>
+<blockquote>
 <p>注：仅专业版支持。</p>
 </blockquote>
 <p>（略）</p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><p>Flyway 的功能主要围绕着 7 个基本命令：<a href="https://flywaydb.org/documentation/command/migrate" target="_blank" rel="noopener">Migrate</a>、<a href="https://flywaydb.org/documentation/command/clean" target="_blank" rel="noopener">Clean</a>、<a href="https://flywaydb.org/documentation/command/info" target="_blank" rel="noopener">Info</a>、<a href="https://flywaydb.org/documentation/command/validate" target="_blank" rel="noopener">Validate</a>、<a href="https://flywaydb.org/documentation/command/undo" target="_blank" rel="noopener">Undo</a>、<a href="https://flywaydb.org/documentation/command/baseline" target="_blank" rel="noopener">Baseline</a> 和 <a href="https://flywaydb.org/documentation/command/repair" target="_blank" rel="noopener">Repair</a>。</p>
+<h3 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h3>
+<p>Flyway 的功能主要围绕着 7 个基本命令：<a href="https://flywaydb.org/documentation/command/migrate" target="_blank" rel="noopener">Migrate</a>、<a href="https://flywaydb.org/documentation/command/clean" target="_blank" rel="noopener">Clean</a>、<a href="https://flywaydb.org/documentation/command/info" target="_blank" rel="noopener">Info</a>、<a href="https://flywaydb.org/documentation/command/validate" target="_blank" rel="noopener">Validate</a>、<a href="https://flywaydb.org/documentation/command/undo" target="_blank" rel="noopener">Undo</a>、<a href="https://flywaydb.org/documentation/command/baseline" target="_blank" rel="noopener">Baseline</a> 和 <a href="https://flywaydb.org/documentation/command/repair" target="_blank" rel="noopener">Repair</a>。</p>
 <p>注：各命令的使用方法细节请查阅官方文档。</p>
-<h3 id="支持的数据库"><a href="#支持的数据库" class="headerlink" title="支持的数据库"></a>支持的数据库</h3><ul>
+<h3 id="支持的数据库"><a class="markdownIt-Anchor" href="#支持的数据库"></a> 支持的数据库</h3>
+<ul>
 <li><a href="https://flywaydb.org/documentation/database/oracle" target="_blank" rel="noopener">Oracle</a></li>
 <li><a href="https://flywaydb.org/documentation/database/sqlserver" target="_blank" rel="noopener">SQL Server</a></li>
 <li><a href="https://flywaydb.org/documentation/database/db2" target="_blank" rel="noopener">DB2</a></li>
@@ -730,7 +758,8 @@
 <li><a href="https://flywaydb.org/documentation/database/derby" target="_blank" rel="noopener">Derby</a></li>
 <li><a href="https://flywaydb.org/documentation/database/sqlite" target="_blank" rel="noopener">SQLite</a></li>
 </ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p>| <a href="https://github.com/flyway/flyway" target="_blank" rel="noopener">Github</a> | <a href="https://flywaydb.org/" target="_blank" rel="noopener">官方文档</a> |</p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<p>| <a href="https://github.com/flyway/flyway" target="_blank" rel="noopener">Github</a> | <a href="https://flywaydb.org/" target="_blank" rel="noopener">官方文档</a> |</p>
 
       
     </div>
@@ -799,8 +828,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/lib/sbe-lib-log/" rel="prev" title="SpringBootTutorialLibLog">
-                SpringBootTutorialLibLog <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-property/" rel="prev" title="SpringBootTutorialCoreProperty">
+                SpringBootTutorialCoreProperty <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -872,7 +901,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -937,7 +966,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1235,7 +1266,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Flyway"><span class="nav-text">Flyway</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-Flyway？"><span class="nav-text">什么是 Flyway？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用数据迁移？"><span class="nav-text">为什么要使用数据迁移？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flyway-如何工作？"><span class="nav-text">Flyway 如何工作？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速上手"><span class="nav-text">快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text">命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JAVA-API"><span class="nav-text">JAVA API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maven"><span class="nav-text">Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gradle"><span class="nav-text">Gradle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门篇"><span class="nav-text">入门篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Migrations"><span class="nav-text">Migrations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Callbacks"><span class="nav-text">Callbacks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Error-Handlers"><span class="nav-text">Error Handlers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dry-Runs"><span class="nav-text">Dry Runs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持的数据库"><span class="nav-text">支持的数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#flyway"><span class="nav-text"> Flyway</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是-flyway"><span class="nav-text"> 什么是 Flyway？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要使用数据迁移"><span class="nav-text"> 为什么要使用数据迁移？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flyway-如何工作"><span class="nav-text"> Flyway 如何工作？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速上手"><span class="nav-text"> 快速上手</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text"> 命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java-api"><span class="nav-text"> JAVA API</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven"><span class="nav-text"> Maven</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gradle"><span class="nav-text"> Gradle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门篇"><span class="nav-text"> 入门篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#migrations"><span class="nav-text"> Migrations</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#callbacks"><span class="nav-text"> Callbacks</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#error-handlers"><span class="nav-text"> Error Handlers</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dry-runs"><span class="nav-text"> Dry Runs</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-text"> 命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#支持的数据库"><span class="nav-text"> 支持的数据库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1277,7 +1308,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

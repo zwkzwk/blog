@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Redis 发布订阅Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。   PS">
+  <meta name="description" content="Redis 发布订阅 Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。">
 <meta name="keywords" content="database,nosql,key-value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 发布订阅">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis发布订阅/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 发布订阅Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。   PS">
+<meta property="og:description" content="Redis 发布订阅 Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.278Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 发布订阅">
-<meta name="twitter:description" content="Redis 发布订阅Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。   PS">
+<meta name="twitter:description" content="Redis 发布订阅 Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。    命令 描述     SUBSCRIBE 订阅给定的一个或多个频道。   UNSUBSCRIBE 退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。   PUBLISH 向给定频道发送消息。">
 
 
 
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">416</span>
+                <span title="本文字数">428</span>
               
 
               
@@ -508,7 +508,8 @@
       
 
       
-        <h1 id="Redis-发布订阅"><a href="#Redis-发布订阅" class="headerlink" title="Redis 发布订阅"></a>Redis 发布订阅</h1><p>Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。</p>
+        <h1 id="redis-发布订阅"><a class="markdownIt-Anchor" href="#redis-发布订阅"></a> Redis 发布订阅</h1>
+<p>Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。</p>
 <table>
 <thead>
 <tr>
@@ -539,8 +540,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="频道的订阅与信息发送"><a href="#频道的订阅与信息发送" class="headerlink" title="频道的订阅与信息发送"></a>频道的订阅与信息发送</h2><p>Redis 的 SUBSCRIBE 命令可以让客户端订阅任意数量的频道，每当有新信息发送到被订阅的频道时，信息就会被发送给所有订阅指定频道的客户端。</p>
-<h3 id="订阅频道"><a href="#订阅频道" class="headerlink" title="订阅频道"></a>订阅频道</h3><h3 id="发送信息到频道"><a href="#发送信息到频道" class="headerlink" title="发送信息到频道"></a>发送信息到频道</h3><h2 id="模式的订阅与信息发送"><a href="#模式的订阅与信息发送" class="headerlink" title="模式的订阅与信息发送"></a>模式的订阅与信息发送</h2><h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="频道的订阅与信息发送"><a class="markdownIt-Anchor" href="#频道的订阅与信息发送"></a> 频道的订阅与信息发送</h2>
+<p>Redis 的 SUBSCRIBE 命令可以让客户端订阅任意数量的频道，每当有新信息发送到被订阅的频道时，信息就会被发送给所有订阅指定频道的客户端。</p>
+<h3 id="订阅频道"><a class="markdownIt-Anchor" href="#订阅频道"></a> 订阅频道</h3>
+<h3 id="发送信息到频道"><a class="markdownIt-Anchor" href="#发送信息到频道"></a> 发送信息到频道</h3>
+<h2 id="模式的订阅与信息发送"><a class="markdownIt-Anchor" href="#模式的订阅与信息发送"></a> 模式的订阅与信息发送</h2>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://redis.io/" target="_blank" rel="noopener">Redis 官网</a></li>
 <li><a href="https://item.jd.com/11791607.html" target="_blank" rel="noopener">Redis 实战</a></li>
 <li><a href="https://item.jd.com/11486101.html" target="_blank" rel="noopener">Redis 设计与实现</a></li>
@@ -613,8 +619,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/09/database/nosql/redis/Redis数据类型/" rel="next" title="Redis 数据类型">
-                <i class="fa fa-chevron-left"></i> Redis 数据类型
+              <a href="/blog/2018/06/09/programming/java/javaweb/distributed/cache/redis/" rel="next" title="Redis">
+                <i class="fa fa-chevron-left"></i> Redis
               </a>
             
           </div>
@@ -696,7 +702,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -761,7 +767,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1059,7 +1067,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-发布订阅"><span class="nav-text">Redis 发布订阅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#频道的订阅与信息发送"><span class="nav-text">频道的订阅与信息发送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#订阅频道"><span class="nav-text">订阅频道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送信息到频道"><span class="nav-text">发送信息到频道</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式的订阅与信息发送"><span class="nav-text">模式的订阅与信息发送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-发布订阅"><span class="nav-text"> Redis 发布订阅</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#频道的订阅与信息发送"><span class="nav-text"> 频道的订阅与信息发送</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#订阅频道"><span class="nav-text"> 订阅频道</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送信息到频道"><span class="nav-text"> 发送信息到频道</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式的订阅与信息发送"><span class="nav-text"> 模式的订阅与信息发送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1101,7 +1109,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

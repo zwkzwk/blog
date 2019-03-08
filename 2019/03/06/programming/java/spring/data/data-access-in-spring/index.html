@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="Spring 的数据访问策略Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这样数">
+  <meta name="description" content="Spring 的数据访问策略 Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 的数据访问策略">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring/data/data-access-in-spring/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Spring 的数据访问策略Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这样数">
+<meta property="og:description" content="Spring 的数据访问策略 Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://dunwu.github.io/2019/03/06/programming/java/spring/data/data-access-in-spring/assets/images/spring-data-exception-tree.jpg">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-d4b685e27d934b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -122,7 +122,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.998Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 的数据访问策略">
-<meta name="twitter:description" content="Spring 的数据访问策略Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这样数">
+<meta name="twitter:description" content="Spring 的数据访问策略 Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。 DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。 Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这">
 <meta name="twitter:image" content="https://dunwu.github.io/2019/03/06/programming/java/spring/data/data-access-in-spring/assets/images/spring-data-exception-tree.jpg">
 
 
@@ -449,7 +449,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">711</span>
+                <span title="本文字数">725</span>
               
 
               
@@ -483,20 +483,30 @@
       
 
       
-        <h1 id="Spring-的数据访问策略"><a href="#Spring-的数据访问策略" class="headerlink" title="Spring 的数据访问策略"></a>Spring 的数据访问策略</h1><p>Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。</p>
+        <h1 id="spring-的数据访问策略"><a class="markdownIt-Anchor" href="#spring-的数据访问策略"></a> Spring 的数据访问策略</h1>
+<p>Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。</p>
 <p>DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。</p>
 <p>Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这样数据访问层仅暴露 DAO 接口，而上层不需要关注具体的持久化技术，达到了解耦的目的。</p>
-<h2 id="Spring-的异常体系"><a href="#Spring-的异常体系" class="headerlink" title="Spring 的异常体系"></a>Spring 的异常体系</h2><ul>
+<h2 id="spring-的异常体系"><a class="markdownIt-Anchor" href="#spring-的异常体系"></a> Spring 的异常体系</h2>
+<ul>
 <li>Spring JDBC不同于JDBC，提供了比较丰富的数据异常类型。</li>
 <li>Spring的数据异常并没有与特定的持久化方式相关联，所以异常对于不同的持久化方式都是一致的。</li>
 <li>Spring的数据异常都继承自 DataAccessException，这种异常是非检查型异常。即，不一定非要捕获Spring所抛出的数据访问异常。</li>
 </ul>
 <p><br><div align="center"><img src="assets/images/spring-data-exception-tree.jpg"></div><br></p>
-<h2 id="数据访问模板化"><a href="#数据访问模板化" class="headerlink" title="数据访问模板化"></a>数据访问模板化</h2><p>Spring 在数据访问过程中，采用了模板方法设计模式。<br>它将数据访问过程分为两块：模板（template）和回调（callback）。模板管理过程中固定的部分，而回调处理自定义的数据访问代码。<br>下图中，左边属于模板固定部分，右边属于模板回调部分。<br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-d4b685e27d934b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<p><strong>对于不同的持久化平台，Spring 提供了多个可选的模板。</strong><br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e98a1fe9635b3f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="使用DAO支持类"><a href="#使用DAO支持类" class="headerlink" title="使用DAO支持类"></a>使用DAO支持类</h2><p>基于模板-回调设计，Spring 提供了 DAO 支持类，而将业务本身的 DAO 类作为它的子类。</p>
-<p>下图展示了模板类、DAO 支持类以及自定义 DAO 实现之间的关系。<br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-4a9bf6f7ce95428a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<p>Spring不仅提供了多个数据模板实现类，还为每种模板提供了对应的 DAO 支持类。<br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-373f10dd0d377aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<h2 id="数据访问模板化"><a class="markdownIt-Anchor" href="#数据访问模板化"></a> 数据访问模板化</h2>
+<p>Spring 在数据访问过程中，采用了模板方法设计模式。<br>
+它将数据访问过程分为两块：模板（template）和回调（callback）。模板管理过程中固定的部分，而回调处理自定义的数据访问代码。<br>
+下图中，左边属于模板固定部分，右边属于模板回调部分。<br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-d4b685e27d934b52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p><strong>对于不同的持久化平台，Spring 提供了多个可选的模板。</strong><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e98a1fe9635b3f1b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<h2 id="使用dao支持类"><a class="markdownIt-Anchor" href="#使用dao支持类"></a> 使用DAO支持类</h2>
+<p>基于模板-回调设计，Spring 提供了 DAO 支持类，而将业务本身的 DAO 类作为它的子类。</p>
+<p>下图展示了模板类、DAO 支持类以及自定义 DAO 实现之间的关系。<br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-4a9bf6f7ce95428a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p>Spring不仅提供了多个数据模板实现类，还为每种模板提供了对应的 DAO 支持类。<br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-373f10dd0d377aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 
       
     </div>
@@ -555,8 +565,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/algorithm/data-structure/heap/" rel="next" title="堆">
-                <i class="fa fa-chevron-left"></i> 堆
+              <a href="/blog/2019/03/06/bigdata/hbase/hbase-ops/" rel="next" title="HBase 维护">
+                <i class="fa fa-chevron-left"></i> HBase 维护
               </a>
             
           </div>
@@ -565,8 +575,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring/data/transaction/" rel="prev" title="事务管理">
-                事务管理 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/bigdata/hbase/hbase-cli/" rel="prev" title="HBase 命令">
+                HBase 命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -638,7 +648,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -703,7 +713,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1001,7 +1013,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-的数据访问策略"><span class="nav-text">Spring 的数据访问策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring-的异常体系"><span class="nav-text">Spring 的异常体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据访问模板化"><span class="nav-text">数据访问模板化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用DAO支持类"><span class="nav-text">使用DAO支持类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-的数据访问策略"><span class="nav-text"> Spring 的数据访问策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-的异常体系"><span class="nav-text"> Spring 的异常体系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据访问模板化"><span class="nav-text"> 数据访问模板化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用dao支持类"><span class="nav-text"> 使用DAO支持类</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1043,7 +1055,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Spring for Apache Kafka spring 基于 kafka-clients jar 包。    简介 特性   快速入门 发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申   简介特性 KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManager sprin">
+  <meta name="description" content="Spring for Apache Kafka  spring 基于 kafka-clients jar 包。    简介  特性   快速入门  发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申    简介  特性  KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManag">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring for Apache Kafka">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring-boot/spring-boot-kafka/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Spring for Apache Kafka spring 基于 kafka-clients jar 包。    简介 特性   快速入门 发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申   简介特性 KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManager sprin">
+<meta property="og:description" content="Spring for Apache Kafka  spring 基于 kafka-clients jar 包。    简介  特性   快速入门  发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申    简介  特性  KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManag">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:47.108Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring for Apache Kafka">
-<meta name="twitter:description" content="Spring for Apache Kafka spring 基于 kafka-clients jar 包。    简介 特性   快速入门 发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申   简介特性 KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManager sprin">
+<meta name="twitter:description" content="Spring for Apache Kafka  spring 基于 kafka-clients jar 包。    简介  特性   快速入门  发送消息 接收消息 流处理 其他 Kafka 属性   引用和引申    简介  特性  KafkaTemplate KafkaMessageListenerContainer @KafkaListener KafkaTransactionManag">
 
 
 
@@ -477,62 +477,73 @@
       
 
       
-        <h1 id="Spring-for-Apache-Kafka"><a href="#Spring-for-Apache-Kafka" class="headerlink" title="Spring for Apache Kafka"></a>Spring for Apache Kafka</h1><blockquote>
+        <h1 id="spring-for-apache-kafka"><a class="markdownIt-Anchor" href="#spring-for-apache-kafka"></a> Spring for Apache Kafka</h1>
+<blockquote>
 <p>spring 基于 <code>kafka-clients</code> jar 包。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#特性">特性</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E7%89%B9%E6%80%A7">特性</a></li>
 </ul>
 </li>
-<li><a href="#快速入门">快速入门</a><ul>
-<li><a href="#发送消息">发送消息</a></li>
-<li><a href="#接收消息">接收消息</a></li>
-<li><a href="#流处理">流处理</a></li>
-<li><a href="#其他-kafka-属性">其他 Kafka 属性</a></li>
+<li><a href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8">快速入门</a>
+<ul>
+<li><a href="#%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF">发送消息</a></li>
+<li><a href="#%E6%8E%A5%E6%94%B6%E6%B6%88%E6%81%AF">接收消息</a></li>
+<li><a href="#%E6%B5%81%E5%A4%84%E7%90%86">流处理</a></li>
+<li><a href="#%E5%85%B6%E4%BB%96-kafka-%E5%B1%9E%E6%80%A7">其他 Kafka 属性</a></li>
 </ul>
 </li>
-<li><a href="#引用和引申">引用和引申</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%B3">引用和引申</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="特性"><a class="markdownIt-Anchor" href="#特性"></a> 特性</h3>
+<ul>
 <li><code>KafkaTemplate</code></li>
 <li><code>KafkaMessageListenerContainer</code></li>
 <li><code>@KafkaListener</code></li>
 <li><code>KafkaTransactionManager</code></li>
 <li><code>spring-kafka-test</code></li>
 </ul>
-<h2 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h2><p><code>spring-kafka</code> 项目支持在 Spring Boot 中自动配置 <a href="https://kafka.apache.org/" target="_blank" rel="noopener">Apache Kafka</a></p>
+<h2 id="快速入门"><a class="markdownIt-Anchor" href="#快速入门"></a> 快速入门</h2>
+<p><code>spring-kafka</code> 项目支持在 Spring Boot 中自动配置 <a href="https://kafka.apache.org/" target="_blank" rel="noopener">Apache Kafka</a></p>
 <p>Kafka 配置在 <code>spring.kafka.*</code> 属性中进行控制。例如：你可以在 <code>application.properties</code> 中声明这些配置属性。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.kafka.bootstrap-servers=localhost:9092</span><br><span class="line">spring.kafka.consumer.group-id=myGroup</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.kafka.bootstrap-servers</span>=<span class="string">localhost:9092</span></span><br><span class="line"><span class="meta">spring.kafka.consumer.group-id</span>=<span class="string">myGroup</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：更详细的配置可以参考 - <a href="https://github.com/spring-projects/spring-boot/tree/v2.1.0.RELEASE/spring-boot-project/spring-boot-autoconfigure/src/main/java/org/springframework/boot/autoconfigure/kafka/KafkaProperties.java" target="_blank" rel="noopener"><code>KafkaProperties</code></a></p>
 </blockquote>
-<h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><p>Spring’s <code>KafkaTemplate</code> is auto-configured, and you can autowire it directly in your own beans, as shown in the following example:</p>
+<h3 id="发送消息"><a class="markdownIt-Anchor" href="#发送消息"></a> 发送消息</h3>
+<p>Spring’s <code>KafkaTemplate</code> is auto-configured, and you can autowire it directly in your own beans, as shown in the following example:</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> KafkaTemplate kafkaTemplate;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Autowired</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyBean</span><span class="params">(KafkaTemplate kafkaTemplate)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.kafkaTemplate = kafkaTemplate;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：如果定义了 <code>spring.kafka.producer.transaction-id-prefix</code> 属性，一个 <code>KafkaTransactionManager</code> 实例会被自动配置。同时，一个 <code>RecordMessageConverter</code> bean 也会被定义，并且它被自动关联到 <code>KafkaTemplate</code>。</p>
 </blockquote>
-<h3 id="接收消息"><a href="#接收消息" class="headerlink" title="接收消息"></a>接收消息</h3><p><code>@KafkaListener</code> 注解用于创建一个 listener。如果没有定义 <code>KafkaListenerContainerFactory</code>，会根据 <code>spring.kafka.listener.*</code> 的属性自动配置一个。</p>
+<h3 id="接收消息"><a class="markdownIt-Anchor" href="#接收消息"></a> 接收消息</h3>
+<p><code>@KafkaListener</code> 注解用于创建一个 listener。如果没有定义 <code>KafkaListenerContainerFactory</code>，会根据 <code>spring.kafka.listener.*</code> 的属性自动配置一个。</p>
 <p>下面是一个监听 <code>someTopic</code> Topic 的示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@KafkaListener</span>(topics = <span class="string">"someTopic"</span>)</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">processMessage</span><span class="params">(String content)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// ...</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果定义了 <code>KafkaTransactionManager</code> Bean，它会被自动关联到容器工厂。类似的，如果 <code>RecordMessageConverter</code>, <code>ErrorHandler</code> 或 <code>AfterRollbackProcessor</code> Bean 被定义，也会壁咚关联到默认工厂。</p>
-<h3 id="流处理"><a href="#流处理" class="headerlink" title="流处理"></a>流处理</h3><p>如果项目的 classpath 出现了 <code>kafka-streams</code>, Spring Boot 会自动配置 <code>KafkaStreamsConfiguration</code> 需要的 Bean，并且 Kafka 流通过 <code>@EnableKafkaStreams</code> 注解启动来开启。</p>
+<h3 id="流处理"><a class="markdownIt-Anchor" href="#流处理"></a> 流处理</h3>
+<p>如果项目的 classpath 出现了 <code>kafka-streams</code>, Spring Boot 会自动配置 <code>KafkaStreamsConfiguration</code> 需要的 Bean，并且 Kafka 流通过 <code>@EnableKafkaStreams</code> 注解启动来开启。</p>
 <p>启动 Kafka 流意味着 application id 和 bootstrap servers 必须设置。可以通过 <code>spring.kafka.streams.application-id</code> 属性配置，如果没有设置，默认为 <code>spring.application.name</code>。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableKafkaStreams</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">KafkaStreamsExampleConfiguration</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Bean</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> KStream&lt;Integer, String&gt; <span class="title">kStream</span><span class="params">(StreamsBuilder streamsBuilder)</span> </span>&#123;</span><br><span class="line">		KStream&lt;Integer, String&gt; stream = streamsBuilder.stream(<span class="string">"ks1In"</span>);</span><br><span class="line">		stream.map((k, v) -&gt; <span class="keyword">new</span> KeyValue&lt;&gt;(k, v.toUpperCase())).to(<span class="string">"ks1Out"</span>,</span><br><span class="line">				Produced.with(Serdes.Integer(), <span class="keyword">new</span> JsonSerde&lt;&gt;()));</span><br><span class="line">		<span class="keyword">return</span> stream;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>默认，流是由 <code>StreamBuilder</code> 对象管理的。可以使用 <code>spring.kafka.streams.auto-startup</code> 属性定制它的行为。</p>
-<h3 id="其他-Kafka-属性"><a href="#其他-Kafka-属性" class="headerlink" title="其他 Kafka 属性"></a>其他 Kafka 属性</h3><blockquote>
+<h3 id="其他-kafka-属性"><a class="markdownIt-Anchor" href="#其他-kafka-属性"></a> 其他 Kafka 属性</h3>
+<blockquote>
 <p>参考：了解更多属性，请参考 - <a href="https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html" target="_blank" rel="noopener">Appendix A, <em>Common application properties</em></a></p>
 </blockquote>
 <p><code>KafkaProperties</code> 类只支持 Kafka 配置属性的部分子集。如果需要配置一些附加属性，可以使用如下属性：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.kafka.properties.prop.one=first</span><br><span class="line">spring.kafka.admin.properties.prop.two=second</span><br><span class="line">spring.kafka.consumer.properties.prop.three=third</span><br><span class="line">spring.kafka.producer.properties.prop.four=fourth</span><br><span class="line">spring.kafka.streams.properties.prop.five=fifth</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.kafka.properties.prop.one</span>=<span class="string">first</span></span><br><span class="line"><span class="meta">spring.kafka.admin.properties.prop.two</span>=<span class="string">second</span></span><br><span class="line"><span class="meta">spring.kafka.consumer.properties.prop.three</span>=<span class="string">third</span></span><br><span class="line"><span class="meta">spring.kafka.producer.properties.prop.four</span>=<span class="string">fourth</span></span><br><span class="line"><span class="meta">spring.kafka.streams.properties.prop.five</span>=<span class="string">fifth</span></span><br></pre></td></tr></table></figure>
 <p>配置 <code>JsonDeserializer</code> 的属性：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.kafka.consumer.value-deserializer=org.springframework.kafka.support.serializer.JsonDeserializer</span><br><span class="line">spring.kafka.consumer.properties.spring.json.value.default.type=com.example.Invoice</span><br><span class="line">spring.kafka.consumer.properties.spring.json.trusted.packages=com.example,org.acme</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.kafka.consumer.value-deserializer</span>=<span class="string">org.springframework.kafka.support.serializer.JsonDeserializer</span></span><br><span class="line"><span class="meta">spring.kafka.consumer.properties.spring.json.value.default.type</span>=<span class="string">com.example.Invoice</span></span><br><span class="line"><span class="meta">spring.kafka.consumer.properties.spring.json.trusted.packages</span>=<span class="string">com.example,org.acme</span></span><br></pre></td></tr></table></figure>
 <p>配置 <code>JsonSerializer</code> 的属性：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.kafka.producer.value-serializer=org.springframework.kafka.support.serializer.JsonSerializer</span><br><span class="line">spring.kafka.producer.properties.spring.json.add.type.headers=false</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引申"><a href="#引用和引申" class="headerlink" title="引用和引申"></a>引用和引申</h2><ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.kafka.producer.value-serializer</span>=<span class="string">org.springframework.kafka.support.serializer.JsonSerializer</span></span><br><span class="line"><span class="meta">spring.kafka.producer.properties.spring.json.add.type.headers</span>=<span class="string">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="引用和引申"><a class="markdownIt-Anchor" href="#引用和引申"></a> 引用和引申</h2>
+<ul>
 <li><a href="http://spring.io/projects/spring-kafka" target="_blank" rel="noopener">Spring for Apache Kafka</a></li>
 <li><a href="https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-messaging.html#boot-features-kafka" target="_blank" rel="noopener">Spring Boot 官方文档之 Apache Kafka Support</a></li>
 </ul>
@@ -677,7 +688,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -742,7 +753,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1040,7 +1053,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-for-Apache-Kafka"><span class="nav-text">Spring for Apache Kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text">特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送消息"><span class="nav-text">发送消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收消息"><span class="nav-text">接收消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流处理"><span class="nav-text">流处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他-Kafka-属性"><span class="nav-text">其他 Kafka 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text">引用和引申</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-for-apache-kafka"><span class="nav-text"> Spring for Apache Kafka</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-text"> 特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速入门"><span class="nav-text"> 快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#发送消息"><span class="nav-text"> 发送消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收消息"><span class="nav-text"> 接收消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流处理"><span class="nav-text"> 流处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他-kafka-属性"><span class="nav-text"> 其他 Kafka 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text"> 引用和引申</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1082,7 +1095,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

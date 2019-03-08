@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="ActiveMQ  1. JMS 基本概念 1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源   1. JMS 基本概念JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台">
-<meta name="keywords" content="java,分布式,javaweb,mq,jms">
+  <meta name="description" content="ActiveMQ   1. JMS 基本概念  1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源    1. JMS 基本概念 JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个">
+<meta name="keywords" content="java,javaweb,分布式,mq,jms">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ActiveMQ">
 <meta property="og:url" content="https://dunwu.github.io/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="ActiveMQ  1. JMS 基本概念 1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源   1. JMS 基本概念JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台">
+<meta property="og:description" content="ActiveMQ   1. JMS 基本概念  1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源    1. JMS 基本概念 JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.776Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ">
-<meta name="twitter:description" content="ActiveMQ  1. JMS 基本概念 1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源   1. JMS 基本概念JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台">
+<meta name="twitter:description" content="ActiveMQ   1. JMS 基本概念  1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源    1. JMS 基本概念 JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif">
 
 
@@ -512,44 +512,58 @@
       
 
       
-        <h1 id="ActiveMQ"><a href="#ActiveMQ" class="headerlink" title="ActiveMQ"></a>ActiveMQ</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="activemq"><a class="markdownIt-Anchor" href="#activemq"></a> ActiveMQ</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-jms-基本概念">1. JMS 基本概念</a><ul>
-<li><a href="#11-消息模型">1.1. 消息模型</a></li>
-<li><a href="#12-jms-编程模型">1.2. JMS 编程模型</a></li>
+<li><a href="#1-jms-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5">1. JMS 基本概念</a>
+<ul>
+<li><a href="#11-%E6%B6%88%E6%81%AF%E6%A8%A1%E5%9E%8B">1.1. 消息模型</a></li>
+<li><a href="#12-jms-%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B">1.2. JMS 编程模型</a></li>
 </ul>
 </li>
-<li><a href="#2-安装">2. 安装</a></li>
-<li><a href="#3-项目中的应用">3. 项目中的应用</a></li>
-<li><a href="#4-资源">4. 资源</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85">2. 安装</a></li>
+<li><a href="#3-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">3. 项目中的应用</a></li>
+<li><a href="#4-%E8%B5%84%E6%BA%90">4. 资源</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-JMS-基本概念"><a href="#1-JMS-基本概念" class="headerlink" title="1. JMS 基本概念"></a>1. JMS 基本概念</h2><p><code>JMS</code> 即 <strong>Java 消息服务（Java Message Service）API</strong>，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台无关的 API，绝大多数 MOM 提供商都对 JMS 提供支持。</p>
-<h3 id="1-1-消息模型"><a href="#1-1-消息模型" class="headerlink" title="1.1. 消息模型"></a>1.1. 消息模型</h3><p>JMS 有两种消息模型：</p>
+<h2 id="1-jms-基本概念"><a class="markdownIt-Anchor" href="#1-jms-基本概念"></a> 1. JMS 基本概念</h2>
+<p><code>JMS</code> 即 <strong>Java 消息服务（Java Message Service）API</strong>，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个与具体平台无关的 API，绝大多数 MOM 提供商都对 JMS 提供支持。</p>
+<h3 id="11-消息模型"><a class="markdownIt-Anchor" href="#11-消息模型"></a> 1.1. 消息模型</h3>
+<p>JMS 有两种消息模型：</p>
 <ul>
 <li>Point-to-Point(P2P)</li>
 <li>Publish/Subscribe(Pub/Sub)</li>
 </ul>
-<h4 id="P2P-的特点"><a href="#P2P-的特点" class="headerlink" title="P2P 的特点"></a>P2P 的特点</h4><p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif"></div><br></p>
+<h4 id="p2p-的特点"><a class="markdownIt-Anchor" href="#p2p-的特点"></a> P2P 的特点</h4>
+<p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif"></div><br></p>
 <p>在点对点的消息系统中，消息分发给一个单独的使用者。点对点消息往往与队列 <code>javax.jms.Queue</code> 相关联。</p>
 <p>每个消息只有一个消费者（Consumer）(即一旦被消费，消息就不再在消息队列中)。</p>
 <p>发送者和接收者之间在时间上没有依赖性，也就是说当发送者发送了消息之后，不管接收者有没有正在运行，它不会影响到消息被发送到队列。</p>
 <p>接收者在成功接收消息之后需向队列应答成功。</p>
 <p>如果你希望发送的每个消息都应该被成功处理的话，那么你需要 P2P 模式。</p>
-<h4 id="Pub-Sub-的特点"><a href="#Pub-Sub-的特点" class="headerlink" title="Pub/Sub 的特点"></a>Pub/Sub 的特点</h4><p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div><br></p>
+<h4 id="pubsub-的特点"><a class="markdownIt-Anchor" href="#pubsub-的特点"></a> Pub/Sub 的特点</h4>
+<p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div><br></p>
 <p>发布/订阅消息系统支持一个事件驱动模型，消息生产者和消费者都参与消息的传递。生产者发布事件，而使用者订阅感兴趣的事件，并使用事件。该类型消息一般与特定的主题 <code>javax.jms.Topic</code> 关联。</p>
 <p>每个消息可以有多个消费者。</p>
 <p>发布者和订阅者之间有时间上的依赖性。针对某个主题（Topic）的订阅者，它必须创建一个订阅者之后，才能消费发布者的消息，而且为了消费消息，订阅者必须保持运行的状态。</p>
 <p>为了缓和这样严格的时间相关性，JMS 允许订阅者创建一个可持久化的订阅。这样，即使订阅者没有被激活（运行），它也能接收到发布者的消息。</p>
 <p>如果你希望发送的消息可以不被做任何处理、或者被一个消息者处理、或者可以被多个消费者处理的话，那么可以采用 Pub/Sub 模型。</p>
-<h3 id="1-2-JMS-编程模型"><a href="#1-2-JMS-编程模型" class="headerlink" title="1.2. JMS 编程模型"></a>1.2. JMS 编程模型</h3><p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div><br></p>
-<h4 id="ConnectionFactory"><a href="#ConnectionFactory" class="headerlink" title="ConnectionFactory"></a>ConnectionFactory</h4><p>创建 <code>Connection</code> 对象的工厂，针对两种不同的 jms 消息模型，分别有 <code>QueueConnectionFactory</code> 和<code>TopicConnectionFactory</code> 两种。可以通过 JNDI 来查找 <code>ConnectionFactory</code> 对象。</p>
-<h4 id="Connection"><a href="#Connection" class="headerlink" title="Connection"></a>Connection</h4><p><code>Connection</code> 表示在客户端和 JMS 系统之间建立的链接（对 TCP/IP socket 的包装）。<code>Connection</code> 可以产生一个或多个<code>Session</code>。跟 <code>ConnectionFactory</code> 一样，<code>Connection</code> 也有两种类型：<code>QueueConnection</code> 和 <code>TopicConnection</code>。</p>
-<h4 id="Destination"><a href="#Destination" class="headerlink" title="Destination"></a>Destination</h4><p><code>Destination</code> 是一个包装了消息目标标识符的被管对象。消息目标是指消息发布和接收的地点，或者是队列 <code>Queue</code> ，或者是主题 <code>Topic</code> 。JMS 管理员创建这些对象，然后用户通过 JNDI 发现它们。和连接工厂一样，管理员可以创建两种类型的目标，点对点模型的 <code>Queue</code>，以及发布者/订阅者模型的 <code>Topic</code>。</p>
-<h4 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h4><p><code>Session</code> 表示一个单线程的上下文，用于发送和接收消息。由于会话是单线程的，所以消息是连续的，就是说消息是按照发送的顺序一个一个接收的。会话的好处是它支持事务。如果用户选择了事务支持，会话上下文将保存一组消息，直到事务被提交才发送这些消息。在提交事务之前，用户可以使用回滚操作取消这些消息。一个会话允许用户创建消息，生产者来发送消息，消费者来接收消息。同样，<code>Session</code> 也分 <code>QueueSession</code> 和 <code>TopicSession</code>。</p>
-<h4 id="MessageConsumer"><a href="#MessageConsumer" class="headerlink" title="MessageConsumer"></a>MessageConsumer</h4><p><code>MessageConsumer</code> 由 <code>Session</code> 创建，并用于将消息发送到 <code>Destination</code>。消费者可以同步地（阻塞模式），或（非阻塞）接收 <code>Queue</code> 和 <code>Topic</code> 类型的消息。同样，消息生产者分两种类型：<code>QueueSender</code> 和<code>TopicPublisher</code>。</p>
-<h4 id="MessageProducer"><a href="#MessageProducer" class="headerlink" title="MessageProducer"></a>MessageProducer</h4><p><code>MessageProducer</code> 由 <code>Session</code> 创建，用于接收被发送到 <code>Destination</code> 的消息。<code>MessageProducer</code> 有两种类型：<code>QueueReceiver</code> 和 <code>TopicSubscriber</code>。可分别通过 <code>session</code> 的 <code>createReceiver(Queue)</code> 或 <code>createSubscriber(Topic)</code> 来创建。当然，也可以 <code>session</code> 的 <code>creatDurableSubscriber</code> 方法来创建持久化的订阅者。</p>
-<h4 id="Message"><a href="#Message" class="headerlink" title="Message"></a>Message</h4><p>是在消费者和生产者之间传送的对象，也就是说从一个应用程序传送到另一个应用程序。一个消息有三个主要部分：</p>
+<h3 id="12-jms-编程模型"><a class="markdownIt-Anchor" href="#12-jms-编程模型"></a> 1.2. JMS 编程模型</h3>
+<p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div><br></p>
+<h4 id="connectionfactory"><a class="markdownIt-Anchor" href="#connectionfactory"></a> ConnectionFactory</h4>
+<p>创建 <code>Connection</code> 对象的工厂，针对两种不同的 jms 消息模型，分别有 <code>QueueConnectionFactory</code> 和<code>TopicConnectionFactory</code> 两种。可以通过 JNDI 来查找 <code>ConnectionFactory</code> 对象。</p>
+<h4 id="connection"><a class="markdownIt-Anchor" href="#connection"></a> Connection</h4>
+<p><code>Connection</code> 表示在客户端和 JMS 系统之间建立的链接（对 TCP/IP socket 的包装）。<code>Connection</code> 可以产生一个或多个<code>Session</code>。跟 <code>ConnectionFactory</code> 一样，<code>Connection</code> 也有两种类型：<code>QueueConnection</code> 和 <code>TopicConnection</code>。</p>
+<h4 id="destination"><a class="markdownIt-Anchor" href="#destination"></a> Destination</h4>
+<p><code>Destination</code> 是一个包装了消息目标标识符的被管对象。消息目标是指消息发布和接收的地点，或者是队列 <code>Queue</code> ，或者是主题 <code>Topic</code> 。JMS 管理员创建这些对象，然后用户通过 JNDI 发现它们。和连接工厂一样，管理员可以创建两种类型的目标，点对点模型的 <code>Queue</code>，以及发布者/订阅者模型的 <code>Topic</code>。</p>
+<h4 id="session"><a class="markdownIt-Anchor" href="#session"></a> Session</h4>
+<p><code>Session</code> 表示一个单线程的上下文，用于发送和接收消息。由于会话是单线程的，所以消息是连续的，就是说消息是按照发送的顺序一个一个接收的。会话的好处是它支持事务。如果用户选择了事务支持，会话上下文将保存一组消息，直到事务被提交才发送这些消息。在提交事务之前，用户可以使用回滚操作取消这些消息。一个会话允许用户创建消息，生产者来发送消息，消费者来接收消息。同样，<code>Session</code> 也分 <code>QueueSession</code> 和 <code>TopicSession</code>。</p>
+<h4 id="messageconsumer"><a class="markdownIt-Anchor" href="#messageconsumer"></a> MessageConsumer</h4>
+<p><code>MessageConsumer</code> 由 <code>Session</code> 创建，并用于将消息发送到 <code>Destination</code>。消费者可以同步地（阻塞模式），或（非阻塞）接收 <code>Queue</code> 和 <code>Topic</code> 类型的消息。同样，消息生产者分两种类型：<code>QueueSender</code> 和<code>TopicPublisher</code>。</p>
+<h4 id="messageproducer"><a class="markdownIt-Anchor" href="#messageproducer"></a> MessageProducer</h4>
+<p><code>MessageProducer</code> 由 <code>Session</code> 创建，用于接收被发送到 <code>Destination</code> 的消息。<code>MessageProducer</code> 有两种类型：<code>QueueReceiver</code> 和 <code>TopicSubscriber</code>。可分别通过 <code>session</code> 的 <code>createReceiver(Queue)</code> 或 <code>createSubscriber(Topic)</code> 来创建。当然，也可以 <code>session</code> 的 <code>creatDurableSubscriber</code> 方法来创建持久化的订阅者。</p>
+<h4 id="message"><a class="markdownIt-Anchor" href="#message"></a> Message</h4>
+<p>是在消费者和生产者之间传送的对象，也就是说从一个应用程序传送到另一个应用程序。一个消息有三个主要部分：</p>
 <ul>
 <li>消息头（必须）：包含用于识别和为消息寻找路由的操作设置。</li>
 <li>一组消息属性（可选）：包含额外的属性，支持其他提供者和用户的兼容。可以创建定制的字段和过滤器（消息选择器）。</li>
@@ -597,7 +611,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><p><strong>安装条件</strong></p>
+<h2 id="2-安装"><a class="markdownIt-Anchor" href="#2-安装"></a> 2. 安装</h2>
+<p><strong>安装条件</strong></p>
 <p>JDK1.7 及以上版本</p>
 <p>本地配置了 <strong>JAVA_HOME</strong> 环境变量。</p>
 <p><strong>下载</strong></p>
@@ -619,16 +634,23 @@
 </ol>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">netstat -an|<span class="builtin-name">find</span> “61616”</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li><p>访问 <a href="http://127.0.0.1:8161/admin/" target="_blank" rel="noopener">http://127.0.0.1:8161/admin/</a></p>
+<li>
+<p>访问 <a href="http://127.0.0.1:8161/admin/" target="_blank" rel="noopener">http://127.0.0.1:8161/admin/</a></p>
 </li>
-<li><p>输入用户名、密码<br>Login: admin<br>Passwort: admin</p>
+<li>
+<p>输入用户名、密码<br>
+Login: admin<br>
+Passwort: admin</p>
 </li>
-<li><p>点击导航栏的 Queues 菜单</p>
+<li>
+<p>点击导航栏的 Queues 菜单</p>
 </li>
-<li><p>添加一个队列（queue）</p>
+<li>
+<p>添加一个队列（queue）</p>
 </li>
 </ol>
-<h2 id="3-项目中的应用"><a href="#3-项目中的应用" class="headerlink" title="3. 项目中的应用"></a>3. 项目中的应用</h2><p><strong>引入依赖</strong></p>
+<h2 id="3-项目中的应用"><a class="markdownIt-Anchor" href="#3-项目中的应用"></a> 3. 项目中的应用</h2>
+<p><strong>引入依赖</strong></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.activemq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>activemq-all<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>5.14.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p><strong>Sender.java</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Sender</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> SEND_NUMBER = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ConnectionFactory ：连接工厂，JMS 用它创建连接</span></span><br><span class="line">        ConnectionFactory connectionFactory;</span><br><span class="line">        <span class="comment">// Connection ：JMS 客户端到JMS Provider 的连接</span></span><br><span class="line">        Connection connection = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// Session： 一个发送或接收消息的线程</span></span><br><span class="line">        Session session;</span><br><span class="line">        <span class="comment">// Destination ：消息的目的地;消息发送给谁.</span></span><br><span class="line">        Destination destination;</span><br><span class="line">        <span class="comment">// MessageProducer：消息发送者</span></span><br><span class="line">        MessageProducer producer;</span><br><span class="line">        <span class="comment">// TextMessage message;</span></span><br><span class="line">        <span class="comment">// 构造ConnectionFactory实例对象，此处采用ActiveMq的实现jar</span></span><br><span class="line">        connectionFactory = <span class="keyword">new</span> ActiveMQConnectionFactory(</span><br><span class="line">                ActiveMQConnection.DEFAULT_USER,</span><br><span class="line">                ActiveMQConnection.DEFAULT_PASSWORD,</span><br><span class="line">                <span class="string">"tcp://localhost:61616"</span>);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 构造从工厂得到连接对象</span></span><br><span class="line">            connection = connectionFactory.createConnection();</span><br><span class="line">            <span class="comment">// 启动</span></span><br><span class="line">            connection.start();</span><br><span class="line">            <span class="comment">// 获取操作连接</span></span><br><span class="line">            session = connection.createSession(Boolean.TRUE,</span><br><span class="line">                    Session.AUTO_ACKNOWLEDGE);</span><br><span class="line">            <span class="comment">// 获取session注意参数值xingbo.xu-queue是一个服务器的queue，须在在ActiveMq的console配置</span></span><br><span class="line">            destination = session.createQueue(<span class="string">"FirstQueue"</span>);</span><br><span class="line">            <span class="comment">// 得到消息生成者【发送者】</span></span><br><span class="line">            producer = session.createProducer(destination);</span><br><span class="line">            <span class="comment">// 设置不持久化，此处学习，实际根据项目决定</span></span><br><span class="line">            producer.setDeliveryMode(DeliveryMode.NON_PERSISTENT);</span><br><span class="line">            <span class="comment">// 构造消息，此处写死，项目就是参数，或者方法获取</span></span><br><span class="line">            sendMessage(session, producer);</span><br><span class="line">            session.commit();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="keyword">null</span> != connection)</span><br><span class="line">                    connection.close();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Throwable ignore) &#123;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sendMessage</span><span class="params">(Session session, MessageProducer producer)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= SEND_NUMBER; i++) &#123;</span><br><span class="line">            TextMessage message = session</span><br><span class="line">                    .createTextMessage(<span class="string">"ActiveMq 发送的消息"</span> + i);</span><br><span class="line">            <span class="comment">// 发送消息到目的地方</span></span><br><span class="line">            System.out.println(<span class="string">"发送消息："</span> + <span class="string">"ActiveMq 发送的消息"</span> + i);</span><br><span class="line">            producer.send(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -638,10 +660,11 @@
 <p>先运行 Receiver.java 进行消息监听，再运行 Send.java 发送消息。</p>
 <p><strong>输出</strong></p>
 <p>Send 的输出内容</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">发送消息：Activemq 发送消息<span class="number">0</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">1</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">2</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">发送消息：Activemq 发送消息<span class="number">0</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">1</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">2</span></span><br><span class="line">发送消息：Activemq 发送消息<span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>Receiver 的输出内容</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">收到消息ActiveMQ 发送消息<span class="number">0</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">1</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">2</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">3</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-资源"><a href="#4-资源" class="headerlink" title="4. 资源"></a>4. 资源</h2><ul>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">收到消息ActiveMQ 发送消息<span class="number">0</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">1</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">2</span></span><br><span class="line">收到消息ActiveMQ 发送消息<span class="number">3</span></span><br></pre></td></tr></table></figure>
+<h2 id="4-资源"><a class="markdownIt-Anchor" href="#4-资源"></a> 4. 资源</h2>
+<ul>
 <li><a href="http://activemq.apache.org/" target="_blank" rel="noopener">ActiveMQ 官网</a></li>
 <li><a href="https://docs.oracle.com/cd/E19575-01/819-3669/6n5sg7cgq/index.html" target="_blank" rel="noopener">oracle 官方的 jms 介绍</a></li>
 </ul>
@@ -698,9 +721,9 @@
           
             <a href="/blog/tags/java/" rel="tag"># java</a>
           
-            <a href="/blog/tags/分布式/" rel="tag"># 分布式</a>
-          
             <a href="/blog/tags/javaweb/" rel="tag"># javaweb</a>
+          
+            <a href="/blog/tags/分布式/" rel="tag"># 分布式</a>
           
             <a href="/blog/tags/mq/" rel="tag"># mq</a>
           
@@ -717,8 +740,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/08/18/programming/java/javastack/javalib/jsoup/" rel="next" title="jsoup 使用小结">
-                <i class="fa fa-chevron-left"></i> jsoup 使用小结
+              <a href="/blog/2017/01/17/programming/java/javastack/javalib/zxing/" rel="next" title="ZXing 使用小结">
+                <i class="fa fa-chevron-left"></i> ZXing 使用小结
               </a>
             
           </div>
@@ -727,8 +750,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/" rel="prev" title="JDK8 升级常见问题">
-                JDK8 升级常见问题 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/08/18/programming/java/javastack/javalib/jsoup/" rel="prev" title="jsoup 使用小结">
+                jsoup 使用小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -800,7 +823,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -865,7 +888,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1163,7 +1188,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ActiveMQ"><span class="nav-text">ActiveMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JMS-基本概念"><span class="nav-text">1. JMS 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-消息模型"><span class="nav-text">1.1. 消息模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#P2P-的特点"><span class="nav-text">P2P 的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Pub-Sub-的特点"><span class="nav-text">Pub/Sub 的特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-JMS-编程模型"><span class="nav-text">1.2. JMS 编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ConnectionFactory"><span class="nav-text">ConnectionFactory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Connection"><span class="nav-text">Connection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Destination"><span class="nav-text">Destination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Session"><span class="nav-text">Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MessageConsumer"><span class="nav-text">MessageConsumer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MessageProducer"><span class="nav-text">MessageProducer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Message"><span class="nav-text">Message</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-text">2. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-项目中的应用"><span class="nav-text">3. 项目中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-资源"><span class="nav-text">4. 资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#activemq"><span class="nav-text"> ActiveMQ</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-jms-基本概念"><span class="nav-text"> 1. JMS 基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-消息模型"><span class="nav-text"> 1.1. 消息模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#p2p-的特点"><span class="nav-text"> P2P 的特点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pubsub-的特点"><span class="nav-text"> Pub/Sub 的特点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-jms-编程模型"><span class="nav-text"> 1.2. JMS 编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#connectionfactory"><span class="nav-text"> ConnectionFactory</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#connection"><span class="nav-text"> Connection</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#destination"><span class="nav-text"> Destination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#session"><span class="nav-text"> Session</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#messageconsumer"><span class="nav-text"> MessageConsumer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#messageproducer"><span class="nav-text"> MessageProducer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#message"><span class="nav-text"> Message</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-text"> 2. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-项目中的应用"><span class="nav-text"> 3. 项目中的应用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-资源"><span class="nav-text"> 4. 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1205,7 +1230,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

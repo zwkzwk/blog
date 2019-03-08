@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Linux 硬件管理 关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法 df du top free iotop     Linux 硬件管理要点 查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁盘 I/O">
+  <meta name="description" content="Linux 硬件管理  关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法  df du top free iotop      Linux 硬件管理要点  查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁">
 <meta name="keywords" content="linux,command">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 硬件管理">
 <meta property="og:url" content="https://dunwu.github.io/2018/02/27/os/linux/cli/08.Linux硬件管理/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Linux 硬件管理 关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法 df du top free iotop     Linux 硬件管理要点 查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁盘 I/O">
+<meta property="og:description" content="Linux 硬件管理  关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法  df du top free iotop      Linux 硬件管理要点  查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.129Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 硬件管理">
-<meta name="twitter:description" content="Linux 硬件管理 关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法 df du top free iotop     Linux 硬件管理要点 查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁盘 I/O">
+<meta name="twitter:description" content="Linux 硬件管理  关键词：df, du, top, free, iotop    Linux 硬件管理要点 命令常见用法  df du top free iotop      Linux 硬件管理要点  查看磁盘空间 - 使用 df 查看文件或目录的磁盘空间 - 使用 du 实时查看系统整体运行状态（如：CPU、内存） - 使用 top 查看已使用和未使用的内存 - 使用 free 查看磁">
 
 
 
@@ -508,13 +508,15 @@
       
 
       
-        <h1 id="Linux-硬件管理"><a href="#Linux-硬件管理" class="headerlink" title="Linux 硬件管理"></a>Linux 硬件管理</h1><blockquote>
+        <h1 id="linux-硬件管理"><a class="markdownIt-Anchor" href="#linux-硬件管理"></a> Linux 硬件管理</h1>
+<blockquote>
 <p>关键词：<code>df</code>, <code>du</code>, <code>top</code>, <code>free</code>, <code>iotop</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#linux-硬件管理要点">Linux 硬件管理要点</a></li>
-<li><a href="#命令常见用法">命令常见用法</a><ul>
+<li><a href="#linux-%E7%A1%AC%E4%BB%B6%E7%AE%A1%E7%90%86%E8%A6%81%E7%82%B9">Linux 硬件管理要点</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95">命令常见用法</a>
+<ul>
 <li><a href="#df">df</a></li>
 <li><a href="#du">du</a></li>
 <li><a href="#top">top</a></li>
@@ -524,36 +526,43 @@
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="Linux-硬件管理要点"><a href="#Linux-硬件管理要点" class="headerlink" title="Linux 硬件管理要点"></a>Linux 硬件管理要点</h2><ul>
+<h2 id="linux-硬件管理要点"><a class="markdownIt-Anchor" href="#linux-硬件管理要点"></a> Linux 硬件管理要点</h2>
+<ul>
 <li>查看磁盘空间 - 使用 <a href="#df">df</a></li>
 <li>查看文件或目录的磁盘空间 - 使用 <a href="#du">du</a></li>
 <li>实时查看系统整体运行状态（如：CPU、内存） - 使用 <a href="#top">top</a></li>
 <li>查看已使用和未使用的内存 - 使用 <a href="#free">free</a></li>
 <li>查看磁盘 I/O 使用状况 - 使用 <a href="#iotop">iotop</a></li>
 </ul>
-<h2 id="命令常见用法"><a href="#命令常见用法" class="headerlink" title="命令常见用法"></a>命令常见用法</h2><h3 id="df"><a href="#df" class="headerlink" title="df"></a>df</h3><blockquote>
+<h2 id="命令常见用法"><a class="markdownIt-Anchor" href="#命令常见用法"></a> 命令常见用法</h2>
+<h3 id="df"><a class="markdownIt-Anchor" href="#df"></a> df</h3>
+<blockquote>
 <p>df 命令用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为 KB。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
 <p>参考：<a href="http://man.linuxde.net/df" target="_blank" rel="noopener">http://man.linuxde.net/df</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看系统磁盘设备，默认是 KB 为单位</span></span><br><span class="line">[root@LinServ-1 ~]<span class="comment"># df</span></span><br><span class="line">文件系统               1K-块        已用     可用 已用% 挂载点</span><br><span class="line">/dev/sda2            146294492  28244432 110498708  21% /</span><br><span class="line">/dev/sda1              1019208     62360    904240   7% /boot</span><br><span class="line">tmpfs                  1032204         0   1032204   0% /dev/shm</span><br><span class="line">/dev/sdb1            2884284108 218826068 2518944764   8% /data1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用 -h 选项以 KB 以上的单位来显示，可读性高</span></span><br><span class="line">[root@LinServ-1 ~]<span class="comment"># df -h</span></span><br><span class="line">文件系统              容量  已用 可用 已用% 挂载点</span><br><span class="line">/dev/sda2             140G   27G  106G  21% /</span><br><span class="line">/dev/sda1             996M   61M  884M   7% /boot</span><br><span class="line">tmpfs                1009M     0 1009M   0% /dev/shm</span><br><span class="line">/dev/sdb1             2.7T  209G  2.4T   8% /data1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看全部文件系统</span></span><br><span class="line">[root@LinServ-1 ~]<span class="comment"># df -a</span></span><br><span class="line">文件系统               1K-块        已用     可用 已用% 挂载点</span><br><span class="line">/dev/sda2            146294492  28244432 110498708  21% /</span><br><span class="line">proc                         0         0         0   -  /proc</span><br><span class="line">sysfs                        0         0         0   -  /sys</span><br><span class="line">devpts                       0         0         0   -  /dev/pts</span><br><span class="line">/dev/sda1              1019208     62360    904240   7% /boot</span><br><span class="line">tmpfs                  1032204         0   1032204   0% /dev/shm</span><br><span class="line">/dev/sdb1            2884284108 218826068 2518944764   8% /data1</span><br><span class="line">none                         0         0         0   -  /proc/sys/fs/binfmt_misc</span><br></pre></td></tr></table></figure>
-<h3 id="du"><a href="#du" class="headerlink" title="du"></a>du</h3><blockquote>
+<h3 id="du"><a class="markdownIt-Anchor" href="#du"></a> du</h3>
+<blockquote>
 <p>du 命令也是查看使用空间的，但是与 df 命令不同的是：du 命令是对文件和目录磁盘使用的空间的查看，还是和 df 命令有一些区别的。</p>
 <p>参考：<a href="http://man.linuxde.net/du" target="_blank" rel="noopener">http://man.linuxde.net/du</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 显示目录或者文件所占空间</span></span><br><span class="line">root@localhost [<span class="built_in">test</span>]<span class="comment"># du</span></span><br><span class="line">608 ./test6</span><br><span class="line">308 ./test4</span><br><span class="line">4 ./scf/lib</span><br><span class="line">4 ./scf/service/deploy/product</span><br><span class="line">4 ./scf/service/deploy/info</span><br><span class="line">12 ./scf/service/deploy</span><br><span class="line">16 ./scf/service</span><br><span class="line">4 ./scf/doc</span><br><span class="line">4 ./scf/bin</span><br><span class="line">32 ./scf</span><br><span class="line">8 ./test3</span><br><span class="line">1288 .</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示指定文件所占空间</span></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># du log2012.log</span></span><br><span class="line">300 log2012.log</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看指定目录的所占空间</span></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># du scf</span></span><br><span class="line">4 scf/lib</span><br><span class="line">4 scf/service/deploy/product</span><br><span class="line">4 scf/service/deploy/info</span><br><span class="line">12 scf/service/deploy</span><br><span class="line">16 scf/service</span><br><span class="line">4 scf/doc</span><br><span class="line">4 scf/bin</span><br><span class="line">32 scf</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示多个文件所占空间</span></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># du log30.tar.gz log31.tar.gz</span></span><br><span class="line">4 log30.tar.gz</span><br><span class="line">4 log31.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="comment"># 只显示总和的大小</span></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># du -s</span></span><br><span class="line">1288 .</span><br><span class="line"></span><br><span class="line">[root@localhost <span class="built_in">test</span>]<span class="comment"># du -s scf</span></span><br><span class="line">32 scf</span><br></pre></td></tr></table></figure>
-<h3 id="top"><a href="#top" class="headerlink" title="top"></a>top</h3><blockquote>
+<h3 id="top"><a class="markdownIt-Anchor" href="#top"></a> top</h3>
+<blockquote>
 <p>top 命令可以实时动态地查看系统的整体运行情况，是一个综合了多方信息监测系统性能和运行信息的实用工具。通过 top 命令所提供的互动式界面，用热键可以管理。</p>
 <p>参考：<a href="http://man.linuxde.net/top" target="_blank" rel="noopener">http://man.linuxde.net/top</a></p>
 </blockquote>
-<h3 id="free"><a href="#free" class="headerlink" title="free"></a>free</h3><blockquote>
+<h3 id="free"><a class="markdownIt-Anchor" href="#free"></a> free</h3>
+<blockquote>
 <p>free 命令可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区。</p>
 <p>参考：<a href="http://man.linuxde.net/free" target="_blank" rel="noopener">http://man.linuxde.net/free</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">free -t    <span class="comment"># 以总和的形式显示内存的使用信息</span></span><br><span class="line">free -s 10 <span class="comment"># 周期性的查询内存使用信息，每10s 执行一次命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示内存使用情况</span></span><br><span class="line"></span><br><span class="line">free -m</span><br><span class="line">             total       used       free     shared    buffers     cached</span><br><span class="line">Mem:          2016       1973         42          0        163       1497</span><br><span class="line">-/+ buffers/cache:        312       1703</span><br><span class="line">Swap:         4094          0       4094</span><br></pre></td></tr></table></figure>
-<h3 id="iotop"><a href="#iotop" class="headerlink" title="iotop"></a>iotop</h3><blockquote>
+<h3 id="iotop"><a class="markdownIt-Anchor" href="#iotop"></a> iotop</h3>
+<blockquote>
 <p>iotop 命令是一个用来监视磁盘 I/O 使用状况的 top 类工具。iotop 具有与 top 相似的 UI，其中包括 PID、用户、I/O、进程等相关信息。Linux 下的 IO 统计工具如 iostat，nmon 等大多数是只能统计到 per 设备的读写情况，如果你想知道每个进程是如何使用 IO 的就比较麻烦，使用 iotop 命令可以很方便的查看。</p>
 <p>参考：<a href="http://man.linuxde.net/iotop" target="_blank" rel="noopener">http://man.linuxde.net/iotop</a></p>
 </blockquote>
@@ -625,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/02/27/os/linux/cli/04.Linux文件压缩和解压/" rel="next" title="Linux 文件压缩和解压">
-                <i class="fa fa-chevron-left"></i> Linux 文件压缩和解压
+              <a href="/blog/2018/02/27/os/linux/cli/03.Linux文件内容查看编辑/" rel="next" title="Linux 文件内容查看编辑">
+                <i class="fa fa-chevron-left"></i> Linux 文件内容查看编辑
               </a>
             
           </div>
@@ -635,8 +644,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/03/29/programming/java/javastack/javalib/java-log-style/" rel="prev" title="Java 日志规范">
-                Java 日志规范 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/02/27/os/linux/cli/04.Linux文件压缩和解压/" rel="prev" title="Linux 文件压缩和解压">
+                Linux 文件压缩和解压 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -708,7 +717,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -773,7 +782,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1071,7 +1082,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-硬件管理"><span class="nav-text">Linux 硬件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-硬件管理要点"><span class="nav-text">Linux 硬件管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text">命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df"><span class="nav-text">df</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du"><span class="nav-text">du</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-text">top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free"><span class="nav-text">free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iotop"><span class="nav-text">iotop</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-硬件管理"><span class="nav-text"> Linux 硬件管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-硬件管理要点"><span class="nav-text"> Linux 硬件管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text"> 命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#df"><span class="nav-text"> df</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du"><span class="nav-text"> du</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#top"><span class="nav-text"> top</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#free"><span class="nav-text"> free</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iotop"><span class="nav-text"> iotop</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1113,7 +1124,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

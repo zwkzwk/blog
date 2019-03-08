@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="RocketMQ 安装部署  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料   环境要求 推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git  下载解压进入官方下载地址：https:">
+  <meta name="description" content="RocketMQ 安装部署   环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ  connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料    环境要求  推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git   下载解压 进入官方下载地址">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RocketMQ 安装部署">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/rocketmq/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="RocketMQ 安装部署  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料   环境要求 推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git  下载解压进入官方下载地址：https:">
+<meta property="og:description" content="RocketMQ 安装部署   环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ  connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料    环境要求  推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git   下载解压 进入官方下载地址">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.200Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RocketMQ 安装部署">
-<meta name="twitter:description" content="RocketMQ 安装部署  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料   环境要求 推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git  下载解压进入官方下载地址：https:">
+<meta name="twitter:description" content="RocketMQ 安装部署   环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器 FAQ  connect to &amp;lt;172.17.0.1:10909&amp;gt; failed   参考资料    环境要求  推荐 64 位操作系统：Linux/Unix/Mac 64bit JDK 1.8+ Maven 3.2.x Git   下载解压 进入官方下载地址">
 
 
 
@@ -477,52 +477,65 @@
       
 
       
-        <h1 id="RocketMQ-安装部署"><a href="#RocketMQ-安装部署" class="headerlink" title="RocketMQ 安装部署"></a>RocketMQ 安装部署</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="rocketmq-安装部署"><a class="markdownIt-Anchor" href="#rocketmq-安装部署"></a> RocketMQ 安装部署</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#环境要求">环境要求</a></li>
-<li><a href="#下载解压">下载解压</a></li>
-<li><a href="#启动-name-server">启动 Name Server</a></li>
-<li><a href="#启动-broker">启动 Broker</a></li>
-<li><a href="#收发消息">收发消息</a></li>
-<li><a href="#关闭服务器">关闭服务器</a></li>
-<li><a href="#faq">FAQ</a><ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82">环境要求</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B">下载解压</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8-name-server">启动 Name Server</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8-broker">启动 Broker</a></li>
+<li><a href="#%E6%94%B6%E5%8F%91%E6%B6%88%E6%81%AF">收发消息</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8">关闭服务器</a></li>
+<li><a href="#faq">FAQ</a>
+<ul>
 <li><a href="#connect-to-172170110909-failed">connect to &lt;172.17.0.1:10909&gt; failed</a></li>
 </ul>
 </li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<h2 id="环境要求"><a class="markdownIt-Anchor" href="#环境要求"></a> 环境要求</h2>
+<ul>
 <li>推荐 64 位操作系统：Linux/Unix/Mac</li>
 <li>64bit JDK 1.8+</li>
 <li>Maven 3.2.x</li>
 <li>Git</li>
 </ul>
-<h2 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h2><p>进入官方下载地址：<a href="https://rocketmq.apache.org/dowloading/releases/，选择合适版本" target="_blank" rel="noopener">https://rocketmq.apache.org/dowloading/releases/，选择合适版本</a></p>
+<h2 id="下载解压"><a class="markdownIt-Anchor" href="#下载解压"></a> 下载解压</h2>
+<p>进入官方下载地址：<a href="https://rocketmq.apache.org/dowloading/releases/%EF%BC%8C%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">https://rocketmq.apache.org/dowloading/releases/，选择合适版本</a></p>
 <p>建议选择 binary 版本。</p>
 <p>解压到本地：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; unzip rocketmq-all-4.2.0-source-release.zip</span><br><span class="line">&gt; <span class="built_in">cd</span> rocketmq-all-4.2.0/</span><br></pre></td></tr></table></figure>
-<h2 id="启动-Name-Server"><a href="#启动-Name-Server" class="headerlink" title="启动 Name Server"></a>启动 Name Server</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqnamesrv &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/namesrv.log</span><br><span class="line">The Name Server boot success...</span><br></pre></td></tr></table></figure>
-<h2 id="启动-Broker"><a href="#启动-Broker" class="headerlink" title="启动 Broker"></a>启动 Broker</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/broker.log</span><br><span class="line">The broker[%s, 172.30.30.233:10911] boot success...</span><br></pre></td></tr></table></figure>
-<h2 id="收发消息"><a href="#收发消息" class="headerlink" title="收发消息"></a>收发消息</h2><p>执行收发消息操作之前，不许告诉客户端命名服务器的位置。在 RocketMQ 中有多种方法来实现这个目的。这里，我们使用最简单的方法——设置环境变量 <code>NAMESRV_ADDR</code> ：</p>
+<h2 id="启动-name-server"><a class="markdownIt-Anchor" href="#启动-name-server"></a> 启动 Name Server</h2>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqnamesrv &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/namesrv.log</span><br><span class="line">The Name Server boot success...</span><br></pre></td></tr></table></figure>
+<h2 id="启动-broker"><a class="markdownIt-Anchor" href="#启动-broker"></a> 启动 Broker</h2>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/broker.log</span><br><span class="line">The broker[%s, 172.30.30.233:10911] boot success...</span><br></pre></td></tr></table></figure>
+<h2 id="收发消息"><a class="markdownIt-Anchor" href="#收发消息"></a> 收发消息</h2>
+<p>执行收发消息操作之前，不许告诉客户端命名服务器的位置。在 RocketMQ 中有多种方法来实现这个目的。这里，我们使用最简单的方法——设置环境变量 <code>NAMESRV_ADDR</code> ：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">export</span> NAMESRV_ADDR=localhost:9876</span><br><span class="line">&gt; sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer</span><br><span class="line">SendResult [sendStatus=SEND_OK, msgId= ...</span><br><span class="line"></span><br><span class="line">&gt; sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer</span><br><span class="line">ConsumeMessageThread_%d Receive New Messages: [MessageExt...</span><br></pre></td></tr></table></figure>
-<h2 id="关闭服务器"><a href="#关闭服务器" class="headerlink" title="关闭服务器"></a>关闭服务器</h2><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; sh bin/mqshutdown broker</span><br><span class="line">The mqbroker(36695) is running...</span><br><span class="line">Send shutdown request to mqbroker(36695) OK</span><br><span class="line"></span><br><span class="line">&gt; sh bin/mqshutdown namesrv</span><br><span class="line">The mqnamesrv(36664) is running...</span><br><span class="line">Send shutdown request to mqnamesrv(36664) OK</span><br></pre></td></tr></table></figure>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="connect-to-lt-172-17-0-1-10909-gt-failed"><a href="#connect-to-lt-172-17-0-1-10909-gt-failed" class="headerlink" title="connect to &lt;172.17.0.1:10909&gt; failed"></a>connect to &lt;172.17.0.1:10909&gt; failed</h3><p>启动后，生产者客户端连接 RocketMQ 时报错：</p>
+<h2 id="关闭服务器"><a class="markdownIt-Anchor" href="#关闭服务器"></a> 关闭服务器</h2>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; sh bin/mqshutdown broker</span><br><span class="line">The mqbroker(36695) is running...</span><br><span class="line">Send shutdown request to mqbroker(36695) OK</span><br><span class="line"></span><br><span class="line">&gt; sh bin/mqshutdown namesrv</span><br><span class="line">The mqnamesrv(36664) is running...</span><br><span class="line">Send shutdown request to mqnamesrv(36664) OK</span><br></pre></td></tr></table></figure>
+<h2 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h2>
+<h3 id="connect-to-172170110909-failed"><a class="markdownIt-Anchor" href="#connect-to-172170110909-failed"></a> connect to &lt;172.17.0.1:10909&gt; failed</h3>
+<p>启动后，生产者客户端连接 RocketMQ 时报错：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to &lt;<span class="number">172.17</span>.0.1:<span class="number">10909</span>&gt; failed</span><br><span class="line">    at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:<span class="number">357</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessageSync(MQClientAPIImpl.java:<span class="number">343</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessage(MQClientAPIImpl.java:<span class="number">327</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessage(MQClientAPIImpl.java:<span class="number">290</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendKernelImpl(DefaultMQProducerImpl.java:<span class="number">688</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendSelectImpl(DefaultMQProducerImpl.java:<span class="number">901</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:<span class="number">878</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:<span class="number">873</span>)</span><br><span class="line">    at org.apache.rocketmq.client.producer.DefaultMQProducer.send(DefaultMQProducer.java:<span class="number">369</span>)</span><br><span class="line">    at com.emrubik.uc.mdm.sync.utils.MdmInit.sendMessage(MdmInit.java:<span class="number">62</span>)</span><br><span class="line">    at com.emrubik.uc.mdm.sync.utils.MdmInit.main(MdmInit.java:<span class="number">2149</span>)</span><br></pre></td></tr></table></figure>
 <p>原因：RocketMQ 部署在虚拟机上，内网 ip 为 10.10.30.63，该虚拟机一个 docker0 网卡，ip 为 172.17.0.1。RocketMQ broker 启动时默认使用了 docker0 网卡，生产者客户端无法连接 172.17.0.1，造成以上问题。</p>
 <p>解决方案</p>
 <p>（1）干掉 docker0 网卡或修改网卡名称</p>
 <p>（2）停掉 broker，修改 broker 配置文件，重启 broker。</p>
 <p>修改 conf/broker.conf，增加两行来指定启动 broker 的 IP：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">namesrvAddr</span> = <span class="number">10.10</span>.<span class="number">30.63</span>:<span class="number">9876</span></span><br><span class="line"><span class="attr">brokerIP1</span> = <span class="number">10.10</span>.<span class="number">30.63</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">namesrvAddr = <span class="number">10.10</span><span class="number">.30</span><span class="number">.63</span>:<span class="number">9876</span></span><br><span class="line">brokerIP1 = <span class="number">10.10</span><span class="number">.30</span><span class="number">.63</span></span><br></pre></td></tr></table></figure>
 <p>启动时需要指定配置文件</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
-<li><strong>引用</strong><ul>
+<li><strong>引用</strong>
+<ul>
 <li><a href="http://rocketmq.apache.org/docs/quick-start/" target="_blank" rel="noopener">RocketMQ 官方文档</a></li>
 <li><a href="http://laciagin.me/2017/12/07/RocketMQ%E6%90%AD%E5%BB%BA%E5%8F%8A%E5%88%A8%E5%9D%91/" target="_blank" rel="noopener">RocketMQ 搭建及刨坑</a></li>
 </ul>
@@ -669,7 +682,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -734,7 +747,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1032,7 +1047,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RocketMQ-安装部署"><span class="nav-text">RocketMQ 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境要求"><span class="nav-text">环境要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载解压"><span class="nav-text">下载解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-Name-Server"><span class="nav-text">启动 Name Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-Broker"><span class="nav-text">启动 Broker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收发消息"><span class="nav-text">收发消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭服务器"><span class="nav-text">关闭服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#connect-to-lt-172-17-0-1-10909-gt-failed"><span class="nav-text">connect to &lt;172.17.0.1:10909&gt; failed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rocketmq-安装部署"><span class="nav-text"> RocketMQ 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境要求"><span class="nav-text"> 环境要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下载解压"><span class="nav-text"> 下载解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-name-server"><span class="nav-text"> 启动 Name Server</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动-broker"><span class="nav-text"> 启动 Broker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#收发消息"><span class="nav-text"> 收发消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关闭服务器"><span class="nav-text"> 关闭服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#faq"><span class="nav-text"> FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#connect-to-172170110909-failed"><span class="nav-text"> connect to &lt;172.17.0.1:10909&gt; failed</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1074,7 +1089,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

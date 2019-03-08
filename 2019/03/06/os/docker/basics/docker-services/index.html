@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 服务关于服务在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会更改运行">
+  <meta name="description" content="Docker 服务  关于服务 在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 服务">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/basics/docker-services/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 服务关于服务在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会更改运行">
+<meta property="og:description" content="Docker 服务  关于服务 在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 服务">
-<meta name="twitter:description" content="Docker 服务关于服务在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会更改运行">
+<meta name="twitter:description" content="Docker 服务  关于服务 在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。 服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">693</span>
+                <span title="本文字数">699</span>
               
 
               
@@ -477,10 +477,13 @@
       
 
       
-        <h1 id="Docker-服务"><a href="#Docker-服务" class="headerlink" title="Docker 服务"></a>Docker 服务</h1><h2 id="关于服务"><a href="#关于服务" class="headerlink" title="关于服务"></a>关于服务</h2><p>在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。</p>
+        <h1 id="docker-服务"><a class="markdownIt-Anchor" href="#docker-服务"></a> Docker 服务</h1>
+<h2 id="关于服务"><a class="markdownIt-Anchor" href="#关于服务"></a> 关于服务</h2>
+<p>在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。</p>
 <p>服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会更改运行该软件的容器实例的数量，从而为流程中的服务分配更多计算资源。</p>
 <p>幸运的是，使用 Docker 平台定义，运行和扩展服务非常简单 - 只需编写一个 docker-compose.yml 文件即可。</p>
-<h2 id="docker-compose-yml-文件"><a href="#docker-compose-yml-文件" class="headerlink" title="docker-compose.yml 文件"></a>docker-compose.yml 文件</h2><p>它是一个YAML文件，它定义了Docker容器在生产中的行为方式。</p>
+<h2 id="docker-composeyml-文件"><a class="markdownIt-Anchor" href="#docker-composeyml-文件"></a> docker-compose.yml 文件</h2>
+<p>它是一个YAML文件，它定义了Docker容器在生产中的行为方式。</p>
 <figure class="highlight less"><table><tr><td class="code"><pre><span class="line"><span class="attribute">version</span>: <span class="string">"3"</span></span><br><span class="line"><span class="attribute">services</span>:</span><br><span class="line">  <span class="attribute">web</span>:</span><br><span class="line">    # replace username/<span class="attribute">repo</span>:tag with your name and image details</span><br><span class="line">    <span class="attribute">image</span>: username/<span class="attribute">repo</span>:tag</span><br><span class="line">    <span class="attribute">deploy</span>:</span><br><span class="line">      <span class="attribute">replicas</span>: <span class="number">5</span></span><br><span class="line">      <span class="attribute">resources</span>:</span><br><span class="line">        <span class="attribute">limits</span>:</span><br><span class="line">          <span class="attribute">cpus</span>: <span class="string">"0.1"</span></span><br><span class="line">          <span class="attribute">memory</span>: <span class="number">50</span>M</span><br><span class="line">      <span class="attribute">restart_policy</span>:</span><br><span class="line">        <span class="attribute">condition</span>: on-failure</span><br><span class="line">    <span class="attribute">ports</span>:</span><br><span class="line">      - <span class="string">"80:80"</span></span><br><span class="line">    <span class="attribute">networks</span>:</span><br><span class="line">      - webnet</span><br><span class="line"><span class="attribute">networks</span>:</span><br><span class="line">  <span class="attribute">webnet</span>:</span><br></pre></td></tr></table></figure>
 
       
@@ -623,7 +626,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -688,7 +691,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -986,7 +991,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-服务"><span class="nav-text">Docker 服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于服务"><span class="nav-text">关于服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-compose-yml-文件"><span class="nav-text">docker-compose.yml 文件</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-服务"><span class="nav-text"> Docker 服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于服务"><span class="nav-text"> 关于服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-composeyml-文件"><span class="nav-text"> docker-compose.yml 文件</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1028,7 +1033,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

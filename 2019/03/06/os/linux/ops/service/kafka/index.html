@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+  <meta name="description" content="Kafka 安装部署  环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署    下载解压 进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kafka 安装部署">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/kafka/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+<meta property="og:description" content="Kafka 安装部署  环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署    下载解压 进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.194Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kafka 安装部署">
-<meta name="twitter:description" content="Kafka 安装部署 环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署   下载解压进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11-1.1">
+<meta name="twitter:description" content="Kafka 安装部署  环境要求：  JDK8 ZooKeeper     下载解压 启动服务器 停止服务器 创建主题 生产者生产消息 消费者消费消息 集群部署    下载解压 进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。 解压到本地： &amp;gt; tar -xzf kafka_2.11-1.1.0.tgz&amp;gt; cd kafka_2.11">
 
 
 
@@ -477,7 +477,8 @@
       
 
       
-        <h1 id="Kafka-安装部署"><a href="#Kafka-安装部署" class="headerlink" title="Kafka 安装部署"></a>Kafka 安装部署</h1><blockquote>
+        <h1 id="kafka-安装部署"><a class="markdownIt-Anchor" href="#kafka-安装部署"></a> Kafka 安装部署</h1>
+<blockquote>
 <p>环境要求：</p>
 <ul>
 <li>JDK8</li>
@@ -486,50 +487,59 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#下载解压">下载解压</a></li>
-<li><a href="#启动服务器">启动服务器</a></li>
-<li><a href="#停止服务器">停止服务器</a></li>
-<li><a href="#创建主题">创建主题</a></li>
-<li><a href="#生产者生产消息">生产者生产消息</a></li>
-<li><a href="#消费者消费消息">消费者消费消息</a></li>
-<li><a href="#集群部署">集群部署</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B">下载解压</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">启动服务器</a></li>
+<li><a href="#%E5%81%9C%E6%AD%A2%E6%9C%8D%E5%8A%A1%E5%99%A8">停止服务器</a></li>
+<li><a href="#%E5%88%9B%E5%BB%BA%E4%B8%BB%E9%A2%98">创建主题</a></li>
+<li><a href="#%E7%94%9F%E4%BA%A7%E8%80%85%E7%94%9F%E4%BA%A7%E6%B6%88%E6%81%AF">生产者生产消息</a></li>
+<li><a href="#%E6%B6%88%E8%B4%B9%E8%80%85%E6%B6%88%E8%B4%B9%E6%B6%88%E6%81%AF">消费者消费消息</a></li>
+<li><a href="#%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2">集群部署</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="下载解压"><a href="#下载解压" class="headerlink" title="下载解压"></a>下载解压</h2><p>进入官方下载地址：<a href="http://kafka.apache.org/downloads，选择合适版本。" target="_blank" rel="noopener">http://kafka.apache.org/downloads，选择合适版本。</a></p>
+<h2 id="下载解压"><a class="markdownIt-Anchor" href="#下载解压"></a> 下载解压</h2>
+<p>进入官方下载地址：<a href="http://kafka.apache.org/downloads%EF%BC%8C%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%89%88%E6%9C%AC%E3%80%82" target="_blank" rel="noopener">http://kafka.apache.org/downloads，选择合适版本。</a></p>
 <p>解压到本地：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&gt; <span class="selector-tag">tar</span> <span class="selector-tag">-xzf</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span><span class="selector-class">.tgz</span></span><br><span class="line">&gt; <span class="selector-tag">cd</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span></span><br></pre></td></tr></table></figure>
 <p>现在您已经在您的机器上下载了最新版本的 Kafka。</p>
-<h2 id="启动服务器"><a href="#启动服务器" class="headerlink" title="启动服务器"></a>启动服务器</h2><p>由于 Kafka 依赖于 ZooKeeper，所以运行前需要先启动 ZooKeeper</p>
+<h2 id="启动服务器"><a class="markdownIt-Anchor" href="#启动服务器"></a> 启动服务器</h2>
+<p>由于 Kafka 依赖于 ZooKeeper，所以运行前需要先启动 ZooKeeper</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/zookeeper-server-start<span class="selector-class">.sh</span> config/zookeeper.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">37</span>,<span class="number">495</span>] INFO Reading configuration from: config/zookeeper<span class="selector-class">.properties</span> (org<span class="selector-class">.apache</span><span class="selector-class">.zookeeper</span><span class="selector-class">.server</span><span class="selector-class">.quorum</span><span class="selector-class">.QuorumPeerConfig</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>然后，启动 Kafka</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">028</span>] INFO Verifying properties (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">051</span>] INFO Property socket<span class="selector-class">.send</span><span class="selector-class">.buffer</span><span class="selector-class">.bytes</span> is overridden to <span class="number">1048576</span> (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="停止服务器"><a href="#停止服务器" class="headerlink" title="停止服务器"></a>停止服务器</h2><p>执行所有操作后，可以使用以下命令停止服务器</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start.sh config/server.properties</span><br><span class="line">[<span class="number">2013</span><span class="number">-04</span><span class="number">-22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">028</span>] INFO Verifying properties (kafka.utils.VerifiableProperties)</span><br><span class="line">[<span class="number">2013</span><span class="number">-04</span><span class="number">-22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">051</span>] INFO Property socket.send.buffer.bytes <span class="keyword">is</span> overridden to <span class="number">1048576</span> (kafka.utils.VerifiableProperties)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="停止服务器"><a class="markdownIt-Anchor" href="#停止服务器"></a> 停止服务器</h2>
+<p>执行所有操作后，可以使用以下命令停止服务器</p>
 <figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-<span class="built_in">server</span>-<span class="keyword">stop</span>.sh config/<span class="built_in">server</span>.properties</span><br></pre></td></tr></table></figure>
-<h2 id="创建主题"><a href="#创建主题" class="headerlink" title="创建主题"></a>创建主题</h2><p>创建一个名为 test 的 Topic，这个 Topic 只有一个分区以及一个备份：</p>
+<h2 id="创建主题"><a class="markdownIt-Anchor" href="#创建主题"></a> 创建主题</h2>
+<p>创建一个名为 test 的 Topic，这个 Topic 只有一个分区以及一个备份：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">test</span></span><br></pre></td></tr></table></figure>
-<h2 id="生产者生产消息"><a href="#生产者生产消息" class="headerlink" title="生产者生产消息"></a>生产者生产消息</h2><p>运行生产者，然后可以在控制台中输入一些消息，这些消息会发送到服务器：</p>
+<h2 id="生产者生产消息"><a class="markdownIt-Anchor" href="#生产者生产消息"></a> 生产者生产消息</h2>
+<p>运行生产者，然后可以在控制台中输入一些消息，这些消息会发送到服务器：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-console-producer.<span class="keyword">sh</span> --broker-<span class="keyword">list</span> localhos<span class="variable">t:9092</span> --topic test</span><br><span class="line">This <span class="keyword">is</span> <span class="keyword">a</span> message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
-<h2 id="消费者消费消息"><a href="#消费者消费消息" class="headerlink" title="消费者消费消息"></a>消费者消费消息</h2><p>启动消费者，然后获得服务器中 Topic 下的消息：</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-<span class="built_in">console</span>-consumer.sh --bootstrap-server localhost:<span class="number">9092</span> --topic test --<span class="keyword">from</span>-beginning</span><br><span class="line">This <span class="keyword">is</span> a message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
-<h2 id="集群部署"><a href="#集群部署" class="headerlink" title="集群部署"></a>集群部署</h2><p>复制配置为多份（Windows 使用 copy 命令代理）：</p>
+<h2 id="消费者消费消息"><a class="markdownIt-Anchor" href="#消费者消费消息"></a> 消费者消费消息</h2>
+<p>启动消费者，然后获得服务器中 Topic 下的消息：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:<span class="number">9092</span> --topic test --<span class="keyword">from</span>-beginning</span><br><span class="line">This <span class="keyword">is</span> a message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
+<h2 id="集群部署"><a class="markdownIt-Anchor" href="#集群部署"></a> 集群部署</h2>
+<p>复制配置为多份（Windows 使用 copy 命令代理）：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">1</span>.properties</span><br><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">2</span>.properties</span><br></pre></td></tr></table></figure>
 <p>修改配置：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">config/server-1.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=1</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9093</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-1</span><br><span class="line"></span><br><span class="line">config/server-2.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=2</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9094</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-2</span><br></pre></td></tr></table></figure>
-<p>其中，broker.id 这个参数必须是唯一的。</p>
+<p>其中，<a href="http://broker.id" target="_blank" rel="noopener">broker.id</a> 这个参数必须是唯一的。</p>
 <p>端口故意配置的不一致，是为了可以在一台机器启动多个应用节点。</p>
 <p>根据这两份配置启动三个服务器节点：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server<span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">1</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">2</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>创建一个新的 Topic 使用 三个备份：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">3</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">my</span><span class="literal">-</span><span class="comment">replicated</span><span class="literal">-</span><span class="comment">topic</span></span><br></pre></td></tr></table></figure>
 <p>查看主题：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">&gt; bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic</span></span><br><span class="line"><span class="string"></span><span class="attr">Topic:</span><span class="string">my-replicated-topic</span>   <span class="attr">PartitionCount:1</span>    <span class="attr">ReplicationFactor:3</span> <span class="attr">Configs:</span></span><br><span class="line"><span class="attr">    Topic:</span> <span class="string">my-replicated-topic</span>  <span class="attr">Partition:</span> <span class="number">0</span>    <span class="attr">Leader:</span> <span class="number">1</span>   <span class="attr">Replicas:</span> <span class="number">1</span><span class="string">,2,0</span> <span class="attr">Isr:</span> <span class="number">1</span><span class="string">,2,0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-topics.sh --describe --zookeeper localhost:<span class="number">2181</span> --topic my-replicated-topic</span><br><span class="line">Topic:my-replicated-topic   PartitionCount:<span class="number">1</span>    ReplicationFactor:<span class="number">3</span> Configs:</span><br><span class="line">    Topic: my-replicated-topic  Partition: <span class="number">0</span>    Leader: <span class="number">1</span>   Replicas: <span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span> Isr: <span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>leader - 负责指定分区的所有读取和写入的节点。每个节点将成为随机选择的分区部分的领导者。</li>
 <li>replicas - 是复制此分区日志的节点列表，无论它们是否为领导者，或者即使它们当前处于活动状态。</li>
 <li>isr - 是“同步”复制品的集合。这是副本列表的子集，该列表当前处于活跃状态并且已经被领导者捕获。</li>
 </ul>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
@@ -592,8 +602,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/ops/service/nodejs/" rel="next" title="Nodejs 安装">
-                <i class="fa fa-chevron-left"></i> Nodejs 安装
+              <a href="/blog/2019/03/06/os/linux/ops/service/nexus/" rel="next" title="Nexus 安装">
+                <i class="fa fa-chevron-left"></i> Nexus 安装
               </a>
             
           </div>
@@ -602,8 +612,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/ops/service/nexus/" rel="prev" title="Nexus 安装">
-                Nexus 安装 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/jenkins/" rel="prev" title="Jenkins 安装">
+                Jenkins 安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -675,7 +685,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -740,7 +750,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1038,7 +1050,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-安装部署"><span class="nav-text">Kafka 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载解压"><span class="nav-text">下载解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务器"><span class="nav-text">启动服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止服务器"><span class="nav-text">停止服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主题"><span class="nav-text">创建主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者生产消息"><span class="nav-text">生产者生产消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者消费消息"><span class="nav-text">消费者消费消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群部署"><span class="nav-text">集群部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka-安装部署"><span class="nav-text"> Kafka 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载解压"><span class="nav-text"> 下载解压</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动服务器"><span class="nav-text"> 启动服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#停止服务器"><span class="nav-text"> 停止服务器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建主题"><span class="nav-text"> 创建主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生产者生产消息"><span class="nav-text"> 生产者生产消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#消费者消费消息"><span class="nav-text"> 消费者消费消息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集群部署"><span class="nav-text"> 集群部署</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1080,7 +1092,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

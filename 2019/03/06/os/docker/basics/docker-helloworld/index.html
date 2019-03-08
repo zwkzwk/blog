@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 之 Hello World前提确保你的环境上已经成功安装 Docker。 Hello World 实例 使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unknown&amp;g">
+  <meta name="description" content="Docker 之 Hello World  前提 确保你的环境上已经成功安装 Docker。  Hello World 实例  使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unk">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 之 Hello World">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/basics/docker-helloworld/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 之 Hello World前提确保你的环境上已经成功安装 Docker。 Hello World 实例 使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unknown&amp;g">
+<meta property="og:description" content="Docker 之 Hello World  前提 确保你的环境上已经成功安装 Docker。  Hello World 实例  使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unk">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.039Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 之 Hello World">
-<meta name="twitter:description" content="Docker 之 Hello World前提确保你的环境上已经成功安装 Docker。 Hello World 实例 使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unknown&amp;g">
+<meta name="twitter:description" content="Docker 之 Hello World  前提 确保你的环境上已经成功安装 Docker。  Hello World 实例  使用 docker version 命令确保你的环境已成功安装 Docker。  # docker versionClient: Version:         1.13.1 API version:     1.26 Package version: &amp;lt;unk">
 
 
 
@@ -477,11 +477,14 @@
       
 
       
-        <h1 id="Docker-之-Hello-World"><a href="#Docker-之-Hello-World" class="headerlink" title="Docker 之 Hello World"></a>Docker 之 Hello World</h1><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>确保你的环境上已经成功安装 Docker。</p>
-<h2 id="Hello-World-实例"><a href="#Hello-World-实例" class="headerlink" title="Hello World 实例"></a>Hello World 实例</h2><ol>
+        <h1 id="docker-之-hello-world"><a class="markdownIt-Anchor" href="#docker-之-hello-world"></a> Docker 之 Hello World</h1>
+<h2 id="前提"><a class="markdownIt-Anchor" href="#前提"></a> 前提</h2>
+<p>确保你的环境上已经成功安装 Docker。</p>
+<h2 id="hello-world-实例"><a class="markdownIt-Anchor" href="#hello-world-实例"></a> Hello World 实例</h2>
+<ol>
 <li>使用 <code>docker version</code> 命令确保你的环境已成功安装 Docker。</li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker version</span></span><br><span class="line"><span class="attr">Client:</span></span><br><span class="line"><span class="attr"> Version:</span>         <span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> <span class="string">API</span> <span class="attr">version:</span>     <span class="number">1.26</span></span><br><span class="line"> <span class="string">Package</span> <span class="attr">version:</span> <span class="string">&lt;unknown&gt;</span></span><br><span class="line"> <span class="string">Go</span> <span class="attr">version:</span>      <span class="string">go1.8.3</span></span><br><span class="line"> <span class="string">Git</span> <span class="attr">commit:</span>      <span class="number">774336</span><span class="string">d/1.13.1</span></span><br><span class="line"><span class="attr"> Built:</span>           <span class="string">Wed</span> <span class="string">Mar</span>  <span class="number">7</span> <span class="number">17</span><span class="string">:06:16</span> <span class="number">2018</span></span><br><span class="line"> <span class="string">OS/Arch:</span>         <span class="string">linux/amd64</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Server:</span></span><br><span class="line"><span class="attr"> Version:</span>         <span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> <span class="string">API</span> <span class="attr">version:</span>     <span class="number">1.26</span> <span class="string">(minimum</span> <span class="string">version</span> <span class="number">1.12</span><span class="string">)</span></span><br><span class="line"> <span class="string">Package</span> <span class="attr">version:</span> <span class="string">&lt;unknown&gt;</span></span><br><span class="line"> <span class="string">Go</span> <span class="attr">version:</span>      <span class="string">go1.8.3</span></span><br><span class="line"> <span class="string">Git</span> <span class="attr">commit:</span>      <span class="number">774336</span><span class="string">d/1.13.1</span></span><br><span class="line"><span class="attr"> Built:</span>           <span class="string">Wed</span> <span class="string">Mar</span>  <span class="number">7</span> <span class="number">17</span><span class="string">:06:16</span> <span class="number">2018</span></span><br><span class="line"> <span class="string">OS/Arch:</span>         <span class="string">linux/amd64</span></span><br><span class="line"><span class="attr"> Experimental:</span>    <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"># docker version</span><br><span class="line">Client:</span><br><span class="line"> Version:         <span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> API version:     <span class="number">1.26</span></span><br><span class="line"> Package version: &lt;unknown&gt;</span><br><span class="line"> Go version:      go1<span class="number">.8</span><span class="number">.3</span></span><br><span class="line"> Git commit:      <span class="number">774336</span>d/<span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> Built:           Wed Mar  <span class="number">7</span> <span class="number">17</span>:<span class="number">06</span>:<span class="number">16</span> <span class="number">2018</span></span><br><span class="line"> OS/Arch:         linux/amd64</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Version:         <span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> API version:     <span class="number">1.26</span> (minimum version <span class="number">1.12</span>)</span><br><span class="line"> Package version: &lt;unknown&gt;</span><br><span class="line"> Go version:      go1<span class="number">.8</span><span class="number">.3</span></span><br><span class="line"> Git commit:      <span class="number">774336</span>d/<span class="number">1.13</span><span class="number">.1</span></span><br><span class="line"> Built:           Wed Mar  <span class="number">7</span> <span class="number">17</span>:<span class="number">06</span>:<span class="number">16</span> <span class="number">2018</span></span><br><span class="line"> OS/Arch:         linux/amd64</span><br><span class="line"> Experimental:    <span class="literal">false</span></span><br></pre></td></tr></table></figure>
 <ol start="2">
 <li>使用 <code>docker run</code> 命令运行 Hello World 镜像。</li>
 </ol>
@@ -489,7 +492,7 @@
 <ol start="3">
 <li>使用 <code>docker image ls</code>命令查看镜像</li>
 </ol>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">docker image ls</span><br><span class="line">REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">docker.io/maven             latest              <span class="number">76</span>c9ab5df55b        <span class="number">7</span> days ago          <span class="number">737</span> MB</span><br><span class="line">docker.io/python            <span class="number">2.7</span>-slim            <span class="number">5541369755</span>c4        <span class="number">13</span> days ago         <span class="number">139</span> MB</span><br><span class="line">docker.io/hello-world       latest              f2a91732366c        <span class="number">4</span> months ago        <span class="number">1.85</span> kB</span><br><span class="line">docker.io/java              <span class="number">8</span>-jre               e44d62cf8862        <span class="number">14</span> months ago       <span class="number">311</span> MB</span><br><span class="line">docker.io/training/webapp   latest              <span class="number">6</span>fae60ef3446        <span class="number">2</span> years ago         <span class="number">349</span> MB</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">docker image ls</span><br><span class="line">REPOSITORY                  TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">docker.io/maven             latest              <span class="number">76</span>c9ab5df55b        <span class="number">7</span> days ago          <span class="number">737</span> MB</span><br><span class="line">docker.io/python            <span class="number">2.7</span>-slim            <span class="number">5541369755</span>c4        <span class="number">13</span> days ago         <span class="number">139</span> MB</span><br><span class="line">docker.io/hello-world       latest              f2a91732366c        <span class="number">4</span> months ago        <span class="number">1.85</span> kB</span><br><span class="line">docker.io/java              <span class="number">8</span>-jre               e44d62cf8862        <span class="number">14</span> months ago       <span class="number">311</span> MB</span><br><span class="line">docker.io/training/webapp   latest              <span class="number">6f</span>ae60ef3446        <span class="number">2</span> years ago         <span class="number">349</span> MB</span><br></pre></td></tr></table></figure>
 <ol start="4">
 <li>使用 <code>docker container ls --all</code> 命令查看容器</li>
 </ol>
@@ -636,7 +639,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -701,7 +704,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -999,7 +1004,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-之-Hello-World"><span class="nav-text">Docker 之 Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-text">前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-World-实例"><span class="nav-text">Hello World 实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-之-hello-world"><span class="nav-text"> Docker 之 Hello World</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前提"><span class="nav-text"> 前提</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-world-实例"><span class="nav-text"> Hello World 实例</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1041,7 +1046,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

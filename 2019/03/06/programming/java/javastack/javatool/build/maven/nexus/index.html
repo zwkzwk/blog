@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="部署并使用 Nexus 作为 Maven 私服 关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus 配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料   下载安装 Nexus进入官方下载地址，选择合适版本下载。  本人希望将 N">
+  <meta name="description" content="部署并使用 Nexus 作为 Maven 私服  关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus  配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料    下载安装 Nexus 进入官方下载地址，选择合适版本下载。  本人">
 <meta property="og:type" content="article">
 <meta property="og:title" content="部署并使用 Nexus 作为 Maven 私服">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/nexus/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="部署并使用 Nexus 作为 Maven 私服 关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus 配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料   下载安装 Nexus进入官方下载地址，选择合适版本下载。  本人希望将 N">
+<meta property="og:description" content="部署并使用 Nexus 作为 Maven 私服  关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus  配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料    下载安装 Nexus 进入官方下载地址，选择合适版本下载。  本人">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203029.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203131.png">
@@ -120,7 +120,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.621Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部署并使用 Nexus 作为 Maven 私服">
-<meta name="twitter:description" content="部署并使用 Nexus 作为 Maven 私服 关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus 配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料   下载安装 Nexus进入官方下载地址，选择合适版本下载。  本人希望将 N">
+<meta name="twitter:description" content="部署并使用 Nexus 作为 Maven 私服  关键词：maven, nexus 部署环境  Nexus 3.13.0 JDK 1.8 Maven 3.5.4     下载安装 Nexus 启动停止 Nexus 使用 Nexus  配置 settings.xml 配置 pom.xml 执行 maven 构建   参考资料    下载安装 Nexus 进入官方下载地址，选择合适版本下载。  本人">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203029.png">
 
 
@@ -481,7 +481,8 @@
       
 
       
-        <h1 id="部署并使用-Nexus-作为-Maven-私服"><a href="#部署并使用-Nexus-作为-Maven-私服" class="headerlink" title="部署并使用 Nexus 作为 Maven 私服"></a>部署并使用 Nexus 作为 Maven 私服</h1><blockquote>
+        <h1 id="部署并使用-nexus-作为-maven-私服"><a class="markdownIt-Anchor" href="#部署并使用-nexus-作为-maven-私服"></a> 部署并使用 Nexus 作为 Maven 私服</h1>
+<blockquote>
 <p>关键词：maven, nexus</p>
 <p>部署环境</p>
 <ul>
@@ -492,18 +493,20 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#下载安装-nexus">下载安装 Nexus</a></li>
-<li><a href="#启动停止-nexus">启动停止 Nexus</a></li>
-<li><a href="#使用-nexus">使用 Nexus</a><ul>
-<li><a href="#配置-settingsxml">配置 settings.xml</a></li>
-<li><a href="#配置-pomxml">配置 pom.xml</a></li>
-<li><a href="#执行-maven-构建">执行 maven 构建</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-nexus">下载安装 Nexus</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2-nexus">启动停止 Nexus</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-nexus">使用 Nexus</a>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE-settingsxml">配置 settings.xml</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE-pomxml">配置 pom.xml</a></li>
+<li><a href="#%E6%89%A7%E8%A1%8C-maven-%E6%9E%84%E5%BB%BA">执行 maven 构建</a></li>
 </ul>
 </li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="下载安装-Nexus"><a href="#下载安装-Nexus" class="headerlink" title="下载安装 Nexus"></a>下载安装 Nexus</h2><p>进入<a href="https://www.sonatype.com/download-oss-sonatype" target="_blank" rel="noopener">官方下载地址</a>，选择合适版本下载。</p>
+<h2 id="下载安装-nexus"><a class="markdownIt-Anchor" href="#下载安装-nexus"></a> 下载安装 Nexus</h2>
+<p>进入<a href="https://www.sonatype.com/download-oss-sonatype" target="_blank" rel="noopener">官方下载地址</a>，选择合适版本下载。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203029.png"></div><br></p>
 <p>本人希望将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。</p>
 <p>这里，如果想通过命令方式直接下载（比如用脚本安装），可以在<a href="https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3" target="_blank" rel="noopener">官方历史发布版本页面</a>中找到合适版本，然后执行以下命令：</p>
@@ -513,7 +516,8 @@
 <li>nexus-3.13.0-01 - 包含了 Nexus 运行所需要的文件。是 Nexus 运行必须的。</li>
 <li>sonatype-work - 包含了 Nexus 生成的配置文件、日志文件、仓库文件等。当我们需要备份 Nexus 的时候默认备份此目录即可。</li>
 </ul>
-<h2 id="启动停止-Nexus"><a href="#启动停止-Nexus" class="headerlink" title="启动停止 Nexus"></a>启动停止 Nexus</h2><p>进入 nexus-3.13.0-01/bin 目录，有一个可执行脚本 nexus。</p>
+<h2 id="启动停止-nexus"><a class="markdownIt-Anchor" href="#启动停止-nexus"></a> 启动停止 Nexus</h2>
+<p>进入 nexus-3.13.0-01/bin 目录，有一个可执行脚本 nexus。</p>
 <p>执行 <code>./nexus</code>，可以查看允许执行的参数，如下所示，含义可谓一目了然：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ./nexus</span><br><span class="line">Usage: ./nexus &#123;start|stop|run|run-redirect|status|restart|force-reload&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -534,10 +538,13 @@
 <li>maven-public - 私有仓库的公共空间，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。</li>
 </ul>
 </blockquote>
-<h2 id="使用-Nexus"><a href="#使用-Nexus" class="headerlink" title="使用 Nexus"></a>使用 Nexus</h2><p>如果要使用 Nexus，还必须在 settings.xml 和 pom.xml 中配置认证信息。</p>
-<h3 id="配置-settings-xml"><a href="#配置-settings-xml" class="headerlink" title="配置 settings.xml"></a>配置 settings.xml</h3><p>一份完整的 <code>settings.xml</code>：</p>
+<h2 id="使用-nexus"><a class="markdownIt-Anchor" href="#使用-nexus"></a> 使用 Nexus</h2>
+<p>如果要使用 Nexus，还必须在 settings.xml 和 pom.xml 中配置认证信息。</p>
+<h3 id="配置-settingsxml"><a class="markdownIt-Anchor" href="#配置-settingsxml"></a> 配置 settings.xml</h3>
+<p>一份完整的 <code>settings.xml</code>：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginGroup</span>&gt;</span>org.sonatype.plugins<span class="tag">&lt;/<span class="name">pluginGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Maven 私服账号信息 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- jar 包下载地址 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>public<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>zp<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://central<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">pluginRepositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">pluginRepository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://central<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">updatePolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">updatePolicy</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">pluginRepository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">pluginRepositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>zp<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="配置-pom-xml"><a href="#配置-pom-xml" class="headerlink" title="配置 pom.xml"></a>配置 pom.xml</h3><p>在 pom.xml 中添加如下配置：</p>
+<h3 id="配置-pomxml"><a class="markdownIt-Anchor" href="#配置-pomxml"></a> 配置 pom.xml</h3>
+<p>在 pom.xml 中添加如下配置：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Releases<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-releases<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Snapshot<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-snapshots<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：</p>
@@ -546,10 +553,12 @@
 <li><code>&lt;url&gt;</code> 标签的地址需要和 maven 私服的地址匹配。</li>
 </ul>
 </blockquote>
-<h3 id="执行-maven-构建"><a href="#执行-maven-构建" class="headerlink" title="执行 maven 构建"></a>执行 maven 构建</h3><p>如果要使用 settings.xml 中的私服配置，必须通过指定 <code>-P zp</code> 来激活 profile。</p>
+<h3 id="执行-maven-构建"><a class="markdownIt-Anchor" href="#执行-maven-构建"></a> 执行 maven 构建</h3>
+<p>如果要使用 settings.xml 中的私服配置，必须通过指定 <code>-P zp</code> 来激活 profile。</p>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 编译并打包 maven 项目</span></span><br><span class="line">$ mvn clean package -Dmaven.skip.test=<span class="literal">true</span> -P zp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 编译并上传 maven 交付件（jar 包）</span></span><br><span class="line">$ mvn clean deploy -Dmaven.skip.test=<span class="literal">true</span> -P zp</span><br></pre></td></tr></table></figure>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
 <li><a href="https://www.cnblogs.com/hoobey/p/6102382.html" target="_blank" rel="noopener">https://www.cnblogs.com/hoobey/p/6102382.html</a></li>
 <li><a href="https://blog.csdn.net/wzygis/article/details/49276779" target="_blank" rel="noopener">https://blog.csdn.net/wzygis/article/details/49276779</a></li>
 <li><a href="https://blog.csdn.net/clj198606061111/article/details/52200928" target="_blank" rel="noopener">https://blog.csdn.net/clj198606061111/article/details/52200928</a></li>
@@ -612,8 +621,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" rel="next" title="Maven 快速指南">
-                <i class="fa fa-chevron-left"></i> Maven 快速指南
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/" rel="next" title="SpringBootTutorialCoreBanner">
+                <i class="fa fa-chevron-left"></i> SpringBootTutorialCoreBanner
               </a>
             
           </div>
@@ -622,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javaweb/distributed/分布式技术面试题/" rel="prev" title="分布式技术面试题">
-                分布式技术面试题 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-profile/" rel="prev" title="SpringBootTutorialCoreProfile">
+                SpringBootTutorialCoreProfile <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -695,7 +704,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -760,7 +769,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1058,7 +1069,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#部署并使用-Nexus-作为-Maven-私服"><span class="nav-text">部署并使用 Nexus 作为 Maven 私服</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装-Nexus"><span class="nav-text">下载安装 Nexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动停止-Nexus"><span class="nav-text">启动停止 Nexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-Nexus"><span class="nav-text">使用 Nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-settings-xml"><span class="nav-text">配置 settings.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-pom-xml"><span class="nav-text">配置 pom.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-maven-构建"><span class="nav-text">执行 maven 构建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#部署并使用-nexus-作为-maven-私服"><span class="nav-text"> 部署并使用 Nexus 作为 Maven 私服</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#下载安装-nexus"><span class="nav-text"> 下载安装 Nexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动停止-nexus"><span class="nav-text"> 启动停止 Nexus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-nexus"><span class="nav-text"> 使用 Nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-settingsxml"><span class="nav-text"> 配置 settings.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置-pomxml"><span class="nav-text"> 配置 pom.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行-maven-构建"><span class="nav-text"> 执行 maven 构建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1100,7 +1111,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

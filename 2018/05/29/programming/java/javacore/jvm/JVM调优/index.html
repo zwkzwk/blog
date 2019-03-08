@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="JVM 调优 :notebook: 本文已归档到：「blog」    1. JVM 调优概述 1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令 2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数 3.1. JVM 内存配置 3.2. GC 类型配置 3.">
+  <meta name="description" content="JVM 调优  📓 本文已归档到：「blog」    1. JVM 调优概述  1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令  2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数  3.1. JVM 内存配置 3.2. GC 类型配置 3.3.">
 <meta name="keywords" content="programming,javacore,java,jvm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JVM 调优">
 <meta property="og:url" content="https://dunwu.github.io/2018/05/29/programming/java/javacore/jvm/JVM调优/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="JVM 调优 :notebook: 本文已归档到：「blog」    1. JVM 调优概述 1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令 2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数 3.1. JVM 内存配置 3.2. GC 类型配置 3.">
+<meta property="og:description" content="JVM 调优  📓 本文已归档到：「blog」    1. JVM 调优概述  1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令  2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数  3.1. JVM 内存配置 3.2. GC 类型配置 3.3.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://ityouknow.com/assets/images/2017/jvm/Young%20GC.png">
 <meta property="og:image" content="http://ityouknow.com/assets/images/2017/jvm/Full%20GC.png">
 <meta property="og:updated_time" content="2019-03-07T05:14:02.896Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JVM 调优">
-<meta name="twitter:description" content="JVM 调优 :notebook: 本文已归档到：「blog」    1. JVM 调优概述 1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令 2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数 3.1. JVM 内存配置 3.2. GC 类型配置 3.">
+<meta name="twitter:description" content="JVM 调优  📓 本文已归档到：「blog」    1. JVM 调优概述  1.1. 性能定义 1.2. 调优原则 1.3. GC 优化的过程   2. 命令  2.1. jmap 2.2. jstack 2.3. jps 2.4. jstat 2.5. jhat 2.6. jinfo   3. HotSpot VM 参数  3.1. JVM 内存配置 3.2. GC 类型配置 3.3.">
 <meta name="twitter:image" content="http://ityouknow.com/assets/images/2017/jvm/Young%20GC.png">
 
 
@@ -532,18 +532,21 @@
       
 
       
-        <h1 id="JVM-调优"><a href="#JVM-调优" class="headerlink" title="JVM 调优"></a>JVM 调优</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="jvm-调优"><a class="markdownIt-Anchor" href="#jvm-调优"></a> JVM 调优</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-jvm-调优概述">1. JVM 调优概述</a><ul>
-<li><a href="#11-性能定义">1.1. 性能定义</a></li>
-<li><a href="#12-调优原则">1.2. 调优原则</a></li>
-<li><a href="#13-gc-优化的过程">1.3. GC 优化的过程</a></li>
+<li><a href="#1-jvm-%E8%B0%83%E4%BC%98%E6%A6%82%E8%BF%B0">1. JVM 调优概述</a>
+<ul>
+<li><a href="#11-%E6%80%A7%E8%83%BD%E5%AE%9A%E4%B9%89">1.1. 性能定义</a></li>
+<li><a href="#12-%E8%B0%83%E4%BC%98%E5%8E%9F%E5%88%99">1.2. 调优原则</a></li>
+<li><a href="#13-gc-%E4%BC%98%E5%8C%96%E7%9A%84%E8%BF%87%E7%A8%8B">1.3. GC 优化的过程</a></li>
 </ul>
 </li>
-<li><a href="#2-命令">2. 命令</a><ul>
+<li><a href="#2-%E5%91%BD%E4%BB%A4">2. 命令</a>
+<ul>
 <li><a href="#21-jmap">2.1. jmap</a></li>
 <li><a href="#22-jstack">2.2. jstack</a></li>
 <li><a href="#23-jps">2.3. jps</a></li>
@@ -552,40 +555,48 @@
 <li><a href="#26-jinfo">2.6. jinfo</a></li>
 </ul>
 </li>
-<li><a href="#3-hotspot-vm-参数">3. HotSpot VM 参数</a><ul>
-<li><a href="#31-jvm-内存配置">3.1. JVM 内存配置</a></li>
-<li><a href="#32-gc-类型配置">3.2. GC 类型配置</a></li>
-<li><a href="#33-辅助配置">3.3. 辅助配置</a></li>
+<li><a href="#3-hotspot-vm-%E5%8F%82%E6%95%B0">3. HotSpot VM 参数</a>
+<ul>
+<li><a href="#31-jvm-%E5%86%85%E5%AD%98%E9%85%8D%E7%BD%AE">3.1. JVM 内存配置</a></li>
+<li><a href="#32-gc-%E7%B1%BB%E5%9E%8B%E9%85%8D%E7%BD%AE">3.2. GC 类型配置</a></li>
+<li><a href="#33-%E8%BE%85%E5%8A%A9%E9%85%8D%E7%BD%AE">3.3. 辅助配置</a></li>
 </ul>
 </li>
-<li><a href="#4-典型配置">4. 典型配置</a><ul>
-<li><a href="#41-堆大小设置">4.1. 堆大小设置</a></li>
-<li><a href="#42-回收器选择">4.2. 回收器选择</a></li>
+<li><a href="#4-%E5%85%B8%E5%9E%8B%E9%85%8D%E7%BD%AE">4. 典型配置</a>
+<ul>
+<li><a href="#41-%E5%A0%86%E5%A4%A7%E5%B0%8F%E8%AE%BE%E7%BD%AE">4.1. 堆大小设置</a></li>
+<li><a href="#42-%E5%9B%9E%E6%94%B6%E5%99%A8%E9%80%89%E6%8B%A9">4.2. 回收器选择</a></li>
 </ul>
 </li>
-<li><a href="#5-jvm-实战">5. JVM 实战</a><ul>
-<li><a href="#51-分析-gc-日志">5.1. 分析 GC 日志</a></li>
-<li><a href="#52-获取-gc-日志">5.2. 获取 GC 日志</a></li>
-<li><a href="#53-如何分析-gc-日志">5.3. 如何分析 GC 日志</a></li>
-<li><a href="#54-outofmemoryoom分析">5.4. OutOfMemory(OOM)分析</a></li>
+<li><a href="#5-jvm-%E5%AE%9E%E6%88%98">5. JVM 实战</a>
+<ul>
+<li><a href="#51-%E5%88%86%E6%9E%90-gc-%E6%97%A5%E5%BF%97">5.1. 分析 GC 日志</a></li>
+<li><a href="#52-%E8%8E%B7%E5%8F%96-gc-%E6%97%A5%E5%BF%97">5.2. 获取 GC 日志</a></li>
+<li><a href="#53-%E5%A6%82%E4%BD%95%E5%88%86%E6%9E%90-gc-%E6%97%A5%E5%BF%97">5.3. 如何分析 GC 日志</a></li>
+<li><a href="#54-outofmemoryoom%E5%88%86%E6%9E%90">5.4. OutOfMemory(OOM)分析</a></li>
 </ul>
 </li>
-<li><a href="#6-资料">6. 资料</a></li>
+<li><a href="#6-%E8%B5%84%E6%96%99">6. 资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-JVM-调优概述"><a href="#1-JVM-调优概述" class="headerlink" title="1. JVM 调优概述"></a>1. JVM 调优概述</h2><h3 id="1-1-性能定义"><a href="#1-1-性能定义" class="headerlink" title="1.1. 性能定义"></a>1.1. 性能定义</h3><ul>
+<h2 id="1-jvm-调优概述"><a class="markdownIt-Anchor" href="#1-jvm-调优概述"></a> 1. JVM 调优概述</h2>
+<h3 id="11-性能定义"><a class="markdownIt-Anchor" href="#11-性能定义"></a> 1.1. 性能定义</h3>
+<ul>
 <li>吞吐量 - 指不考虑 GC 引起的停顿时间或内存消耗，垃圾收集器能支撑应用达到的最高性能指标。</li>
 <li>延迟 - 其度量标准是缩短由于垃圾啊收集引起的停顿时间或者完全消除因垃圾收集所引起的停顿，避免应用运行时发生抖动。</li>
 <li>内存占用 - 垃圾收集器流畅运行所需要的内存数量。</li>
 </ul>
-<h3 id="1-2-调优原则"><a href="#1-2-调优原则" class="headerlink" title="1.2. 调优原则"></a>1.2. 调优原则</h3><p>GC 优化的两个目标：</p>
+<h3 id="12-调优原则"><a class="markdownIt-Anchor" href="#12-调优原则"></a> 1.2. 调优原则</h3>
+<p>GC 优化的两个目标：</p>
 <ol>
 <li>将进入老年代的对象数量降到最低</li>
 <li>减少 Full GC 的执行时间</li>
 </ol>
 <p>GC 优化的基本原则是：将不同的 GC 参数应用到两个及以上的服务器上然后比较它们的性能，然后将那些被证明可以提高性能或减少 GC 执行时间的参数应用于最终的工作服务器上。</p>
-<h4 id="将进入老年代的对象数量降到最低"><a href="#将进入老年代的对象数量降到最低" class="headerlink" title="将进入老年代的对象数量降到最低"></a>将进入老年代的对象数量降到最低</h4><p>除了可以在 JDK7 及更高版本中使用的 G1 收集器以外，其他分代 GC 都是由 Oracle JVM 提供的。关于分代 GC，就是对象在 Eden 区被创建，随后被转移到 Survivor 区，在此之后剩余的对象会被转入老年代。也有一些对象由于占用内存过大，在 Eden 区被创建后会直接被传入老年代。老年代 GC 相对来说会比新生代 GC 更耗时，因此，减少进入老年代的对象数量可以显著降低 Full GC 的频率。你可能会以为减少进入老年代的对象数量意味着把它们留在新生代，事实正好相反，新生代内存的大小是可以调节的。</p>
-<h4 id="降低-Full-GC-的时间"><a href="#降低-Full-GC-的时间" class="headerlink" title="降低 Full GC 的时间"></a>降低 Full GC 的时间</h4><p>Full GC 的执行时间比 Minor GC 要长很多，因此，如果在 Full GC 上花费过多的时间（超过 1s），将可能出现超时错误。</p>
+<h4 id="将进入老年代的对象数量降到最低"><a class="markdownIt-Anchor" href="#将进入老年代的对象数量降到最低"></a> 将进入老年代的对象数量降到最低</h4>
+<p>除了可以在 JDK7 及更高版本中使用的 G1 收集器以外，其他分代 GC 都是由 Oracle JVM 提供的。关于分代 GC，就是对象在 Eden 区被创建，随后被转移到 Survivor 区，在此之后剩余的对象会被转入老年代。也有一些对象由于占用内存过大，在 Eden 区被创建后会直接被传入老年代。老年代 GC 相对来说会比新生代 GC 更耗时，因此，减少进入老年代的对象数量可以显著降低 Full GC 的频率。你可能会以为减少进入老年代的对象数量意味着把它们留在新生代，事实正好相反，新生代内存的大小是可以调节的。</p>
+<h4 id="降低-full-gc-的时间"><a class="markdownIt-Anchor" href="#降低-full-gc-的时间"></a> 降低 Full GC 的时间</h4>
+<p>Full GC 的执行时间比 Minor GC 要长很多，因此，如果在 Full GC 上花费过多的时间（超过 1s），将可能出现超时错误。</p>
 <ul>
 <li>如果<strong>通过减小老年代内存来减少 Full GC 时间</strong>，可能会引起 OutOfMemoryError 或者导致 Full GC 的频率升高。</li>
 <li>另外，如果<strong>通过增加老年代内存来降低 Full GC 的频率</strong>，Full GC 的时间可能因此增加。</li>
@@ -630,24 +641,32 @@
 </table>
 <p>GC 优化时最常用的参数是<code>-Xms</code>,<code>-Xmx</code>和<code>-XX:NewRatio</code>。<code>-Xms</code>和<code>-Xmx</code>参数通常是必须的，所以<code>NewRatio</code>的值将对 GC 性能产生重要的影响。</p>
 <p>有些人可能会问<strong>如何设置永久代内存大小</strong>，你可以用<code>-XX:PermSize</code>和<code>-XX:MaxPermSize</code>参数来进行设置，但是要记住，只有当出现<code>OutOfMemoryError</code>错误时你才需要去设置永久代内存。</p>
-<h3 id="1-3-GC-优化的过程"><a href="#1-3-GC-优化的过程" class="headerlink" title="1.3. GC 优化的过程"></a>1.3. GC 优化的过程</h3><p>GC 优化的过程和大多数常见的提升性能的过程相似，下面是笔者使用的流程：</p>
-<h4 id="1-监控-GC-状态"><a href="#1-监控-GC-状态" class="headerlink" title="1.监控 GC 状态"></a>1.监控 GC 状态</h4><p>你需要监控 GC 从而检查系统中运行的 GC 的各种状态。</p>
-<h4 id="2-分析监控结果后决定是否需要优化-GC"><a href="#2-分析监控结果后决定是否需要优化-GC" class="headerlink" title="2.分析监控结果后决定是否需要优化 GC"></a>2.分析监控结果后决定是否需要优化 GC</h4><p>在检查 GC 状态后，你需要分析监控结构并决定是否需要进行 GC 优化。如果分析结果显示运行 GC 的时间只有 0.1-0.3 秒，那么就不需要把时间浪费在 GC 优化上，但如果运行 GC 的时间达到 1-3 秒，甚至大于 10 秒，那么 GC 优化将是很有必要的。</p>
-<p>但是，如果你已经分配了大约 10GB 内存给 Java，并且这些内存无法省下，那么就无法进行 GC 优化了。在进行 GC 优化之前，你需要考虑为什么你需要分配这么大的内存空间，如果你分配了 1GB 或 2GB 大小的内存并且出现了<code>OutOfMemoryError</code>，那你就应该执行<strong>堆快照（heap dump）</strong>来消除导致异常的原因。</p>
+<h3 id="13-gc-优化的过程"><a class="markdownIt-Anchor" href="#13-gc-优化的过程"></a> 1.3. GC 优化的过程</h3>
+<p>GC 优化的过程和大多数常见的提升性能的过程相似，下面是笔者使用的流程：</p>
+<h4 id="1监控-gc-状态"><a class="markdownIt-Anchor" href="#1监控-gc-状态"></a> 1.监控 GC 状态</h4>
+<p>你需要监控 GC 从而检查系统中运行的 GC 的各种状态。</p>
+<h4 id="2分析监控结果后决定是否需要优化-gc"><a class="markdownIt-Anchor" href="#2分析监控结果后决定是否需要优化-gc"></a> 2.分析监控结果后决定是否需要优化 GC</h4>
+<p>在检查 GC 状态后，你需要分析监控结构并决定是否需要进行 GC 优化。如果分析结果显示运行 GC 的时间只有 0.1-0.3 秒，那么就不需要把时间浪费在 GC 优化上，但如果运行 GC 的时间达到 1-3 秒，甚至大于 10 秒，那么 GC 优化将是很有必要的。</p>
+<p>但是，如果你已经分配了大约 10GB 内存给 Java，并且这些内存无法省下，那么就无法进行 GC 优化了。在进行 GC 优化之前，你需要考虑为什么你需要分配这么大的内存空间，如果你分配了 1GB 或 2GB 大小的内存并且出现了<code>OutOfMemoryError</code>，那你就应该执行**堆快照（heap dump）**来消除导致异常的原因。</p>
 <blockquote>
 <p>注意：</p>
 </blockquote>
 <blockquote>
-<p><strong>堆快照（heap dump）</strong>是一个用来检查 Java 内存中的对象和数据的内存文件。该文件可以通过执行 JDK 中的<code>jmap</code>命令来创建。在创建文件的过程中，所有 Java 程序都将暂停，因此，不要在系统执行过程中创建该文件。</p>
+<p>**堆快照（heap dump）**是一个用来检查 Java 内存中的对象和数据的内存文件。该文件可以通过执行 JDK 中的<code>jmap</code>命令来创建。在创建文件的过程中，所有 Java 程序都将暂停，因此，不要在系统执行过程中创建该文件。</p>
 </blockquote>
 <blockquote>
 <p>你可以在互联网上搜索 heap dump 的详细说明。</p>
 </blockquote>
-<h4 id="3-设置-GC-类型-内存大小"><a href="#3-设置-GC-类型-内存大小" class="headerlink" title="3.设置 GC 类型/内存大小"></a>3.设置 GC 类型/内存大小</h4><p>如果你决定要进行 GC 优化，那么你需要选择一个 GC 类型并且为它设置内存大小。此时如果你有多个服务器，请如上文提到的那样，在每台机器上设置不同的 GC 参数并分析它们的区别。</p>
-<h4 id="4-分析结果"><a href="#4-分析结果" class="headerlink" title="4.分析结果"></a>4.分析结果</h4><p>在设置完 GC 参数后就可以开始收集数据，请在收集至少 24 小时后再进行结果分析。如果你足够幸运，你可能会找到系统的最佳 GC 参数。如若不然，你还需要分析输出日志并检查分配的内存，然后需要通过不断调整 GC 类型/内存大小来找到系统的最佳参数。</p>
-<h4 id="5-如果结果令人满意，将参数应用到所有服务器上并结束-GC-优化"><a href="#5-如果结果令人满意，将参数应用到所有服务器上并结束-GC-优化" class="headerlink" title="5.如果结果令人满意，将参数应用到所有服务器上并结束 GC 优化"></a>5.如果结果令人满意，将参数应用到所有服务器上并结束 GC 优化</h4><p>如果 GC 优化的结果令人满意，就可以将参数应用到所有服务器上，并停止 GC 优化。</p>
+<h4 id="3设置-gc-类型内存大小"><a class="markdownIt-Anchor" href="#3设置-gc-类型内存大小"></a> 3.设置 GC 类型/内存大小</h4>
+<p>如果你决定要进行 GC 优化，那么你需要选择一个 GC 类型并且为它设置内存大小。此时如果你有多个服务器，请如上文提到的那样，在每台机器上设置不同的 GC 参数并分析它们的区别。</p>
+<h4 id="4分析结果"><a class="markdownIt-Anchor" href="#4分析结果"></a> 4.分析结果</h4>
+<p>在设置完 GC 参数后就可以开始收集数据，请在收集至少 24 小时后再进行结果分析。如果你足够幸运，你可能会找到系统的最佳 GC 参数。如若不然，你还需要分析输出日志并检查分配的内存，然后需要通过不断调整 GC 类型/内存大小来找到系统的最佳参数。</p>
+<h4 id="5如果结果令人满意将参数应用到所有服务器上并结束-gc-优化"><a class="markdownIt-Anchor" href="#5如果结果令人满意将参数应用到所有服务器上并结束-gc-优化"></a> 5.如果结果令人满意，将参数应用到所有服务器上并结束 GC 优化</h4>
+<p>如果 GC 优化的结果令人满意，就可以将参数应用到所有服务器上，并停止 GC 优化。</p>
 <p>在下面的章节中，你将会看到上述每一步所做的具体工作。</p>
-<h2 id="2-命令"><a href="#2-命令" class="headerlink" title="2. 命令"></a>2. 命令</h2><h3 id="2-1-jmap"><a href="#2-1-jmap" class="headerlink" title="2.1. jmap"></a>2.1. jmap</h3><p>jmap 即 JVM Memory Map。</p>
+<h2 id="2-命令"><a class="markdownIt-Anchor" href="#2-命令"></a> 2. 命令</h2>
+<h3 id="21-jmap"><a class="markdownIt-Anchor" href="#21-jmap"></a> 2.1. jmap</h3>
+<p>jmap 即 JVM Memory Map。</p>
 <p><strong>jmap 用于生成 heap dump 文件</strong>。</p>
 <p>如果不使用这个命令，还可以使用 <code>-XX:+HeapDumpOnOutOfMemoryError</code> 参数来让虚拟机出现 OOM 的时候，自动生成 dump 文件。</p>
 <p>jmap 不仅能生成 dump 文件，还可以查询 finalize 执行队列、Java 堆和永久代的详细信息，如当前使用率、当前使用的是哪种收集器等。</p>
@@ -662,12 +681,15 @@
 <li>permstat - to print permanent generation statistics</li>
 <li>F - 当-dump 没有响应时，强制生成 dump 快照</li>
 </ul>
-<h4 id="示例：jmap-dump-PID-生成堆快照"><a href="#示例：jmap-dump-PID-生成堆快照" class="headerlink" title="示例：jmap -dump PID 生成堆快照"></a>示例：jmap -dump PID 生成堆快照</h4><p>dump 堆到文件，format 指定输出格式，live 指明是活着的对象，file 指定文件名</p>
+<h4 id="示例jmap-dump-pid-生成堆快照"><a class="markdownIt-Anchor" href="#示例jmap-dump-pid-生成堆快照"></a> 示例：jmap -dump PID 生成堆快照</h4>
+<p>dump 堆到文件，format 指定输出格式，live 指明是活着的对象，file 指定文件名</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ jmap -dump:live,format=<span class="selector-tag">b</span>,file=dump<span class="selector-class">.hprof</span> <span class="number">28920</span></span><br><span class="line">Dumping heap to /home/xxx/dump<span class="selector-class">.hprof</span> ...</span><br><span class="line">Heap dump file created</span><br></pre></td></tr></table></figure>
 <p>dump.hprof 这个后缀是为了后续可以直接用 MAT(Memory Anlysis Tool)打开。</p>
-<h4 id="示例：jmap-heap-查看指定进程的堆信息"><a href="#示例：jmap-heap-查看指定进程的堆信息" class="headerlink" title="示例：jmap -heap 查看指定进程的堆信息"></a>示例：jmap -heap 查看指定进程的堆信息</h4><p>注意：使用 CMS GC 情况下，jmap -heap 的执行有可能会导致 java 进程挂起。</p>
+<h4 id="示例jmap-heap-查看指定进程的堆信息"><a class="markdownIt-Anchor" href="#示例jmap-heap-查看指定进程的堆信息"></a> 示例：jmap -heap 查看指定进程的堆信息</h4>
+<p>注意：使用 CMS GC 情况下，jmap -heap 的执行有可能会导致 java 进程挂起。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">jmap -heap PID</span><br><span class="line">[root@chances bin]# ./jmap -heap 12379</span><br><span class="line">Attaching to process ID <span class="number">12379</span>, please wait...</span><br><span class="line">Debugger attached successfully.</span><br><span class="line">Server compiler detected.</span><br><span class="line">JVM version is <span class="number">17.0</span>-b16</span><br><span class="line"></span><br><span class="line">using thread-local object allocation.</span><br><span class="line">Parallel GC with <span class="number">6</span> thread(s)</span><br><span class="line"></span><br><span class="line">Heap Configuration:</span><br><span class="line">   MinHeapFreeRatio = <span class="number">40</span></span><br><span class="line">   MaxHeapFreeRatio = <span class="number">70</span></span><br><span class="line">   MaxHeapSize      = <span class="number">83886080</span> (<span class="number">80.0</span>MB)</span><br><span class="line">   NewSize          = <span class="number">1310720</span> (<span class="number">1.25</span>MB)</span><br><span class="line">   MaxNewSize       = <span class="number">17592186044415</span> MB</span><br><span class="line">   OldSize          = <span class="number">5439488</span> (<span class="number">5.1875</span>MB)</span><br><span class="line">   NewRatio         = <span class="number">2</span></span><br><span class="line">   SurvivorRatio    = <span class="number">8</span></span><br><span class="line">   PermSize         = <span class="number">20971520</span> (<span class="number">20.0</span>MB)</span><br><span class="line">   MaxPermSize      = <span class="number">88080384</span> (<span class="number">84.0</span>MB)</span><br><span class="line"></span><br><span class="line">Heap Usage:</span><br><span class="line">PS Young Generation</span><br><span class="line">Eden Space:</span><br><span class="line">   capacity = <span class="number">9306112</span> (<span class="number">8.875</span>MB)</span><br><span class="line">   used     = <span class="number">5375360</span> (<span class="number">5.1263427734375</span>MB)</span><br><span class="line">   free     = <span class="number">3930752</span> (<span class="number">3.7486572265625</span>MB)</span><br><span class="line">   <span class="number">57.761608714788736</span>% used</span><br><span class="line">From Space:</span><br><span class="line">   capacity = <span class="number">9306112</span> (<span class="number">8.875</span>MB)</span><br><span class="line">   used     = <span class="number">3425240</span> (<span class="number">3.2665634155273438</span>MB)</span><br><span class="line">   free     = <span class="number">5880872</span> (<span class="number">5.608436584472656</span>MB)</span><br><span class="line">   <span class="number">36.80634834397007</span>% used</span><br><span class="line">To Space:</span><br><span class="line">   capacity = <span class="number">9306112</span> (<span class="number">8.875</span>MB)</span><br><span class="line">   used     = <span class="number">0</span> (<span class="number">0.0</span>MB)</span><br><span class="line">   free     = <span class="number">9306112</span> (<span class="number">8.875</span>MB)</span><br><span class="line">   <span class="number">0.0</span>% used</span><br><span class="line">PS Old Generation</span><br><span class="line">   capacity = <span class="number">55967744</span> (<span class="number">53.375</span>MB)</span><br><span class="line">   used     = <span class="number">48354640</span> (<span class="number">46.11457824707031</span>MB)</span><br><span class="line">   free     = <span class="number">7613104</span> (<span class="number">7.2604217529296875</span>MB)</span><br><span class="line">   <span class="number">86.39733629427693</span>% used</span><br><span class="line">PS Perm Generation</span><br><span class="line">   capacity = <span class="number">62062592</span> (<span class="number">59.1875</span>MB)</span><br><span class="line">   used     = <span class="number">60243112</span> (<span class="number">57.452308654785156</span>MB)</span><br><span class="line">   free     = <span class="number">1819480</span> (<span class="number">1.7351913452148438</span>MB)</span><br><span class="line">   <span class="number">97.06831451706046</span>% used</span><br></pre></td></tr></table></figure>
-<h3 id="2-2-jstack"><a href="#2-2-jstack" class="headerlink" title="2.2. jstack"></a>2.2. jstack</h3><p><strong>jstack 用于生成 java 虚拟机当前时刻的线程快照。</strong></p>
+<h3 id="22-jstack"><a class="markdownIt-Anchor" href="#22-jstack"></a> 2.2. jstack</h3>
+<p><strong>jstack 用于生成 java 虚拟机当前时刻的线程快照。</strong></p>
 <p>线程快照是当前 java 虚拟机内每一条线程正在执行的方法堆栈的集合，生成线程快照的主要目的是定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等。</p>
 <p>线程出现停顿的时候通过 jstack 来查看各个线程的调用堆栈，就可以知道没有响应的线程到底在后台做什么事情，或者等待什么资源。 如果 java 程序崩溃生成 core 文件，jstack 工具可以用来获得 core 文件的 java stack 和 native stack 的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题。另外，jstack 工具还可以附属到正在运行的 java 程序中，看到当时运行的 java 程序的 java stack 和 native stack 的信息, 如果现在运行的 java 程序呈现 hung 的状态，jstack 是非常有用的。</p>
 <p>命令格式：</p>
@@ -678,7 +700,8 @@
 <li><code>-l</code> - 除堆栈外，显示关于锁的附加信息</li>
 <li><code>-m</code> - 如果调用到本地方法的话，可以显示 C/C++的堆栈</li>
 </ul>
-<h3 id="2-3-jps"><a href="#2-3-jps" class="headerlink" title="2.3. jps"></a>2.3. jps</h3><p>jps(JVM Process Status Tool)，显示指定系统内所有的 HotSpot 虚拟机进程。</p>
+<h3 id="23-jps"><a class="markdownIt-Anchor" href="#23-jps"></a> 2.3. jps</h3>
+<p>jps(JVM Process Status Tool)，显示指定系统内所有的 HotSpot 虚拟机进程。</p>
 <p>命令格式：</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line">jps <span class="string">[options]</span> <span class="string">[hostid]</span></span><br></pre></td></tr></table></figure>
 <p>option 参数：</p>
@@ -690,7 +713,8 @@
 </ul>
 <p>其中[option]、[hostid]参数也可以不写。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ jps -l -m</span><br><span class="line"><span class="number">28920</span> org<span class="selector-class">.apache</span><span class="selector-class">.catalina</span><span class="selector-class">.startup</span><span class="selector-class">.Bootstrap</span> start</span><br><span class="line"><span class="number">11589</span> org<span class="selector-class">.apache</span><span class="selector-class">.catalina</span><span class="selector-class">.startup</span><span class="selector-class">.Bootstrap</span> start</span><br><span class="line"><span class="number">25816</span> sun<span class="selector-class">.tools</span><span class="selector-class">.jps</span><span class="selector-class">.Jps</span> -l -m</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-jstat"><a href="#2-4-jstat" class="headerlink" title="2.4. jstat"></a>2.4. jstat</h3><p>jstat(JVM statistics Monitoring)，是用于监视虚拟机运行时状态信息的命令，它可以显示出虚拟机进程中的类装载、内存、垃圾收集、JIT 编译等运行数据。</p>
+<h3 id="24-jstat"><a class="markdownIt-Anchor" href="#24-jstat"></a> 2.4. jstat</h3>
+<p>jstat(JVM statistics Monitoring)，是用于监视虚拟机运行时状态信息的命令，它可以显示出虚拟机进程中的类装载、内存、垃圾收集、JIT 编译等运行数据。</p>
 <p>命令格式：</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line">jstat <span class="string">[option]</span> LVMID <span class="string">[interval]</span> <span class="string">[count]</span></span><br></pre></td></tr></table></figure>
 <p>参数：</p>
@@ -700,11 +724,13 @@
 <li>[interval] - 连续输出的时间间隔</li>
 <li>[count] - 连续输出的次数</li>
 </ul>
-<h3 id="2-5-jhat"><a href="#2-5-jhat" class="headerlink" title="2.5. jhat"></a>2.5. jhat</h3><p>jhat(JVM Heap Analysis Tool)，是与 jmap 搭配使用，用来分析 jmap 生成的 dump，jhat 内置了一个微型的 HTTP/HTML 服务器，生成 dump 的分析结果后，可以在浏览器中查看。</p>
+<h3 id="25-jhat"><a class="markdownIt-Anchor" href="#25-jhat"></a> 2.5. jhat</h3>
+<p>jhat(JVM Heap Analysis Tool)，是与 jmap 搭配使用，用来分析 jmap 生成的 dump，jhat 内置了一个微型的 HTTP/HTML 服务器，生成 dump 的分析结果后，可以在浏览器中查看。</p>
 <p>注意：一般不会直接在服务器上进行分析，因为 jhat 是一个耗时并且耗费硬件资源的过程，一般把服务器生成的 dump 文件复制到本地或其他机器上进行分析。</p>
 <p>命令格式：</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line">jhat <span class="string">[dumpfile]</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-6-jinfo"><a href="#2-6-jinfo" class="headerlink" title="2.6. jinfo"></a>2.6. jinfo</h3><p>jinfo(JVM Configuration info)，用于实时查看和调整虚拟机运行参数。</p>
+<h3 id="26-jinfo"><a class="markdownIt-Anchor" href="#26-jinfo"></a> 2.6. jinfo</h3>
+<p>jinfo(JVM Configuration info)，用于实时查看和调整虚拟机运行参数。</p>
 <p>之前的 jps -v 口令只能查看到显示指定的参数，如果想要查看未被显示指定的参数的值就要使用 jinfo 口令</p>
 <p>命令格式：</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line">jinfo <span class="string">[option]</span> <span class="string">[args]</span> LVMID</span><br></pre></td></tr></table></figure>
@@ -716,10 +742,12 @@
 <li>-sysprops : 输出系统属性，等同于 System.getProperties()</li>
 </ul>
 </blockquote>
-<h2 id="3-HotSpot-VM-参数"><a href="#3-HotSpot-VM-参数" class="headerlink" title="3. HotSpot VM 参数"></a>3. HotSpot VM 参数</h2><blockquote>
+<h2 id="3-hotspot-vm-参数"><a class="markdownIt-Anchor" href="#3-hotspot-vm-参数"></a> 3. HotSpot VM 参数</h2>
+<blockquote>
 <p>详细参数说明请参考官方文档：<a href="http://www.oracle.com/technetwork/java/javase/tech/vmoptions-jsp-140102.html" target="_blank" rel="noopener">Java HotSpot VM Options</a>，这里仅列举常用参数。</p>
 </blockquote>
-<h3 id="3-1-JVM-内存配置"><a href="#3-1-JVM-内存配置" class="headerlink" title="3.1. JVM 内存配置"></a>3.1. JVM 内存配置</h3><table>
+<h3 id="31-jvm-内存配置"><a class="markdownIt-Anchor" href="#31-jvm-内存配置"></a> 3.1. JVM 内存配置</h3>
+<table>
 <thead>
 <tr>
 <th>配置</th>
@@ -757,7 +785,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-2-GC-类型配置"><a href="#3-2-GC-类型配置" class="headerlink" title="3.2. GC 类型配置"></a>3.2. GC 类型配置</h3><table>
+<h3 id="32-gc-类型配置"><a class="markdownIt-Anchor" href="#32-gc-类型配置"></a> 3.2. GC 类型配置</h3>
+<table>
 <thead>
 <tr>
 <th>配置</th>
@@ -791,7 +820,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="3-3-辅助配置"><a href="#3-3-辅助配置" class="headerlink" title="3.3. 辅助配置"></a>3.3. 辅助配置</h3><table>
+<h3 id="33-辅助配置"><a class="markdownIt-Anchor" href="#33-辅助配置"></a> 3.3. 辅助配置</h3>
+<table>
 <thead>
 <tr>
 <th>配置</th>
@@ -813,7 +843,9 @@
 </tr>
 </tbody>
 </table>
-<h2 id="4-典型配置"><a href="#4-典型配置" class="headerlink" title="4. 典型配置"></a>4. 典型配置</h2><h3 id="4-1-堆大小设置"><a href="#4-1-堆大小设置" class="headerlink" title="4.1. 堆大小设置"></a>4.1. 堆大小设置</h3><p><strong>年轻代的设置很关键。</strong></p>
+<h2 id="4-典型配置"><a class="markdownIt-Anchor" href="#4-典型配置"></a> 4. 典型配置</h2>
+<h3 id="41-堆大小设置"><a class="markdownIt-Anchor" href="#41-堆大小设置"></a> 4.1. 堆大小设置</h3>
+<p><strong>年轻代的设置很关键。</strong></p>
 <p>JVM 中最大堆大小有三方面限制：</p>
 <ol>
 <li>相关操作系统的数据模型（32-bt 还是 64-bit）限制；</li>
@@ -825,44 +857,56 @@
 <li>持久代一般固定大小为 64m。使用 <code>-XX:PermSize</code> 设置。</li>
 <li>官方推荐年轻代占整个堆的 3/8。使用 <code>-Xmn</code> 设置。</li>
 </ul>
-<h3 id="4-2-回收器选择"><a href="#4-2-回收器选择" class="headerlink" title="4.2. 回收器选择"></a>4.2. 回收器选择</h3><p>JVM 给了三种选择：串行收集器、并行收集器、并发收集器。</p>
-<h2 id="5-JVM-实战"><a href="#5-JVM-实战" class="headerlink" title="5. JVM 实战"></a>5. JVM 实战</h2><h3 id="5-1-分析-GC-日志"><a href="#5-1-分析-GC-日志" class="headerlink" title="5.1. 分析 GC 日志"></a>5.1. 分析 GC 日志</h3><h3 id="5-2-获取-GC-日志"><a href="#5-2-获取-GC-日志" class="headerlink" title="5.2. 获取 GC 日志"></a>5.2. 获取 GC 日志</h3><p>获取 GC 日志有两种方式：</p>
+<h3 id="42-回收器选择"><a class="markdownIt-Anchor" href="#42-回收器选择"></a> 4.2. 回收器选择</h3>
+<p>JVM 给了三种选择：串行收集器、并行收集器、并发收集器。</p>
+<h2 id="5-jvm-实战"><a class="markdownIt-Anchor" href="#5-jvm-实战"></a> 5. JVM 实战</h2>
+<h3 id="51-分析-gc-日志"><a class="markdownIt-Anchor" href="#51-分析-gc-日志"></a> 5.1. 分析 GC 日志</h3>
+<h3 id="52-获取-gc-日志"><a class="markdownIt-Anchor" href="#52-获取-gc-日志"></a> 5.2. 获取 GC 日志</h3>
+<p>获取 GC 日志有两种方式：</p>
 <ul>
 <li>使用命令动态查看</li>
 <li>在容器中设置相关参数打印 GC 日志</li>
 </ul>
 <p><code>jstat -gc</code> 统计垃圾回收堆的行为：</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">jstat -gc <span class="number">1262</span></span><br><span class="line"> S0C    S1C     S0U     S1U   EC       EU        OC         OU        PC       PU         YGC    YGCT    FGC    FGCT     GCT</span><br><span class="line"><span class="number">26112.0</span> <span class="number">24064.0</span> <span class="number">6562.5</span>  <span class="number">0.0</span>   <span class="number">564224.0</span> <span class="number">76274.5</span>   <span class="number">434176.0</span>   <span class="number">388518.3</span>  <span class="number">524288.0</span> <span class="number">42724.7</span>    <span class="number">320</span>    <span class="number">6.417</span>   <span class="number">1</span>      <span class="number">0.398</span>    <span class="number">6.815</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">jstat -gc <span class="number">1262</span></span><br><span class="line"> S0C    S1C     S0U     S1U   EC       EU        OC         OU        PC       PU         YGC    YGCT    FGC    FGCT     GCT</span><br><span class="line"><span class="number">26112.0</span> <span class="number">24064.0</span> <span class="number">6562.5</span>  <span class="number">0.0</span>   <span class="number">564224.0</span> <span class="number">76274.5</span>   <span class="number">434176.0</span>   <span class="number">388518.3</span>  <span class="number">524288.0</span> <span class="number">42724.7</span>    <span class="number">320</span>    <span class="number">6.417</span>   <span class="number">1</span>      <span class="number">0.398</span>    <span class="number">6.815</span></span><br></pre></td></tr></table></figure>
 <p>也可以设置间隔固定时间来打印：</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">$ jstat -gc <span class="number">1262</span> <span class="number">2000</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$ jstat -gc <span class="number">1262</span> <span class="number">2000</span> <span class="number">20</span></span><br></pre></td></tr></table></figure>
 <p>这个命令意思就是每隔 2000ms 输出 1262 的 gc 情况，一共输出 20 次</p>
 <p>Tomcat 设置示例：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">JAVA_OPTS="-server</span> <span class="bullet">-Xms2000m</span> <span class="bullet">-Xmx2000m</span> <span class="bullet">-Xmn800m</span> <span class="attr">-XX:PermSize=64m</span> <span class="attr">-XX:MaxPermSize=256m</span> <span class="attr">-XX:SurvivorRatio=4</span></span><br><span class="line"><span class="attr">-verbose:</span><span class="string">gc</span> <span class="attr">-Xloggc:$CATALINA_HOME/logs/gc.log</span></span><br><span class="line"><span class="bullet">-</span><span class="string">Djava.awt.headless=true</span></span><br><span class="line"><span class="attr">-XX:</span><span class="string">+PrintGCTimeStamps</span> <span class="attr">-XX:+PrintGCDetails</span></span><br><span class="line"><span class="bullet">-</span><span class="string">Dsun.rmi.dgc.server.gcInterval=600000</span> <span class="bullet">-Dsun.rmi.dgc.client.gcInterval=600000</span></span><br><span class="line"><span class="attr">-XX:</span><span class="string">+UseConcMarkSweepGC</span> <span class="attr">-XX:MaxTenuringThreshold=15"</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><code>-Xms2000m -Xmx2000m -Xmn800m -XX:PermSize=64m -XX:MaxPermSize=256m</code><br>Xms，即为 jvm 启动时得 JVM 初始堆大小,Xmx 为 jvm 的最大堆大小，xmn 为新生代的大小，permsize 为永久代的初始大小，MaxPermSize 为永久代的最大空间。</li>
-<li><code>-XX:SurvivorRatio=4</code><br>SurvivorRatio 为新生代空间中的 Eden 区和救助空间 Survivor 区的大小比值，默认是 8，则两个 Survivor 区与一个 Eden 区的比值为 2:8,一个 Survivor 区占整个年轻代的 1/10。调小这个参数将增大 survivor 区，让对象尽量在 survitor 区呆长一点，减少进入年老代的对象。去掉救助空间的想法是让大部分不能马上回收的数据尽快进入年老代，加快年老代的回收频率，减少年老代暴涨的可能性，这个是通过将-XX:SurvivorRatio 设置成比较大的值（比如 65536)来做到。</li>
-<li><code>-verbose:gc -Xloggc:$CATALINA_HOME/logs/gc.log</code><br>将虚拟机每次垃圾回收的信息写到日志文件中，文件名由 file 指定，文件格式是平文件，内容和-verbose:gc 输出内容相同。</li>
+<li><code>-Xms2000m -Xmx2000m -Xmn800m -XX:PermSize=64m -XX:MaxPermSize=256m</code><br>
+Xms，即为 jvm 启动时得 JVM 初始堆大小,Xmx 为 jvm 的最大堆大小，xmn 为新生代的大小，permsize 为永久代的初始大小，MaxPermSize 为永久代的最大空间。</li>
+<li><code>-XX:SurvivorRatio=4</code><br>
+SurvivorRatio 为新生代空间中的 Eden 区和救助空间 Survivor 区的大小比值，默认是 8，则两个 Survivor 区与一个 Eden 区的比值为 2:8,一个 Survivor 区占整个年轻代的 1/10。调小这个参数将增大 survivor 区，让对象尽量在 survitor 区呆长一点，减少进入年老代的对象。去掉救助空间的想法是让大部分不能马上回收的数据尽快进入年老代，加快年老代的回收频率，减少年老代暴涨的可能性，这个是通过将-XX:SurvivorRatio 设置成比较大的值（比如 65536)来做到。</li>
+<li><code>-verbose:gc -Xloggc:$CATALINA_HOME/logs/gc.log</code><br>
+将虚拟机每次垃圾回收的信息写到日志文件中，文件名由 file 指定，文件格式是平文件，内容和-verbose:gc 输出内容相同。</li>
 <li><code>-Djava.awt.headless=true</code> Headless 模式是系统的一种配置模式。在该模式下，系统缺少了显示设备、键盘或鼠标。</li>
-<li><code>-XX:+PrintGCTimeStamps -XX:+PrintGCDetails</code><br>设置 gc 日志的格式</li>
-<li><code>-Dsun.rmi.dgc.server.gcInterval=600000 -Dsun.rmi.dgc.client.gcInterval=600000</code><br>指定 rmi 调用时 gc 的时间间隔</li>
+<li><code>-XX:+PrintGCTimeStamps -XX:+PrintGCDetails</code><br>
+设置 gc 日志的格式</li>
+<li><code>-Dsun.rmi.dgc.server.gcInterval=600000 -Dsun.rmi.dgc.client.gcInterval=600000</code><br>
+指定 rmi 调用时 gc 的时间间隔</li>
 <li><code>-XX:+UseConcMarkSweepGC -XX:MaxTenuringThreshold=15</code> 采用并发 gc 方式，经过 15 次 minor gc 后进入年老代</li>
 </ul>
-<h3 id="5-3-如何分析-GC-日志"><a href="#5-3-如何分析-GC-日志" class="headerlink" title="5.3. 如何分析 GC 日志"></a>5.3. 如何分析 GC 日志</h3><p>Young GC 回收日志:</p>
-<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="number">2016</span><span class="number">-07</span><span class="number">-05</span>T10:<span class="number">43</span>:<span class="number">18.093</span>+<span class="number">0800</span>: <span class="number">25.395</span>: [GC [PSYoungGen: <span class="number">274931</span><span class="keyword">K</span>-&gt;<span class="number">10738</span><span class="keyword">K</span>(<span class="number">274944</span><span class="keyword">K</span>)] <span class="number">371093</span><span class="keyword">K</span>-&gt;<span class="number">147186</span><span class="keyword">K</span>(<span class="number">450048</span><span class="keyword">K</span>), <span class="number">0.0668480</span> secs] [<span class="keyword">Times</span>: user=<span class="number">0.17</span> sys=<span class="number">0.08</span>, real=<span class="number">0.07</span> secs]</span><br></pre></td></tr></table></figure>
+<h3 id="53-如何分析-gc-日志"><a class="markdownIt-Anchor" href="#53-如何分析-gc-日志"></a> 5.3. 如何分析 GC 日志</h3>
+<p>Young GC 回收日志:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">2016</span><span class="number">-07</span><span class="number">-05</span>T10:<span class="number">43</span>:<span class="number">18.093</span>+<span class="number">0800</span>: <span class="number">25.395</span>: [GC [PSYoungGen: <span class="number">274931</span>K-&gt;<span class="number">10738</span>K(<span class="number">274944</span>K)] <span class="number">371093</span>K-&gt;<span class="number">147186</span>K(<span class="number">450048</span>K), <span class="number">0.0668480</span> secs] [Times: user=<span class="number">0.17</span> sys=<span class="number">0.08</span>, real=<span class="number">0.07</span> secs]</span><br></pre></td></tr></table></figure>
 <p>Full GC 回收日志:</p>
-<figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line"><span class="number">2016</span><span class="number">-07</span><span class="number">-05</span>T10:<span class="number">43</span>:<span class="number">18.160</span>+<span class="number">0800</span>: <span class="number">25.462</span>: [<span class="keyword">Full</span> GC [PSYoungGen: <span class="number">10738</span><span class="keyword">K</span>-&gt;<span class="number">0</span><span class="keyword">K</span>(<span class="number">274944</span><span class="keyword">K</span>)] [ParOldGen: <span class="number">136447</span><span class="keyword">K</span>-&gt;<span class="number">140379</span><span class="keyword">K</span>(<span class="number">302592</span><span class="keyword">K</span>)] <span class="number">147186</span><span class="keyword">K</span>-&gt;<span class="number">140379</span><span class="keyword">K</span>(<span class="number">577536</span><span class="keyword">K</span>) [PSPermGen: <span class="number">85411</span><span class="keyword">K</span>-&gt;<span class="number">85376</span><span class="keyword">K</span>(<span class="number">171008</span><span class="keyword">K</span>)], <span class="number">0.6763541</span> secs] [<span class="keyword">Times</span>: user=<span class="number">1.75</span> sys=<span class="number">0.02</span>, real=<span class="number">0.68</span> secs]</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">2016</span><span class="number">-07</span><span class="number">-05</span>T10:<span class="number">43</span>:<span class="number">18.160</span>+<span class="number">0800</span>: <span class="number">25.462</span>: [Full GC [PSYoungGen: <span class="number">10738</span>K-&gt;<span class="number">0</span>K(<span class="number">274944</span>K)] [ParOldGen: <span class="number">136447</span>K-&gt;<span class="number">140379</span>K(<span class="number">302592</span>K)] <span class="number">147186</span>K-&gt;<span class="number">140379</span>K(<span class="number">577536</span>K) [PSPermGen: <span class="number">85411</span>K-&gt;<span class="number">85376</span>K(<span class="number">171008</span>K)], <span class="number">0.6763541</span> secs] [Times: user=<span class="number">1.75</span> sys=<span class="number">0.02</span>, real=<span class="number">0.68</span> secs]</span><br></pre></td></tr></table></figure>
 <p>通过上面日志分析得出，PSYoungGen、ParOldGen、PSPermGen 属于 Parallel 收集器。其中 PSYoungGen 表示 gc 回收前后年轻代的内存变化；ParOldGen 表示 gc 回收前后老年代的内存变化；PSPermGen 表示 gc 回收前后永久区的内存变化。young gc 主要是针对年轻代进行内存回收比较频繁，耗时短；full gc 会对整个堆内存进行回城，耗时长，因此一般尽量减少 full gc 的次数</p>
 <p>通过两张图非常明显看出 gc 日志构成：</p>
 <p><br><div align="center"><img src="http://ityouknow.com/assets/images/2017/jvm/Young%20GC.png"></div><br></p>
 <p><br><div align="center"><img src="http://ityouknow.com/assets/images/2017/jvm/Full%20GC.png"></div><br></p>
-<h3 id="5-4-OutOfMemory-OOM-分析"><a href="#5-4-OutOfMemory-OOM-分析" class="headerlink" title="5.4. OutOfMemory(OOM)分析"></a>5.4. OutOfMemory(OOM)分析</h3><p>OutOfMemory ，即内存溢出，是一个常见的 JVM 问题。那么分析 OOM 的思路是什么呢？</p>
+<h3 id="54-outofmemoryoom分析"><a class="markdownIt-Anchor" href="#54-outofmemoryoom分析"></a> 5.4. OutOfMemory(OOM)分析</h3>
+<p>OutOfMemory ，即内存溢出，是一个常见的 JVM 问题。那么分析 OOM 的思路是什么呢？</p>
 <p>首先，要知道有三种 OutOfMemoryError：</p>
 <ul>
 <li><strong>OutOfMemoryError:Java heap space</strong> - 堆空间溢出</li>
 <li><strong>OutOfMemoryError:PermGen space</strong> - 方法区和运行时常量池溢出</li>
 <li><strong>OutOfMemoryError:unable to create new native thread</strong> - 线程过多</li>
 </ul>
-<h4 id="OutOfMemoryError-PermGen-space"><a href="#OutOfMemoryError-PermGen-space" class="headerlink" title="OutOfMemoryError:PermGen space"></a>OutOfMemoryError:PermGen space</h4><p>OutOfMemoryError:PermGen space 表示方法区和运行时常量池溢出。</p>
+<h4 id="outofmemoryerrorpermgen-space"><a class="markdownIt-Anchor" href="#outofmemoryerrorpermgen-space"></a> OutOfMemoryError:PermGen space</h4>
+<p>OutOfMemoryError:PermGen space 表示方法区和运行时常量池溢出。</p>
 <p><strong>原因：</strong></p>
 <p>Perm 区主要用于存放 Class 和 Meta 信息的，Class 在被 Loader 时就会被放到 PermGen space，这个区域称为年老代。GC 在主程序运行期间不会对年老区进行清理，默认是 64M 大小。</p>
 <p>当程序程序中使用了大量的 jar 或 class，使 java 虚拟机装载类的空间不够，超过 64M 就会报这部分内存溢出了，需要加大内存分配，一般 128m 足够。</p>
@@ -876,29 +920,38 @@
 <p>注意：<code>-XX:PermSize</code> 一般设为 64M</p>
 </blockquote>
 <p>（2）清理应用程序中 <code>WEB-INF/lib</code> 下的 jar，用不上的 jar 删除掉，多个应用公共的 jar 移动到 Tomcat 的 lib 目录，减少重复加载。</p>
-<h4 id="OutOfMemoryError-Java-heap-space"><a href="#OutOfMemoryError-Java-heap-space" class="headerlink" title="OutOfMemoryError:Java heap space"></a>OutOfMemoryError:Java heap space</h4><p>OutOfMemoryError:Java heap space 表示堆空间溢出。</p>
+<h4 id="outofmemoryerrorjava-heap-space"><a class="markdownIt-Anchor" href="#outofmemoryerrorjava-heap-space"></a> OutOfMemoryError:Java heap space</h4>
+<p>OutOfMemoryError:Java heap space 表示堆空间溢出。</p>
 <p>原因：JVM 分配给堆内存的空间已经用满了。</p>
-<h5 id="问题定位"><a href="#问题定位" class="headerlink" title="问题定位"></a>问题定位</h5><p>（1）使用 jmap 或 -XX:+HeapDumpOnOutOfMemoryError 获取堆快照。<br>（2）使用内存分析工具（visualvm、mat、jProfile 等）对堆快照文件进行分析。<br>（3）根据分析图，重点是确认内存中的对象是否是必要的，分清究竟是是内存泄漏（Memory Leak）还是内存溢出（Memory Overflow）。</p>
-<h6 id="内存泄露"><a href="#内存泄露" class="headerlink" title="内存泄露"></a>内存泄露</h6><p>内存泄漏是指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。</p>
+<h5 id="问题定位"><a class="markdownIt-Anchor" href="#问题定位"></a> 问题定位</h5>
+<p>（1）使用 jmap 或 -XX:+HeapDumpOnOutOfMemoryError 获取堆快照。<br>
+（2）使用内存分析工具（visualvm、mat、jProfile 等）对堆快照文件进行分析。<br>
+（3）根据分析图，重点是确认内存中的对象是否是必要的，分清究竟是是内存泄漏（Memory Leak）还是内存溢出（Memory Overflow）。</p>
+<h6 id="内存泄露"><a class="markdownIt-Anchor" href="#内存泄露"></a> 内存泄露</h6>
+<p>内存泄漏是指由于疏忽或错误造成程序未能释放已经不再使用的内存的情况。</p>
 <p>内存泄漏并非指内存在物理上的消失，而是应用程序分配某段内存后，由于设计错误，失去了对该段内存的控制，因而造成了内存的浪费。</p>
 <p>内存泄漏随着被执行的次数越多-最终会导致内存溢出。</p>
 <p>而因程序死循环导致的不断创建对象-只要被执行到就会产生内存溢出。</p>
 <p>内存泄漏常见几个情况：</p>
 <ul>
-<li>静态集合类<ul>
+<li>静态集合类
+<ul>
 <li>声明为静态（static）的 HashMap、Vector 等集合</li>
 <li>通俗来讲 A 中有 B，当前只把 B 设置为空，A 没有设置为空，回收时 B 无法回收-因被 A 引用。</li>
 </ul>
 </li>
-<li>监听器<ul>
+<li>监听器
+<ul>
 <li>监听器被注册后释放对象时没有删除监听器</li>
 </ul>
 </li>
-<li>物理连接<ul>
+<li>物理连接
+<ul>
 <li>DataSource.getConnection()建立链接，必须通过 close()关闭链接</li>
 </ul>
 </li>
-<li>内部类和外部模块等的引用<ul>
+<li>内部类和外部模块等的引用
+<ul>
 <li>发现它的方式同内存溢出，可再加个实时观察</li>
 <li>jstat -gcutil 7362 2500 70</li>
 </ul>
@@ -910,22 +963,29 @@
 <li>FGCT — 从应用程序启动到采样时 Full GC 所用的时间（单位秒）。</li>
 <li>FGC 次数越多，FGCT 所需时间越多-可非常有可能存在内存泄漏。</li>
 </ul>
-<h5 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h5><p>（1）检查程序，看是否有死循环或不必要地重复创建大量对象。有则改之。</p>
+<h5 id="解决方案"><a class="markdownIt-Anchor" href="#解决方案"></a> 解决方案</h5>
+<p>（1）检查程序，看是否有死循环或不必要地重复创建大量对象。有则改之。</p>
 <p>下面是一个重复创建内存的示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OOM</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Integer sum1=<span class="number">300000</span>;</span><br><span class="line">        Integer sum2=<span class="number">400000</span>;</span><br><span class="line">        OOM oom = <span class="keyword">new</span> OOM();</span><br><span class="line">        System.out.println(<span class="string">"往ArrayList中加入30w内容"</span>);</span><br><span class="line">        oom.javaHeapSpace(sum1);</span><br><span class="line">        oom.memoryTotal();</span><br><span class="line">        System.out.println(<span class="string">"往ArrayList中加入40w内容"</span>);</span><br><span class="line">        oom.javaHeapSpace(sum2);</span><br><span class="line">        oom.memoryTotal();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">javaHeapSpace</span><span class="params">(Integer sum)</span></span>&#123;</span><br><span class="line">        Random random = <span class="keyword">new</span> Random();  </span><br><span class="line">        ArrayList openList = <span class="keyword">new</span> ArrayList();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;sum;i++)&#123;</span><br><span class="line">            String charOrNum = String.valueOf(random.nextInt(<span class="number">10</span>));</span><br><span class="line">            openList.add(charOrNum);</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">memoryTotal</span><span class="params">()</span></span>&#123;</span><br><span class="line">        Runtime run = Runtime.getRuntime();</span><br><span class="line">        <span class="keyword">long</span> max = run.maxMemory();</span><br><span class="line">        <span class="keyword">long</span> total = run.totalMemory();</span><br><span class="line">        <span class="keyword">long</span> free = run.freeMemory();</span><br><span class="line">        <span class="keyword">long</span> usable = max - total + free;</span><br><span class="line">        System.out.println(<span class="string">"最大内存 = "</span> + max);</span><br><span class="line">        System.out.println(<span class="string">"已分配内存 = "</span> + total);</span><br><span class="line">        System.out.println(<span class="string">"已分配内存中的剩余空间 = "</span> + free);</span><br><span class="line">        System.out.println(<span class="string">"最大可用内存 = "</span> + usable);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>执行结果：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">往ArrayList中加入<span class="number">30</span>w内容</span><br><span class="line">最大内存 = <span class="number">20447232</span></span><br><span class="line">已分配内存 = <span class="number">20447232</span></span><br><span class="line">已分配内存中的剩余空间 = <span class="number">4032576</span></span><br><span class="line">最大可用内存 = <span class="number">4032576</span></span><br><span class="line">往ArrayList中加入<span class="number">40</span>w内容</span><br><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> java<span class="selector-class">.lang</span><span class="selector-class">.OutOfMemoryError</span>: Java heap space</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.Arrays</span><span class="selector-class">.copyOf</span>(Arrays<span class="selector-class">.java</span>:<span class="number">2245</span>)</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.Arrays</span><span class="selector-class">.copyOf</span>(Arrays<span class="selector-class">.java</span>:<span class="number">2219</span>)</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.ArrayList</span><span class="selector-class">.grow</span>(ArrayList<span class="selector-class">.java</span>:<span class="number">242</span>)</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.ArrayList</span><span class="selector-class">.ensureExplicitCapacity</span>(ArrayList<span class="selector-class">.java</span>:<span class="number">216</span>)</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.ArrayList</span><span class="selector-class">.ensureCapacityInternal</span>(ArrayList<span class="selector-class">.java</span>:<span class="number">208</span>)</span><br><span class="line">    at java<span class="selector-class">.util</span><span class="selector-class">.ArrayList</span><span class="selector-class">.add</span>(ArrayList<span class="selector-class">.java</span>:<span class="number">440</span>)</span><br><span class="line">    at pers<span class="selector-class">.qingqian</span><span class="selector-class">.study</span><span class="selector-class">.seven</span><span class="selector-class">.OOM</span><span class="selector-class">.javaHeapSpace</span>(OOM<span class="selector-class">.java</span>:<span class="number">36</span>)</span><br><span class="line">    at pers<span class="selector-class">.qingqian</span><span class="selector-class">.study</span><span class="selector-class">.seven</span><span class="selector-class">.OOM</span><span class="selector-class">.main</span>(OOM<span class="selector-class">.java</span>:<span class="number">26</span>)</span><br></pre></td></tr></table></figure>
 <p>（2）扩大堆内存空间</p>
 <p>使用 <code>-Xms</code> 和 <code>-Xmx</code> 来控制堆内存空间大小。</p>
-<h4 id="OutOfMemoryError-GC-overhead-limit-exceeded"><a href="#OutOfMemoryError-GC-overhead-limit-exceeded" class="headerlink" title="OutOfMemoryError: GC overhead limit exceeded"></a>OutOfMemoryError: GC overhead limit exceeded</h4><p>原因：JDK6 新增错误类型，当 GC 为释放很小空间占用大量时间时抛出；一般是因为堆太小，导致异常的原因，没有足够的内存。</p>
+<h4 id="outofmemoryerror-gc-overhead-limit-exceeded"><a class="markdownIt-Anchor" href="#outofmemoryerror-gc-overhead-limit-exceeded"></a> OutOfMemoryError: GC overhead limit exceeded</h4>
+<p>原因：JDK6 新增错误类型，当 GC 为释放很小空间占用大量时间时抛出；一般是因为堆太小，导致异常的原因，没有足够的内存。</p>
 <p>解决方案：</p>
-<p>查看系统是否有使用大内存的代码或死循环；<br>通过添加 JVM 配置，来限制使用内存：</p>
+<p>查看系统是否有使用大内存的代码或死循环；<br>
+通过添加 JVM 配置，来限制使用内存：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jvm-arg</span>&gt;</span>-XX:-UseGCOverheadLimit<span class="tag">&lt;/<span class="name">jvm-arg</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="OutOfMemoryError：unable-to-create-new-native-thread"><a href="#OutOfMemoryError：unable-to-create-new-native-thread" class="headerlink" title="OutOfMemoryError：unable to create new native thread"></a>OutOfMemoryError：unable to create new native thread</h4><p>原因：线程过多</p>
+<h4 id="outofmemoryerrorunable-to-create-new-native-thread"><a class="markdownIt-Anchor" href="#outofmemoryerrorunable-to-create-new-native-thread"></a> OutOfMemoryError：unable to create new native thread</h4>
+<p>原因：线程过多</p>
 <p>那么能创建多少线程呢？这里有一个公式：</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(MaxProcessMemory - JVMMemory - ReservedOsMemory) / (ThreadStackSize) = <span class="built_in">Number</span> <span class="keyword">of</span> threads  </span><br><span class="line">MaxProcessMemory 指的是一个进程的最大内存  </span><br><span class="line">JVMMemory         JVM内存  </span><br><span class="line">ReservedOsMemory  保留的操作系统内存  </span><br><span class="line">ThreadStackSize      线程栈的大小</span><br></pre></td></tr></table></figure>
-<p>当发起一个线程的创建时，虚拟机会在 JVM 内存创建一个 Thread 对象同时创建一个操作系统线程，而这个系统线程的内存用的不是 JVMMemory，而是系统中剩下的内存：<br>(MaxProcessMemory - JVMMemory - ReservedOsMemory)<br>结论：你给 JVM 内存越多，那么你能用来创建的系统线程的内存就会越少，越容易发生 java.lang.OutOfMemoryError: unable to create new native thread。</p>
-<h4 id="CPU-过高"><a href="#CPU-过高" class="headerlink" title="CPU 过高"></a>CPU 过高</h4><p>定位步骤：</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">(MaxProcessMemory</span> <span class="string">- JVMMemory - ReservedOsMemory) / (ThreadStackSize) = Number of threads  </span></span><br><span class="line"><span class="attr">MaxProcessMemory</span> <span class="string">指的是一个进程的最大内存  </span></span><br><span class="line"><span class="attr">JVMMemory</span>         <span class="string">JVM内存  </span></span><br><span class="line"><span class="attr">ReservedOsMemory</span>  <span class="string">保留的操作系统内存  </span></span><br><span class="line"><span class="attr">ThreadStackSize</span>      <span class="string">线程栈的大小</span></span><br></pre></td></tr></table></figure>
+<p>当发起一个线程的创建时，虚拟机会在 JVM 内存创建一个 Thread 对象同时创建一个操作系统线程，而这个系统线程的内存用的不是 JVMMemory，而是系统中剩下的内存：<br>
+(MaxProcessMemory - JVMMemory - ReservedOsMemory)<br>
+结论：你给 JVM 内存越多，那么你能用来创建的系统线程的内存就会越少，越容易发生 java.lang.OutOfMemoryError: unable to create new native thread。</p>
+<h4 id="cpu-过高"><a class="markdownIt-Anchor" href="#cpu-过高"></a> CPU 过高</h4>
+<p>定位步骤：</p>
 <p>（1）执行 top -c 命令，找到 cpu 最高的进程的 id</p>
 <p>（2）jstack PID 导出 Java 应用程序的线程堆栈信息。</p>
 <p>示例：</p>
@@ -936,13 +996,14 @@
 <p>（3）定位 CPU 高的线程打印其 nid</p>
 <p>查看线程下具体进程信息的命令如下：</p>
 <p>top -H -p 6735</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">top</span> <span class="selector-tag">-</span> 14<span class="selector-pseudo">:20</span><span class="selector-pseudo">:09</span> <span class="selector-tag">up</span> 611 <span class="selector-tag">days</span>,  2<span class="selector-pseudo">:56</span>,  1 <span class="selector-tag">user</span>,  <span class="selector-tag">load</span> <span class="selector-tag">average</span>: 13<span class="selector-class">.19</span>, 7<span class="selector-class">.76</span>, 7<span class="selector-class">.82</span></span><br><span class="line"><span class="selector-tag">Threads</span>: 6991 <span class="selector-tag">total</span>,  17 <span class="selector-tag">running</span>, 6974 <span class="selector-tag">sleeping</span>,   0 <span class="selector-tag">stopped</span>,   0 <span class="selector-tag">zombie</span></span><br><span class="line">%<span class="selector-tag">Cpu</span>(<span class="selector-tag">s</span>): 90<span class="selector-class">.4</span> <span class="selector-tag">us</span>,  2<span class="selector-class">.1</span> <span class="selector-tag">sy</span>,  0<span class="selector-class">.0</span> <span class="selector-tag">ni</span>,  7<span class="selector-class">.0</span> <span class="selector-tag">id</span>,  0<span class="selector-class">.0</span> <span class="selector-tag">wa</span>,  0<span class="selector-class">.0</span> <span class="selector-tag">hi</span>,  0<span class="selector-class">.4</span> <span class="selector-tag">si</span>,  0<span class="selector-class">.0</span> <span class="selector-tag">st</span></span><br><span class="line"><span class="selector-tag">KiB</span> <span class="selector-tag">Mem</span>:  32783044 <span class="selector-tag">total</span>, 32505008 <span class="selector-tag">used</span>,   278036 <span class="selector-tag">free</span>,   120304 <span class="selector-tag">buffers</span></span><br><span class="line"><span class="selector-tag">KiB</span> <span class="selector-tag">Swap</span>:        0 <span class="selector-tag">total</span>,        0 <span class="selector-tag">used</span>,        0 <span class="selector-tag">free</span>.  4497428 <span class="selector-tag">cached</span> <span class="selector-tag">Mem</span></span><br><span class="line"></span><br><span class="line">  <span class="selector-tag">PID</span> <span class="selector-tag">USER</span>      <span class="selector-tag">PR</span>  <span class="selector-tag">NI</span>    <span class="selector-tag">VIRT</span>    <span class="selector-tag">RES</span>    <span class="selector-tag">SHR</span> <span class="selector-tag">S</span> %<span class="selector-tag">CPU</span> %<span class="selector-tag">MEM</span>     <span class="selector-tag">TIME</span>+ <span class="selector-tag">COMMAND</span></span><br><span class="line"> 6800 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 54<span class="selector-class">.7</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:55.61</span> <span class="selector-tag">java</span></span><br><span class="line"> 6803 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 54<span class="selector-class">.4</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:52.59</span> <span class="selector-tag">java</span></span><br><span class="line"> 6798 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 53<span class="selector-class">.7</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:55.08</span> <span class="selector-tag">java</span></span><br><span class="line"> 6801 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 53<span class="selector-class">.7</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:55.25</span> <span class="selector-tag">java</span></span><br><span class="line"> 6797 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 53<span class="selector-class">.1</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:52.78</span> <span class="selector-tag">java</span></span><br><span class="line"> 6804 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 53<span class="selector-class">.1</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:55.76</span> <span class="selector-tag">java</span></span><br><span class="line"> 6802 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 52<span class="selector-class">.1</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:54.79</span> <span class="selector-tag">java</span></span><br><span class="line"> 6799 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 51<span class="selector-class">.8</span> 70<span class="selector-class">.1</span> 187<span class="selector-pseudo">:53.36</span> <span class="selector-tag">java</span></span><br><span class="line"> 6807 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span> 13<span class="selector-class">.6</span> 70<span class="selector-class">.1</span>  48<span class="selector-pseudo">:58.60</span> <span class="selector-tag">java</span></span><br><span class="line">11014 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">R</span>  8<span class="selector-class">.4</span> 70<span class="selector-class">.1</span>   8<span class="selector-pseudo">:00.32</span> <span class="selector-tag">java</span></span><br><span class="line">10642 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">R</span>  6<span class="selector-class">.5</span> 70<span class="selector-class">.1</span>   6<span class="selector-pseudo">:32.06</span> <span class="selector-tag">java</span></span><br><span class="line"> 6808 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  6<span class="selector-class">.1</span> 70<span class="selector-class">.1</span> 159<span class="selector-pseudo">:08.40</span> <span class="selector-tag">java</span></span><br><span class="line">11315 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  3<span class="selector-class">.9</span> 70<span class="selector-class">.1</span>   5<span class="selector-pseudo">:54.10</span> <span class="selector-tag">java</span></span><br><span class="line">12545 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  3<span class="selector-class">.9</span> 70<span class="selector-class">.1</span>   6<span class="selector-pseudo">:55.48</span> <span class="selector-tag">java</span></span><br><span class="line">23353 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  3<span class="selector-class">.9</span> 70<span class="selector-class">.1</span>   2<span class="selector-pseudo">:20.55</span> <span class="selector-tag">java</span></span><br><span class="line">24868 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  3<span class="selector-class">.9</span> 70<span class="selector-class">.1</span>   2<span class="selector-pseudo">:12.46</span> <span class="selector-tag">java</span></span><br><span class="line"> 9146 <span class="selector-tag">root</span>      20   0 27<span class="selector-class">.299g</span> 0<span class="selector-class">.021t</span>   7172 <span class="selector-tag">S</span>  3<span class="selector-class">.6</span> 70<span class="selector-class">.1</span>   7<span class="selector-pseudo">:42.72</span> <span class="selector-tag">java</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">top - <span class="number">14</span>:<span class="number">20</span>:<span class="number">09</span> up <span class="number">611</span> days,  <span class="number">2</span>:<span class="number">56</span>,  <span class="number">1</span> user,  load average: <span class="number">13.19</span>, <span class="number">7.76</span>, <span class="number">7.82</span></span><br><span class="line">Threads: <span class="number">6991</span> total,  <span class="number">17</span> running, <span class="number">6974</span> sleeping,   <span class="number">0</span> stopped,   <span class="number">0</span> zombie</span><br><span class="line">%Cpu(s): <span class="number">90.4</span> us,  <span class="number">2.1</span> sy,  <span class="number">0.0</span> ni,  <span class="number">7.0</span> id,  <span class="number">0.0</span> wa,  <span class="number">0.0</span> hi,  <span class="number">0.4</span> si,  <span class="number">0.0</span> st</span><br><span class="line">KiB Mem:  <span class="number">32783044</span> total, <span class="number">32505008</span> used,   <span class="number">278036</span> free,   <span class="number">120304</span> buffers</span><br><span class="line">KiB Swap:        <span class="number">0</span> total,        <span class="number">0</span> used,        <span class="number">0</span> free.  <span class="number">4497428</span> cached Mem</span><br><span class="line"></span><br><span class="line">  PID USER      PR  NI    VIRT    RES    SHR S %CPU %MEM     TIME+ COMMAND</span><br><span class="line"> <span class="number">6800</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">54.7</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">55.61</span> java</span><br><span class="line"> <span class="number">6803</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">54.4</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">52.59</span> java</span><br><span class="line"> <span class="number">6798</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">53.7</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">55.08</span> java</span><br><span class="line"> <span class="number">6801</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">53.7</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">55.25</span> java</span><br><span class="line"> <span class="number">6797</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">53.1</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">52.78</span> java</span><br><span class="line"> <span class="number">6804</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">53.1</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">55.76</span> java</span><br><span class="line"> <span class="number">6802</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">52.1</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">54.79</span> java</span><br><span class="line"> <span class="number">6799</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">51.8</span> <span class="number">70.1</span> <span class="number">187</span>:<span class="number">53.36</span> java</span><br><span class="line"> <span class="number">6807</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S <span class="number">13.6</span> <span class="number">70.1</span>  <span class="number">48</span>:<span class="number">58.60</span> java</span><br><span class="line"><span class="number">11014</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> R  <span class="number">8.4</span> <span class="number">70.1</span>   <span class="number">8</span>:<span class="number">00.32</span> java</span><br><span class="line"><span class="number">10642</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> R  <span class="number">6.5</span> <span class="number">70.1</span>   <span class="number">6</span>:<span class="number">32.06</span> java</span><br><span class="line"> <span class="number">6808</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">6.1</span> <span class="number">70.1</span> <span class="number">159</span>:<span class="number">08.40</span> java</span><br><span class="line"><span class="number">11315</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">3.9</span> <span class="number">70.1</span>   <span class="number">5</span>:<span class="number">54.10</span> java</span><br><span class="line"><span class="number">12545</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">3.9</span> <span class="number">70.1</span>   <span class="number">6</span>:<span class="number">55.48</span> java</span><br><span class="line"><span class="number">23353</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">3.9</span> <span class="number">70.1</span>   <span class="number">2</span>:<span class="number">20.55</span> java</span><br><span class="line"><span class="number">24868</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">3.9</span> <span class="number">70.1</span>   <span class="number">2</span>:<span class="number">12.46</span> java</span><br><span class="line"> <span class="number">9146</span> root      <span class="number">20</span>   <span class="number">0</span> <span class="number">27.299</span>g <span class="number">0.021</span>t   <span class="number">7172</span> S  <span class="number">3.6</span> <span class="number">70.1</span>   <span class="number">7</span>:<span class="number">42.72</span> java</span><br></pre></td></tr></table></figure>
 <p>由此可以看出占用 CPU 较高的线程，但是这些还不高，无法直接定位到具体的类。nid 是 16 进制的，所以我们要获取线程的 16 进制 ID：</p>
 <figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">printf <span class="string">"%x<span class="subst">\n</span>"</span> <span class="number">6800</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">输出结果<span class="selector-pseudo">:45cd</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">输出结果:<span class="number">45</span>cd</span><br></pre></td></tr></table></figure>
 <p>然后根据输出结果到 jstack 打印的堆栈日志中查定位：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="string">"catalina-exec-5692"</span> daemon prio=<span class="number">10</span> tid=<span class="number">0</span>x00007f3b05013800 nid=<span class="number">0</span>x45cd waiting on condition [<span class="number">0</span>x00007f3ae08e3000]</span><br><span class="line">   java<span class="selector-class">.lang</span><span class="selector-class">.Thread</span><span class="selector-class">.State</span>: TIMED_WAITING (parking)</span><br><span class="line">        at sun<span class="selector-class">.misc</span><span class="selector-class">.Unsafe</span><span class="selector-class">.park</span>(Native Method)</span><br><span class="line">        - parking to wait <span class="keyword">for</span>  &lt;<span class="number">0</span>x00000006a7800598&gt; (<span class="selector-tag">a</span> java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.locks</span><span class="selector-class">.AbstractQueuedSynchronizer</span><span class="variable">$ConditionObject</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.locks</span><span class="selector-class">.LockSupport</span><span class="selector-class">.parkNanos</span>(LockSupport<span class="selector-class">.java</span>:<span class="number">226</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.locks</span><span class="selector-class">.AbstractQueuedSynchronizer</span><span class="variable">$ConditionObject</span>.awaitNanos(AbstractQueuedSynchronizer<span class="selector-class">.java</span>:<span class="number">2082</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.LinkedBlockingQueue</span><span class="selector-class">.poll</span>(LinkedBlockingQueue<span class="selector-class">.java</span>:<span class="number">467</span>)</span><br><span class="line">        at org<span class="selector-class">.apache</span><span class="selector-class">.tomcat</span><span class="selector-class">.util</span><span class="selector-class">.threads</span><span class="selector-class">.TaskQueue</span><span class="selector-class">.poll</span>(TaskQueue<span class="selector-class">.java</span>:<span class="number">86</span>)</span><br><span class="line">        at org<span class="selector-class">.apache</span><span class="selector-class">.tomcat</span><span class="selector-class">.util</span><span class="selector-class">.threads</span><span class="selector-class">.TaskQueue</span><span class="selector-class">.poll</span>(TaskQueue<span class="selector-class">.java</span>:<span class="number">32</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.ThreadPoolExecutor</span><span class="selector-class">.getTask</span>(ThreadPoolExecutor<span class="selector-class">.java</span>:<span class="number">1068</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.ThreadPoolExecutor</span><span class="selector-class">.runWorker</span>(ThreadPoolExecutor<span class="selector-class">.java</span>:<span class="number">1130</span>)</span><br><span class="line">        at java<span class="selector-class">.util</span><span class="selector-class">.concurrent</span><span class="selector-class">.ThreadPoolExecutor</span><span class="variable">$Worker</span>.run(ThreadPoolExecutor<span class="selector-class">.java</span>:<span class="number">615</span>)</span><br><span class="line">        at org<span class="selector-class">.apache</span><span class="selector-class">.tomcat</span><span class="selector-class">.util</span><span class="selector-class">.threads</span><span class="selector-class">.TaskThread</span><span class="variable">$WrappingRunnable</span>.run(TaskThread<span class="selector-class">.java</span>:<span class="number">61</span>)</span><br><span class="line">        at java<span class="selector-class">.lang</span><span class="selector-class">.Thread</span><span class="selector-class">.run</span>(Thread<span class="selector-class">.java</span>:<span class="number">745</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="6-资料"><a href="#6-资料" class="headerlink" title="6. 资料"></a>6. 资料</h2><ul>
+<h2 id="6-资料"><a class="markdownIt-Anchor" href="#6-资料"></a> 6. 资料</h2>
+<ul>
 <li><a href="http://www.importnew.com/23761.html" target="_blank" rel="noopener">JVM（4）：Jvm 调优-命令篇</a></li>
 <li><a href="https://www.cnblogs.com/zhguang/p/Java-JVM-GC.html" target="_blank" rel="noopener">Java 系列笔记(4) - JVM 监控与调优</a></li>
 <li><a href="https://segmentfault.com/a/1190000005174819" target="_blank" rel="noopener">Java 服务 GC 参数调优案例</a></li>
@@ -1032,8 +1093,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/垃圾收集/" rel="prev" title="垃圾收集">
-                垃圾收集 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/29/programming/java/javacore/jvm/运行时数据区域/" rel="prev" title="运行时数据区域">
+                运行时数据区域 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1105,7 +1166,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1170,7 +1231,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1468,7 +1531,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JVM-调优"><span class="nav-text">JVM 调优</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-JVM-调优概述"><span class="nav-text">1. JVM 调优概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-性能定义"><span class="nav-text">1.1. 性能定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-调优原则"><span class="nav-text">1.2. 调优原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将进入老年代的对象数量降到最低"><span class="nav-text">将进入老年代的对象数量降到最低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降低-Full-GC-的时间"><span class="nav-text">降低 Full GC 的时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-GC-优化的过程"><span class="nav-text">1.3. GC 优化的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-监控-GC-状态"><span class="nav-text">1.监控 GC 状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-分析监控结果后决定是否需要优化-GC"><span class="nav-text">2.分析监控结果后决定是否需要优化 GC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-设置-GC-类型-内存大小"><span class="nav-text">3.设置 GC 类型/内存大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-分析结果"><span class="nav-text">4.分析结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-如果结果令人满意，将参数应用到所有服务器上并结束-GC-优化"><span class="nav-text">5.如果结果令人满意，将参数应用到所有服务器上并结束 GC 优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-命令"><span class="nav-text">2. 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-jmap"><span class="nav-text">2.1. jmap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例：jmap-dump-PID-生成堆快照"><span class="nav-text">示例：jmap -dump PID 生成堆快照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例：jmap-heap-查看指定进程的堆信息"><span class="nav-text">示例：jmap -heap 查看指定进程的堆信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-jstack"><span class="nav-text">2.2. jstack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-jps"><span class="nav-text">2.3. jps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-jstat"><span class="nav-text">2.4. jstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-jhat"><span class="nav-text">2.5. jhat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-jinfo"><span class="nav-text">2.6. jinfo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HotSpot-VM-参数"><span class="nav-text">3. HotSpot VM 参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-JVM-内存配置"><span class="nav-text">3.1. JVM 内存配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-GC-类型配置"><span class="nav-text">3.2. GC 类型配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-辅助配置"><span class="nav-text">3.3. 辅助配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-典型配置"><span class="nav-text">4. 典型配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-堆大小设置"><span class="nav-text">4.1. 堆大小设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-回收器选择"><span class="nav-text">4.2. 回收器选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-JVM-实战"><span class="nav-text">5. JVM 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-分析-GC-日志"><span class="nav-text">5.1. 分析 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-获取-GC-日志"><span class="nav-text">5.2. 获取 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-如何分析-GC-日志"><span class="nav-text">5.3. 如何分析 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-OutOfMemory-OOM-分析"><span class="nav-text">5.4. OutOfMemory(OOM)分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OutOfMemoryError-PermGen-space"><span class="nav-text">OutOfMemoryError:PermGen space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OutOfMemoryError-Java-heap-space"><span class="nav-text">OutOfMemoryError:Java heap space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OutOfMemoryError-GC-overhead-limit-exceeded"><span class="nav-text">OutOfMemoryError: GC overhead limit exceeded</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OutOfMemoryError：unable-to-create-new-native-thread"><span class="nav-text">OutOfMemoryError：unable to create new native thread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CPU-过高"><span class="nav-text">CPU 过高</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-资料"><span class="nav-text">6. 资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jvm-调优"><span class="nav-text"> JVM 调优</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-jvm-调优概述"><span class="nav-text"> 1. JVM 调优概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-性能定义"><span class="nav-text"> 1.1. 性能定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-调优原则"><span class="nav-text"> 1.2. 调优原则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将进入老年代的对象数量降到最低"><span class="nav-text"> 将进入老年代的对象数量降到最低</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#降低-full-gc-的时间"><span class="nav-text"> 降低 Full GC 的时间</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-gc-优化的过程"><span class="nav-text"> 1.3. GC 优化的过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1监控-gc-状态"><span class="nav-text"> 1.监控 GC 状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2分析监控结果后决定是否需要优化-gc"><span class="nav-text"> 2.分析监控结果后决定是否需要优化 GC</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3设置-gc-类型内存大小"><span class="nav-text"> 3.设置 GC 类型/内存大小</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4分析结果"><span class="nav-text"> 4.分析结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5如果结果令人满意将参数应用到所有服务器上并结束-gc-优化"><span class="nav-text"> 5.如果结果令人满意，将参数应用到所有服务器上并结束 GC 优化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-命令"><span class="nav-text"> 2. 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-jmap"><span class="nav-text"> 2.1. jmap</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#示例jmap-dump-pid-生成堆快照"><span class="nav-text"> 示例：jmap -dump PID 生成堆快照</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例jmap-heap-查看指定进程的堆信息"><span class="nav-text"> 示例：jmap -heap 查看指定进程的堆信息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-jstack"><span class="nav-text"> 2.2. jstack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-jps"><span class="nav-text"> 2.3. jps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-jstat"><span class="nav-text"> 2.4. jstat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-jhat"><span class="nav-text"> 2.5. jhat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-jinfo"><span class="nav-text"> 2.6. jinfo</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-hotspot-vm-参数"><span class="nav-text"> 3. HotSpot VM 参数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-jvm-内存配置"><span class="nav-text"> 3.1. JVM 内存配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-gc-类型配置"><span class="nav-text"> 3.2. GC 类型配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-辅助配置"><span class="nav-text"> 3.3. 辅助配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-典型配置"><span class="nav-text"> 4. 典型配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-堆大小设置"><span class="nav-text"> 4.1. 堆大小设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-回收器选择"><span class="nav-text"> 4.2. 回收器选择</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-jvm-实战"><span class="nav-text"> 5. JVM 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-分析-gc-日志"><span class="nav-text"> 5.1. 分析 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-获取-gc-日志"><span class="nav-text"> 5.2. 获取 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-如何分析-gc-日志"><span class="nav-text"> 5.3. 如何分析 GC 日志</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-outofmemoryoom分析"><span class="nav-text"> 5.4. OutOfMemory(OOM)分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#outofmemoryerrorpermgen-space"><span class="nav-text"> OutOfMemoryError:PermGen space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#outofmemoryerrorjava-heap-space"><span class="nav-text"> OutOfMemoryError:Java heap space</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#outofmemoryerror-gc-overhead-limit-exceeded"><span class="nav-text"> OutOfMemoryError: GC overhead limit exceeded</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#outofmemoryerrorunable-to-create-new-native-thread"><span class="nav-text"> OutOfMemoryError：unable to create new native thread</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cpu-过高"><span class="nav-text"> CPU 过高</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-资料"><span class="nav-text"> 6. 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1510,7 +1573,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

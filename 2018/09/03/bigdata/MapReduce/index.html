@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="MapReduce  MapReduce 简介 概念 思想 特点 适用场景 不适用场景   MapReduce 原理 Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解 Map 端 Reduce 端   作业运行模式 JobTracker/TaskTracker 模式（Hadoop">
+  <meta name="description" content="MapReduce   MapReduce 简介  概念 思想 特点 适用场景 不适用场景   MapReduce 原理  Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解  Map 端 Reduce 端   作业运行模式  JobTracker/TaskTracker 模式（">
 <meta name="keywords" content="bigdata,hadoop">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MapReduce">
 <meta property="og:url" content="https://dunwu.github.io/2018/09/03/bigdata/MapReduce/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="MapReduce  MapReduce 简介 概念 思想 特点 适用场景 不适用场景   MapReduce 原理 Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解 Map 端 Reduce 端   作业运行模式 JobTracker/TaskTracker 模式（Hadoop">
+<meta property="og:description" content="MapReduce   MapReduce 简介  概念 思想 特点 适用场景 不适用场景   MapReduce 原理  Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解  Map 端 Reduce 端   作业运行模式  JobTracker/TaskTracker 模式（">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.195Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MapReduce">
-<meta name="twitter:description" content="MapReduce  MapReduce 简介 概念 思想 特点 适用场景 不适用场景   MapReduce 原理 Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解 Map 端 Reduce 端   作业运行模式 JobTracker/TaskTracker 模式（Hadoop">
+<meta name="twitter:description" content="MapReduce   MapReduce 简介  概念 思想 特点 适用场景 不适用场景   MapReduce 原理  Job &amp;amp; Task（作业与任务） Split（切片） Map 阶段（映射） Reduce 阶段（化简） Shuffle 阶段（洗牌）   Shuffle 详解  Map 端 Reduce 端   作业运行模式  JobTracker/TaskTracker 模式（">
 
 
 
@@ -508,40 +508,50 @@
       
 
       
-        <h1 id="MapReduce"><a href="#MapReduce" class="headerlink" title="MapReduce"></a>MapReduce</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="mapreduce"><a class="markdownIt-Anchor" href="#mapreduce"></a> MapReduce</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#mapreduce-简介">MapReduce 简介</a><ul>
-<li><a href="#概念">概念</a></li>
-<li><a href="#思想">思想</a></li>
-<li><a href="#特点">特点</a></li>
-<li><a href="#适用场景">适用场景</a></li>
-<li><a href="#不适用场景">不适用场景</a></li>
+<li><a href="#mapreduce-%E7%AE%80%E4%BB%8B">MapReduce 简介</a>
+<ul>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a></li>
+<li><a href="#%E6%80%9D%E6%83%B3">思想</a></li>
+<li><a href="#%E7%89%B9%E7%82%B9">特点</a></li>
+<li><a href="#%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF">适用场景</a></li>
+<li><a href="#%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF">不适用场景</a></li>
 </ul>
 </li>
-<li><a href="#mapreduce-原理">MapReduce 原理</a><ul>
-<li><a href="#job--task作业与任务">Job &amp; Task（作业与任务）</a></li>
-<li><a href="#split切片">Split（切片）</a></li>
-<li><a href="#map-阶段映射">Map 阶段（映射）</a></li>
-<li><a href="#reduce-阶段化简">Reduce 阶段（化简）</a></li>
-<li><a href="#shuffle-阶段洗牌">Shuffle 阶段（洗牌）</a></li>
+<li><a href="#mapreduce-%E5%8E%9F%E7%90%86">MapReduce 原理</a>
+<ul>
+<li><a href="#job--task%E4%BD%9C%E4%B8%9A%E4%B8%8E%E4%BB%BB%E5%8A%A1">Job &amp; Task（作业与任务）</a></li>
+<li><a href="#split%E5%88%87%E7%89%87">Split（切片）</a></li>
+<li><a href="#map-%E9%98%B6%E6%AE%B5%E6%98%A0%E5%B0%84">Map 阶段（映射）</a></li>
+<li><a href="#reduce-%E9%98%B6%E6%AE%B5%E5%8C%96%E7%AE%80">Reduce 阶段（化简）</a></li>
+<li><a href="#shuffle-%E9%98%B6%E6%AE%B5%E6%B4%97%E7%89%8C">Shuffle 阶段（洗牌）</a></li>
 </ul>
 </li>
-<li><a href="#shuffle-详解">Shuffle 详解</a><ul>
-<li><a href="#map-端">Map 端</a></li>
-<li><a href="#reduce-端">Reduce 端</a></li>
+<li><a href="#shuffle-%E8%AF%A6%E8%A7%A3">Shuffle 详解</a>
+<ul>
+<li><a href="#map-%E7%AB%AF">Map 端</a></li>
+<li><a href="#reduce-%E7%AB%AF">Reduce 端</a></li>
 </ul>
 </li>
-<li><a href="#作业运行模式">作业运行模式</a><ul>
-<li><a href="#jobtrackertasktracker-模式hadoop-1x">JobTracker/TaskTracker 模式（Hadoop 1.X）</a></li>
-<li><a href="#yarn-模式hadoop-2x">YARN 模式（Hadoop 2.X）</a></li>
+<li><a href="#%E4%BD%9C%E4%B8%9A%E8%BF%90%E8%A1%8C%E6%A8%A1%E5%BC%8F">作业运行模式</a>
+<ul>
+<li><a href="#jobtrackertasktracker-%E6%A8%A1%E5%BC%8Fhadoop-1x">JobTracker/TaskTracker 模式（Hadoop 1.X）</a></li>
+<li><a href="#yarn-%E6%A8%A1%E5%BC%8Fhadoop-2x">YARN 模式（Hadoop 2.X）</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="MapReduce-简介"><a href="#MapReduce-简介" class="headerlink" title="MapReduce 简介"></a>MapReduce 简介</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>MapReduce 是一个面向批处理的分布式计算框架。</p>
+<h2 id="mapreduce-简介"><a class="markdownIt-Anchor" href="#mapreduce-简介"></a> MapReduce 简介</h2>
+<h3 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h3>
+<p>MapReduce 是一个面向批处理的分布式计算框架。</p>
 <p>编程模型：MapReduce 程序被分为 Map（映射）阶段和 Reduce（化简）阶段。</p>
-<h3 id="思想"><a href="#思想" class="headerlink" title="思想"></a>思想</h3><p>分而治之，并行计算<br>移动计算，而非移动数据</p>
-<h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ul>
+<h3 id="思想"><a class="markdownIt-Anchor" href="#思想"></a> 思想</h3>
+<p>分而治之，并行计算<br>
+移动计算，而非移动数据</p>
+<h3 id="特点"><a class="markdownIt-Anchor" href="#特点"></a> 特点</h3>
+<ul>
 <li>计算跟着数据走</li>
 <li>良好的扩展性：计算能力随着节点数增加，近似线性递增</li>
 <li>高容错</li>
@@ -549,37 +559,47 @@
 <li>适合海量数据的离线批处理</li>
 <li>降低了分布式编程的门槛</li>
 </ul>
-<h3 id="适用场景"><a href="#适用场景" class="headerlink" title="适用场景"></a>适用场景</h3><ul>
+<h3 id="适用场景"><a class="markdownIt-Anchor" href="#适用场景"></a> 适用场景</h3>
+<ul>
 <li>数据统计，如：网站的 PV、UV 统计</li>
 <li>搜索引擎构建索引</li>
 <li>海量数据查询</li>
 </ul>
-<h3 id="不适用场景"><a href="#不适用场景" class="headerlink" title="不适用场景"></a>不适用场景</h3><ul>
-<li>OLAP<ul>
+<h3 id="不适用场景"><a class="markdownIt-Anchor" href="#不适用场景"></a> 不适用场景</h3>
+<ul>
+<li>OLAP
+<ul>
 <li>要求毫秒或秒级返回结果</li>
 </ul>
 </li>
-<li>流计算<ul>
+<li>流计算
+<ul>
 <li>流计算的输入数据集是动态的，而 MapReduce 是静态的</li>
 </ul>
 </li>
-<li>DAG 计算<ul>
+<li>DAG 计算
+<ul>
 <li>多个作业存在依赖关系，后一个的输入是前一个的输出，构成有向无环图 DAG</li>
 <li>每个 MapReduce 作业的输出结果都会落盘，造成大量磁盘 IO，导致性能非常低下</li>
 </ul>
 </li>
 </ul>
-<h2 id="MapReduce-原理"><a href="#MapReduce-原理" class="headerlink" title="MapReduce 原理"></a>MapReduce 原理</h2><h3 id="Job-amp-Task（作业与任务）"><a href="#Job-amp-Task（作业与任务）" class="headerlink" title="Job &amp; Task（作业与任务）"></a>Job &amp; Task（作业与任务）</h3><ul>
-<li>作业是客户端请求执行的一个工作单元<ul>
+<h2 id="mapreduce-原理"><a class="markdownIt-Anchor" href="#mapreduce-原理"></a> MapReduce 原理</h2>
+<h3 id="job-task作业与任务"><a class="markdownIt-Anchor" href="#job-task作业与任务"></a> Job &amp; Task（作业与任务）</h3>
+<ul>
+<li>作业是客户端请求执行的一个工作单元
+<ul>
 <li>包括输入数据、MapReduce 程序、配置信息</li>
 </ul>
 </li>
-<li>任务是将作业分解后得到的细分工作单元<ul>
+<li>任务是将作业分解后得到的细分工作单元
+<ul>
 <li>分为 Map 任务和 Reduce 任务</li>
 </ul>
 </li>
 </ul>
-<h3 id="Split（切片）"><a href="#Split（切片）" class="headerlink" title="Split（切片）"></a>Split（切片）</h3><ul>
+<h3 id="split切片"><a class="markdownIt-Anchor" href="#split切片"></a> Split（切片）</h3>
+<ul>
 <li>输入数据被划分成等长的小数据块，称为输入切片（Input Split），简称切片</li>
 <li>Split 是逻辑概念，仅包含元数据信息，如：数据的起始位置、长度、所在节点等</li>
 <li>每个 Split 交给一个 Map 任务处理，Split 的数量决定 Map 任务的数量</li>
@@ -587,24 +607,35 @@
 <li>Split 的大小默认等于 Block 大小</li>
 <li>Split 越小，负载越均衡，但集群的开销越大</li>
 </ul>
-<h3 id="Map-阶段（映射）"><a href="#Map-阶段（映射）" class="headerlink" title="Map 阶段（映射）"></a>Map 阶段（映射）</h3><ul>
+<h3 id="map-阶段映射"><a class="markdownIt-Anchor" href="#map-阶段映射"></a> Map 阶段（映射）</h3>
+<ul>
 <li>由若干 Map 任务组成，任务数量由 Split 数量决定</li>
 <li>输入：Split 切片（key-value），输出：中间计算结果（key-value）</li>
 </ul>
-<h3 id="Reduce-阶段（化简）"><a href="#Reduce-阶段（化简）" class="headerlink" title="Reduce 阶段（化简）"></a>Reduce 阶段（化简）</h3><ul>
+<h3 id="reduce-阶段化简"><a class="markdownIt-Anchor" href="#reduce-阶段化简"></a> Reduce 阶段（化简）</h3>
+<ul>
 <li>由若干 Reduce 任务组成，任务数量由程序指定</li>
 <li>输入：Map 阶段输出的中间结果（key-value），输出：最终结果（key-value）</li>
 </ul>
-<h3 id="Shuffle-阶段（洗牌）"><a href="#Shuffle-阶段（洗牌）" class="headerlink" title="Shuffle 阶段（洗牌）"></a>Shuffle 阶段（洗牌）</h3><ul>
+<h3 id="shuffle-阶段洗牌"><a class="markdownIt-Anchor" href="#shuffle-阶段洗牌"></a> Shuffle 阶段（洗牌）</h3>
+<ul>
 <li>Map、Reduce 阶段的中间环节，负责执行 Partition（分区）、Sort（排序）、Spill（溢写）、Merge（合并）、抓取（Fetch）等工作</li>
 <li>Partition 决定了 Map 任务输出的每条数据放入哪个分区，交给哪个 Reduce 任务处理</li>
 <li>Reduce 任务的数量决定了 Partition 数量</li>
 <li>Partition 编号 = Reduce 任务编号 =“key hashcode % reduce task number”</li>
 <li>避免和减少 Shuffle 是 MapReduce 程序调优的重点</li>
 </ul>
-<h2 id="Shuffle-详解"><a href="#Shuffle-详解" class="headerlink" title="Shuffle 详解"></a>Shuffle 详解</h2><h3 id="Map-端"><a href="#Map-端" class="headerlink" title="Map 端"></a>Map 端</h3><p>Map 任务将中间结果写入专用内存缓冲区 Buffer（默认 100M），同时进行 Partition 和 Sort（先按“key hashcode % reduce task number”对数据进行分区，分区内再按 key 排序）<br>当 Buffer 的数据量达到阈值（默认 80%）时，将数据溢写（Spill）到磁盘的一个临时文件中，文件内数据先分区后排序<br>Map 任务结束前，将多个临时文件合并（Merge）为一个 Map 输出文件，文件内数据先分区后排序</p>
-<h3 id="Reduce-端"><a href="#Reduce-端" class="headerlink" title="Reduce 端"></a>Reduce 端</h3><p>Reduce 任务从多个 Map 输出文件中主动抓取（Fetch）属于自己的分区数据，先写入 Buffer，数据量达到阈值后，溢写到磁盘的一个临时文件中<br>数据抓取完成后，将多个临时文件合并为一个 Reduce 输入文件，文件内数据按 key 排序</p>
-<h2 id="作业运行模式"><a href="#作业运行模式" class="headerlink" title="作业运行模式"></a>作业运行模式</h2><h3 id="JobTracker-TaskTracker-模式（Hadoop-1-X）"><a href="#JobTracker-TaskTracker-模式（Hadoop-1-X）" class="headerlink" title="JobTracker/TaskTracker 模式（Hadoop 1.X）"></a>JobTracker/TaskTracker 模式（Hadoop 1.X）</h3><p><strong>JobTracker 节点（Master）</strong></p>
+<h2 id="shuffle-详解"><a class="markdownIt-Anchor" href="#shuffle-详解"></a> Shuffle 详解</h2>
+<h3 id="map-端"><a class="markdownIt-Anchor" href="#map-端"></a> Map 端</h3>
+<p>Map 任务将中间结果写入专用内存缓冲区 Buffer（默认 100M），同时进行 Partition 和 Sort（先按“key hashcode % reduce task number”对数据进行分区，分区内再按 key 排序）<br>
+当 Buffer 的数据量达到阈值（默认 80%）时，将数据溢写（Spill）到磁盘的一个临时文件中，文件内数据先分区后排序<br>
+Map 任务结束前，将多个临时文件合并（Merge）为一个 Map 输出文件，文件内数据先分区后排序</p>
+<h3 id="reduce-端"><a class="markdownIt-Anchor" href="#reduce-端"></a> Reduce 端</h3>
+<p>Reduce 任务从多个 Map 输出文件中主动抓取（Fetch）属于自己的分区数据，先写入 Buffer，数据量达到阈值后，溢写到磁盘的一个临时文件中<br>
+数据抓取完成后，将多个临时文件合并为一个 Reduce 输入文件，文件内数据按 key 排序</p>
+<h2 id="作业运行模式"><a class="markdownIt-Anchor" href="#作业运行模式"></a> 作业运行模式</h2>
+<h3 id="jobtrackertasktracker-模式hadoop-1x"><a class="markdownIt-Anchor" href="#jobtrackertasktracker-模式hadoop-1x"></a> JobTracker/TaskTracker 模式（Hadoop 1.X）</h3>
+<p><strong>JobTracker 节点（Master）</strong></p>
 <ul>
 <li>调度任务在 TaskTracker 上运行</li>
 <li>若任务失败，指定新 TaskTracker 重新运行</li>
@@ -621,7 +652,8 @@
 <li>TaskTracker 对资源的描述过于简单</li>
 <li>源码很难理解</li>
 </ul>
-<h3 id="YARN-模式（Hadoop-2-X）"><a href="#YARN-模式（Hadoop-2-X）" class="headerlink" title="YARN 模式（Hadoop 2.X）"></a>YARN 模式（Hadoop 2.X）</h3><ul>
+<h3 id="yarn-模式hadoop-2x"><a class="markdownIt-Anchor" href="#yarn-模式hadoop-2x"></a> YARN 模式（Hadoop 2.X）</h3>
+<ul>
 <li>提交作业</li>
 <li>查看作业</li>
 <li>终止作业</li>
@@ -692,8 +724,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/09/03/bigdata/YARN/" rel="next" title="YARN">
-                <i class="fa fa-chevron-left"></i> YARN
+              <a href="/blog/2018/09/03/bigdata/Spark/" rel="next" title="Spark">
+                <i class="fa fa-chevron-left"></i> Spark
               </a>
             
           </div>
@@ -702,8 +734,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/09/03/bigdata/HDFS/" rel="prev" title="HDFS">
-                HDFS <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/09/03/bigdata/overview/" rel="prev" title="大数据简介">
+                大数据简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -775,7 +807,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -840,7 +872,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1138,7 +1172,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MapReduce"><span class="nav-text">MapReduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce-简介"><span class="nav-text">MapReduce 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-text">思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-text">适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不适用场景"><span class="nav-text">不适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MapReduce-原理"><span class="nav-text">MapReduce 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Job-amp-Task（作业与任务）"><span class="nav-text">Job &amp; Task（作业与任务）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Split（切片）"><span class="nav-text">Split（切片）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map-阶段（映射）"><span class="nav-text">Map 阶段（映射）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce-阶段（化简）"><span class="nav-text">Reduce 阶段（化简）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shuffle-阶段（洗牌）"><span class="nav-text">Shuffle 阶段（洗牌）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shuffle-详解"><span class="nav-text">Shuffle 详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map-端"><span class="nav-text">Map 端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reduce-端"><span class="nav-text">Reduce 端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业运行模式"><span class="nav-text">作业运行模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JobTracker-TaskTracker-模式（Hadoop-1-X）"><span class="nav-text">JobTracker/TaskTracker 模式（Hadoop 1.X）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#YARN-模式（Hadoop-2-X）"><span class="nav-text">YARN 模式（Hadoop 2.X）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mapreduce"><span class="nav-text"> MapReduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mapreduce-简介"><span class="nav-text"> MapReduce 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思想"><span class="nav-text"> 思想</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-text"> 特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#适用场景"><span class="nav-text"> 适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不适用场景"><span class="nav-text"> 不适用场景</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mapreduce-原理"><span class="nav-text"> MapReduce 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#job-task作业与任务"><span class="nav-text"> Job &amp; Task（作业与任务）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#split切片"><span class="nav-text"> Split（切片）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-阶段映射"><span class="nav-text"> Map 阶段（映射）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-阶段化简"><span class="nav-text"> Reduce 阶段（化简）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shuffle-阶段洗牌"><span class="nav-text"> Shuffle 阶段（洗牌）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#shuffle-详解"><span class="nav-text"> Shuffle 详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map-端"><span class="nav-text"> Map 端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce-端"><span class="nav-text"> Reduce 端</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业运行模式"><span class="nav-text"> 作业运行模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jobtrackertasktracker-模式hadoop-1x"><span class="nav-text"> JobTracker/TaskTracker 模式（Hadoop 1.X）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#yarn-模式hadoop-2x"><span class="nav-text"> YARN 模式（Hadoop 2.X）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1180,7 +1214,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

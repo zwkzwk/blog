@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 容器之 Queue :notebook: 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料">
+  <meta name="description" content="Java 容器之 Queue  📓 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料    Queu">
 <meta name="keywords" content="programming,javacore,java,container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 容器之 Queue">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/29/programming/java/javacore/container/Queue/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 容器之 Queue :notebook: 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料">
+<meta property="og:description" content="Java 容器之 Queue  📓 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料    Queu">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Queue-diagrams.png">
 <meta property="og:updated_time" content="2019-03-07T05:19:00.469Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 容器之 Queue">
-<meta name="twitter:description" content="Java 容器之 Queue :notebook: 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料">
+<meta name="twitter:description" content="Java 容器之 Queue  📓 本文已归档到：「blog」    Queue 架构 Queue 接口 BlockingQueue 接口 AbstractQueue 抽象类 PriorityQueue 类 PriorityBlockingQueue 类 LinkedBlockingQueue 类 ArrayBlockingQueue 类 SynchronousQueue 资料    Queu">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Queue-diagrams.png">
 
 
@@ -497,7 +497,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.1k</span>
+                <span title="本文字数">5.2k</span>
               
 
               
@@ -531,28 +531,33 @@
       
 
       
-        <h1 id="Java-容器之-Queue"><a href="#Java-容器之-Queue" class="headerlink" title="Java 容器之 Queue"></a>Java 容器之 Queue</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-容器之-queue"><a class="markdownIt-Anchor" href="#java-容器之-queue"></a> Java 容器之 Queue</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#queue-架构">Queue 架构</a></li>
-<li><a href="#queue-接口">Queue 接口</a></li>
-<li><a href="#blockingqueue-接口">BlockingQueue 接口</a></li>
-<li><a href="#abstractqueue-抽象类">AbstractQueue 抽象类</a></li>
-<li><a href="#priorityqueue-类">PriorityQueue 类</a></li>
-<li><a href="#priorityblockingqueue-类">PriorityBlockingQueue 类</a></li>
-<li><a href="#linkedblockingqueue-类">LinkedBlockingQueue 类</a></li>
-<li><a href="#arrayblockingqueue-类">ArrayBlockingQueue 类</a></li>
+<li><a href="#queue-%E6%9E%B6%E6%9E%84">Queue 架构</a></li>
+<li><a href="#queue-%E6%8E%A5%E5%8F%A3">Queue 接口</a></li>
+<li><a href="#blockingqueue-%E6%8E%A5%E5%8F%A3">BlockingQueue 接口</a></li>
+<li><a href="#abstractqueue-%E6%8A%BD%E8%B1%A1%E7%B1%BB">AbstractQueue 抽象类</a></li>
+<li><a href="#priorityqueue-%E7%B1%BB">PriorityQueue 类</a></li>
+<li><a href="#priorityblockingqueue-%E7%B1%BB">PriorityBlockingQueue 类</a></li>
+<li><a href="#linkedblockingqueue-%E7%B1%BB">LinkedBlockingQueue 类</a></li>
+<li><a href="#arrayblockingqueue-%E7%B1%BB">ArrayBlockingQueue 类</a></li>
 <li><a href="#synchronousqueue">SynchronousQueue</a></li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="Queue-架构"><a href="#Queue-架构" class="headerlink" title="Queue 架构"></a>Queue 架构</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Queue-diagrams.png"><br></div>
-
-<h2 id="Queue-接口"><a href="#Queue-接口" class="headerlink" title="Queue 接口"></a>Queue 接口</h2><p>Queue 接口定义如下：</p>
+<h2 id="queue-架构"><a class="markdownIt-Anchor" href="#queue-架构"></a> Queue 架构</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/Queue-diagrams.png">
+</div>
+<h2 id="queue-接口"><a class="markdownIt-Anchor" href="#queue-接口"></a> Queue 接口</h2>
+<p>Queue 接口定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Collection</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="BlockingQueue-接口"><a href="#BlockingQueue-接口" class="headerlink" title="BlockingQueue 接口"></a>BlockingQueue 接口</h2><p>BlockingQueue 接口定义如下：</p>
+<h2 id="blockingqueue-接口"><a class="markdownIt-Anchor" href="#blockingqueue-接口"></a> BlockingQueue 接口</h2>
+<p>BlockingQueue 接口定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>BlockingQueue 顾名思义，是一个阻塞队列。</p>
 <p>在 BlockingQueue 中，如果获取队列元素但是队列为空时，会阻塞，等待队列中有元素再返回；如果添加元素时，如果队列已满，那么等到队列可以放入新元素时再放入。</p>
@@ -600,56 +605,68 @@
 </table>
 <p>BlockingQueue 的各个实现类都遵循了这些规则。</p>
 <p>BlockingQueue 不接受 null 值元素。</p>
-<h2 id="AbstractQueue-抽象类"><a href="#AbstractQueue-抽象类" class="headerlink" title="AbstractQueue 抽象类"></a>AbstractQueue 抽象类</h2><p>AbstractQueue 抽象类定义如下：</p>
+<h2 id="abstractqueue-抽象类"><a class="markdownIt-Anchor" href="#abstractqueue-抽象类"></a> AbstractQueue 抽象类</h2>
+<p>AbstractQueue 抽象类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">extends</span> <span class="title">AbstractCollection</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">Queue</span>&lt;<span class="title">E</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <p>AbstractQueue 类提供 Queue 接口的骨干实现，以最大限度地减少实现 Queue 接口所需的工作。</p>
-<h2 id="PriorityQueue-类"><a href="#PriorityQueue-类" class="headerlink" title="PriorityQueue 类"></a>PriorityQueue 类</h2><p>PriorityQueue 类定义如下：</p>
+<h2 id="priorityqueue-类"><a class="markdownIt-Anchor" href="#priorityqueue-类"></a> PriorityQueue 类</h2>
+<p>PriorityQueue 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PriorityQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="PriorityQueue-要点"><a href="#PriorityQueue-要点" class="headerlink" title="PriorityQueue 要点"></a>PriorityQueue 要点</h3><ol>
+<h3 id="priorityqueue-要点"><a class="markdownIt-Anchor" href="#priorityqueue-要点"></a> PriorityQueue 要点</h3>
+<ol>
 <li>PriorityQueue 实现了 Serializable，支持序列化。</li>
 <li>PriorityQueue 类是基于优先级堆实现的无界优先级队列。</li>
 <li>PriorityQueue 中的元素根据自然顺序或 Comparator 提供的顺序排序。</li>
 <li>PriorityQueue 不接受 null 值元素。</li>
 <li>PriorityQueue 不是线程安全的。</li>
 </ol>
-<h2 id="PriorityBlockingQueue-类"><a href="#PriorityBlockingQueue-类" class="headerlink" title="PriorityBlockingQueue 类"></a>PriorityBlockingQueue 类</h2><p>PriorityBlockingQueue 类定义如下：</p>
+<h2 id="priorityblockingqueue-类"><a class="markdownIt-Anchor" href="#priorityblockingqueue-类"></a> PriorityBlockingQueue 类</h2>
+<p>PriorityBlockingQueue 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PriorityBlockingQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="PriorityBlockingQueue-要点"><a href="#PriorityBlockingQueue-要点" class="headerlink" title="PriorityBlockingQueue 要点"></a>PriorityBlockingQueue 要点</h3><ol>
+<h3 id="priorityblockingqueue-要点"><a class="markdownIt-Anchor" href="#priorityblockingqueue-要点"></a> PriorityBlockingQueue 要点</h3>
+<ol>
 <li>PriorityBlockingQueue 实现了 BlockingQueue，也是一个阻塞队列。</li>
 <li>PriorityBlockingQueue 实现了 Serializable，支持序列化。</li>
 <li>PriorityBlockingQueue 可以视为 PriorityQueue 的线程安全版本。</li>
 <li>PriorityBlockingQueue 不接受 null 值元素。</li>
 <li>PriorityBlockingQueue 的插入操作 put 方法不会 block，因为它是无界队列（take 方法在队列为空的时候会阻塞）。</li>
 </ol>
-<h3 id="PriorityBlockingQueue-原理"><a href="#PriorityBlockingQueue-原理" class="headerlink" title="PriorityBlockingQueue 原理"></a>PriorityBlockingQueue 原理</h3><p>PriorityBlockingQueue 有两个重要成员：</p>
+<h3 id="priorityblockingqueue-原理"><a class="markdownIt-Anchor" href="#priorityblockingqueue-原理"></a> PriorityBlockingQueue 原理</h3>
+<p>PriorityBlockingQueue 有两个重要成员：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> Object[] queue;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ReentrantLock lock;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>queue 是一个 Object 数组，用于保存 PriorityBlockingQueue 的元素。</li>
 <li>而可重入锁 lock 则用于在执行插入、删除操作时，保证这个方法在当前线程释放锁之前，其他线程不能访问。</li>
 </ul>
 <p>PriorityBlockingQueue 的容量虽然有初始化大小，但是不限制大小，如果当前容量已满，插入新元素时会自动扩容。</p>
-<h2 id="LinkedBlockingQueue-类"><a href="#LinkedBlockingQueue-类" class="headerlink" title="LinkedBlockingQueue 类"></a>LinkedBlockingQueue 类</h2><p>LinkedBlockingQueue 类定义如下：</p>
+<h2 id="linkedblockingqueue-类"><a class="markdownIt-Anchor" href="#linkedblockingqueue-类"></a> LinkedBlockingQueue 类</h2>
+<p>LinkedBlockingQueue 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LinkedBlockingQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="LinkedBlockingQueue-要点"><a href="#LinkedBlockingQueue-要点" class="headerlink" title="LinkedBlockingQueue 要点"></a>LinkedBlockingQueue 要点</h3><ol>
+<h3 id="linkedblockingqueue-要点"><a class="markdownIt-Anchor" href="#linkedblockingqueue-要点"></a> LinkedBlockingQueue 要点</h3>
+<ol>
 <li>LinkedBlockingQueue 实现了 BlockingQueue，也是一个阻塞队列。</li>
 <li>LinkedBlockingQueue 实现了 Serializable，支持序列化。</li>
 <li>LinkedBlockingQueue 是基于单链表实现的阻塞队列，可以当做无界队列也可以当做有界队列来使用。</li>
 <li>LinkedBlockingQueue 中元素按照插入顺序保存（FIFO）。</li>
 </ol>
-<h3 id="LinkedBlockingQueue-原理"><a href="#LinkedBlockingQueue-原理" class="headerlink" title="LinkedBlockingQueue 原理"></a>LinkedBlockingQueue 原理</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 队列容量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列中的元素数量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> AtomicInteger count = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队头</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> Node&lt;E&gt; head;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队尾</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> Node&lt;E&gt; last;</span><br><span class="line"></span><br><span class="line"><span class="comment">// take, poll, peek 等读操作的方法需要获取到这个锁</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ReentrantLock takeLock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果读操作的时候队列是空的，那么等待 notEmpty 条件</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notEmpty = takeLock.newCondition();</span><br><span class="line"></span><br><span class="line"><span class="comment">// put, offer 等写操作的方法需要获取到这个锁</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ReentrantLock putLock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果写操作的时候队列是满的，那么等待 notFull 条件</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notFull = putLock.newCondition();</span><br></pre></td></tr></table></figure>
+<h3 id="linkedblockingqueue-原理"><a class="markdownIt-Anchor" href="#linkedblockingqueue-原理"></a> LinkedBlockingQueue 原理</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 队列容量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> capacity;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队列中的元素数量</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> AtomicInteger count = <span class="keyword">new</span> AtomicInteger(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队头</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> Node&lt;E&gt; head;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队尾</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">transient</span> Node&lt;E&gt; last;</span><br><span class="line"></span><br><span class="line"><span class="comment">// take, poll, peek 等读操作的方法需要获取到这个锁</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ReentrantLock takeLock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果读操作的时候队列是空的，那么等待 notEmpty 条件</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notEmpty = takeLock.newCondition();</span><br><span class="line"></span><br><span class="line"><span class="comment">// put, offer 等写操作的方法需要获取到这个锁</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> ReentrantLock putLock = <span class="keyword">new</span> ReentrantLock();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果写操作的时候队列是满的，那么等待 notFull 条件</span></span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notFull = putLock.newCondition();</span><br></pre></td></tr></table></figure>
 <p>这里用了两个锁，两个 Condition，简单介绍如下：</p>
 <ul>
 <li>takeLock 和 notEmpty 搭配：如果要获取（take）一个元素，需要获取 takeLock 锁，但是获取了锁还不够，如果队列此时为空，还需要队列不为空（notEmpty）这个条件（Condition）。</li>
 <li>putLock 需要和 notFull 搭配：如果要插入（put）一个元素，需要获取 putLock 锁，但是获取了锁还不够，如果队列此时已满，还需要队列不是满的（notFull）这个条件（Condition）。</li>
 </ul>
-<h2 id="ArrayBlockingQueue-类"><a href="#ArrayBlockingQueue-类" class="headerlink" title="ArrayBlockingQueue 类"></a>ArrayBlockingQueue 类</h2><p>ArrayBlockingQueue 类定义如下：</p>
+<h2 id="arrayblockingqueue-类"><a class="markdownIt-Anchor" href="#arrayblockingqueue-类"></a> ArrayBlockingQueue 类</h2>
+<p>ArrayBlockingQueue 类定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayBlockingQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">        <span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="ArrayBlockingQueue-要点"><a href="#ArrayBlockingQueue-要点" class="headerlink" title="ArrayBlockingQueue 要点"></a>ArrayBlockingQueue 要点</h3><ol>
+<h3 id="arrayblockingqueue-要点"><a class="markdownIt-Anchor" href="#arrayblockingqueue-要点"></a> ArrayBlockingQueue 要点</h3>
+<ol>
 <li>ArrayBlockingQueue 实现了 BlockingQueue，也是一个阻塞队列。</li>
 <li>ArrayBlockingQueue 实现了 Serializable，支持序列化。</li>
 <li>ArrayBlockingQueue 是基于数组实现的无界阻塞队列。</li>
 </ol>
-<h3 id="ArrayBlockingQueue-原理"><a href="#ArrayBlockingQueue-原理" class="headerlink" title="ArrayBlockingQueue 原理"></a>ArrayBlockingQueue 原理</h3><p>ArrayBlockingQueue 的重要成员如下：</p>
+<h3 id="arrayblockingqueue-原理"><a class="markdownIt-Anchor" href="#arrayblockingqueue-原理"></a> ArrayBlockingQueue 原理</h3>
+<p>ArrayBlockingQueue 的重要成员如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 用于存放元素的数组</span></span><br><span class="line"><span class="keyword">final</span> Object[] items;</span><br><span class="line"><span class="comment">// 下一次读取操作的位置</span></span><br><span class="line"><span class="keyword">int</span> takeIndex;</span><br><span class="line"><span class="comment">// 下一次写入操作的位置</span></span><br><span class="line"><span class="keyword">int</span> putIndex;</span><br><span class="line"><span class="comment">// 队列中的元素数量</span></span><br><span class="line"><span class="keyword">int</span> count;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以下几个就是控制并发用的同步器</span></span><br><span class="line"><span class="keyword">final</span> ReentrantLock lock;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notEmpty;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> Condition notFull;</span><br></pre></td></tr></table></figure>
 <p>ArrayBlockingQueue 实现并发同步的原理就是，读操作和写操作都需要获取到 AQS 独占锁才能进行操作。</p>
 <ul>
@@ -662,7 +679,8 @@
 <li>指定独占锁是公平锁还是非公平锁。非公平锁的吞吐量比较高，公平锁可以保证每次都是等待最久的线程获取到锁；</li>
 <li>可以指定用一个集合来初始化，将此集合中的元素在构造方法期间就先添加到队列中。</li>
 </ol>
-<h2 id="SynchronousQueue"><a href="#SynchronousQueue" class="headerlink" title="SynchronousQueue"></a>SynchronousQueue</h2><p>SynchronousQueue 定义如下：</p>
+<h2 id="synchronousqueue"><a class="markdownIt-Anchor" href="#synchronousqueue"></a> SynchronousQueue</h2>
+<p>SynchronousQueue 定义如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SynchronousQueue</span>&lt;<span class="title">E</span>&gt; <span class="keyword">extends</span> <span class="title">AbstractQueue</span>&lt;<span class="title">E</span>&gt;</span></span><br><span class="line"><span class="class">    <span class="keyword">implements</span> <span class="title">BlockingQueue</span>&lt;<span class="title">E</span>&gt;, <span class="title">java</span>.<span class="title">io</span>.<span class="title">Serializable</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 <ol>
 <li>SynchronousQueue 这个类，不过它在线程池的实现类 ScheduledThreadPoolExecutor 中得到了应用。</li>
@@ -672,7 +690,8 @@
 <li>虽然 SynchronousQueue 间接地实现了 Collection 接口，但是如果你将其当做 Collection 来用的话，那么集合是空的。</li>
 <li>当然，SynchronousQueue 也不允许传递 null 值的（并发包中的容器类好像都不支持插入 null 值，因为 null 值往往用作其他用途，比如用于方法的返回值代表操作失败）。</li>
 </ol>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><a href="http://www.importnew.com/28053.html" target="_blank" rel="noopener">解读 Java 并发队列 BlockingQueue</a></p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<p><a href="http://www.importnew.com/28053.html" target="_blank" rel="noopener">解读 Java 并发队列 BlockingQueue</a></p>
 
       
     </div>
@@ -826,7 +845,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -891,7 +910,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1189,7 +1210,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-容器之-Queue"><span class="nav-text">Java 容器之 Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-架构"><span class="nav-text">Queue 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Queue-接口"><span class="nav-text">Queue 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BlockingQueue-接口"><span class="nav-text">BlockingQueue 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AbstractQueue-抽象类"><span class="nav-text">AbstractQueue 抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PriorityQueue-类"><span class="nav-text">PriorityQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityQueue-要点"><span class="nav-text">PriorityQueue 要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PriorityBlockingQueue-类"><span class="nav-text">PriorityBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityBlockingQueue-要点"><span class="nav-text">PriorityBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PriorityBlockingQueue-原理"><span class="nav-text">PriorityBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LinkedBlockingQueue-类"><span class="nav-text">LinkedBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedBlockingQueue-要点"><span class="nav-text">LinkedBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LinkedBlockingQueue-原理"><span class="nav-text">LinkedBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ArrayBlockingQueue-类"><span class="nav-text">ArrayBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayBlockingQueue-要点"><span class="nav-text">ArrayBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ArrayBlockingQueue-原理"><span class="nav-text">ArrayBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SynchronousQueue"><span class="nav-text">SynchronousQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-容器之-queue"><span class="nav-text"> Java 容器之 Queue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#queue-架构"><span class="nav-text"> Queue 架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queue-接口"><span class="nav-text"> Queue 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blockingqueue-接口"><span class="nav-text"> BlockingQueue 接口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#abstractqueue-抽象类"><span class="nav-text"> AbstractQueue 抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priorityqueue-类"><span class="nav-text"> PriorityQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityqueue-要点"><span class="nav-text"> PriorityQueue 要点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priorityblockingqueue-类"><span class="nav-text"> PriorityBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityblockingqueue-要点"><span class="nav-text"> PriorityBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityblockingqueue-原理"><span class="nav-text"> PriorityBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#linkedblockingqueue-类"><span class="nav-text"> LinkedBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedblockingqueue-要点"><span class="nav-text"> LinkedBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedblockingqueue-原理"><span class="nav-text"> LinkedBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arrayblockingqueue-类"><span class="nav-text"> ArrayBlockingQueue 类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#arrayblockingqueue-要点"><span class="nav-text"> ArrayBlockingQueue 要点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arrayblockingqueue-原理"><span class="nav-text"> ArrayBlockingQueue 原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#synchronousqueue"><span class="nav-text"> SynchronousQueue</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1231,7 +1252,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

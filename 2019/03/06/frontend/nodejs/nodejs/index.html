@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Node.js 入门 Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置 Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL） 简单的表达式运算 使用变量 多行表达式   Node 的代码组织 模块路径解析规则">
+  <meta name="description" content="Node.js 入门  Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置  Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL）  简单的表达式运算 使用变量 多行表达式   Node 的代码组织  模块路">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js 入门">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/nodejs/nodejs/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Node.js 入门 Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置 Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL） 简单的表达式运算 使用变量 多行表达式   Node 的代码组织 模块路径解析规则">
+<meta property="og:description" content="Node.js 入门  Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置  Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL）  简单的表达式运算 使用变量 多行表达式   Node 的代码组织  模块路">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106200239.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.877Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js 入门">
-<meta name="twitter:description" content="Node.js 入门 Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置 Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL） 简单的表达式运算 使用变量 多行表达式   Node 的代码组织 模块路径解析规则">
+<meta name="twitter:description" content="Node.js 入门  Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。 关键词： nodejs, REPL， require, exports    安装配置  Windows / IOS Linux / Ubuntu / Debian 第一个应用   交互式解释器（REPL）  简单的表达式运算 使用变量 多行表达式   Node 的代码组织  模块路">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106200239.png">
 
 
@@ -479,55 +479,66 @@
       
 
       
-        <h1 id="Node-js-入门"><a href="#Node-js-入门" class="headerlink" title="Node.js 入门"></a>Node.js 入门</h1><blockquote>
+        <h1 id="nodejs-入门"><a class="markdownIt-Anchor" href="#nodejs-入门"></a> Node.js 入门</h1>
+<blockquote>
 <p>Node.js 是一个能够在服务器端运行 JavaScript 源代码的跨平台运行环境。</p>
 <p>关键词： <code>nodejs</code>, <code>REPL</code>， <code>require</code>, <code>exports</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装配置">安装配置</a><ul>
+<li><a href="#%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE">安装配置</a>
+<ul>
 <li><a href="#windows--ios">Windows / IOS</a></li>
 <li><a href="#linux--ubuntu--debian">Linux / Ubuntu / Debian</a></li>
-<li><a href="#第一个应用">第一个应用</a></li>
+<li><a href="#%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8">第一个应用</a></li>
 </ul>
 </li>
-<li><a href="#交互式解释器repl">交互式解释器（REPL）</a><ul>
-<li><a href="#简单的表达式运算">简单的表达式运算</a></li>
-<li><a href="#使用变量">使用变量</a></li>
-<li><a href="#多行表达式">多行表达式</a></li>
+<li><a href="#%E4%BA%A4%E4%BA%92%E5%BC%8F%E8%A7%A3%E9%87%8A%E5%99%A8repl">交互式解释器（REPL）</a>
+<ul>
+<li><a href="#%E7%AE%80%E5%8D%95%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BF%90%E7%AE%97">简单的表达式运算</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E5%8F%98%E9%87%8F">使用变量</a></li>
+<li><a href="#%E5%A4%9A%E8%A1%8C%E8%A1%A8%E8%BE%BE%E5%BC%8F">多行表达式</a></li>
 </ul>
 </li>
-<li><a href="#node-的代码组织">Node 的代码组织</a><ul>
-<li><a href="#模块路径解析规则">模块路径解析规则</a></li>
-<li><a href="#包package">包（package）</a></li>
+<li><a href="#node-%E7%9A%84%E4%BB%A3%E7%A0%81%E7%BB%84%E7%BB%87">Node 的代码组织</a>
+<ul>
+<li><a href="#%E6%A8%A1%E5%9D%97%E8%B7%AF%E5%BE%84%E8%A7%A3%E6%9E%90%E8%A7%84%E5%88%99">模块路径解析规则</a></li>
+<li><a href="#%E5%8C%85package">包（package）</a></li>
 <li><a href="#indexjs">index.js</a></li>
 <li><a href="#packagejson">package.json</a></li>
-<li><a href="#命令行程序">命令行程序</a></li>
-<li><a href="#工程目录">工程目录</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%A8%8B%E5%BA%8F">命令行程序</a></li>
+<li><a href="#%E5%B7%A5%E7%A8%8B%E7%9B%AE%E5%BD%95">工程目录</a></li>
 </ul>
 </li>
-<li><a href="#node-的-io-操作">Node 的 IO 操作</a><ul>
+<li><a href="#node-%E7%9A%84-io-%E6%93%8D%E4%BD%9C">Node 的 IO 操作</a>
+<ul>
 <li><a href="#buffer">Buffer</a></li>
 <li><a href="#stream">Stream</a></li>
-<li><a href="#文件系统">文件系统</a></li>
+<li><a href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">文件系统</a></li>
 </ul>
 </li>
-<li><a href="#nodejs-工具">Node.js 工具</a><ul>
+<li><a href="#nodejs-%E5%B7%A5%E5%85%B7">Node.js 工具</a>
+<ul>
 <li><a href="#nvm">nvm</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="Windows-IOS"><a href="#Windows-IOS" class="headerlink" title="Windows / IOS"></a>Windows / IOS</h3><p>可以在官方下载安装文件：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>。</p>
+<h2 id="安装配置"><a class="markdownIt-Anchor" href="#安装配置"></a> 安装配置</h2>
+<h3 id="windows-ios"><a class="markdownIt-Anchor" href="#windows-ios"></a> Windows / IOS</h3>
+<p>可以在官方下载安装文件：<a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106200239.png"></div><br></p>
-<h3 id="Linux-Ubuntu-Debian"><a href="#Linux-Ubuntu-Debian" class="headerlink" title="Linux / Ubuntu / Debian"></a>Linux / Ubuntu / Debian</h3><p>命令格式如下：</p>
+<h3 id="linux-ubuntu-debian"><a class="markdownIt-Anchor" href="#linux-ubuntu-debian"></a> Linux / Ubuntu / Debian</h3>
+<p>命令格式如下：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -</span><br><span class="line">sudo apt-get install -y nodejs</span><br></pre></td></tr></table></figure>
 <p>详细内容参考官方文档：<a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="noopener">通过包管理器安装 Node.js</a></p>
-<h3 id="第一个应用"><a href="#第一个应用" class="headerlink" title="第一个应用"></a>第一个应用</h3><p>创建 helloworld.js 文件，内容如下：</p>
+<h3 id="第一个应用"><a class="markdownIt-Anchor" href="#第一个应用"></a> 第一个应用</h3>
+<p>创建 helloworld.js 文件，内容如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">helloworld</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br><span class="line">helloworld();</span><br></pre></td></tr></table></figure>
 <p>执行命令 <code>node helloworld.js</code> 运行脚本。</p>
-<h2 id="交互式解释器（REPL）"><a href="#交互式解释器（REPL）" class="headerlink" title="交互式解释器（REPL）"></a>交互式解释器（REPL）</h2><p>Node.js REPL(Read Eval Print Loop:交互式解释器) 表示一个电脑的环境，类似 Window 系统的终端或 Unix/Linux shell，我们可以在终端中输入命令，并接收系统的响应。</p>
+<h2 id="交互式解释器repl"><a class="markdownIt-Anchor" href="#交互式解释器repl"></a> 交互式解释器（REPL）</h2>
+<p>Node.js REPL(Read Eval Print Loop:交互式解释器) 表示一个电脑的环境，类似 Window 系统的终端或 Unix/Linux shell，我们可以在终端中输入命令，并接收系统的响应。</p>
 <p>Node 自带了交互式解释器，可以执行以下任务：</p>
 <ul>
 <li><strong>读取</strong> - 读取用户输入，解析输入了 Javascript 数据结构并存储在内存中。</li>
@@ -537,46 +548,59 @@
 </ul>
 <p>Node 的交互式解释器可以很好的调试 Javascript 代码。</p>
 <p>我们可以输入 <code>node</code> 命令来启动 Node 的终端：</p>
-<h3 id="简单的表达式运算"><a href="#简单的表达式运算" class="headerlink" title="简单的表达式运算"></a>简单的表达式运算</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; 1 + 4</span><br><span class="line">5</span><br><span class="line">&gt; 1 + ( 2 * 3 ) - 4</span><br><span class="line">2.5</span><br></pre></td></tr></table></figure>
-<h3 id="使用变量"><a href="#使用变量" class="headerlink" title="使用变量"></a>使用变量</h3><p>你可以将数据存储在变量中，并在你需要的时候使用它。</p>
+<h3 id="简单的表达式运算"><a class="markdownIt-Anchor" href="#简单的表达式运算"></a> 简单的表达式运算</h3>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; 1 + 4</span><br><span class="line">5</span><br><span class="line">&gt; 1 + ( 2 * 3 ) - 4</span><br><span class="line">2.5</span><br></pre></td></tr></table></figure>
+<h3 id="使用变量"><a class="markdownIt-Anchor" href="#使用变量"></a> 使用变量</h3>
+<p>你可以将数据存储在变量中，并在你需要的时候使用它。</p>
 <p>变量声明需要使用  <code>var</code>  关键字，如果没有使用 <code>var</code> 关键字变量会直接打印出来。</p>
 <p>使用  <code>var</code>  关键字的变量可以使用 <code>console.log()</code> 来输出变量。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; x = 10</span><br><span class="line">10</span><br><span class="line">&gt; var y = 10</span><br><span class="line">undefined</span><br><span class="line">&gt; x + y</span><br><span class="line">20</span><br><span class="line">&gt; console.log(&quot;Hello World&quot;)</span><br><span class="line">Hello World</span><br><span class="line">undefined</span><br><span class="line">&gt; console.log(&quot;www.runoob.com&quot;)</span><br><span class="line">www.runoob.com</span><br><span class="line">undefined</span><br></pre></td></tr></table></figure>
-<h3 id="多行表达式"><a href="#多行表达式" class="headerlink" title="多行表达式"></a>多行表达式</h3><p>Node REPL 支持输入多行表达式，这就有点类似 JavaScript。接下来让我们来执行一个 do-while 循环：</p>
+<h3 id="多行表达式"><a class="markdownIt-Anchor" href="#多行表达式"></a> 多行表达式</h3>
+<p>Node REPL 支持输入多行表达式，这就有点类似 JavaScript。接下来让我们来执行一个 do-while 循环：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ node</span><br><span class="line">&gt; var x = 0</span><br><span class="line">undefined</span><br><span class="line">&gt; do &#123;</span><br><span class="line">... x++;</span><br><span class="line">... console.log(&quot;x: &quot; + x);</span><br><span class="line">... &#125; while ( x &lt; 5 );</span><br><span class="line">x: 1</span><br><span class="line">x: 2</span><br><span class="line">x: 3</span><br><span class="line">x: 4</span><br><span class="line">x: 5</span><br><span class="line">undefined</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 <p><strong>…</strong>  三个点的符号是系统自动生成的，你回车换行后即可。Node 会自动检测是否为连续的表达式。</p>
 <p>不会打乱对象原有的继承关系。</p>
-<h2 id="Node-的代码组织"><a href="#Node-的代码组织" class="headerlink" title="Node 的代码组织"></a>Node 的代码组织</h2><p>有经验的 C 程序员在编写一个新程序时首先从 make 文件写起。同样的，使用 Node.js 编写程序前，为了有个良好的开端，首先需要准备好代码的目录结构和部署方式，就如同修房子要先搭脚手架。本章将介绍与之相关的各种知识。</p>
-<h3 id="模块路径解析规则"><a href="#模块路径解析规则" class="headerlink" title="模块路径解析规则"></a>模块路径解析规则</h3><p>我们已经知道，<code>require</code> 函数支持斜杠（<code>/</code>）或盘符（<code>C:</code>）开头的绝对路径，也支持<code>./</code>开头的相对路径。但这两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，变得牵一发动全身。因此，<code>require</code>函数支持第三种形式的路径，写法类似于<code>foo/bar</code>，并依次按照以下规则解析路径，直到找到模块位置。</p>
-<h4 id="内置模块"><a href="#内置模块" class="headerlink" title="内置模块"></a>内置模块</h4><p>如果传递给 <code>require</code> 函数的是 Node.js 内置模块名称，不做路径解析，直接返回内部模块的导出对象，例如<code>require(&quot;fs&quot;)</code>。</p>
-<h4 id="node-modules-目录"><a href="#node-modules-目录" class="headerlink" title="node_modules 目录"></a>node_modules 目录</h4><p>Node.js 定义了一个特殊的 <code>node_modules</code> 目录用于存放模块。</p>
-<p>例如某个模块的绝对路径是 <code>/home/user/hello.js</code>，在该模块中使用 <code>require(&#39;foo/bar&#39;)</code> 方式加载模块时，则 Node.js 会依次尝试使用以下路径。</p>
+<h2 id="node-的代码组织"><a class="markdownIt-Anchor" href="#node-的代码组织"></a> Node 的代码组织</h2>
+<p>有经验的 C 程序员在编写一个新程序时首先从 make 文件写起。同样的，使用 Node.js 编写程序前，为了有个良好的开端，首先需要准备好代码的目录结构和部署方式，就如同修房子要先搭脚手架。本章将介绍与之相关的各种知识。</p>
+<h3 id="模块路径解析规则"><a class="markdownIt-Anchor" href="#模块路径解析规则"></a> 模块路径解析规则</h3>
+<p>我们已经知道，<code>require</code> 函数支持斜杠（<code>/</code>）或盘符（<code>C:</code>）开头的绝对路径，也支持<code>./</code>开头的相对路径。但这两种路径在模块之间建立了强耦合关系，一旦某个模块文件的存放位置需要变更，使用该模块的其它模块的代码也需要跟着调整，变得牵一发动全身。因此，<code>require</code>函数支持第三种形式的路径，写法类似于<code>foo/bar</code>，并依次按照以下规则解析路径，直到找到模块位置。</p>
+<h4 id="内置模块"><a class="markdownIt-Anchor" href="#内置模块"></a> 内置模块</h4>
+<p>如果传递给 <code>require</code> 函数的是 Node.js 内置模块名称，不做路径解析，直接返回内部模块的导出对象，例如<code>require(&quot;fs&quot;)</code>。</p>
+<h4 id="node_modules-目录"><a class="markdownIt-Anchor" href="#node_modules-目录"></a> node_modules 目录</h4>
+<p>Node.js 定义了一个特殊的 <code>node_modules</code> 目录用于存放模块。</p>
+<p>例如某个模块的绝对路径是 <code>/home/user/hello.js</code>，在该模块中使用 <code>require('foo/bar')</code> 方式加载模块时，则 Node.js 会依次尝试使用以下路径。</p>
 <figure class="highlight dts"><table><tr><td class="code"><pre><span class="line"><span class="meta-keyword">/home/</span>user/node_modules<span class="meta-keyword">/foo/</span>bar</span><br><span class="line"><span class="meta-keyword">/home/</span>node_modules<span class="meta-keyword">/foo/</span>bar</span><br><span class="line">/node_modules<span class="meta-keyword">/foo/</span>bar</span><br></pre></td></tr></table></figure>
-<h4 id="NODE-PATH-环境变量"><a href="#NODE-PATH-环境变量" class="headerlink" title="NODE_PATH 环境变量"></a>NODE_PATH 环境变量</h4><p>与 <code>PATH</code> 环境变量类似，Node.js 允许通过 <code>NODE_PATH</code> 环境变量来指定额外的模块搜索路径。</p>
+<h4 id="node_path-环境变量"><a class="markdownIt-Anchor" href="#node_path-环境变量"></a> NODE_PATH 环境变量</h4>
+<p>与 <code>PATH</code> 环境变量类似，Node.js 允许通过 <code>NODE_PATH</code> 环境变量来指定额外的模块搜索路径。</p>
 <p><code>NODE_PATH</code> 环境变量中包含一到多个目录路径，路径之间在 Linux 下使用<code>:</code>分隔，在 Windows 下使用<code>;</code>分隔。例如定义了以下 <code>NODE_PATH</code> 环境变量：</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">NODE_PATH=/<span class="built_in">home</span>/user/lib:/<span class="built_in">home</span>/lib</span><br></pre></td></tr></table></figure>
-<p>当使用 <code>require(&#39;foo/bar&#39;)</code> 的方式加载模块时，则 Node.js 依次尝试以下路径。</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><span class="line">NODE_PATH=<span class="regexp">/home/u</span>ser/lib:<span class="regexp">/home/</span>lib</span><br></pre></td></tr></table></figure>
+<p>当使用 <code>require('foo/bar')</code> 的方式加载模块时，则 Node.js 依次尝试以下路径。</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">/home/user/<span class="class"><span class="keyword">lib</span>/<span class="title">foo</span>/<span class="title">bar</span></span></span><br><span class="line">/home/<span class="class"><span class="keyword">lib</span>/<span class="title">foo</span>/<span class="title">bar</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="包（package）"><a href="#包（package）" class="headerlink" title="包（package）"></a>包（package）</h3><p>我们已经知道了 JS 模块的基本单位是单个 JS 文件，但复杂些的模块往往由多个子模块组成。为了便于管理和使用，我们可以把由多个子模块组成的大模块称做<code>包</code>，并把所有子模块放在同一个目录里。</p>
+<h3 id="包package"><a class="markdownIt-Anchor" href="#包package"></a> 包（package）</h3>
+<p>我们已经知道了 JS 模块的基本单位是单个 JS 文件，但复杂些的模块往往由多个子模块组成。为了便于管理和使用，我们可以把由多个子模块组成的大模块称做<code>包</code>，并把所有子模块放在同一个目录里。</p>
 <p>在组成一个包的所有子模块中，需要有一个入口模块，入口模块的导出对象被作为包的导出对象。例如有以下目录结构。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">- /home/user/lib/</span><br><span class="line">    - cat/</span><br><span class="line">        head.js</span><br><span class="line">        <span class="selector-tag">body</span>.js</span><br><span class="line">        main.js</span><br></pre></td></tr></table></figure>
 <p>其中<code>cat</code>目录定义了一个包，其中包含了 3 个子模块。<code>main.js</code>作为入口模块，其内容如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> head = <span class="built_in">require</span>(<span class="string">"./head"</span>);</span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">require</span>(<span class="string">"./body"</span>);</span><br><span class="line"></span><br><span class="line">exports.create = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    name: name,</span><br><span class="line">    head: head.create(),</span><br><span class="line">    body: body.create()</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>在其它模块里使用包的时候，需要加载包的入口模块。接着上例，使用<code>require(&#39;/home/user/lib/cat/main&#39;)</code>能达到目的，但是入口模块名称出现在路径里看上去不是个好主意。因此我们需要做点额外的工作，让包使用起来更像是单个模块。</p>
-<h3 id="index-js"><a href="#index-js" class="headerlink" title="index.js"></a>index.js</h3><p>当模块的文件名是<code>index.js</code>，加载模块时可以使用模块所在目录的路径代替模块文件路径，因此接着上例，以下两条语句等价。</p>
+<p>在其它模块里使用包的时候，需要加载包的入口模块。接着上例，使用<code>require('/home/user/lib/cat/main')</code>能达到目的，但是入口模块名称出现在路径里看上去不是个好主意。因此我们需要做点额外的工作，让包使用起来更像是单个模块。</p>
+<h3 id="indexjs"><a class="markdownIt-Anchor" href="#indexjs"></a> index.js</h3>
+<p>当模块的文件名是<code>index.js</code>，加载模块时可以使用模块所在目录的路径代替模块文件路径，因此接着上例，以下两条语句等价。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> cat = <span class="built_in">require</span>(<span class="string">"/home/user/lib/cat"</span>);</span><br><span class="line"><span class="keyword">var</span> cat = <span class="built_in">require</span>(<span class="string">"/home/user/lib/cat/index"</span>);</span><br></pre></td></tr></table></figure>
 <p>这样处理后，就只需要把包目录路径传递给<code>require</code>函数，感觉上整个目录被当作单个模块使用，更有整体感。</p>
-<h3 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h3><p>如果想自定义入口模块的文件名和存放位置，就需要在包目录下包含一个<code>package.json</code>文件，并在其中指定入口模块的路径。上例中的<code>cat</code>模块可以重构如下。</p>
+<h3 id="packagejson"><a class="markdownIt-Anchor" href="#packagejson"></a> package.json</h3>
+<p>如果想自定义入口模块的文件名和存放位置，就需要在包目录下包含一个<code>package.json</code>文件，并在其中指定入口模块的路径。上例中的<code>cat</code>模块可以重构如下。</p>
 <figure class="highlight crystal"><table><tr><td class="code"><pre><span class="line">- <span class="regexp">/home/user</span><span class="regexp">/lib/</span></span><br><span class="line">    - cat/</span><br><span class="line">        + doc/</span><br><span class="line">        - <span class="class"><span class="keyword">lib</span>/</span></span><br><span class="line">            head.js</span><br><span class="line">            body.js</span><br><span class="line">            main.js</span><br><span class="line">        + tests/</span><br><span class="line">        package.json</span><br></pre></td></tr></table></figure>
 <p>其中<code>package.json</code>内容如下。</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"cat"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"./lib/main.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如此一来，就同样可以使用<code>require(&#39;/home/user/lib/cat&#39;)</code>的方式加载模块。Node.js 会根据包目录下的<code>package.json</code>找到入口模块所在位置。</p>
-<h3 id="命令行程序"><a href="#命令行程序" class="headerlink" title="命令行程序"></a>命令行程序</h3><p>使用 Node.js 编写的东西，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。因此我们在部署代码时需要一些技巧，让用户觉得自己是在使用一个命令行程序。</p>
+<p>如此一来，就同样可以使用<code>require('/home/user/lib/cat')</code>的方式加载模块。Node.js 会根据包目录下的<code>package.json</code>找到入口模块所在位置。</p>
+<h3 id="命令行程序"><a class="markdownIt-Anchor" href="#命令行程序"></a> 命令行程序</h3>
+<p>使用 Node.js 编写的东西，要么是一个包，要么是一个命令行程序，而前者最终也会用于开发后者。因此我们在部署代码时需要一些技巧，让用户觉得自己是在使用一个命令行程序。</p>
 <p>例如我们用 Node.js 写了个程序，可以把命令行参数原样打印出来。该程序很简单，在主模块内实现了所有功能。并且写好后，我们把该程序部署在<code>/home/user/bin/node-echo.js</code>这个位置。为了在任何目录下都能运行该程序，我们需要使用以下终端命令。</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span> <span class="title">/home</span>/user/bin/<span class="keyword">node</span><span class="title">-echo</span>.js Hello World</span><br><span class="line">Hello World</span><br></pre></td></tr></table></figure>
 <p>这种使用方式看起来不怎么像是一个命令行程序，下边的才是我们期望的方式。</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ <span class="keyword">node</span><span class="title">-echo</span> Hello World</span><br></pre></td></tr></table></figure>
-<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><p>在 Linux 系统下，我们可以把 JS 文件当作 shell 脚本来运行，从而达到上述目的，具体步骤如下：</p>
+<h4 id="linux"><a class="markdownIt-Anchor" href="#linux"></a> Linux</h4>
+<p>在 Linux 系统下，我们可以把 JS 文件当作 shell 脚本来运行，从而达到上述目的，具体步骤如下：</p>
 <p>（1）在 shell 脚本中，可以通过<code>#!</code>注释来指定当前脚本使用的解析器。所以我们首先在<code>node-echo.js</code>文件顶部增加以下一行注释，表明当前脚本使用 Node.js 解析。</p>
 <figure class="highlight d"><table><tr><td class="code"><pre><span class="line"><span class="meta">#! /usr/bin/env node</span></span><br></pre></td></tr></table></figure>
 <p>Node.js 会忽略掉位于 JS 模块首行的<code>#!</code>注释，不必担心这行注释是非法语句。</p>
@@ -585,18 +609,23 @@
 <p>（3）最后，我们在 PATH 环境变量中指定的某个目录下，例如在<code>/usr/local/bin</code>下边创建一个软链文件，文件名与我们希望使用的终端命令同名，命令如下：</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">$ sudo ln -s /home/user/bin/<span class="keyword">node</span><span class="title">-echo</span>.js /usr/local/bin/<span class="keyword">node</span><span class="title">-echo</span></span><br></pre></td></tr></table></figure>
 <p>这样处理后，我们就可以在任何目录下使用<code>node-echo</code>命令了。</p>
-<h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>在 Windows 系统下的做法完全不同，我们得靠<code>.cmd</code>文件来解决问题。假设<code>node-echo.js</code>存放在<code>C:\Users\user\bin</code>目录，并且该目录已经添加到 PATH 环境变量里了。接下来需要在该目录下新建一个名为<code>node-echo.cmd</code>的文件，文件内容如下：</p>
+<h4 id="windows"><a class="markdownIt-Anchor" href="#windows"></a> Windows</h4>
+<p>在 Windows 系统下的做法完全不同，我们得靠<code>.cmd</code>文件来解决问题。假设<code>node-echo.js</code>存放在<code>C:\Users\user\bin</code>目录，并且该目录已经添加到 PATH 环境变量里了。接下来需要在该目录下新建一个名为<code>node-echo.cmd</code>的文件，文件内容如下：</p>
 <figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">@<span class="keyword">node</span> <span class="title">"C</span>:\User\user\bin\<span class="keyword">node</span><span class="title">-echo</span>.js<span class="string">" %*</span></span><br></pre></td></tr></table></figure>
 <p>这样处理后，我们就可以在任何目录下使用<code>node-echo</code>命令了。</p>
-<h3 id="工程目录"><a href="#工程目录" class="headerlink" title="工程目录"></a>工程目录</h3><p>了解了以上知识后，现在我们可以来完整地规划一个工程目录了。以编写一个命令行程序为例，一般我们会同时提供命令行模式和 API 模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。因此，一个标准的工程目录都看起来像下边这样。</p>
+<h3 id="工程目录"><a class="markdownIt-Anchor" href="#工程目录"></a> 工程目录</h3>
+<p>了解了以上知识后，现在我们可以来完整地规划一个工程目录了。以编写一个命令行程序为例，一般我们会同时提供命令行模式和 API 模式两种使用方式，并且我们会借助三方包来编写代码。除了代码外，一个完整的程序也应该有自己的文档和测试用例。因此，一个标准的工程目录都看起来像下边这样。</p>
 <figure class="highlight clean"><table><tr><td class="code"><pre><span class="line">- /home/user/workspace/node-echo/   ## 工程目录</span><br><span class="line">    - bin/                          ## 存放命令行相关代码</span><br><span class="line">        node-echo</span><br><span class="line">    + docs/                          ## 存放文档</span><br><span class="line">    - libs/                          ## 存放API相关代码</span><br><span class="line">        echo.js</span><br><span class="line">    - node_modules/                 ## 存放三方包</span><br><span class="line">        + argv/</span><br><span class="line">    + tests/                        ## 存放测试用例</span><br><span class="line">    package.json                    ## 元数据文件</span><br><span class="line">    README.md                       ## 说明文件</span><br></pre></td></tr></table></figure>
 <p>其中部分文件内容如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* bin/node-echo */</span></span><br><span class="line"><span class="keyword">var</span> argv = <span class="built_in">require</span>(<span class="string">'argv'</span>),</span><br><span class="line">    echo = <span class="built_in">require</span>(<span class="string">'../lib/echo'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(echo(argv.join(<span class="string">' '</span>)));</span><br><span class="line"></span><br><span class="line"><span class="comment">/* lib/echo.js */</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span> (<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> message;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* package.json */</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"name"</span>: <span class="string">"node-echo"</span>,</span><br><span class="line">    <span class="string">"main"</span>: <span class="string">"./lib/echo.js"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>以上例子中分类存放了不同类型的文件，并通过<code>node_moudles</code>目录直接使用三方包名加载模块。此外，定义了<code>package.json</code>之后，<code>node-echo</code>目录也可被当作一个包来使用。</p>
-<h2 id="Node-的-IO-操作"><a href="#Node-的-IO-操作" class="headerlink" title="Node 的 IO 操作"></a>Node 的 IO 操作</h2><h3 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h3><p>JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。</p>
+<h2 id="node-的-io-操作"><a class="markdownIt-Anchor" href="#node-的-io-操作"></a> Node 的 IO 操作</h2>
+<h3 id="buffer"><a class="markdownIt-Anchor" href="#buffer"></a> Buffer</h3>
+<p>JavaScript 语言自身只有字符串数据类型，没有二进制数据类型。</p>
 <p>但在处理像 TCP 流或文件流时，必须使用到二进制数据。因此在 Node.js 中，定义了一个 Buffer 类，该类用来创建一个专门存放二进制数据的缓存区。</p>
 <p>在 Node.js 中，Buffer 类是随 Node 内核一起发布的核心库。Buffer 库为 Node.js 带来了一种存储原始数据的方法，可以让 Node.js 处理二进制数据，每当需要在 Node.js 中处理 I/O 操作中移动的数据时，就有可能使用 Buffer 库。原始数据存储在 Buffer 类的实例中。一个 Buffer 类似于一个整数数组，但它对应于 V8 堆内存之外的一块原始内存。</p>
-<h4 id="创建-Buffer"><a href="#创建-Buffer" class="headerlink" title="创建 Buffer"></a>创建 Buffer</h4><p>Node Buffer 类可以通过多种方式来创建。</p>
+<h4 id="创建-buffer"><a class="markdownIt-Anchor" href="#创建-buffer"></a> 创建 Buffer</h4>
+<p>Node Buffer 类可以通过多种方式来创建。</p>
 <ol>
 <li>创建指定长度的的 Buffer 实例：</li>
 </ol>
@@ -610,7 +639,8 @@
 </ol>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> Buffer(<span class="string">"How are you?"</span>, <span class="string">"utf-8"</span>);</span><br></pre></td></tr></table></figure>
 <p><code>utf-8</code> 是默认的编码方式，此外它同样支持以下编码：<code>ascii</code>, <code>utf8</code>, <code>utf16le</code>, <code>ucs2</code>, <code>base64</code> 和 <code>hex</code>。</p>
-<h4 id="写入缓冲区"><a href="#写入缓冲区" class="headerlink" title="写入缓冲区"></a>写入缓冲区</h4><p><strong>语法</strong></p>
+<h4 id="写入缓冲区"><a class="markdownIt-Anchor" href="#写入缓冲区"></a> 写入缓冲区</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.write(string[, offset[, length]][, encoding])</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -624,8 +654,9 @@
 <p><strong>示例</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buf1 = <span class="keyword">new</span> Buffer(<span class="number">10</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buf1 写入字节数: "</span> + buf1.write(<span class="string">"0123456789"</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buf2 = <span class="keyword">new</span> Buffer(<span class="number">5</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buf2 写入字节数: "</span> + buf2.write(<span class="string">"0123456789"</span>));</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
-<h4 id="从缓冲区读取数据"><a href="#从缓冲区读取数据" class="headerlink" title="从缓冲区读取数据"></a>从缓冲区读取数据</h4><p><strong>语法</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">10</span></span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+<h4 id="从缓冲区读取数据"><a class="markdownIt-Anchor" href="#从缓冲区读取数据"></a> 从缓冲区读取数据</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.toString([encoding[, start[, end]]])</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -637,7 +668,8 @@
 <p>解码缓冲区数据并使用指定的编码返回字符串。</p>
 <p><strong>实例</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf = <span class="keyword">new</span> Buffer(<span class="number">26</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">  buf[i] = i + <span class="number">97</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="string">"ascii"</span>)); <span class="comment">// 输出: abcdefghijklmnopqrstuvwxyz</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="string">"ascii"</span>, <span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// 输出: abcde</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="string">"utf8"</span>, <span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// 输出: abcde</span></span><br><span class="line"><span class="built_in">console</span>.log(buf.toString(<span class="literal">undefined</span>, <span class="number">0</span>, <span class="number">5</span>)); <span class="comment">// 使用 'utf8' 编码, 并输出: abcde</span></span><br></pre></td></tr></table></figure>
-<h4 id="将-Buffer-转换为-JSON-对象"><a href="#将-Buffer-转换为-JSON-对象" class="headerlink" title="将 Buffer 转换为 JSON 对象"></a>将 Buffer 转换为 JSON 对象</h4><p><strong>语法</strong></p>
+<h4 id="将-buffer-转换为-json-对象"><a class="markdownIt-Anchor" href="#将-buffer-转换为-json-对象"></a> 将 Buffer 转换为 JSON 对象</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.toJSON();</span><br></pre></td></tr></table></figure>
 <p><strong>返回</strong>值</p>
 <p>返回 JSON 对象。</p>
@@ -645,7 +677,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buf = <span class="keyword">new</span> Buffer(<span class="string">"goodbye"</span>);</span><br><span class="line"><span class="keyword">var</span> json = buf.toJSON(buf);</span><br><span class="line"><span class="built_in">console</span>.log(json);</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">&#123; <span class="attr">type</span>: <span class="string">'Buffer'</span>, <span class="attr">data</span>: [ <span class="number">103</span>, <span class="number">111</span>, <span class="number">111</span>, <span class="number">100</span>, <span class="number">98</span>, <span class="number">121</span>, <span class="number">101</span> ] &#125;</span><br></pre></td></tr></table></figure>
-<h4 id="缓冲区合并"><a href="#缓冲区合并" class="headerlink" title="缓冲区合并"></a>缓冲区合并</h4><p><strong>语法</strong></p>
+<h4 id="缓冲区合并"><a class="markdownIt-Anchor" href="#缓冲区合并"></a> 缓冲区合并</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Buffer.concat(list[, totalLength])</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -658,7 +691,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer1 = <span class="keyword">new</span> Buffer(<span class="string">"Nothing is "</span>);</span><br><span class="line"><span class="keyword">var</span> buffer2 = <span class="keyword">new</span> Buffer(<span class="string">"impossible"</span>);</span><br><span class="line"><span class="keyword">var</span> buffer3 = Buffer.concat([buffer1, buffer2]);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buffer3 内容: "</span> + buffer3.toString());</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight kotlin"><table><tr><td class="code"><pre><span class="line">buffer3 内容: <span class="built_in">Nothing</span> <span class="keyword">is</span> impossible</span><br></pre></td></tr></table></figure>
-<h4 id="缓冲区比较"><a href="#缓冲区比较" class="headerlink" title="缓冲区比较"></a>缓冲区比较</h4><p><strong>语法</strong></p>
+<h4 id="缓冲区比较"><a class="markdownIt-Anchor" href="#缓冲区比较"></a> 缓冲区比较</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.compare(otherBuffer);</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <p>参数描述如下：</p>
@@ -671,7 +705,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer1 = <span class="keyword">new</span> Buffer(<span class="string">"ABC"</span>);</span><br><span class="line"><span class="keyword">var</span> buffer2 = <span class="keyword">new</span> Buffer(<span class="string">"ABCD"</span>);</span><br><span class="line"><span class="keyword">var</span> result = buffer1.compare(buffer2);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (result &lt; <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(buffer1 + <span class="string">" 在 "</span> + buffer2 + <span class="string">"之前"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(buffer1 + <span class="string">" 与 "</span> + buffer2 + <span class="string">"相同"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(buffer1 + <span class="string">" 在 "</span> + buffer2 + <span class="string">"之后"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ABC在ABCD之前</span><br></pre></td></tr></table></figure>
-<h4 id="拷贝缓冲区"><a href="#拷贝缓冲区" class="headerlink" title="拷贝缓冲区"></a>拷贝缓冲区</h4><p><strong>语法</strong></p>
+<h4 id="拷贝缓冲区"><a class="markdownIt-Anchor" href="#拷贝缓冲区"></a> 拷贝缓冲区</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.copy(targetBuffer[, targetStart[, sourceStart[, sourceEnd]]])</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -686,7 +721,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer1 = <span class="keyword">new</span> Buffer(<span class="string">"ABC"</span>);</span><br><span class="line"><span class="keyword">var</span> buffer2 = <span class="keyword">new</span> Buffer(<span class="number">3</span>);</span><br><span class="line">buffer1.copy(buffer2);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buffer2 内容: "</span> + buffer2.toString());</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">buffer2 </span>内容: ABC</span><br></pre></td></tr></table></figure>
-<h4 id="剪切缓冲区"><a href="#剪切缓冲区" class="headerlink" title="剪切缓冲区"></a>剪切缓冲区</h4><p><strong>语法</strong></p>
+<h4 id="剪切缓冲区"><a class="markdownIt-Anchor" href="#剪切缓冲区"></a> 剪切缓冲区</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.slice([start[, end]])</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -699,7 +735,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer1 = <span class="keyword">new</span> Buffer(<span class="string">"goodbye"</span>);</span><br><span class="line"><span class="keyword">var</span> buffer2 = buffer1.slice(<span class="number">0</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buffer2 内容: "</span> + buffer2.toString());</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line"><span class="keyword">buffer2 </span>内容: go</span><br></pre></td></tr></table></figure>
-<h4 id="缓冲区长度"><a href="#缓冲区长度" class="headerlink" title="缓冲区长度"></a>缓冲区长度</h4><p><strong>语法</strong></p>
+<h4 id="缓冲区长度"><a class="markdownIt-Anchor" href="#缓冲区长度"></a> 缓冲区长度</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">buf.length;</span><br></pre></td></tr></table></figure>
 <p><strong>返回值</strong></p>
 <p>返回 Buffer 对象所占据的内存长度。</p>
@@ -707,7 +744,8 @@
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> buffer = <span class="keyword">new</span> Buffer(<span class="string">"made in China"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"buffer length: "</span> + buffer.length);</span><br></pre></td></tr></table></figure>
 <p>执行以上代码，输出结果为：</p>
 <figure class="highlight glsl"><table><tr><td class="code"><pre><span class="line"><span class="keyword">buffer</span> <span class="built_in">length</span>: <span class="number">13</span></span><br></pre></td></tr></table></figure>
-<h3 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h3><p>Stream 是一个抽象接口，Node 中有很多对象实现了这个接口。例如，对 http 服务器发起请求的 request 对象就是一个 Stream，还有 stdout（标准输出）。</p>
+<h3 id="stream"><a class="markdownIt-Anchor" href="#stream"></a> Stream</h3>
+<p>Stream 是一个抽象接口，Node 中有很多对象实现了这个接口。例如，对 http 服务器发起请求的 request 对象就是一个 Stream，还有 stdout（标准输出）。</p>
 <p>Node.js，Stream 有四种流类型：</p>
 <ul>
 <li><strong>Readable</strong> - 可读操作。</li>
@@ -723,25 +761,32 @@
 <li><strong>finish</strong> - 所有数据已被写入到底层系统时触发。</li>
 </ul>
 <p>本教程会为大家介绍常用的流操作。</p>
-<h4 id="读取流"><a href="#读取流" class="headerlink" title="读取流"></a>读取流</h4><p>获取读取流</p>
+<h4 id="读取流"><a class="markdownIt-Anchor" href="#读取流"></a> 读取流</h4>
+<p>获取读取流</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> readerStream = fs.createReadStream(pathname);</span><br><span class="line"></span><br><span class="line">readerStream.on(<span class="string">"data"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">chunk</span>) </span>&#123;</span><br><span class="line">  doSomething(chunk);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">readerStream.on(<span class="string">"end"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  cleanUp();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <p>完整示例代码见：codes/chapter01/node/stream/streamDemo01.js</p>
-<h4 id="写入流"><a href="#写入流" class="headerlink" title="写入流"></a>写入流</h4><p>获取写入流</p>
+<h4 id="写入流"><a class="markdownIt-Anchor" href="#写入流"></a> 写入流</h4>
+<p>获取写入流</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> writerStream = fs.createWriteStream(<span class="string">"output.txt"</span>);</span><br><span class="line">writerStream.write(data, <span class="string">"UTF8"</span>);</span><br><span class="line">writerStream.end();</span><br></pre></td></tr></table></figure>
 <p>完整示例代码见：codes/chapter01/node/stream/streamDemo02.js</p>
-<h4 id="管道流"><a href="#管道流" class="headerlink" title="管道流"></a>管道流</h4><p>管道提供了一个输出流到输入流的机制。通常我们用于从一个流中获取数据并将数据传递到另外一个流中。</p>
+<h4 id="管道流"><a class="markdownIt-Anchor" href="#管道流"></a> 管道流</h4>
+<p>管道提供了一个输出流到输入流的机制。通常我们用于从一个流中获取数据并将数据传递到另外一个流中。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">var</span> readerStream = fs.createReadStream(<span class="string">"input.txt"</span>);</span><br><span class="line"><span class="keyword">var</span> writerStream = fs.createWriteStream(<span class="string">"output.txt"</span>);</span><br><span class="line">readerStream.pipe(writerStream);</span><br></pre></td></tr></table></figure>
 <p>完整示例代码见：codes/chapter01/node/stream/streamDemo03.js</p>
-<h4 id="链式流"><a href="#链式流" class="headerlink" title="链式流"></a>链式流</h4><p>链式是通过连接输出流到另外一个流并创建多个对个流操作链的机制。链式流一般用于管道操作。</p>
+<h4 id="链式流"><a class="markdownIt-Anchor" href="#链式流"></a> 链式流</h4>
+<p>链式是通过连接输出流到另外一个流并创建多个对个流操作链的机制。链式流一般用于管道操作。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">var</span> zlib = <span class="built_in">require</span>(<span class="string">"zlib"</span>);</span><br><span class="line">fs.createReadStream(<span class="string">"input.txt"</span>)</span><br><span class="line">  .pipe(zlib.createGzip())</span><br><span class="line">  .pipe(fs.createWriteStream(<span class="string">"input.txt.gz"</span>));</span><br></pre></td></tr></table></figure>
 <p>完整示例代码见：codes/chapter01/node/stream/streamDemo04.js</p>
-<h3 id="文件系统"><a href="#文件系统" class="headerlink" title="文件系统"></a>文件系统</h3><p>Node.js 提供一组类似 UNIX（POSIX）标准的文件操作 API。 Node 导入文件系统模块(fs)语法如下所示：</p>
+<h3 id="文件系统"><a class="markdownIt-Anchor" href="#文件系统"></a> 文件系统</h3>
+<p>Node.js 提供一组类似 UNIX（POSIX）标准的文件操作 API。 Node 导入文件系统模块(fs)语法如下所示：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="异步和同步"><a href="#异步和同步" class="headerlink" title="异步和同步"></a>异步和同步</h4><p>Node.js 文件系统（fs 模块）模块中的方法均有异步和同步版本，例如读取文件内容的函数有异步的 fs.readFile() 和同步的 fs.readFileSync()。</p>
+<h4 id="异步和同步"><a class="markdownIt-Anchor" href="#异步和同步"></a> 异步和同步</h4>
+<p>Node.js 文件系统（fs 模块）模块中的方法均有异步和同步版本，例如读取文件内容的函数有异步的 fs.readFile() 和同步的 fs.readFileSync()。</p>
 <p>异步的方法函数最后一个参数为回调函数，回调函数的第一个参数包含了错误信息(error)。</p>
 <p>建议大家是用异步方法，比起同步，异步方法性能更高，速度更快，而且没有阻塞。</p>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo01.js</p>
-<h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p><strong>语法</strong></p>
+<h4 id="打开文件"><a class="markdownIt-Anchor" href="#打开文件"></a> 打开文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.open(path, flags[, mode], callback)</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -810,7 +855,8 @@
 </tbody>
 </table>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo02.js</p>
-<h4 id="获取文件信息"><a href="#获取文件信息" class="headerlink" title="获取文件信息"></a>获取文件信息</h4><p><strong>语法</strong></p>
+<h4 id="获取文件信息"><a class="markdownIt-Anchor" href="#获取文件信息"></a> 获取文件信息</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.stat(path, callback);</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -858,7 +904,8 @@
 </tbody>
 </table>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo03.js</p>
-<h4 id="写入文件"><a href="#写入文件" class="headerlink" title="写入文件"></a>写入文件</h4><p><strong>语法</strong></p>
+<h4 id="写入文件"><a class="markdownIt-Anchor" href="#写入文件"></a> 写入文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.writeFile(file, data[, options], callback)</span><br></pre></td></tr></table></figure>
 <p>如果文件存在，该方法写入的内容会覆盖旧的文件内容。</p>
 <p><strong>参数</strong></p>
@@ -869,7 +916,8 @@
 <li><strong>callback</strong> - 回调函数，回调函数只包含错误信息参数(err)，在写入失败时返回。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo04.js</p>
-<h4 id="读取文件"><a href="#读取文件" class="headerlink" title="读取文件"></a>读取文件</h4><p><strong>语法</strong></p>
+<h4 id="读取文件"><a class="markdownIt-Anchor" href="#读取文件"></a> 读取文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.read(fd, buffer, offset, length, position, callback);</span><br></pre></td></tr></table></figure>
 <p>该方法使用了文件描述符来读取文件。</p>
 <p><strong>参数</strong></p>
@@ -882,7 +930,8 @@
 <li><strong>callback</strong> - 回调函数，有三个参数 err, bytesRead, buffer，err 为错误信息， bytesRead 表示读取的字节数，buffer 为缓冲区对象。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo05.js</p>
-<h4 id="关闭文件"><a href="#关闭文件" class="headerlink" title="关闭文件"></a>关闭文件</h4><p><strong>语法</strong></p>
+<h4 id="关闭文件"><a class="markdownIt-Anchor" href="#关闭文件"></a> 关闭文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.close(fd, callback);</span><br></pre></td></tr></table></figure>
 <p>该方法使用了文件描述符来读取文件。</p>
 <p><strong>参数</strong></p>
@@ -891,7 +940,8 @@
 <li><strong>callback</strong> - 回调函数，没有参数。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo06.js</p>
-<h4 id="截取文件"><a href="#截取文件" class="headerlink" title="截取文件"></a>截取文件</h4><p><strong>语法</strong></p>
+<h4 id="截取文件"><a class="markdownIt-Anchor" href="#截取文件"></a> 截取文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.ftruncate(fd, len, callback);</span><br></pre></td></tr></table></figure>
 <p>该方法使用了文件描述符来读取文件。</p>
 <p><strong>参数</strong></p>
@@ -901,7 +951,8 @@
 <li><strong>callback</strong> - 回调函数，没有参数。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo07.js</p>
-<h4 id="删除文件"><a href="#删除文件" class="headerlink" title="删除文件"></a>删除文件</h4><p><strong>语法</strong></p>
+<h4 id="删除文件"><a class="markdownIt-Anchor" href="#删除文件"></a> 删除文件</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.unlink(path, callback);</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -909,7 +960,8 @@
 <li><strong>callback</strong> - 回调函数，没有参数。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo08.js</p>
-<h4 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a>创建目录</h4><p><strong>语法</strong></p>
+<h4 id="创建目录"><a class="markdownIt-Anchor" href="#创建目录"></a> 创建目录</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.mkdir(path[, mode], callback)</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -918,7 +970,8 @@
 <li><strong>callback</strong> - 回调函数，没有参数。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo09.js</p>
-<h4 id="读取目录"><a href="#读取目录" class="headerlink" title="读取目录"></a>读取目录</h4><p><strong>语法</strong></p>
+<h4 id="读取目录"><a class="markdownIt-Anchor" href="#读取目录"></a> 读取目录</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.readdir(path, callback);</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -926,7 +979,8 @@
 <li><strong>callback</strong> - 回调函数，回调函数带有两个参数 err, files，err 为错误信息，files 为 目录下的文件数组列表。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo10.js</p>
-<h4 id="删除目录"><a href="#删除目录" class="headerlink" title="删除目录"></a>删除目录</h4><p><strong>语法</strong></p>
+<h4 id="删除目录"><a class="markdownIt-Anchor" href="#删除目录"></a> 删除目录</h4>
+<p><strong>语法</strong></p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">fs.rmdir(path, callback);</span><br></pre></td></tr></table></figure>
 <p><strong>参数</strong></p>
 <ul>
@@ -934,43 +988,51 @@
 <li><strong>callback</strong> - 回调函数，没有参数。</li>
 </ul>
 <p><strong>完整代码示例</strong>：codes/chapter01/node/fs/fsDemo11.js</p>
-<h2 id="Node-js-工具"><a href="#Node-js-工具" class="headerlink" title="Node.js 工具"></a>Node.js 工具</h2><h3 id="nvm"><a href="#nvm" class="headerlink" title="nvm"></a>nvm</h3><p><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 是 Node 版本管理器。</p>
+<h2 id="nodejs-工具"><a class="markdownIt-Anchor" href="#nodejs-工具"></a> Node.js 工具</h2>
+<h3 id="nvm"><a class="markdownIt-Anchor" href="#nvm"></a> nvm</h3>
+<p><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> 是 Node 版本管理器。</p>
 <p>安装</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 两条命令效果相同</span></span><br><span class="line">wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash</span><br><span class="line">curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash</span><br></pre></td></tr></table></figure>
 <p>设置环境变量</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="built_in">export</span> NVM_DIR=<span class="string">"<span class="variable">$&#123;XDG_CONFIG_HOME/:-$HOME/.&#125;</span>nvm"</span></span><br><span class="line">[ -s <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"<span class="variable">$NVM_DIR</span>/nvm.sh"</span></span><br></pre></td></tr></table></figure>
 <p>使用</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nvm install 6.14.4  <span class="comment"># 安装 Node.js 版本</span></span><br><span class="line">nvm use node6.14.4  <span class="comment"># 指定 Node.js 版本（必须已安装）</span></span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="nodejs.md">Node.js</a></li>
 <li><a href="npm.md">Npm</a></li>
 <li><a href="yarn.md">Yarn</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
-<li><strong>官方</strong><ul>
+<li><strong>官方</strong>
+<ul>
 <li><a href="https://nodejs.org/zh-cn/" target="_blank" rel="noopener">Node.js 官网</a></li>
 <li><a href="https://github.com/nodejs/node" target="_blank" rel="noopener">Node.js Github</a></li>
 </ul>
 </li>
-<li><strong>教程</strong><ul>
+<li><strong>教程</strong>
+<ul>
 <li><a href="https://github.com/alsotang/node-lessons" target="_blank" rel="noopener">Node.js 包教不包会</a></li>
 <li><a href="https://github.com/nswbmw/N-blog" target="_blank" rel="noopener">一起学 Node.js</a></li>
 <li><a href="https://github.com/nqdeng/7-days-nodejs" target="_blank" rel="noopener">七天学会 NodeJS</a></li>
 </ul>
 </li>
-<li><strong>规范</strong><ul>
+<li><strong>规范</strong>
+<ul>
 <li><a href="https://github.com/i0natan/nodebestpractices" target="_blank" rel="noopener">Node.JS 最佳实践</a></li>
 </ul>
 </li>
-<li><strong>工具</strong><ul>
+<li><strong>工具</strong>
+<ul>
 <li><a href="https://github.com/creationix/nvm" target="_blank" rel="noopener">nvm</a> - Node 版本管理器</li>
 </ul>
 </li>
-<li><strong>更多资源</strong><ul>
+<li><strong>更多资源</strong>
+<ul>
 <li><a href="https://github.com/sindresorhus/awesome-nodejs" target="_blank" rel="noopener">awesome-nodejs</a></li>
 </ul>
 </li>
@@ -1116,7 +1178,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1181,7 +1243,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1479,7 +1543,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Node-js-入门"><span class="nav-text">Node.js 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows-IOS"><span class="nav-text">Windows / IOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-Ubuntu-Debian"><span class="nav-text">Linux / Ubuntu / Debian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个应用"><span class="nav-text">第一个应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互式解释器（REPL）"><span class="nav-text">交互式解释器（REPL）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的表达式运算"><span class="nav-text">简单的表达式运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量"><span class="nav-text">使用变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行表达式"><span class="nav-text">多行表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-的代码组织"><span class="nav-text">Node 的代码组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块路径解析规则"><span class="nav-text">模块路径解析规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置模块"><span class="nav-text">内置模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node-modules-目录"><span class="nav-text">node_modules 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NODE-PATH-环境变量"><span class="nav-text">NODE_PATH 环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包（package）"><span class="nav-text">包（package）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#index-js"><span class="nav-text">index.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#package-json"><span class="nav-text">package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行程序"><span class="nav-text">命令行程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux"><span class="nav-text">Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows"><span class="nav-text">Windows</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程目录"><span class="nav-text">工程目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-的-IO-操作"><span class="nav-text">Node 的 IO 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Buffer"><span class="nav-text">Buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-Buffer"><span class="nav-text">创建 Buffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入缓冲区"><span class="nav-text">写入缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从缓冲区读取数据"><span class="nav-text">从缓冲区读取数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-Buffer-转换为-JSON-对象"><span class="nav-text">将 Buffer 转换为 JSON 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区合并"><span class="nav-text">缓冲区合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区比较"><span class="nav-text">缓冲区比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝缓冲区"><span class="nav-text">拷贝缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#剪切缓冲区"><span class="nav-text">剪切缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区长度"><span class="nav-text">缓冲区长度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Stream"><span class="nav-text">Stream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取流"><span class="nav-text">读取流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入流"><span class="nav-text">写入流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管道流"><span class="nav-text">管道流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式流"><span class="nav-text">链式流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统"><span class="nav-text">文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步和同步"><span class="nav-text">异步和同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开文件"><span class="nav-text">打开文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取文件信息"><span class="nav-text">获取文件信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入文件"><span class="nav-text">写入文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取文件"><span class="nav-text">读取文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭文件"><span class="nav-text">关闭文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#截取文件"><span class="nav-text">截取文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-text">删除文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建目录"><span class="nav-text">创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取目录"><span class="nav-text">读取目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除目录"><span class="nav-text">删除目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Node-js-工具"><span class="nav-text">Node.js 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm"><span class="nav-text">nvm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nodejs-入门"><span class="nav-text"> Node.js 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-text"> 安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#windows-ios"><span class="nav-text"> Windows / IOS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-ubuntu-debian"><span class="nav-text"> Linux / Ubuntu / Debian</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个应用"><span class="nav-text"> 第一个应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互式解释器repl"><span class="nav-text"> 交互式解释器（REPL）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的表达式运算"><span class="nav-text"> 简单的表达式运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用变量"><span class="nav-text"> 使用变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多行表达式"><span class="nav-text"> 多行表达式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-的代码组织"><span class="nav-text"> Node 的代码组织</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模块路径解析规则"><span class="nav-text"> 模块路径解析规则</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内置模块"><span class="nav-text"> 内置模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node_modules-目录"><span class="nav-text"> node_modules 目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node_path-环境变量"><span class="nav-text"> NODE_PATH 环境变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#包package"><span class="nav-text"> 包（package）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexjs"><span class="nav-text"> index.js</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#packagejson"><span class="nav-text"> package.json</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行程序"><span class="nav-text"> 命令行程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#linux"><span class="nav-text"> Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#windows"><span class="nav-text"> Windows</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工程目录"><span class="nav-text"> 工程目录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#node-的-io-操作"><span class="nav-text"> Node 的 IO 操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#buffer"><span class="nav-text"> Buffer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建-buffer"><span class="nav-text"> 创建 Buffer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入缓冲区"><span class="nav-text"> 写入缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从缓冲区读取数据"><span class="nav-text"> 从缓冲区读取数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将-buffer-转换为-json-对象"><span class="nav-text"> 将 Buffer 转换为 JSON 对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区合并"><span class="nav-text"> 缓冲区合并</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区比较"><span class="nav-text"> 缓冲区比较</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#拷贝缓冲区"><span class="nav-text"> 拷贝缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#剪切缓冲区"><span class="nav-text"> 剪切缓冲区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#缓冲区长度"><span class="nav-text"> 缓冲区长度</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stream"><span class="nav-text"> Stream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取流"><span class="nav-text"> 读取流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入流"><span class="nav-text"> 写入流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#管道流"><span class="nav-text"> 管道流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式流"><span class="nav-text"> 链式流</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统"><span class="nav-text"> 文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#异步和同步"><span class="nav-text"> 异步和同步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开文件"><span class="nav-text"> 打开文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取文件信息"><span class="nav-text"> 获取文件信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#写入文件"><span class="nav-text"> 写入文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取文件"><span class="nav-text"> 读取文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭文件"><span class="nav-text"> 关闭文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#截取文件"><span class="nav-text"> 截取文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除文件"><span class="nav-text"> 删除文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建目录"><span class="nav-text"> 创建目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#读取目录"><span class="nav-text"> 读取目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除目录"><span class="nav-text"> 删除目录</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#nodejs-工具"><span class="nav-text"> Node.js 工具</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nvm"><span class="nav-text"> nvm</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1521,7 +1585,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

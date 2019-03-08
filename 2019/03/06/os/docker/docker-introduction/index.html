@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Docker 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。  概述Docker 是什么Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和在生产环境中">
+  <meta name="description" content="Docker 简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。   概述  Docker 是什么 Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 简介">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/docker-introduction/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。  概述Docker 是什么Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和在生产环境中">
+<meta property="og:description" content="Docker 简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。   概述  Docker 是什么 Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://docs.docker.com/engine/images/engine-components-flow.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/docker/containers-and-vm.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 简介">
-<meta name="twitter:description" content="Docker 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。  概述Docker 是什么Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和在生产环境中">
+<meta name="twitter:description" content="Docker 简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。   概述  Docker 是什么 Docker 是开发，传输和运行应用程序的开放平台。 Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。 借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和">
 <meta name="twitter:image" content="https://docs.docker.com/engine/images/engine-components-flow.png">
 
 
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.8k</span>
+                <span title="本文字数">2.9k</span>
               
 
               
@@ -480,50 +480,62 @@
       
 
       
-        <h1 id="Docker-简介"><a href="#Docker-简介" class="headerlink" title="Docker 简介"></a>Docker 简介</h1><blockquote>
+        <h1 id="docker-简介"><a class="markdownIt-Anchor" href="#docker-简介"></a> Docker 简介</h1>
+<blockquote>
 <p><strong>Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。</strong></p>
 </blockquote>
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="Docker-是什么"><a href="#Docker-是什么" class="headerlink" title="Docker 是什么"></a>Docker 是什么</h3><p>Docker 是开发，传输和运行应用程序的开放平台。</p>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<h3 id="docker-是什么"><a class="markdownIt-Anchor" href="#docker-是什么"></a> Docker 是什么</h3>
+<p>Docker 是开发，传输和运行应用程序的开放平台。</p>
 <p>Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。</p>
 <p>借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和在生产环境中运行代码之间的耗时。</p>
-<h3 id="Docker-平台"><a href="#Docker-平台" class="headerlink" title="Docker 平台"></a>Docker 平台</h3><p>Docker 提供了被称为容器的松散隔离环境，在环境中可以打包和运行应用程序。隔离和安全性允许您在给定主机上同时运行多个容器。容器是轻量级的，因为它们不需要管理程序的额外负载，而是直接在主机的内核中运行。这意味着您可以在给定的硬件组合上运行更多容器，而不是使用虚拟机。你甚至可以在实际上是虚拟机的主机中运行 Docker 容器！</p>
+<h3 id="docker-平台"><a class="markdownIt-Anchor" href="#docker-平台"></a> Docker 平台</h3>
+<p>Docker 提供了被称为容器的松散隔离环境，在环境中可以打包和运行应用程序。隔离和安全性允许您在给定主机上同时运行多个容器。容器是轻量级的，因为它们不需要管理程序的额外负载，而是直接在主机的内核中运行。这意味着您可以在给定的硬件组合上运行更多容器，而不是使用虚拟机。你甚至可以在实际上是虚拟机的主机中运行 Docker 容器！</p>
 <p>Docker 提供工具和平台来管理容器的生命周期：</p>
 <ul>
 <li>使用容器开发您的应用程序及其支持组件。</li>
 <li>容器成为分发和测试你的应用程序的单元。</li>
 <li>准备好后，将您的应用程序部署到生产环境中，作为容器或协调服务。无论您的生产环境是本地数据中心，云提供商还是两者的混合，这都是一样的。</li>
 </ul>
-<h3 id="Docker-引擎"><a href="#Docker-引擎" class="headerlink" title="Docker 引擎"></a>Docker 引擎</h3><p>Docker 引擎是一个 C/S 架构的应用，它有这些主要的组件：</p>
+<h3 id="docker-引擎"><a class="markdownIt-Anchor" href="#docker-引擎"></a> Docker 引擎</h3>
+<p>Docker 引擎是一个 C/S 架构的应用，它有这些主要的组件：</p>
 <p>服务器是一个长期运行的程序，被称为守护进程。</p>
 <p>REST API 指定程序可用于与守护进程进行通信并指示其执行操作的接口。</p>
 <p>命令行客户端。</p>
 <p><br><div align="center"><img src="https://docs.docker.com/engine/images/engine-components-flow.png"></div><br></p>
 <p>CLI 使用 Docker REST API 通过脚本或直接 CLI 命令来控制 Docker 守护进程或与其进行交互。许多其他 Docker 应用程序使用底层的 API 和 CLI。</p>
 <p>守护进程创建并管理 Docker 对象，如镜像，容器，网络和卷。</p>
-<h3 id="传统虚拟机和-Docker"><a href="#传统虚拟机和-Docker" class="headerlink" title="传统虚拟机和 Docker"></a>传统虚拟机和 Docker</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/docker/containers-and-vm.png"></div><br></p>
-<h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>Docker 包括三个基本概念</p>
+<h3 id="传统虚拟机和-docker"><a class="markdownIt-Anchor" href="#传统虚拟机和-docker"></a> 传统虚拟机和 Docker</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/docker/containers-and-vm.png"></div><br></p>
+<h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2>
+<p>Docker 包括三个基本概念</p>
 <ul>
 <li>镜像（Image）</li>
 <li>容器（Container）</li>
 <li>仓库（Repository）</li>
 </ul>
-<h3 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h3><p>我们都知道，操作系统分为内核和用户空间。对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:18.04 就包含了完整的一套 Ubuntu 18.04 最小系统的 root 文件系统。</p>
+<h3 id="镜像"><a class="markdownIt-Anchor" href="#镜像"></a> 镜像</h3>
+<p>我们都知道，操作系统分为内核和用户空间。对于 Linux 而言，内核启动后，会挂载 root 文件系统为其提供用户空间支持。而 Docker 镜像（Image），就相当于是一个 root 文件系统。比如官方镜像 ubuntu:18.04 就包含了完整的一套 Ubuntu 18.04 最小系统的 root 文件系统。</p>
 <p>Docker 镜像是一个特殊的文件系统，除了提供容器运行时所需的程序、库、资源、配置等文件外，还包含了一些为运行时准备的一些配置参数（如匿名卷、环境变量、用户等）。镜像不包含任何动态数据，其内容在构建之后也不会被改变。</p>
-<h4 id="分层存储"><a href="#分层存储" class="headerlink" title="分层存储"></a>分层存储</h4><p>因为镜像包含操作系统完整的 root 文件系统，其体积往往是庞大的，因此在 Docker 设计时，就充分利用 Union FS 的技术，将其设计为分层存储的架构。所以严格来说，镜像并非是像一个 ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，由多层文件系统联合组成。</p>
+<h4 id="分层存储"><a class="markdownIt-Anchor" href="#分层存储"></a> 分层存储</h4>
+<p>因为镜像包含操作系统完整的 root 文件系统，其体积往往是庞大的，因此在 Docker 设计时，就充分利用 Union FS 的技术，将其设计为分层存储的架构。所以严格来说，镜像并非是像一个 ISO 那样的打包文件，镜像只是一个虚拟的概念，其实际体现并非由一个文件组成，而是由一组文件系统组成，或者说，由多层文件系统联合组成。</p>
 <p>镜像构建时，会一层层构建，前一层是后一层的基础。每一层构建完就不会再发生改变，后一层上的任何改变只发生在自己这一层。比如，删除前一层文件的操作，实际不是真的删除前一层的文件，而是仅在当前层标记为该文件已删除。在最终容器运行的时候，虽然不会看到这个文件，但是实际上该文件会一直跟随镜像。因此，在构建镜像的时候，需要额外小心，每一层尽量只包含该层需要添加的东西，任何额外的东西应该在该层构建结束前清理掉。</p>
 <p>分层存储的特征还使得镜像的复用、定制变的更为容易。甚至可以用之前构建好的镜像作为基础层，然后进一步添加新的层，以定制自己所需的内容，构建新的镜像。</p>
-<h3 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h3><p>镜像（<code>Image</code>）和容器（<code>Container</code>）的关系，就像是面向对象程序设计中的 <code>类</code> 和 <code>实例</code> 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</p>
+<h3 id="容器"><a class="markdownIt-Anchor" href="#容器"></a> 容器</h3>
+<p>镜像（<code>Image</code>）和容器（<code>Container</code>）的关系，就像是面向对象程序设计中的 <code>类</code> 和 <code>实例</code> 一样，镜像是静态的定义，容器是镜像运行时的实体。容器可以被创建、启动、停止、删除、暂停等。</p>
 <p>容器的实质是进程，但与直接在宿主执行的进程不同，容器进程运行于属于自己的独立的 <a href="https://en.wikipedia.org/wiki/Linux_namespaces" target="_blank" rel="noopener">命名空间</a>。因此容器可以拥有自己的 <code>root</code> 文件系统、自己的网络配置、自己的进程空间，甚至自己的用户 ID 空间。容器内的进程是运行在一个隔离的环境里，使用起来，就好像是在一个独立于宿主的系统下操作一样。这种特性使得容器封装的应用比直接在宿主运行更加安全。也因为这种隔离的特性，很多人初学 Docker 时常常会混淆容器和虚拟机。</p>
 <p>前面讲过镜像使用的是分层存储，容器也是如此。每一个容器运行时，是以镜像为基础层，在其上创建一个当前容器的存储层，我们可以称这个为容器运行时读写而准备的存储层为<strong>容器存储层</strong>。</p>
 <p>容器存储层的生存周期和容器一样，容器消亡时，容器存储层也随之消亡。因此，任何保存于容器存储层的信息都会随容器删除而丢失。</p>
 <p>按照 Docker 最佳实践的要求，容器不应该向其存储层内写入任何数据，容器存储层要保持无状态化。所有的文件写入操作，都应该使用 <a href="https://yeasy.gitbooks.io/docker_practice/content/data_management/volume.html" target="_blank" rel="noopener">数据卷（Volume）</a>、或者绑定宿主目录，在这些位置的读写会跳过容器存储层，直接对宿主（或网络存储）发生读写，其性能和稳定性更高。</p>
 <p>数据卷的生存周期独立于容器，容器消亡，数据卷不会消亡。因此，使用数据卷后，容器删除或者重新运行之后，数据却不会丢失。</p>
-<h3 id="仓库"><a href="#仓库" class="headerlink" title="仓库"></a>仓库</h3><p>镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a href="https://yeasy.gitbooks.io/docker_practice/content/repository/registry.html" target="_blank" rel="noopener">Docker Registry</a> 就是这样的服务。</p>
+<h3 id="仓库"><a class="markdownIt-Anchor" href="#仓库"></a> 仓库</h3>
+<p>镜像构建完成后，可以很容易的在当前宿主机上运行，但是，如果需要在其它服务器上使用这个镜像，我们就需要一个集中的存储、分发镜像的服务，<a href="https://yeasy.gitbooks.io/docker_practice/content/repository/registry.html" target="_blank" rel="noopener">Docker Registry</a> 就是这样的服务。</p>
 <p>一个 <strong>Docker Registry</strong> 中可以包含多个<strong>仓库</strong>（<code>Repository</code>）；每个仓库可以包含多个<strong>标签</strong>（<code>Tag</code>）；每个标签对应一个镜像。</p>
 <p>通常，一个仓库会包含同一个软件不同版本的镜像，而标签就常用于对应该软件的各个版本。我们可以通过 <code>&lt;仓库名&gt;:&lt;标签&gt;</code> 的格式来指定具体是这个软件哪个版本的镜像。如果不给出标签，将以 <code>latest</code> 作为默认标签。</p>
 <p>以 <a href="https://store.docker.com/images/ubuntu" target="_blank" rel="noopener">Ubuntu 镜像</a> 为例，<code>ubuntu</code> 是仓库的名字，其内包含有不同的版本标签，如，<code>16.04</code>, <code>18.04</code>。我们可以通过 <code>ubuntu:14.04</code>，或者 <code>ubuntu:18.04</code> 来具体指定所需哪个版本的镜像。如果忽略了标签，比如 <code>ubuntu</code>，那将视为 <code>ubuntu:latest</code>。</p>
 <p>仓库名经常以 <em>两段式路径</em> 形式出现，比如 <code>jwilder/nginx-proxy</code>，前者往往意味着 Docker Registry 多用户环境下的用户名，后者则往往是对应的软件名。但这并非绝对，取决于所使用的具体 Docker Registry 的软件或服务。</p>
-<h2 id="引用和引申"><a href="#引用和引申" class="headerlink" title="引用和引申"></a>引用和引申</h2><ul>
+<h2 id="引用和引申"><a class="markdownIt-Anchor" href="#引用和引申"></a> 引用和引申</h2>
+<ul>
 <li><a href="https://yeasy.gitbooks.io/docker_practice/content/basic_concept/repository.html" target="_blank" rel="noopener">https://yeasy.gitbooks.io/docker_practice/content/basic_concept/repository.html</a></li>
 </ul>
 
@@ -584,8 +596,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/docker/docker-quickstart/" rel="next" title="Docker 入门">
-                <i class="fa fa-chevron-left"></i> Docker 入门
+              <a href="/blog/2019/03/06/os/docker/docker/" rel="next" title="Docker 教程">
+                <i class="fa fa-chevron-left"></i> Docker 教程
               </a>
             
           </div>
@@ -594,8 +606,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/network/physical/README/" rel="prev" title="物理层">
-                物理层 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/web/nginx/install-nginx/" rel="prev" title="Nginx 安装">
+                Nginx 安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -667,7 +679,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -732,7 +744,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1030,7 +1044,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-简介"><span class="nav-text">Docker 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-是什么"><span class="nav-text">Docker 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-平台"><span class="nav-text">Docker 平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Docker-引擎"><span class="nav-text">Docker 引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传统虚拟机和-Docker"><span class="nav-text">传统虚拟机和 Docker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像"><span class="nav-text">镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分层存储"><span class="nav-text">分层存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器"><span class="nav-text">容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库"><span class="nav-text">仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text">引用和引申</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-简介"><span class="nav-text"> Docker 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-是什么"><span class="nav-text"> Docker 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-平台"><span class="nav-text"> Docker 平台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#docker-引擎"><span class="nav-text"> Docker 引擎</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传统虚拟机和-docker"><span class="nav-text"> 传统虚拟机和 Docker</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#镜像"><span class="nav-text"> 镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分层存储"><span class="nav-text"> 分层存储</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器"><span class="nav-text"> 容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#仓库"><span class="nav-text"> 仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text"> 引用和引申</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1072,7 +1086,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

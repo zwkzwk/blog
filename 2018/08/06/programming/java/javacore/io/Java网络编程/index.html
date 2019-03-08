@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 网络编程 :notebook: 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网">
+  <meta name="description" content="Java 网络编程  📓 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网络通信。">
 <meta name="keywords" content="programming,javacore,java,io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 网络编程">
 <meta property="og:url" content="https://dunwu.github.io/2018/08/06/programming/java/javacore/io/Java网络编程/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 网络编程 :notebook: 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网">
+<meta property="og:description" content="Java 网络编程  📓 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网络通信。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://dunwu.github.io/2018/08/06/programming/java/javacore/io/pics//ClienteServidorSockets1521731145260.jpg">
 <meta property="og:updated_time" content="2019-03-07T05:14:46.717Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 网络编程">
-<meta name="twitter:description" content="Java 网络编程 :notebook: 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网">
+<meta name="twitter:description" content="Java 网络编程  📓 本文已归档到：「blog」 关键词：URL、InetAddress    InetAddress URL Sockets Datagram   Java 中的网络支持：  InetAddress：用于表示网络上的硬件资源，即 IP 地址； URL：统一资源定位符； Sockets：使用 TCP 协议实现网络通信； Datagram：使用 UDP 协议实现网络通信。">
 <meta name="twitter:image" content="https://dunwu.github.io/2018/08/06/programming/java/javacore/io/pics//ClienteServidorSockets1521731145260.jpg">
 
 
@@ -497,7 +497,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">910</span>
+                <span title="本文字数">912</span>
               
 
               
@@ -531,8 +531,9 @@
       
 
       
-        <h1 id="Java-网络编程"><a href="#Java-网络编程" class="headerlink" title="Java 网络编程"></a>Java 网络编程</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-网络编程"><a class="markdownIt-Anchor" href="#java-网络编程"></a> Java 网络编程</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 <p>关键词：URL、InetAddress</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
@@ -550,17 +551,21 @@
 <li>Sockets：使用 TCP 协议实现网络通信；</li>
 <li>Datagram：使用 UDP 协议实现网络通信。</li>
 </ul>
-<h2 id="InetAddress"><a href="#InetAddress" class="headerlink" title="InetAddress"></a>InetAddress</h2><p>没有公有的构造函数，只能通过静态方法来创建实例。</p>
+<h2 id="inetaddress"><a class="markdownIt-Anchor" href="#inetaddress"></a> InetAddress</h2>
+<p>没有公有的构造函数，只能通过静态方法来创建实例。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">InetAddress.getByName(String host);</span><br><span class="line">InetAddress.getByAddress(<span class="keyword">byte</span>[] address);</span><br></pre></td></tr></table></figure>
-<h2 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h2><p>可以直接从 URL 中读取字节流数据。</p>
+<h2 id="url"><a class="markdownIt-Anchor" href="#url"></a> URL</h2>
+<p>可以直接从 URL 中读取字节流数据。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line"></span><br><span class="line">    URL url = <span class="keyword">new</span> URL(<span class="string">"http://www.baidu.com"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 字节流 */</span></span><br><span class="line">    InputStream is = url.openStream();</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 字符流 */</span></span><br><span class="line">    InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(is, <span class="string">"utf-8"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">/* 提供缓存功能 */</span></span><br><span class="line">    BufferedReader br = <span class="keyword">new</span> BufferedReader(isr);</span><br><span class="line"></span><br><span class="line">    String line;</span><br><span class="line">    <span class="keyword">while</span> ((line = br.readLine()) != <span class="keyword">null</span>) &#123;</span><br><span class="line">        System.out.println(line);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    br.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Sockets"><a href="#Sockets" class="headerlink" title="Sockets"></a>Sockets</h2><ul>
+<h2 id="sockets"><a class="markdownIt-Anchor" href="#sockets"></a> Sockets</h2>
+<ul>
 <li>ServerSocket：服务器端类</li>
 <li>Socket：客户端类</li>
 <li>服务器和客户端通过 InputStream 和 OutputStream 进行输入输出。</li>
 </ul>
-<p><div align="center"> <img src="../pics//ClienteServidorSockets1521731145260.jpg"> </div><br></p>
-<h2 id="Datagram"><a href="#Datagram" class="headerlink" title="Datagram"></a>Datagram</h2><ul>
+<div align="center"> <img src="../pics//ClienteServidorSockets1521731145260.jpg"> </div><br>
+<h2 id="datagram"><a class="markdownIt-Anchor" href="#datagram"></a> Datagram</h2>
+<ul>
 <li>DatagramPacket：数据包类</li>
 <li>DatagramSocket：通信类</li>
 </ul>
@@ -634,8 +639,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/08/06/programming/java/javacore/io/Java常用IO类/" rel="next" title="Java 常用 IO 类">
-                <i class="fa fa-chevron-left"></i> Java 常用 IO 类
+              <a href="/blog/2018/08/02/programming/java/spring/spring-interview/" rel="next" title="Spring 常见面试问题">
+                <i class="fa fa-chevron-left"></i> Spring 常见面试问题
               </a>
             
           </div>
@@ -644,8 +649,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/08/06/programming/java/javacore/io/JavaNIO/" rel="prev" title="Java NIO">
-                Java NIO <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/08/06/programming/java/javacore/io/Java常用IO类/" rel="prev" title="Java 常用 IO 类">
+                Java 常用 IO 类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +722,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -782,7 +787,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1080,7 +1087,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-网络编程"><span class="nav-text">Java 网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#InetAddress"><span class="nav-text">InetAddress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL"><span class="nav-text">URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sockets"><span class="nav-text">Sockets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datagram"><span class="nav-text">Datagram</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-网络编程"><span class="nav-text"> Java 网络编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#inetaddress"><span class="nav-text"> InetAddress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#url"><span class="nav-text"> URL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sockets"><span class="nav-text"> Sockets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#datagram"><span class="nav-text"> Datagram</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1122,7 +1129,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

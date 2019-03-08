@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Freemark FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介 1.1. 什么是 Freemark？   2. 入门 2.1. 创建 Configuration 实例 2.2. 创建">
+  <meta name="description" content="Freemark  FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介  1.1. 什么是 Freemark？   2. 入门  2.1. 创建 Configuration 实例 2.2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Freemark">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/javalib/freemark/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Freemark FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介 1.1. 什么是 Freemark？   2. 入门 2.1. 创建 Configuration 实例 2.2. 创建">
+<meta property="og:description" content="Freemark  FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介  1.1. 什么是 Freemark？   2. 入门  2.1. 创建 Configuration 实例 2.2">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://freemarker.foofun.cn/figures/overview.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/ftl-template.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Freemark">
-<meta name="twitter:description" content="Freemark FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介 1.1. 什么是 Freemark？   2. 入门 2.1. 创建 Configuration 实例 2.2. 创建">
+<meta name="twitter:description" content="Freemark  FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。    1. 简介  1.1. 什么是 Freemark？   2. 入门  2.1. 创建 Configuration 实例 2.2">
 <meta name="twitter:image" content="http://freemarker.foofun.cn/figures/overview.png">
 
 
@@ -480,40 +480,49 @@
       
 
       
-        <h1 id="Freemark"><a href="#Freemark" class="headerlink" title="Freemark"></a>Freemark</h1><blockquote>
+        <h1 id="freemark"><a class="markdownIt-Anchor" href="#freemark"></a> Freemark</h1>
+<blockquote>
 <p>FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-简介">1. 简介</a><ul>
-<li><a href="#11-什么是-freemark">1.1. 什么是 Freemark？</a></li>
+<li><a href="#1-%E7%AE%80%E4%BB%8B">1. 简介</a>
+<ul>
+<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AF-freemark">1.1. 什么是 Freemark？</a></li>
 </ul>
 </li>
-<li><a href="#2-入门">2. 入门</a><ul>
-<li><a href="#21-创建-configuration-实例">2.1. 创建 Configuration 实例</a></li>
-<li><a href="#22-创建数据模型">2.2. 创建数据模型</a></li>
-<li><a href="#23-获取模板">2.3. 获取模板</a></li>
-<li><a href="#24-合并模板和数据模型">2.4. 合并模板和数据模型</a></li>
-<li><a href="#25-完整示例">2.5. 完整示例</a></li>
+<li><a href="#2-%E5%85%A5%E9%97%A8">2. 入门</a>
+<ul>
+<li><a href="#21-%E5%88%9B%E5%BB%BA-configuration-%E5%AE%9E%E4%BE%8B">2.1. 创建 Configuration 实例</a></li>
+<li><a href="#22-%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">2.2. 创建数据模型</a></li>
+<li><a href="#23-%E8%8E%B7%E5%8F%96%E6%A8%A1%E6%9D%BF">2.3. 获取模板</a></li>
+<li><a href="#24-%E5%90%88%E5%B9%B6%E6%A8%A1%E6%9D%BF%E5%92%8C%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">2.4. 合并模板和数据模型</a></li>
+<li><a href="#25-%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B">2.5. 完整示例</a></li>
 </ul>
 </li>
-<li><a href="#3-基础">3. 基础</a><ul>
-<li><a href="#模板">模板</a></li>
+<li><a href="#3-%E5%9F%BA%E7%A1%80">3. 基础</a>
+<ul>
+<li><a href="#%E6%A8%A1%E6%9D%BF">模板</a></li>
 </ul>
 </li>
-<li><a href="#4-进阶">4. 进阶</a></li>
-<li><a href="#5-引用和引申">5. 引用和引申</a></li>
+<li><a href="#4-%E8%BF%9B%E9%98%B6">4. 进阶</a></li>
+<li><a href="#5-%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%B3">5. 引用和引申</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h2><h3 id="1-1-什么是-Freemark？"><a href="#1-1-什么是-Freemark？" class="headerlink" title="1.1. 什么是 Freemark？"></a>1.1. 什么是 Freemark？</h3><p>FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。</p>
+<h2 id="1-简介"><a class="markdownIt-Anchor" href="#1-简介"></a> 1. 简介</h2>
+<h3 id="11-什么是-freemark"><a class="markdownIt-Anchor" href="#11-什么是-freemark"></a> 1.1. 什么是 Freemark？</h3>
+<p>FreeMarker 是一款 模板引擎： 即一种基于模板和要改变的数据， 并用来生成输出文本(HTML 网页，电子邮件，配置文件，源代码等)的通用工具。 它不是面向最终用户的，而是一个 Java 类库，是一款程序员可以嵌入他们所开发产品的组件。</p>
 <p>简言之：模板 + 数据 = 输出</p>
 <p><br><div align="center"><img src="http://freemarker.foofun.cn/figures/overview.png"></div><br></p>
-<h2 id="2-入门"><a href="#2-入门" class="headerlink" title="2. 入门"></a>2. 入门</h2><h3 id="2-1-创建-Configuration-实例"><a href="#2-1-创建-Configuration-实例" class="headerlink" title="2.1. 创建 Configuration 实例"></a>2.1. 创建 Configuration 实例</h3><p>首先，你应该创建一个 <code>freemarker.template.Configuration</code> 实例， 然后调整它的设置。Configuration 实例是存储 FreeMarker 应用级设置的核心部分。同时，它也处理创建和缓存预解析模板(比如 Template 对象)的工作。</p>
+<h2 id="2-入门"><a class="markdownIt-Anchor" href="#2-入门"></a> 2. 入门</h2>
+<h3 id="21-创建-configuration-实例"><a class="markdownIt-Anchor" href="#21-创建-configuration-实例"></a> 2.1. 创建 Configuration 实例</h3>
+<p>首先，你应该创建一个 <code>freemarker.template.Configuration</code> 实例， 然后调整它的设置。Configuration 实例是存储 FreeMarker 应用级设置的核心部分。同时，它也处理创建和缓存预解析模板(比如 Template 对象)的工作。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Create your Configuration instance, and specify if up to what FreeMarker</span></span><br><span class="line"><span class="comment">// version (here 2.3.22) do you want to apply the fixes that are not 100%</span></span><br><span class="line"><span class="comment">// backward-compatible. See the Configuration JavaDoc for details.</span></span><br><span class="line">Configuration cfg = <span class="keyword">new</span> Configuration(Configuration.VERSION_2_3_22);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Specify the source where the template files come from. Here I set a</span></span><br><span class="line"><span class="comment">// plain directory for it, but non-file-system sources are possible too:</span></span><br><span class="line">cfg.setDirectoryForTemplateLoading(<span class="keyword">new</span> File(<span class="string">"/where/you/store/templates"</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set the preferred charset template files are stored in. UTF-8 is</span></span><br><span class="line"><span class="comment">// a good choice in most applications:</span></span><br><span class="line">cfg.setDefaultEncoding(<span class="string">"UTF-8"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Sets how errors will appear.</span></span><br><span class="line"><span class="comment">// During web page *development* TemplateExceptionHandler.HTML_DEBUG_HANDLER is better.</span></span><br><span class="line">cfg.setTemplateExceptionHandler(TemplateExceptionHandler.RETHROW_HANDLER);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注：不需要重复创建 Configuration 实例；它的代价很高，尤其是会丢失缓存。Configuration 实例就是应用级别的单例。</p>
 </blockquote>
-<h3 id="2-2-创建数据模型"><a href="#2-2-创建数据模型" class="headerlink" title="2.2. 创建数据模型"></a>2.2. 创建数据模型</h3><p>在简单的示例中你可以使用 <code>java.lang</code> 和 <code>java.util</code> 包中的类， 还有用户自定义的 Java Bean 来构建数据对象：</p>
+<h3 id="22-创建数据模型"><a class="markdownIt-Anchor" href="#22-创建数据模型"></a> 2.2. 创建数据模型</h3>
+<p>在简单的示例中你可以使用 <code>java.lang</code> 和 <code>java.util</code> 包中的类， 还有用户自定义的 Java Bean 来构建数据对象：</p>
 <ul>
 <li>使用 <code>java.lang.String</code> 来构建字符串。</li>
 <li>使用 <code>java.lang.Number</code> 来派生数字类型。</li>
@@ -524,44 +533,56 @@
 </ul>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Create the root hash</span></span><br><span class="line">Map&lt;String, Object&gt; root = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="comment">// Put string ``user'' into the root</span></span><br><span class="line">root.put(<span class="string">"user"</span>, <span class="string">"Big Joe"</span>);</span><br><span class="line"><span class="comment">// Create the hash for ``latestProduct''</span></span><br><span class="line">Map&lt;String, Object&gt; latest = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"><span class="comment">// and put it into the root</span></span><br><span class="line">root.put(<span class="string">"latestProduct"</span>, latest);</span><br><span class="line"><span class="comment">// put ``url'' and ``name'' into latest</span></span><br><span class="line">latest.put(<span class="string">"url"</span>, <span class="string">"products/greenmouse.html"</span>);</span><br><span class="line">latest.put(<span class="string">"name"</span>, <span class="string">"green mouse"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-获取模板"><a href="#2-3-获取模板" class="headerlink" title="2.3. 获取模板"></a>2.3. 获取模板</h3><p>模板代表了 <code>freemarker.template.Template</code> 实例。典型的做法是从 <code>Configuration</code> 实例中获取一个 <code>Template</code> 实例。无论什么时候你需要一个模板实例， 都可以使用它的 <code>getTemplate</code> 方法来获取。在 <a href="http://freemarker.foofun.cn/pgui_quickstart_createconfiguration.html" target="_blank" rel="noopener">之前</a> 设置的目录中的 <code>test.ftl</code> 文件中存储 <a href="http://freemarker.foofun.cn/dgui_quickstart_basics.html#example.first" target="_blank" rel="noopener">示例模板</a>，那么就可以这样来做：</p>
+<h3 id="23-获取模板"><a class="markdownIt-Anchor" href="#23-获取模板"></a> 2.3. 获取模板</h3>
+<p>模板代表了 <code>freemarker.template.Template</code> 实例。典型的做法是从 <code>Configuration</code> 实例中获取一个 <code>Template</code> 实例。无论什么时候你需要一个模板实例， 都可以使用它的 <code>getTemplate</code> 方法来获取。在 <a href="http://freemarker.foofun.cn/pgui_quickstart_createconfiguration.html" target="_blank" rel="noopener">之前</a> 设置的目录中的 <code>test.ftl</code> 文件中存储 <a href="http://freemarker.foofun.cn/dgui_quickstart_basics.html#example.first" target="_blank" rel="noopener">示例模板</a>，那么就可以这样来做：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Template temp = cfg.getTemplate(<span class="string">"test.ftl"</span>);</span><br></pre></td></tr></table></figure>
 <p>当调用这个方法的时候，将会创建一个 <code>test.ftl</code> 的 <code>Template</code> 实例，通过读取 <code>*/where/you/store/templates/*test.ftl</code> 文件，之后解析(编译)它。<code>Template</code> 实例以解析后的形式存储模板， 而不是以源文件的文本形式。</p>
 <p><code>Configuration</code> 缓存 <code>Template</code> 实例，当再次获得 <code>test.ftl</code> 的时候，它可能再读取和解析模板文件了， 而只是返回第一次的 <code>Template</code>实例。</p>
-<h3 id="2-4-合并模板和数据模型"><a href="#2-4-合并模板和数据模型" class="headerlink" title="2.4. 合并模板和数据模型"></a>2.4. 合并模板和数据模型</h3><p>我们已经知道，数据模型+模板=输出，我们有了一个数据模型 (<code>root</code>) 和一个模板 (<code>temp</code>)， 为了得到输出就需要合并它们。这是由模板的 <code>process</code> 方法完成的。它用数据模型 root 和 <code>Writer</code> 对象作为参数，然后向 <code>Writer</code> 对象写入产生的内容。 为简单起见，这里我们只做标准的输出：</p>
-<figure class="highlight vhdl"><table><tr><td class="code"><pre><span class="line">Writer <span class="keyword">out</span> = <span class="keyword">new</span> OutputStreamWriter(System.<span class="keyword">out</span>);</span><br><span class="line">temp.<span class="keyword">process</span>(root, <span class="keyword">out</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="24-合并模板和数据模型"><a class="markdownIt-Anchor" href="#24-合并模板和数据模型"></a> 2.4. 合并模板和数据模型</h3>
+<p>我们已经知道，数据模型+模板=输出，我们有了一个数据模型 (<code>root</code>) 和一个模板 (<code>temp</code>)， 为了得到输出就需要合并它们。这是由模板的 <code>process</code> 方法完成的。它用数据模型 root 和 <code>Writer</code> 对象作为参数，然后向 <code>Writer</code> 对象写入产生的内容。 为简单起见，这里我们只做标准的输出：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">Writer <span class="keyword">out</span> = <span class="built_in">new</span> OutputStreamWriter(<span class="keyword">System</span>.<span class="keyword">out</span>);</span><br><span class="line"><span class="keyword">temp</span>.process(root, <span class="keyword">out</span>);</span><br></pre></td></tr></table></figure>
 <p>这会向你的终端输出你在模板开发指南部分的 <a href="http://freemarker.foofun.cn/dgui_quickstart_basics.html#example.first" target="_blank" rel="noopener">第一个示例</a> 中看到的内容。</p>
-<p>Java I/O 相关注意事项：基于 <code>out</code> 对象，必须保证 <code>out.close()</code> 最后被调用。当 <code>out</code> 对象被打开并将模板的输出写入文件时，这是很电影的做法。其它时候， 比如典型的 Web 应用程序，那就 _不能_ 关闭 <code>out</code> 对象。FreeMarker 会在模板执行成功后 (也可以在 <code>Configuration</code> 中禁用) 调用 <code>out.flush()</code>，所以不必为此担心。</p>
+<p>Java I/O 相关注意事项：基于 <code>out</code> 对象，必须保证 <code>out.close()</code> 最后被调用。当 <code>out</code> 对象被打开并将模板的输出写入文件时，这是很电影的做法。其它时候， 比如典型的 Web 应用程序，那就 <em>不能</em> 关闭 <code>out</code> 对象。FreeMarker 会在模板执行成功后 (也可以在 <code>Configuration</code> 中禁用) 调用 <code>out.flush()</code>，所以不必为此担心。</p>
 <p>请注意，一旦获得了 <code>Template</code> 实例， 就能将它和不同的数据模型进行不限次数 (<code>Template</code>实例是无状态的)的合并。此外， 当 <code>Template</code>实例创建之后 <code>test.ftl</code> 文件才能访问，而不是在调用处理方法时。</p>
-<h3 id="2-5-完整示例"><a href="#2-5-完整示例" class="headerlink" title="2.5. 完整示例"></a>2.5. 完整示例</h3><p><a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/template/sbe-tmpl-freemark" target="_blank" rel="noopener"><strong>源码</strong></a></p>
-<h2 id="3-基础"><a href="#3-基础" class="headerlink" title="3. 基础"></a>3. 基础</h2><h3 id="数值"><a href="#数值" class="headerlink" title="数值"></a>数值</h3><p>注意观察每个数据模型的例子你也许能发现：被”(root)”所标识的内容就是哈希表类型的值。 当编写如 <code>user</code> 这样的代码时，那就意味着要把”user”变量存储在哈希表的根上。 就像编写 <code>root.user</code>一样，这里但并没有名”root”为的变量， 那么这就起不到任何作用了。</p>
+<h3 id="25-完整示例"><a class="markdownIt-Anchor" href="#25-完整示例"></a> 2.5. 完整示例</h3>
+<p><a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/template/sbe-tmpl-freemark" target="_blank" rel="noopener"><strong>源码</strong></a></p>
+<h2 id="3-基础"><a class="markdownIt-Anchor" href="#3-基础"></a> 3. 基础</h2>
+<h3 id="数值"><a class="markdownIt-Anchor" href="#数值"></a> 数值</h3>
+<p>注意观察每个数据模型的例子你也许能发现：被&quot;(root)&quot;所标识的内容就是哈希表类型的值。 当编写如 <code>user</code> 这样的代码时，那就意味着要把&quot;user&quot;变量存储在哈希表的根上。 就像编写 <code>root.user</code>一样，这里但并没有名&quot;root&quot;为的变量， 那么这就起不到任何作用了。</p>
 <p>某些人也许会被这种数据模型的例子所困惑，也就是说，根哈希表包含更多的哈希表或序列 (<code>lotteryNumbers</code> and <code>cargo</code>)。其它就没有更特殊的内容了。 哈希表包含其他变量，那些变量包含其它值，这些数值可以是字符串，数字等变量， 当然也可以是哈希表或序列变量。最初我们解释过的，就像字符串和数字， 序列或哈希表也是一种值的表示形式。</p>
-<h3 id="类型"><a href="#类型" class="headerlink" title="类型"></a>类型</h3><p>Freemark 支持的类型有：</p>
+<h3 id="类型"><a class="markdownIt-Anchor" href="#类型"></a> 类型</h3>
+<p>Freemark 支持的类型有：</p>
 <ul>
-<li>标量：<ul>
+<li>标量：
+<ul>
 <li>字符串</li>
 <li>数字</li>
 <li>布尔值</li>
 <li>日期/时间 (日期，时间或日期时间)</li>
 </ul>
 </li>
-<li>容器：<ul>
+<li>容器：
+<ul>
 <li>哈希表</li>
 <li>序列</li>
 <li>集合</li>
 </ul>
 </li>
-<li>子程序：<ul>
+<li>子程序：
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_datamodel_types.html#dgui_datamodel_method" target="_blank" rel="noopener">方法和函数</a></li>
 <li><a href="http://freemarker.foofun.cn/dgui_datamodel_types.html#dgui_datamodel_userdefdir" target="_blank" rel="noopener">用户自定义指令</a></li>
 </ul>
 </li>
-<li>其它/很少使用：<ul>
+<li>其它/很少使用：
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_datamodel_types.html#dgui_datamodel_node" target="_blank" rel="noopener">结点</a></li>
 </ul>
 </li>
 </ul>
-<h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><h4 id="总体结构"><a href="#总体结构" class="headerlink" title="总体结构"></a>总体结构</h4><p>模板(FTL 编程)是由如下部分混合而成的：</p>
+<h3 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h3>
+<h4 id="总体结构"><a class="markdownIt-Anchor" href="#总体结构"></a> 总体结构</h4>
+<p>模板(FTL 编程)是由如下部分混合而成的：</p>
 <ul>
 <li><strong>文本</strong>：文本会照着原样来输出。</li>
 <li><strong>插值</strong>：这部分的输出会被计算的值来替换。插值由 <code>${</code> and <code>}</code> 所分隔。</li>
@@ -570,7 +591,7 @@
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/ftl-template.png"></div><br></p>
 <blockquote>
-<p>:warning: 注意：</p>
+<p>⚠️ 注意：</p>
 <ul>
 <li>FTL 是区分大小写的。</li>
 <li><code>插值</code> 仅仅可以在 <code>文本</code> 中使用。</li>
@@ -578,7 +599,8 @@
 <li><code>注释</code> 可以放在 <code>FTL 标签</code> 和 <code>插值</code> 中。</li>
 </ul>
 </blockquote>
-<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><p>使用 FTL 标签来调用 <strong>指令</strong>。</p>
+<h4 id="指令"><a class="markdownIt-Anchor" href="#指令"></a> 指令</h4>
+<p>使用 FTL 标签来调用 <strong>指令</strong>。</p>
 <p>FTL 标签分为两种：</p>
 <ul>
 <li>开始标签： <code>&lt;#*directivename* *parameters*&gt;</code></li>
@@ -588,66 +610,76 @@
 <p><code>*parameters*</code> 的格式由 <code>*directivename*</code>来决定。</p>
 <p>事实上，指令有两种类型： <a href="http://freemarker.foofun.cn/gloss.html#gloss.predefinedDirective" target="_blank" rel="noopener">预定义指令</a> 和 <a href="http://freemarker.foofun.cn/gloss.html#gloss.userDefinedDirective" target="_blank" rel="noopener">用户自定义指令</a>。 对于用户自定义的指令使用 <code>@</code> 来代替 <code>#</code>。</p>
 <blockquote>
-<p>:warning: 注意：</p>
+<p>⚠️ 注意：</p>
 <ul>
 <li>FreeMarker 仅仅关心 FTL 标签的嵌套而不关心 HTML 标签的嵌套。 它只会把 HTML 看做是文本，不会来解释 HTML。</li>
 <li>如果你尝试使用一个不存在的指令(比如，输错了指令的名称)， FreeMarker 就会拒绝执行模板，同时抛出错误信息。</li>
 <li>FreeMarker 会忽略 FTL 标签中多余的 <a href="http://freemarker.foofun.cn/gloss.html#gloss.whiteSpace" target="_blank" rel="noopener">空白标记</a>。</li>
 </ul>
 </blockquote>
-<h4 id="表达式"><a href="#表达式" class="headerlink" title="表达式"></a>表达式</h4><p>以下为快速浏览清单，如果需要了解更多细节，请参考<a href="http://freemarker.foofun.cn/dgui_template_exp.html" target="_blank" rel="noopener"><strong>这里</strong></a>。</p>
+<h4 id="表达式"><a class="markdownIt-Anchor" href="#表达式"></a> 表达式</h4>
+<p>以下为快速浏览清单，如果需要了解更多细节，请参考<a href="http://freemarker.foofun.cn/dgui_template_exp.html" target="_blank" rel="noopener"><strong>这里</strong></a>。</p>
 <ul>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct" target="_blank" rel="noopener">直接指定值</a><ul>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_string" target="_blank" rel="noopener">字符串</a>： <code>&quot;Foo&quot;</code> 或者 <code>&#39;Foo&#39;</code> 或者 <code>&quot;It&#39;s \&quot;quoted\&quot;&quot;</code> 或者 <code>&#39;It\&#39;s &quot;quoted&quot;&#39;</code> 或者 <code>r&quot;C:\raw\string&quot;</code></li>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct" target="_blank" rel="noopener">直接指定值</a>
+<ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_string" target="_blank" rel="noopener">字符串</a>： <code>&quot;Foo&quot;</code> 或者 <code>'Foo'</code> 或者 <code>&quot;It's \&quot;quoted\&quot;&quot;</code> 或者 <code>'It\'s &quot;quoted&quot;'</code> 或者 <code>r&quot;C:\raw\string&quot;</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_number" target="_blank" rel="noopener">数字</a>： <code>123.45</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_boolean" target="_blank" rel="noopener">布尔值</a>： <code>true</code>， <code>false</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_seuqence" target="_blank" rel="noopener">序列</a>： <code>[&quot;foo&quot;, &quot;bar&quot;, 123.45]</code>； 值域： <code>0..9</code>, <code>0..&lt;10</code> (或 <code>0..!10</code>), <code>0..</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_hash" target="_blank" rel="noopener">哈希表</a>： <code>{&quot;name&quot;:&quot;green mouse&quot;, &quot;price&quot;:150}</code></li>
 </ul>
 </li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var" target="_blank" rel="noopener">检索变量</a><ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var" target="_blank" rel="noopener">检索变量</a>
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var_toplevel" target="_blank" rel="noopener">顶层变量</a>： <code>user</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var_hash" target="_blank" rel="noopener">从哈希表中检索数据</a>： <code>user.name</code>， <code>user[&quot;name&quot;]</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var_sequence" target="_blank" rel="noopener">从序列中检索数据</a>： <code>products[5]</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_var_special" target="_blank" rel="noopener">特殊变量</a>： <code>.main</code></li>
 </ul>
 </li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_stringop" target="_blank" rel="noopener">字符串操作</a><ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_stringop" target="_blank" rel="noopener">字符串操作</a>
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_stringop_interpolation" target="_blank" rel="noopener">插值(或连接)</a>： <code>&quot;Hello ${user}!&quot;</code> (或 <code>&quot;Hello &quot; + user + &quot;!&quot;</code>)</li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_get_character" target="_blank" rel="noopener">获取一个字符</a>： <code>name[0]</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_stringop_slice" target="_blank" rel="noopener">字符串切分：</a> 包含结尾： <code>name[0..4]</code>，不包含结尾： <code>name[0..&lt;5]</code>，基于长度(宽容处理)： <code>name[0..*5]</code>，去除开头：<code>name[5..]</code></li>
 </ul>
 </li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_sequenceop" target="_blank" rel="noopener">序列操作</a><ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_sequenceop" target="_blank" rel="noopener">序列操作</a>
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_sequenceop_cat" target="_blank" rel="noopener">连接</a>： <code>users + [&quot;guest&quot;]</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_seqenceop_slice" target="_blank" rel="noopener">序列切分</a>：包含结尾： <code>products[20..29]</code>， 不包含结尾： <code>products[20..&lt;30]</code>，基于长度(宽容处理)：<code>products[20..*10]</code>，去除开头： <code>products[20..]</code></li>
 </ul>
 </li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_hashop" target="_blank" rel="noopener">哈希表操作</a><ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_hashop" target="_blank" rel="noopener">哈希表操作</a>
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_hashop_cat" target="_blank" rel="noopener">连接</a>： <code>passwords + { &quot;joe&quot;: &quot;secret42&quot; }</code></li>
 </ul>
 </li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_arit" target="_blank" rel="noopener">算术运算</a>： <code>(x * 1.5 + 10) / 2 - y % 100</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_comparison" target="_blank" rel="noopener">比较运算</a>： <code>x == y</code>， <code>x != y</code>， <code>x &lt; y</code>， <code>x &gt; y</code>， <code>x &gt;= y</code>， <code>x &lt;= y</code>， <code>x lt y</code>， <code>x lte y</code>， <code>x gt y</code>， <code>x gte y</code>， 等等。。。。。。</li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_logicalop" target="_blank" rel="noopener">逻辑操作</a>： <code>!registered &amp;&amp; (firstVisit || fromEurope)</code></li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_builtin" target="_blank" rel="noopener">内建函数</a>： <code>name?upper_case</code>, <code>path?ensure_starts_with(&#39;/&#39;)</code></li>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_builtin" target="_blank" rel="noopener">内建函数</a>： <code>name?upper_case</code>, <code>path?ensure_starts_with('/')</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_methodcall" target="_blank" rel="noopener">方法调用</a>： <code>repeat(&quot;What&quot;, 3)</code></li>
-<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_missing" target="_blank" rel="noopener">处理不存在的值</a><ul>
+<li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_missing" target="_blank" rel="noopener">处理不存在的值</a>
+<ul>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_missing_default" target="_blank" rel="noopener">默认值</a>： <code>name!&quot;unknown&quot;</code> 或者 <code>(user.name)!&quot;unknown&quot;</code> 或者 <code>name!</code> 或者 <code>(user.name)!</code></li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_missing_test" target="_blank" rel="noopener">检测不存在的值</a>： <code>name??</code> 或者 <code>(user.name)??</code></li>
 </ul>
 </li>
 <li><a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_assignment" target="_blank" rel="noopener">赋值操作</a>： <code>=</code>, <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>%=</code>, <code>++</code>, <code>--</code></li>
 </ul>
-<h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><p>插值的使用格式是： <code>${*expression*}</code>，这里的 <code>*expression*</code> 可以是所有种类的表达式(比如 <code>${100 + x}</code>)。</p>
+<h4 id="插值"><a class="markdownIt-Anchor" href="#插值"></a> 插值</h4>
+<p>插值的使用格式是： <code>${*expression*}</code>，这里的 <code>*expression*</code> 可以是所有种类的表达式(比如 <code>${100 + x}</code>)。</p>
 <p>插值是用来给 <code>*表达式*</code> 插入具体值然后转换为文本(字符串)。插值仅仅可以在两种位置使用：在 <a href="http://freemarker.foofun.cn/dgui_template_overallstructure.html" target="_blank" rel="noopener">文本 区</a> (比如 <code>&lt;h1&gt;Hello ${name}!&lt;/h1&gt;</code>) 和 <a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_stringop_interpolation" target="_blank" rel="noopener">字符串表达式</a> (比如 <code>&lt;#include &quot;/footer/${company}.html&quot;&gt;</code>)中。</p>
 <p>表达式的结果必须是字符串，数字或者日期/时间/日期-时间值， 因为(默认是这样)仅仅这些值可以被插值自动转换为字符串。其它类型的值 (比如布尔值，序列)必须 “手动地” 转换成字符串(后续会有一些建议)， 否则就会发生错误，中止模板执行。</p>
-<p>注意：插值 _仅仅_ 在 <a href="http://freemarker.foofun.cn/dgui_template_overallstructure.html" target="_blank" rel="noopener">文本区</a> (比如 <code>&lt;h1&gt;Hello ${name}!&lt;/h1&gt;</code>) 和 <a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_string" target="_blank" rel="noopener">字符串</a> 中起作用。</p>
-<p>:heavy_check_mark: <code>&lt;#include &quot;/footer/${company}.html&quot;&gt;</code></p>
-<p>:heavy_check_mark: <code>&lt;#if big&gt;...&lt;/#if&gt;</code></p>
-<p>:x: <code>&lt;#if ${big}&gt;...&lt;/#if&gt;</code></p>
-<p>:x: <code>&lt;#if &quot;${big}&quot;&gt;...&lt;/#if&gt;</code></p>
-<h2 id="4-进阶"><a href="#4-进阶" class="headerlink" title="4. 进阶"></a>4. 进阶</h2><h2 id="5-引用和引申"><a href="#5-引用和引申" class="headerlink" title="5. 引用和引申"></a>5. 引用和引申</h2><p><a href="http://freemarker.foofun.cn/" target="_blank" rel="noopener">http://freemarker.foofun.cn/</a></p>
+<p>注意：插值 <em>仅仅</em> 在 <a href="http://freemarker.foofun.cn/dgui_template_overallstructure.html" target="_blank" rel="noopener">文本区</a> (比如 <code>&lt;h1&gt;Hello ${name}!&lt;/h1&gt;</code>) 和 <a href="http://freemarker.foofun.cn/dgui_template_exp.html#dgui_template_exp_direct_string" target="_blank" rel="noopener">字符串</a> 中起作用。</p>
+<p>✔️ <code>&lt;#include &quot;/footer/${company}.html&quot;&gt;</code></p>
+<p>✔️ <code>&lt;#if big&gt;...&lt;/#if&gt;</code></p>
+<p>❌ <code>&lt;#if ${big}&gt;...&lt;/#if&gt;</code></p>
+<p>❌ <code>&lt;#if &quot;${big}&quot;&gt;...&lt;/#if&gt;</code></p>
+<h2 id="4-进阶"><a class="markdownIt-Anchor" href="#4-进阶"></a> 4. 进阶</h2>
+<h2 id="5-引用和引申"><a class="markdownIt-Anchor" href="#5-引用和引申"></a> 5. 引用和引申</h2>
+<p><a href="http://freemarker.foofun.cn/" target="_blank" rel="noopener">http://freemarker.foofun.cn/</a></p>
 
       
     </div>
@@ -706,8 +738,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis-generator/" rel="next" title="1. MyBatis Generator (MBG) 指南">
-                <i class="fa fa-chevron-left"></i> 1. MyBatis Generator (MBG) 指南
+              <a href="/blog/2019/03/06/database/sql/关系型数据库基本原理/" rel="next" title="关系型数据库基本原理">
+                <i class="fa fa-chevron-left"></i> 关系型数据库基本原理
               </a>
             
           </div>
@@ -716,8 +748,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/tool/git/README/" rel="prev" title="git">
-                git <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/design/UML/" rel="prev" title="UML 教程">
+                UML 教程 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -789,7 +821,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -854,7 +886,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1152,7 +1186,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Freemark"><span class="nav-text">Freemark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text">1. 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-什么是-Freemark？"><span class="nav-text">1.1. 什么是 Freemark？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-入门"><span class="nav-text">2. 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-创建-Configuration-实例"><span class="nav-text">2.1. 创建 Configuration 实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-创建数据模型"><span class="nav-text">2.2. 创建数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-获取模板"><span class="nav-text">2.3. 获取模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-合并模板和数据模型"><span class="nav-text">2.4. 合并模板和数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-完整示例"><span class="nav-text">2.5. 完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-基础"><span class="nav-text">3. 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-text">数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-text">类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板"><span class="nav-text">模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总体结构"><span class="nav-text">总体结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令"><span class="nav-text">指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-text">表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值"><span class="nav-text">插值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-进阶"><span class="nav-text">4. 进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-引用和引申"><span class="nav-text">5. 引用和引申</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#freemark"><span class="nav-text"> Freemark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-简介"><span class="nav-text"> 1. 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-什么是-freemark"><span class="nav-text"> 1.1. 什么是 Freemark？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-入门"><span class="nav-text"> 2. 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-创建-configuration-实例"><span class="nav-text"> 2.1. 创建 Configuration 实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-创建数据模型"><span class="nav-text"> 2.2. 创建数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-获取模板"><span class="nav-text"> 2.3. 获取模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-合并模板和数据模型"><span class="nav-text"> 2.4. 合并模板和数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-完整示例"><span class="nav-text"> 2.5. 完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-基础"><span class="nav-text"> 3. 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数值"><span class="nav-text"> 数值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型"><span class="nav-text"> 类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模板"><span class="nav-text"> 模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#总体结构"><span class="nav-text"> 总体结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#指令"><span class="nav-text"> 指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#表达式"><span class="nav-text"> 表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值"><span class="nav-text"> 插值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-进阶"><span class="nav-text"> 4. 进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-引用和引申"><span class="nav-text"> 5. 引用和引申</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1194,7 +1228,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

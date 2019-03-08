@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Webpack 代码分离 :pushpin: 提示：  版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2   2) 阅读建议    阅读本文前，建议">
+  <meta name="description" content="Webpack 代码分离  📌 提示：   版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2     阅读建议 阅读本文前，建议先阅读 Webp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack 代码分离">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/webpack/code-splitting/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Webpack 代码分离 :pushpin: 提示：  版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2   2) 阅读建议    阅读本文前，建议">
+<meta property="og:description" content="Webpack 代码分离  📌 提示：   版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2     阅读建议 阅读本文前，建议先阅读 Webp">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack 代码分离">
-<meta name="twitter:description" content="Webpack 代码分离 :pushpin: 提示：  版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2   2) 阅读建议    阅读本文前，建议">
+<meta name="twitter:description" content="Webpack 代码分离  📌 提示：   版本问题 本文基于 webpack 2.x 版本。webpack 2.x 相比 webpack 1.x 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。 如果铁了心要升级 webpack ，请参考 webpack 官方文档 - 从 v1 迁移到 v2     阅读建议 阅读本文前，建议先阅读 Webp">
 
 
 
@@ -477,16 +477,22 @@
       
 
       
-        <h1 id="Webpack-代码分离"><a href="#Webpack-代码分离" class="headerlink" title="Webpack 代码分离"></a>Webpack 代码分离</h1><blockquote>
-<p>:pushpin: <strong>提示：</strong></p>
+        <h1 id="webpack-代码分离"><a class="markdownIt-Anchor" href="#webpack-代码分离"></a> Webpack 代码分离</h1>
+<blockquote>
+<p>📌 <strong>提示：</strong></p>
 <ol>
-<li><p>版本问题</p>
+<li>
+<p>版本问题</p>
 <p>本文基于 <code>webpack 2.x</code> 版本。<code>webpack 2.x</code> 相比 <code>webpack 1.x</code> 有重大改变。所以，如果你的项目中已使用了 webpack 1.x ，本教程的示例将不适用，请慎重。</p>
 <p>如果铁了心要升级 webpack ，请参考 <a href="https://doc.webpack-china.org/guides/migrating/" target="_blank" rel="noopener">webpack 官方文档 - 从 v1 迁移到 v2</a></p>
 </li>
 </ol>
-<p>2) 阅读建议</p>
-<p>   阅读本文前，建议先阅读 <a href="https://github.com/dunwu/frontend-tutorial/blob/master/docs/chapter03/webpack/concept.md" target="_blank" rel="noopener">Webpack 概念</a> 。</p>
+<ol start="2">
+<li>
+<p>阅读建议</p>
+<p>阅读本文前，建议先阅读 <a href="https://github.com/dunwu/frontend-tutorial/blob/master/docs/chapter03/webpack/concept.md" target="_blank" rel="noopener">Webpack 概念</a> 。</p>
+</li>
+</ol>
 </blockquote>
 <p>代码分离是 webpack 中最引人注目的特性之一。</p>
 <p>你可以把你的代码分离到不同的 bundle 中，然后你就可以去按需加载这些文件。</p>
@@ -495,16 +501,19 @@
 <li>资源分离</li>
 <li>代码分离</li>
 </ul>
-<h2 id="资源分离-Resource-Splitting"><a href="#资源分离-Resource-Splitting" class="headerlink" title="资源分离(Resource Splitting)"></a>资源分离(Resource Splitting)</h2><p>对第三方库(vendor) 和 CSS 进行代码分离，这些方式有助于实现缓存和并行加载。</p>
-<h3 id="分离-CSS-CSS-Splitting"><a href="#分离-CSS-CSS-Splitting" class="headerlink" title="分离 CSS(CSS Splitting)"></a>分离 CSS(CSS Splitting)</h3><p>你可能也想将你的样式代码分离到单独的 bundle 中，以此使其独立于应用程序逻辑。这加强了样式的可缓存性，并且使得浏览器能够并行加载应用程序代码中的样式文件，避免 FOUC 问题 (<a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_blank" rel="noopener">无样式内容造成的闪烁</a>)。</p>
+<h2 id="资源分离resource-splitting"><a class="markdownIt-Anchor" href="#资源分离resource-splitting"></a> 资源分离(Resource Splitting)</h2>
+<p>对第三方库(vendor) 和 CSS 进行代码分离，这些方式有助于实现缓存和并行加载。</p>
+<h3 id="分离-csscss-splitting"><a class="markdownIt-Anchor" href="#分离-csscss-splitting"></a> 分离 CSS(CSS Splitting)</h3>
+<p>你可能也想将你的样式代码分离到单独的 bundle 中，以此使其独立于应用程序逻辑。这加强了样式的可缓存性，并且使得浏览器能够并行加载应用程序代码中的样式文件，避免 FOUC 问题 (<a href="https://en.wikipedia.org/wiki/Flash_of_unstyled_content" target="_blank" rel="noopener">无样式内容造成的闪烁</a>)。</p>
 <p>安装  <a href="https://doc.webpack-china.org/plugins/extract-text-webpack-plugin" target="_blank" rel="noopener"><code>ExtractTextWebpackPlugin</code></a>  如下</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install --save-dev extract-text-webpack-plugin</span><br></pre></td></tr></table></figure>
 <p>webpack.config.js 中需要按下面进行配置：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 关于模块配置</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    <span class="comment">// 模块规则（配置 loader、解析器等选项）</span></span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="comment">// css 加载</span></span><br><span class="line">        test: <span class="regexp">/\.css$/</span>,</span><br><span class="line">        use: ExtractTextPlugin.extract(&#123;</span><br><span class="line">          use: <span class="string">"css-loader"</span></span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 附加插件列表</span></span><br><span class="line">  plugins: [</span><br><span class="line">    <span class="comment">// 将样式文件独立打包</span></span><br><span class="line">    <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"styles.css"</span>)</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>​:flashlight: <strong>示例 DEMO09：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo09/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo09" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
+<p>​🔦 <strong>示例 DEMO09：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo09/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo09" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
 </blockquote>
-<h3 id="分离第三方库-Vendor-Code-Splitting"><a href="#分离第三方库-Vendor-Code-Splitting" class="headerlink" title="分离第三方库(Vendor Code Splitting)"></a>分离第三方库(Vendor Code Splitting)</h3><p>一个典型的应用程序，由于框架/功能性需求，会依赖于许多第三方库的代码。不同于应用程序代码，这些第三方库代码不会频繁修改。</p>
+<h3 id="分离第三方库vendor-code-splitting"><a class="markdownIt-Anchor" href="#分离第三方库vendor-code-splitting"></a> 分离第三方库(Vendor Code Splitting)</h3>
+<p>一个典型的应用程序，由于框架/功能性需求，会依赖于许多第三方库的代码。不同于应用程序代码，这些第三方库代码不会频繁修改。</p>
 <p>如果我们将这些库(library)中的代码，保留在与应用程序代码相独立的 bundle 中，我们就可以利用浏览器缓存机制，把这些文件长时间地缓存在用户机器上。</p>
 <p>为了完成这个目标，不管应用程序代码如何变化，vendor 文件名中的  <code>hash</code>  部分必须保持不变。学习如何使用  <code>CommonsChunkPlugin</code> <a href="https://doc.webpack-china.org/guides/code-splitting-libraries" target="_blank" rel="noopener">分离 vendor/library</a>  代码。</p>
 <p>webpack.config.js</p>
@@ -518,15 +527,17 @@
 <p>执行 webpack 命令后，webpack 会生成 2 个 bundle 文件，形式如：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">main</span><span class="selector-class">.bef8f974</span><span class="selector-class">.js</span></span><br><span class="line"><span class="selector-tag">vendor</span><span class="selector-class">.2f1bd4c8</span><span class="selector-class">.js</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>​:flashlight: <strong>示例 DEMO10：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo10/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo10" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
+<p>​🔦 <strong>示例 DEMO10：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo10/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo10" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
 </blockquote>
-<h2 id="代码按需分离-On-Demand-Code-Splitting"><a href="#代码按需分离-On-Demand-Code-Splitting" class="headerlink" title="代码按需分离(On Demand Code Splitting)"></a>代码按需分离(On Demand Code Splitting)</h2><p>虽然前面几类资源分离，需要用户预先在配置中指定分离模块，但也可以在应用程序代码中创建动态分离模块。</p>
+<h2 id="代码按需分离on-demand-code-splitting"><a class="markdownIt-Anchor" href="#代码按需分离on-demand-code-splitting"></a> 代码按需分离(On Demand Code Splitting)</h2>
+<p>虽然前面几类资源分离，需要用户预先在配置中指定分离模块，但也可以在应用程序代码中创建动态分离模块。</p>
 <p>这可以用于更细粒度的代码块，例如，根据我们的应用程序路由，或根据用户行为预测。这可以使用户按照实际需要加载非必要资源。</p>
 <p>前一节，我们了解了 webpack 可以将资源拆分为 bundle。接下来，我们要学习如何异步加载。例如，这允许首先提供最低限度的引导 bundle，并在稍后再异步地加载其他功能。</p>
 <p>webpack 支持两种相似的技术实现此目的：使用  <code>import()</code> (推荐，ECMAScript 提案) 和  <code>require.ensure()</code> (遗留，webpack 特定)。本文只介绍官方推荐的 <code>import()</code> 方式。</p>
 <p><a href="https://whatwg.github.io/loader/" target="_blank" rel="noopener">ES2015 loader 规范</a>定义了  <code>import()</code>  作为一种在运行时(runtime)动态载入 ES2015 模块的方法。</p>
 <p>webpack 把  <code>import()</code>  作为一个分离点(split-point)，并把引入的模块作为一个单独的 chunk。 <code>import()</code>  将模块名字作为参数并返回一个  <code>Promoise</code>  对象，即  <code>import(name) -&gt; Promise</code></p>
-<h3 id="配合-Babel-使用"><a href="#配合-Babel-使用" class="headerlink" title="配合 Babel 使用"></a>配合 Babel 使用</h3><p>如果你想要在  <a href="http://babeljs.io/" target="_blank" rel="noopener">Babel</a>  中使用  <code>import</code>，但是由于 import() 还是属于 Stage 3 的特性，所以你需要安装/添加  <a href="http://babeljs.io/docs/plugins/syntax-dynamic-import/" target="_blank" rel="noopener"><code>syntax-dynamic-import</code></a>  插件来避免 parser 报错。在草案正式成为规范后，就不再需要这个插件了。</p>
+<h3 id="配合-babel-使用"><a class="markdownIt-Anchor" href="#配合-babel-使用"></a> 配合 Babel 使用</h3>
+<p>如果你想要在  <a href="http://babeljs.io/" target="_blank" rel="noopener">Babel</a>  中使用  <code>import</code>，但是由于 import() 还是属于 Stage 3 的特性，所以你需要安装/添加  <a href="http://babeljs.io/docs/plugins/syntax-dynamic-import/" target="_blank" rel="noopener"><code>syntax-dynamic-import</code></a>  插件来避免 parser 报错。在草案正式成为规范后，就不再需要这个插件了。</p>
 <p>例：</p>
 <p>我们来定义一个 Clock 组件，动态引入 moment 库。</p>
 <p>首先，安装 moment 库。</p>
@@ -536,10 +547,11 @@
 <p>webpack.config.js</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 关于模块配置</span></span><br><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 模块规则（配置 loader、解析器等选项）</span></span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">// 语义解释器，将 js/jsx 文件中的 es2015/react 语法自动转为浏览器可识别的 Javascript 语法</span></span><br><span class="line">      test: <span class="regexp">/\.jsx?$/</span>,</span><br><span class="line">      include: path.resolve(__dirname, <span class="string">"app"</span>),</span><br><span class="line"></span><br><span class="line">      <span class="comment">// 应该应用的 loader，它相对上下文解析</span></span><br><span class="line">      <span class="comment">// 为了更清晰，`-loader` 后缀在 webpack 2 中不再是可选的</span></span><br><span class="line">      <span class="comment">// 查看 webpack 1 升级指南。</span></span><br><span class="line">      loader: <span class="string">"babel-loader"</span>,</span><br><span class="line"></span><br><span class="line">      <span class="comment">// loader 的可选项</span></span><br><span class="line">      options: &#123;</span><br><span class="line">        presets: [<span class="string">"es2015"</span>, <span class="string">"react"</span>],</span><br><span class="line">        plugins: [<span class="string">'syntax-dynamic-import'</span>]</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;,</span><br><span class="line">  ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>​:flashlight: <strong>示例 DEMO11：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo11/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo11" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
+<p>​🔦 <strong>示例 DEMO11：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo11/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo11" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
 </blockquote>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="webpack.md">Webpack 入门</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
@@ -547,10 +559,11 @@
 <li><a href="code-splitting.md">Webpack 代码分离</a></li>
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
-<li><strong>官方资料</strong><ul>
+<li><strong>官方资料</strong>
+<ul>
 <li><a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 官网</a></li>
 <li><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">Webpack 中文网</a></li>
 <li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener">webpack Github</a></li>
@@ -558,13 +571,15 @@
 <li><a href="http://webpack.github.io/docs/webpack-dev-server.html" target="_blank" rel="noopener">webpack-dev-server 官方文档</a></li>
 </ul>
 </li>
-<li><strong>入门资料</strong><ul>
+<li><strong>入门资料</strong>
+<ul>
 <li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="noopener">webpack-demos</a></li>
 <li><a href="https://github.com/petehunt/webpack-howto/blob/master/README-zh.md" target="_blank" rel="noopener">webpack-howto</a></li>
 <li><a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="noopener">webpack-handbook</a></li>
 </ul>
 </li>
-<li><strong>教程</strong><ul>
+<li><strong>教程</strong>
+<ul>
 <li><a href="webpack-howto.md">如何学习 Webpack</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
 <li><a href="webpack.md">Webpack 入门</a></li>
@@ -573,12 +588,14 @@
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
 </li>
-<li><strong>文章</strong><ul>
+<li><strong>文章</strong>
+<ul>
 <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/" target="_blank" rel="noopener">JavaScript 模块化七日谈</a></li>
 <li><a href="https://github.com/seajs/seajs/issues/588" target="_blank" rel="noopener">前端模块化开发那点历史</a></li>
 </ul>
 </li>
-<li><strong>更多资源</strong><ul>
+<li><strong>更多资源</strong>
+<ul>
 <li><a href="https://github.com/webpack-china/awesome-webpack-cn" target="_blank" rel="noopener">awesome-webpack-cn</a></li>
 </ul>
 </li>
@@ -724,7 +741,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -789,7 +806,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1087,7 +1106,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Webpack-代码分离"><span class="nav-text">Webpack 代码分离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源分离-Resource-Splitting"><span class="nav-text">资源分离(Resource Splitting)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离-CSS-CSS-Splitting"><span class="nav-text">分离 CSS(CSS Splitting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分离第三方库-Vendor-Code-Splitting"><span class="nav-text">分离第三方库(Vendor Code Splitting)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码按需分离-On-Demand-Code-Splitting"><span class="nav-text">代码按需分离(On Demand Code Splitting)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配合-Babel-使用"><span class="nav-text">配合 Babel 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-代码分离"><span class="nav-text"> Webpack 代码分离</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#资源分离resource-splitting"><span class="nav-text"> 资源分离(Resource Splitting)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分离-csscss-splitting"><span class="nav-text"> 分离 CSS(CSS Splitting)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分离第三方库vendor-code-splitting"><span class="nav-text"> 分离第三方库(Vendor Code Splitting)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码按需分离on-demand-code-splitting"><span class="nav-text"> 代码按需分离(On Demand Code Splitting)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配合-babel-使用"><span class="nav-text"> 配合 Babel 使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1129,7 +1148,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

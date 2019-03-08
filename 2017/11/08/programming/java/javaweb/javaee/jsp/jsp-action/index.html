@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">7.8k</span>
+                <span title="本文字数">7.9k</span>
               
 
               
@@ -568,12 +568,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="常见的属性"><a href="#常见的属性" class="headerlink" title="常见的属性"></a>常见的属性</h2><p>所有的动作要素都有两个属性：id 属性和 scope 属性。</p>
+<h2 id="常见的属性"><a class="markdownIt-Anchor" href="#常见的属性"></a> 常见的属性</h2>
+<p>所有的动作要素都有两个属性：id 属性和 scope 属性。</p>
 <ul>
-<li><strong>id 属性：</strong>id 属性是动作元素的唯一标识，可以在 JSP 页面中引用。动作元素创建的 id 值可以通过 PageContext 来调用。</li>
-<li><strong>scope 属性：</strong>该属性用于识别动作元素的生命周期。 id 属性和 scope 属性有直接关系，scope 属性定义了相关联 id 对象的寿命。 scope 属性有四个可能的值： (a) page, (b)request, (c)session, 和 (d) application。</li>
+<li>**id 属性：**id 属性是动作元素的唯一标识，可以在 JSP 页面中引用。动作元素创建的 id 值可以通过 PageContext 来调用。</li>
+<li>**scope 属性：**该属性用于识别动作元素的生命周期。 id 属性和 scope 属性有直接关系，scope 属性定义了相关联 id 对象的寿命。 scope 属性有四个可能的值： (a) page, (b)request, ©session, 和 (d) application。</li>
 </ul>
-<h2 id="jsp-include"><a href="#jsp-include" class="headerlink" title="jsp:include"></a><a href="jsp:include" target="_blank" rel="noopener">jsp:include</a></h2><p><code>&lt;jsp:include&gt;</code>用来包含静态和动态的文件。该动作把指定文件插入正在生成的页面。</p>
+<h2 id="jspinclude"><a class="markdownIt-Anchor" href="#jspinclude"></a> <a href="jsp:include" target="_blank" rel="noopener">jsp:include</a></h2>
+<p><code>&lt;jsp:include&gt;</code>用来包含静态和动态的文件。该动作把指定文件插入正在生成的页面。</p>
 <p>如果被包含的文件为 JSP 程序，则会先执行 JSP 程序，再将执行结果包含进来。</p>
 <p>语法格式如下：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;jsp:include <span class="attribute">page</span>=<span class="string">"相对 URL 地址"</span> <span class="attribute">flush</span>=<span class="string">"true"</span> /&gt;</span><br></pre></td></tr></table></figure>
@@ -604,9 +606,10 @@
 <p>main.jsp 文件代码：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;include 动作实例&lt;/h2&gt;</span><br><span class="line">&lt;jsp:include page=<span class="string">"date.jsp"</span> flush=<span class="string">"true"</span> /&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>现在将以上两个文件放在服务器的根目录下，访问 main.jsp 文件。显示结果如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">include</span> 动作实例</span><br><span class="line"></span><br><span class="line">今天的日期是: 2016<span class="selector-tag">-6-25</span> 14<span class="selector-pseudo">:08</span><span class="selector-pseudo">:17</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">include 动作实例</span><br><span class="line"></span><br><span class="line">今天的日期是: <span class="number">2016</span><span class="number">-6</span><span class="number">-25</span> <span class="number">14</span>:<span class="number">08</span>:<span class="number">17</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="jsp-useBean"><a href="#jsp-useBean" class="headerlink" title="jsp:useBean"></a><a href="jsp:useBean" target="_blank" rel="noopener">jsp:useBean</a></h2><p><strong>jsp:useBean</strong>  动作用来加载一个将在 JSP 页面中使用的 JavaBean。</p>
+<h2 id="jspusebean"><a class="markdownIt-Anchor" href="#jspusebean"></a> <a href="jsp:useBean" target="_blank" rel="noopener">jsp:useBean</a></h2>
+<p><strong>jsp:useBean</strong>  动作用来加载一个将在 JSP 页面中使用的 JavaBean。</p>
 <p>这个功能非常有用，因为它使得我们可以发挥 Java 组件复用的优势。</p>
 <p>jsp:useBean 动作最简单的语法为：</p>
 <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;jsp:useBean <span class="built_in">id</span>=<span class="string">"name"</span> <span class="built_in">class</span>=<span class="string">"package.class"</span> /&gt;</span><br></pre></td></tr></table></figure>
@@ -636,7 +639,8 @@
 </table>
 <p>在给出具体实例前，让我们先来看下 jsp:setProperty 和 jsp:getProperty 动作元素：</p>
 <hr>
-<h2 id="jsp-setProperty"><a href="#jsp-setProperty" class="headerlink" title="jsp:setProperty"></a><a href="jsp:setProperty" target="_blank" rel="noopener">jsp:setProperty</a></h2><p>jsp:setProperty 用来设置已经实例化的 Bean 对象的属性，有两种用法。首先，你可以在 jsp:useBean 元素的外面（后面）使用 jsp:setProperty，如下所示：</p>
+<h2 id="jspsetproperty"><a class="markdownIt-Anchor" href="#jspsetproperty"></a> <a href="jsp:setProperty" target="_blank" rel="noopener">jsp:setProperty</a></h2>
+<p>jsp:setProperty 用来设置已经实例化的 Bean 对象的属性，有两种用法。首先，你可以在 jsp:useBean 元素的外面（后面）使用 jsp:setProperty，如下所示：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;jsp:useBean <span class="attribute">id</span>=<span class="string">"myName"</span> <span class="built_in">..</span>. /&gt;</span><br><span class="line"><span class="built_in">..</span>.</span><br><span class="line">&lt;jsp:setProperty <span class="attribute">name</span>=<span class="string">"myName"</span> <span class="attribute">property</span>=<span class="string">"someProperty"</span> <span class="built_in">..</span>./&gt;</span><br></pre></td></tr></table></figure>
 <p>此时，不管 jsp:useBean 是找到了一个现有的 Bean，还是新创建了一个 Bean 实例，jsp:setProperty 都会执行。第二种用法是把 jsp:setProperty 放入 jsp:useBean 元素的内部，如下所示：</p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">&lt;jsp<span class="function">:useBean</span> id=<span class="string">"myName"</span> <span class="string">...</span> &gt;</span><br><span class="line"><span class="string">...</span></span><br><span class="line">   &lt;jsp<span class="function">:setProperty</span> name=<span class="string">"myName"</span> property=<span class="string">"someProperty"</span> <span class="string">.../</span>&gt;</span><br><span class="line">&lt;<span class="string">/jsp</span><span class="function">:useBean</span>&gt;</span><br></pre></td></tr></table></figure>
@@ -656,11 +660,11 @@
 </tr>
 <tr>
 <td>property</td>
-<td>property 属性是必需的。它表示要设置哪个属性。有一个特殊用法：如果 property 的值是”*“，表示所有名字和 Bean 属性名字匹配的请求参数都将被传递给相应的属性 set 方法。</td>
+<td>property 属性是必需的。它表示要设置哪个属性。有一个特殊用法：如果 property 的值是&quot;*&quot;，表示所有名字和 Bean 属性名字匹配的请求参数都将被传递给相应的属性 set 方法。</td>
 </tr>
 <tr>
 <td>value</td>
-<td>value 属性是可选的。该属性用来指定 Bean 属性的值。字符串数据会在目标类中通过标准的 valueOf 方法自动转换成数字、boolean、Boolean、 byte、Byte、char、Character。例如，boolean 和 Boolean 类型的属性值（比如”true”）通过 Boolean.valueOf 转换，int 和 Integer 类型的属性值（比如”42”）通过 Integer.valueOf 转换。 　　 value 和 param 不能同时使用，但可以使用其中任意一个。</td>
+<td>value 属性是可选的。该属性用来指定 Bean 属性的值。字符串数据会在目标类中通过标准的 valueOf 方法自动转换成数字、boolean、Boolean、 byte、Byte、char、Character。例如，boolean 和 Boolean 类型的属性值（比如&quot;true&quot;）通过 Boolean.valueOf 转换，int 和 Integer 类型的属性值（比如&quot;42&quot;）通过 Integer.valueOf 转换。 　　 value 和 param 不能同时使用，但可以使用其中任意一个。</td>
 </tr>
 <tr>
 <td>param</td>
@@ -669,7 +673,8 @@
 </tbody>
 </table>
 <hr>
-<h2 id="jsp-getProperty"><a href="#jsp-getProperty" class="headerlink" title="jsp:getProperty"></a><a href="jsp:getProperty" target="_blank" rel="noopener">jsp:getProperty</a></h2><p>jsp:getProperty 动作提取指定 Bean 属性的值，转换成字符串，然后输出。语法格式如下：</p>
+<h2 id="jspgetproperty"><a class="markdownIt-Anchor" href="#jspgetproperty"></a> <a href="jsp:getProperty" target="_blank" rel="noopener">jsp:getProperty</a></h2>
+<p>jsp:getProperty 动作提取指定 Bean 属性的值，转换成字符串，然后输出。语法格式如下：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;jsp:useBean <span class="attribute">id</span>=<span class="string">"myName"</span> <span class="built_in">..</span>. /&gt;</span><br><span class="line"><span class="built_in">..</span>.</span><br><span class="line">&lt;jsp:getProperty <span class="attribute">name</span>=<span class="string">"myName"</span> <span class="attribute">property</span>=<span class="string">"someProperty"</span> <span class="built_in">..</span>./&gt;</span><br></pre></td></tr></table></figure>
 <p>下表是与 getProperty 相关联的属性：</p>
 <table>
@@ -694,7 +699,7 @@
 <p>以下实例我们使用了 Bean:</p>
 <figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.runoob.main;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestBean</span> </span>&#123;</span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">String</span> message = <span class="string">"菜鸟教程"</span>;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">String</span> getMessage() &#123;</span><br><span class="line">      <span class="keyword">return</span>(message);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="keyword">public</span> void setMessage(<span class="keyword">String</span> message) &#123;</span><br><span class="line">      <span class="built_in">this</span>.message = message;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>编译以上实例文件 TestBean.java ：</p>
-<figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>javac TestBean.java</span><br></pre></td></tr></table></figure>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">$ javac <span class="module-access"><span class="module"><span class="identifier">TestBean</span>.</span></span>java</span><br></pre></td></tr></table></figure>
 <p>编译完成后会在当前目录下生成一个  <strong>TestBean.class</strong>  文件， 将该文件拷贝至当前 JSP 项目的  <strong>WebContent/WEB-INF/classes/com/runoob/main</strong>  下( com/runoob/main 包路径，没有需要手动创建)。</p>
 <p>下面是一个 Eclipse 中目录结构图：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/6AC33FBA-0B76-4BFD-A690-E856E9E01900.jpg"></div><br></p>
@@ -704,7 +709,8 @@
 <p>浏览器访问，执行以上文件，输出如下所示：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/D7AD87A8-3392-4D4E-8731-18806B0644CD.jpg"></div><br></p>
 <hr>
-<h2 id="jsp-forward"><a href="#jsp-forward" class="headerlink" title="jsp:forward"></a><a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a></h2><p>jsp:forward 动作把请求转到另外的页面。jsp:forward 标记只有一个属性 page。语法格式如下所示：</p>
+<h2 id="jspforward"><a class="markdownIt-Anchor" href="#jspforward"></a> <a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a></h2>
+<p>jsp:forward 动作把请求转到另外的页面。jsp:forward 标记只有一个属性 page。语法格式如下所示：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp:forward</span> <span class="attr">page</span>=<span class="string">"相对 URL 地址"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以下是 forward 相关联的属性：</p>
 <table>
@@ -728,22 +734,25 @@
 <p>main.jsp 文件代码：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>forward 动作实例<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:forward</span> <span class="attr">page</span>=<span class="string">"date.jsp"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>现在将以上两个文件放在服务器的根目录下，访问 main.jsp 文件。显示结果如下：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">今天的日期是: 2016<span class="selector-tag">-6-25</span> 14<span class="selector-pseudo">:37</span><span class="selector-pseudo">:25</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">今天的日期是: <span class="number">2016</span><span class="number">-6</span><span class="number">-25</span> <span class="number">14</span>:<span class="number">37</span>:<span class="number">25</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="jsp-plugin"><a href="#jsp-plugin" class="headerlink" title="jsp:plugin"></a><a href="jsp:plugin" target="_blank" rel="noopener">jsp:plugin</a></h2><p>jsp:plugin 动作用来根据浏览器的类型，插入通过 Java 插件 运行 Java Applet 所必需的 OBJECT 或 EMBED 元素。</p>
+<h2 id="jspplugin"><a class="markdownIt-Anchor" href="#jspplugin"></a> <a href="jsp:plugin" target="_blank" rel="noopener">jsp:plugin</a></h2>
+<p>jsp:plugin 动作用来根据浏览器的类型，插入通过 Java 插件 运行 Java Applet 所必需的 OBJECT 或 EMBED 元素。</p>
 <p>如果需要的插件不存在，它会下载插件，然后执行 Java 组件。 Java 组件可以是一个 applet 或一个 JavaBean。</p>
 <p>plugin 动作有多个对应 HTML 元素的属性用于格式化 Java 组件。param 元素可用于向 Applet 或 Bean 传递参数。</p>
 <p>以下是使用 plugin 动作元素的典型实例:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp:plugin</span> <span class="attr">type</span>=<span class="string">"applet"</span> <span class="attr">codebase</span>=<span class="string">"dirname"</span> <span class="attr">code</span>=<span class="string">"MyApplet.class"</span></span></span><br><span class="line"><span class="tag">                           <span class="attr">width</span>=<span class="string">"60"</span> <span class="attr">height</span>=<span class="string">"80"</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">jsp:param</span> <span class="attr">name</span>=<span class="string">"fontcolor"</span> <span class="attr">value</span>=<span class="string">"red"</span> /&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">jsp:param</span> <span class="attr">name</span>=<span class="string">"background"</span> <span class="attr">value</span>=<span class="string">"black"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">   <span class="tag">&lt;<span class="name">jsp:fallback</span>&gt;</span></span><br><span class="line">      Unable to initialize Java Plugin</span><br><span class="line">   <span class="tag">&lt;/<span class="name">jsp:fallback</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:plugin</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果你有兴趣可以尝试使用 applet 来测试 jsp:plugin 动作元素，<fallback>元素是一个新元素，在组件出现故障的错误是发送给用户错误信息。</fallback></p>
 <hr>
-<h2 id="jsp-element-、-jsp-attribute、-jsp-body"><a href="#jsp-element-、-jsp-attribute、-jsp-body" class="headerlink" title="jsp:element 、 jsp:attribute、 jsp:body"></a><a href="jsp:element" target="_blank" rel="noopener">jsp:element</a> 、 <a href="jsp:attribute" target="_blank" rel="noopener">jsp:attribute</a>、 <a href="jsp:body" target="_blank" rel="noopener">jsp:body</a></h2><p><a href="jsp:element" target="_blank" rel="noopener">jsp:element</a> 、 <a href="jsp:attribute" target="_blank" rel="noopener">jsp:attribute</a>、 <a href="jsp:body" target="_blank" rel="noopener">jsp:body</a>动作元素动态定义 XML 元素。动态是非常重要的，这就意味着 XML 元素在编译时是动态生成的而非静态。</p>
+<h2 id="jspelement"><a class="markdownIt-Anchor" href="#jspelement"></a> <a href="jsp:element" target="_blank" rel="noopener">jsp:element</a> 、 <a href="jsp:attribute" target="_blank" rel="noopener">jsp:attribute</a>、 <a href="jsp:body" target="_blank" rel="noopener">jsp:body</a></h2>
+<p><a href="jsp:element" target="_blank" rel="noopener">jsp:element</a> 、 <a href="jsp:attribute" target="_blank" rel="noopener">jsp:attribute</a>、 <a href="jsp:body" target="_blank" rel="noopener">jsp:body</a>动作元素动态定义 XML 元素。动态是非常重要的，这就意味着 XML 元素在编译时是动态生成的而非静态。</p>
 <p>以下实例动态定义了 XML 元素：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:element</span> <span class="attr">name</span>=<span class="string">"xmlElement"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:attribute</span> <span class="attr">name</span>=<span class="string">"xmlElementAttr"</span>&gt;</span></span><br><span class="line">   属性值</span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:attribute</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:body</span>&gt;</span></span><br><span class="line">   XML 元素的主体</span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器访问以下页面，输出结果如下所示：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/7D8C47F0-0DDE-4F1D-8BE1-B2C9C955683E.jpg"></div><br></p>
 <hr>
-<h2 id="jsp-text"><a href="#jsp-text" class="headerlink" title="jsp:text"></a><a href="jsp:text" target="_blank" rel="noopener">jsp:text</a></h2><p><a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>动作元素允许在 JSP 页面和文档中使用写入文本的模板，语法格式如下：</p>
+<h2 id="jsptext"><a class="markdownIt-Anchor" href="#jsptext"></a> <a href="jsp:text" target="_blank" rel="noopener">jsp:text</a></h2>
+<p><a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>动作元素允许在 JSP 页面和文档中使用写入文本的模板，语法格式如下：</p>
 <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line">&lt;jsp:<span class="built_in">text</span>&gt;模板数据&lt;/jsp:<span class="built_in">text</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>以上文本模板不能包含其他元素，只能只能包含文本和 EL 表达式（注：EL 表达式将在后续章节中介绍）。请注意，在 XML 文件中，您不能使用表达式如 ${whatever &gt; 0}，因为&gt;符号是非法的。 你可以使用 ${whatever gt 0}表达式或者嵌入在一个 CDATA 部分的值。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">jsp:text</span>&gt;</span>&lt;![CDATA[&lt;br&gt;]]&gt;<span class="tag">&lt;/<span class="name">jsp:text</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -826,8 +835,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/tools/jetty/" rel="prev" title="Jetty 使用小结">
-                Jetty 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/" rel="prev" title="JDK8 升级常见问题">
+                JDK8 升级常见问题 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -899,7 +908,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -964,7 +973,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1262,7 +1273,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的属性"><span class="nav-text">常见的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-include"><span class="nav-text">jsp:include</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-useBean"><span class="nav-text">jsp:useBean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-setProperty"><span class="nav-text">jsp:setProperty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-getProperty"><span class="nav-text">jsp:getProperty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-forward"><span class="nav-text">jsp:forward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-plugin"><span class="nav-text">jsp:plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-element-、-jsp-attribute、-jsp-body"><span class="nav-text">jsp:element 、 jsp:attribute、 jsp:body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-text"><span class="nav-text">jsp:text</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#常见的属性"><span class="nav-text"> 常见的属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspinclude"><span class="nav-text"> jsp:include</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspusebean"><span class="nav-text"> jsp:useBean</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspsetproperty"><span class="nav-text"> jsp:setProperty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspgetproperty"><span class="nav-text"> jsp:getProperty</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspforward"><span class="nav-text"> jsp:forward</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspplugin"><span class="nav-text"> jsp:plugin</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jspelement"><span class="nav-text"> jsp:element 、 jsp:attribute、 jsp:body</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsptext"><span class="nav-text"> jsp:text</span></a></li></ol></div>
             
 
           </div>
@@ -1304,7 +1315,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

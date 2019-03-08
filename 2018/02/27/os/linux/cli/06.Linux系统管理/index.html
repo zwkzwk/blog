@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+  <meta name="description" content="Linux 系统管理  关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法  lsb_release reboot exit shutdown date mount umount ps kill syst">
 <meta name="keywords" content="linux,command">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 系统管理">
 <meta property="og:url" content="https://dunwu.github.io/2018/02/27/os/linux/cli/06.Linux系统管理/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+<meta property="og:description" content="Linux 系统管理  关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法  lsb_release reboot exit shutdown date mount umount ps kill syst">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.119Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 系统管理">
-<meta name="twitter:description" content="Linux 系统管理 关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法 lsb_release reboot exit shutdown date mount umount ps kill systemc">
+<meta name="twitter:description" content="Linux 系统管理  关键词：lsb_release, reboot, exit, shutdown, date, mount, umount, ps, kill, systemctl, service, crontab    Linux 系统管理要点 命令常见用法  lsb_release reboot exit shutdown date mount umount ps kill syst">
 
 
 
@@ -508,13 +508,15 @@
       
 
       
-        <h1 id="Linux-系统管理"><a href="#Linux-系统管理" class="headerlink" title="Linux 系统管理"></a>Linux 系统管理</h1><blockquote>
+        <h1 id="linux-系统管理"><a class="markdownIt-Anchor" href="#linux-系统管理"></a> Linux 系统管理</h1>
+<blockquote>
 <p>关键词：<code>lsb_release</code>, <code>reboot</code>, <code>exit</code>, <code>shutdown</code>, <code>date</code>, <code>mount</code>, <code>umount</code>, <code>ps</code>, <code>kill</code>, <code>systemctl</code>, <code>service</code>, <code>crontab</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#linux-系统管理要点">Linux 系统管理要点</a></li>
-<li><a href="#命令常见用法">命令常见用法</a><ul>
+<li><a href="#linux-%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E8%A6%81%E7%82%B9">Linux 系统管理要点</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95">命令常见用法</a>
+<ul>
 <li><a href="#lsb_release">lsb_release</a></li>
 <li><a href="#reboot">reboot</a></li>
 <li><a href="#exit">exit</a></li>
@@ -531,8 +533,10 @@
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="Linux-系统管理要点"><a href="#Linux-系统管理要点" class="headerlink" title="Linux 系统管理要点"></a>Linux 系统管理要点</h2><ul>
-<li>查看 Linux 系统发行版本<ul>
+<h2 id="linux-系统管理要点"><a class="markdownIt-Anchor" href="#linux-系统管理要点"></a> Linux 系统管理要点</h2>
+<ul>
+<li>查看 Linux 系统发行版本
+<ul>
 <li>使用 <a href="#lsb_release">lsb_release</a>（此命令适用于所有的 Linux 发行版本）</li>
 <li>使用 <code>cat /etc/redhat-release</code>（此方法只适合 Redhat 系的 Linux）</li>
 </ul>
@@ -550,73 +554,86 @@
 <li>启动、停止、重启、关闭、显示系统服务（Centos7 以前），使用 <a href="#service">service</a></li>
 <li>管理需要周期性执行的任务，使用 <a href="#crontab">crontab</a></li>
 </ul>
-<h2 id="命令常见用法"><a href="#命令常见用法" class="headerlink" title="命令常见用法"></a>命令常见用法</h2><h3 id="lsb-release"><a href="#lsb-release" class="headerlink" title="lsb_release"></a>lsb_release</h3><p>lsb_release 不是 bash 默认命令，如果要使用，需要先安装。</p>
+<h2 id="命令常见用法"><a class="markdownIt-Anchor" href="#命令常见用法"></a> 命令常见用法</h2>
+<h3 id="lsb_release"><a class="markdownIt-Anchor" href="#lsb_release"></a> lsb_release</h3>
+<p>lsb_release 不是 bash 默认命令，如果要使用，需要先安装。</p>
 <p>安装方法：</p>
 <ol>
 <li>执行 <code>yum provides lsb_release</code>，查看支持 lsb_release 命令的包。</li>
 <li>选择合适版本，执行类似这样的安装命令：<code>yum install -y redhat-lsb-core-4.1-27.el7.centos.1.x86_64</code></li>
 </ol>
-<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><blockquote>
+<h3 id="reboot"><a class="markdownIt-Anchor" href="#reboot"></a> reboot</h3>
+<blockquote>
 <p>reboot 命令用来重新启动正在运行的 Linux 操作系统。</p>
 <p>参考：<a href="http://man.linuxde.net/reboot" target="_blank" rel="noopener">http://man.linuxde.net/reboot</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">reboot        <span class="comment"># 重开机。</span></span><br><span class="line">reboot -w     <span class="comment"># 做个重开机的模拟（只有纪录并不会真的重开机）。</span></span><br></pre></td></tr></table></figure>
-<h3 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h3><blockquote>
+<h3 id="exit"><a class="markdownIt-Anchor" href="#exit"></a> exit</h3>
+<blockquote>
 <p>exit 命令同于退出 shell，并返回给定值。在 shell 脚本中可以终止当前脚本执行。执行 exit 可使 shell 以指定的状态值退出。若不设置状态值参数，则 shell 以预设值退出。状态值 0 代表执行成功，其他值代表执行失败。</p>
 <p>参考：<a href="http://man.linuxde.net/exit" target="_blank" rel="noopener">http://man.linuxde.net/exit</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 退出当前 shell</span></span><br><span class="line">[root@localhost ~]<span class="comment"># exit</span></span><br><span class="line"><span class="built_in">logout</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，进入脚本所在目录，否则退出</span></span><br><span class="line"><span class="built_in">cd</span> $(dirname <span class="variable">$0</span>) || <span class="built_in">exit</span> 1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，判断参数数量，不匹配就打印使用方式，退出</span></span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$#</span>"</span> -ne <span class="string">"2"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"usage: <span class="variable">$0</span> &lt;area&gt; &lt;hours&gt;"</span></span><br><span class="line">    <span class="built_in">exit</span> 2</span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在脚本中，退出时删除临时文件</span></span><br><span class="line"><span class="built_in">trap</span> <span class="string">"rm -f tmpfile; echo Bye."</span> EXIT</span><br><span class="line"></span><br><span class="line"><span class="comment"># 检查上一命令的退出码</span></span><br><span class="line">./mycommand.sh</span><br><span class="line">EXCODE=$?</span><br><span class="line"><span class="keyword">if</span> [ <span class="string">"<span class="variable">$EXCODE</span>"</span> == <span class="string">"0"</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">"O.K"</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
-<h3 id="shutdown"><a href="#shutdown" class="headerlink" title="shutdown"></a>shutdown</h3><blockquote>
+<h3 id="shutdown"><a class="markdownIt-Anchor" href="#shutdown"></a> shutdown</h3>
+<blockquote>
 <p>shutdown 命令用来系统关机命令。shutdown 指令可以关闭所有程序，并依用户的需要，进行重新开机或关机的动作。</p>
 <p>参考：<a href="http://man.linuxde.net/shutdown" target="_blank" rel="noopener">http://man.linuxde.net/shutdown</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定现在立即关机</span></span><br><span class="line">shutdown -h now</span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定 5 分钟后关机，同时送出警告信息给登入用户</span></span><br><span class="line">shutdown +5 <span class="string">"System will shutdown after 5 minutes"</span></span><br></pre></td></tr></table></figure>
-<h3 id="date"><a href="#date" class="headerlink" title="date"></a>date</h3><blockquote>
+<h3 id="date"><a class="markdownIt-Anchor" href="#date"></a> date</h3>
+<blockquote>
 <p>date 命令是显示或设置系统时间与日期。</p>
 <p>参考：<a href="http://man.linuxde.net/date" target="_blank" rel="noopener">http://man.linuxde.net/date</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 格式化输出</span></span><br><span class="line">date +<span class="string">"%Y-%m-%d"</span></span><br><span class="line">2009-12-07</span><br><span class="line"></span><br><span class="line"><span class="comment"># 输出昨天日期</span></span><br><span class="line">date -d <span class="string">"1 day ago"</span> +<span class="string">"%Y-%m-%d"</span></span><br><span class="line">2012-11-19</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2 秒后输出</span></span><br><span class="line">date -d <span class="string">"2 second"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2012-11-20 14:21.31</span><br><span class="line"></span><br><span class="line"><span class="comment"># 传说中的 1234567890 秒</span></span><br><span class="line">date -d <span class="string">"1970-01-01 1234567890 seconds"</span> +<span class="string">"%Y-%m-%d %H:%m:%S"</span></span><br><span class="line">2009-02-13 23:02:30</span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通转格式</span></span><br><span class="line">date -d <span class="string">"2009-12-12"</span> +<span class="string">"%Y/%m/%d %H:%M.%S"</span></span><br><span class="line">2009/12/12 00:00.00</span><br><span class="line"></span><br><span class="line"><span class="comment"># apache 格式转换</span></span><br><span class="line">date -d <span class="string">"Dec 5, 2009 12:00:37 AM"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2009-12-05 00:00.37</span><br><span class="line"></span><br><span class="line"><span class="comment"># 格式转换后时间游走</span></span><br><span class="line">date -d <span class="string">"Dec 5, 2009 12:00:37 AM 2 year ago"</span> +<span class="string">"%Y-%m-%d %H:%M.%S"</span></span><br><span class="line">2007-12-05 00:00.37</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加减操作</span></span><br><span class="line">date +%Y%m%d                   <span class="comment"># 显示前天年月日</span></span><br><span class="line">date -d <span class="string">"+1 day"</span> +%Y%m%d       <span class="comment"># 显示前一天的日期</span></span><br><span class="line">date -d <span class="string">"-1 day"</span> +%Y%m%d       <span class="comment"># 显示后一天的日期</span></span><br><span class="line">date -d <span class="string">"-1 month"</span> +%Y%m%d     <span class="comment"># 显示上一月的日期</span></span><br><span class="line">date -d <span class="string">"+1 month"</span> +%Y%m%d     <span class="comment"># 显示下一月的日期</span></span><br><span class="line">date -d <span class="string">"-1 year"</span> +%Y%m%d      <span class="comment"># 显示前一年的日期</span></span><br><span class="line">date -d <span class="string">"+1 year"</span> +%Y%m%d      <span class="comment"># 显示下一年的日期</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设定时间</span></span><br><span class="line">date -s                        <span class="comment"># 设置当前时间，只有root权限才能设置，其他只能查看</span></span><br><span class="line">date -s 20120523               <span class="comment"># 设置成20120523，这样会把具体时间设置成空00:00:00</span></span><br><span class="line">date -s 01:01:01               <span class="comment"># 设置具体时间，不会对日期做更改</span></span><br><span class="line">date -s <span class="string">"01:01:01 2012-05-23"</span>  <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"01:01:01 20120523"</span>    <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"2012-05-23 01:01:01"</span>  <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line">date -s <span class="string">"20120523 01:01:01"</span>    <span class="comment"># 这样可以设置全部时间</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 有时需要检查一组命令花费的时间</span></span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line">start=$(date +%s)</span><br><span class="line">nmap man.linuxde.net &amp;&gt; /dev/null</span><br><span class="line"></span><br><span class="line">end=$(date +%s)</span><br><span class="line">difference=$(( end - start ))</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$difference</span> seconds.</span><br></pre></td></tr></table></figure>
-<h3 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h3><blockquote>
+<h3 id="mount"><a class="markdownIt-Anchor" href="#mount"></a> mount</h3>
+<blockquote>
 <p>mount 命令用于挂载文件系统到指定的挂载点。此命令的最常用于挂载 cdrom，使我们可以访问 cdrom 中的数据，因为你将光盘插入 cdrom 中，Linux 并不会自动挂载，必须使用 Linux mount 命令来手动完成挂载。</p>
 <p>参考：<a href="http://man.linuxde.net/mount" target="_blank" rel="noopener">http://man.linuxde.net/mount</a> &gt; <a href="https://blog.csdn.net/weishujie000/article/details/76531924" target="_blank" rel="noopener">https://blog.csdn.net/weishujie000/article/details/76531924</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 /dev/hda1 挂在 /mnt 之下</span></span><br><span class="line">mount /dev/hda1 /mnt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 /dev/hda1 用唯读模式挂在 /mnt 之下</span></span><br><span class="line">mount -o ro /dev/hda1 /mnt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 /tmp/image.iso 这个光碟的 image 档使用 loop 模式挂在 /mnt/cdrom 之下</span></span><br><span class="line"><span class="comment"># 用这种方法可以将一般网络上可以找到的 Linux ISO 在不烧录成光碟的情况下检视其内容</span></span><br><span class="line">mount -o loop /tmp/image.iso /mnt/cdrom</span><br></pre></td></tr></table></figure>
-<h3 id="umount"><a href="#umount" class="headerlink" title="umount"></a>umount</h3><blockquote>
+<h3 id="umount"><a class="markdownIt-Anchor" href="#umount"></a> umount</h3>
+<blockquote>
 <p>umount 命令用于卸载已经挂载的文件系统。利用设备名或挂载点都能 umount 文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。</p>
 <p>参考：<a href="http://man.linuxde.net/umount" target="_blank" rel="noopener">http://man.linuxde.net/umount</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 通过设备名卸载</span></span><br><span class="line">umount -v /dev/sda1</span><br><span class="line">/dev/sda1 umounted</span><br><span class="line"></span><br><span class="line"><span class="comment"># 通过挂载点卸载</span></span><br><span class="line">umount -v /mnt/mymount/</span><br><span class="line">/tmp/diskboot.img umounted</span><br></pre></td></tr></table></figure>
-<h3 id="ps"><a href="#ps" class="headerlink" title="ps"></a>ps</h3><blockquote>
+<h3 id="ps"><a class="markdownIt-Anchor" href="#ps"></a> ps</h3>
+<blockquote>
 <p>ps 命令用于报告当前系统的进程状态。可以搭配 kill 指令随时中断、删除不必要的程序。ps 命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。</p>
 <p>参考：<a href="http://man.linuxde.net/ps" target="_blank" rel="noopener">http://man.linuxde.net/ps</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 按内存资源的使用量对进程进行排序</span></span><br><span class="line">ps aux | sort -rnk 4</span><br><span class="line"></span><br><span class="line"><span class="comment"># 按 CPU 资源的使用量对进程进行排序</span></span><br><span class="line">ps aux | sort -nk 3</span><br></pre></td></tr></table></figure>
-<h3 id="kill"><a href="#kill" class="headerlink" title="kill"></a>kill</h3><blockquote>
+<h3 id="kill"><a class="markdownIt-Anchor" href="#kill"></a> kill</h3>
+<blockquote>
 <p>kill 命令用来删除执行中的程序或工作。kill 可将指定的信息送至程序。预设的信息为 SIGTERM(15),可将指定程序终止。若仍无法终止该程序，可使用 SIGKILL(9) 信息尝试强制删除程序。程序或工作的编号可利用 ps 指令或 job 指令查看。</p>
 <p>参考：<a href="http://man.linuxde.net/kill" target="_blank" rel="noopener">http://man.linuxde.net/kill</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出所有信号名称</span></span><br><span class="line"> <span class="built_in">kill</span> -l</span><br><span class="line"> 1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL</span><br><span class="line"> 5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE</span><br><span class="line"> 9) SIGKILL     10) SIGUSR1     11) SIGSEGV     12) SIGUSR2</span><br><span class="line">13) SIGPIPE     14) SIGALRM     15) SIGTERM     16) SIGSTKFLT</span><br><span class="line">17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP</span><br><span class="line">21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU</span><br><span class="line">25) SIGXFSZ     26) SIGVTALRM   27) SIGPROF     28) SIGWINCH</span><br><span class="line">29) SIGIO       30) SIGPWR      31) SIGSYS      34) SIGRTMIN</span><br><span class="line">35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3  38) SIGRTMIN+4</span><br><span class="line">39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8</span><br><span class="line">43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12</span><br><span class="line">47) SIGRTMIN+13 48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14</span><br><span class="line">51) SIGRTMAX-13 52) SIGRTMAX-12 53) SIGRTMAX-11 54) SIGRTMAX-10</span><br><span class="line">55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7  58) SIGRTMAX-6</span><br><span class="line">59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2</span><br><span class="line">63) SIGRTMAX-1  64) SIGRTMAX</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先用 ps 查找进程，然后用 kill 杀掉</span></span><br><span class="line">ps -ef | grep vim</span><br><span class="line">root      3268  2884  0 16:21 pts/1    00:00:00 vim install.log</span><br><span class="line">root      3370  2822  0 16:21 pts/0    00:00:00 grep vim</span><br><span class="line"></span><br><span class="line"><span class="built_in">kill</span> 3268</span><br><span class="line"><span class="built_in">kill</span> 3268</span><br><span class="line">-bash: <span class="built_in">kill</span>: (3268) - 没有那个进程</span><br></pre></td></tr></table></figure>
-<h3 id="systemctl"><a href="#systemctl" class="headerlink" title="systemctl"></a>systemctl</h3><blockquote>
+<h3 id="systemctl"><a class="markdownIt-Anchor" href="#systemctl"></a> systemctl</h3>
+<blockquote>
 <p>systemctl 命令是系统服务管理器指令，它实际上将 service 和 chkconfig 这两个命令组合到一起。</p>
 <p>参考：<a href="http://man.linuxde.net/systemctl" target="_blank" rel="noopener">http://man.linuxde.net/systemctl</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 1.启动 nfs 服务</span></span><br><span class="line">systemctl start nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 2.设置开机自启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 3.停止开机自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4.查看服务当前状态</span></span><br><span class="line">systemctl status nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 5.重新启动某服务</span></span><br><span class="line">systemctl restart nfs-server.service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 6.查看所有已启动的服务</span></span><br><span class="line">systemctl list -units --<span class="built_in">type</span>=service</span><br><span class="line"></span><br><span class="line"><span class="comment"># 7. 开启防火墙 22 端口</span></span><br><span class="line">iptables -I INPUT -p tcp --dport 22 -j accept</span><br><span class="line"></span><br><span class="line"><span class="comment"># 8. 彻底关闭防火墙</span></span><br><span class="line">sudo systemctl status firewalld.service</span><br><span class="line">sudo systemctl stop firewalld.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
-<h3 id="service"><a href="#service" class="headerlink" title="service"></a>service</h3><blockquote>
+<h3 id="service"><a class="markdownIt-Anchor" href="#service"></a> service</h3>
+<blockquote>
 <p>service 命令是 Redhat Linux 兼容的发行版中用来控制系统服务的实用工具，它以启动、停止、重新启动和关闭系统服务，还可以显示所有系统服务的当前状态。</p>
 <p>参考：<a href="http://man.linuxde.net/service" target="_blank" rel="noopener">http://man.linuxde.net/service</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">service network status</span><br><span class="line">配置设备：</span><br><span class="line">lo eth0</span><br><span class="line">当前的活跃设备：</span><br><span class="line">lo eth0</span><br><span class="line"></span><br><span class="line">service network restart</span><br><span class="line">正在关闭接口 eth0：                                        [  确定  ]</span><br><span class="line">关闭环回接口：                                             [  确定  ]</span><br><span class="line">设置网络参数：                                             [  确定  ]</span><br><span class="line">弹出环回接口：                                             [  确定  ]</span><br><span class="line">弹出界面 eth0：                                            [  确定  ]</span><br></pre></td></tr></table></figure>
-<h3 id="crontab"><a href="#crontab" class="headerlink" title="crontab"></a>crontab</h3><blockquote>
+<h3 id="crontab"><a class="markdownIt-Anchor" href="#crontab"></a> crontab</h3>
+<blockquote>
 <p>crontab 命令被用来提交和管理用户的需要周期性执行的任务，与 windows 下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动 crond 进程，crond 进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
 <p>参考：<a href="http://man.linuxde.net/crontab" target="_blank" rel="noopener">http://man.linuxde.net/crontab</a></p>
 </blockquote>
@@ -688,8 +705,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/02/27/os/linux/cli/02.Linux文件目录管理/" rel="next" title="Linux 文件目录管理命令">
-                <i class="fa fa-chevron-left"></i> Linux 文件目录管理命令
+              <a href="/blog/2018/02/27/os/linux/cli/07.Linux网络管理/" rel="next" title="Linux 网络管理">
+                <i class="fa fa-chevron-left"></i> Linux 网络管理
               </a>
             
           </div>
@@ -698,8 +715,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/02/27/os/linux/cli/07.Linux网络管理/" rel="prev" title="Linux 网络管理">
-                Linux 网络管理 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/03/29/programming/java/javastack/javalib/java-log-style/" rel="prev" title="Java 日志规范">
+                Java 日志规范 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -771,7 +788,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -836,7 +853,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1134,7 +1153,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-系统管理"><span class="nav-text">Linux 系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-系统管理要点"><span class="nav-text">Linux 系统管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text">命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lsb-release"><span class="nav-text">lsb_release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reboot"><span class="nav-text">reboot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit"><span class="nav-text">exit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutdown"><span class="nav-text">shutdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-text">date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount"><span class="nav-text">mount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#umount"><span class="nav-text">umount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-text">ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill"><span class="nav-text">kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#systemctl"><span class="nav-text">systemctl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service"><span class="nav-text">service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#crontab"><span class="nav-text">crontab</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-系统管理"><span class="nav-text"> Linux 系统管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-系统管理要点"><span class="nav-text"> Linux 系统管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text"> 命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lsb_release"><span class="nav-text"> lsb_release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reboot"><span class="nav-text"> reboot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exit"><span class="nav-text"> exit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shutdown"><span class="nav-text"> shutdown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date"><span class="nav-text"> date</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount"><span class="nav-text"> mount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#umount"><span class="nav-text"> umount</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ps"><span class="nav-text"> ps</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kill"><span class="nav-text"> kill</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#systemctl"><span class="nav-text"> systemctl</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#service"><span class="nav-text"> service</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#crontab"><span class="nav-text"> crontab</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1176,7 +1195,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

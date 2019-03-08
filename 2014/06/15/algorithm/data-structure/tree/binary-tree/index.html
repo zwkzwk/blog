@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="二叉树   简介 二叉树的性质 满二叉树 完全二叉树     简介二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。 二叉树的性质 二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉树中，若终端结">
+  <meta name="description" content="二叉树    简介  二叉树的性质 满二叉树 完全二叉树      简介 二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。  二叉树的性质  二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉">
 <meta name="keywords" content="data-structure,tree">
 <meta property="og:type" content="article">
 <meta property="og:title" content="二叉树">
 <meta property="og:url" content="https://dunwu.github.io/2014/06/15/algorithm/data-structure/tree/binary-tree/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="二叉树   简介 二叉树的性质 满二叉树 完全二叉树     简介二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。 二叉树的性质 二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉树中，若终端结">
+<meta property="og:description" content="二叉树    简介  二叉树的性质 满二叉树 完全二叉树      简介 二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。  二叉树的性质  二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/二叉树.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/满二叉树.png">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-07T02:26:11.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二叉树">
-<meta name="twitter:description" content="二叉树   简介 二叉树的性质 满二叉树 完全二叉树     简介二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。 二叉树的性质 二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉树中，若终端结">
+<meta name="twitter:description" content="二叉树    简介  二叉树的性质 满二叉树 完全二叉树      简介 二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。  二叉树的性质  二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。 深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。 包含 n 个结点的二叉树的高度至少为 log2(n+1)。 在任意一棵二叉">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/二叉树.png">
 
 
@@ -485,7 +485,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">418</span>
+                <span title="本文字数">429</span>
               
 
               
@@ -519,27 +519,33 @@
       
 
       
-        <h1 id="二叉树"><a href="#二叉树" class="headerlink" title="二叉树"></a>二叉树</h1><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/二叉树.png"></div><br></p>
+        <h1 id="二叉树"><a class="markdownIt-Anchor" href="#二叉树"></a> 二叉树</h1>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/二叉树.png"></div><br></p>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#二叉树的性质">二叉树的性质</a></li>
-<li><a href="#满二叉树">满二叉树</a></li>
-<li><a href="#完全二叉树">完全二叉树</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E6%80%A7%E8%B4%A8">二叉树的性质</a></li>
+<li><a href="#%E6%BB%A1%E4%BA%8C%E5%8F%89%E6%A0%91">满二叉树</a></li>
+<li><a href="#%E5%AE%8C%E5%85%A8%E4%BA%8C%E5%8F%89%E6%A0%91">完全二叉树</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。</p>
-<h3 id="二叉树的性质"><a href="#二叉树的性质" class="headerlink" title="二叉树的性质"></a>二叉树的性质</h3><ol>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。</p>
+<h3 id="二叉树的性质"><a class="markdownIt-Anchor" href="#二叉树的性质"></a> 二叉树的性质</h3>
+<ol>
 <li>二叉树第 i 层上的结点数目最多为 <strong>2<sup>i-1</sup></strong> (i≥1)。</li>
 <li>深度为 k 的二叉树至多有 <strong>2<sup>k</sup>-1</strong> 个结点(k≥1)。</li>
 <li>包含 n 个结点的二叉树的高度至少为 <strong>log<sub>2</sub>(n+1)</strong>。</li>
 <li>在任意一棵二叉树中，若终端结点的个数为 n0，度为 2 的结点数为 n2，则 n0=n2+1。</li>
 </ol>
-<h3 id="满二叉树"><a href="#满二叉树" class="headerlink" title="满二叉树"></a>满二叉树</h3><p>定义：高度为 h，并且由 <strong>2<sup>h</sup>–1</strong> 个结点的二叉树，被称为满二叉树。</p>
+<h3 id="满二叉树"><a class="markdownIt-Anchor" href="#满二叉树"></a> 满二叉树</h3>
+<p>定义：高度为 h，并且由 <strong>2<sup>h</sup>–1</strong> 个结点的二叉树，被称为满二叉树。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/满二叉树.png"></div><br></p>
-<h3 id="完全二叉树"><a href="#完全二叉树" class="headerlink" title="完全二叉树"></a>完全二叉树</h3><p>定义：一棵二叉树中，只有最下面两层结点的度可以小于 2，并且最下一层的叶结点集中在靠左的若干位置上。这样的二叉树称为完全二叉树。</p>
+<h3 id="完全二叉树"><a class="markdownIt-Anchor" href="#完全二叉树"></a> 完全二叉树</h3>
+<p>定义：一棵二叉树中，只有最下面两层结点的度可以小于 2，并且最下一层的叶结点集中在靠左的若干位置上。这样的二叉树称为完全二叉树。</p>
 <p>特点：叶子结点只能出现在最下层和次下层，且最下层的叶子结点集中在树的左部。显然，一棵满二叉树必定是一棵完全二叉树，而完全二叉树未必是满二叉树。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/tree/完全二叉树.png"></div><br></p>
 
@@ -691,7 +697,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -756,7 +762,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1054,7 +1062,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树"><span class="nav-text">二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的性质"><span class="nav-text">二叉树的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#满二叉树"><span class="nav-text">满二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全二叉树"><span class="nav-text">完全二叉树</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#二叉树"><span class="nav-text"> 二叉树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#二叉树的性质"><span class="nav-text"> 二叉树的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#满二叉树"><span class="nav-text"> 满二叉树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完全二叉树"><span class="nav-text"> 完全二叉树</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1096,7 +1104,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

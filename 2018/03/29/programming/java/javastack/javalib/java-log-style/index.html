@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 日志规范 本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源   要求 【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import org.">
+  <meta name="description" content="Java 日志规范  本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源    要求  【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import">
 <meta name="keywords" content="java,javalib,log">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 日志规范">
 <meta property="og:url" content="https://dunwu.github.io/2018/03/29/programming/java/javastack/javalib/java-log-style/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 日志规范 本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源   要求 【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import org.">
+<meta property="og:description" content="Java 日志规范  本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源    要求  【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback/log-pattern.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.557Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 日志规范">
-<meta name="twitter:description" content="Java 日志规范 本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源   要求 【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import org.">
+<meta name="twitter:description" content="Java 日志规范  本文基于阿里巴巴 Java 开发手册日志规约章节，结合自己的开发经验做了一些增删和调整。    要求 资源    要求  【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。  import org.slf4j.Logger;import">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback/log-pattern.png">
 
 
@@ -510,23 +510,27 @@
       
 
       
-        <h1 id="Java-日志规范"><a href="#Java-日志规范" class="headerlink" title="Java 日志规范"></a>Java 日志规范</h1><blockquote>
+        <h1 id="java-日志规范"><a class="markdownIt-Anchor" href="#java-日志规范"></a> Java 日志规范</h1>
+<blockquote>
 <p>本文基于<a href="https://yq.aliyun.com/attachment/download/?id=4942" target="_blank" rel="noopener">阿里巴巴 Java 开发手册</a>日志规约章节，结合自己的开发经验做了一些增删和调整。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#要求">要求</a></li>
-<li><a href="#资源">资源</a></li>
+<li><a href="#%E8%A6%81%E6%B1%82">要求</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ol>
+<h2 id="要求"><a class="markdownIt-Anchor" href="#要求"></a> 要求</h2>
+<ol>
 <li>【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。</li>
 </ol>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(Abc.class);</span><br></pre></td></tr></table></figure>
 <ol start="2">
-<li><p>【强制】日志文件推荐至少保存 <code>30</code> 天，因为有些异常具备以“周”为频次发生的特点。</p>
+<li>
+<p>【强制】日志文件推荐至少保存 <code>30</code> 天，因为有些异常具备以“周”为频次发生的特点。</p>
 </li>
-<li><p>【强制】应用中的扩展日志（如打点、临时监控、访问日志等）命名方式：<code>appName_logType_logName.log</code>。logType:日志类型，推荐分类有 stats/desc/monitor/visit 等；logName:日志描述。这种命名的好处：通过文件名就可知道日志文件属于什么应用，什么类型，什么目的，也有利于归类查找。</p>
+<li>
+<p>【强制】应用中的扩展日志（如打点、临时监控、访问日志等）命名方式：<code>appName_logType_logName.log</code>。logType:日志类型，推荐分类有 stats/desc/monitor/visit 等；logName:日志描述。这种命名的好处：通过文件名就可知道日志文件属于什么应用，什么类型，什么目的，也有利于归类查找。</p>
 </li>
 </ol>
 <p><strong>正例</strong>：mppserver 应用中单独监控时区转换异常，如：<code>mppserver_monitor_timeZoneConvert.log</code></p>
@@ -547,7 +551,7 @@
 <ol start="6">
 <li>【强制】异常信息应该包括两类信息：案发现场信息和异常堆栈信息。如果不处理，那么通过关键字 throws 往上抛出。</li>
 </ol>
-<p><strong>正例</strong>：logger.error(各类参数或者对象 toString + “_“ + e.getMessage(), e);</p>
+<p><strong>正例</strong>：logger.error(各类参数或者对象 toString + “_” + e.getMessage(), e);</p>
 <ol start="9">
 <li>【强制】日志格式遵循如下格式：</li>
 </ol>
@@ -567,7 +571,8 @@
 <ol start="10">
 <li>【参考】有一些第三方框架或库的日志对于排查问题具有一定的帮助，如 Spring、Dubbo、Mybatis 等。这些框架所使用的日志库未必和本项目一样，为了避免出现日志无法输出的问题，请引入对应的桥接 jar 包。</li>
 </ol>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<ul>
 <li><a href="https://yq.aliyun.com/attachment/download/?id=4942" target="_blank" rel="noopener">阿里巴巴 Java 开发手册</a>日志规约章节</li>
 </ul>
 
@@ -638,8 +643,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/02/27/os/linux/cli/08.Linux硬件管理/" rel="next" title="Linux 硬件管理">
-                <i class="fa fa-chevron-left"></i> Linux 硬件管理
+              <a href="/blog/2018/02/27/os/linux/cli/06.Linux系统管理/" rel="next" title="Linux 系统管理">
+                <i class="fa fa-chevron-left"></i> Linux 系统管理
               </a>
             
           </div>
@@ -721,7 +726,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -786,7 +791,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1084,7 +1091,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-日志规范"><span class="nav-text">Java 日志规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要求"><span class="nav-text">要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-日志规范"><span class="nav-text"> Java 日志规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要求"><span class="nav-text"> 要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1126,7 +1133,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

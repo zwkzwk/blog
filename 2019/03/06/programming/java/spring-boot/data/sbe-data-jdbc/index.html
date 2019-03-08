@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="SpringBootTutorialDataJdbc  简介 API execute update query   实战 配置数据源 注入 JdbcTemplate 完整示例   更多内容   简介Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath 上存在必要">
+  <meta name="description" content="SpringBootTutorialDataJdbc   简介 API  execute update query   实战  配置数据源 注入 JdbcTemplate 完整示例   更多内容    简介 Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBootTutorialDataJdbc">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring-boot/data/sbe-data-jdbc/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SpringBootTutorialDataJdbc  简介 API execute update query   实战 配置数据源 注入 JdbcTemplate 完整示例   更多内容   简介Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath 上存在必要">
+<meta property="og:description" content="SpringBootTutorialDataJdbc   简介 API  execute update query   实战  配置数据源 注入 JdbcTemplate 完整示例   更多内容    简介 Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:56:35.635Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBootTutorialDataJdbc">
-<meta name="twitter:description" content="SpringBootTutorialDataJdbc  简介 API execute update query   实战 配置数据源 注入 JdbcTemplate 完整示例   更多内容   简介Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath 上存在必要">
+<meta name="twitter:description" content="SpringBootTutorialDataJdbc   简介 API  execute update query   实战  配置数据源 注入 JdbcTemplate 完整示例   更多内容    简介 Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。 当 classpath">
 
 
 
@@ -477,30 +477,35 @@
       
 
       
-        <h1 id="SpringBootTutorialDataJdbc"><a href="#SpringBootTutorialDataJdbc" class="headerlink" title="SpringBootTutorialDataJdbc"></a>SpringBootTutorialDataJdbc</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="springboottutorialdatajdbc"><a class="markdownIt-Anchor" href="#springboottutorialdatajdbc"></a> SpringBootTutorialDataJdbc</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#api">API</a><ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#api">API</a>
+<ul>
 <li><a href="#execute">execute</a></li>
 <li><a href="#update">update</a></li>
 <li><a href="#query">query</a></li>
 </ul>
 </li>
-<li><a href="#实战">实战</a><ul>
-<li><a href="#配置数据源">配置数据源</a></li>
-<li><a href="#注入-jdbctemplate">注入 JdbcTemplate</a></li>
-<li><a href="#完整示例">完整示例</a></li>
+<li><a href="#%E5%AE%9E%E6%88%98">实战</a>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%95%B0%E6%8D%AE%E6%BA%90">配置数据源</a></li>
+<li><a href="#%E6%B3%A8%E5%85%A5-jdbctemplate">注入 JdbcTemplate</a></li>
+<li><a href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B">完整示例</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Spring Data 包含对 JDBC 的存储库支持，并将自动为 <code>CrudRepository</code> 上的方法生成 SQL。对于更高级的查询，提供了 <code>@Query</code> 注解。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>Spring Data 包含对 JDBC 的存储库支持，并将自动为 <code>CrudRepository</code> 上的方法生成 SQL。对于更高级的查询，提供了 <code>@Query</code> 注解。</p>
 <p>当 classpath 上存在必要的依赖项时，Spring Boot 将自动配置 Spring Data 的 JDBC 存储库。它们可以通过 <code>spring-boot-starter-data-jdbc</code> 的单一依赖项添加到项目中。如有必要，可以通过将 <code>@EnableJdbcRepositories</code> 批注或 <code>JdbcConfiguration</code> 子类添加到应用程序来控制 Spring Data JDBC 的配置。</p>
 <blockquote>
 <p>更多 Spring Data JDBC 细节，可以参考 <a href="http://spring.io/projects/spring-data-jdbc" target="_blank" rel="noopener">Spring Data JDBC 官方文档</a>。</p>
 </blockquote>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p><code>spring-boot-starter-data-jdbc</code> 引入了 <code>spring-jdbc</code> ，其 JDBC 特性就是基于 <code>spring-jdbc</code>。</p>
+<h2 id="api"><a class="markdownIt-Anchor" href="#api"></a> API</h2>
+<p><code>spring-boot-starter-data-jdbc</code> 引入了 <code>spring-jdbc</code> ，其 JDBC 特性就是基于 <code>spring-jdbc</code>。</p>
 <p>而 <code>spring-jdbc</code> 最核心的 API 无疑就是 <code>JdbcTemplate</code>，可以说所有的 JDBC 数据访问，几乎都是围绕着这个类去工作的。</p>
 <p>Spring 对数据库的操作在 Jdbc 层面做了深层次的封装，利用依赖注入，把数据源配置装配到 <code>JdbcTemplate</code> 中，再由 <code>JdbcTemplate</code> 负责具体的数据访问。</p>
 <p><code>JdbcTemplate</code> 主要提供以下几类方法：</p>
@@ -513,9 +518,11 @@
 <p>为了方便演示，以下增删改查操作都围绕一个名为 user 的表（该表的主键 id 是自增序列）进行，该表的数据实体如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Integer id;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="keyword">private</span> Integer age;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 省略 getter/setter</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>数据实体只要是一个纯粹的 Java Bean 即可，无需任何注解修饰。</p>
-<h3 id="execute"><a href="#execute" class="headerlink" title="execute"></a>execute</h3><p>使用 execute 执行 DDL 语句，创建一个名为 test 的数据库，并在此数据库下新建一个名为 user 的表。</p>
+<h3 id="execute"><a class="markdownIt-Anchor" href="#execute"></a> execute</h3>
+<p>使用 execute 执行 DDL 语句，创建一个名为 test 的数据库，并在此数据库下新建一个名为 user 的表。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">recreateTable</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    jdbcTemplate.execute(<span class="string">"DROP DATABASE IF EXISTS test"</span>);</span><br><span class="line">    jdbcTemplate.execute(<span class="string">"CREATE DATABASE test"</span>);</span><br><span class="line">    jdbcTemplate.execute(<span class="string">"USE test"</span>);</span><br><span class="line">    jdbcTemplate.execute(<span class="string">"DROP TABLE if EXISTS user"</span>);</span><br><span class="line">    jdbcTemplate.execute(<span class="string">"DROP TABLE if EXISTS user"</span>);</span><br><span class="line">    <span class="comment">// @formatter:off</span></span><br><span class="line">    StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    sb.append(<span class="string">"CREATE TABLE user (id int (10) unsigned NOT NULL AUTO_INCREMENT,\n"</span>)</span><br><span class="line">        .append(<span class="string">"name varchar (64) NOT NULL DEFAULT '',\n"</span>)</span><br><span class="line">        .append(<span class="string">"age tinyint (3) NOT NULL DEFAULT 0,\n"</span>)</span><br><span class="line">        .append(<span class="string">"PRIMARY KEY (ID));\n"</span>);</span><br><span class="line">    <span class="comment">// @formatter:on</span></span><br><span class="line">    jdbcTemplate.execute(sb.toString());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="update"><a href="#update" class="headerlink" title="update"></a>update</h3><p>新增数据</p>
+<h3 id="update"><a class="markdownIt-Anchor" href="#update"></a> update</h3>
+<p>新增数据</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insert</span><span class="params">(String name, Integer age)</span> </span>&#123;</span><br><span class="line">    jdbcTemplate.update(<span class="string">"INSERT INTO user(name, age) VALUES(?, ?)"</span>, name, age);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>删除数据</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">delete</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    jdbcTemplate.update(<span class="string">"DELETE FROM user WHERE name = ?"</span>, name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -523,20 +530,26 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(User user)</span> </span>&#123;</span><br><span class="line">    jdbcTemplate.update(<span class="string">"UPDATE USER SET name=?, age=? WHERE id=?"</span>, user.getName(), user.getAge(), user.getId());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>批处理</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">batchInsert</span><span class="params">(List&lt;User&gt; users)</span> </span>&#123;</span><br><span class="line">    String sql = <span class="string">"INSERT INTO user(name, age) VALUES(?, ?)"</span>;</span><br><span class="line"></span><br><span class="line">    List&lt;Object[]&gt; params = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">    users.forEach(item -&gt; &#123;</span><br><span class="line">        params.add(<span class="keyword">new</span> Object[] &#123;item.getName(), item.getAge()&#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    jdbcTemplate.batchUpdate(sql, params);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="query"><a href="#query" class="headerlink" title="query"></a>query</h3><p>查单个对象</p>
+<h3 id="query"><a class="markdownIt-Anchor" href="#query"></a> query</h3>
+<p>查单个对象</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> User <span class="title">queryByName</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate</span><br><span class="line">            .queryForObject(<span class="string">"SELECT * FROM user WHERE name = ?"</span>, <span class="keyword">new</span> BeanPropertyRowMapper&lt;&gt;(User.class), name);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (EmptyResultDataAccessException e) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>查多个对象</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;User&gt; <span class="title">list</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> jdbcTemplate.query(<span class="string">"select * from USER"</span>, <span class="keyword">new</span> BeanPropertyRowMapper(User.class));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>获取某个记录某列或者 count、avg、sum 等函数返回唯一值</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Integer <span class="title">count</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> jdbcTemplate.queryForObject(<span class="string">"SELECT COUNT(*) FROM user"</span>, Integer.class);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (EmptyResultDataAccessException e) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><h3 id="配置数据源"><a href="#配置数据源" class="headerlink" title="配置数据源"></a>配置数据源</h3><p>在 <code>src/main/resource</code> 目录下添加 <code>application.properties</code> 配置文件，内容如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.datasource.url = jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span><br><span class="line">spring.datasource.username = root</span><br><span class="line">spring.datasource.password = root</span><br><span class="line">spring.datasource.driver-class-name = com.mysql.cj.jdbc.Driver</span><br></pre></td></tr></table></figure>
+<h2 id="实战"><a class="markdownIt-Anchor" href="#实战"></a> 实战</h2>
+<h3 id="配置数据源"><a class="markdownIt-Anchor" href="#配置数据源"></a> 配置数据源</h3>
+<p>在 <code>src/main/resource</code> 目录下添加 <code>application.properties</code> 配置文件，内容如下：</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.datasource.url</span> = <span class="string">jdbc:mysql://localhost:3306/test?serverTimezone=UTC&amp;useUnicode=true&amp;characterEncoding=utf8&amp;useSSL=false</span></span><br><span class="line"><span class="meta">spring.datasource.username</span> = <span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.password</span> = <span class="string">root</span></span><br><span class="line"><span class="meta">spring.datasource.driver-class-name</span> = <span class="string">com.mysql.cj.jdbc.Driver</span></span><br></pre></td></tr></table></figure>
 <p>需要根据实际情况，替换 <code>url</code>、<code>username</code>、<code>password</code>。</p>
-<h3 id="注入-JdbcTemplate"><a href="#注入-JdbcTemplate" class="headerlink" title="注入 JdbcTemplate"></a>注入 JdbcTemplate</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDAOImpl</span> <span class="keyword">implements</span> <span class="title">UserDAO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserDAOImpl</span><span class="params">(JdbcTemplate jdbcTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jdbcTemplate = jdbcTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="完整示例"><a href="#完整示例" class="headerlink" title="完整示例"></a>完整示例</h3><p>请参考：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/data/sbe-data-jdbc" target="_blank" rel="noopener">源码</a></p>
+<h3 id="注入-jdbctemplate"><a class="markdownIt-Anchor" href="#注入-jdbctemplate"></a> 注入 JdbcTemplate</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserDAOImpl</span> <span class="keyword">implements</span> <span class="title">UserDAO</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> JdbcTemplate jdbcTemplate;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">UserDAOImpl</span><span class="params">(JdbcTemplate jdbcTemplate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.jdbcTemplate = jdbcTemplate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整示例"><a class="markdownIt-Anchor" href="#完整示例"></a> 完整示例</h3>
+<p>请参考：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/data/sbe-data-jdbc" target="_blank" rel="noopener">源码</a></p>
 <p>使用方法：</p>
 <p>运行应用或单元测试例前，请先执行 <code>codes/data/sbe-data-jdbc/sql/ddl.sql</code></p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><p><strong>引申</strong></p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<p><strong>引申</strong></p>
 <ul>
 <li><a href="https://github.com/dunwu/spring-boot-tutorial" target="_blank" rel="noopener">Spring Boot 教程</a></li>
 </ul>
@@ -602,8 +615,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/data/sbe-data-elasticsearch/" rel="next" title="SpringBootTutorialDataElasticsearch">
-                <i class="fa fa-chevron-left"></i> SpringBootTutorialDataElasticsearch
+              <a href="/blog/2019/03/06/programming/java/spring/appendix/resources/" rel="next" title="资源">
+                <i class="fa fa-chevron-left"></i> 资源
               </a>
             
           </div>
@@ -685,7 +698,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -750,7 +763,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1048,7 +1063,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBootTutorialDataJdbc"><span class="nav-text">SpringBootTutorialDataJdbc</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-text">API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#execute"><span class="nav-text">execute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-text">update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#query"><span class="nav-text">query</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置数据源"><span class="nav-text">配置数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入-JdbcTemplate"><span class="nav-text">注入 JdbcTemplate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整示例"><span class="nav-text">完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboottutorialdatajdbc"><span class="nav-text"> SpringBootTutorialDataJdbc</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-text"> API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#execute"><span class="nav-text"> execute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#update"><span class="nav-text"> update</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#query"><span class="nav-text"> query</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text"> 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置数据源"><span class="nav-text"> 配置数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注入-jdbctemplate"><span class="nav-text"> 注入 JdbcTemplate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整示例"><span class="nav-text"> 完整示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1090,7 +1105,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

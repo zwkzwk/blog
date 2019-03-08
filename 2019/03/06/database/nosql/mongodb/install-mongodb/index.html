@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Mongodb 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz 我个">
+  <meta name="description" content="Mongodb 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mongodb 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/nosql/mongodb/install-mongodb/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Mongodb 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz 我个">
+<meta property="og:description" content="Mongodb 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tg">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.231Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mongodb 安装">
-<meta name="twitter:description" content="Mongodb 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz 我个">
+<meta name="twitter:description" content="Mongodb 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://www.mongodb.com/download-center#community ，选择合适的版本下载。 我选择的是最新稳定版本 3.6.3：https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tg">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">593</span>
+                <span title="本文字数">601</span>
               
 
               
@@ -477,24 +477,28 @@
       
 
       
-        <h1 id="Mongodb-安装"><a href="#Mongodb-安装" class="headerlink" title="Mongodb 安装"></a>Mongodb 安装</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="mongodb-安装"><a class="markdownIt-Anchor" href="#mongodb-安装"></a> Mongodb 安装</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#启动">启动</a></li>
-<li><a href="#脚本">脚本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC">脚本</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装步骤如下：</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>安装步骤如下：</p>
 <p>（1）下载并解压到本地</p>
 <p>进入官网下载地址：<a href="https://www.mongodb.com/download-center#community" target="_blank" rel="noopener">https://www.mongodb.com/download-center#community</a> ，选择合适的版本下载。</p>
 <p>我选择的是最新稳定版本 3.6.3：<a href="https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz" target="_blank" rel="noopener">https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz</a></p>
 <p>我个人喜欢存放在：<code>/opt/mongodb</code></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget -O /opt/mongodb/mongodb-linux-x86_64-<span class="number">3.6</span>.<span class="number">3</span><span class="selector-class">.tgz</span> https:<span class="comment">//fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz</span></span><br><span class="line">cd /opt/mongodb</span><br><span class="line">tar zxvf mongodb-linux-x86_64-<span class="number">3.6</span>.<span class="number">3</span>.tgz</span><br><span class="line">mv mongodb-linux-x86_64-<span class="number">3.6</span>.<span class="number">3</span> mongodb-<span class="number">3.6</span>.<span class="number">3</span></span><br><span class="line">mkdir -<span class="selector-tag">p</span> /data/db</span><br></pre></td></tr></table></figure>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><strong>启动 mongodb 服务</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">wget -O /opt/mongodb/mongodb-linux-x86_64<span class="number">-3.6</span><span class="number">.3</span>.tgz https:<span class="comment">//fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.6.3.tgz</span></span><br><span class="line">cd /opt/mongodb</span><br><span class="line">tar zxvf mongodb-linux-x86_64<span class="number">-3.6</span><span class="number">.3</span>.tgz</span><br><span class="line">mv mongodb-linux-x86_64<span class="number">-3.6</span><span class="number">.3</span> mongodb<span class="number">-3.6</span><span class="number">.3</span></span><br><span class="line">mkdir -p /data/db</span><br></pre></td></tr></table></figure>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动"></a> 启动</h2>
+<p><strong>启动 mongodb 服务</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/mongodb/mongodb-3.6.3/bin</span></span><br><span class="line"><span class="string">./mongod</span> <span class="params">--dbpath=/data/db</span></span><br></pre></td></tr></table></figure>
 <p><strong>启动 mongodb 客户端</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/mongodb/mongodb-3.6.3/bin</span></span><br><span class="line"><span class="string">./mongo</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>| <a href="https://github.com/dunwu/linux/tree/master/codes/deploy/tool/mongodb" target="_blank" rel="noopener">安装脚本</a> |</p>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>| <a href="https://github.com/dunwu/linux/tree/master/codes/deploy/tool/mongodb" target="_blank" rel="noopener">安装脚本</a> |</p>
 
       
     </div>
@@ -553,8 +557,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/tool/git/basics/git-installation/" rel="next" title="Git 安装">
-                <i class="fa fa-chevron-left"></i> Git 安装
+              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" rel="next" title="Maven 快速指南">
+                <i class="fa fa-chevron-left"></i> Maven 快速指南
               </a>
             
           </div>
@@ -563,8 +567,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/algorithm/data-structure/tree/tree/" rel="prev" title="树">
-                树 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/apollo/README/" rel="prev" title="Apollo">
+                Apollo <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -636,7 +640,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -701,7 +705,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -999,7 +1005,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Mongodb-安装"><span class="nav-text">Mongodb 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#mongodb-安装"><span class="nav-text"> Mongodb 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text"> 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1041,7 +1047,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

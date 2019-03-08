@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Spring 中使用 JDBC 访问数据准备使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt">
+  <meta name="description" content="Spring 中使用 JDBC 访问数据  准备 使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;versio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 中使用 JDBC 访问数据">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring/data/spring-and-jdbc/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Spring 中使用 JDBC 访问数据准备使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt">
+<meta property="og:description" content="Spring 中使用 JDBC 访问数据  准备 使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;versio">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:47.007Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 中使用 JDBC 访问数据">
-<meta name="twitter:description" content="Spring 中使用 JDBC 访问数据准备使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;version&amp;gt">
+<meta name="twitter:description" content="Spring 中使用 JDBC 访问数据  准备 使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖： &amp;lt;dependency&amp;gt;  &amp;lt;groupId&amp;gt;org.springframework&amp;lt;/groupId&amp;gt;  &amp;lt;artifactId&amp;gt;spring-jdbc&amp;lt;/artifactId&amp;gt;  &amp;lt;versio">
 
 
 
@@ -477,15 +477,22 @@
       
 
       
-        <h1 id="Spring-中使用-JDBC-访问数据"><a href="#Spring-中使用-JDBC-访问数据" class="headerlink" title="Spring 中使用 JDBC 访问数据"></a>Spring 中使用 JDBC 访问数据</h1><h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖：</p>
+        <h1 id="spring-中使用-jdbc-访问数据"><a class="markdownIt-Anchor" href="#spring-中使用-jdbc-访问数据"></a> Spring 中使用 JDBC 访问数据</h1>
+<h2 id="准备"><a class="markdownIt-Anchor" href="#准备"></a> 准备</h2>
+<p>使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-jdbc<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.1.4.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="配置数据源"><a href="#配置数据源" class="headerlink" title="配置数据源"></a>配置数据源</h2><h3 id="使用-JNDI-数据源"><a href="#使用-JNDI-数据源" class="headerlink" title="使用 JNDI 数据源"></a>使用 JNDI 数据源</h3><p>如果 Spring 应用部署在支持 JNDI 的WEB服务器上（如WebSphere、JBoss、Tomcat等），就可以使用JNDI获取数据源。</p>
+<h2 id="配置数据源"><a class="markdownIt-Anchor" href="#配置数据源"></a> 配置数据源</h2>
+<h3 id="使用-jndi-数据源"><a class="markdownIt-Anchor" href="#使用-jndi-数据源"></a> 使用 JNDI 数据源</h3>
+<p>如果 Spring 应用部署在支持 JNDI 的WEB服务器上（如WebSphere、JBoss、Tomcat等），就可以使用JNDI获取数据源。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span><span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:jee</span>=<span class="string">"http://www.springframework.org/schema/jee"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></span><br><span class="line"><span class="tag"><span class="string">            http://www.springframework.org/schema/beans/spring-beans-3.2.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">http://www.springframework.org/schema/jee</span></span></span><br><span class="line"><span class="tag"><span class="string">http://www.springframework.org/schema/jee/spring-jee-3.2.xsd"</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="comment">&lt;!-- 1.使用bean配置jndi数据源 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jndi.JndiObjectFactoryBean"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jndiName"</span> <span class="attr">value</span>=<span class="string">"java:comp/env/jdbc/orclight"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"> </span><br><span class="line">  <span class="comment">&lt;!-- 2.使用jee标签配置jndi数据源，与1等价，但是需要引入命名空间 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">jee:jndi-lookup</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">jndi-name</span>=<span class="string">" java:comp/env/jdbc/orclight"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="使用数据源连接池"><a href="#使用数据源连接池" class="headerlink" title="使用数据源连接池"></a>使用数据源连接池</h3><p>Spring 本身并没有提供数据源连接池的实现。</p>
+<h3 id="使用数据源连接池"><a class="markdownIt-Anchor" href="#使用数据源连接池"></a> 使用数据源连接池</h3>
+<p>Spring 本身并没有提供数据源连接池的实现。</p>
 <p>推荐使用 <a href="https://github.com/alibaba/druid" target="_blank" rel="noopener">Druid</a> 。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.alibaba.druid.pool.DruidDataSource"</span></span></span><br><span class="line"><span class="tag">        <span class="attr">init-method</span>=<span class="string">"init"</span> <span class="attr">destroy-method</span>=<span class="string">"close"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line">  </span><br><span class="line">    <span class="comment">&lt;!-- 配置初始化大小、最小、最大 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"initialSize"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minIdle"</span> <span class="attr">value</span>=<span class="string">"1"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxActive"</span> <span class="attr">value</span>=<span class="string">"10"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置获取连接等待超时的时间 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxWait"</span> <span class="attr">value</span>=<span class="string">"10000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"timeBetweenEvictionRunsMillis"</span> <span class="attr">value</span>=<span class="string">"60000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 配置一个连接在池中最小生存的时间，单位是毫秒 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minEvictableIdleTimeMillis"</span> <span class="attr">value</span>=<span class="string">"300000"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testWhileIdle"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 这里建议配置为TRUE，防止取到的连接不可用 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testOnBorrow"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"testOnReturn"</span> <span class="attr">value</span>=<span class="string">"false"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 打开PSCache，并且指定每个连接上PSCache的大小 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"poolPreparedStatements"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxPoolPreparedStatementPerConnectionSize"</span></span></span><br><span class="line"><span class="tag">              <span class="attr">value</span>=<span class="string">"20"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 这里配置提交方式，默认就是TRUE，可以不用配置 --&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"defaultAutoCommit"</span> <span class="attr">value</span>=<span class="string">"true"</span>/&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 验证连接有效与否的SQL，不同的数据配置不同 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"validationQuery"</span> <span class="attr">value</span>=<span class="string">"select 1 "</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"filters"</span> <span class="attr">value</span>=<span class="string">"stat"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="基于JDBC驱动的数据源"><a href="#基于JDBC驱动的数据源" class="headerlink" title="基于JDBC驱动的数据源"></a>基于JDBC驱动的数据源</h3><figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="使用-JDBC-模板"><a href="#使用-JDBC-模板" class="headerlink" title="使用 JDBC 模板"></a>使用 JDBC 模板</h2><p>Spring 将数据访问的样板式代码提取到模板类中。Spring 提供了 3 个模板类：</p>
+<h3 id="基于jdbc驱动的数据源"><a class="markdownIt-Anchor" href="#基于jdbc驱动的数据源"></a> 基于JDBC驱动的数据源</h3>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DriverManagerDataSource"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClassName"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"url"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用-jdbc-模板"><a class="markdownIt-Anchor" href="#使用-jdbc-模板"></a> 使用 JDBC 模板</h2>
+<p>Spring 将数据访问的样板式代码提取到模板类中。Spring 提供了 3 个模板类：</p>
 <p>JdbcTemplate：最基本的 Spring JDBC 模板，这个模板支持最简单的 JDBC 数据库访问功能以及简单的索引参数查询。</p>
 <p>SimpleJdbcTemplate：改模板类利用 Java 5 的一些特性，如自动装箱、泛型以及可变参数列表来简化 JDBC 模板的使用。</p>
 <p>NamedParameterJdbcTemplate：使用该模板类执行查询时，可以将查询值以命名参数的形式绑定到 SQL 中，而不是使用简单的索引参数。</p>
@@ -498,7 +505,8 @@
 <li>创建一个 DAO 接口的实现类，使用 Spring 的 JDBC 模板去实现接口。</li>
 <li>最后，只需要按照 Spring 的 JDBC 规范配置 xml。定义一个 DAO 接口的实现类的 JavaBean，并将数据源注入进去。</li>
 </ol>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><p>实例可以参考 <a href>spring-data-jdbc</a> 中的实例。</p>
+<h2 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h2>
+<p>实例可以参考 <a href>spring-data-jdbc</a> 中的实例。</p>
 <p>执行 <code>io.github.dunwu.spring.data.jdbc</code> 包中的 Test 单元测试，即可看到测试结果。</p>
 
       
@@ -558,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javacore/advanced/encode/java-encryption/" rel="next" title>
-                <i class="fa fa-chevron-left"></i> 
+              <a href="/blog/2019/03/06/bigdata/hbase/hbase-api-java/" rel="next" title="HBase Java API">
+                <i class="fa fa-chevron-left"></i> HBase Java API
               </a>
             
           </div>
@@ -568,8 +576,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/" rel="prev" title="MyBatis 指南">
-                MyBatis 指南 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/bigdata/hbase/README/" rel="prev" title="HBase">
+                HBase <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -641,7 +649,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -706,7 +714,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1004,7 +1014,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spring-中使用-JDBC-访问数据"><span class="nav-text">Spring 中使用 JDBC 访问数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-text">准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置数据源"><span class="nav-text">配置数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-JNDI-数据源"><span class="nav-text">使用 JNDI 数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据源连接池"><span class="nav-text">使用数据源连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于JDBC驱动的数据源"><span class="nav-text">基于JDBC驱动的数据源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-JDBC-模板"><span class="nav-text">使用 JDBC 模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-text">实例</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-中使用-jdbc-访问数据"><span class="nav-text"> Spring 中使用 JDBC 访问数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-text"> 准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置数据源"><span class="nav-text"> 配置数据源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-jndi-数据源"><span class="nav-text"> 使用 JNDI 数据源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用数据源连接池"><span class="nav-text"> 使用数据源连接池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于jdbc驱动的数据源"><span class="nav-text"> 基于JDBC驱动的数据源</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-jdbc-模板"><span class="nav-text"> 使用 JDBC 模板</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-text"> 实例</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1046,7 +1056,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

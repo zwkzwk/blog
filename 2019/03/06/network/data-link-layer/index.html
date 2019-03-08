@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="数据链路层 数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题 封装成帧 透明传输 差错检测   点对点信道 PP">
+  <meta name="description" content="数据链路层  数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题  封装成帧 透明传输 差错检测   点对点信道">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据链路层">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/network/data-link-layer/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="数据链路层 数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题 封装成帧 透明传输 差错检测   点对点信道 PP">
+<meta property="og:description" content="数据链路层  数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题  封装成帧 透明传输 差错检测   点对点信道">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/数据链路帧.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/经过字节填充后发送的数据.png">
@@ -122,7 +122,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.968Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据链路层">
-<meta name="twitter:description" content="数据链路层 数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题 封装成帧 透明传输 差错检测   点对点信道 PP">
+<meta name="twitter:description" content="数据链路层  数据链路层（Data Link Layer） - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。  主要协议：PPP、CSMA/CD 等。 数据单元：帧（frame）。 典型设备：二层交换机、网桥、网卡。     简介 基本问题  封装成帧 透明传输 差错检测   点对点信道">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/数据链路帧.png">
 
 
@@ -483,7 +483,8 @@
       
 
       
-        <h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><blockquote>
+        <h1 id="数据链路层"><a class="markdownIt-Anchor" href="#数据链路层"></a> 数据链路层</h1>
+<blockquote>
 <p><strong>数据链路层（Data Link Layer）</strong> - 网络层针对的还是主机之间的数据传输服务，而主机之间可以有很多链路，链路层协议就是为同一链路的主机提供数据传输服务。数据链路层把网络层传下来的分组封装成帧。</p>
 <ul>
 <li>主要协议：<code>PPP</code>、<code>CSMA/CD</code> 等。</li>
@@ -493,50 +494,61 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#基本问题">基本问题</a><ul>
-<li><a href="#封装成帧">封装成帧</a></li>
-<li><a href="#透明传输">透明传输</a></li>
-<li><a href="#差错检测">差错检测</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98">基本问题</a>
+<ul>
+<li><a href="#%E5%B0%81%E8%A3%85%E6%88%90%E5%B8%A7">封装成帧</a></li>
+<li><a href="#%E9%80%8F%E6%98%8E%E4%BC%A0%E8%BE%93">透明传输</a></li>
+<li><a href="#%E5%B7%AE%E9%94%99%E6%A3%80%E6%B5%8B">差错检测</a></li>
 </ul>
 </li>
-<li><a href="#点对点信道">点对点信道</a><ul>
-<li><a href="#ppp-协议">PPP 协议</a></li>
+<li><a href="#%E7%82%B9%E5%AF%B9%E7%82%B9%E4%BF%A1%E9%81%93">点对点信道</a>
+<ul>
+<li><a href="#ppp-%E5%8D%8F%E8%AE%AE">PPP 协议</a></li>
 </ul>
 </li>
-<li><a href="#广播信道">广播信道</a><ul>
-<li><a href="#csmacd-协议">CSMA/CD 协议</a></li>
+<li><a href="#%E5%B9%BF%E6%92%AD%E4%BF%A1%E9%81%93">广播信道</a>
+<ul>
+<li><a href="#csmacd-%E5%8D%8F%E8%AE%AE">CSMA/CD 协议</a></li>
 </ul>
 </li>
-<li><a href="#局域网">局域网</a></li>
-<li><a href="#以太网">以太网</a></li>
-<li><a href="#mac-地址">MAC 地址</a></li>
-<li><a href="#设备">设备</a><ul>
-<li><a href="#适配器">适配器</a></li>
-<li><a href="#集线器">集线器</a></li>
-<li><a href="#网桥">网桥</a></li>
-<li><a href="#以太网交换机">以太网交换机</a></li>
+<li><a href="#%E5%B1%80%E5%9F%9F%E7%BD%91">局域网</a></li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91">以太网</a></li>
+<li><a href="#mac-%E5%9C%B0%E5%9D%80">MAC 地址</a></li>
+<li><a href="#%E8%AE%BE%E5%A4%87">设备</a>
+<ul>
+<li><a href="#%E9%80%82%E9%85%8D%E5%99%A8">适配器</a></li>
+<li><a href="#%E9%9B%86%E7%BA%BF%E5%99%A8">集线器</a></li>
+<li><a href="#%E7%BD%91%E6%A1%A5">网桥</a></li>
+<li><a href="#%E4%BB%A5%E5%A4%AA%E7%BD%91%E4%BA%A4%E6%8D%A2%E6%9C%BA">以太网交换机</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><ul>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<ul>
 <li>链路是从一个节点到相邻节点的一段物理线路，数据链路则是在链路的基础上增加了一些必要的硬件（网络适配器）和软件（协议）。</li>
 <li>数据链路层三个基本问题：封装成帧、透明传输、差错检测。</li>
 <li>数据链路层有两种信道类型：点对点信道（主要使用 <code>PPP</code>）和广播信道（主要使用 <code>CSMA/CD</code>）。</li>
 <li>以太网 MAC 层的地址。</li>
 <li>适配器、转发器、集线器、网桥、以太网交换机的作用及使用场合。</li>
 </ul>
-<h2 id="基本问题"><a href="#基本问题" class="headerlink" title="基本问题"></a>基本问题</h2><h3 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h3><p>为网络层传下来的 IP 数据报添加首部和尾部，用于标记帧的开始和结束。</p>
+<h2 id="基本问题"><a class="markdownIt-Anchor" href="#基本问题"></a> 基本问题</h2>
+<h3 id="封装成帧"><a class="markdownIt-Anchor" href="#封装成帧"></a> 封装成帧</h3>
+<p>为网络层传下来的 IP 数据报添加首部和尾部，用于标记帧的开始和结束。</p>
 <p>为了提高传输效率，应该让数据部分长度尽可能大于首部和尾部。但是，每种链路层协议都限制了帧的数据部分长度上线——最大传送单元 MTU（Maximum Transfer Unit）</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/数据链路帧.png"></div><br></p>
-<h3 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h3><p><strong>透明</strong>表示：某一个实际存在的事物看起来好像不存在一样。</p>
+<h3 id="透明传输"><a class="markdownIt-Anchor" href="#透明传输"></a> 透明传输</h3>
+<p><strong>透明</strong>表示：某一个实际存在的事物看起来好像不存在一样。</p>
 <p>帧使用首部和尾部进行定界，如果帧的数据部分含有和首部尾部相同的内容，那么帧的开始和结束位置就会被错误的判定。需要在数据部分出现首部尾部相同的内容前面插入转义字符。如果数据部分出现转义字符，那么就在转义字符前面再加个转义字符。在接收端进行处理之后可以还原出原始数据。这个过程透明传输的内容是转义字符，用户察觉不到转义字符的存在。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/经过字节填充后发送的数据.png"></div><br></p>
-<h3 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h3><p>目前数据链路层广泛使用了<a href="https://zh.wikipedia.org/wiki/循环冗余检验" target="_blank" rel="noopener"><strong>循环冗余检验 CRC（Cyclic redundancy check）</strong></a>来检查比特差错。</p>
-<h2 id="点对点信道"><a href="#点对点信道" class="headerlink" title="点对点信道"></a>点对点信道</h2><p>点对点信道使用一对一的点对点通信方式。</p>
+<h3 id="差错检测"><a class="markdownIt-Anchor" href="#差错检测"></a> 差错检测</h3>
+<p>目前数据链路层广泛使用了<a href="https://zh.wikipedia.org/wiki/%E5%BE%AA%E7%8E%AF%E5%86%97%E4%BD%99%E6%A3%80%E9%AA%8C" target="_blank" rel="noopener"><strong>循环冗余检验 CRC（Cyclic redundancy check）</strong></a>来检查比特差错。</p>
+<h2 id="点对点信道"><a class="markdownIt-Anchor" href="#点对点信道"></a> 点对点信道</h2>
+<p>点对点信道使用一对一的点对点通信方式。</p>
 <p>对于点对点的链路，点对点协议 PPP（Point-to-Point Protocol）是使用最广泛的数据链路层协议。</p>
-<h3 id="PPP-协议"><a href="#PPP-协议" class="headerlink" title="PPP 协议"></a>PPP 协议</h3><p>互联网用户通常都要连接到某个 ISP 之后才能接入到互联网，PPP 协议是用户计算机和 ISP 进行通信时所使用的数据链路层协议。</p>
+<h3 id="ppp-协议"><a class="markdownIt-Anchor" href="#ppp-协议"></a> PPP 协议</h3>
+<p>互联网用户通常都要连接到某个 ISP 之后才能接入到互联网，PPP 协议是用户计算机和 ISP 进行通信时所使用的数据链路层协议。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/PPP协议.png"></div><br></p>
 <p>PPP（点到点协议）是为在同等单元之间传输数据包这样的简单链路设计的链路层协议。这种链路提供全双工操作，并按照顺序传递数据包。设计目的主要是用来通过拨号或专线方式建立点对点连接发送数据，使其成为各种主机、网桥和路由器之间简单连接的一种共通的解决方案。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/PPP帧.png"></div><br></p>
@@ -547,32 +559,42 @@
 <li>FCS 字段是使用 CRC 的检验序列</li>
 <li>信息部分的长度不超过 1500</li>
 </ul>
-<h2 id="广播信道"><a href="#广播信道" class="headerlink" title="广播信道"></a>广播信道</h2><p>广播信道(broadcast channel)是通过广播的方式传输信息的信息通道。</p>
+<h2 id="广播信道"><a class="markdownIt-Anchor" href="#广播信道"></a> 广播信道</h2>
+<p>广播信道(broadcast channel)是通过广播的方式传输信息的信息通道。</p>
 <p>所有的节点都在同一个广播信道上发送数据，因此需要有专门的控制方法进行协调，避免发生冲突（冲突也叫碰撞）。</p>
 <p>主要有两种控制方法进行协调，一个是使用信道复用技术，一是使用 CSMA/CD 协议。</p>
-<h3 id="CSMA-CD-协议"><a href="#CSMA-CD-协议" class="headerlink" title="CSMA/CD 协议"></a>CSMA/CD 协议</h3><p>CSMA/CD（Carrier Sense Multiple Access with Collision Detection）即带冲突检测的载波监听多路访问技术(载波监听多点接入/碰撞检测)。</p>
+<h3 id="csmacd-协议"><a class="markdownIt-Anchor" href="#csmacd-协议"></a> CSMA/CD 协议</h3>
+<p>CSMA/CD（Carrier Sense Multiple Access with Collision Detection）即带冲突检测的载波监听多路访问技术(载波监听多点接入/碰撞检测)。</p>
 <ul>
 <li><strong>多点接入</strong> ：说明这是总线型网络，许多计算机以多点接入的方式连接在一根总线上。</li>
 <li><strong>载波监听</strong> ：每个主机都必须不停地监听信道。发送前监听，如果忙则等待，如果空闲则发送。</li>
-<li><strong>碰撞检测</strong> ：即边发送边检测。若检测到信道有干扰信号，则表示产生了碰撞，于是就要停止发送数据，计算出退避等待时间，然后使用 CSMA 方法继续尝试发送。计算退避等待时间采用的是<a href="https://baike.baidu.com/item/二进制指数退避算法" target="_blank" rel="noopener">二进制指数退避算法</a>。</li>
+<li><strong>碰撞检测</strong> ：即边发送边检测。若检测到信道有干扰信号，则表示产生了碰撞，于是就要停止发送数据，计算出退避等待时间，然后使用 CSMA 方法继续尝试发送。计算退避等待时间采用的是<a href="https://baike.baidu.com/item/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%8C%87%E6%95%B0%E9%80%80%E9%81%BF%E7%AE%97%E6%B3%95" target="_blank" rel="noopener">二进制指数退避算法</a>。</li>
 </ul>
-<h2 id="局域网"><a href="#局域网" class="headerlink" title="局域网"></a>局域网</h2><p>局域网 LAN（Local Area Network）是指在某一区域内由多台计算机互联成的计算机组。</p>
+<h2 id="局域网"><a class="markdownIt-Anchor" href="#局域网"></a> 局域网</h2>
+<p>局域网 LAN（Local Area Network）是指在某一区域内由多台计算机互联成的计算机组。</p>
 <p>局域网的拓扑结构通常为总线型和环型。</p>
 <p>局域网技术主要有：以太网、令牌环网、FDDI 网和无线局域网等。</p>
-<h2 id="以太网"><a href="#以太网" class="headerlink" title="以太网"></a>以太网</h2><p>以太网（Ethernet）是一种星型拓扑结构局域网。</p>
+<h2 id="以太网"><a class="markdownIt-Anchor" href="#以太网"></a> 以太网</h2>
+<p>以太网（Ethernet）是一种星型拓扑结构局域网。</p>
 <p>以太网是目前应用最广泛的局域网。</p>
 <p>以太网使用 CSMA/CD 协议。</p>
-<h2 id="MAC-地址"><a href="#MAC-地址" class="headerlink" title="MAC 地址"></a>MAC 地址</h2><p>MAC 地址（Media Access Control Address），也称为以太网地址或物理地址，它是一个用来确认网上设备位置的地址。</p>
+<h2 id="mac-地址"><a class="markdownIt-Anchor" href="#mac-地址"></a> MAC 地址</h2>
+<p>MAC 地址（Media Access Control Address），也称为以太网地址或物理地址，它是一个用来确认网上设备位置的地址。</p>
 <p>MAC 地址长度为 6 字节（48 位），用于唯一标识网络适配器（网卡）。</p>
 <p>一台主机拥有多少个网络适配器就有多少个 MAC 地址。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/data-link/MAC帧.png"></div><br></p>
-<h2 id="设备"><a href="#设备" class="headerlink" title="设备"></a>设备</h2><h3 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h3><p>网络适配器一般指网卡。</p>
+<h2 id="设备"><a class="markdownIt-Anchor" href="#设备"></a> 设备</h2>
+<h3 id="适配器"><a class="markdownIt-Anchor" href="#适配器"></a> 适配器</h3>
+<p>网络适配器一般指网卡。</p>
 <p>网卡是工作在链路层的网络组件，是局域网中连接计算机和传输介质的接口，不仅能实现与局域网传输介质之间的物理连接和电信号匹配，还涉及帧的发送与接收、帧的封装与拆封、介质访问控制、数据的编码与解码以及数据缓存的功能等。</p>
 <p>网卡和局域网之间的通信是通过电缆或双绞线以串行传输方式进行的。而网卡和计算机之间的通信则是通过计算机主板上的 I/O 总线以并行传输方式进行。</p>
-<h3 id="集线器"><a href="#集线器" class="headerlink" title="集线器"></a>集线器</h3><p>集线器（Hub）的主要功能是对接收到的信号进行再生整形放大，以扩大网络的传输距离，同时把所有节点集中在以它为中心的节点上。</p>
+<h3 id="集线器"><a class="markdownIt-Anchor" href="#集线器"></a> 集线器</h3>
+<p>集线器（Hub）的主要功能是对接收到的信号进行再生整形放大，以扩大网络的传输距离，同时把所有节点集中在以它为中心的节点上。</p>
 <p>使用集线器可以在物理层扩展以太网。</p>
-<h3 id="网桥"><a href="#网桥" class="headerlink" title="网桥"></a>网桥</h3><p>网桥（Bridge）是早期的两端口二层网络设备，用来连接不同网段。网桥的两个端口分别有一条独立的交换信道，不是共享一条背板总线，可隔离冲突域。网桥比集线器（Hub）性能更好，集线器上各端口都是共享同一条背板总线的。后来，网桥被具有更多端口、同时也可隔离冲突域的交换机（Switch）所取代。</p>
-<h3 id="以太网交换机"><a href="#以太网交换机" class="headerlink" title="以太网交换机"></a>以太网交换机</h3><p>以太网交换机是基于以太网传输数据的交换机，以太网采用共享总线型传输媒体方式的局域网。以太网交换机的结构是每个端口都直接与主机相连，并且一般都工作在全双工方式。交换机能同时连通许多对端口，使每一对相互通信的主机都能像独占通信媒体那样，进行无冲突地传输数据。</p>
+<h3 id="网桥"><a class="markdownIt-Anchor" href="#网桥"></a> 网桥</h3>
+<p>网桥（Bridge）是早期的两端口二层网络设备，用来连接不同网段。网桥的两个端口分别有一条独立的交换信道，不是共享一条背板总线，可隔离冲突域。网桥比集线器（Hub）性能更好，集线器上各端口都是共享同一条背板总线的。后来，网桥被具有更多端口、同时也可隔离冲突域的交换机（Switch）所取代。</p>
+<h3 id="以太网交换机"><a class="markdownIt-Anchor" href="#以太网交换机"></a> 以太网交换机</h3>
+<p>以太网交换机是基于以太网传输数据的交换机，以太网采用共享总线型传输媒体方式的局域网。以太网交换机的结构是每个端口都直接与主机相连，并且一般都工作在全双工方式。交换机能同时连通许多对端口，使每一对相互通信的主机都能像独占通信媒体那样，进行无冲突地传输数据。</p>
 <ul>
 <li>以太网交换机的每个端口都直接与主机相连，并且一般都工作在全双工方式。</li>
 <li>交换机能同时连通许多对的端口，使每一对相互通信的主机都能像独占通信媒体那样，进行无冲突地传输数据。</li>
@@ -636,8 +658,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-profile/" rel="next" title="SpringBootTutorialCoreProfile">
-                <i class="fa fa-chevron-left"></i> SpringBootTutorialCoreProfile
+              <a href="/blog/2019/03/06/os/linux/tool/git/appendix/git-faq/" rel="next" title="Git 常见问题">
+                <i class="fa fa-chevron-left"></i> Git 常见问题
               </a>
             
           </div>
@@ -646,8 +668,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javacore/basic/README/" rel="prev" title="Java 基础教程">
-                Java 基础教程 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/docker/basics/docker-dockerfile/" rel="prev" title="Dockerfile">
+                Dockerfile <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -719,7 +741,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -784,7 +806,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1082,7 +1106,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本问题"><span class="nav-text">基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装成帧"><span class="nav-text">封装成帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明传输"><span class="nav-text">透明传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错检测"><span class="nav-text">差错检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点信道"><span class="nav-text">点对点信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PPP-协议"><span class="nav-text">PPP 协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广播信道"><span class="nav-text">广播信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA-CD-协议"><span class="nav-text">CSMA/CD 协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局域网"><span class="nav-text">局域网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以太网"><span class="nav-text">以太网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MAC-地址"><span class="nav-text">MAC 地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备"><span class="nav-text">设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器"><span class="nav-text">适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集线器"><span class="nav-text">集线器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网桥"><span class="nav-text">网桥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网交换机"><span class="nav-text">以太网交换机</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#数据链路层"><span class="nav-text"> 数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本问题"><span class="nav-text"> 基本问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#封装成帧"><span class="nav-text"> 封装成帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#透明传输"><span class="nav-text"> 透明传输</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错检测"><span class="nav-text"> 差错检测</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#点对点信道"><span class="nav-text"> 点对点信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ppp-协议"><span class="nav-text"> PPP 协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#广播信道"><span class="nav-text"> 广播信道</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#csmacd-协议"><span class="nav-text"> CSMA/CD 协议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#局域网"><span class="nav-text"> 局域网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以太网"><span class="nav-text"> 以太网</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mac-地址"><span class="nav-text"> MAC 地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设备"><span class="nav-text"> 设备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#适配器"><span class="nav-text"> 适配器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#集线器"><span class="nav-text"> 集线器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网桥"><span class="nav-text"> 网桥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网交换机"><span class="nav-text"> 以太网交换机</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1124,7 +1148,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+  <meta name="description" content="线性表的查找  概念  什么是查找？ 查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。  查找算法的分类 若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。  查找算法性能比较的标准 ——平均查找长度ASL（Av">
 <meta name="keywords" content="data-structure,search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="线性表的查找">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/10/algorithm/data-structure/search/linear-list-search/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+<meta property="og:description" content="线性表的查找  概念  什么是查找？ 查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。  查找算法的分类 若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。  查找算法性能比较的标准 ——平均查找长度ASL（Av">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-07T02:25:17.154Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性表的查找">
-<meta name="twitter:description" content="线性表的查找概念什么是查找？查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。 查找算法的分类若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。 查找算法性能比较的标准——平均查找长度ASL（Average Sear">
+<meta name="twitter:description" content="线性表的查找  概念  什么是查找？ 查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。  查找算法的分类 若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。  查找算法性能比较的标准 ——平均查找长度ASL（Av">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip">
 
 
@@ -519,18 +519,24 @@
       
 
       
-        <h1 id="线性表的查找"><a href="#线性表的查找" class="headerlink" title="线性表的查找"></a>线性表的查找</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><h3 id="什么是查找？"><a href="#什么是查找？" class="headerlink" title="什么是查找？"></a>什么是查找？</h3><p><strong>查找</strong>是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。</p>
-<h3 id="查找算法的分类"><a href="#查找算法的分类" class="headerlink" title="查找算法的分类"></a>查找算法的分类</h3><p>若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为<strong>动态查找表</strong>；</p>
+        <h1 id="线性表的查找"><a class="markdownIt-Anchor" href="#线性表的查找"></a> 线性表的查找</h1>
+<h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2>
+<h3 id="什么是查找"><a class="markdownIt-Anchor" href="#什么是查找"></a> 什么是查找？</h3>
+<p><strong>查找</strong>是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。</p>
+<h3 id="查找算法的分类"><a class="markdownIt-Anchor" href="#查找算法的分类"></a> 查找算法的分类</h3>
+<p>若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为<strong>动态查找表</strong>；</p>
 <p>否则，称之为<strong>静态查找表</strong>。</p>
 <p>此外，如果查找的全过程都在内存中进行，称之为<strong>内查找</strong>；</p>
 <p>反之，如果查找过程中需要访问外存，称之为<strong>外查找</strong>。</p>
-<h3 id="查找算法性能比较的标准"><a href="#查找算法性能比较的标准" class="headerlink" title="查找算法性能比较的标准"></a>查找算法性能比较的标准</h3><p><strong>——平均查找长度ASL（Average Search Length）</strong></p>
+<h3 id="查找算法性能比较的标准"><a class="markdownIt-Anchor" href="#查找算法性能比较的标准"></a> 查找算法性能比较的标准</h3>
+<p><strong>——平均查找长度ASL（Average Search Length）</strong></p>
 <p>由于查找算法的主要运算是关键字的比较过程，所以通常把查找过程中对关键字需要执行的<strong>平均比较长度</strong>（也称为<strong>平均比较次数</strong>）作为衡量一个查找算法效率优劣的比较标准。</p>
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip"></div><br></p>
 <p><strong>选取查找算法的因素</strong></p>
 <p>(1) 使用什么数据存储结构（如线性表、树形表等）。</p>
 <p>(2) 表中的次序，即对无序表还是有序表进行查找。</p>
-<h2 id="顺序查找"><a href="#顺序查找" class="headerlink" title="顺序查找"></a>顺序查找</h2><p><strong>要点</strong></p>
+<h2 id="顺序查找"><a class="markdownIt-Anchor" href="#顺序查找"></a> 顺序查找</h2>
+<p><strong>要点</strong></p>
 <p>它是一种最简单的查找算法，效率也很低下。</p>
 <p><strong>存储结构</strong></p>
 <p>没有存储结构要求，可以无序，也可以有序。</p>
@@ -545,7 +551,8 @@
 <p>所以，顺序查找算法的平均查找长度为</p>
 <p>ASL = (N + N-1 + … + 2 + 1) / N = (N+1) / 2</p>
 <p>顺序查找的<strong>平均时间复杂度</strong>为<strong>O(N)</strong>。</p>
-<h2 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h2><p><strong>要点</strong></p>
+<h2 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h2>
+<p><strong>要点</strong></p>
 <p>二分查找又称<strong>折半查找</strong>，它是一种效率较高的查找方法。</p>
 <p><strong>存储结构</strong></p>
 <p>使用二分查找需要两个前提：</p>
@@ -553,7 +560,8 @@
 <p>(2) 必须是<strong>有序</strong>的表。</p>
 <p><strong>基本思想</strong></p>
 <p>首先，将表<strong>中间位置</strong>记录的关键字与查找关键字比较，如果两者相等，则查找成功；</p>
-<p>否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。<br>重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。</p>
+<p>否则利用中间位置记录将表分成前、后两个子表，如果中间位置记录的关键字大于查找关键字，则进一步查找前一子表，否则进一步查找后一子表。<br>
+重复以上过程，直到找到满足条件的记录，使查找成功，或直到子表不存在为止，此时查找不成功。</p>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] list, <span class="keyword">int</span> length, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> low = <span class="number">0</span>, mid = <span class="number">0</span>, high = length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">        mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (list[mid] == key) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid; <span class="comment">// 查找成功，直接返回位置</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (list[mid] &lt; key) &#123;</span><br><span class="line">            low = mid + <span class="number">1</span>; <span class="comment">// 关键字大于中间位置的值，则在大值区间[mid+1, high]继续查找</span></span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            high = mid - <span class="number">1</span>; <span class="comment">// 关键字小于中间位置的值，则在小值区间[low, mid-1]继续查找</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>算法分析</strong></p>
@@ -561,15 +569,16 @@
 <p>把查找区间的中间位置视为树的根，左区间和右区间视为根的左子树和右子树。</p>
 <p>由此得到的二叉树，称为二分查找的判定树或比较树。</p>
 <p>由此可知，二分查找的<strong>平均查找长度</strong>实际上就是树的高度<strong>O(log<sub>2</sub>N)</strong>。</p>
-<h2 id="分块查找"><a href="#分块查找" class="headerlink" title="分块查找"></a>分块查找</h2><p><strong>要点</strong></p>
+<h2 id="分块查找"><a class="markdownIt-Anchor" href="#分块查找"></a> 分块查找</h2>
+<p><strong>要点</strong></p>
 <p>分块查找(Blocking Search)又称<strong>索引顺序查找</strong>。它是一种性能介于顺序查找和二分查找之间的查找方法。</p>
 <p>分块查找由于只要求索引表是有序的，对块内节点没有排序要求，因此特别适合于节点动态变化的情况。</p>
 <p><strong>存储结构</strong></p>
-<p>分块查找表是由<strong>“分块有序”的线性表</strong>和<strong>索引表</strong>两部分构成的。</p>
-<p>所谓<strong>“分块有序”的线性表</strong>，是指：</p>
+<p>分块查找表是由**“分块有序”的线性表<strong>和</strong>索引表**两部分构成的。</p>
+<p>所谓**“分块有序”的线性表**，是指：</p>
 <p>假设要排序的表为R[0…N-1]，<strong>将表均匀分成b块</strong>，前b-1块中记录个数为s=N/b，最后一块记录数小于等于s；</p>
 <p>每一块中的关键字不一定有序，但<strong>前一块中的最大关键字必须小于后一块中的最小关键字</strong>。</p>
-<p><strong><em>注：这是使用分块查找的前提条件。</em></strong></p>
+<p><em><strong>注：这是使用分块查找的前提条件。</strong></em></p>
 <p>如上将表均匀分成b块后，抽取各块中的<strong>最大关键字</strong>和<strong>起始位置</strong>构成一个索引表IDX[0…b-1]。</p>
 <p>由于表R是分块有序的，所以<strong>索引表是一个递增有序表</strong>。</p>
 <p>下图就是一个分块查找表的存储结构示意图</p>
@@ -585,14 +594,16 @@
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip"></div><br></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlockSearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">IndexType</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> key; <span class="comment">// 分块中的最大值</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> link; <span class="comment">// 分块的起始位置</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建立索引方法，n 是线性表最大长度，gap是分块的最大长度</span></span><br><span class="line">    <span class="keyword">public</span> IndexType[] createIndex(<span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> gap) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = n / gap;</span><br><span class="line">        IndexType[] idxGroup = <span class="keyword">new</span> IndexType[num]; <span class="comment">// 根据步长数分配索引数组大小</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i &lt; num) &#123;</span><br><span class="line">            j = <span class="number">0</span>;</span><br><span class="line">            idxGroup[i] = <span class="keyword">new</span> IndexType();</span><br><span class="line">            idxGroup[i].link = gap * i; <span class="comment">// 确定当前索引组的第一个元素位置</span></span><br><span class="line">            max = list[gap * i]; <span class="comment">// 每次假设当前组的第一个数为最大值</span></span><br><span class="line">            <span class="comment">// 遍历这个分块，找到最大值</span></span><br><span class="line">            <span class="keyword">while</span> (j &lt; gap) &#123;</span><br><span class="line">                <span class="keyword">if</span> (max &lt; list[gap * i + j]) &#123;</span><br><span class="line">                    max = list[gap * i + j];</span><br><span class="line">                &#125;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            idxGroup[i].key = max;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> idxGroup;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 分块查找算法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">blockSearch</span><span class="params">(IndexType[] idxGroup, <span class="keyword">int</span> m, <span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = m -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> gap = n / m; <span class="comment">// 分块大小等于线性表长度除以组数</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 先在索引表中进行二分查找，找到的位置存放在 low 中</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">            mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (idxGroup[mid].key &gt;= key) &#123;</span><br><span class="line">                high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在索引表中查找成功后，再在线性表的指定块中进行顺序查找</span></span><br><span class="line">        <span class="keyword">if</span> (low &lt; m) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = idxGroup[low].link; i &lt; idxGroup[low].link + gap; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (list[i] == key)</span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印完整序列</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printAll</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> value : list) &#123;</span><br><span class="line">            System.out.print(value + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印索引表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printIDX</span><span class="params">(IndexType[] list)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造索引表如下："</span>);</span><br><span class="line">        <span class="keyword">for</span> (IndexType elem : list) &#123;</span><br><span class="line">            System.out.format(<span class="string">"key = %d, link = %d\n"</span>, elem.key, elem.link);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key = <span class="number">85</span>;</span><br><span class="line">        <span class="keyword">int</span> array[] = &#123; <span class="number">8</span>, <span class="number">14</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">31</span>, <span class="number">40</span>, <span class="number">38</span>, <span class="number">54</span>, <span class="number">66</span>, <span class="number">46</span>, <span class="number">71</span>, <span class="number">78</span>, <span class="number">68</span>, <span class="number">80</span>, <span class="number">85</span> &#125;;</span><br><span class="line">        BlockSearch search = <span class="keyword">new</span> BlockSearch();</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"线性表: "</span>);</span><br><span class="line">        search.printAll(array);</span><br><span class="line"></span><br><span class="line">        IndexType[] idxGroup = search.createIndex(array, array.length, <span class="number">5</span>);</span><br><span class="line">        search.printIDX(idxGroup);</span><br><span class="line">        <span class="keyword">int</span> pos = search.blockSearch(idxGroup, idxGroup.length, array,</span><br><span class="line">                array.length, key);</span><br><span class="line">        <span class="keyword">if</span> (-<span class="number">1</span> == pos) &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d失败"</span>, key);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d成功，位置为%d"</span>, key, pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>运行结果</strong></p>
-<figure class="highlight tap"><table><tr><td class="code"><pre><span class="line">线性表:<span class="number"> 8 </span>14<span class="number"> 6 </span>9<span class="number"> 10 </span>22<span class="number"> 34 </span>18<span class="number"> 19 </span>31<span class="number"> 40 </span>38<span class="number"> 54 </span>66<span class="number"> 46 </span>71<span class="number"> 78 </span>68<span class="number"> 80 </span>85 </span><br><span class="line">构造索引表如下：</span><br><span class="line">key = 14, link = 0</span><br><span class="line">key = 34, link = 5</span><br><span class="line">key = 66, link = 10</span><br><span class="line">key = 85, link = 15</span><br><span class="line"></span><br><span class="line">查找key = 85成功，位置为19</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">线性表: <span class="number">8</span> <span class="number">14</span> <span class="number">6</span> <span class="number">9</span> <span class="number">10</span> <span class="number">22</span> <span class="number">34</span> <span class="number">18</span> <span class="number">19</span> <span class="number">31</span> <span class="number">40</span> <span class="number">38</span> <span class="number">54</span> <span class="number">66</span> <span class="number">46</span> <span class="number">71</span> <span class="number">78</span> <span class="number">68</span> <span class="number">80</span> <span class="number">85</span> </span><br><span class="line">构造索引表如下：</span><br><span class="line">key = <span class="number">14</span>, link = <span class="number">0</span></span><br><span class="line">key = <span class="number">34</span>, link = <span class="number">5</span></span><br><span class="line">key = <span class="number">66</span>, link = <span class="number">10</span></span><br><span class="line">key = <span class="number">85</span>, link = <span class="number">15</span></span><br><span class="line"></span><br><span class="line">查找key = <span class="number">85</span>成功，位置为<span class="number">19</span></span><br></pre></td></tr></table></figure>
 <p><strong>算法分析</strong></p>
 <p>因为分块查找实际上是两次查找过程之和。若以二分查找来确定块，显然它的查找效率介于顺序查找和二分查找之间。</p>
-<h2 id="三种线性查找的PK"><a href="#三种线性查找的PK" class="headerlink" title="三种线性查找的PK"></a>三种线性查找的PK</h2><p>(1) 以平均查找长度而言，二分查找 &gt; 分块查找 &gt; 顺序查找。</p>
+<h2 id="三种线性查找的pk"><a class="markdownIt-Anchor" href="#三种线性查找的pk"></a> 三种线性查找的PK</h2>
+<p>(1) 以平均查找长度而言，二分查找 &gt; 分块查找 &gt; 顺序查找。</p>
 <p>(2) 从适用性而言，顺序查找无限制条件，二分查找仅适用于有序表，分块查找要求“分块有序”。</p>
 <p>(3) 从存储结构而言，顺序查找和分块查找既可用于顺序表也可用于链表；而二分查找只适用于顺序表。</p>
 <p>(4) 分块查找综合了顺序查找和二分查找的优点，既可以较为快速，也能使用动态变化的要求。</p>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><p>《数据结构习题与解析》（B级第3版）</p>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<p>《数据结构习题与解析》（B级第3版）</p>
 
       
     </div>
@@ -742,7 +753,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -807,7 +818,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1105,7 +1118,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的查找"><span class="nav-text">线性表的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text">概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是查找？"><span class="nav-text">什么是查找？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法的分类"><span class="nav-text">查找算法的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法性能比较的标准"><span class="nav-text">查找算法性能比较的标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序查找"><span class="nav-text">顺序查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-text">二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分块查找"><span class="nav-text">分块查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种线性查找的PK"><span class="nav-text">三种线性查找的PK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性表的查找"><span class="nav-text"> 线性表的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是查找"><span class="nav-text"> 什么是查找？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法的分类"><span class="nav-text"> 查找算法的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找算法性能比较的标准"><span class="nav-text"> 查找算法性能比较的标准</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序查找"><span class="nav-text"> 顺序查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找"><span class="nav-text"> 二分查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分块查找"><span class="nav-text"> 分块查找</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种线性查找的pk"><span class="nav-text"> 三种线性查找的PK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1147,7 +1160,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

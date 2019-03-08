@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="HBase  简介 基础 原理 数据模型 HBase 架构   HBase 和 RDBMS API 附录 命令行   更多内容 扩展阅读 参考资料     简介HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase 适用场景：实">
+  <meta name="description" content="HBase   简介 基础 原理  数据模型 HBase 架构   HBase 和 RDBMS API 附录  命令行   更多内容  扩展阅读 参考资料      简介 HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HBase">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/bigdata/hbase/README/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="HBase  简介 基础 原理 数据模型 HBase 架构   HBase 和 RDBMS API 附录 命令行   更多内容 扩展阅读 参考资料     简介HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase 适用场景：实">
+<meta property="og:description" content="HBase   简介 基础 原理  数据模型 HBase 架构   HBase 和 RDBMS API 附录  命令行   更多内容  扩展阅读 参考资料      简介 HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164163369.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164224778.png">
@@ -124,7 +124,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:45.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HBase">
-<meta name="twitter:description" content="HBase  简介 基础 原理 数据模型 HBase 架构   HBase 和 RDBMS API 附录 命令行   更多内容 扩展阅读 参考资料     简介HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase 适用场景：实">
+<meta name="twitter:description" content="HBase   简介 基础 原理  数据模型 HBase 架构   HBase 和 RDBMS API 附录  命令行   更多内容  扩展阅读 参考资料      简介 HBase 是建立在 HDFS 基础上的面向列的分布式数据库。  HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。 它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。  HBase">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164163369.png">
 
 
@@ -485,37 +485,45 @@
       
 
       
-        <h1 id="HBase"><a href="#HBase" class="headerlink" title="HBase"></a>HBase</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="hbase"><a class="markdownIt-Anchor" href="#hbase"></a> HBase</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#基础">基础</a></li>
-<li><a href="#原理">原理</a><ul>
-<li><a href="#数据模型">数据模型</a></li>
-<li><a href="#hbase-架构">HBase 架构</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%9F%BA%E7%A1%80">基础</a></li>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a>
+<ul>
+<li><a href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B">数据模型</a></li>
+<li><a href="#hbase-%E6%9E%B6%E6%9E%84">HBase 架构</a></li>
 </ul>
 </li>
-<li><a href="#hbase-和-rdbms">HBase 和 RDBMS</a></li>
+<li><a href="#hbase-%E5%92%8C-rdbms">HBase 和 RDBMS</a></li>
 <li><a href="#api">API</a></li>
-<li><a href="#附录">附录</a><ul>
-<li><a href="#命令行">命令行</a></li>
+<li><a href="#%E9%99%84%E5%BD%95">附录</a>
+<ul>
+<li><a href="#%E5%91%BD%E4%BB%A4%E8%A1%8C">命令行</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a><ul>
-<li><a href="#扩展阅读">扩展阅读</a></li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a>
+<ul>
+<li><a href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB">扩展阅读</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>HBase 是建立在 HDFS 基础上的面向列的分布式数据库。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>HBase 是建立在 HDFS 基础上的面向列的分布式数据库。</p>
 <ul>
 <li>HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。</li>
 <li>它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。</li>
 </ul>
 <p>HBase 适用场景：实时地随机访问超大数据集。</p>
 <p>在 <a href="https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">CAP 理论</a>中，HBase 属于 CP 类型的系统。</p>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><a href="hbase-ops.md">HBase 维护</a></p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><h3 id="数据模型"><a href="#数据模型" class="headerlink" title="数据模型"></a>数据模型</h3><p>HBase 是一个面向列的数据库，在表中它由行排序。</p>
+<h2 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h2>
+<p><a href="hbase-ops.md">HBase 维护</a></p>
+<h2 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h2>
+<h3 id="数据模型"><a class="markdownIt-Anchor" href="#数据模型"></a> 数据模型</h3>
+<p>HBase 是一个面向列的数据库，在表中它由行排序。</p>
 <p>HBase 表模型结构为：</p>
 <ul>
 <li>表（table）是行的集合。</li>
@@ -527,19 +535,23 @@
 <p>HBase 表的单元格（cell）由行和列的坐标交叉决定，是有版本的。默认情况下，版本号是自动分配的，为 HBase 插入单元格时的时间戳。单元格的内容是未解释的字节数组。</p>
 <p>行的键也是未解释的字节数组，所以理论上，任何数据都可以通过序列化表示成字符串或二进制，从而存为 HBase 的键值。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164224778.png"></div><br></p>
-<h3 id="HBase-架构"><a href="#HBase-架构" class="headerlink" title="HBase 架构"></a>HBase 架构</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164744748.png"></div><br></p>
+<h3 id="hbase-架构"><a class="markdownIt-Anchor" href="#hbase-架构"></a> HBase 架构</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551164744748.png"></div><br></p>
 <p>和 HDFS、YARN 一样，HBase 也采用 master / slave 架构：</p>
 <ul>
 <li>HBase 有一个 master 节点。master 节点负责将区域（region）分配给 region 节点；恢复 region 节点的故障。</li>
 <li>HBase 有多个 region 节点。region 节点负责零个或多个区域（region）的管理并相应客户端的读写请求。region 节点还负责区域的划分并通知 master 节点有了新的子区域。</li>
 </ul>
 <p>HBase 依赖 ZooKeeper 来实现故障恢复。</p>
-<h4 id="Regin"><a href="#Regin" class="headerlink" title="Regin"></a>Regin</h4><p>HBase 表按行键范围水平自动划分为区域（region）。每个区域由表中行的子集构成。每个区域由它所属的表、它所含的第一行及最后一行来表示。</p>
+<h4 id="regin"><a class="markdownIt-Anchor" href="#regin"></a> Regin</h4>
+<p>HBase 表按行键范围水平自动划分为区域（region）。每个区域由表中行的子集构成。每个区域由它所属的表、它所含的第一行及最后一行来表示。</p>
 <p><strong>区域只不过是表被拆分，并分布在区域服务器。</strong></p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551165887616.png"></div><br></p>
-<h4 id="Master-服务器"><a href="#Master-服务器" class="headerlink" title="Master 服务器"></a>Master 服务器</h4><p>区域分配、DDL(create、delete)操作由 HBase master 服务器处理。</p>
+<h4 id="master-服务器"><a class="markdownIt-Anchor" href="#master-服务器"></a> Master 服务器</h4>
+<p>区域分配、DDL(create、delete)操作由 HBase master 服务器处理。</p>
 <ul>
-<li>master 服务器负责协调 region 服务器<ul>
+<li>master 服务器负责协调 region 服务器
+<ul>
 <li>协助区域启动，出现故障恢复或负载均衡情况时，重新分配 region 服务器</li>
 <li>监控集群中的所有 region 服务器</li>
 </ul>
@@ -547,19 +559,28 @@
 <li>支持 DDL 接口（创建、删除、更新表）</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551166513572.png"></div><br></p>
-<h4 id="Regin-服务器"><a href="#Regin-服务器" class="headerlink" title="Regin 服务器"></a>Regin 服务器</h4><p>区域服务器运行在 HDFS 数据节点上，具有以下组件</p>
+<h4 id="regin-服务器"><a class="markdownIt-Anchor" href="#regin-服务器"></a> Regin 服务器</h4>
+<p>区域服务器运行在 HDFS 数据节点上，具有以下组件</p>
 <ul>
-<li><p><code>WAL</code> - Write Ahead Log 是 HDFS 上的文件。WAL 存储尚未持久存储到永久存储的新数据，它用于在发生故障时进行恢复。</p>
+<li>
+<p><code>WAL</code> - Write Ahead Log 是 HDFS 上的文件。WAL 存储尚未持久存储到永久存储的新数据，它用于在发生故障时进行恢复。</p>
 </li>
-<li><p><code>BlockCache</code> - 是读缓存。它将频繁读取的数据存储在内存中。至少最近使用的数据在完整时被逐出。</p>
+<li>
+<p><code>BlockCache</code> - 是读缓存。它将频繁读取的数据存储在内存中。至少最近使用的数据在完整时被逐出。</p>
 </li>
-<li><code>MemStore</code> - 是写缓存。它存储尚未写入磁盘的新数据。在写入磁盘之前对其进行排序。每个区域每个列族有一个 MemStore。</li>
-<li><code>Hfiles</code> - 将行存储为磁盘上的排序键值对。</li>
+<li>
+<p><code>MemStore</code> - 是写缓存。它存储尚未写入磁盘的新数据。在写入磁盘之前对其进行排序。每个区域每个列族有一个 MemStore。</p>
+</li>
+<li>
+<p><code>Hfiles</code> - 将行存储为磁盘上的排序键值对。</p>
+</li>
 </ul>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551166602999.png"></div><br></p>
-<h4 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h4><p>HBase 使用 ZooKeeper 作为分布式协调服务来维护集群中的服务器状态。Zookeeper 维护哪些服务器是活动的和可用的，并提供服务器故障通知。集群至少应该有 3 个节点。</p>
+<h4 id="zookeeper"><a class="markdownIt-Anchor" href="#zookeeper"></a> ZooKeeper</h4>
+<p>HBase 使用 ZooKeeper 作为分布式协调服务来维护集群中的服务器状态。Zookeeper 维护哪些服务器是活动的和可用的，并提供服务器故障通知。集群至少应该有 3 个节点。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/bigdata/hbase/1551166447147.png"></div><br></p>
-<h2 id="HBase-和-RDBMS"><a href="#HBase-和-RDBMS" class="headerlink" title="HBase 和 RDBMS"></a>HBase 和 RDBMS</h2><table>
+<h2 id="hbase-和-rdbms"><a class="markdownIt-Anchor" href="#hbase-和-rdbms"></a> HBase 和 RDBMS</h2>
+<table>
 <thead>
 <tr>
 <th>HBase</th>
@@ -589,19 +610,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><p>Java API 归纳总结在这里：<a href="hbase-api-java.md">Hbase Java API</a></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>HBase 命令行可以参考这里：<a href="hbase-cli.md">HBase 命令行</a></p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><h3 id="扩展阅读"><a href="#扩展阅读" class="headerlink" title="扩展阅读"></a>扩展阅读</h3><ul>
+<h2 id="api"><a class="markdownIt-Anchor" href="#api"></a> API</h2>
+<p>Java API 归纳总结在这里：<a href="hbase-api-java.md">Hbase Java API</a></p>
+<h2 id="附录"><a class="markdownIt-Anchor" href="#附录"></a> 附录</h2>
+<h3 id="命令行"><a class="markdownIt-Anchor" href="#命令行"></a> 命令行</h3>
+<p>HBase 命令行可以参考这里：<a href="hbase-cli.md">HBase 命令行</a></p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<h3 id="扩展阅读"><a class="markdownIt-Anchor" href="#扩展阅读"></a> 扩展阅读</h3>
+<ul>
 <li><a href="hbase-cli.md">HBase 命令</a></li>
 <li><a href="hbase-ops.md">HBase 配置</a></li>
 </ul>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><h4 id="官方"><a href="#官方" class="headerlink" title="官方"></a>官方</h4><ul>
+<h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+<h4 id="官方"><a class="markdownIt-Anchor" href="#官方"></a> 官方</h4>
+<ul>
 <li><a href="http://hbase.apache.org/" target="_blank" rel="noopener">HBase 官网</a></li>
 <li><a href="https://hbase.apache.org/book.html" target="_blank" rel="noopener">HBase 官方文档</a></li>
 <li><a href="http://abloz.com/hbase/book.html" target="_blank" rel="noopener">HBase 官方文档中文版</a></li>
 <li><a href="https://hbase.apache.org/apidocs/index.html" target="_blank" rel="noopener">HBase API</a></li>
 </ul>
-<h4 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h4><ul>
+<h4 id="文章"><a class="markdownIt-Anchor" href="#文章"></a> 文章</h4>
+<ul>
 <li><a href="https://static.googleusercontent.com/media/research.google.com/zh-CN//archive/bigtable-osdi06.pdf" target="_blank" rel="noopener">Bigtable: A Distributed Storage System for Structured Data</a></li>
 <li><a href="https://mapr.com/blog/in-depth-look-hbase-architecture/" target="_blank" rel="noopener">https://mapr.com/blog/in-depth-look-hbase-architecture/</a></li>
 </ul>
@@ -663,8 +692,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-action/" rel="next" title="Maven 常见问题和最佳实践">
-                <i class="fa fa-chevron-left"></i> Maven 常见问题和最佳实践
+              <a href="/blog/2019/03/06/programming/java/spring/data/spring-and-jdbc/" rel="next" title="Spring 中使用 JDBC 访问数据">
+                <i class="fa fa-chevron-left"></i> Spring 中使用 JDBC 访问数据
               </a>
             
           </div>
@@ -673,8 +702,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/tool/git/appendix/git-faq/" rel="prev" title="Git 常见问题">
-                Git 常见问题 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-action/" rel="prev" title="Maven 常见问题和最佳实践">
+                Maven 常见问题和最佳实践 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -746,7 +775,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -811,7 +840,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1109,7 +1140,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HBase"><span class="nav-text">HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型"><span class="nav-text">数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HBase-架构"><span class="nav-text">HBase 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Regin"><span class="nav-text">Regin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Master-服务器"><span class="nav-text">Master 服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Regin-服务器"><span class="nav-text">Regin 服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ZooKeeper"><span class="nav-text">ZooKeeper</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HBase-和-RDBMS"><span class="nav-text">HBase 和 RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text">命令行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展阅读"><span class="nav-text">扩展阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#官方"><span class="nav-text">官方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章"><span class="nav-text">文章</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hbase"><span class="nav-text"> HBase</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-text"> 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text"> 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据模型"><span class="nav-text"> 数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hbase-架构"><span class="nav-text"> HBase 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#regin"><span class="nav-text"> Regin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#master-服务器"><span class="nav-text"> Master 服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#regin-服务器"><span class="nav-text"> Regin 服务器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#zookeeper"><span class="nav-text"> ZooKeeper</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hbase-和-rdbms"><span class="nav-text"> HBase 和 RDBMS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-text"> API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-text"> 附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text"> 命令行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展阅读"><span class="nav-text"> 扩展阅读</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#官方"><span class="nav-text"> 官方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章"><span class="nav-text"> 文章</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1151,7 +1182,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

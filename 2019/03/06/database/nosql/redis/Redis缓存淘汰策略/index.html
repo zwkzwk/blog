@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Redis 缓存淘汰策略概述 最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了失效时间">
+  <meta name="description" content="Redis 缓存淘汰策略  概述  最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 缓存淘汰策略">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/nosql/redis/Redis缓存淘汰策略/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 缓存淘汰策略概述 最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了失效时间">
+<meta property="og:description" content="Redis 缓存淘汰策略  概述  最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 缓存淘汰策略">
-<meta name="twitter:description" content="Redis 缓存淘汰策略概述 最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了失效时间">
+<meta name="twitter:description" content="Redis 缓存淘汰策略  概述  最大缓存  Redis 允许通过 maxmemory 参数来设置内存最大值。  主键失效  作为一种定期清理无效数据的重要机制，在 Redis 提供的诸多命令中，EXPIRE、EXPIREAT、PEXPIRE、PEXPIREAT 以及 SETEX 和 PSETEX 均可以用来设置一条 Key-Value 对的失效时间，而一条 Key-Value 对一旦被关联了">
 
 
 
@@ -477,7 +477,9 @@
       
 
       
-        <h1 id="Redis-缓存淘汰策略"><a href="#Redis-缓存淘汰策略" class="headerlink" title="Redis 缓存淘汰策略"></a>Redis 缓存淘汰策略</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+        <h1 id="redis-缓存淘汰策略"><a class="markdownIt-Anchor" href="#redis-缓存淘汰策略"></a> Redis 缓存淘汰策略</h1>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<ul>
 <li>最大缓存</li>
 </ul>
 <p>Redis 允许通过 maxmemory 参数来设置内存最大值。</p>
@@ -489,12 +491,14 @@
 <li>淘汰机制</li>
 </ul>
 <p>随着不断的向 redis 中保存数据，当内存剩余空间无法满足添加的数据时，redis 内就会施行数据淘汰策略，清除一部分内容然后保证新的数据可以保存到内存中。</p>
-<p>内存淘汰机制是为了更好的使用内存，用一定得 miss 来换取内存的利用率，保证 redis 缓存中保存的都是热点数据。<br>​</p>
+<p>内存淘汰机制是为了更好的使用内存，用一定得 miss 来换取内存的利用率，保证 redis 缓存中保存的都是热点数据。<br>
+​</p>
 <ul>
 <li>非精准的 LRU</li>
 </ul>
 <p>实际上 Redis 实现的 LRU 并不是可靠的 LRU，也就是名义上我们使用 LRU 算法淘汰键，但是实际上被淘汰的键并不一定是真正的最久没用的。</p>
-<h2 id="淘汰策略"><a href="#淘汰策略" class="headerlink" title="淘汰策略"></a>淘汰策略</h2><p>内存淘汰只是 Redis 提供的一个功能，为了更好地实现这个功能，必须为不同的应用场景提供不同的策略，内存淘汰策略讲的是为实现内存淘汰我们具体怎么做，要解决的问题包括淘汰键空间如何选择？在键空间中淘汰键如何选择？</p>
+<h2 id="淘汰策略"><a class="markdownIt-Anchor" href="#淘汰策略"></a> 淘汰策略</h2>
+<p>内存淘汰只是 Redis 提供的一个功能，为了更好地实现这个功能，必须为不同的应用场景提供不同的策略，内存淘汰策略讲的是为实现内存淘汰我们具体怎么做，要解决的问题包括淘汰键空间如何选择？在键空间中淘汰键如何选择？</p>
 <p>Redis 提供了下面几种淘汰策略供用户选择，其中默认的策略为 noeviction 策略：</p>
 <ul>
 <li><strong>noeviction</strong> - 当内存使用达到阈值的时候，所有引起申请内存的命令会报错。</li>
@@ -505,13 +509,15 @@
 <li><strong>volatile-ttl</strong> - 在设置了过期时间的键空间中，具有更早过期时间的 key 优先移除。</li>
 </ul>
 <p>这里补充一下主键空间和设置了过期时间的键空间，举个例子，假设我们有一批键存储在 Redis 中，则有那么一个哈希表用于存储这批键及其值，如果这批键中有一部分设置了过期时间，那么这批键还会被存储到另外一个哈希表中，这个哈希表中的值对应的是键被设置的过期时间。设置了过期时间的键空间为主键空间的子集。</p>
-<h2 id="如何选择淘汰策略"><a href="#如何选择淘汰策略" class="headerlink" title="如何选择淘汰策略"></a>如何选择淘汰策略</h2><ul>
+<h2 id="如何选择淘汰策略"><a class="markdownIt-Anchor" href="#如何选择淘汰策略"></a> 如何选择淘汰策略</h2>
+<ul>
 <li>如果数据呈现幂律分布，也就是一部分数据访问频率高，一部分数据访问频率低，则使用 allkeys-lru。</li>
 <li>如果数据呈现平等分布，也就是所有的数据访问频率都相同，则使用 allkeys-random。</li>
 <li>volatile-lru 策略和 volatile-random 策略适合我们将一个 Redis 实例既应用于缓存和又应用于持久化存储的时候，然而我们也可以通过使用两个 Redis 实例来达到相同的效果。</li>
 <li>将 key 设置过期时间实际上会消耗更多的内存，因此我们建议使用 allkeys-lru 策略从而更有效率的使用内存。</li>
 </ul>
-<h2 id="内部实现"><a href="#内部实现" class="headerlink" title="内部实现"></a>内部实现</h2><p>Redis 删除失效主键的方法主要有两种：</p>
+<h2 id="内部实现"><a class="markdownIt-Anchor" href="#内部实现"></a> 内部实现</h2>
+<p>Redis 删除失效主键的方法主要有两种：</p>
 <ul>
 <li>消极方法（passive way），在主键被访问时如果发现它已经失效，那么就删除它。</li>
 <li>主动方法（active way），周期性地从设置了失效时间的主键中选择一部分失效的主键删除。</li>
@@ -575,8 +581,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/redis/install-redis/" rel="next" title="Redis 安装">
-                <i class="fa fa-chevron-left"></i> Redis 安装
+              <a href="/blog/2019/03/06/database/nosql/redis/Redis配置/" rel="next" title="Redis 配置">
+                <i class="fa fa-chevron-left"></i> Redis 配置
               </a>
             
           </div>
@@ -585,8 +591,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-quickstart/" rel="prev" title="Gitlab 快速教程">
-                Gitlab 快速教程 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/elastic/README/" rel="prev" title="Elastic 技术栈">
+                Elastic 技术栈 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -658,7 +664,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -723,7 +729,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1021,7 +1029,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-缓存淘汰策略"><span class="nav-text">Redis 缓存淘汰策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#淘汰策略"><span class="nav-text">淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择淘汰策略"><span class="nav-text">如何选择淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部实现"><span class="nav-text">内部实现</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-缓存淘汰策略"><span class="nav-text"> Redis 缓存淘汰策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#淘汰策略"><span class="nav-text"> 淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何选择淘汰策略"><span class="nav-text"> 如何选择淘汰策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部实现"><span class="nav-text"> 内部实现</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1063,7 +1071,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

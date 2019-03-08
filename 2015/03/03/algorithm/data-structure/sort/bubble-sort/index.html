@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="冒泡排序要点冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。  算法思想它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端，故名。">
+  <meta name="description" content="冒泡排序  要点 冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。   算法思想 它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="冒泡排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/03/algorithm/data-structure/sort/bubble-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="冒泡排序要点冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。  算法思想它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端，故名。">
+<meta property="og:description" content="冒泡排序  要点 冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。   算法思想 它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/bubble-sort.png">
 <meta property="og:updated_time" content="2019-03-07T02:23:58.880Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="冒泡排序">
-<meta name="twitter:description" content="冒泡排序要点冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。  算法思想它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端，故名。">
+<meta name="twitter:description" content="冒泡排序  要点 冒泡排序是一种交换排序。 什么是交换排序呢？  交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。   算法思想 它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。 这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/bubble-sort.png">
 
 
@@ -517,39 +517,48 @@
       
 
       
-        <h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p>冒泡排序是一种交换排序。</p>
+        <h1 id="冒泡排序"><a class="markdownIt-Anchor" href="#冒泡排序"></a> 冒泡排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<p>冒泡排序是一种交换排序。</p>
 <p>什么是交换排序呢？</p>
 <blockquote>
 <p>交换排序：两两比较待排序的关键字，并交换不满足次序要求的那对数，直到整个表都满足次序要求为止。</p>
 </blockquote>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<p>它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</p>
 <p>这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端，故名。</p>
 <p>假设有一个大小为 N 的无序序列。冒泡排序就是要每趟排序过程中通过两两比较，找到第 i 个小（大）的元素，将其往上排。</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/bubble-sort.png"></div><br></p>
 <p>以上图为例，演示一下冒泡排序的实际流程：</p>
 <p>假设有一个无序序列  { 4. 3. 1. 2, 5 }</p>
 <ul>
-<li><p>第一趟排序：通过两两比较，找到第一小的数值 1 ，将其放在序列的第一位。</p>
+<li>
+<p>第一趟排序：通过两两比较，找到第一小的数值 1 ，将其放在序列的第一位。</p>
 </li>
-<li><p>第二趟排序：通过两两比较，找到第二小的数值 2 ，将其放在序列的第二位。</p>
+<li>
+<p>第二趟排序：通过两两比较，找到第二小的数值 2 ，将其放在序列的第二位。</p>
 </li>
-<li><p>第三趟排序：通过两两比较，找到第三小的数值 3 ，将其放在序列的第三位。</p>
+<li>
+<p>第三趟排序：通过两两比较，找到第三小的数值 3 ，将其放在序列的第三位。</p>
 </li>
 </ul>
-<p>至此，所有元素已经有序，排序结束。 </p>
+<p>至此，所有元素已经有序，排序结束。</p>
 <p>要将以上流程转化为代码，我们需要像机器一样去思考，不然编译器可看不懂。</p>
 <ul>
-<li><p>假设要对一个大小为 N 的无序序列进行升序排序（即从小到大）。 </p>
+<li>
+<p>假设要对一个大小为 N 的无序序列进行升序排序（即从小到大）。</p>
 <p>每趟排序过程中需要通过比较找到第 i 个小的元素。</p>
 <p>所以，我们需要一个外部循环，从数组首端(下标 0) 开始，一直扫描到倒数第二个元素（即下标 N - 2) ，剩下最后一个元素，必然为最大。</p>
 </li>
-<li><p>假设是第 i 趟排序，可知，前 i-1 个元素已经有序。现在要找第 i 个元素，只需从数组末端开始，扫描到第 i 个元素，将它们两两比较即可。</p>
+<li>
+<p>假设是第 i 趟排序，可知，前 i-1 个元素已经有序。现在要找第 i 个元素，只需从数组末端开始，扫描到第 i 个元素，将它们两两比较即可。</p>
 <p>所以，需要一个内部循环，从数组末端开始（下标 N - 1），扫描到 (下标 i + 1)。</p>
 </li>
 </ul>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>; <span class="comment">// 用来交换的临时数</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 要遍历的次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 从后向前依次的比较相邻两个数的大小，遍历一次后，把数组中第i小的数放在第i个位置上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = list.length - <span class="number">1</span>; j &gt; i; j--) &#123;</span><br><span class="line">            <span class="comment">// 比较相邻的元素，如果前面的数大于后面的数，则交换</span></span><br><span class="line">            <span class="keyword">if</span> (list[j - <span class="number">1</span>] &gt; list[j]) &#123;</span><br><span class="line">                temp = list[j - <span class="number">1</span>];</span><br><span class="line">                list[j - <span class="number">1</span>] = list[j];</span><br><span class="line">                list[j] = temp;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        System.out.format(<span class="string">"第 %d 趟：\t"</span>, i);</span><br><span class="line">        printAll(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>冒泡排序算法的性能</strong></p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p><strong>冒泡排序算法的性能</strong></p>
 <table>
 <thead>
 <tr>
@@ -592,20 +601,24 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>若文件的初始状态是正序的，一趟扫描即可完成排序。所需的关键字比较次数C和记录移动次数M均达到最小值：Cmin = N - 1, Mmin = 0。所以，冒泡排序最好时间复杂度为O(N)。</p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>若文件的初始状态是正序的，一趟扫描即可完成排序。所需的关键字比较次数C和记录移动次数M均达到最小值：Cmin = N - 1, Mmin = 0。所以，冒泡排序最好时间复杂度为O(N)。</p>
 <p>若初始文件是反序的，需要进行 N -1 趟排序。每趟排序要进行 N - i 次关键字的比较(1 ≤ i ≤ N - 1)，且每次比较都必须移动记录三次来达到交换记录位置。在这种情况下，比较和移动次数均达到最大值：</p>
 <p>Cmax = N(N-1)/2 = O(N2)</p>
 <p>Mmax = 3N(N-1)/2 = O(N2)</p>
 <p>冒泡排序的最坏时间复杂度为O(N2)。</p>
 <p>因此，冒泡排序的平均时间复杂度为O(N2)。</p>
 <p>总结起来，其实就是一句话：当数据越接近正序时，冒泡排序性能越好。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>冒泡排序就是把小的元素往前调或者把大的元素往后调。比较是相邻的两个元素比较，交换也发生在这两个元素之间。</p>
 <p>所以相同元素的前后顺序并没有改变，所以冒泡排序是一种稳定排序算法。</p>
-<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><p>对冒泡排序常见的改进方法是加入标志性变量exchange，用于标志某一趟排序过程中是否有数据交换。</p>
+<h3 id="优化"><a class="markdownIt-Anchor" href="#优化"></a> 优化</h3>
+<p>对冒泡排序常见的改进方法是加入标志性变量exchange，用于标志某一趟排序过程中是否有数据交换。</p>
 <p>如果进行某一趟排序时并没有进行数据交换，则说明所有数据已经有序，可立即结束排序，避免不必要的比较过程。</p>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 对 bubbleSort 的优化算法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bubbleSort_2</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>; <span class="comment">// 用来交换的临时数</span></span><br><span class="line">    <span class="keyword">boolean</span> bChange = <span class="keyword">false</span>; <span class="comment">// 交换标志</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 要遍历的次数</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; list.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        bChange = <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 从后向前依次的比较相邻两个数的大小，遍历一次后，把数组中第i小的数放在第i个位置上</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = list.length - <span class="number">1</span>; j &gt; i; j--) &#123;</span><br><span class="line">            <span class="comment">// 比较相邻的元素，如果前面的数大于后面的数，则交换</span></span><br><span class="line">            <span class="keyword">if</span> (list[j - <span class="number">1</span>] &gt; list[j]) &#123;</span><br><span class="line">                temp = list[j - <span class="number">1</span>];</span><br><span class="line">                list[j - <span class="number">1</span>] = list[j];</span><br><span class="line">                list[j] = temp;</span><br><span class="line">                bChange = <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 如果标志为false，说明本轮遍历没有交换，已经是有序数列，可以结束排序</span></span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">false</span> == bChange)</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line"> </span><br><span class="line">        System.out.format(<span class="string">"第 %d 趟：\t"</span>, i);</span><br><span class="line">        printAll(list);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -756,7 +769,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -821,7 +834,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1119,7 +1134,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-text">冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-text">优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#冒泡排序"><span class="nav-text"> 冒泡排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化"><span class="nav-text"> 优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1161,7 +1176,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

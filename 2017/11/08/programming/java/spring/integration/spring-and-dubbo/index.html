@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="ZooKeeperZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg 的内">
+  <meta name="description" content="ZooKeeper ZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg">
 <meta name="keywords" content="spring,integration,rpc,dubbo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring 集成 Dubbo">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/spring/integration/spring-and-dubbo/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="ZooKeeperZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg 的内">
+<meta property="og:description" content="ZooKeeper ZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:47.032Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring 集成 Dubbo">
-<meta name="twitter:description" content="ZooKeeperZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg 的内">
+<meta name="twitter:description" content="ZooKeeper ZooKeeper 可以作为 Dubbo 的注册中心。 Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。 安装 在 ZooKeeper 发布中心 选择需要的版本，下载后解压到本地。 配置 vi conf/zoo.cfg 如果不需要集群，zoo.cfg">
 
 
 
@@ -508,7 +508,8 @@
       
 
       
-        <h2 id="ZooKeeper"><a href="#ZooKeeper" class="headerlink" title="ZooKeeper"></a>ZooKeeper</h2><p>ZooKeeper 可以作为 Dubbo 的注册中心。</p>
+        <h2 id="zookeeper"><a class="markdownIt-Anchor" href="#zookeeper"></a> ZooKeeper</h2>
+<p>ZooKeeper 可以作为 Dubbo 的注册中心。</p>
 <p>Dubbo 未对 Zookeeper 服务器端做任何侵入修改，只需安装原生的 Zookeeper 服务器即可，所有注册中心逻辑适配都在调用 Zookeeper 客户端时完成。</p>
 <p><strong>安装</strong></p>
 <p>在 <a href="http://zookeeper.apache.org/releases.html" target="_blank" rel="noopener">ZooKeeper 发布中心</a> 选择需要的版本，下载后解压到本地。</p>
@@ -517,17 +518,17 @@
 <p>如果不需要集群，<code>zoo.cfg</code> 的内容如下 <a href="https://dubbo.gitbooks.io/dubbo-admin-book/content/install/zookeeper.html#fn_2" target="_blank" rel="noopener">2</a>：</p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">tickTime</span>=<span class="number">2000</span></span><br><span class="line"><span class="attr">initLimit</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">syncLimit</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">dataDir</span>=/home/dubbo/zookeeper-<span class="number">3.3</span>.<span class="number">3</span>/data</span><br><span class="line"><span class="attr">clientPort</span>=<span class="number">2181</span></span><br></pre></td></tr></table></figure>
 <p>如果需要集群，<code>zoo.cfg</code> 的内容如下 <a href="https://dubbo.gitbooks.io/dubbo-admin-book/content/install/zookeeper.html#fn_3" target="_blank" rel="noopener">3</a>：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">tickTime</span>=<span class="number">2000</span></span><br><span class="line"><span class="attr">initLimit</span>=<span class="number">10</span></span><br><span class="line"><span class="attr">syncLimit</span>=<span class="number">5</span></span><br><span class="line"><span class="attr">dataDir</span>=/home/dubbo/zookeeper-<span class="number">3.3</span>.<span class="number">3</span>/data</span><br><span class="line"><span class="attr">clientPort</span>=<span class="number">2181</span></span><br><span class="line"><span class="attr">server.1</span>=<span class="number">10.20</span>.<span class="number">153.10</span>:<span class="number">2555</span>:<span class="number">3555</span></span><br><span class="line"><span class="attr">server.2</span>=<span class="number">10.20</span>.<span class="number">153.11</span>:<span class="number">2555</span>:<span class="number">3555</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">tickTime=<span class="number">2000</span></span><br><span class="line">initLimit=<span class="number">10</span></span><br><span class="line">syncLimit=<span class="number">5</span></span><br><span class="line">dataDir=/home/dubbo/zookeeper<span class="number">-3.3</span><span class="number">.3</span>/data</span><br><span class="line">clientPort=<span class="number">2181</span></span><br><span class="line">server<span class="number">.1</span>=<span class="number">10.20</span><span class="number">.153</span><span class="number">.10</span>:<span class="number">2555</span>:<span class="number">3555</span></span><br><span class="line">server<span class="number">.2</span>=<span class="number">10.20</span><span class="number">.153</span><span class="number">.11</span>:<span class="number">2555</span>:<span class="number">3555</span></span><br></pre></td></tr></table></figure>
 <p>并在 data 目录 <a href="https://dubbo.gitbooks.io/dubbo-admin-book/content/install/zookeeper.html#fn_4" target="_blank" rel="noopener">4</a> 下放置 myid 文件：</p>
 <figure class="highlight haskell"><table><tr><td class="code"><pre><span class="line"><span class="title">mkdir</span> <span class="class"><span class="keyword">data</span></span></span><br><span class="line"><span class="title">vi</span> myid</span><br></pre></td></tr></table></figure>
 <p>myid 指明自己的 id，对应上面 <code>zoo.cfg</code> 中 <code>server.</code> 后的数字，第一台的内容为 1，第二台的内容为 2，内容如下：</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
 <p><strong>启动</strong></p>
 <p>Linux 下执行 <code>bin/zkServer.sh</code> ；Windows <code>bin/zkServer.cmd</code> 启动 ZooKeeper 。</p>
 <p><strong>命令行</strong></p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">telnet <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">2181</span></span><br><span class="line">dump</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">telnet <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">2181</span></span><br><span class="line">dump</span><br></pre></td></tr></table></figure>
 <p>或者:</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">echo dump | nc <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">2181</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">echo dump | nc <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> <span class="number">2181</span></span><br></pre></td></tr></table></figure>
 <p>用法:</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">dubbo<span class="selector-class">.registry</span><span class="selector-class">.address</span>=zookeeper:<span class="comment">//10.20.153.10:2181?backup=10.20.153.11:2181</span></span><br></pre></td></tr></table></figure>
 <p>或者:</p>
@@ -541,23 +542,32 @@
 <li><a href="http://zookeeper.apache.org/doc/r3.3.3/zookeeperAdmin.html" target="_blank" rel="noopener">http://zookeeper.apache.org/doc/r3.3.3/zookeeperAdmin.html</a></li>
 </ol>
 </blockquote>
-<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><p>Dubbo 采用全 Spring 配置方式，透明化接入应用，对应用没有任何 API 侵入，只需用 Spring 加载 Dubbo 的配置即可，Dubbo 基于 Spring 的 Schema 扩展进行加载。</p>
+<h2 id="dubbo"><a class="markdownIt-Anchor" href="#dubbo"></a> Dubbo</h2>
+<p>Dubbo 采用全 Spring 配置方式，透明化接入应用，对应用没有任何 API 侵入，只需用 Spring 加载 Dubbo 的配置即可，Dubbo 基于 Spring 的 Schema 扩展进行加载。</p>
 <p>如果不想使用 Spring 配置，可以通过 <a href="https://dubbo.gitbooks.io/configuration/api.md" target="_blank" rel="noopener">API 的方式</a> 进行调用。</p>
-<h2 id="服务提供者"><a href="#服务提供者" class="headerlink" title="服务提供者"></a>服务提供者</h2><p>完整安装步骤，请参见：<a href="https://dubbo.gitbooks.io/dubbo-admin-book/install/provider-demo.html" target="_blank" rel="noopener">示例提供者安装</a></p>
-<h3 id="定义服务接口"><a href="#定义服务接口" class="headerlink" title="定义服务接口"></a>定义服务接口</h3><p>DemoService.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_1" target="_blank" rel="noopener">1</a>：</p>
+<h2 id="服务提供者"><a class="markdownIt-Anchor" href="#服务提供者"></a> 服务提供者</h2>
+<p>完整安装步骤，请参见：<a href="https://dubbo.gitbooks.io/dubbo-admin-book/install/provider-demo.html" target="_blank" rel="noopener">示例提供者安装</a></p>
+<h3 id="定义服务接口"><a class="markdownIt-Anchor" href="#定义服务接口"></a> 定义服务接口</h3>
+<p>DemoService.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_1" target="_blank" rel="noopener">1</a>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.alibaba.dubbo.demo;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">DemoService</span> </span>&#123;</span><br><span class="line">    <span class="function">String <span class="title">sayHello</span><span class="params">(String name)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="在服务提供方实现接口"><a href="#在服务提供方实现接口" class="headerlink" title="在服务提供方实现接口"></a>在服务提供方实现接口</h3><p>DemoServiceImpl.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_2" target="_blank" rel="noopener">2</a>：</p>
+<h3 id="在服务提供方实现接口"><a class="markdownIt-Anchor" href="#在服务提供方实现接口"></a> 在服务提供方实现接口</h3>
+<p>DemoServiceImpl.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_2" target="_blank" rel="noopener">2</a>：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.alibaba.dubbo.demo.provider;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.dubbo.demo.DemoService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoServiceImpl</span> <span class="keyword">implements</span> <span class="title">DemoService</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">sayHello</span><span class="params">(String name)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello "</span> + name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="用-Spring-配置声明暴露服务"><a href="#用-Spring-配置声明暴露服务" class="headerlink" title="用 Spring 配置声明暴露服务"></a>用 Spring 配置声明暴露服务</h3><p>provider.xml：</p>
+<h3 id="用-spring-配置声明暴露服务"><a class="markdownIt-Anchor" href="#用-spring-配置声明暴露服务"></a> 用 Spring 配置声明暴露服务</h3>
+<p>provider.xml：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:dubbo</span>=<span class="string">"http://code.alibabatech.com/schema/dubbo"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 提供方应用信息，用于计算依赖关系 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">"hello-world-app"</span>  /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 使用multicast广播注册中心暴露服务地址 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">"multicast://224.5.6.7:1234"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 用dubbo协议在20880端口暴露服务 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:protocol</span> <span class="attr">name</span>=<span class="string">"dubbo"</span> <span class="attr">port</span>=<span class="string">"20880"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 声明需要暴露的服务接口 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:service</span> <span class="attr">interface</span>=<span class="string">"com.alibaba.dubbo.demo.DemoService"</span> <span class="attr">ref</span>=<span class="string">"demoService"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 和本地bean一样实现服务 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"demoService"</span> <span class="attr">class</span>=<span class="string">"com.alibaba.dubbo.demo.provider.DemoServiceImpl"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果注册中心使用 ZooKeeper，可以将 dubbo:registry 改为 zookeeper://127.0.0.1:2181</p>
-<h3 id="加载-Spring-配置"><a href="#加载-Spring-配置" class="headerlink" title="加载 Spring 配置"></a>加载 Spring 配置</h3><p>Provider.java：</p>
+<h3 id="加载-spring-配置"><a class="markdownIt-Anchor" href="#加载-spring-配置"></a> 加载 Spring 配置</h3>
+<p>Provider.java：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Provider</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        ClassPathXmlApplicationContext context = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="keyword">new</span> String[] &#123;<span class="string">"http://10.20.160.198/wiki/display/dubbo/provider.xml"</span>&#125;);</span><br><span class="line">        context.start();</span><br><span class="line">        System.in.read(); <span class="comment">// 按任意键退出</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="服务消费者"><a href="#服务消费者" class="headerlink" title="服务消费者"></a>服务消费者</h2><p>完整安装步骤，请参见：<a href="https://dubbo.gitbooks.io/dubbo-admin-book/install/consumer-demo.html" target="_blank" rel="noopener">示例消费者安装</a></p>
-<h3 id="通过-Spring-配置引用远程服务"><a href="#通过-Spring-配置引用远程服务" class="headerlink" title="通过 Spring 配置引用远程服务"></a>通过 Spring 配置引用远程服务</h3><p>consumer.xml：</p>
+<h2 id="服务消费者"><a class="markdownIt-Anchor" href="#服务消费者"></a> 服务消费者</h2>
+<p>完整安装步骤，请参见：<a href="https://dubbo.gitbooks.io/dubbo-admin-book/install/consumer-demo.html" target="_blank" rel="noopener">示例消费者安装</a></p>
+<h3 id="通过-spring-配置引用远程服务"><a class="markdownIt-Anchor" href="#通过-spring-配置引用远程服务"></a> 通过 Spring 配置引用远程服务</h3>
+<p>consumer.xml：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xmlns:dubbo</span>=<span class="string">"http://code.alibabatech.com/schema/dubbo"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:application</span> <span class="attr">name</span>=<span class="string">"consumer-of-helloworld-app"</span>  /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 使用multicast广播注册中心暴露发现服务地址 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:registry</span> <span class="attr">address</span>=<span class="string">"multicast://224.5.6.7:1234"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!-- 生成远程服务代理，可以和本地bean一样使用demoService --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dubbo:reference</span> <span class="attr">id</span>=<span class="string">"demoService"</span> <span class="attr">interface</span>=<span class="string">"com.alibaba.dubbo.demo.DemoService"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果注册中心使用 ZooKeeper，可以将 dubbo:registry 改为 zookeeper://127.0.0.1:2181</p>
-<h3 id="加载Spring配置，并调用远程服务"><a href="#加载Spring配置，并调用远程服务" class="headerlink" title="加载Spring配置，并调用远程服务"></a>加载Spring配置，并调用远程服务</h3><p>Consumer.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_3" target="_blank" rel="noopener">3</a>：</p>
+<h3 id="加载spring配置并调用远程服务"><a class="markdownIt-Anchor" href="#加载spring配置并调用远程服务"></a> 加载Spring配置，并调用远程服务</h3>
+<p>Consumer.java <a href="https://dubbo.gitbooks.io/dubbo-user-book/quick-start.html#fn_3" target="_blank" rel="noopener">3</a>：</p>
 <figure class="highlight haxe"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.support.ClassPathXmlApplicationContext;</span><br><span class="line"><span class="keyword">import</span> com.alibaba.dubbo.demo.DemoService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Consumer</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> void main(<span class="keyword">String</span>[] args) throws Exception &#123;</span><br><span class="line">        ClassPathXmlApplicationContext context = <span class="keyword">new</span> <span class="type">ClassPathXmlApplicationContext</span>(<span class="keyword">new</span> <span class="type">String</span>[] &#123;<span class="string">"http://10.20.160.198/wiki/display/dubbo/consumer.xml"</span>&#125;);</span><br><span class="line">        context.start();</span><br><span class="line">        DemoService demoService = (DemoService)context.getBean(<span class="string">"demoService"</span>); <span class="comment">// 获取远程服务代理</span></span><br><span class="line">        <span class="keyword">String</span> hello = demoService.sayHello(<span class="string">"world"</span>); <span class="comment">// 执行远程方法</span></span><br><span class="line">        System.out.println( hello ); <span class="comment">// 显示调用结果</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <ol>
@@ -566,8 +576,10 @@
 <li>也可以使用 IoC 注入</li>
 </ol>
 </blockquote>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><p>建议使用 <code>dubbo-2.3.3</code> 以上版本的 zookeeper 注册中心客户端。</p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><strong>Dubbo</strong></p>
+<h2 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h2>
+<p>建议使用 <code>dubbo-2.3.3</code> 以上版本的 zookeeper 注册中心客户端。</p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<p><strong>Dubbo</strong></p>
 <p><a href="https://github.com/alibaba/dubbo" target="_blank" rel="noopener">Github</a> | <a href="https://dubbo.gitbooks.io/dubbo-user-book/content/" target="_blank" rel="noopener">用户手册</a> | <a href="https://dubbo.gitbooks.io/dubbo-dev-book/content/" target="_blank" rel="noopener">开发手册</a> | <a href="https://dubbo.gitbooks.io/dubbo-admin-book/content/" target="_blank" rel="noopener">管理员手册</a></p>
 <p><strong>ZooKeeper</strong></p>
 <p><a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">官网</a> | <a href="http://zookeeper.apache.org/doc/trunk/" target="_blank" rel="noopener">官方文档</a></p>
@@ -641,8 +653,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/" rel="next" title="JDK8 升级常见问题">
-                <i class="fa fa-chevron-left"></i> JDK8 升级常见问题
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" rel="next" title="JSP 国际化">
+                <i class="fa fa-chevron-left"></i> JSP 国际化
               </a>
             
           </div>
@@ -724,7 +736,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -789,7 +801,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1087,7 +1101,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ZooKeeper"><span class="nav-text">ZooKeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dubbo"><span class="nav-text">Dubbo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务提供者"><span class="nav-text">服务提供者</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义服务接口"><span class="nav-text">定义服务接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在服务提供方实现接口"><span class="nav-text">在服务提供方实现接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-Spring-配置声明暴露服务"><span class="nav-text">用 Spring 配置声明暴露服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载-Spring-配置"><span class="nav-text">加载 Spring 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务消费者"><span class="nav-text">服务消费者</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Spring-配置引用远程服务"><span class="nav-text">通过 Spring 配置引用远程服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载Spring配置，并调用远程服务"><span class="nav-text">加载Spring配置，并调用远程服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-text">FAQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#zookeeper"><span class="nav-text"> ZooKeeper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dubbo"><span class="nav-text"> Dubbo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务提供者"><span class="nav-text"> 服务提供者</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义服务接口"><span class="nav-text"> 定义服务接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在服务提供方实现接口"><span class="nav-text"> 在服务提供方实现接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用-spring-配置声明暴露服务"><span class="nav-text"> 用 Spring 配置声明暴露服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载-spring-配置"><span class="nav-text"> 加载 Spring 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务消费者"><span class="nav-text"> 服务消费者</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-spring-配置引用远程服务"><span class="nav-text"> 通过 Spring 配置引用远程服务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载spring配置并调用远程服务"><span class="nav-text"> 加载Spring配置，并调用远程服务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#faq"><span class="nav-text"> FAQ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></div>
             
 
           </div>
@@ -1129,7 +1143,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

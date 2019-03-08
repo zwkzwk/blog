@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.9k</span>
+                <span title="本文字数">7k</span>
               
 
               
@@ -564,9 +564,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-formatNumber-gt-标签"><a href="#lt-fmt-formatNumber-gt-标签" class="headerlink" title="&lt;fmt:formatNumber&gt;标签"></a><code>&lt;fmt:formatNumber&gt;</code>标签</h2><p><code>&lt;fmt:formatNumber&gt;</code>标签用于格式化数字，百分比，货币。</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:formatNumber</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  currencyCode=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  currencySymbol=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  groupingUsed=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  maxIntegerDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  minIntegerDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  maxFractionDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  minFractionDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:formatNumber&gt;</code>标签有如下属性：</p>
+<h2 id="fmtformatnumber标签"><a class="markdownIt-Anchor" href="#fmtformatnumber标签"></a> <code>&lt;fmt:formatNumber&gt;</code>标签</h2>
+<p><code>&lt;fmt:formatNumber&gt;</code>标签用于格式化数字，百分比，货币。</p>
+<h3 id="语法格式"><a class="markdownIt-Anchor" href="#语法格式"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:formatNumber</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  currencyCode=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  currencySymbol=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  groupingUsed=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  maxIntegerDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  minIntegerDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  maxFractionDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  minFractionDigits=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<p><code>&lt;fmt:formatNumber&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -597,13 +600,13 @@
 </tr>
 <tr>
 <td>currencyCode</td>
-<td>货币码（当 type=”currency”时）</td>
+<td>货币码（当 type=&quot;currency&quot;时）</td>
 <td>否</td>
 <td>取决于默认区域</td>
 </tr>
 <tr>
 <td>currencySymbol</td>
-<td>货币符号 (当 type=”currency”时)</td>
+<td>货币符号 (当 type=&quot;currency&quot;时)</td>
 <td>否</td>
 <td>取决于默认区域</td>
 </tr>
@@ -709,14 +712,17 @@
 <td>指定可以作为前缀或后缀的字符</td>
 </tr>
 <tr>
-<td>‘</td>
+<td>’</td>
 <td>在前缀或后缀中引用特殊字符</td>
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-parseNumber-gt-标签"><a href="#lt-fmt-parseNumber-gt-标签" class="headerlink" title="&lt;fmt:parseNumber&gt; 标签"></a><code>&lt;fmt:parseNumber&gt;</code> 标签</h2><p><code>&lt;fmt:parseNumber&gt;</code>标签用来解析数字，百分数，货币。</p>
-<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:parseNumber</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  parseLocale=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  integerOnly=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:parseNumber&gt;</code>标签有如下属性：</p>
+<h2 id="fmtparsenumber-标签"><a class="markdownIt-Anchor" href="#fmtparsenumber-标签"></a> <code>&lt;fmt:parseNumber&gt;</code> 标签</h2>
+<p><code>&lt;fmt:parseNumber&gt;</code>标签用来解析数字，百分数，货币。</p>
+<h3 id="语法格式-2"><a class="markdownIt-Anchor" href="#语法格式-2"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:parseNumber</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  parseLocale=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  integerOnly=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-2"><a class="markdownIt-Anchor" href="#属性-2"></a> 属性</h3>
+<p><code>&lt;fmt:parseNumber&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -778,9 +784,12 @@
 </tbody>
 </table>
 <p><code>pattern</code>属性与<code>&lt;fmt:formatNumber&gt;</code>标签中的<code>pattern</code>有相同的作用。在解析时，<code>pattern</code>属性告诉解析器期望的格式。</p>
-<h2 id="lt-fmt-formatDate-gt-标签"><a href="#lt-fmt-formatDate-gt-标签" class="headerlink" title="&lt;fmt:formatDate&gt; 标签"></a><code>&lt;fmt:formatDate&gt;</code> 标签</h2><p><code>&lt;fmt:formatDate&gt;</code>标签用于使用不同的方式格式化日期。</p>
-<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:formatDate</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  dateStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  timeStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  timeZone=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:formatDate&gt;</code>标签有如下属性：</p>
+<h2 id="fmtformatdate-标签"><a class="markdownIt-Anchor" href="#fmtformatdate-标签"></a> <code>&lt;fmt:formatDate&gt;</code> 标签</h2>
+<p><code>&lt;fmt:formatDate&gt;</code>标签用于使用不同的方式格式化日期。</p>
+<h3 id="语法格式-3"><a class="markdownIt-Anchor" href="#语法格式-3"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:formatDate</span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  dateStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  timeStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  timeZone=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-3"><a class="markdownIt-Anchor" href="#属性-3"></a> 属性</h3>
+<p><code>&lt;fmt:formatDate&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -942,7 +951,7 @@
 <td>中部标准时间</td>
 </tr>
 <tr>
-<td>‘</td>
+<td>’</td>
 <td></td>
 <td>转义文本</td>
 </tr>
@@ -953,9 +962,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-parseDate-gt-标签"><a href="#lt-fmt-parseDate-gt-标签" class="headerlink" title="&lt;fmt:parseDate&gt; 标签"></a><code>&lt;fmt:parseDate&gt;</code> 标签</h2><p><code>&lt;fmt:parseDate&gt;</code> 标签用于解析日期。</p>
-<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:parseDate</span><br><span class="line">   value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   dateStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   timeStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   timeZone=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   parseLocale=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:parseDate&gt;</code>标签有如下属性：</p>
+<h2 id="fmtparsedate-标签"><a class="markdownIt-Anchor" href="#fmtparsedate-标签"></a> <code>&lt;fmt:parseDate&gt;</code> 标签</h2>
+<p><code>&lt;fmt:parseDate&gt;</code> 标签用于解析日期。</p>
+<h3 id="语法格式-4"><a class="markdownIt-Anchor" href="#语法格式-4"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:parseDate</span><br><span class="line">   value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   type=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   dateStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   timeStyle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   pattern=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   timeZone=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   parseLocale=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-4"><a class="markdownIt-Anchor" href="#属性-4"></a> 属性</h3>
+<p><code>&lt;fmt:parseDate&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1017,11 +1029,14 @@
 </tbody>
 </table>
 <p>属性设置我们需要的输出的时间格式。</p>
-<h2 id="lt-fmt-bundle-gt-标签"><a href="#lt-fmt-bundle-gt-标签" class="headerlink" title="&lt;fmt:bundle&gt; 标签"></a><code>&lt;fmt:bundle&gt;</code> 标签</h2><p><code>&lt;fmt:bundle&gt;</code>标签将指定的资源束对出现在<code>&lt;fmt:bundle&gt;</code>标签中的<code>&lt;fmt:message&gt;</code>标签可用。这可以使您省去为每个<code>&lt;fmt:message&gt;</code>标签指定资源束的很多步骤。</p>
+<h2 id="fmtbundle-标签"><a class="markdownIt-Anchor" href="#fmtbundle-标签"></a> <code>&lt;fmt:bundle&gt;</code> 标签</h2>
+<p><code>&lt;fmt:bundle&gt;</code>标签将指定的资源束对出现在<code>&lt;fmt:bundle&gt;</code>标签中的<code>&lt;fmt:message&gt;</code>标签可用。这可以使您省去为每个<code>&lt;fmt:message&gt;</code>标签指定资源束的很多步骤。</p>
 <p>举例来说，下面的两个<code>&lt;fmt:bundle&gt;</code>块将产生同样的输出：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;fmt:bundle basename=<span class="string">"com.tutorialspoint.Example"</span>&gt;</span><br><span class="line">    &lt;fmt:message key=<span class="string">"count.one"</span>/&gt;</span><br><span class="line">&lt;/fmt:bundle&gt;</span><br><span class="line"></span><br><span class="line">&lt;fmt:bundle basename=<span class="string">"com.tutorialspoint.Example"</span> prefix=<span class="string">"count."</span>&gt;</span><br><span class="line">    &lt;fmt:message key=<span class="string">"title"</span>/&gt;</span><br><span class="line">&lt;/fmt:bundle&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="语法格式-4"><a href="#语法格式-4" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:bundle baseName=<span class="string">"&lt;string&gt;"</span> prefix=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:bundle&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-5"><a class="markdownIt-Anchor" href="#语法格式-5"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:bundle baseName=<span class="string">"&lt;string&gt;"</span> prefix=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-5"><a class="markdownIt-Anchor" href="#属性-5"></a> 属性</h3>
+<p><code>&lt;fmt:bundle&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1046,9 +1061,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-setLocale-gt-标签"><a href="#lt-fmt-setLocale-gt-标签" class="headerlink" title="&lt;fmt:setLocale&gt; 标签"></a><code>&lt;fmt:setLocale&gt;</code> 标签</h2><p><code>&lt;fmt:setLocale&gt;</code>标签用来将给定的区域存储在 locale 配置变量中。</p>
-<h3 id="语法格式-5"><a href="#语法格式-5" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setLocale value=<span class="string">"&lt;string&gt;"</span> variant=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:setLocale&gt;</code>标签有如下属性：</p>
+<h2 id="fmtsetlocale-标签"><a class="markdownIt-Anchor" href="#fmtsetlocale-标签"></a> <code>&lt;fmt:setLocale&gt;</code> 标签</h2>
+<p><code>&lt;fmt:setLocale&gt;</code>标签用来将给定的区域存储在 locale 配置变量中。</p>
+<h3 id="语法格式-6"><a class="markdownIt-Anchor" href="#语法格式-6"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setLocale value=<span class="string">"&lt;string&gt;"</span> variant=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-6"><a class="markdownIt-Anchor" href="#属性-6"></a> 属性</h3>
+<p><code>&lt;fmt:setLocale&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1079,9 +1097,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-timeZone-gt-标签"><a href="#lt-fmt-timeZone-gt-标签" class="headerlink" title="&lt;fmt:timeZone&gt; 标签"></a><code>&lt;fmt:timeZone&gt;</code> 标签</h2><p><code>&lt;fmt:timeZone&gt;</code>标签用来指定时区，供其它标签使用。</p>
-<h3 id="语法格式-6"><a href="#语法格式-6" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setLocale value=<span class="string">"&lt;string&gt;"</span> variant=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:timeZone&gt;</code>标签有如下属性：</p>
+<h2 id="fmttimezone-标签"><a class="markdownIt-Anchor" href="#fmttimezone-标签"></a> <code>&lt;fmt:timeZone&gt;</code> 标签</h2>
+<p><code>&lt;fmt:timeZone&gt;</code>标签用来指定时区，供其它标签使用。</p>
+<h3 id="语法格式-7"><a class="markdownIt-Anchor" href="#语法格式-7"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setLocale value=<span class="string">"&lt;string&gt;"</span> variant=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-7"><a class="markdownIt-Anchor" href="#属性-7"></a> 属性</h3>
+<p><code>&lt;fmt:timeZone&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1100,9 +1121,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-setTimeZone-gt-标签"><a href="#lt-fmt-setTimeZone-gt-标签" class="headerlink" title="&lt;fmt:setTimeZone&gt; 标签"></a><code>&lt;fmt:setTimeZone&gt;</code> 标签</h2><p><code>&lt;fmt:setTimeZone&gt;</code>标签用来复制一个时区对象至指定的作用域。</p>
-<h3 id="语法格式-7"><a href="#语法格式-7" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setTimeZone value=<span class="string">"&lt;string&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:setTimeZone&gt;</code>标签有如下属性：</p>
+<h2 id="fmtsettimezone-标签"><a class="markdownIt-Anchor" href="#fmtsettimezone-标签"></a> <code>&lt;fmt:setTimeZone&gt;</code> 标签</h2>
+<p><code>&lt;fmt:setTimeZone&gt;</code>标签用来复制一个时区对象至指定的作用域。</p>
+<h3 id="语法格式-8"><a class="markdownIt-Anchor" href="#语法格式-8"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:setTimeZone value=<span class="string">"&lt;string&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-8"><a class="markdownIt-Anchor" href="#属性-8"></a> 属性</h3>
+<p><code>&lt;fmt:setTimeZone&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1133,9 +1157,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-message-gt-标签"><a href="#lt-fmt-message-gt-标签" class="headerlink" title="&lt;fmt:message&gt; 标签"></a><code>&lt;fmt:message&gt;</code> 标签</h2><p><code>&lt;fmt:message&gt;</code>标签映射一个关键字给局部消息，然后执行参数替换。</p>
-<h3 id="语法格式-8"><a href="#语法格式-8" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:message</span><br><span class="line">   key=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   bundle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-8"><a href="#属性-8" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:message&gt;</code>标签有如下属性：</p>
+<h2 id="fmtmessage-标签"><a class="markdownIt-Anchor" href="#fmtmessage-标签"></a> <code>&lt;fmt:message&gt;</code> 标签</h2>
+<p><code>&lt;fmt:message&gt;</code>标签映射一个关键字给局部消息，然后执行参数替换。</p>
+<h3 id="语法格式-9"><a class="markdownIt-Anchor" href="#语法格式-9"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:message</span><br><span class="line">   key=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   bundle=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-9"><a class="markdownIt-Anchor" href="#属性-9"></a> 属性</h3>
+<p><code>&lt;fmt:message&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1172,9 +1199,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-fmt-requestEncoding-gt-标签"><a href="#lt-fmt-requestEncoding-gt-标签" class="headerlink" title="&lt;fmt:requestEncoding&gt; 标签"></a><code>&lt;fmt:requestEncoding&gt;</code> 标签</h2><p><code>&lt;fmt:requestEncoding&gt;</code>标签用来指定返回给 Web 应用程序的表单编码类型。</p>
-<h3 id="语法格式-9"><a href="#语法格式-9" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:requestEncoding value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-9"><a href="#属性-9" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;fmt:requestEncoding&gt;</code>标签有如下属性：</p>
+<h2 id="fmtrequestencoding-标签"><a class="markdownIt-Anchor" href="#fmtrequestencoding-标签"></a> <code>&lt;fmt:requestEncoding&gt;</code> 标签</h2>
+<p><code>&lt;fmt:requestEncoding&gt;</code>标签用来指定返回给 Web 应用程序的表单编码类型。</p>
+<h3 id="语法格式-10"><a class="markdownIt-Anchor" href="#语法格式-10"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;fmt:requestEncoding value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-10"><a class="markdownIt-Anchor" href="#属性-10"></a> 属性</h3>
+<p><code>&lt;fmt:requestEncoding&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1262,8 +1292,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/integration/spring-and-cache/" rel="next" title="Spring 集成缓存">
-                <i class="fa fa-chevron-left"></i> Spring 集成缓存
+              <a href="/blog/2017/11/08/programming/java/spring/core/ioc/" rel="next" title="Spring IoC">
+                <i class="fa fa-chevron-left"></i> Spring IoC
               </a>
             
           </div>
@@ -1272,8 +1302,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/core/aop/" rel="prev" title="Spring AOP">
-                Spring AOP <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/tools/jetty/" rel="prev" title="Jetty 使用小结">
+                Jetty 使用小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1345,7 +1375,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1410,7 +1440,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1708,7 +1740,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-formatNumber-gt-标签"><span class="nav-text">&lt;fmt:formatNumber&gt;标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-parseNumber-gt-标签"><span class="nav-text">&lt;fmt:parseNumber&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-1"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-formatDate-gt-标签"><span class="nav-text">&lt;fmt:formatDate&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-parseDate-gt-标签"><span class="nav-text">&lt;fmt:parseDate&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-bundle-gt-标签"><span class="nav-text">&lt;fmt:bundle&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-setLocale-gt-标签"><span class="nav-text">&lt;fmt:setLocale&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-timeZone-gt-标签"><span class="nav-text">&lt;fmt:timeZone&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-setTimeZone-gt-标签"><span class="nav-text">&lt;fmt:setTimeZone&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-message-gt-标签"><span class="nav-text">&lt;fmt:message&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-8"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-8"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-fmt-requestEncoding-gt-标签"><span class="nav-text">&lt;fmt:requestEncoding&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-9"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-9"><span class="nav-text">属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtformatnumber标签"><span class="nav-text"> &lt;fmt:formatNumber&gt;标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtparsenumber-标签"><span class="nav-text"> &lt;fmt:parseNumber&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtformatdate-标签"><span class="nav-text"> &lt;fmt:formatDate&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtparsedate-标签"><span class="nav-text"> &lt;fmt:parseDate&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtbundle-标签"><span class="nav-text"> &lt;fmt:bundle&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtsetlocale-标签"><span class="nav-text"> &lt;fmt:setLocale&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmttimezone-标签"><span class="nav-text"> &lt;fmt:timeZone&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtsettimezone-标签"><span class="nav-text"> &lt;fmt:setTimeZone&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-8"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-8"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtmessage-标签"><span class="nav-text"> &lt;fmt:message&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-9"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-9"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fmtrequestencoding-标签"><span class="nav-text"> &lt;fmt:requestEncoding&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-10"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-10"><span class="nav-text"> 属性</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1750,7 +1782,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

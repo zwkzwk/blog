@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="spring 4 升级踩雷指南前言最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。 为什么升级 spring4升级 Spring4 的原因是：">
+  <meta name="description" content="spring 4 升级踩雷指南  前言 最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。  为什么升级 spring4 升级 Spring4">
 <meta name="keywords" content="spring,upgrade">
 <meta property="og:type" content="article">
 <meta property="og:title" content="spring 4 升级踩雷指南">
 <meta property="og:url" content="https://dunwu.github.io/2017/12/15/programming/java/spring/appendix/spring4-upgrade/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="spring 4 升级踩雷指南前言最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。 为什么升级 spring4升级 Spring4 的原因是：">
+<meta property="og:description" content="spring 4 升级踩雷指南  前言 最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。  为什么升级 spring4 升级 Spring4">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring 4 升级踩雷指南">
-<meta name="twitter:description" content="spring 4 升级踩雷指南前言最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。 为什么升级 spring4升级 Spring4 的原因是：">
+<meta name="twitter:description" content="spring 4 升级踩雷指南  前言 最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。 总之，这是个费劲的活啊。 本文小结一下升级 Spring4 的连锁问题。  为什么升级 spring4 升级 Spring4">
 
 
 
@@ -508,14 +508,18 @@
       
 
       
-        <h1 id="spring-4-升级踩雷指南"><a href="#spring-4-升级踩雷指南" class="headerlink" title="spring 4 升级踩雷指南"></a>spring 4 升级踩雷指南</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。</p>
+        <h1 id="spring-4-升级踩雷指南"><a class="markdownIt-Anchor" href="#spring-4-升级踩雷指南"></a> spring 4 升级踩雷指南</h1>
+<h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>最近，一直在为公司老项目做核心库升级工作。本来只是想升级一下 JDK8 ，却因为兼容性问题而不得不升级一些其他的库，而其他库本身依赖的一些库可能也要同步升级。这是一系列连锁问题，你很难一一识别，往往只有在编译时、运行时才能发现问题。</p>
 <p>总之，这是个费劲的活啊。</p>
 <p>本文小结一下升级 Spring4 的连锁问题。</p>
-<h2 id="为什么升级-spring4"><a href="#为什么升级-spring4" class="headerlink" title="为什么升级 spring4"></a>为什么升级 spring4</h2><p>升级 Spring4 的原因是：Spring 4 以前的版本不兼容 JDK8。当你的项目同时使用 Spring3 和 JDK8，如果代码中有使用 JDK8 字节码或 Lambada 表达式，那么会出问题。</p>
+<h2 id="为什么升级-spring4"><a class="markdownIt-Anchor" href="#为什么升级-spring4"></a> 为什么升级 spring4</h2>
+<p>升级 Spring4 的原因是：Spring 4 以前的版本不兼容 JDK8。当你的项目同时使用 Spring3 和 JDK8，如果代码中有使用 JDK8 字节码或 Lambada 表达式，那么会出问题。</p>
 <p>也许你会问，为什么不使用最新的 Spring 5 呢？因为作为企业软件，一般更倾向使用稳定的版本（bug 少），而不是最新的版本，尤其是一些核心库。</p>
 <p>更多细节可以参考：</p>
 <p><a href="https://spring.io/blog/2013/05/21/spring-framework-4-0-m1-3-2-3-available/" target="_blank" rel="noopener">https://spring.io/blog/2013/05/21/spring-framework-4-0-m1-3-2-3-available/</a></p>
-<h2 id="spring-4-重要新特性"><a href="#spring-4-重要新特性" class="headerlink" title="spring 4 重要新特性"></a>spring 4 重要新特性</h2><p>Spring 4 相比 Spring 3，引入许多新特性，这里列举几条较为重要的：</p>
+<h2 id="spring-4-重要新特性"><a class="markdownIt-Anchor" href="#spring-4-重要新特性"></a> spring 4 重要新特性</h2>
+<p>Spring 4 相比 Spring 3，引入许多新特性，这里列举几条较为重要的：</p>
 <ol>
 <li>支持 <code>JDK8</code> （这个是最主要的）。</li>
 <li><code>Groovy Bean Definition DSL</code> 风格配置。</li>
@@ -526,37 +530,45 @@
 <p>更多 Spring 4 新特性可以参考：</p>
 <p><a href="https://docs.spring.io/spring/docs/4.3.14.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#spring-whats-new" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/4.3.14.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#spring-whats-new</a></p>
 <p><a href="http://jinnianshilongnian.iteye.com/blog/1995111" target="_blank" rel="noopener">http://jinnianshilongnian.iteye.com/blog/1995111</a></p>
-<h2 id="升级-spring-4-步骤"><a href="#升级-spring-4-步骤" class="headerlink" title="升级 spring 4 步骤"></a>升级 spring 4 步骤</h2><p>了解了前面内容，我们知道了升级 Spring 4 带来的好处。现在开始真刀真枪的升级了。</p>
+<h2 id="升级-spring-4-步骤"><a class="markdownIt-Anchor" href="#升级-spring-4-步骤"></a> 升级 spring 4 步骤</h2>
+<p>了解了前面内容，我们知道了升级 Spring 4 带来的好处。现在开始真刀真枪的升级了。</p>
 <p>不要以为升级一下 Spring 4，仅仅是改一下版本号，那么简单，细节处多着呢。</p>
 <p>下面，结合我在公司项目升级 Spring4 时遇到的一系列坑，希望能帮助各位少走弯路。</p>
 <blockquote>
 <p><strong>注</strong></p>
 <p>下文内容基于假设你的项目是用 maven 管理这一前提。如果不满足这一前提，那么这篇文章对你没什么太大帮助。</p>
 </blockquote>
-<h3 id="修改-spring-版本"><a href="#修改-spring-版本" class="headerlink" title="修改 spring 版本"></a>修改 spring 版本</h3><p>第一步，当然是修改 pom.xml 中的 spring 版本。</p>
+<h3 id="修改-spring-版本"><a class="markdownIt-Anchor" href="#修改-spring-版本"></a> 修改 spring 版本</h3>
+<p>第一步，当然是修改 pom.xml 中的 spring 版本。</p>
 <p><code>3.x.x.RELEASE</code> &gt; <code>4.x.x.RELEASE</code></p>
 <p>实例：升级 spring-core</p>
 <p>其它 spring 库的升级也如此：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">spring.version</span>&gt;</span>4.3.13.RELEASE<span class="tag">&lt;/<span class="name">spring.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="修改-spring-xml-文件的-xsd"><a href="#修改-spring-xml-文件的-xsd" class="headerlink" title="修改 spring xml 文件的 xsd"></a>修改 spring xml 文件的 xsd</h3><p>用过 spring 的都知道，spring 通常依赖于大量的 xml 配置。</p>
+<h3 id="修改-spring-xml-文件的-xsd"><a class="markdownIt-Anchor" href="#修改-spring-xml-文件的-xsd"></a> 修改 spring xml 文件的 xsd</h3>
+<p>用过 spring 的都知道，spring 通常依赖于大量的 xml 配置。</p>
 <p>spring 的 xml 解析器在解析 xml 时，需要读取 xml schema，schema 定义了 xml 的命名空间。它的好处在于可以避免命名冲突，有点像 Java 中的 package。</p>
 <p>实例：一个 spring xml 的 schema</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns:util</span>=<span class="string">"http://www.springframework.org/schema/util"</span> <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xmlns:mvc</span>=<span class="string">"http://www.springframework.org/schema/mvc"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd</span></span></span><br><span class="line"><span class="tag"><span class="string">		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>说明</strong></p>
 <ul>
-<li><p><code>xmlns=&quot;http://www.springframework.org/schema/beans&quot;</code> 声明 xml 文件默认的命名空间，表示未使用其他命名空间的所有标签的默认命名空间。  </p>
+<li>
+<p><code>xmlns=&quot;http://www.springframework.org/schema/beans&quot;</code> 声明 xml 文件默认的命名空间，表示未使用其他命名空间的所有标签的默认命名空间。</p>
 </li>
-<li><p><code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code> 声明XML Schema 实例，声明后就可以使用 schemaLocation 属性了。</p>
+<li>
+<p><code>xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</code> 声明XML Schema 实例，声明后就可以使用 schemaLocation 属性了。</p>
 </li>
-<li><p><code>xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</code><br>声明前缀为 mvc 的命名空间，后面的 URL 用于标示命名空间的地址不会被解析器用于查找信息。其惟一的作用是赋予命名空间一个惟一的名称。当命名空间被定义在元素的开始标签中时，所有带有相同前缀的子元素都会与同一个命名空间相关联。  其它的类似 <code>xmlns:context</code> 、<code>xmlns:jdbc</code> 等等同样如此。</p>
+<li>
+<p><code>xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</code><br>
+声明前缀为 mvc 的命名空间，后面的 URL 用于标示命名空间的地址不会被解析器用于查找信息。其惟一的作用是赋予命名空间一个惟一的名称。当命名空间被定义在元素的开始标签中时，所有带有相同前缀的子元素都会与同一个命名空间相关联。  其它的类似 <code>xmlns:context</code> 、<code>xmlns:jdbc</code> 等等同样如此。</p>
 </li>
-<li><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">   xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   ...<span class="string">"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
+<li>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash">   xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   ...<span class="string">"</span></span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
 <blockquote>
-<p>  这个从命名可以看出个大概，指定 schema 位置这个属性必须结合命名空间使用。这个属性有两个值，第一个值表示需要使用的命名空间。第二个值表示供命名空间使用的 xml schema 的位置。</p>
+<p>这个从命名可以看出个大概，指定 schema 位置这个属性必须结合命名空间使用。这个属性有两个值，第一个值表示需要使用的命名空间。第二个值表示供命名空间使用的 xml schema 的位置。</p>
 </blockquote>
 <p>上面示例中的 xsd 版本是 <code>3.1.xsd</code> ，表示 spring 的 xml 解析器会将其视为 3.1 版本的 xml 文件来处理。</p>
 <p>现在，我们使用了 Spring 4，<code>3.1.xsd</code> 版本显然就不正确了，我们可以根据自己引入的 Spring 4 的子版本号将其改为 <code>4.x.xsd</code> 。</p>
@@ -568,34 +580,41 @@
 <li><code>schemaLocation</code> 提供了一个 xml namespace 到对应的 xsd 文件的一个映射。</li>
 <li>如果不指定 spring xsd 的版本号，spring 取的就是当前本地 jar 里的 xsd 文件，减少了各种风险（比如 xsd 与实际 spring jar 版本不一致）。</li>
 </ul>
-<p>更多详细内容可以参考这篇文章：<a href="http://blog.csdn.net/hengyunabc/article/details/22295749" target="_blank" rel="noopener">为什么在Spring的配置里，最好不要配置xsd文件的版本号</a> </p>
-<h3 id="修改-spring-xml-文件"><a href="#修改-spring-xml-文件" class="headerlink" title="修改 spring xml 文件"></a>修改 spring xml 文件</h3><p>spring 4 对 xml 做了一些改动。这里说一个最常用的改动：</p>
-<h4 id="ref-local"><a href="#ref-local" class="headerlink" title="ref local"></a>ref local</h4><p>spring 不再支持 <code>ref</code> 元素的 <code>local</code> 属性，如果你的项目中使用了，需要改为 <code>bean</code>。</p>
+<p>更多详细内容可以参考这篇文章：<a href="http://blog.csdn.net/hengyunabc/article/details/22295749" target="_blank" rel="noopener">为什么在Spring的配置里，最好不要配置xsd文件的版本号</a></p>
+<h3 id="修改-spring-xml-文件"><a class="markdownIt-Anchor" href="#修改-spring-xml-文件"></a> 修改 spring xml 文件</h3>
+<p>spring 4 对 xml 做了一些改动。这里说一个最常用的改动：</p>
+<h4 id="ref-local"><a class="markdownIt-Anchor" href="#ref-local"></a> ref local</h4>
+<p>spring 不再支持 <code>ref</code> 元素的 <code>local</code> 属性，如果你的项目中使用了，需要改为 <code>bean</code>。</p>
 <p>shi</p>
 <p>spring 4 以前：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ref</span> <span class="attr">local</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>spring 4 以后：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"transactionManager"</span> <span class="attr">class</span>=<span class="string">"org.springframework.jdbc.datasource.DataSourceTransactionManager"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"dataSource"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果不改启动会报错：</p>
-<figure class="highlight oxygene"><table><tr><td class="code"><pre><span class="line">Caused <span class="keyword">by</span>: org.xml.sax.SAXParseException: cvc-complex-<span class="keyword">type</span>.<span class="number">3.2</span>.<span class="number">2</span>: Attribute <span class="string">'local'</span> <span class="keyword">is</span> <span class="keyword">not</span> allowed <span class="keyword">to</span> appear <span class="keyword">in</span> element <span class="string">'ref'</span>.</span><br></pre></td></tr></table></figure>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><span class="line">Caused <span class="keyword">by</span>: org.xml.sax.SAXParseException: cvc-complex-<span class="keyword">type</span><span class="number">.3</span><span class="number">.2</span><span class="number">.2</span>: <span class="keyword">Attribute</span> <span class="string">'local'</span> <span class="keyword">is</span> <span class="keyword">not</span> allowed <span class="keyword">to</span> appear <span class="keyword">in</span> element <span class="string">'ref'</span>.</span><br></pre></td></tr></table></figure>
 <p>当然，可能还有一些其他配置改动，这个只能说兵来将挡水来土掩，遇到了再去查官方文档吧。</p>
-<h3 id="加入-spring-support"><a href="#加入-spring-support" class="headerlink" title="加入 spring support"></a>加入 spring support</h3><p>spring 3 中很多的扩展内容不需要引入support 。但是 spring 4 中分离的更彻底了，如果不分离，会有很多<code>ClassNotFound</code> 。</p>
+<h3 id="加入-spring-support"><a class="markdownIt-Anchor" href="#加入-spring-support"></a> 加入 spring support</h3>
+<p>spring 3 中很多的扩展内容不需要引入support 。但是 spring 4 中分离的更彻底了，如果不分离，会有很多<code>ClassNotFound</code> 。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context-support<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.3.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="更换-spring-mvc-jackson"><a href="#更换-spring-mvc-jackson" class="headerlink" title="更换 spring-mvc jackson"></a>更换 spring-mvc jackson</h3><p>spring mvc 中如果返回结果为 json 需要依赖 jackson 的jar包，但是他升级到了2, 以前是 <code>codehaus.jackson</code>，现在换成了 <code>fasterxml.jackson</code></p>
+<h3 id="更换-spring-mvc-jackson"><a class="markdownIt-Anchor" href="#更换-spring-mvc-jackson"></a> 更换 spring-mvc jackson</h3>
+<p>spring mvc 中如果返回结果为 json 需要依赖 jackson 的jar包，但是他升级到了2, 以前是 <code>codehaus.jackson</code>，现在换成了 <code>fasterxml.jackson</code></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>      </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span>                </span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.fasterxml.jackson.core<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jackson-databind<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>同时修改spring mvc的配置文件：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">bean</span></span></span><br><span class="line"><span class="tag">	<span class="attr">class</span>=<span class="string">"org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"messageConverters"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">			 <span class="tag">&lt;<span class="name">ref</span> <span class="attr">bean</span>=<span class="string">"stringHttpMessageConverter"</span> /&gt;</span>  </span><br><span class="line">			<span class="tag">&lt;<span class="name">bean</span></span></span><br><span class="line"><span class="tag">				<span class="attr">class</span>=<span class="string">"org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"stringHttpMessageConverter"</span></span></span><br><span class="line"><span class="tag">	<span class="attr">class</span>=<span class="string">"org.springframework.http.converter.StringHttpMessageConverter"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"supportedMediaTypes"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">list</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="name">value</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">list</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">bean</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="解决-ibatis-兼容问题"><a href="#解决-ibatis-兼容问题" class="headerlink" title="解决 ibatis 兼容问题"></a>解决 ibatis 兼容问题</h3><p><strong>问题</strong></p>
+<h3 id="解决-ibatis-兼容问题"><a class="markdownIt-Anchor" href="#解决-ibatis-兼容问题"></a> 解决 ibatis 兼容问题</h3>
+<p><strong>问题</strong></p>
 <p>如果你的项目中使用了 ibatis (mybatis 的前身)这个 orm 框架，当 spring3 升级 spring4 后，会出现兼容性问题，编译都不能通过。</p>
 <p>这是因为 Spring4 官方已经不再支持 ibatis。</p>
 <p><strong>解决方案</strong></p>
 <p>添加兼容性 jar 包</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.mybatis<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>mybatis-2-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>更多内容可参考：<a href="https://stackoverflow.com/questions/32353286/no-support-for-ibatis-in-spring4-2-0" target="_blank" rel="noopener">https://stackoverflow.com/questions/32353286/no-support-for-ibatis-in-spring4-2-0</a></p>
-<h3 id="升级-Dubbo"><a href="#升级-Dubbo" class="headerlink" title="升级 Dubbo"></a>升级 Dubbo</h3><p>我们的项目中使用了 soa 框架 Dubbo 。由于 Dubbo 是老版本的，具体来说是（2013年的 2.4.10），而老版本中使用的 spirng 版本为2.x，有兼容性问题。</p>
+<h3 id="升级-dubbo"><a class="markdownIt-Anchor" href="#升级-dubbo"></a> 升级 Dubbo</h3>
+<p>我们的项目中使用了 soa 框架 Dubbo 。由于 Dubbo 是老版本的，具体来说是（2013年的 2.4.10），而老版本中使用的 spirng 版本为2.x，有兼容性问题。</p>
 <p>Dubbo 项目从今年开始恢复维护了，首先把一些落后的库升级到较新版本，比如 jdk8，spring4 等，并修复了一些 bug。所以，我们可以通过升级一下 Dubbo 版本来解决问题。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.alibaba<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dubbo<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.5.8<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">exclusions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-context<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-web<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">exclusion</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.javassist<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>javassist<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">exclusion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">exclusions</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="升级-Jedis"><a href="#升级-Jedis" class="headerlink" title="升级 Jedis"></a>升级 Jedis</h3><p>升级 Dubbo 为当前最新的 2.5.8 版本后，运行时报错：</p>
+<h3 id="升级-jedis"><a class="markdownIt-Anchor" href="#升级-jedis"></a> 升级 Jedis</h3>
+<p>升级 Dubbo 为当前最新的 2.5.8 版本后，运行时报错：</p>
 <ul>
 <li><strong>JedisPoolConfig 配置错误</strong></li>
 </ul>
@@ -615,7 +634,8 @@
 <p>解决方法是修改上面的host 配置，为：<code>&lt;constructor-arg type=&quot;java.lang.String&quot; value=&quot;${redis.host}&quot; /&gt;</code></p>
 <hr>
 <p>至此，spring 4 升级结束。后面如果遇到其他升级问题再补充。</p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://spring.io/blog/2013/05/21/spring-framework-4-0-m1-3-2-3-available/" target="_blank" rel="noopener">https://spring.io/blog/2013/05/21/spring-framework-4-0-m1-3-2-3-available/</a></li>
 <li><a href="https://docs.spring.io/spring/docs/4.3.14.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#spring-whats-new" target="_blank" rel="noopener">https://docs.spring.io/spring/docs/4.3.14.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/#spring-whats-new</a></li>
 <li><a href="http://www.sojson.com/blog/145.html" target="_blank" rel="noopener">Spring 3.x 升级到Spring 4.x 注意事项和步骤，错误解决方法</a></li>
@@ -689,8 +709,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/12/06/os/linux/tool/git/git-quickstart/" rel="next" title="git 快速指南">
-                <i class="fa fa-chevron-left"></i> git 快速指南
+              <a href="/blog/2017/12/06/programming/java/javacore/basic/2-Java开发环境/" rel="next" title="Java 开发环境">
+                <i class="fa fa-chevron-left"></i> Java 开发环境
               </a>
             
           </div>
@@ -772,7 +792,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -837,7 +857,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1135,7 +1157,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-4-升级踩雷指南"><span class="nav-text">spring 4 升级踩雷指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么升级-spring4"><span class="nav-text">为什么升级 spring4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-4-重要新特性"><span class="nav-text">spring 4 重要新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级-spring-4-步骤"><span class="nav-text">升级 spring 4 步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-版本"><span class="nav-text">修改 spring 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-xml-文件的-xsd"><span class="nav-text">修改 spring xml 文件的 xsd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-xml-文件"><span class="nav-text">修改 spring xml 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ref-local"><span class="nav-text">ref local</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入-spring-support"><span class="nav-text">加入 spring support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换-spring-mvc-jackson"><span class="nav-text">更换 spring-mvc jackson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-ibatis-兼容问题"><span class="nav-text">解决 ibatis 兼容问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级-Dubbo"><span class="nav-text">升级 Dubbo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级-Jedis"><span class="nav-text">升级 Jedis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spring-4-升级踩雷指南"><span class="nav-text"> spring 4 升级踩雷指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么升级-spring4"><span class="nav-text"> 为什么升级 spring4</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring-4-重要新特性"><span class="nav-text"> spring 4 重要新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#升级-spring-4-步骤"><span class="nav-text"> 升级 spring 4 步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-版本"><span class="nav-text"> 修改 spring 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-xml-文件的-xsd"><span class="nav-text"> 修改 spring xml 文件的 xsd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改-spring-xml-文件"><span class="nav-text"> 修改 spring xml 文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ref-local"><span class="nav-text"> ref local</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加入-spring-support"><span class="nav-text"> 加入 spring support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更换-spring-mvc-jackson"><span class="nav-text"> 更换 spring-mvc jackson</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解决-ibatis-兼容问题"><span class="nav-text"> 解决 ibatis 兼容问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级-dubbo"><span class="nav-text"> 升级 Dubbo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#升级-jedis"><span class="nav-text"> 升级 Jedis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1177,7 +1199,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

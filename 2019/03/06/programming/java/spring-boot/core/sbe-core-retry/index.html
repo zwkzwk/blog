@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="SpringBootTutorialCoreRetry  源码 更多内容   简介开启 Retry使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;im">
+  <meta name="description" content="SpringBootTutorialCoreRetry   源码 更多内容    简介  开启 Retry 使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplicat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBootTutorialCoreRetry">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring-boot/core/sbe-core-retry/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SpringBootTutorialCoreRetry  源码 更多内容   简介开启 Retry使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;im">
+<meta property="og:description" content="SpringBootTutorialCoreRetry   源码 更多内容    简介  开启 Retry 使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplicat">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:56:35.667Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBootTutorialCoreRetry">
-<meta name="twitter:description" content="SpringBootTutorialCoreRetry  源码 更多内容   简介开启 Retry使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplication;im">
+<meta name="twitter:description" content="SpringBootTutorialCoreRetry   源码 更多内容    简介  开启 Retry 使用 @EnableRetry 注解开启 Retry 功能。 import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplicat">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">583</span>
+                <span title="本文字数">593</span>
               
 
               
@@ -477,18 +477,23 @@
       
 
       
-        <h1 id="SpringBootTutorialCoreRetry"><a href="#SpringBootTutorialCoreRetry" class="headerlink" title="SpringBootTutorialCoreRetry"></a>SpringBootTutorialCoreRetry</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="springboottutorialcoreretry"><a class="markdownIt-Anchor" href="#springboottutorialcoreretry"></a> SpringBootTutorialCoreRetry</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#源码">源码</a></li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%BA%90%E7%A0%81">源码</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="开启-Retry"><a href="#开启-Retry" class="headerlink" title="开启 Retry"></a>开启 Retry</h3><p>使用 <code>@EnableRetry</code> 注解开启 Retry 功能。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="开启-retry"><a class="markdownIt-Anchor" href="#开启-retry"></a> 开启 Retry</h3>
+<p>使用 <code>@EnableRetry</code> 注解开启 Retry 功能。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.retry.annotation.EnableRetry;</span><br><span class="line"></span><br><span class="line"><span class="meta">@EnableRetry</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SbeCoreRetryApplication</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        SpringApplication.run(SbeCoreRetryApplication.class, args);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>@Retryable</p>
 <p>使用 @Retryable 注解修饰方法</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>完整示例：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/core/sbe-core-retry" target="_blank" rel="noopener">源码</a></p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><p><strong>引申</strong></p>
+<h2 id="源码"><a class="markdownIt-Anchor" href="#源码"></a> 源码</h2>
+<p>完整示例：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/core/sbe-core-retry" target="_blank" rel="noopener">源码</a></p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<p><strong>引申</strong></p>
 <ul>
 <li><a href="https://github.com/dunwu/spring-boot-tutorial" target="_blank" rel="noopener">Spring Boot 教程</a></li>
 </ul>
@@ -555,8 +560,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javacore/basic/README/" rel="next" title="Java 基础教程">
-                <i class="fa fa-chevron-left"></i> Java 基础教程
+              <a href="/blog/2019/03/06/algorithm/data-structure/heap/" rel="next" title="堆">
+                <i class="fa fa-chevron-left"></i> 堆
               </a>
             
           </div>
@@ -565,8 +570,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/data/sbe-data-elasticsearch/" rel="prev" title="SpringBootTutorialDataElasticsearch">
-                SpringBootTutorialDataElasticsearch <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/tool/git/README/" rel="prev" title="git">
+                git <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -638,7 +643,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -703,7 +708,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1001,7 +1008,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBootTutorialCoreRetry"><span class="nav-text">SpringBootTutorialCoreRetry</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-Retry"><span class="nav-text">开启 Retry</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboottutorialcoreretry"><span class="nav-text"> SpringBootTutorialCoreRetry</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-retry"><span class="nav-text"> 开启 Retry</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-text"> 源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1043,7 +1050,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

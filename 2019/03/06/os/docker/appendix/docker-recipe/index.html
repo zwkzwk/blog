@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 技巧命令技巧停止所有的 docker container这样才能够删除其中的images docker stop $(docker ps -a -q) 删除所有的 docker containerdocker rm $(docker ps -a -q) 删除所有的 docker imagesdocker rmi $(docker images -q)">
+  <meta name="description" content="Docker 技巧  命令技巧  停止所有的 docker container 这样才能够删除其中的images docker stop $(docker ps -a -q)  删除所有的 docker container docker rm $(docker ps -a -q)  删除所有的 docker images docker rmi $(docker images -q)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 技巧">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/appendix/docker-recipe/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 技巧命令技巧停止所有的 docker container这样才能够删除其中的images docker stop $(docker ps -a -q) 删除所有的 docker containerdocker rm $(docker ps -a -q) 删除所有的 docker imagesdocker rmi $(docker images -q)">
+<meta property="og:description" content="Docker 技巧  命令技巧  停止所有的 docker container 这样才能够删除其中的images docker stop $(docker ps -a -q)  删除所有的 docker container docker rm $(docker ps -a -q)  删除所有的 docker images docker rmi $(docker images -q)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 技巧">
-<meta name="twitter:description" content="Docker 技巧命令技巧停止所有的 docker container这样才能够删除其中的images docker stop $(docker ps -a -q) 删除所有的 docker containerdocker rm $(docker ps -a -q) 删除所有的 docker imagesdocker rmi $(docker images -q)">
+<meta name="twitter:description" content="Docker 技巧  命令技巧  停止所有的 docker container 这样才能够删除其中的images docker stop $(docker ps -a -q)  删除所有的 docker container docker rm $(docker ps -a -q)  删除所有的 docker images docker rmi $(docker images -q)">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">184</span>
+                <span title="本文字数">194</span>
               
 
               
@@ -477,10 +477,15 @@
       
 
       
-        <h1 id="Docker-技巧"><a href="#Docker-技巧" class="headerlink" title="Docker 技巧"></a>Docker 技巧</h1><h2 id="命令技巧"><a href="#命令技巧" class="headerlink" title="命令技巧"></a>命令技巧</h2><h3 id="停止所有的-docker-container"><a href="#停止所有的-docker-container" class="headerlink" title="停止所有的 docker container"></a>停止所有的 docker container</h3><p><em>这样才能够删除其中的images</em></p>
-<figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">docker stop $<span class="comment">(docker ps -a -q)</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除所有的-docker-container"><a href="#删除所有的-docker-container" class="headerlink" title="删除所有的 docker container"></a>删除所有的 docker container</h3><figure class="highlight gcode"><table><tr><td class="code"><pre><span class="line">docker rm $<span class="comment">(docker ps -a -q)</span></span><br></pre></td></tr></table></figure>
-<h3 id="删除所有的-docker-images"><a href="#删除所有的-docker-images" class="headerlink" title="删除所有的 docker images"></a>删除所有的 docker images</h3><figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line">docker rmi <span class="variable">$(</span>docker images -q)</span><br></pre></td></tr></table></figure>
+        <h1 id="docker-技巧"><a class="markdownIt-Anchor" href="#docker-技巧"></a> Docker 技巧</h1>
+<h2 id="命令技巧"><a class="markdownIt-Anchor" href="#命令技巧"></a> 命令技巧</h2>
+<h3 id="停止所有的-docker-container"><a class="markdownIt-Anchor" href="#停止所有的-docker-container"></a> 停止所有的 docker container</h3>
+<p><em>这样才能够删除其中的images</em></p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">docker stop <span class="constructor">$(<span class="params">docker</span> <span class="params">ps</span> -<span class="params">a</span> -<span class="params">q</span>)</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除所有的-docker-container"><a class="markdownIt-Anchor" href="#删除所有的-docker-container"></a> 删除所有的 docker container</h3>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">docker rm <span class="constructor">$(<span class="params">docker</span> <span class="params">ps</span> -<span class="params">a</span> -<span class="params">q</span>)</span></span><br></pre></td></tr></table></figure>
+<h3 id="删除所有的-docker-images"><a class="markdownIt-Anchor" href="#删除所有的-docker-images"></a> 删除所有的 docker images</h3>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">docker rmi <span class="constructor">$(<span class="params">docker</span> <span class="params">images</span> -<span class="params">q</span>)</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -622,7 +627,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -687,7 +692,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -985,7 +992,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-技巧"><span class="nav-text">Docker 技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令技巧"><span class="nav-text">命令技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#停止所有的-docker-container"><span class="nav-text">停止所有的 docker container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除所有的-docker-container"><span class="nav-text">删除所有的 docker container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除所有的-docker-images"><span class="nav-text">删除所有的 docker images</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-技巧"><span class="nav-text"> Docker 技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令技巧"><span class="nav-text"> 命令技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#停止所有的-docker-container"><span class="nav-text"> 停止所有的 docker container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除所有的-docker-container"><span class="nav-text"> 删除所有的 docker container</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除所有的-docker-images"><span class="nav-text"> 删除所有的 docker images</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1027,7 +1034,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Chapter04 类和接口 类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类   第13条">
+  <meta name="description" content="Chapter04 类和接口  类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类    第">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Chapter04 类和接口">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/style/effective/chapter04/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Chapter04 类和接口 类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类   第13条">
+<meta property="og:description" content="Chapter04 类和接口  类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类    第">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.700Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter04 类和接口">
-<meta name="twitter:description" content="Chapter04 类和接口 类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类   第13条">
+<meta name="twitter:description" content="Chapter04 类和接口  类和接口的规则：  第13条：使类和成员的可访问性最小化 第14条：在公有类中使用访问方法而非公有域 第15条：使可变性最小化 第16条：复合优先于继承 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承 第18条：接口优于抽象类 第19条：接口只用于定义类型 第20条：类层次优于标签类 第21条：用函数对象表示策略 第22条：优先考虑静态成员类    第">
 
 
 
@@ -477,7 +477,8 @@
       
 
       
-        <h1 id="Chapter04-类和接口"><a href="#Chapter04-类和接口" class="headerlink" title="Chapter04 类和接口"></a>Chapter04 类和接口</h1><blockquote>
+        <h1 id="chapter04-类和接口"><a class="markdownIt-Anchor" href="#chapter04-类和接口"></a> Chapter04 类和接口</h1>
+<blockquote>
 <p>类和接口的规则：</p>
 <ul>
 <li>第13条：使类和成员的可访问性最小化</li>
@@ -492,7 +493,8 @@
 <li>第22条：优先考虑静态成员类</li>
 </ul>
 </blockquote>
-<h2 id="第13条：使类和成员的可访问性最小化"><a href="#第13条：使类和成员的可访问性最小化" class="headerlink" title="第13条：使类和成员的可访问性最小化"></a>第13条：使类和成员的可访问性最小化</h2><p><strong>尽可能地使每个类或者成员不被外界访问。</strong></p>
+<h2 id="第13条使类和成员的可访问性最小化"><a class="markdownIt-Anchor" href="#第13条使类和成员的可访问性最小化"></a> 第13条：使类和成员的可访问性最小化</h2>
+<p><strong>尽可能地使每个类或者成员不被外界访问。</strong></p>
 <p>对于顶层的类和接口，只有两种访问级别：package-private 和 public 。</p>
 <p>如果一个包级私有的顶层类（或者接口）只是在某一个类的内部被用到，就应该考虑使用它成为唯一使用它的那个类的私有嵌套类（见第22条）。</p>
 <p>实例域绝对不能是公有的（见第14条）。包含公有可变域的类不是线程安全的。</p>
@@ -502,51 +504,68 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Thing[] PRIVATE_VALUES = &#123;...&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> List&lt;Thing&gt; VALUES = Collections.unmodifiableList(Arrays.asList(PRIVATE_VALUES));</span><br></pre></td></tr></table></figure>
 <p>或</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Thing[] PRIVATE_VALUES = &#123;...&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Thing[] values()&#123;</span><br><span class="line">    <span class="keyword">return</span> PRIVATE_VALUES.clone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="第14条：在公有类中使用访问方法而非公有域"><a href="#第14条：在公有类中使用访问方法而非公有域" class="headerlink" title="第14条：在公有类中使用访问方法而非公有域"></a>第14条：在公有类中使用访问方法而非公有域</h2><p>如果类可以在它所在的包的外部进行访问，就提供访问方法。</p>
+<h2 id="第14条在公有类中使用访问方法而非公有域"><a class="markdownIt-Anchor" href="#第14条在公有类中使用访问方法而非公有域"></a> 第14条：在公有类中使用访问方法而非公有域</h2>
+<p>如果类可以在它所在的包的外部进行访问，就提供访问方法。</p>
 <p>如果类是包级私有的，或者是私有的嵌套类，直接暴露它的数据成员并没有本质的错误——假设这些数据成员确实描述了该类所提供的抽象。</p>
 <p>如果成员是不可变的，设为 public 的危害比较小一些。</p>
-<h2 id="第15条：使可变性最小化"><a href="#第15条：使可变性最小化" class="headerlink" title="第15条：使可变性最小化"></a>第15条：使可变性最小化</h2><p>不可变类只是其实例不能被修改的类。</p>
-<h3 id="不可变类规则"><a href="#不可变类规则" class="headerlink" title="不可变类规则"></a>不可变类规则</h3><ul>
+<h2 id="第15条使可变性最小化"><a class="markdownIt-Anchor" href="#第15条使可变性最小化"></a> 第15条：使可变性最小化</h2>
+<p>不可变类只是其实例不能被修改的类。</p>
+<h3 id="不可变类规则"><a class="markdownIt-Anchor" href="#不可变类规则"></a> 不可变类规则</h3>
+<ul>
 <li><strong>不要提供任何会修改对象状态的方法。</strong></li>
-<li><strong>保证类不会被扩展。</strong>使用 final 修饰类。</li>
+<li>**保证类不会被扩展。**使用 final 修饰类。</li>
 <li><strong>使所有成员都是 final 的。</strong></li>
 <li><strong>使所有成员都是 private 的。</strong></li>
 <li><strong>确保对于任何可变组件的互斥访问。</strong></li>
 </ul>
-<h3 id="不可变对象优点"><a href="#不可变对象优点" class="headerlink" title="不可变对象优点"></a>不可变对象优点</h3><ul>
+<h3 id="不可变对象优点"><a class="markdownIt-Anchor" href="#不可变对象优点"></a> 不可变对象优点</h3>
+<ul>
 <li>比较简单。不可变对象可以只有创建时的状态。</li>
 <li>本质上是线程安全的，它们不要求同步。</li>
 <li>可以被自由地共享。</li>
 <li>为其他对象提供了大量的构件</li>
 </ul>
-<h3 id="不可变对象的缺点"><a href="#不可变对象的缺点" class="headerlink" title="不可变对象的缺点"></a>不可变对象的缺点</h3><p>对于每个不同的值都需要一个单独的对象。</p>
+<h3 id="不可变对象的缺点"><a class="markdownIt-Anchor" href="#不可变对象的缺点"></a> 不可变对象的缺点</h3>
+<p>对于每个不同的值都需要一个单独的对象。</p>
 <p>示例</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">Complex</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> re;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">double</span> im;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">private</span> <span class="title">Complex</span><span class="params">(<span class="keyword">double</span> re, <span class="keyword">double</span> im)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.re = re;</span><br><span class="line">		<span class="keyword">this</span>.im = im;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Complex <span class="title">valueOf</span><span class="params">(<span class="keyword">double</span> re, <span class="keyword">double</span> im)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Complex(re, im);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Complex <span class="title">valueOfPolar</span><span class="params">(<span class="keyword">double</span> r, <span class="keyword">double</span> theta)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Complex(r * Math.cos(theta), r * Math.sin(theta));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Complex ZERO = <span class="keyword">new</span> Complex(<span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Complex ONE = <span class="keyword">new</span> Complex(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> Complex I = <span class="keyword">new</span> Complex(<span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Accessors with no corresponding mutators</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">realPart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> re;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">imaginaryPart</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> im;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Complex <span class="title">add</span><span class="params">(Complex c)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">new</span> Complex(re + c.re, im + c.im);</span><br><span class="line">	&#125;</span><br><span class="line">  </span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="第16条：复合优先于继承"><a href="#第16条：复合优先于继承" class="headerlink" title="第16条：复合优先于继承"></a>第16条：复合优先于继承</h2><p>继承打破了封装性。</p>
-<h3 id="继承的问题"><a href="#继承的问题" class="headerlink" title="继承的问题"></a>继承的问题</h3><p>父类新添方法，如果恰好与子类的方法名相同，返回类型不同，编译会失败。</p>
+<h2 id="第16条复合优先于继承"><a class="markdownIt-Anchor" href="#第16条复合优先于继承"></a> 第16条：复合优先于继承</h2>
+<p>继承打破了封装性。</p>
+<h3 id="继承的问题"><a class="markdownIt-Anchor" href="#继承的问题"></a> 继承的问题</h3>
+<p>父类新添方法，如果恰好与子类的方法名相同，返回类型不同，编译会失败。</p>
 <p>如果新添方法与子类的方法同名但是返回类型不同，就成了覆写（Override）。</p>
-<h3 id="复合（composition）"><a href="#复合（composition）" class="headerlink" title="复合（composition）"></a>复合（composition）</h3><p>在新类中增加一个私有成员，引用现有类的一个实例。</p>
-<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForwardingSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> Set&lt;E&gt; s;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ForwardingSet</span><span class="params">(Set&lt;E&gt; s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.s = s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		s.clear();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="复合composition"><a class="markdownIt-Anchor" href="#复合composition"></a> 复合（composition）</h3>
+<p>在新类中增加一个私有成员，引用现有类的一个实例。</p>
+<h3 id="示例"><a class="markdownIt-Anchor" href="#示例"></a> 示例</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ForwardingSet</span>&lt;<span class="title">E</span>&gt; <span class="keyword">implements</span> <span class="title">Set</span>&lt;<span class="title">E</span>&gt; </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> Set&lt;E&gt; s;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">ForwardingSet</span><span class="params">(Set&lt;E&gt; s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.s = s;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		s.clear();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这种设计叫做装饰设计模式，这种类则叫做包装类。</p>
 <p>需要注意，包装类有一个缺点：包装类不适合用在回调框架中；在回调框架中，对象把自身的引用传递给其他的对象，用于后续的回调。</p>
-<h2 id="第17条：要么为继承而设计，并提供文档说明，要么就禁止继承"><a href="#第17条：要么为继承而设计，并提供文档说明，要么就禁止继承" class="headerlink" title="第17条：要么为继承而设计，并提供文档说明，要么就禁止继承"></a>第17条：要么为继承而设计，并提供文档说明，要么就禁止继承</h2><h2 id="第18条：接口优于抽象类"><a href="#第18条：接口优于抽象类" class="headerlink" title="第18条：接口优于抽象类"></a>第18条：接口优于抽象类</h2><p>已有的类可以很容易被更新，以实现新的接口。</p>
+<h2 id="第17条要么为继承而设计并提供文档说明要么就禁止继承"><a class="markdownIt-Anchor" href="#第17条要么为继承而设计并提供文档说明要么就禁止继承"></a> 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承</h2>
+<h2 id="第18条接口优于抽象类"><a class="markdownIt-Anchor" href="#第18条接口优于抽象类"></a> 第18条：接口优于抽象类</h2>
+<p>已有的类可以很容易被更新，以实现新的接口。</p>
 <p>接口定义是混合类型的理想选择。</p>
 <p>接口使得我们可以构造出非层次结构的类型框架。</p>
 <p>接口使得安全地增强一个类的功能成为可能。</p>
-<h2 id="第19条：接口只用于定义类型"><a href="#第19条：接口只用于定义类型" class="headerlink" title="第19条：接口只用于定义类型"></a>第19条：接口只用于定义类型</h2><p><strong>常量接口模式是对接口的不良使用。</strong> </p>
+<h2 id="第19条接口只用于定义类型"><a class="markdownIt-Anchor" href="#第19条接口只用于定义类型"></a> 第19条：接口只用于定义类型</h2>
+<p><strong>常量接口模式是对接口的不良使用。</strong></p>
 <p>一个类需要使用哪些常量，这纯粹是实现细节，不应该对外暴露。</p>
-<h3 id="示例-1"><a href="#示例-1" class="headerlink" title="示例"></a>示例</h3><p><strong>BAD</strong></p>
+<h3 id="示例-2"><a class="markdownIt-Anchor" href="#示例-2"></a> 示例</h3>
+<p><strong>BAD</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">PhysicalConstants</span> </span>&#123;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> AVOGADROS_NUMBER = <span class="number">6.02214199e23</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> BOLTZMANN_CONSTANT = <span class="number">1.3806503e-23</span>;</span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> ELECTRON_MASS = <span class="number">9.10938188e-31</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>GOOD</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PhysicalConstants</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> AVOGADROS_NUMBER = <span class="number">6.02214199e23</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> BOLTZMANN_CONSTANT = <span class="number">1.3806503e-23</span>;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">double</span> ELECTRON_MASS = <span class="number">9.10938188e-31</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="第20条：类层次优于标签类"><a href="#第20条：类层次优于标签类" class="headerlink" title="第20条：类层次优于标签类"></a>第20条：类层次优于标签类</h2><p>标签类是冗长的，低效且容易出错。</p>
+<h2 id="第20条类层次优于标签类"><a class="markdownIt-Anchor" href="#第20条类层次优于标签类"></a> 第20条：类层次优于标签类</h2>
+<p>标签类是冗长的，低效且容易出错。</p>
 <p>它们有很多引用，可读性差，它们增加了内存占用以及更多的短缺。</p>
 <p>标签类只是类继承的模仿</p>
-<h3 id="示例-2"><a href="#示例-2" class="headerlink" title="示例"></a>示例</h3><p><strong>BAD</strong></p>
+<h3 id="示例-3"><a class="markdownIt-Anchor" href="#示例-3"></a> 示例</h3>
+<p><strong>BAD</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Figure</span> </span>&#123;</span><br><span class="line">	<span class="keyword">enum</span> Shape &#123;</span><br><span class="line">		RECTANGLE, CIRCLE</span><br><span class="line">	&#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Tag field - the shape of this figure</span></span><br><span class="line">	<span class="keyword">final</span> Shape shape;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// These fields are used only if shape is RECTANGLE</span></span><br><span class="line">	<span class="keyword">double</span> length;</span><br><span class="line">	<span class="keyword">double</span> width;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// This field is used only if shape is CIRCLE</span></span><br><span class="line">	<span class="keyword">double</span> radius;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Constructor for circle</span></span><br><span class="line">	Figure(<span class="keyword">double</span> radius) &#123;</span><br><span class="line">		shape = Shape.CIRCLE;</span><br><span class="line">		<span class="keyword">this</span>.radius = radius;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Constructor for rectangle</span></span><br><span class="line">	Figure(<span class="keyword">double</span> length, <span class="keyword">double</span> width) &#123;</span><br><span class="line">		shape = Shape.RECTANGLE;</span><br><span class="line">		<span class="keyword">this</span>.length = length;</span><br><span class="line">		<span class="keyword">this</span>.width = width;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">switch</span> (shape) &#123;</span><br><span class="line">		<span class="keyword">case</span> RECTANGLE:</span><br><span class="line">			<span class="keyword">return</span> length * width;</span><br><span class="line">		<span class="keyword">case</span> CIRCLE:</span><br><span class="line">			<span class="keyword">return</span> Math.PI * (radius * radius);</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> AssertionError();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>GOOD</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Figure</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">abstract</span> <span class="keyword">double</span> <span class="title">area</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Circle</span> <span class="keyword">extends</span> <span class="title">Figure</span> </span>&#123;</span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> radius;</span><br><span class="line"></span><br><span class="line">	Circle(<span class="keyword">double</span> radius) &#123;</span><br><span class="line">		<span class="keyword">this</span>.radius = radius;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> Math.PI * (radius * radius);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span> <span class="keyword">extends</span> <span class="title">Figure</span> </span>&#123;</span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> length;</span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">double</span> width;</span><br><span class="line"></span><br><span class="line">	Rectangle(<span class="keyword">double</span> length, <span class="keyword">double</span> width) &#123;</span><br><span class="line">		<span class="keyword">this</span>.length = length;</span><br><span class="line">		<span class="keyword">this</span>.width = width;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">double</span> <span class="title">area</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> length * width;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Square</span> <span class="keyword">extends</span> <span class="title">Rectangle</span> </span>&#123;</span><br><span class="line">	Square(<span class="keyword">double</span> side) &#123;</span><br><span class="line">		<span class="keyword">super</span>(side, side);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="第21条：用函数对象表示策略"><a href="#第21条：用函数对象表示策略" class="headerlink" title="第21条：用函数对象表示策略"></a>第21条：用函数对象表示策略</h2><h2 id="第22条：优先考虑静态成员类"><a href="#第22条：优先考虑静态成员类" class="headerlink" title="第22条：优先考虑静态成员类"></a>第22条：优先考虑静态成员类</h2>
+<h2 id="第21条用函数对象表示策略"><a class="markdownIt-Anchor" href="#第21条用函数对象表示策略"></a> 第21条：用函数对象表示策略</h2>
+<h2 id="第22条优先考虑静态成员类"><a class="markdownIt-Anchor" href="#第22条优先考虑静态成员类"></a> 第22条：优先考虑静态成员类</h2>
+
       
     </div>
 
@@ -604,8 +623,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/style/effective/chapter02/" rel="next" title="Chapter02 创建和销毁对象">
-                <i class="fa fa-chevron-left"></i> Chapter02 创建和销毁对象
+              <a href="/blog/2019/03/06/style/project-style/" rel="next" title="项目规范">
+                <i class="fa fa-chevron-left"></i> 项目规范
               </a>
             
           </div>
@@ -614,8 +633,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/style/effective/chapter03/" rel="prev" title="Chapter03 对于所有对象都通用的方法">
-                Chapter03 对于所有对象都通用的方法 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/javaweb/javaee/jsp/taglib/" rel="prev" title>
+                 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -687,7 +706,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -752,7 +771,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1050,7 +1071,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Chapter04-类和接口"><span class="nav-text">Chapter04 类和接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第13条：使类和成员的可访问性最小化"><span class="nav-text">第13条：使类和成员的可访问性最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第14条：在公有类中使用访问方法而非公有域"><span class="nav-text">第14条：在公有类中使用访问方法而非公有域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第15条：使可变性最小化"><span class="nav-text">第15条：使可变性最小化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变类规则"><span class="nav-text">不可变类规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变对象优点"><span class="nav-text">不可变对象优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变对象的缺点"><span class="nav-text">不可变对象的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第16条：复合优先于继承"><span class="nav-text">第16条：复合优先于继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的问题"><span class="nav-text">继承的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合（composition）"><span class="nav-text">复合（composition）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第17条：要么为继承而设计，并提供文档说明，要么就禁止继承"><span class="nav-text">第17条：要么为继承而设计，并提供文档说明，要么就禁止继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第18条：接口优于抽象类"><span class="nav-text">第18条：接口优于抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第19条：接口只用于定义类型"><span class="nav-text">第19条：接口只用于定义类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例-1"><span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第20条：类层次优于标签类"><span class="nav-text">第20条：类层次优于标签类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例-2"><span class="nav-text">示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第21条：用函数对象表示策略"><span class="nav-text">第21条：用函数对象表示策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第22条：优先考虑静态成员类"><span class="nav-text">第22条：优先考虑静态成员类</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#chapter04-类和接口"><span class="nav-text"> Chapter04 类和接口</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第13条使类和成员的可访问性最小化"><span class="nav-text"> 第13条：使类和成员的可访问性最小化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第14条在公有类中使用访问方法而非公有域"><span class="nav-text"> 第14条：在公有类中使用访问方法而非公有域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第15条使可变性最小化"><span class="nav-text"> 第15条：使可变性最小化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变类规则"><span class="nav-text"> 不可变类规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变对象优点"><span class="nav-text"> 不可变对象优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不可变对象的缺点"><span class="nav-text"> 不可变对象的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第16条复合优先于继承"><span class="nav-text"> 第16条：复合优先于继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#继承的问题"><span class="nav-text"> 继承的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复合composition"><span class="nav-text"> 复合（composition）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#示例"><span class="nav-text"> 示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第17条要么为继承而设计并提供文档说明要么就禁止继承"><span class="nav-text"> 第17条：要么为继承而设计，并提供文档说明，要么就禁止继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第18条接口优于抽象类"><span class="nav-text"> 第18条：接口优于抽象类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第19条接口只用于定义类型"><span class="nav-text"> 第19条：接口只用于定义类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例-2"><span class="nav-text"> 示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第20条类层次优于标签类"><span class="nav-text"> 第20条：类层次优于标签类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#示例-3"><span class="nav-text"> 示例</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第21条用函数对象表示策略"><span class="nav-text"> 第21条：用函数对象表示策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第22条优先考虑静态成员类"><span class="nav-text"> 第22条：优先考虑静态成员类</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1092,7 +1113,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

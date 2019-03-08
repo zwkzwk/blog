@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="SpringBootTutorialDataElasticsearch  简介 通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容   简介Elasticsearch 是一个开源的、分布式的搜索和分析引擎。">
+  <meta name="description" content="SpringBootTutorialDataElasticsearch   简介  通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容    简介 Elasticsearch 是一个开源的、分布式的搜索和分">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringBootTutorialDataElasticsearch">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/spring-boot/data/sbe-data-elasticsearch/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SpringBootTutorialDataElasticsearch  简介 通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容   简介Elasticsearch 是一个开源的、分布式的搜索和分析引擎。">
+<meta property="og:description" content="SpringBootTutorialDataElasticsearch   简介  通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容    简介 Elasticsearch 是一个开源的、分布式的搜索和分">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:56:35.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringBootTutorialDataElasticsearch">
-<meta name="twitter:description" content="SpringBootTutorialDataElasticsearch  简介 通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容   简介Elasticsearch 是一个开源的、分布式的搜索和分析引擎。">
+<meta name="twitter:description" content="SpringBootTutorialDataElasticsearch   简介  通过 REST 客户端连接 Elasticsearch 通过 Jest 连接 Elasticsearch 通过 Spring Data 访问 Elasticsearch Elasticsearch Repositories   源码 更多内容    简介 Elasticsearch 是一个开源的、分布式的搜索和分">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.3k</span>
+                <span title="本文字数">2.4k</span>
               
 
               
@@ -477,39 +477,48 @@
       
 
       
-        <h1 id="SpringBootTutorialDataElasticsearch"><a href="#SpringBootTutorialDataElasticsearch" class="headerlink" title="SpringBootTutorialDataElasticsearch"></a>SpringBootTutorialDataElasticsearch</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="springboottutorialdataelasticsearch"><a class="markdownIt-Anchor" href="#springboottutorialdataelasticsearch"></a> SpringBootTutorialDataElasticsearch</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#通过-rest-客户端连接-elasticsearch">通过 REST 客户端连接 Elasticsearch</a></li>
-<li><a href="#通过-jest-连接-elasticsearch">通过 Jest 连接 Elasticsearch</a></li>
-<li><a href="#通过-spring-data-访问-elasticsearch">通过 Spring Data 访问 Elasticsearch</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E9%80%9A%E8%BF%87-rest-%E5%AE%A2%E6%88%B7%E7%AB%AF%E8%BF%9E%E6%8E%A5-elasticsearch">通过 REST 客户端连接 Elasticsearch</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-jest-%E8%BF%9E%E6%8E%A5-elasticsearch">通过 Jest 连接 Elasticsearch</a></li>
+<li><a href="#%E9%80%9A%E8%BF%87-spring-data-%E8%AE%BF%E9%97%AE-elasticsearch">通过 Spring Data 访问 Elasticsearch</a></li>
 <li><a href="#elasticsearch-repositories">Elasticsearch Repositories</a></li>
 </ul>
 </li>
-<li><a href="#源码">源码</a></li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%BA%90%E7%A0%81">源码</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">Elasticsearch</a> 是一个开源的、分布式的搜索和分析引擎。</p>
-<h3 id="通过-REST-客户端连接-Elasticsearch"><a href="#通过-REST-客户端连接-Elasticsearch" class="headerlink" title="通过 REST 客户端连接 Elasticsearch"></a>通过 REST 客户端连接 Elasticsearch</h3><p>如果在 classpath 路径下存在 <code>org.elasticsearch.client:elasticsearch-rest-client</code> jar 包，Spring Boot 会自动配置并注册一个 <code>RestClient</code> Bean，它的默认访问路径为：<code>localhost:9200</code>。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p><a href="https://www.elastic.co/products/elasticsearch" target="_blank" rel="noopener">Elasticsearch</a> 是一个开源的、分布式的搜索和分析引擎。</p>
+<h3 id="通过-rest-客户端连接-elasticsearch"><a class="markdownIt-Anchor" href="#通过-rest-客户端连接-elasticsearch"></a> 通过 REST 客户端连接 Elasticsearch</h3>
+<p>如果在 classpath 路径下存在 <code>org.elasticsearch.client:elasticsearch-rest-client</code> jar 包，Spring Boot 会自动配置并注册一个 <code>RestClient</code> Bean，它的默认访问路径为：<code>localhost:9200</code>。</p>
 <p>你可以使用如下方式进行定制：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.elasticsearch.rest.uris=http://search.example.com:9200</span><br><span class="line">spring.elasticsearch.rest.username=user</span><br><span class="line">spring.elasticsearch.rest.password=secret</span><br></pre></td></tr></table></figure>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.elasticsearch.rest.uris</span>=<span class="string">http://search.example.com:9200</span></span><br><span class="line"><span class="meta">spring.elasticsearch.rest.username</span>=<span class="string">user</span></span><br><span class="line"><span class="meta">spring.elasticsearch.rest.password</span>=<span class="string">secret</span></span><br></pre></td></tr></table></figure>
 <p>您还可以注册实现任意数量的 <code>RestClientBuilderCustomizer</code> bean，以进行更高级的定制。要完全控制注册，请定义 <code>RestClient</code> bean。</p>
 <p>如果 classpath 路径有 <code>org.elasticsearch.client：elasticsearch-rest-high-level-client</code> jar 包，Spring Boot 将自动配置一个 <code>RestHighLevelClient</code>，它包装任何现有的 <code>RestClient</code> bean，重用其 HTTP 配置。</p>
-<h3 id="通过-Jest-连接-Elasticsearch"><a href="#通过-Jest-连接-Elasticsearch" class="headerlink" title="通过 Jest 连接 Elasticsearch"></a>通过 Jest 连接 Elasticsearch</h3><p>如果 classpath 上有 Jest，你可以注入一个自动配置的 <code>JestClient</code>，默认情况下是 <code>localhost:9200</code>。您可以进一步调整客户端的配置方式，如以下示例所示：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">spring.elasticsearch.jest.uris=http://search.example.com:9200</span><br><span class="line">spring.elasticsearch.jest.read-timeout=10000</span><br><span class="line">spring.elasticsearch.jest.username=user</span><br><span class="line">spring.elasticsearch.jest.password=secret</span><br></pre></td></tr></table></figure>
+<h3 id="通过-jest-连接-elasticsearch"><a class="markdownIt-Anchor" href="#通过-jest-连接-elasticsearch"></a> 通过 Jest 连接 Elasticsearch</h3>
+<p>如果 classpath 上有 Jest，你可以注入一个自动配置的 <code>JestClient</code>，默认情况下是 <code>localhost:9200</code>。您可以进一步调整客户端的配置方式，如以下示例所示：</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="meta">spring.elasticsearch.jest.uris</span>=<span class="string">http://search.example.com:9200</span></span><br><span class="line"><span class="meta">spring.elasticsearch.jest.read-timeout</span>=<span class="string">10000</span></span><br><span class="line"><span class="meta">spring.elasticsearch.jest.username</span>=<span class="string">user</span></span><br><span class="line"><span class="meta">spring.elasticsearch.jest.password</span>=<span class="string">secret</span></span><br></pre></td></tr></table></figure>
 <p>您还可以注册实现任意数量的 <code>HttpClientConfigBuilderCustomizer</code> bean，以进行更高级的定制。以下示例调整为其他 HTTP 设置：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">HttpSettingsCustomizer</span> <span class="keyword">implements</span> <span class="title">HttpClientConfigBuilderCustomizer</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customize</span><span class="params">(HttpClientConfig.Builder builder)</span> </span>&#123;</span><br><span class="line">		builder.maxTotalConnection(<span class="number">100</span>).defaultMaxTotalConnectionPerRoute(<span class="number">5</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>要完全控制注册，请定义 <code>JestClient</code> bean。</p>
-<h3 id="通过-Spring-Data-访问-Elasticsearch"><a href="#通过-Spring-Data-访问-Elasticsearch" class="headerlink" title="通过 Spring Data 访问 Elasticsearch"></a>通过 Spring Data 访问 Elasticsearch</h3><p>要连接到 Elasticsearch，您必须提供一个或多个集群节点的地址。可以通过将 <code>spring.data.elasticsearch.cluster-nodes</code> 属性设置为以逗号分隔的 <code>host:port</code> 列表来指定地址。使用此配置，可以像任何其他 Spring bean 一样注入 <code>ElasticsearchTemplate</code> 或 <code>TransportClient</code>，如以下示例所示：</p>
+<h3 id="通过-spring-data-访问-elasticsearch"><a class="markdownIt-Anchor" href="#通过-spring-data-访问-elasticsearch"></a> 通过 Spring Data 访问 Elasticsearch</h3>
+<p>要连接到 Elasticsearch，您必须提供一个或多个集群节点的地址。可以通过将 <code>spring.data.elasticsearch.cluster-nodes</code> 属性设置为以逗号分隔的 <code>host:port</code> 列表来指定地址。使用此配置，可以像任何其他 Spring bean 一样注入 <code>ElasticsearchTemplate</code> 或 <code>TransportClient</code>，如以下示例所示：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">spring.data.elasticsearch.cluster-nodes=localhost:<span class="number">9300</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyBean</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">final</span> ElasticsearchTemplate template;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyBean</span><span class="params">(ElasticsearchTemplate template)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.template = template;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果你添加了自定义的 <code>ElasticsearchTemplate</code> 或 <code>TransportClient</code> <code>@Bean</code> ，就会替换默认的配置。</p>
-<h3 id="Elasticsearch-Repositories"><a href="#Elasticsearch-Repositories" class="headerlink" title="Elasticsearch Repositories"></a>Elasticsearch Repositories</h3><p>Spring Data 包含对 Elasticsearch 的 repository 支持。基本原则是根据方法名称自动为您构建查询。</p>
+<h3 id="elasticsearch-repositories"><a class="markdownIt-Anchor" href="#elasticsearch-repositories"></a> Elasticsearch Repositories</h3>
+<p>Spring Data 包含对 Elasticsearch 的 repository 支持。基本原则是根据方法名称自动为您构建查询。</p>
 <p>事实上，Spring Data JPA 和 Spring Data Elasticsearch 共享相同的通用基础架构。</p>
-<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><p>完整示例：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/data/sbe-data-elasticsearch" target="_blank" rel="noopener">源码</a></p>
+<h2 id="源码"><a class="markdownIt-Anchor" href="#源码"></a> 源码</h2>
+<p>完整示例：<a href="https://github.com/dunwu/spring-boot-tutorial/tree/master/codes/data/sbe-data-elasticsearch" target="_blank" rel="noopener">源码</a></p>
 <p>使用方法：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">mvn clean package</span><br><span class="line"><span class="built_in">cd</span> target</span><br><span class="line">java -jar sbe-data-elasticsearch.jar</span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><p><strong>引申</strong></p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<p><strong>引申</strong></p>
 <ul>
 <li><a href="https://github.com/dunwu/spring-boot-tutorial" target="_blank" rel="noopener">Spring Boot 教程</a></li>
 </ul>
@@ -577,8 +586,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-retry/" rel="next" title="SpringBootTutorialCoreRetry">
-                <i class="fa fa-chevron-left"></i> SpringBootTutorialCoreRetry
+              <a href="/blog/2019/03/06/os/docker/basics/docker-container/" rel="next" title="Docker 容器">
+                <i class="fa fa-chevron-left"></i> Docker 容器
               </a>
             
           </div>
@@ -587,8 +596,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/spring-boot/data/sbe-data-jdbc/" rel="prev" title="SpringBootTutorialDataJdbc">
-                SpringBootTutorialDataJdbc <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring/appendix/resources/" rel="prev" title="资源">
+                资源 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -660,7 +669,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -725,7 +734,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1023,7 +1034,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SpringBootTutorialDataElasticsearch"><span class="nav-text">SpringBootTutorialDataElasticsearch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-REST-客户端连接-Elasticsearch"><span class="nav-text">通过 REST 客户端连接 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Jest-连接-Elasticsearch"><span class="nav-text">通过 Jest 连接 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-Spring-Data-访问-Elasticsearch"><span class="nav-text">通过 Spring Data 访问 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Elasticsearch-Repositories"><span class="nav-text">Elasticsearch Repositories</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-text">源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#springboottutorialdataelasticsearch"><span class="nav-text"> SpringBootTutorialDataElasticsearch</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-rest-客户端连接-elasticsearch"><span class="nav-text"> 通过 REST 客户端连接 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-jest-连接-elasticsearch"><span class="nav-text"> 通过 Jest 连接 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过-spring-data-访问-elasticsearch"><span class="nav-text"> 通过 Spring Data 访问 Elasticsearch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#elasticsearch-repositories"><span class="nav-text"> Elasticsearch Repositories</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#源码"><span class="nav-text"> 源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1065,7 +1076,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

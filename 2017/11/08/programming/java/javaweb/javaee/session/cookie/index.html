@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。 Cookie 是什么？Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向客户">
+  <meta name="description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。  Cookie 是什么？ Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向">
 <meta name="keywords" content="javaee,cookie,session">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaEE Cookie">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/session/cookie/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。 Cookie 是什么？Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向客户">
+<meta property="og:description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。  Cookie 是什么？ Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE Cookie">
-<meta name="twitter:description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。 Cookie 是什么？Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向客户">
+<meta name="twitter:description" content="由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。 会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。  Cookie 是什么？ Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。 Cookie 工作步骤：  客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向">
 
 
 
@@ -510,7 +510,8 @@
       
         <p>由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。</p>
 <p>会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。</p>
-<h2 id="Cookie-是什么？"><a href="#Cookie-是什么？" class="headerlink" title="Cookie 是什么？"></a>Cookie 是什么？</h2><p>Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。</p>
+<h2 id="cookie-是什么"><a class="markdownIt-Anchor" href="#cookie-是什么"></a> Cookie 是什么？</h2>
+<p>Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。</p>
 <p><strong>Cookie 工作步骤：</strong></p>
 <ol>
 <li>客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向客户端浏览器颁发一个 Cookie。</li>
@@ -519,13 +520,15 @@
 </ol>
 <p><strong><em>注：Cookie 功能需要浏览器的支持，如果浏览器不支持 Cookie 或者 Cookie 禁用了，Cookie 功能就会失效。</em></strong></p>
 <p>Java 中把 Cookie 封装成了<code>javax.servlet.http.Cookie</code>类。</p>
-<h2 id="Cookie-剖析"><a href="#Cookie-剖析" class="headerlink" title="Cookie 剖析"></a>Cookie 剖析</h2><p>Cookies 通常设置在 HTTP 头信息中（虽然 JavaScript 也可以直接在浏览器上设置一个 Cookie）。</p>
+<h2 id="cookie-剖析"><a class="markdownIt-Anchor" href="#cookie-剖析"></a> Cookie 剖析</h2>
+<p>Cookies 通常设置在 HTTP 头信息中（虽然 JavaScript 也可以直接在浏览器上设置一个 Cookie）。</p>
 <p>设置 Cookie 的 Servlet 会发送如下的头信息：</p>
-<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line">Date: Fri, <span class="number">04</span> Feb <span class="number">2000</span> <span class="number">21</span>:<span class="number">03</span>:<span class="number">38</span> GMT</span><br><span class="line">Server: Apache/<span class="number">1.3</span>.9 (UNIX) PHP/<span class="number">4.0b3</span></span><br><span class="line">Set-Cookie: name=xyz; expires=Friday, <span class="number">04</span>-Feb-<span class="number">07</span> <span class="number">22</span>:<span class="number">03</span>:<span class="number">38</span> GMT;</span><br><span class="line">                 path=/; <span class="built_in">domain</span>=w3cschool.cc</span><br><span class="line">Connection: <span class="built_in">close</span></span><br><span class="line">Content-Type: text/html</span><br></pre></td></tr></table></figure>
-<p>正如您所看到的，<code>Set-Cookie</code> 头包含了一个名称值对、一个 GMT 日期、一个路径和一个域。名称和值会被 URL 编码。expires 字段是一个指令，告诉浏览器在给定的时间和日期之后”忘记”该 Cookie。</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">HTTP/<span class="number">1.1</span> <span class="number">200</span> OK</span><br><span class="line">Date: Fri, <span class="number">04</span> Feb <span class="number">2000</span> <span class="number">21</span>:<span class="number">03</span>:<span class="number">38</span> GMT</span><br><span class="line">Server: Apache/<span class="number">1.3</span><span class="number">.9</span> (UNIX) PHP/<span class="number">4.0</span>b3</span><br><span class="line">Set-Cookie: name=xyz; expires=Friday, <span class="number">04</span>-Feb<span class="number">-07</span> <span class="number">22</span>:<span class="number">03</span>:<span class="number">38</span> GMT;</span><br><span class="line">                 path=/; domain=w3cschool.cc</span><br><span class="line">Connection: close</span><br><span class="line">Content-Type: text/html</span><br></pre></td></tr></table></figure>
+<p>正如您所看到的，<code>Set-Cookie</code> 头包含了一个名称值对、一个 GMT 日期、一个路径和一个域。名称和值会被 URL 编码。expires 字段是一个指令，告诉浏览器在给定的时间和日期之后&quot;忘记&quot;该 Cookie。</p>
 <p>如果浏览器被配置为存储 Cookies，它将会保留此信息直到到期日期。如果用户的浏览器指向任何匹配该 Cookie 的路径和域的页面，它会重新发送 Cookie 到服务器。浏览器的头信息可能如下所示：</p>
 <figure class="highlight http"><table><tr><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/</span> HTTP/1.0</span><br><span class="line"><span class="attribute">Connection</span>: Keep-Alive</span><br><span class="line"><span class="attribute">User-Agent</span>: Mozilla/4.6 (X11; I; Linux 2.2.6-15apmac ppc)</span><br><span class="line"><span class="attribute">Host</span>: zink.demon.co.uk:1126</span><br><span class="line"><span class="attribute">Accept</span>: image/gif, */*</span><br><span class="line"><span class="attribute">Accept-Encoding</span>: gzip</span><br><span class="line"><span class="attribute">Accept-Language</span>: en</span><br><span class="line"><span class="attribute">Accept-Charset</span>: iso-8859-1,*,utf-8</span><br><span class="line"><span class="attribute">Cookie</span>: name=xyz</span><br></pre></td></tr></table></figure>
-<h2 id="Cookie-类中的方法"><a href="#Cookie-类中的方法" class="headerlink" title="Cookie 类中的方法"></a>Cookie 类中的方法</h2><table>
+<h2 id="cookie-类中的方法"><a class="markdownIt-Anchor" href="#cookie-类中的方法"></a> Cookie 类中的方法</h2>
+<table>
 <thead>
 <tr>
 <th>方法</th>
@@ -583,41 +586,55 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Cookie-的有效期"><a href="#Cookie-的有效期" class="headerlink" title="Cookie 的有效期"></a>Cookie 的有效期</h2><p><code>Cookie</code>的<code>maxAge</code>决定着 Cookie 的有效期，单位为秒。</p>
+<h2 id="cookie-的有效期"><a class="markdownIt-Anchor" href="#cookie-的有效期"></a> Cookie 的有效期</h2>
+<p><code>Cookie</code>的<code>maxAge</code>决定着 Cookie 的有效期，单位为秒。</p>
 <p>如果 maxAge 为 0，则表示删除该 Cookie；</p>
 <p>如果为负数，表示该 Cookie 仅在本浏览器中以及本窗口打开的子窗口内有效，关闭窗口后该 Cookie 即失效。</p>
 <p>Cookie 中提供<code>getMaxAge()</code><strong>和</strong><code>setMaxAge(int expiry)</code>方法来读写<code>maxAge</code>属性。</p>
-<h2 id="Cookie-的域名"><a href="#Cookie-的域名" class="headerlink" title="Cookie 的域名"></a>Cookie 的域名</h2><p>Cookie 是不可以跨域名的。域名 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 颁发的 Cookie 不会被提交到域名 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 去。这是由 Cookie 的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的 Cookie。</p>
+<h2 id="cookie-的域名"><a class="markdownIt-Anchor" href="#cookie-的域名"></a> Cookie 的域名</h2>
+<p>Cookie 是不可以跨域名的。域名 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a> 颁发的 Cookie 不会被提交到域名 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 去。这是由 Cookie 的隐私安全机制决定的。隐私安全机制能够禁止网站非法获取其他网站的 Cookie。</p>
 <p>正常情况下，同一个一级域名的两个二级域名之间也不能互相使用 Cookie。如果想让某域名下的子域名也可以使用该 Cookie，需要设置 Cookie 的 domain 参数。</p>
 <p>Java 中使用<code>setDomain(Stringdomain)</code>和<code>getDomain()</code>方法来设置、获取 domain。</p>
-<h2 id="Cookie-的路径"><a href="#Cookie-的路径" class="headerlink" title="Cookie 的路径"></a>Cookie 的路径</h2><p>Path 属性决定允许访问 Cookie 的路径。</p>
+<h2 id="cookie-的路径"><a class="markdownIt-Anchor" href="#cookie-的路径"></a> Cookie 的路径</h2>
+<p>Path 属性决定允许访问 Cookie 的路径。</p>
 <p>Java 中使用<code>setPath(Stringuri)</code>和<code>getPath()</code>方法来设置、获取 path。</p>
-<h2 id="Cookie-的安全属性"><a href="#Cookie-的安全属性" class="headerlink" title="Cookie 的安全属性"></a>Cookie 的安全属性</h2><p>HTTP 协议不仅是无状态的，而且是不安全的。</p>
+<h2 id="cookie-的安全属性"><a class="markdownIt-Anchor" href="#cookie-的安全属性"></a> Cookie 的安全属性</h2>
+<p>HTTP 协议不仅是无状态的，而且是不安全的。</p>
 <p>使用 HTTP 协议的数据不经过任何加密就直接在网络上传播，有被截获的可能。如果不希望 Cookie 在 HTTP 等非安全协议中传输，可以设置 Cookie 的 secure 属性为 true。浏览器只会在 HTTPS 和 SSL 等安全协议中传输此类 Cookie。</p>
 <p>Java 中使用<code>setSecure(booleanflag)</code>和<code>getSecure ()</code>方法来设置、获取 Secure。</p>
-<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="添加-Cookie"><a href="#添加-Cookie" class="headerlink" title="添加 Cookie"></a>添加 Cookie</h3><p>通过 Servlet 添加 Cookies 包括三个步骤：</p>
+<h2 id="实例"><a class="markdownIt-Anchor" href="#实例"></a> 实例</h2>
+<h3 id="添加-cookie"><a class="markdownIt-Anchor" href="#添加-cookie"></a> 添加 Cookie</h3>
+<p>通过 Servlet 添加 Cookies 包括三个步骤：</p>
 <ol>
-<li><p>创建一个 Cookie 对象：您可以调用带有 cookie 名称和 cookie 值的 Cookie 构造函数，cookie 名称和 cookie 值都是字符串。</p>
+<li>
+<p>创建一个 Cookie 对象：您可以调用带有 cookie 名称和 cookie 值的 Cookie 构造函数，cookie 名称和 cookie 值都是字符串。</p>
 </li>
-<li><p>设置最大生存周期：您可以使用 <code>setMaxAge</code> 方法来指定 cookie 能够保持有效的时间（以秒为单位）。</p>
+<li>
+<p>设置最大生存周期：您可以使用 <code>setMaxAge</code> 方法来指定 cookie 能够保持有效的时间（以秒为单位）。</p>
 </li>
-<li><p>发送 Cookie 到 HTTP 响应头：您可以使用 <code>response.addCookie</code> 来添加 HTTP 响应头中的 Cookies。</p>
+<li>
+<p>发送 Cookie 到 HTTP 响应头：您可以使用 <code>response.addCookie</code> 来添加 HTTP 响应头中的 Cookies。</p>
 </li>
 </ol>
 <p>AddCookies.java</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.net.URLEncoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.Cookie;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/servlet/AddCookies"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AddCookies</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#HttpServlet()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">AddCookies</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">                    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        <span class="comment">// 为名字和姓氏创建 Cookie</span></span><br><span class="line">        Cookie name = <span class="keyword">new</span> Cookie(<span class="string">"name"</span>, URLEncoder.encode(request.getParameter(<span class="string">"name"</span>), <span class="string">"UTF-8"</span>)); <span class="comment">// 中文转码</span></span><br><span class="line">        Cookie url = <span class="keyword">new</span> Cookie(<span class="string">"url"</span>, request.getParameter(<span class="string">"url"</span>));</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 为两个 Cookie 设置过期日期为 24 小时后</span></span><br><span class="line">        name.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">        url.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在响应头中添加两个 Cookie</span></span><br><span class="line">        response.addCookie(name);</span><br><span class="line">        response.addCookie(url);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置响应内容类型</span></span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        String title = <span class="string">"设置 Cookie 实例"</span>;</span><br><span class="line">        String docType = <span class="string">"&lt;!DOCTYPE html&gt;\n"</span>;</span><br><span class="line">        out.println(docType + <span class="string">"&lt;html&gt;\n"</span> + <span class="string">"&lt;head&gt;&lt;title&gt;"</span> + title + <span class="string">"&lt;/title&gt;&lt;/head&gt;\n"</span></span><br><span class="line">                        + <span class="string">"&lt;body bgcolor=\"#f0f0f0\"&gt;\n"</span> + <span class="string">"&lt;h1 align=\"center\"&gt;"</span> + title</span><br><span class="line">                        + <span class="string">"&lt;/h1&gt;\n"</span> + <span class="string">"&lt;ul&gt;\n"</span> + <span class="string">"  &lt;li&gt;&lt;b&gt;站点名：&lt;/b&gt;："</span> + request.getParameter(<span class="string">"name"</span>)</span><br><span class="line">                        + <span class="string">"\n&lt;/li&gt;"</span> + <span class="string">"  &lt;li&gt;&lt;b&gt;站点 URL：&lt;/b&gt;："</span> + request.getParameter(<span class="string">"url"</span>)</span><br><span class="line">                        + <span class="string">"\n&lt;/li&gt;"</span> + <span class="string">"&lt;/ul&gt;\n"</span> + <span class="string">"&lt;/body&gt;&lt;/html&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">                    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>addCookies.jsp</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> pageEncoding=<span class="string">"UTF-8"</span> %&gt;</span><br><span class="line">&lt;!DOCTYPE HTML PUBLIC <span class="string">"-//W3C//DTD HTML 4.01 Transitional//EN"</span>&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;添加Cookie&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;form action=/servlet/AddCookies method=<span class="string">"GET"</span>&gt;</span><br><span class="line">  站点名 ：&lt;input type=<span class="string">"text"</span> name=<span class="string">"name"</span>&gt;</span><br><span class="line">  &lt;br/&gt;</span><br><span class="line">  站点 URL：&lt;input type=<span class="string">"text"</span> name=<span class="string">"url"</span>/&gt;&lt;br&gt;</span><br><span class="line">  &lt;input type=<span class="string">"submit"</span> value=<span class="string">"提交"</span>/&gt;</span><br><span class="line">&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="显示-Cookie"><a href="#显示-Cookie" class="headerlink" title="显示 Cookie"></a>显示 Cookie</h3><p>要读取 Cookies，您需要通过调用 <code>HttpServletRequest</code> 的 <code>getCookies()</code> 方法创建一个 <code>javax.servlet.http.Cookie</code> 对象的数组。然后循环遍历数组，并使用 <code>getName()</code> 和 <code>getValue()</code> 方法来访问每个 cookie 和关联的值。</p>
+<h3 id="显示-cookie"><a class="markdownIt-Anchor" href="#显示-cookie"></a> 显示 Cookie</h3>
+<p>要读取 Cookies，您需要通过调用 <code>HttpServletRequest</code> 的 <code>getCookies()</code> 方法创建一个 <code>javax.servlet.http.Cookie</code> 对象的数组。然后循环遍历数组，并使用 <code>getName()</code> 和 <code>getValue()</code> 方法来访问每个 cookie 和关联的值。</p>
 <p>ReadCookies.java</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.io.PrintWriter;</span><br><span class="line"><span class="keyword">import</span> java.net.URLDecoder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.WebServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.Cookie;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServlet;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet</span>(<span class="string">"/servlet/ReadCookies"</span>)</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadCookies</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">long</span> serialVersionUID = <span class="number">1L</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#HttpServlet()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ReadCookies</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">                    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        Cookie cookie = <span class="keyword">null</span>;</span><br><span class="line">        Cookie[] cookies = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 获取与该域相关的 Cookie 的数组</span></span><br><span class="line">        cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 设置响应内容类型</span></span><br><span class="line">        response.setContentType(<span class="string">"text/html;charset=UTF-8"</span>);</span><br><span class="line"></span><br><span class="line">        PrintWriter out = response.getWriter();</span><br><span class="line">        String title = <span class="string">"Delete Cookie Example"</span>;</span><br><span class="line">        String docType = <span class="string">"&lt;!DOCTYPE html&gt;\n"</span>;</span><br><span class="line">        out.println(docType + <span class="string">"&lt;html&gt;\n"</span> + <span class="string">"&lt;head&gt;&lt;title&gt;"</span> + title + <span class="string">"&lt;/title&gt;&lt;/head&gt;\n"</span></span><br><span class="line">                        + <span class="string">"&lt;body bgcolor=\"#f0f0f0\"&gt;\n"</span>);</span><br><span class="line">        <span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">            out.println(<span class="string">"&lt;h2&gt;Cookie 名称和值&lt;/h2&gt;"</span>);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) &#123;</span><br><span class="line">                cookie = cookies[i];</span><br><span class="line">                <span class="keyword">if</span> ((cookie.getName()).compareTo(<span class="string">"name"</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                    cookie.setMaxAge(<span class="number">0</span>);</span><br><span class="line">                    response.addCookie(cookie);</span><br><span class="line">                    out.print(<span class="string">"已删除的 cookie："</span> + cookie.getName() + <span class="string">"&lt;br/&gt;"</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                out.print(<span class="string">"名称："</span> + cookie.getName() + <span class="string">"，"</span>);</span><br><span class="line">                out.print(<span class="string">"值："</span> + URLDecoder.decode(cookie.getValue(), <span class="string">"utf-8"</span>) + <span class="string">" &lt;br/&gt;"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            out.println(<span class="string">"&lt;h2 class=\"tutheader\"&gt;No Cookie founds&lt;/h2&gt;"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        out.println(<span class="string">"&lt;/body&gt;"</span>);</span><br><span class="line">        out.println(<span class="string">"&lt;/html&gt;"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span> HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">                    <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">        doGet(request, response);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="删除-Cookie"><a href="#删除-Cookie" class="headerlink" title="删除 Cookie"></a>删除 Cookie</h3><p>Java 中并没有提供直接删除 Cookie 的方法，如果想要删除一个 Cookie，直接将这个 Cookie 的有效期设为 0 就可以了。步骤如下：</p>
+<h3 id="删除-cookie"><a class="markdownIt-Anchor" href="#删除-cookie"></a> 删除 Cookie</h3>
+<p>Java 中并没有提供直接删除 Cookie 的方法，如果想要删除一个 Cookie，直接将这个 Cookie 的有效期设为 0 就可以了。步骤如下：</p>
 <ol>
-<li><p>读取一个现有的 cookie，并把它存储在 Cookie 对象中。</p>
+<li>
+<p>读取一个现有的 cookie，并把它存储在 Cookie 对象中。</p>
 </li>
-<li><p>使用 <code>setMaxAge()</code> 方法设置 cookie 的年龄为零，来删除现有的 cookie。</p>
+<li>
+<p>使用 <code>setMaxAge()</code> 方法设置 cookie 的年龄为零，来删除现有的 cookie。</p>
 </li>
-<li><p>把这个 cookie 添加到响应头。</p>
+<li>
+<p>把这个 cookie 添加到响应头。</p>
 </li>
 </ol>
 <p>DeleteCookies.java</p>
@@ -690,8 +707,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/session/" rel="next" title="JavaEE Session">
-                <i class="fa fa-chevron-left"></i> JavaEE Session
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-demo/" rel="next" title="JavaEE Servlet 示例">
+                <i class="fa fa-chevron-left"></i> JavaEE Servlet 示例
               </a>
             
           </div>
@@ -700,8 +717,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/" rel="prev" title="JavaEE Servlet HTTP 状态码">
-                JavaEE Servlet HTTP 状态码 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/spring/introduction/spring-overview/" rel="prev" title="Spring 概述">
+                Spring 概述 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -773,7 +790,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -838,7 +855,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1136,7 +1155,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-是什么？"><span class="nav-text">Cookie 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-剖析"><span class="nav-text">Cookie 剖析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-类中的方法"><span class="nav-text">Cookie 类中的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-的有效期"><span class="nav-text">Cookie 的有效期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-的域名"><span class="nav-text">Cookie 的域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-的路径"><span class="nav-text">Cookie 的路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie-的安全属性"><span class="nav-text">Cookie 的安全属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-text">实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-Cookie"><span class="nav-text">添加 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示-Cookie"><span class="nav-text">显示 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-Cookie"><span class="nav-text">删除 Cookie</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-是什么"><span class="nav-text"> Cookie 是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-剖析"><span class="nav-text"> Cookie 剖析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-类中的方法"><span class="nav-text"> Cookie 类中的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-的有效期"><span class="nav-text"> Cookie 的有效期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-的域名"><span class="nav-text"> Cookie 的域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-的路径"><span class="nav-text"> Cookie 的路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cookie-的安全属性"><span class="nav-text"> Cookie 的安全属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例"><span class="nav-text"> 实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#添加-cookie"><span class="nav-text"> 添加 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示-cookie"><span class="nav-text"> 显示 Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除-cookie"><span class="nav-text"> 删除 Cookie</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1178,7 +1197,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

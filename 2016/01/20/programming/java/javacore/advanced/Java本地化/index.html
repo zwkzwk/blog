@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Java 本地化  背景知识 语言编码、国家/地区编码 字符编码   Java 中实现本地化 定义不同语种的模板 定义 properties 文件 Unicode  转换工具   选择语种 Locale   加载指定语种的模板 ResourceBoundle     支持本地化的工具类 NumberFormat DateFormat MessageFormat     背景知识通讯的发达，使得世界">
+  <meta name="description" content="Java 本地化   背景知识  语言编码、国家/地区编码 字符编码   Java 中实现本地化  定义不同语种的模板  定义 properties 文件 [Unicode  转换工具](#unicode -转换工具)   选择语种  Locale   加载指定语种的模板  ResourceBoundle     支持本地化的工具类  NumberFormat DateFormat Messag">
 <meta name="keywords" content="javacore,java,advanced">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 本地化">
 <meta property="og:url" content="https://dunwu.github.io/2016/01/20/programming/java/javacore/advanced/Java本地化/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 本地化  背景知识 语言编码、国家/地区编码 字符编码   Java 中实现本地化 定义不同语种的模板 定义 properties 文件 Unicode  转换工具   选择语种 Locale   加载指定语种的模板 ResourceBoundle     支持本地化的工具类 NumberFormat DateFormat MessageFormat     背景知识通讯的发达，使得世界">
+<meta property="og:description" content="Java 本地化   背景知识  语言编码、国家/地区编码 字符编码   Java 中实现本地化  定义不同语种的模板  定义 properties 文件 [Unicode  转换工具](#unicode -转换工具)   选择语种  Locale   加载指定语种的模板  ResourceBoundle     支持本地化的工具类  NumberFormat DateFormat Messag">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.332Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 本地化">
-<meta name="twitter:description" content="Java 本地化  背景知识 语言编码、国家/地区编码 字符编码   Java 中实现本地化 定义不同语种的模板 定义 properties 文件 Unicode  转换工具   选择语种 Locale   加载指定语种的模板 ResourceBoundle     支持本地化的工具类 NumberFormat DateFormat MessageFormat     背景知识通讯的发达，使得世界">
+<meta name="twitter:description" content="Java 本地化   背景知识  语言编码、国家/地区编码 字符编码   Java 中实现本地化  定义不同语种的模板  定义 properties 文件 [Unicode  转换工具](#unicode -转换工具)   选择语种  Locale   加载指定语种的模板  ResourceBoundle     支持本地化的工具类  NumberFormat DateFormat Messag">
 
 
 
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.9k</span>
+                <span title="本文字数">7k</span>
               
 
               
@@ -508,30 +508,37 @@
       
 
       
-        <h1 id="Java-本地化"><a href="#Java-本地化" class="headerlink" title="Java 本地化"></a>Java 本地化</h1><!-- TOC depthFrom:2 depthTo:4 -->
+        <h1 id="java-本地化"><a class="markdownIt-Anchor" href="#java-本地化"></a> Java 本地化</h1>
+<!-- TOC depthFrom:2 depthTo:4 -->
 <ul>
-<li><a href="#背景知识">背景知识</a><ul>
-<li><a href="#语言编码国家地区编码">语言编码、国家/地区编码</a></li>
-<li><a href="#字符编码">字符编码</a></li>
+<li><a href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86">背景知识</a>
+<ul>
+<li><a href="#%E8%AF%AD%E8%A8%80%E7%BC%96%E7%A0%81%E5%9B%BD%E5%AE%B6%E5%9C%B0%E5%8C%BA%E7%BC%96%E7%A0%81">语言编码、国家/地区编码</a></li>
+<li><a href="#%E5%AD%97%E7%AC%A6%E7%BC%96%E7%A0%81">字符编码</a></li>
 </ul>
 </li>
-<li><a href="#java-中实现本地化">Java 中实现本地化</a><ul>
-<li><a href="#定义不同语种的模板">定义不同语种的模板</a><ul>
-<li><a href="#定义-properties-文件">定义 properties 文件</a></li>
-<li><a href="#unicode -转换工具">Unicode  转换工具</a></li>
+<li><a href="#java-%E4%B8%AD%E5%AE%9E%E7%8E%B0%E6%9C%AC%E5%9C%B0%E5%8C%96">Java 中实现本地化</a>
+<ul>
+<li><a href="#%E5%AE%9A%E4%B9%89%E4%B8%8D%E5%90%8C%E8%AF%AD%E7%A7%8D%E7%9A%84%E6%A8%A1%E6%9D%BF">定义不同语种的模板</a>
+<ul>
+<li><a href="#%E5%AE%9A%E4%B9%89-properties-%E6%96%87%E4%BB%B6">定义 properties 文件</a></li>
+<li>[Unicode  转换工具](#unicode -转换工具)</li>
 </ul>
 </li>
-<li><a href="#选择语种">选择语种</a><ul>
+<li><a href="#%E9%80%89%E6%8B%A9%E8%AF%AD%E7%A7%8D">选择语种</a>
+<ul>
 <li><a href="#locale">Locale</a></li>
 </ul>
 </li>
-<li><a href="#加载指定语种的模板">加载指定语种的模板</a><ul>
+<li><a href="#%E5%8A%A0%E8%BD%BD%E6%8C%87%E5%AE%9A%E8%AF%AD%E7%A7%8D%E7%9A%84%E6%A8%A1%E6%9D%BF">加载指定语种的模板</a>
+<ul>
 <li><a href="#resourceboundle">ResourceBoundle</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#支持本地化的工具类">支持本地化的工具类</a><ul>
+<li><a href="#%E6%94%AF%E6%8C%81%E6%9C%AC%E5%9C%B0%E5%8C%96%E7%9A%84%E5%B7%A5%E5%85%B7%E7%B1%BB">支持本地化的工具类</a>
+<ul>
 <li><a href="#numberformat">NumberFormat</a></li>
 <li><a href="#dateformat">DateFormat</a></li>
 <li><a href="#messageformat">MessageFormat</a></li>
@@ -539,9 +546,11 @@
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h2><p>通讯的发达，使得世界各地交流越来越紧密。许多的软件产品也要面向世界上不同国家的用户。其中，语言障碍显然是产品在不同语种用户中进行推广的一个重要问题。</p>
+<h2 id="背景知识"><a class="markdownIt-Anchor" href="#背景知识"></a> 背景知识</h2>
+<p>通讯的发达，使得世界各地交流越来越紧密。许多的软件产品也要面向世界上不同国家的用户。其中，语言障碍显然是产品在不同语种用户中进行推广的一个重要问题。</p>
 <p>本文围绕本地化这一主题，先介绍国际标准的语言编码，然后讲解在 Java 应用中如何去实现本地化。</p>
-<h3 id="语言编码、国家-地区编码"><a href="#语言编码、国家-地区编码" class="headerlink" title="语言编码、国家/地区编码"></a>语言编码、国家/地区编码</h3><p>做 web 开发的朋友可能多多少少接触过类似 <strong>zh-cn</strong>, <strong>en-us</strong> 这样的编码字样。</p>
+<h3 id="语言编码-国家地区编码"><a class="markdownIt-Anchor" href="#语言编码-国家地区编码"></a> 语言编码、国家/地区编码</h3>
+<p>做 web 开发的朋友可能多多少少接触过类似 <strong>zh-cn</strong>, <strong>en-us</strong> 这样的编码字样。</p>
 <p>这些编码是用来表示指定的国家地区的语言类型的。那么，这些含有特殊含义的编码是如何产生的呢？</p>
 <p><a href="http://www.loc.gov/standards/iso639-2/php/English_list.php" target="_blank" rel="noopener"><strong>ISO-639</strong></a> 标准使用编码定义了国际上常见的语言，每一种语言由两个小写字母表示。</p>
 <p><a href="https://www.iso.org/obp/ui/#iso:std:iso:3166:-2:ed-3:v1:en,fr" target="_blank" rel="noopener"><strong>ISO-3166</strong></a> 标准使用编码定义了国家/地区，每个国家/地区由两个大写字母表示。</p>
@@ -728,11 +737,13 @@
 <td>瑞典语(瑞典)</td>
 <td>sv-se</td>
 <td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
 <p><strong>注：由表中可以看出语言、国家/地区编码一般都是英文单词的缩写。</strong></p>
-<h3 id="字符编码"><a href="#字符编码" class="headerlink" title="字符编码"></a>字符编码</h3><p>在此处，引申一下字符编码的概念。</p>
+<h3 id="字符编码"><a class="markdownIt-Anchor" href="#字符编码"></a> 字符编码</h3>
+<p>在此处，引申一下字符编码的概念。</p>
 <p><strong>是不是有了语言、国家/地区编码，计算机就可以识别各种语言了？</strong></p>
 <p>答案是否。作为程序员，相信每个人都会遇到过这样的情况：期望打印中文，结果输出的却是乱码。</p>
 <p>这种情况，往往是因为字符编码的问题。</p>
@@ -741,26 +752,30 @@
 <p>有人不禁要问，既然 <code>Unicode</code> 可以支持所有语言的字符，那还要其他字符编码做什么？</p>
 <p><code>Unicode</code>  有一个缺点：为了支持所有语言的字符，所以它需要用更多位数去表示，比如 <code>ASCII</code> 表示一个英文字符只需要一个字节，而  <code>Unicode</code>  则需要两个字节。很明显，如果字符数多，这样的效率会很低。</p>
 <p>为了解决这个问题，有出现了一些中间格式的字符编码：如 <code>UTF-8</code>、<code>UTF-16</code>、<code>UTF-32</code> 等（中国的程序员一般使用<strong>UTF-8</strong>编码）。</p>
-<h2 id="Java-中实现本地化"><a href="#Java-中实现本地化" class="headerlink" title="Java 中实现本地化"></a>Java 中实现本地化</h2><p>本地化的实现原理很简单：</p>
+<h2 id="java-中实现本地化"><a class="markdownIt-Anchor" href="#java-中实现本地化"></a> Java 中实现本地化</h2>
+<p>本地化的实现原理很简单：</p>
 <ol>
 <li>先定义好不同语种的模板；</li>
 <li>选择语种；</li>
 <li>加载指定语种的模板。</li>
 </ol>
 <p>接下来，本文会按照步骤逐一讲解实现本地化的具体步骤</p>
-<h3 id="定义不同语种的模板"><a href="#定义不同语种的模板" class="headerlink" title="定义不同语种的模板"></a>定义不同语种的模板</h3><p><strong>Java 中将多语言文本存储在格式为 <code>properties</code> 的资源文件中。</strong></p>
+<h3 id="定义不同语种的模板"><a class="markdownIt-Anchor" href="#定义不同语种的模板"></a> 定义不同语种的模板</h3>
+<p><strong>Java 中将多语言文本存储在格式为 <code>properties</code> 的资源文件中。</strong></p>
 <p>它必须遵照以下的命名规范：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">资源名</span>&gt;</span>_<span class="tag">&lt;<span class="name">语言代码</span>&gt;</span>_<span class="tag">&lt;<span class="name">国家</span>/地区编码&gt;</span>.properties</span><br></pre></td></tr></table></figure>
 <p>其中，语言编码和国家/地区编码都是可选的。</p>
 <p>注：<code>&lt;资源名&gt;.properties</code> 命名的本地化资源文件是<strong>默认的资源文件</strong>，即某个本地化类型在系统中找不到对应的资源文件，就采用这个默认的资源文件。</p>
-<h4 id="定义-properties-文件"><a href="#定义-properties-文件" class="headerlink" title="定义 properties 文件"></a>定义 properties 文件</h4><p>在<code>src/main/resources/locales</code>  路径下定义名为 content 的不同语种资源文件：</p>
+<h4 id="定义-properties-文件"><a class="markdownIt-Anchor" href="#定义-properties-文件"></a> 定义 properties 文件</h4>
+<p>在<code>src/main/resources/locales</code>  路径下定义名为 content 的不同语种资源文件：</p>
 <p><strong>content_en_US.properties</strong></p>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">helloWorld</span> = HelloWorld!</span><br><span class="line"><span class="attr">time</span> = The current time is %s.</span><br></pre></td></tr></table></figure>
 <p><strong>content_zh_CN.properties</strong></p>
 <figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">helloWorld = <span class="symbol">\u</span>4e16<span class="symbol">\u</span>754c<span class="symbol">\u</span>ff0c<span class="symbol">\u</span>4f60<span class="symbol">\u</span>597d<span class="symbol">\u</span>ff01</span><br><span class="line">time = <span class="symbol">\u</span>5f53<span class="symbol">\u</span>524d<span class="symbol">\u</span>65f6<span class="symbol">\u</span>95f4<span class="symbol">\u</span>662f<span class="symbol">\u</span>0025<span class="symbol">\u</span>0073<span class="symbol">\u</span>3002</span><br></pre></td></tr></table></figure>
 <p>可以看到：几个资源文件中，定义的 Key  完全一致，只是  Value  是对应语言的字符串。</p>
 <p>虽然属性值各不相同，但属性名却是相同的，这样应用程序就可以通过 Locale 对象和属性名精确调用到某个具体的属性值了。</p>
-<h4 id="Unicode-转换工具"><a href="#Unicode-转换工具" class="headerlink" title="Unicode  转换工具"></a>Unicode  转换工具</h4><p>上一节中，我们定义的中文资源文件中的属性值都是以\u 开头的四位 16 进制数。其实，这表示的是一个 Unicode 编码。</p>
+<h4 id="unicode-转换工具"><a class="markdownIt-Anchor" href="#unicode-转换工具"></a> Unicode  转换工具</h4>
+<p>上一节中，我们定义的中文资源文件中的属性值都是以\u 开头的四位 16 进制数。其实，这表示的是一个 Unicode 编码。</p>
 <figure class="highlight taggerscript"><table><tr><td class="code"><pre><span class="line">helloWorld = <span class="symbol">\u</span>4e16<span class="symbol">\u</span>754c<span class="symbol">\u</span>ff0c<span class="symbol">\u</span>4f60<span class="symbol">\u</span>597d<span class="symbol">\u</span>ff01</span><br><span class="line">time = <span class="symbol">\u</span>5f53<span class="symbol">\u</span>524d<span class="symbol">\u</span>65f6<span class="symbol">\u</span>95f4<span class="symbol">\u</span>662f<span class="symbol">\u</span>0025<span class="symbol">\u</span>0073<span class="symbol">\u</span>3002</span><br></pre></td></tr></table></figure>
 <p>本文的字符编码中提到了，为了达到跨编码也正常显示的目的，有必要将非 <code>ASCII</code>  字符转为  <code>Unicode</code>  编码。上面的中文资源文件就是中文转为  <code>Unicode</code>  的结果。</p>
 <p>怎么将非 <code>ASCII</code>  字符转为  <code>Unicode</code>  编码呢？</p>
@@ -769,25 +784,35 @@
 <figure class="highlight inform7"><table><tr><td class="code"><pre><span class="line">native2ascii <span class="comment">[-reverse]</span> <span class="comment">[-encoding 编码]</span> <span class="comment">[输入文件 <span class="comment">[输出文件]</span>]</span></span><br></pre></td></tr></table></figure>
 <p>假设<strong>content_zh_CN.properties</strong>  在 <code>d:\</code>  目录。执行以下命令可以新建一个名为  <strong>content_zh_CN_new.properties</strong> 的文件，其中的内容就中文字符转为  <code>UTF-8</code>  编码格式的结果。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">native2ascii</span> <span class="selector-tag">-encoding</span> <span class="selector-tag">utf-8</span> <span class="selector-tag">d</span>:\<span class="selector-tag">content_zh_CN</span><span class="selector-class">.properties</span> <span class="selector-tag">d</span>:\<span class="selector-tag">content_zh_CN_new</span><span class="selector-class">.properties</span></span><br></pre></td></tr></table></figure>
-<h3 id="选择语种"><a href="#选择语种" class="headerlink" title="选择语种"></a>选择语种</h3><p>定义了多语言资源文件，第二步就是根据本地语种选择模板文件了。</p>
-<h4 id="Locale"><a href="#Locale" class="headerlink" title="Locale"></a>Locale</h4><p>在 Java 中，一个 <code>java.util.Locale</code> 对象表示了特定的地理、政治和文化地区。需要 Locale 来执行其任务的操作称为语言环境敏感的操作，它使用 Locale 为用户量身定制本地信息。</p>
+<h3 id="选择语种"><a class="markdownIt-Anchor" href="#选择语种"></a> 选择语种</h3>
+<p>定义了多语言资源文件，第二步就是根据本地语种选择模板文件了。</p>
+<h4 id="locale"><a class="markdownIt-Anchor" href="#locale"></a> Locale</h4>
+<p>在 Java 中，一个 <code>java.util.Locale</code> 对象表示了特定的地理、政治和文化地区。需要 Locale 来执行其任务的操作称为语言环境敏感的操作，它使用 Locale 为用户量身定制本地信息。</p>
 <p>它有三个构造方法</p>
-<p><code>Locale(String language)</code> ：根据语言编码初始化<br><code>Locale(String language, String country)</code> ：根据语言编码、国家编码初始化<br><code>Locale(String language, String country, String variant)</code> ：根据语言编码、国家编码、变体初始化</p>
+<p><code>Locale(String language)</code> ：根据语言编码初始化<br>
+<code>Locale(String language, String country)</code> ：根据语言编码、国家编码初始化<br>
+<code>Locale(String language, String country, String variant)</code> ：根据语言编码、国家编码、变体初始化</p>
 <p>此外，Locale 定义了一些常用的 Locale 常量：<code>Locale.ENGLISH</code>、<code>Locale.CHINESE</code> 等。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 初始化一个通用英语的locale.</span></span><br><span class="line">Locale locale1 = <span class="keyword">new</span> Locale(<span class="string">"en"</span>);</span><br><span class="line"><span class="comment">// 初始化一个加拿大英语的locale.</span></span><br><span class="line">Locale locale2 = <span class="keyword">new</span> Locale(<span class="string">"en"</span>, <span class="string">"CA"</span>);</span><br><span class="line"><span class="comment">// 初始化一个美式英语变种硅谷英语的locale</span></span><br><span class="line">Locale locale3 = <span class="keyword">new</span> Locale(<span class="string">"en"</span>, <span class="string">"US"</span>, <span class="string">"SiliconValley"</span>);</span><br><span class="line"><span class="comment">// 根据Locale常量初始化一个简体中文</span></span><br><span class="line">Locale locale4 = Locale.SIMPLIFIED_CHINESE;</span><br></pre></td></tr></table></figure>
-<h3 id="加载指定语种的模板"><a href="#加载指定语种的模板" class="headerlink" title="加载指定语种的模板"></a>加载指定语种的模板</h3><h4 id="ResourceBoundle"><a href="#ResourceBoundle" class="headerlink" title="ResourceBoundle"></a>ResourceBoundle</h4><p>Java 为我们提供了用于加载本地化资源文件的工具类：<code>java.util.ResourceBoundle</code>。</p>
+<h3 id="加载指定语种的模板"><a class="markdownIt-Anchor" href="#加载指定语种的模板"></a> 加载指定语种的模板</h3>
+<h4 id="resourceboundle"><a class="markdownIt-Anchor" href="#resourceboundle"></a> ResourceBoundle</h4>
+<p>Java 为我们提供了用于加载本地化资源文件的工具类：<code>java.util.ResourceBoundle</code>。</p>
 <p><code>ResourceBoundle</code> 提供了多个名为 <code>getBundle</code> 的静态重载方法，这些方法的作用是用来根据资源名、Locale 选择指定语种的资源文件。需要说明的是： <code>getBundle</code> 方法的第一个参数一般都是<code>baseName</code> ，这个参数表示资源文件名。</p>
 <p><code>ResourceBoundle</code> 还提供了名为 <code>getString</code> 的方法，用来获取资源文件中 key 对应的 value。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 根据语言+地区编码初始化</span></span><br><span class="line">    ResourceBundle rbUS = ResourceBundle.getBundle(<span class="string">"locales.content"</span>, <span class="keyword">new</span> Locale(<span class="string">"en"</span>, <span class="string">"US"</span>));</span><br><span class="line">    <span class="comment">// 根据Locale常量初始化</span></span><br><span class="line">    ResourceBundle rbZhCN = ResourceBundle.getBundle(<span class="string">"locales.content"</span>, Locale.SIMPLIFIED_CHINESE);</span><br><span class="line">    <span class="comment">// 获取本地系统默认的Locale初始化</span></span><br><span class="line">    ResourceBundle rbDefault = ResourceBundle.getBundle(<span class="string">"locales.content"</span>);</span><br><span class="line">    <span class="comment">// ResourceBundle rbDefault =ResourceBundle.getBundle("locales.content", Locale.getDefault()); // 与上行代码等价</span></span><br><span class="line"></span><br><span class="line">    System.out.println(<span class="string">"us-US:"</span> + rbUS.getString(<span class="string">"helloWorld"</span>));</span><br><span class="line">    System.out.println(<span class="string">"us-US:"</span> + String.format(rbUS.getString(<span class="string">"time"</span>), <span class="string">"08:00"</span>));</span><br><span class="line">    System.out.println(<span class="string">"zh-CN："</span> + rbZhCN.getString(<span class="string">"helloWorld"</span>));</span><br><span class="line">    System.out.println(<span class="string">"zh-CN："</span> + String.format(rbZhCN.getString(<span class="string">"time"</span>), <span class="string">"08:00"</span>));</span><br><span class="line">    System.out.println(<span class="string">"default："</span> + rbDefault.getString(<span class="string">"helloWorld"</span>));</span><br><span class="line">    System.out.println(<span class="string">"default："</span> + String.format(rbDefault.getString(<span class="string">"time"</span>), <span class="string">"08:00"</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>输出</strong></p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">us-US</span><span class="selector-pseudo">:HelloWorld</span>!</span><br><span class="line"><span class="selector-tag">us-US</span><span class="selector-pseudo">:The</span> <span class="selector-tag">current</span> <span class="selector-tag">time</span> <span class="selector-tag">is</span> 08<span class="selector-pseudo">:00.</span></span><br><span class="line"><span class="selector-tag">zh-CN</span>：世界，你好！</span><br><span class="line"><span class="selector-tag">zh-CN</span>：当前时间是08<span class="selector-pseudo">:00</span>。</span><br><span class="line"><span class="selector-tag">default</span>：世界，你好！</span><br><span class="line"><span class="selector-tag">default</span>：当前时间是08<span class="selector-pseudo">:00</span>。</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">us-US:HelloWorld!</span><br><span class="line">us-US:The current time <span class="keyword">is</span> <span class="number">08</span>:<span class="number">00.</span></span><br><span class="line">zh-CN：世界，你好！</span><br><span class="line">zh-CN：当前时间是<span class="number">08</span>:<span class="number">00</span>。</span><br><span class="line"><span class="keyword">default</span>：世界，你好！</span><br><span class="line"><span class="keyword">default</span>：当前时间是<span class="number">08</span>:<span class="number">00</span>。</span><br></pre></td></tr></table></figure>
 <p>注：在加载资源时，如果指定的本地化资源文件不存在，它会尝试按下面的顺序加载其他的资源：本地系统默认本地化对象对应的资源 -&gt;  默认的资源。如果指定错误，Java 会提示找不到资源文件。</p>
-<h2 id="支持本地化的工具类"><a href="#支持本地化的工具类" class="headerlink" title="支持本地化的工具类"></a>支持本地化的工具类</h2><p>Java  中也提供了几个支持本地化的格式化工具类。例如：<code>NumberFormat</code>、<code>DateFormat</code>、<code>MessageFormat</code></p>
-<h3 id="NumberFormat"><a href="#NumberFormat" class="headerlink" title="NumberFormat"></a>NumberFormat</h3><p><code>NumberFormat</code>  是所有数字格式类的基类。它提供格式化和解析数字的接口。它也提供了决定数字所属语言类型的方法。</p>
+<h2 id="支持本地化的工具类"><a class="markdownIt-Anchor" href="#支持本地化的工具类"></a> 支持本地化的工具类</h2>
+<p>Java  中也提供了几个支持本地化的格式化工具类。例如：<code>NumberFormat</code>、<code>DateFormat</code>、<code>MessageFormat</code></p>
+<h3 id="numberformat"><a class="markdownIt-Anchor" href="#numberformat"></a> NumberFormat</h3>
+<p><code>NumberFormat</code>  是所有数字格式类的基类。它提供格式化和解析数字的接口。它也提供了决定数字所属语言类型的方法。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">double</span> num = <span class="number">123456.78</span>;</span><br><span class="line">	NumberFormat format = NumberFormat.getCurrencyInstance(Locale.SIMPLIFIED_CHINESE);</span><br><span class="line">	System.out.format(<span class="string">"%f 的本地化（%s）结果: %s"</span>, num, Locale.SIMPLIFIED_CHINESE, format.format(num));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="DateFormat"><a href="#DateFormat" class="headerlink" title="DateFormat"></a>DateFormat</h3><p>DateFormat  是日期、时间格式化类的抽象类。它支持基于语言习惯的日期、时间格式。</p>
+<h3 id="dateformat"><a class="markdownIt-Anchor" href="#dateformat"></a> DateFormat</h3>
+<p>DateFormat  是日期、时间格式化类的抽象类。它支持基于语言习惯的日期、时间格式。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	Date date = <span class="keyword">new</span> Date();</span><br><span class="line">	DateFormat df = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.ENGLISH);</span><br><span class="line">	DateFormat df2 = DateFormat.getDateInstance(DateFormat.MEDIUM, Locale.SIMPLIFIED_CHINESE);</span><br><span class="line">	System.out.format(<span class="string">"%s 的本地化（%s）结果: %s\n"</span>, date, Locale.SIMPLIFIED_CHINESE, df.format(date));</span><br><span class="line">	System.out.format(<span class="string">"%s 的本地化（%s）结果: %s\n"</span>, date, Locale.SIMPLIFIED_CHINESE, df2.format(date));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="MessageFormat"><a href="#MessageFormat" class="headerlink" title="MessageFormat"></a>MessageFormat</h3><p>Messageformat  提供一种与语言无关的拼接消息的方式。通过这种拼接方式，将最终呈现返回给使用者。</p>
+<h3 id="messageformat"><a class="markdownIt-Anchor" href="#messageformat"></a> MessageFormat</h3>
+<p>Messageformat  提供一种与语言无关的拼接消息的方式。通过这种拼接方式，将最终呈现返回给使用者。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	String pattern1 = <span class="string">"&#123;0&#125;，你好！你于  &#123;1&#125; 消费  &#123;2&#125; 元。"</span>;</span><br><span class="line">	String pattern2 = <span class="string">"At &#123;1,time,short&#125; On &#123;1,date,long&#125;，&#123;0&#125; paid &#123;2,number, currency&#125;."</span>;</span><br><span class="line">	Object[] params = &#123;<span class="string">"Jack"</span>, <span class="keyword">new</span> GregorianCalendar().getTime(), <span class="number">8888</span>&#125;;</span><br><span class="line">	String msg1 = MessageFormat.format(pattern1, params);</span><br><span class="line">	MessageFormat mf = <span class="keyword">new</span> MessageFormat(pattern2, Locale.US);</span><br><span class="line">	String msg2 = mf.format(params);</span><br><span class="line">	System.out.println(msg1);</span><br><span class="line">	System.out.println(msg2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
@@ -940,7 +965,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1005,7 +1030,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1303,7 +1330,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-本地化"><span class="nav-text">Java 本地化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景知识"><span class="nav-text">背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言编码、国家-地区编码"><span class="nav-text">语言编码、国家/地区编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符编码"><span class="nav-text">字符编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-中实现本地化"><span class="nav-text">Java 中实现本地化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义不同语种的模板"><span class="nav-text">定义不同语种的模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-properties-文件"><span class="nav-text">定义 properties 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unicode-转换工具"><span class="nav-text">Unicode  转换工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择语种"><span class="nav-text">选择语种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Locale"><span class="nav-text">Locale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载指定语种的模板"><span class="nav-text">加载指定语种的模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ResourceBoundle"><span class="nav-text">ResourceBoundle</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持本地化的工具类"><span class="nav-text">支持本地化的工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#NumberFormat"><span class="nav-text">NumberFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DateFormat"><span class="nav-text">DateFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MessageFormat"><span class="nav-text">MessageFormat</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-本地化"><span class="nav-text"> Java 本地化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背景知识"><span class="nav-text"> 背景知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语言编码-国家地区编码"><span class="nav-text"> 语言编码、国家/地区编码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符编码"><span class="nav-text"> 字符编码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-中实现本地化"><span class="nav-text"> Java 中实现本地化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义不同语种的模板"><span class="nav-text"> 定义不同语种的模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义-properties-文件"><span class="nav-text"> 定义 properties 文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#unicode-转换工具"><span class="nav-text"> Unicode  转换工具</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择语种"><span class="nav-text"> 选择语种</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#locale"><span class="nav-text"> Locale</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加载指定语种的模板"><span class="nav-text"> 加载指定语种的模板</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#resourceboundle"><span class="nav-text"> ResourceBoundle</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支持本地化的工具类"><span class="nav-text"> 支持本地化的工具类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#numberformat"><span class="nav-text"> NumberFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dateformat"><span class="nav-text"> DateFormat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#messageformat"><span class="nav-text"> MessageFormat</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1345,7 +1372,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

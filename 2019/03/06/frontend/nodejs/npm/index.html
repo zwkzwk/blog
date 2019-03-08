@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Npm 入门 Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令 初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件 package 版本 版本号   npm 扩展 cnpm">
+  <meta name="description" content="Npm 入门  Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令  初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件  package 版本 版本号   npm 扩展">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Npm 入门">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/nodejs/npm/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Npm 入门 Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令 初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件 package 版本 版本号   npm 扩展 cnpm">
+<meta property="og:description" content="Npm 入门  Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令  初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件  package 版本 版本号   npm 扩展">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Npm 入门">
-<meta name="twitter:description" content="Npm 入门 Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令 初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件 package 版本 版本号   npm 扩展 cnpm">
+<meta name="twitter:description" content="Npm 入门  Npm 是随同 Nodejs 一起安装的 js 包管理工具。 关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules    简介 安装 Npm 工作流 Npm 常用命令  初始化新项目 安装模块 卸载模块 更新模块 管理配置文件 发布包 执行脚本 查看安装信息   配置文件  package 版本 版本号   npm 扩展">
 
 
 
@@ -477,40 +477,45 @@
       
 
       
-        <h1 id="Npm-入门"><a href="#Npm-入门" class="headerlink" title="Npm 入门"></a>Npm 入门</h1><blockquote>
+        <h1 id="npm-入门"><a class="markdownIt-Anchor" href="#npm-入门"></a> Npm 入门</h1>
+<blockquote>
 <p><strong>Npm 是随同 Nodejs 一起安装的 js 包管理工具。</strong></p>
 <p>关键词： <code>nodejs</code>, <code>包管理</code>, <code>npm</code>, <code>cnpm</code>, <code>package.json</code>, <code>node_modules</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#npm-工作流">Npm 工作流</a></li>
-<li><a href="#npm-常用命令">Npm 常用命令</a><ul>
-<li><a href="#初始化新项目">初始化新项目</a></li>
-<li><a href="#安装模块">安装模块</a></li>
-<li><a href="#卸载模块">卸载模块</a></li>
-<li><a href="#更新模块">更新模块</a></li>
-<li><a href="#管理配置文件">管理配置文件</a></li>
-<li><a href="#发布包">发布包</a></li>
-<li><a href="#执行脚本">执行脚本</a></li>
-<li><a href="#查看安装信息">查看安装信息</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#npm-%E5%B7%A5%E4%BD%9C%E6%B5%81">Npm 工作流</a></li>
+<li><a href="#npm-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">Npm 常用命令</a>
+<ul>
+<li><a href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E6%96%B0%E9%A1%B9%E7%9B%AE">初始化新项目</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97">安装模块</a></li>
+<li><a href="#%E5%8D%B8%E8%BD%BD%E6%A8%A1%E5%9D%97">卸载模块</a></li>
+<li><a href="#%E6%9B%B4%E6%96%B0%E6%A8%A1%E5%9D%97">更新模块</a></li>
+<li><a href="#%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">管理配置文件</a></li>
+<li><a href="#%E5%8F%91%E5%B8%83%E5%8C%85">发布包</a></li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC">执行脚本</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%AE%89%E8%A3%85%E4%BF%A1%E6%81%AF">查看安装信息</a></li>
 </ul>
 </li>
-<li><a href="#配置文件">配置文件</a><ul>
-<li><a href="#package-版本">package 版本</a></li>
-<li><a href="#版本号">版本号</a></li>
+<li><a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件</a>
+<ul>
+<li><a href="#package-%E7%89%88%E6%9C%AC">package 版本</a></li>
+<li><a href="#%E7%89%88%E6%9C%AC%E5%8F%B7">版本号</a></li>
 </ul>
 </li>
-<li><a href="#npm-扩展">npm 扩展</a><ul>
+<li><a href="#npm-%E6%89%A9%E5%B1%95">npm 扩展</a>
+<ul>
 <li><a href="#cnpm">cnpm</a></li>
 <li><a href="#nrm">nrm</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p><strong>Npm 是随同 Nodejs 一起安装的 js 包管理工具。</strong></p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p><strong>Npm 是随同 Nodejs 一起安装的 js 包管理工具。</strong></p>
 <p>常见的使用场景有以下几种：</p>
 <ul>
 <li>允许用户从 Npm 服务器下载别人编写的第三方包到本地使用。</li>
@@ -518,14 +523,16 @@
 <li>允许用户将自己编写的包或命令行程序上传到 Npm 服务器供别人使用。</li>
 </ul>
 <p>如果一个项目中存在 <code>package.json</code> 文件，那么用户可以直接使用 <code>npm install</code> 命令自动安装和维护当前项目所需的所有模块。在 <code>package.json</code> 文件中，开发者可以指定每个依赖项的版本范围，这样既可以保证模块自动更新，又不会因为所需模块功能大幅变化导致项目出现问题。开发者也可以选择将模块固定在某个版本之上。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>由于新版的 nodejs 已经集成了 npm，所以之前 npm 也一并安装好了。同样可以通过输入 <code>npm -v</code> 来测试是否成功安装。命令如下，出现版本提示表示安装成功:</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>由于新版的 nodejs 已经集成了 npm，所以之前 npm 也一并安装好了。同样可以通过输入 <code>npm -v</code> 来测试是否成功安装。命令如下，出现版本提示表示安装成功:</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm -v</span><br><span class="line">2.3.0</span><br></pre></td></tr></table></figure>
 <p>可以通过命令方式升级 npm</p>
 <ul>
 <li>Linux - <code>sudo npm install npm -g</code></li>
 <li>Window - <code>npm install npm -g</code></li>
 </ul>
-<h2 id="Npm-工作流"><a href="#Npm-工作流" class="headerlink" title="Npm 工作流"></a>Npm 工作流</h2><p>Npm 工作流：</p>
+<h2 id="npm-工作流"><a class="markdownIt-Anchor" href="#npm-工作流"></a> Npm 工作流</h2>
+<p>Npm 工作流：</p>
 <ol>
 <li>创建一个新项目</li>
 <li>增加／更新／删除依赖</li>
@@ -533,7 +540,8 @@
 <li>引入版本控制系统（例如 git）</li>
 <li>持续集成</li>
 </ol>
-<h2 id="Npm-常用命令"><a href="#Npm-常用命令" class="headerlink" title="Npm 常用命令"></a>Npm 常用命令</h2><p><strong>每个命令都会更新 <code>package.json</code> 文件。</strong></p>
+<h2 id="npm-常用命令"><a class="markdownIt-Anchor" href="#npm-常用命令"></a> Npm 常用命令</h2>
+<p><strong>每个命令都会更新 <code>package.json</code> 文件。</strong></p>
 <ul>
 <li>Npm 提供了很多命令，例如<code>install</code>和<code>publish</code>，使用<code>npm help</code>可查看所有命令。</li>
 <li>使用<code>npm help</code>可查看某条命令的详细帮助，例如<code>npm help install</code>。</li>
@@ -544,7 +552,8 @@
 <li>使用<code>npm unpublish @</code>可以撤销发布自己发布过的某个版本代码。</li>
 </ul>
 <p>Npm 提供了很多命令，例如 install 和 publish，使用 npm help 可查看所有命令。</p>
-<h3 id="初始化新项目"><a href="#初始化新项目" class="headerlink" title="初始化新项目"></a>初始化新项目</h3><blockquote>
+<h3 id="初始化新项目"><a class="markdownIt-Anchor" href="#初始化新项目"></a> 初始化新项目</h3>
+<blockquote>
 <p><code>npm init</code> 用于初始化项目，它会创建一个名为 <code>package.json</code> 的配置文件。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
@@ -557,7 +566,8 @@
 <p>以上的信息，你需要根据你自己的情况输入。在最后输入 “yes” 后会生成 <code>package.json</code> 文件。</p>
 <p>接下来我们可以使用以下命令在 npm 资源库中注册用户（使用邮箱注册）：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm adduser</span><br><span class="line">Username: mcmohd</span><br><span class="line">Password:</span><br><span class="line">Email: (this IS public) mcmohd@gmail.com</span><br></pre></td></tr></table></figure>
-<h3 id="安装模块"><a href="#安装模块" class="headerlink" title="安装模块"></a>安装模块</h3><blockquote>
+<h3 id="安装模块"><a class="markdownIt-Anchor" href="#安装模块"></a> 安装模块</h3>
+<blockquote>
 <p><code>npm install</code> 用于安装模块。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
@@ -574,17 +584,20 @@
 <li><code>-E, --save-exact</code> - 会在 <code>package.json</code> 文件指定安装模块的确切版本。</li>
 <li><code>-B, --save-bundle</code> - 包也将被添加到<code>bundleDependencies</code>。</li>
 </ul>
-<h4 id="全局安装与本地安装"><a href="#全局安装与本地安装" class="headerlink" title="全局安装与本地安装"></a>全局安装与本地安装</h4><p>npm 的包安装分为本地安装（local）、全局安装（global）两种，从敲的命令行来看，差别只是有没有-g 而已，比如</p>
+<h4 id="全局安装与本地安装"><a class="markdownIt-Anchor" href="#全局安装与本地安装"></a> 全局安装与本地安装</h4>
+<p>npm 的包安装分为本地安装（local）、全局安装（global）两种，从敲的命令行来看，差别只是有没有-g 而已，比如</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm install express     <span class="comment"># 本地安装</span></span><br><span class="line">npm install express -g  <span class="comment"># 全局安装</span></span><br></pre></td></tr></table></figure>
-<h5 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h5><ol>
+<h5 id="本地安装"><a class="markdownIt-Anchor" href="#本地安装"></a> 本地安装</h5>
+<ol>
 <li>将安装包放在 <code>node_modules</code> 下（运行 npm 命令时所在的目录），如果没有 <code>node_modules</code> 目录，会在当前执行 npm 命令的目录下新建 <code>node_modules</code> 目录。</li>
 <li>可以通过 require() 来引入本地安装的包。</li>
 </ol>
 <p>示例：我们使用 npm 命令安装常用的 Node.js 的 web 框架模块 <strong>express</strong>:</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">$ npm <span class="keyword">install</span> express</span><br></pre></td></tr></table></figure>
-<p>安装好之后，express 包就放在了工程目录下的 <code>node_modules</code> 目录中，因此在代码中只需要通过 <code>require(&#39;express&#39;)</code> 的方式就好，无需指定第三方包路径。</p>
+<p>安装好之后，express 包就放在了工程目录下的 <code>node_modules</code> 目录中，因此在代码中只需要通过 <code>require('express')</code> 的方式就好，无需指定第三方包路径。</p>
 <figure class="highlight ebnf"><table><tr><td class="code"><pre><span class="line"><span class="attribute">var express</span> = require(<span class="string">'express'</span>);</span><br></pre></td></tr></table></figure>
-<h5 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h5><ol>
+<h5 id="全局安装"><a class="markdownIt-Anchor" href="#全局安装"></a> 全局安装</h5>
+<ol>
 <li>将安装包放在 /usr/local 下或者你 node 的安装目录。</li>
 <li>可以直接在命令行里使用。</li>
 </ol>
@@ -593,7 +606,8 @@
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm install express -g</span><br></pre></td></tr></table></figure>
 <p>安装过程输出如下内容，第一行输出了模块的版本号及安装位置。</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">express@4.13.3 node_modules/express</span><br><span class="line">├── escape-html@1.0.2</span><br><span class="line">├── range-parser@1.0.2</span><br><span class="line">├── merge-descriptors@1.0.0</span><br><span class="line">├── array-flatten@1.1.1</span><br><span class="line">├── cookie@0.1.3</span><br><span class="line">├── utils-merge@1.0.0</span><br><span class="line">├── parseurl@1.3.0</span><br><span class="line">├── cookie-signature@1.0.6</span><br><span class="line">├── methods@1.1.1</span><br><span class="line">├── fresh@0.3.0</span><br><span class="line">├── vary@1.0.1</span><br><span class="line">├── path-to-regexp@0.1.7</span><br><span class="line">├── content-type@1.0.1</span><br><span class="line">├── etag@1.7.0</span><br><span class="line">├── serve-static@1.10.0</span><br><span class="line">├── content-disposition@0.5.0</span><br><span class="line">├── depd@1.0.1</span><br><span class="line">├── qs@4.0.0</span><br><span class="line">├── finalhandler@0.4.0 (unpipe@1.0.0)</span><br><span class="line">├── on-finished@2.3.0 (ee-first@1.1.1)</span><br><span class="line">├── proxy-addr@1.0.8 (forwarded@0.1.0, ipaddr.js@1.0.1)</span><br><span class="line">├── debug@2.2.0 (ms@0.7.1)</span><br><span class="line">├── <span class="built_in">type</span>-is@1.6.8 (media-typer@0.3.0, mime-types@2.1.6)</span><br><span class="line">├── accepts@1.2.12 (negotiator@0.5.3, mime-types@2.1.6)</span><br><span class="line">└── send@0.13.0 (destroy@1.0.3, statuses@1.2.1, ms@0.7.1, mime@1.3.4, http-errors@1.3.1)</span><br></pre></td></tr></table></figure>
-<h3 id="卸载模块"><a href="#卸载模块" class="headerlink" title="卸载模块"></a>卸载模块</h3><blockquote>
+<h3 id="卸载模块"><a class="markdownIt-Anchor" href="#卸载模块"></a> 卸载模块</h3>
+<blockquote>
 <p><code>npm uninstall</code> 用于卸载包。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
@@ -608,20 +622,23 @@
 </ul>
 <p>例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm uninstall sax</span><br><span class="line">npm uninstall sax --save</span><br><span class="line">npm uninstall @myorg/privatepackage --save</span><br><span class="line">npm uninstall node-tap --save-dev</span><br><span class="line">npm uninstall dtrace-provider --save-optional</span><br></pre></td></tr></table></figure>
-<h3 id="更新模块"><a href="#更新模块" class="headerlink" title="更新模块"></a>更新模块</h3><blockquote>
+<h3 id="更新模块"><a class="markdownIt-Anchor" href="#更新模块"></a> 更新模块</h3>
+<blockquote>
 <p><code>npm update</code> 用于更新本地安装的模块。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm update [-g] [&lt;pkg&gt;...]</span><br><span class="line"></span><br><span class="line">aliases: up, upgrade</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>注：从 <a href="mailto:**npm@2.6.1" target="_blank" rel="noopener">**npm@2.6.1</a>** 开始，<code>npm update</code> 仅更新顶级包。旧版本的 npm 会递归检查所有的依赖。如果要达到旧版本的行为，请使用<code>npm --depth 9999 update</code>。</p>
+<p>注：从 <strong>npm@2.6.1</strong> 开始，<code>npm update</code> 仅更新顶级包。旧版本的 npm 会递归检查所有的依赖。如果要达到旧版本的行为，请使用<code>npm --depth 9999 update</code>。</p>
 </blockquote>
-<h3 id="管理配置文件"><a href="#管理配置文件" class="headerlink" title="管理配置文件"></a>管理配置文件</h3><blockquote>
+<h3 id="管理配置文件"><a class="markdownIt-Anchor" href="#管理配置文件"></a> 管理配置文件</h3>
+<blockquote>
 <p><code>npm config</code> 命令用于管理配置文件。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> &lt;key&gt; &lt;value&gt; [-g|--global]  <span class="comment"># 设置一个配置参数</span></span><br><span class="line">npm config get &lt;key&gt;                        <span class="comment"># 获取一个配置参数</span></span><br><span class="line">npm config delete &lt;key&gt;                     <span class="comment"># 删除一个配置参数</span></span><br><span class="line">npm config list                             <span class="comment"># 打印配置参数列表</span></span><br><span class="line">npm config edit                             <span class="comment"># 直接编辑配置文件</span></span><br><span class="line">npm get &lt;key&gt;                               <span class="comment"># npm config get &lt;key&gt; 的简写。</span></span><br><span class="line">npm <span class="built_in">set</span> &lt;key&gt; &lt;value&gt; [-g|--global]         <span class="comment"># npm config set &lt;key&gt; &lt;value&gt; [-g|--global] 的简写</span></span><br></pre></td></tr></table></figure>
-<h3 id="发布包"><a href="#发布包" class="headerlink" title="发布包"></a>发布包</h3><blockquote>
+<h3 id="发布包"><a class="markdownIt-Anchor" href="#发布包"></a> 发布包</h3>
+<blockquote>
 <p><code>npm publish</code> 用于发布一个包。</p>
 </blockquote>
 <p><strong>命令格式</strong></p>
@@ -629,7 +646,8 @@
 <blockquote>
 <p>说明：将包发布到注册表，以便可以按名称安装。如果没有本地 <code>.gitignore</code> 或 <code>.npmignore</code> 文件，则包括软件包目录中的所有文件。如果这两个过滤文件都存在时，某个文件被 <code>.gitignore</code> 忽略，而不被 <code>.npmignore</code> 忽略，则它将被包括。</p>
 </blockquote>
-<h3 id="执行脚本"><a href="#执行脚本" class="headerlink" title="执行脚本"></a>执行脚本</h3><blockquote>
+<h3 id="执行脚本"><a class="markdownIt-Anchor" href="#执行脚本"></a> 执行脚本</h3>
+<blockquote>
 <p><code>npm run</code> 用于执行脚本。</p>
 </blockquote>
 <p>如果在 <code>package.json</code> 文件中的 <code>scripts</code> 字段定义了命令，就可以使用 <code>npm run</code> 来执行脚本命令。</p>
@@ -642,11 +660,13 @@
 <li><code>npm run prepublish</code> - 相当于执行 <code>npm run test</code> 和 <code>npm run lint</code> 两条命令。现在你了解如何复合命令了吧。</li>
 <li><code>npm start</code> - 相当于执行 <code>node index.js</code> 。Node.js 启动一个服务的入口脚本。</li>
 </ul>
-<h3 id="查看安装信息"><a href="#查看安装信息" class="headerlink" title="查看安装信息"></a>查看安装信息</h3><p>你可以使用以下命令来查看所有全局安装的模块：</p>
+<h3 id="查看安装信息"><a class="markdownIt-Anchor" href="#查看安装信息"></a> 查看安装信息</h3>
+<p>你可以使用以下命令来查看所有全局安装的模块：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm list -g</span><br><span class="line"></span><br><span class="line">├─┬ cnpm@4.3.2</span><br><span class="line">│ ├── auto-correct@1.0.0</span><br><span class="line">│ ├── bagpipe@0.3.5</span><br><span class="line">│ ├── colors@1.1.2</span><br><span class="line">│ ├─┬ commander@2.9.0</span><br><span class="line">│ │ └── graceful-readlink@1.0.1</span><br><span class="line">│ ├─┬ cross-spawn@0.2.9</span><br><span class="line">│ │ └── lru-cache@2.7.3</span><br><span class="line">……</span><br></pre></td></tr></table></figure>
 <p>如果要查看某个模块的版本号，可以使用命令如下：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ npm list grunt</span><br><span class="line"></span><br><span class="line">projectName@projectVersion /path/to/project/folder</span><br><span class="line">└── grunt@0.4.1</span><br></pre></td></tr></table></figure>
-<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>使用 npm 来管理的 javascript 项目一般都有一个<code>package.json</code>文件。它定义了这个项目所依赖的各种包，以及项目的配置信息（比如名称、版本、依赖等元数据）。</p>
+<h2 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h2>
+<p>使用 npm 来管理的 javascript 项目一般都有一个<code>package.json</code>文件。它定义了这个项目所依赖的各种包，以及项目的配置信息（比如名称、版本、依赖等元数据）。</p>
 <p><code>package.json</code> 中的内容就是 json 形式。</p>
 <p>重要字段：</p>
 <ul>
@@ -666,7 +686,8 @@
 </ul>
 <p><strong>示例：一个完整的 package.json</strong></p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"name"</span>: <span class="string">"reactnotes"</span>,</span><br><span class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</span><br><span class="line">  <span class="attr">"description"</span>: <span class="string">"react 教程"</span>,</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"./index.js"</span>,</span><br><span class="line">  <span class="attr">"dependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"react"</span>: <span class="string">"^15.4.1"</span>,</span><br><span class="line">    <span class="attr">"react-dom"</span>: <span class="string">"^15.4.1"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"webpack-dev-server"</span>: <span class="string">"^1.16.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"start"</span>: <span class="string">"node index.js"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"repository"</span>: &#123;</span><br><span class="line">    <span class="attr">"type"</span>: <span class="string">"git"</span>,</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"git+https://github.com/atlantis1024/ReactNotes.git"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"author"</span>: <span class="string">"victor"</span>,</span><br><span class="line">  <span class="attr">"license"</span>: <span class="string">"Apache-2.0"</span>,</span><br><span class="line">  <span class="attr">"bugs"</span>: &#123;</span><br><span class="line">    <span class="attr">"url"</span>: <span class="string">"https://github.com/atlantis1024/ReactNotes/issues"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"homepage"</span>: <span class="string">"https://github.com/atlantis1024/ReactNotes#readme"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="package-版本"><a href="#package-版本" class="headerlink" title="package 版本"></a>package 版本</h3><p>上文介绍 package.json 文件中的 <code>dependencies</code> 和 <code>devDependencies</code> 字段，这二者都是 json 数组。它们的每个 json 子对象，key 表示包名，value 表示版本。</p>
+<h3 id="package-版本"><a class="markdownIt-Anchor" href="#package-版本"></a> package 版本</h3>
+<p>上文介绍 package.json 文件中的 <code>dependencies</code> 和 <code>devDependencies</code> 字段，这二者都是 json 数组。它们的每个 json 子对象，key 表示包名，value 表示版本。</p>
 <p>npm 允许的版本声明方式十分多样。下面将为你介绍一二。</p>
 <p><strong>说明</strong></p>
 <ul>
@@ -689,35 +710,42 @@
 <p><strong>直接将 Git Url 作为依赖包版本</strong></p>
 <p>Git Url 形式可以如下：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">git://github.com/user/project.git<span class="comment">#commit-ish</span></span><br><span class="line">git+ssh://user@hostname:project.git<span class="comment">#commit-ish</span></span><br><span class="line">git+ssh://user@hostname/project.git<span class="comment">#commit-ish</span></span><br><span class="line">git+http://user@hostname/project/blah.git<span class="comment">#commit-ish</span></span><br><span class="line">git+https://user@hostname/project/blah.git<span class="comment">#commit-ish</span></span><br></pre></td></tr></table></figure>
-<h3 id="版本号"><a href="#版本号" class="headerlink" title="版本号"></a>版本号</h3><p>使用 Npm 下载和发布代码时都会接触到版本号。Npm 使用语义版本号来管理代码，这里简单介绍一下。</p>
+<h3 id="版本号"><a class="markdownIt-Anchor" href="#版本号"></a> 版本号</h3>
+<p>使用 Npm 下载和发布代码时都会接触到版本号。Npm 使用语义版本号来管理代码，这里简单介绍一下。</p>
 <p>语义版本号分为 X.Y.Z 三位，分别代表主版本号、次版本号和补丁版本号。当代码变更时，版本号按以下原则更新。</p>
 <ul>
 <li>如果只是修复 bug，需要更新 Z 位。</li>
 <li>如果是新增了功能，但是向下兼容，需要更新 Y 位。</li>
 <li>如果有大变动，向下不兼容，需要更新 X 位。</li>
 </ul>
-<p>版本号有了这个保证后，在申明第三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。例如”argv”: “0.0.x”表示依赖于 0.0.x 系列的最新版 argv。</p>
+<p>版本号有了这个保证后，在申明第三方包依赖时，除了可依赖于一个固定版本号外，还可依赖于某个范围的版本号。例如&quot;argv&quot;: &quot;0.0.x&quot;表示依赖于 0.0.x 系列的最新版 argv。</p>
 <p>Npm 支持的所有版本号范围指定方式可以查看<a href="https://npmjs.org/doc/files/package.json.html#dependencies" target="_blank" rel="noopener">官方文档</a>。</p>
-<h2 id="npm-扩展"><a href="#npm-扩展" class="headerlink" title="npm 扩展"></a>npm 扩展</h2><h3 id="cnpm"><a href="#cnpm" class="headerlink" title="cnpm"></a>cnpm</h3><p>大家都知道国内直接使用 npm 的官方镜像是非常慢的，这里推荐使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝 NPM 镜像</a>。</p>
-<p><a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝 NPM 镜像</a>是一个完整 npmjs.org 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10 分钟 一次以保证尽量与官方服务同步。</p>
+<h2 id="npm-扩展"><a class="markdownIt-Anchor" href="#npm-扩展"></a> npm 扩展</h2>
+<h3 id="cnpm"><a class="markdownIt-Anchor" href="#cnpm"></a> cnpm</h3>
+<p>大家都知道国内直接使用 npm 的官方镜像是非常慢的，这里推荐使用<a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝 NPM 镜像</a>。</p>
+<p><a href="https://npm.taobao.org/" target="_blank" rel="noopener">淘宝 NPM 镜像</a>是一个完整 <a href="http://npmjs.org" target="_blank" rel="noopener">npmjs.org</a> 镜像，你可以用此代替官方版本(只读)，同步频率目前为 10 分钟 一次以保证尽量与官方服务同步。</p>
 <p>你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
 <figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">$ <span class="built_in">npm</span> install -g cnpm --registry=https:<span class="regexp">//</span>registry.<span class="built_in">npm</span>.taobao.org</span><br></pre></td></tr></table></figure>
 <p>这样就可以使用 cnpm 命令来安装模块了：</p>
 <figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">$ cnpm <span class="keyword">install</span> [<span class="keyword">name</span>]</span><br></pre></td></tr></table></figure>
 <p>更多信息可以查阅：<a href="http://npm.taobao.org/" target="_blank" rel="noopener">http://npm.taobao.org/</a>。</p>
-<h3 id="nrm"><a href="#nrm" class="headerlink" title="nrm"></a>nrm</h3><p><a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">Nrm</a> 是 NPM 注册服务器管理工具，可以快速切换不同的注册表：npm，cnpm，nj，taobao，或者是你自己的私服。</p>
-<h4 id="安装-nrm"><a href="#安装-nrm" class="headerlink" title="安装 nrm"></a>安装 nrm</h4><figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g nrm</span><br></pre></td></tr></table></figure>
+<h3 id="nrm"><a class="markdownIt-Anchor" href="#nrm"></a> nrm</h3>
+<p><a href="https://github.com/Pana/nrm" target="_blank" rel="noopener">Nrm</a> 是 NPM 注册服务器管理工具，可以快速切换不同的注册表：npm，cnpm，nj，taobao，或者是你自己的私服。</p>
+<h4 id="安装-nrm"><a class="markdownIt-Anchor" href="#安装-nrm"></a> 安装 nrm</h4>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g nrm</span><br></pre></td></tr></table></figure>
 <p>查看可用服务器</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查看可用服务器</span></span><br><span class="line">$ nrm ls</span><br><span class="line"></span><br><span class="line">* npm -----  https://registry.npmjs.org/</span><br><span class="line">  cnpm ----  http://r.cnpmjs.org/</span><br><span class="line">  taobao --  https://registry.npm.taobao.org/</span><br><span class="line">  nj ------  https://registry.nodejitsu.com/</span><br><span class="line">  rednpm -- http://registry.mirror.cqupt.edu.cn</span><br><span class="line">  skimdb -- https://skimdb.npmjs.com/registry</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换服务器</span></span><br><span class="line">$ nrm use tabao</span><br></pre></td></tr></table></figure>
-<h4 id="nrm-命令语义"><a href="#nrm-命令语义" class="headerlink" title="nrm 命令语义"></a>nrm 命令语义</h4><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Usage: nrm [options] [<span class="built_in">command</span>]</span><br><span class="line"></span><br><span class="line">  Commands:</span><br><span class="line"></span><br><span class="line">    ls                           List all the registries</span><br><span class="line">    use &lt;registry&gt;               Change registry to registry</span><br><span class="line">    add &lt;registry&gt; &lt;url&gt; [home]  Add one custom registry</span><br><span class="line">    del &lt;registry&gt;               Delete one custom registry</span><br><span class="line">    home &lt;registry&gt; [browser]    Open the homepage of registry with optional browser</span><br><span class="line">    <span class="built_in">test</span> [registry]              Show the response time <span class="keyword">for</span> one or all registries</span><br><span class="line">    <span class="built_in">help</span>                         Print this <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">  Options:</span><br><span class="line"></span><br><span class="line">    -h, --<span class="built_in">help</span>     output usage information</span><br><span class="line">    -V, --version  output the version number</span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h4 id="nrm-命令语义"><a class="markdownIt-Anchor" href="#nrm-命令语义"></a> nrm 命令语义</h4>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">Usage: nrm [options] [<span class="built_in">command</span>]</span><br><span class="line"></span><br><span class="line">  Commands:</span><br><span class="line"></span><br><span class="line">    ls                           List all the registries</span><br><span class="line">    use &lt;registry&gt;               Change registry to registry</span><br><span class="line">    add &lt;registry&gt; &lt;url&gt; [home]  Add one custom registry</span><br><span class="line">    del &lt;registry&gt;               Delete one custom registry</span><br><span class="line">    home &lt;registry&gt; [browser]    Open the homepage of registry with optional browser</span><br><span class="line">    <span class="built_in">test</span> [registry]              Show the response time <span class="keyword">for</span> one or all registries</span><br><span class="line">    <span class="built_in">help</span>                         Print this <span class="built_in">help</span></span><br><span class="line"></span><br><span class="line">  Options:</span><br><span class="line"></span><br><span class="line">    -h, --<span class="built_in">help</span>     output usage information</span><br><span class="line">    -V, --version  output the version number</span><br></pre></td></tr></table></figure>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="nodejs.md">Node.js</a></li>
 <li><a href="npm.md">Npm</a></li>
 <li><a href="yarn.md">Yarn</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
 <li><a href="https://www.npmjs.com/" target="_blank" rel="noopener">Npm 官网</a></li>
@@ -870,7 +898,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -935,7 +963,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1233,7 +1263,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Npm-入门"><span class="nav-text">Npm 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Npm-工作流"><span class="nav-text">Npm 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Npm-常用命令"><span class="nav-text">Npm 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化新项目"><span class="nav-text">初始化新项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块"><span class="nav-text">安装模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局安装与本地安装"><span class="nav-text">全局安装与本地安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载模块"><span class="nav-text">卸载模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新模块"><span class="nav-text">更新模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理配置文件"><span class="nav-text">管理配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布包"><span class="nav-text">发布包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行脚本"><span class="nav-text">执行脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看安装信息"><span class="nav-text">查看安装信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#package-版本"><span class="nav-text">package 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本号"><span class="nav-text">版本号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-扩展"><span class="nav-text">npm 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cnpm"><span class="nav-text">cnpm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nrm"><span class="nav-text">nrm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-nrm"><span class="nav-text">安装 nrm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nrm-命令语义"><span class="nav-text">nrm 命令语义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#npm-入门"><span class="nav-text"> Npm 入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-工作流"><span class="nav-text"> Npm 工作流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-常用命令"><span class="nav-text"> Npm 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化新项目"><span class="nav-text"> 初始化新项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装模块"><span class="nav-text"> 安装模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全局安装与本地安装"><span class="nav-text"> 全局安装与本地安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载模块"><span class="nav-text"> 卸载模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新模块"><span class="nav-text"> 更新模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理配置文件"><span class="nav-text"> 管理配置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发布包"><span class="nav-text"> 发布包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行脚本"><span class="nav-text"> 执行脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看安装信息"><span class="nav-text"> 查看安装信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置文件"><span class="nav-text"> 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#package-版本"><span class="nav-text"> package 版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本号"><span class="nav-text"> 版本号</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#npm-扩展"><span class="nav-text"> npm 扩展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cnpm"><span class="nav-text"> cnpm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nrm"><span class="nav-text"> nrm</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装-nrm"><span class="nav-text"> 安装 nrm</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#nrm-命令语义"><span class="nav-text"> nrm 命令语义</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1275,7 +1305,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

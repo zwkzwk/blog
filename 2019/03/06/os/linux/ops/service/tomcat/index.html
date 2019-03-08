@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Tomcat 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apa">
+  <meta name="description" content="Tomcat 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tomcat 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/tomcat/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Tomcat 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apa">
+<meta property="og:description" content="Tomcat 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tomcat 安装">
-<meta name="twitter:description" content="Tomcat 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apa">
+<meta name="twitter:description" content="Tomcat 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://tomcat.apache.org/download-80.cgi ，选择合适的版本下载。 我选择的是最新稳定版本 8.5.28：http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">624</span>
+                <span title="本文字数">635</span>
               
 
               
@@ -477,26 +477,32 @@
       
 
       
-        <h1 id="Tomcat-安装"><a href="#Tomcat-安装" class="headerlink" title="Tomcat 安装"></a>Tomcat 安装</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="tomcat-安装"><a class="markdownIt-Anchor" href="#tomcat-安装"></a> Tomcat 安装</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#启动">启动</a></li>
-<li><a href="#脚本">脚本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC">脚本</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装步骤如下：</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>安装步骤如下：</p>
 <p>（1）下载并解压到本地</p>
 <p>进入官网下载地址：<a href="https://tomcat.apache.org/download-80.cgi" target="_blank" rel="noopener">https://tomcat.apache.org/download-80.cgi</a> ，选择合适的版本下载。</p>
 <p>我选择的是最新稳定版本 8.5.28：<a href="http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz" target="_blank" rel="noopener">http://mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz</a></p>
 <p>我个人喜欢存放在：<code>/opt/tomcat</code></p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget -O /opt/tomcat/apache-tomcat-<span class="number">8.5</span>.<span class="number">28</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span> http:<span class="comment">//mirrors.tuna.tsinghua.edu.cn/apache/tomcat/tomcat-8/v8.5.28/bin/apache-tomcat-8.5.28.tar.gz</span></span><br><span class="line">cd /opt/tomcat</span><br><span class="line">tar zxvf apache-tomcat-<span class="number">8.5</span>.<span class="number">28</span><span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><strong>启动 tomcat 服务</strong></p>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动"></a> 启动</h2>
+<p><strong>启动 tomcat 服务</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/tomcat/apache-tomcat-8.5.28/bin</span></span><br><span class="line"><span class="string">./catalina.sh</span> start</span><br></pre></td></tr></table></figure>
 <p><strong>停止 tomcat 服务</strong></p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /<span class="keyword">opt</span>/tomcat/apache-tomcat-<span class="number">8.5</span>.<span class="number">28</span>/bin</span><br><span class="line">./catalina.<span class="keyword">sh</span> <span class="keyword">stop</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/tomcat" target="_blank" rel="noopener">安装脚本</a> |</p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/tomcat" target="_blank" rel="noopener">安装脚本</a> |</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
@@ -642,7 +648,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -707,7 +713,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1005,7 +1013,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Tomcat-安装"><span class="nav-text">Tomcat 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tomcat-安装"><span class="nav-text"> Tomcat 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text"> 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1047,7 +1055,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

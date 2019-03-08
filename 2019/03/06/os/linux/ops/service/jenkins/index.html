@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Jenkins 安装 环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ 登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war 版本 2">
+  <meta name="description" content="Jenkins 安装  环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ  登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Jenkins 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/jenkins/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Jenkins 安装 环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ 登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war 版本 2">
+<meta property="og:description" content="Jenkins 安装  环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ  登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/jenkins/images/jenkins-checking.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Jenkins 安装">
-<meta name="twitter:description" content="Jenkins 安装 环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ 登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war 版本 2">
+<meta name="twitter:description" content="Jenkins 安装  环境要求  JDK：JDK7+，官网推荐是 JDK 8     安装 启动 脚本 FAQ  登录密码 忘记密码 卡在 check 页面 卡在 getting startted 页面   参考资料    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。 我选择的是最新稳定 war">
 <meta name="twitter:image" content="https://dunwu.github.io/2019/03/06/os/linux/ops/service/jenkins/images/jenkins-checking.png">
 
 
@@ -479,7 +479,8 @@
       
 
       
-        <h1 id="Jenkins-安装"><a href="#Jenkins-安装" class="headerlink" title="Jenkins 安装"></a>Jenkins 安装</h1><blockquote>
+        <h1 id="jenkins-安装"><a class="markdownIt-Anchor" href="#jenkins-安装"></a> Jenkins 安装</h1>
+<blockquote>
 <p>环境要求</p>
 <ul>
 <li>JDK：JDK7+，官网推荐是 JDK 8</li>
@@ -487,33 +488,40 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#启动">启动</a></li>
-<li><a href="#脚本">脚本</a></li>
-<li><a href="#faq">FAQ</a><ul>
-<li><a href="#登录密码">登录密码</a></li>
-<li><a href="#忘记密码">忘记密码</a></li>
-<li><a href="#卡在-check-页面">卡在 check 页面</a></li>
-<li><a href="#卡在-getting-startted-页面">卡在 getting startted 页面</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC">脚本</a></li>
+<li><a href="#faq">FAQ</a>
+<ul>
+<li><a href="#%E7%99%BB%E5%BD%95%E5%AF%86%E7%A0%81">登录密码</a></li>
+<li><a href="#%E5%BF%98%E8%AE%B0%E5%AF%86%E7%A0%81">忘记密码</a></li>
+<li><a href="#%E5%8D%A1%E5%9C%A8-check-%E9%A1%B5%E9%9D%A2">卡在 check 页面</a></li>
+<li><a href="#%E5%8D%A1%E5%9C%A8-getting-startted-%E9%A1%B5%E9%9D%A2">卡在 getting startted 页面</a></li>
 </ul>
 </li>
-<li><a href="#参考资料">参考资料</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装步骤如下：</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>安装步骤如下：</p>
 <p>（1）下载并解压到本地</p>
 <p>进入官网下载地址：<a href="https://jenkins.io/download/" target="_blank" rel="noopener">https://jenkins.io/download/</a> ，选择合适的版本下载。</p>
 <p>我选择的是最新稳定 war 版本 2.89.4：<a href="http://mirrors.jenkins.io/war-stable/latest/jenkins.war" target="_blank" rel="noopener">http://mirrors.jenkins.io/war-stable/latest/jenkins.war</a></p>
 <p>我个人喜欢存放在：<code>/opt/software/jenkins</code></p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">mkdir -p <span class="regexp">/opt/</span>software/jenkins</span><br><span class="line">wget -O <span class="regexp">/opt/</span>software<span class="regexp">/jenkins/</span>jenkins.war <span class="string">http:</span><span class="comment">//mirrors.jenkins.io/war-stable/latest/jenkins.war</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p>如果你和我一样，选择 war 版本，那么你可以将 war 移到 Tomcat 的 webapps 目录下，通过 Tomcat 来启动。</p>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动"></a> 启动</h2>
+<p>如果你和我一样，选择 war 版本，那么你可以将 war 移到 Tomcat 的 webapps 目录下，通过 Tomcat 来启动。</p>
 <p>当然，也可以通过 <code>java -jar</code> 方式来启动。</p>
 <p><strong>启动 jenkins 服务</strong></p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">cd /opt/software/jenkins</span><br><span class="line">nohup java -jar jenkins<span class="selector-class">.war</span> --httpPort=<span class="number">8080</span> &gt;&gt; nohup<span class="selector-class">.out</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/jenkins" target="_blank" rel="noopener">安装脚本</a> |</p>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="登录密码"><a href="#登录密码" class="headerlink" title="登录密码"></a>登录密码</h3><p>如果不知道初始登录密码，可以通过以下方式查看：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">cd /opt/software/jenkins</span><br><span class="line">nohup java -jar jenkins.war --httpPort=<span class="number">8080</span> &gt;&gt; nohup.<span class="keyword">out</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>| <a href="https://github.com/dunwu/OS/tree/master/codes/deploy/tool/jenkins" target="_blank" rel="noopener">安装脚本</a> |</p>
+<h2 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h2>
+<h3 id="登录密码"><a class="markdownIt-Anchor" href="#登录密码"></a> 登录密码</h3>
+<p>如果不知道初始登录密码，可以通过以下方式查看：</p>
 <p>执行命令 <code>cat /root/.jenkins/secrets/initialAdminPassword</code>，打印出来的即是初始登录密码。</p>
-<h3 id="忘记密码"><a href="#忘记密码" class="headerlink" title="忘记密码"></a>忘记密码</h3><p>1.执行 <code>vim /root/.jenkins/config.xml</code> ，删除以下内容</p>
+<h3 id="忘记密码"><a class="markdownIt-Anchor" href="#忘记密码"></a> 忘记密码</h3>
+<p>1.执行 <code>vim /root/.jenkins/config.xml</code> ，删除以下内容</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">useSecurity</span>&gt;</span>true<span class="tag">&lt;/<span class="name">useSecurity</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">authorizationStrategy</span> <span class="attr">class</span>=<span class="string">"hudson.security.FullControlOnceLoggedInAuthorizationStrategy"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">denyAnonymousReadAccess</span>&gt;</span>true<span class="tag">&lt;/<span class="name">denyAnonymousReadAccess</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">authorizationStrategy</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">securityRealm</span> <span class="attr">class</span>=<span class="string">"hudson.security.HudsonPrivateSecurityRealm"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">disableSignup</span>&gt;</span>true<span class="tag">&lt;/<span class="name">disableSignup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">enableCaptcha</span>&gt;</span>false<span class="tag">&lt;/<span class="name">enableCaptcha</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">securityRealm</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>2.重启 Jenkins 服务；</p>
 <p>3.进入首页&gt;“系统管理”&gt;“Configure Global Security”；</p>
@@ -522,23 +530,28 @@
 <p>6.重新点击首页&gt;“系统管理”,发现此时出现“管理用户”；</p>
 <p>7.点击进入展示“用户列表”；</p>
 <p>8.点击右侧进入修改密码页面，修改后即可重新登录。</p>
-<h3 id="卡在-check-页面"><a href="#卡在-check-页面" class="headerlink" title="卡在 check 页面"></a>卡在 check 页面</h3><p><strong>现象</strong>：输入密码后，卡在 check 页面</p>
+<h3 id="卡在-check-页面"><a class="markdownIt-Anchor" href="#卡在-check-页面"></a> 卡在 check 页面</h3>
+<p><strong>现象</strong>：输入密码后，卡在 check 页面</p>
 <p><br><div align="center"><img src="images/jenkins-checking.png"></div><br></p>
-<p><strong>原因</strong>：jenkins 在安装插件前总是尝试连接 <a href="http://www.google.com，来判断网络是否连通。谷歌的网站在大陆是连不上的，所以会出现这个问题。" target="_blank" rel="noopener">www.google.com，来判断网络是否连通。谷歌的网站在大陆是连不上的，所以会出现这个问题。</a></p>
+<p><strong>原因</strong>：jenkins 在安装插件前总是尝试连接 <a href="http://www.google.com" target="_blank" rel="noopener">www.google.com</a>，来判断网络是否连通。谷歌的网站在大陆是连不上的，所以会出现这个问题。</p>
 <p><strong>解决方案</strong>：执行<code>vim /root/.jenkins/updates/default.json</code>，将 <code>connectionCheckUrl</code> 后的 <code>www.google.com</code> 改为 <code>www.baidu.com</code> 。然后重启即可。</p>
 <p>或者直接执行命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">'s/www.google.com/www.baidu.com/g'</span> /root/.jenkins/updates/default.json</span><br></pre></td></tr></table></figure>
-<h3 id="卡在-getting-startted-页面"><a href="#卡在-getting-startted-页面" class="headerlink" title="卡在 getting startted 页面"></a>卡在 getting startted 页面</h3><p><strong>现象</strong>：卡在 getting startted 页面</p>
+<h3 id="卡在-getting-startted-页面"><a class="markdownIt-Anchor" href="#卡在-getting-startted-页面"></a> 卡在 getting startted 页面</h3>
+<p><strong>现象</strong>：卡在 getting startted 页面</p>
 <p><strong>原因</strong>：jenkins 默认的插件下载服务器地址在国外，如果不翻墙下载不了。</p>
 <p><strong>解决方案</strong>：执行<code>vim /root/.jenkins/hudson.model.UpdateCenter.xml</code>，将 <code>&lt;url&gt;</code> 改为 <code>http://mirror.xmission.com/jenkins/updates/update-center.json</code> 。然后重启即可。</p>
 <p>或者直接执行命令：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">sed -i <span class="string">'/^&lt;url&gt;/s/.*/&lt;url&gt;http:\/\/mirror.xmission.com\/jenkins\/updates\/update-center.json&lt;\/url&gt;/g'</span> /root/.jenkins/hudson.model.UpdateCenter.xml</span><br></pre></td></tr></table></figure>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><ul>
-<li><strong>引申</strong><ul>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<ul>
+<li><strong>引申</strong>
+<ul>
 <li><a href="https://github.com/dunwu/OS" target="_blank" rel="noopener">操作系统、运维部署总结系列</a></li>
 </ul>
 </li>
-<li><strong>引用</strong><ul>
+<li><strong>引用</strong>
+<ul>
 <li><a href="https://jenkins.io/doc/pipeline/tour/getting-started/" target="_blank" rel="noopener">https://jenkins.io/doc/pipeline/tour/getting-started/</a></li>
 <li><a href="https://www.cnblogs.com/austinspark-jessylu/p/6894944.html" target="_blank" rel="noopener">https://www.cnblogs.com/austinspark-jessylu/p/6894944.html</a></li>
 <li><a href="http://blog.csdn.net/jlminghui/article/details/54952148" target="_blank" rel="noopener">http://blog.csdn.net/jlminghui/article/details/54952148</a></li>
@@ -603,8 +616,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/linux/ops/service/jdk/" rel="next" title="JDK 安装">
-                <i class="fa fa-chevron-left"></i> JDK 安装
+              <a href="/blog/2019/03/06/os/linux/ops/service/kafka/" rel="next" title="Kafka 安装部署">
+                <i class="fa fa-chevron-left"></i> Kafka 安装部署
               </a>
             
           </div>
@@ -613,8 +626,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javaweb/architecture/网站的高可用架构/" rel="prev" title="网站的高可用架构">
-                网站的高可用架构 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/os/linux/ops/service/jdk/" rel="prev" title="JDK 安装">
+                JDK 安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -686,7 +699,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -751,7 +764,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1049,7 +1064,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Jenkins-安装"><span class="nav-text">Jenkins 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登录密码"><span class="nav-text">登录密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记密码"><span class="nav-text">忘记密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡在-check-页面"><span class="nav-text">卡在 check 页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡在-getting-startted-页面"><span class="nav-text">卡在 getting startted 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jenkins-安装"><span class="nav-text"> Jenkins 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text"> 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#faq"><span class="nav-text"> FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#登录密码"><span class="nav-text"> 登录密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#忘记密码"><span class="nav-text"> 忘记密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡在-check-页面"><span class="nav-text"> 卡在 check 页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卡在-getting-startted-页面"><span class="nav-text"> 卡在 getting startted 页面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1091,7 +1106,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

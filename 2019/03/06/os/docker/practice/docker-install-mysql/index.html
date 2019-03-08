@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 安装 MySQL 实测环境：Centos  查看可下载镜像# docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFICIAL">
+  <meta name="description" content="Docker 安装 MySQL  实测环境：Centos   查看可下载镜像 # docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 安装 MySQL">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/practice/docker-install-mysql/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 安装 MySQL 实测环境：Centos  查看可下载镜像# docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFICIAL">
+<meta property="og:description" content="Docker 安装 MySQL  实测环境：Centos   查看可下载镜像 # docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFI">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.063Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 安装 MySQL">
-<meta name="twitter:description" content="Docker 安装 MySQL 实测环境：Centos  查看可下载镜像# docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFICIAL">
+<meta name="twitter:description" content="Docker 安装 MySQL  实测环境：Centos   查看可下载镜像 # docker search mysqlINDEX       NAME                                                             DESCRIPTION                                     STARS     OFFI">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">867</span>
+                <span title="本文字数">877</span>
               
 
               
@@ -477,14 +477,19 @@
       
 
       
-        <h1 id="Docker-安装-MySQL"><a href="#Docker-安装-MySQL" class="headerlink" title="Docker 安装 MySQL"></a>Docker 安装 MySQL</h1><blockquote>
+        <h1 id="docker-安装-mysql"><a class="markdownIt-Anchor" href="#docker-安装-mysql"></a> Docker 安装 MySQL</h1>
+<blockquote>
 <p>实测环境：Centos</p>
 </blockquote>
-<h2 id="查看可下载镜像"><a href="#查看可下载镜像" class="headerlink" title="查看可下载镜像"></a>查看可下载镜像</h2><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker search mysql</span></span><br><span class="line">INDEX       NAME                                                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</span><br><span class="line">docker.io   docker.io/mysql                                                  MySQL is a widely used, open-source relati...   <span class="number">5757</span>      [OK]       </span><br><span class="line">docker.io   docker.io/mariadb                                                MariaDB is a community-developed fork of M...   <span class="number">1863</span>      [OK]       </span><br><span class="line">docker.io   docker.io/mysql/mysql-server                                     Optimized MySQL Server Docker images. Crea...   <span class="number">397</span>                  [OK]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="选择下载官方镜像"><a href="#选择下载官方镜像" class="headerlink" title="选择下载官方镜像"></a>选择下载官方镜像</h2><p>比如，我想下载最新版本，则执行如下命令：</p>
+<h2 id="查看可下载镜像"><a class="markdownIt-Anchor" href="#查看可下载镜像"></a> 查看可下载镜像</h2>
+<figure class="highlight docker"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker search mysql</span></span><br><span class="line">INDEX       NAME                                                             DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED</span><br><span class="line">docker.io   docker.io/mysql                                                  MySQL is a widely used, open-source relati...   <span class="number">5757</span>      [OK]       </span><br><span class="line">docker.io   docker.io/mariadb                                                MariaDB is a community-developed fork of M...   <span class="number">1863</span>      [OK]       </span><br><span class="line">docker.io   docker.io/mysql/mysql-server                                     Optimized MySQL Server Docker images. Crea...   <span class="number">397</span>                  [OK]</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="选择下载官方镜像"><a class="markdownIt-Anchor" href="#选择下载官方镜像"></a> 选择下载官方镜像</h2>
+<p>比如，我想下载最新版本，则执行如下命令：</p>
 <figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker pull mysql</span><br></pre></td></tr></table></figure>
-<h2 id="使用镜像"><a href="#使用镜像" class="headerlink" title="使用镜像"></a>使用镜像</h2><figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -p 3306:3306 --name mysql -v /opt/docker_v/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span></span><br></pre></td></tr></table></figure>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
+<h2 id="使用镜像"><a class="markdownIt-Anchor" href="#使用镜像"></a> 使用镜像</h2>
+<figure class="highlight docker"><table><tr><td class="code"><pre><span class="line">docker <span class="keyword">run</span><span class="bash"> -p 3306:3306 --name mysql -v /opt/docker_v/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql</span></span><br></pre></td></tr></table></figure>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<ul>
 <li><a href="https://hub.docker.com/_/mysql/" target="_blank" rel="noopener">https://hub.docker.com/_/mysql/</a></li>
 </ul>
 
@@ -628,7 +633,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -693,7 +698,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -991,7 +998,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-安装-MySQL"><span class="nav-text">Docker 安装 MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看可下载镜像"><span class="nav-text">查看可下载镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择下载官方镜像"><span class="nav-text">选择下载官方镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用镜像"><span class="nav-text">使用镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-安装-mysql"><span class="nav-text"> Docker 安装 MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查看可下载镜像"><span class="nav-text"> 查看可下载镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择下载官方镜像"><span class="nav-text"> 选择下载官方镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用镜像"><span class="nav-text"> 使用镜像</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1033,7 +1040,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

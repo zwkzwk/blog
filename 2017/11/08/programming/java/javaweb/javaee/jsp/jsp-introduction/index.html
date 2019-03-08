@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="什么是 Java Server Pages?JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入 J">
+  <meta name="description" content="什么是 Java Server Pages? JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入">
 <meta name="keywords" content="javaee,jsp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP 概述">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-introduction/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="什么是 Java Server Pages?JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入 J">
+<meta property="og:description" content="什么是 Java Server Pages? JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/jsp-arch.jpg">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/jsp_life_cycle.jpg">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP 概述">
-<meta name="twitter:description" content="什么是 Java Server Pages?JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入 J">
+<meta name="twitter:description" content="什么是 Java Server Pages? JSP全称Java Server Pages，是一种动态网页开发技术。 它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以&amp;lt;%开头以%&amp;gt;结束。 JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入">
 <meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2014/01/jsp-arch.jpg">
 
 
@@ -511,12 +511,14 @@
       
 
       
-        <h2 id="什么是-Java-Server-Pages"><a href="#什么是-Java-Server-Pages" class="headerlink" title="什么是 Java Server Pages?"></a>什么是 Java Server Pages?</h2><p><code>JSP</code>全称<code>Java Server Pages</code>，是一种动态网页开发技术。</p>
+        <h2 id="什么是-java-server-pages"><a class="markdownIt-Anchor" href="#什么是-java-server-pages"></a> 什么是 Java Server Pages?</h2>
+<p><code>JSP</code>全称<code>Java Server Pages</code>，是一种动态网页开发技术。</p>
 <p>它使用 JSP 标签在 HTML 网页中插入 Java 代码。标签通常以<code>&lt;%</code>开头以<code>%&gt;</code>结束。</p>
 <p>JSP 是一种 Java servlet，主要用于实现 Java web 应用程序的用户界面部分。网页开发者们通过结合 HTML 代码、XHTML 代码、XML 元素以及嵌入 JSP 操作和命令来编写 JSP。</p>
 <p>JSP 通过网页表单获取用户输入数据、访问数据库及其他数据源，然后动态地创建网页。</p>
 <p>JSP 标签有多种功能，比如访问数据库、记录用户选择信息、访问 JavaBeans 组件等，还可以在不同的网页中传递控制信息和共享信息。</p>
-<h2 id="为什么使用-JSP？"><a href="#为什么使用-JSP？" class="headerlink" title="为什么使用 JSP？"></a>为什么使用 JSP？</h2><p>JSP 也是一种 Servlet，因此 JSP 能够完成 Servlet 能完成的任何工作。</p>
+<h2 id="为什么使用-jsp"><a class="markdownIt-Anchor" href="#为什么使用-jsp"></a> 为什么使用 JSP？</h2>
+<p>JSP 也是一种 Servlet，因此 JSP 能够完成 Servlet 能完成的任何工作。</p>
 <p>JSP 程序与 CGI 程序有着相似的功能，但和 CGI 程序相比，JSP 程序有如下优势：</p>
 <ul>
 <li>性能更加优越，因为 JSP 可以直接在 HTML 网页中动态嵌入元素而不需要单独引用 CGI 文件。</li>
@@ -525,7 +527,8 @@
 <li>JSP 页面可以与处理业务逻辑的 servlets 一起使用，这种模式被 Java servlet 模板引擎所支持。</li>
 </ul>
 <p>最后，JSP 是 Java EE 不可或缺的一部分，是一个完整的企业级应用平台。这意味着 JSP 可以用最简单的方式来实现最复杂的应用。</p>
-<h2 id="JSP-的优势"><a href="#JSP-的优势" class="headerlink" title="JSP 的优势"></a>JSP 的优势</h2><p>以下列出了使用 JSP 带来的其他好处：</p>
+<h2 id="jsp-的优势"><a class="markdownIt-Anchor" href="#jsp-的优势"></a> JSP 的优势</h2>
+<p>以下列出了使用 JSP 带来的其他好处：</p>
 <ul>
 <li>与 ASP 相比：JSP 有两大优势。首先，动态部分用 Java 编写，而不是 VB 或其他 MS 专用语言，所以更加强大与易用。第二点就是 JSP 易于移植到非 MS 平台上。</li>
 <li>与纯 Servlets 相比：JSP 可以很方便的编写或者修改 HTML 网页而不用去面对大量的 println 语句。</li>
@@ -533,15 +536,18 @@
 <li>与 JavaScript 相比：虽然 JavaScript 可以在客户端动态生成 HTML，但是很难与服务器交互，因此不能提供复杂的服务，比如访问数据库和图像处理等等。</li>
 <li>与静态 HTML 相比：静态 HTML 不包含动态信息。</li>
 </ul>
-<h1 id="JSP-工作原理"><a href="#JSP-工作原理" class="headerlink" title="JSP 工作原理"></a>JSP 工作原理</h1><p><strong>JSP 是一种 Servlet</strong>，但工作方式和 Servlet 有所差别。</p>
+<h1 id="jsp-工作原理"><a class="markdownIt-Anchor" href="#jsp-工作原理"></a> JSP 工作原理</h1>
+<p><strong>JSP 是一种 Servlet</strong>，但工作方式和 Servlet 有所差别。</p>
 <p>Servlet 是先将源代码编译为 class 文件后部署到服务器下的，<strong>先编译后部署</strong>。</p>
 <p>Jsp 是先将源代码部署到服务器再编译，<strong>先部署后编译</strong>。</p>
 <p>Jsp 会在客户端第一次请求 Jsp 文件时被编译为 HttpJspPage 类（Servlet 的一个子类）。该类会被服务器临时存放在服务器工作目录里。所以，第一次请求 Jsp 后，访问速度会变快就是这个道理。</p>
-<h2 id="JSP-工作流程"><a href="#JSP-工作流程" class="headerlink" title="JSP 工作流程"></a>JSP 工作流程</h2><p>网络服务器需要一个 JSP 引擎，也就是一个容器来处理 JSP 页面。容器负责截获对 JSP 页面的请求。本教程使用内嵌 JSP 容器的 Apache 来支持 JSP 开发。</p>
+<h2 id="jsp-工作流程"><a class="markdownIt-Anchor" href="#jsp-工作流程"></a> JSP 工作流程</h2>
+<p>网络服务器需要一个 JSP 引擎，也就是一个容器来处理 JSP 页面。容器负责截获对 JSP 页面的请求。本教程使用内嵌 JSP 容器的 Apache 来支持 JSP 开发。</p>
 <p>JSP 容器与 Web 服务器协同合作，为 JSP 的正常运行提供必要的运行环境和其他服务，并且能够正确识别专属于 JSP 网页的特殊元素。</p>
 <p>下图显示了 JSP 容器和 JSP 文件在 Web 应用中所处的位置。</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/jsp-arch.jpg"></div><br></p>
-<h3 id="工作步骤"><a href="#工作步骤" class="headerlink" title="工作步骤"></a>工作步骤</h3><p>以下步骤表明了 Web 服务器是如何使用 JSP 来创建网页的：</p>
+<h3 id="工作步骤"><a class="markdownIt-Anchor" href="#工作步骤"></a> 工作步骤</h3>
+<p>以下步骤表明了 Web 服务器是如何使用 JSP 来创建网页的：</p>
 <ul>
 <li>就像其他普通的网页一样，您的浏览器发送一个 HTTP 请求给服务器。</li>
 <li>Web 服务器识别出这是一个对 JSP 网页的请求，并且将该请求传递给 JSP 引擎。通过使用 URL 或者.jsp 文件来完成。</li>
@@ -553,33 +559,38 @@
 </ul>
 <p>以上提及到的步骤可以用下图来表示：</p>
 <p>一般情况下，JSP 引擎会检查 JSP 文件对应的 servlet 是否已经存在，并且检查 JSP 文件的修改日期是否早于 servlet。如果 JSP 文件的修改日期早于对应的 servlet，那么容器就可以确定 JSP 文件没有被修改过并且 servlet 有效。这使得整个流程与其他脚本语言（比如 PHP）相比要高效快捷一些。</p>
-<h1 id="JSP-生命周期"><a href="#JSP-生命周期" class="headerlink" title="JSP  生命周期"></a>JSP  生命周期</h1><p>理解 JSP 底层功能的关键就是去理解它们所遵守的生命周期。</p>
+<h1 id="jsp-生命周期"><a class="markdownIt-Anchor" href="#jsp-生命周期"></a> JSP  生命周期</h1>
+<p>理解 JSP 底层功能的关键就是去理解它们所遵守的生命周期。</p>
 <p>JSP 生命周期就是从创建到销毁的整个过程，类似于 servlet 生命周期，区别在于 JSP 生命周期还包括将 JSP 文件编译成 servlet。</p>
 <p>以下是 JSP 生命周期中所走过的几个阶段：</p>
 <ul>
-<li><strong>编译阶段：</strong>servlet 容器编译 servlet 源文件，生成 servlet 类</li>
-<li><strong>初始化阶段：</strong>加载与 JSP 对应的 servlet 类，创建其实例，并调用它的初始化方法</li>
-<li><strong>执行阶段：</strong>调用与 JSP 对应的 servlet 实例的服务方法</li>
-<li><strong>销毁阶段：</strong>调用与 JSP 对应的 servlet 实例的销毁方法，然后销毁 servlet 实例</li>
+<li>**编译阶段：**servlet 容器编译 servlet 源文件，生成 servlet 类</li>
+<li>**初始化阶段：**加载与 JSP 对应的 servlet 类，创建其实例，并调用它的初始化方法</li>
+<li>**执行阶段：**调用与 JSP 对应的 servlet 实例的服务方法</li>
+<li>**销毁阶段：**调用与 JSP 对应的 servlet 实例的销毁方法，然后销毁 servlet 实例</li>
 </ul>
 <p>很明显，JSP 生命周期的四个主要阶段和 servlet 生命周期非常相似，下面给出图示：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/jsp_life_cycle.jpg"></div><br></p>
-<h2 id="JSP-编译"><a href="#JSP-编译" class="headerlink" title="JSP 编译"></a>JSP 编译</h2><p>当浏览器请求 JSP 页面时，JSP 引擎会首先去检查是否需要编译这个文件。如果这个文件没有被编译过，或者在上次编译后被更改过，则编译这个 JSP 文件。</p>
+<h2 id="jsp-编译"><a class="markdownIt-Anchor" href="#jsp-编译"></a> JSP 编译</h2>
+<p>当浏览器请求 JSP 页面时，JSP 引擎会首先去检查是否需要编译这个文件。如果这个文件没有被编译过，或者在上次编译后被更改过，则编译这个 JSP 文件。</p>
 <p>编译的过程包括三个步骤：</p>
 <ul>
 <li>解析 JSP 文件。</li>
 <li>将 JSP 文件转为 servlet。</li>
 <li>编译 servlet。</li>
 </ul>
-<h2 id="JSP-初始化"><a href="#JSP-初始化" class="headerlink" title="JSP 初始化"></a>JSP 初始化</h2><p>容器载入 JSP 文件后，它会在为请求提供任何服务前调用 jspInit()方法。如果您需要执行自定义的 JSP 初始化任务，复写 jspInit()方法就行了，就像下面这样：</p>
+<h2 id="jsp-初始化"><a class="markdownIt-Anchor" href="#jsp-初始化"></a> JSP 初始化</h2>
+<p>容器载入 JSP 文件后，它会在为请求提供任何服务前调用 jspInit()方法。如果您需要执行自定义的 JSP 初始化任务，复写 jspInit()方法就行了，就像下面这样：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspInit</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="comment">// 初始化代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>一般来讲程序只初始化一次，servlet 也是如此。通常情况下您可以在 jspInit()方法中初始化数据库连接、打开文件和创建查询表。</p>
-<h2 id="JSP-执行"><a href="#JSP-执行" class="headerlink" title="JSP 执行"></a>JSP 执行</h2><p>这一阶段描述了 JSP 生命周期中一切与请求相关的交互行为，直到被销毁。</p>
+<h2 id="jsp-执行"><a class="markdownIt-Anchor" href="#jsp-执行"></a> JSP 执行</h2>
+<p>这一阶段描述了 JSP 生命周期中一切与请求相关的交互行为，直到被销毁。</p>
 <p>当 JSP 网页完成初始化后，JSP 引擎将会调用_jspService()方法。</p>
 <p>_jspService()方法需要一个 HttpServletRequest 对象和一个 HttpServletResponse 对象作为它的参数，就像下面这样：</p>
 <figure class="highlight aspectj"><table><tr><td class="code"><pre><span class="line"><span class="keyword">void</span> _jspService(HttpServletRequest request,</span><br><span class="line">                 HttpServletResponse response)</span><br><span class="line">&#123;</span><br><span class="line">   <span class="comment">// 服务端处理代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>_jspService()方法在每个 request 中被调用一次并且负责产生与之相对应的 response，并且它还负责产生所有 7 个 HTTP 方法的回应，比如 GET、POST、DELETE 等等。</p>
-<h2 id="JSP-清理"><a href="#JSP-清理" class="headerlink" title="JSP 清理"></a>JSP 清理</h2><p>JSP 生命周期的销毁阶段描述了当一个 JSP 网页从容器中被移除时所发生的一切。</p>
+<h2 id="jsp-清理"><a class="markdownIt-Anchor" href="#jsp-清理"></a> JSP 清理</h2>
+<p>JSP 生命周期的销毁阶段描述了当一个 JSP 网页从容器中被移除时所发生的一切。</p>
 <p>jspDestroy()方法在 JSP 中等价于 servlet 中的销毁方法。当您需要执行任何清理工作时复写 jspDestroy()方法，比如释放数据库连接或者关闭文件夹等等。</p>
 <p>jspDestroy()方法的格式如下：</p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jspDestroy</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="comment">// 清理代码</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -659,8 +670,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/core/ioc/" rel="prev" title="Spring IoC">
-                Spring IoC <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/spring/web/spring-websocket/" rel="prev" title="Spring 和 WebSocket">
+                Spring 和 WebSocket <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -732,7 +743,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -797,7 +808,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1095,7 +1108,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-Java-Server-Pages"><span class="nav-text">什么是 Java Server Pages?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用-JSP？"><span class="nav-text">为什么使用 JSP？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-的优势"><span class="nav-text">JSP 的优势</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP-工作原理"><span class="nav-text">JSP 工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-工作流程"><span class="nav-text">JSP 工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作步骤"><span class="nav-text">工作步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP-生命周期"><span class="nav-text">JSP  生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-编译"><span class="nav-text">JSP 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-初始化"><span class="nav-text">JSP 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-执行"><span class="nav-text">JSP 执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-清理"><span class="nav-text">JSP 清理</span></a></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是-java-server-pages"><span class="nav-text"> 什么是 Java Server Pages?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么使用-jsp"><span class="nav-text"> 为什么使用 JSP？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-的优势"><span class="nav-text"> JSP 的优势</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#jsp-工作原理"><span class="nav-text"> JSP 工作原理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-工作流程"><span class="nav-text"> JSP 工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工作步骤"><span class="nav-text"> 工作步骤</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jsp-生命周期"><span class="nav-text"> JSP  生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-编译"><span class="nav-text"> JSP 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-初始化"><span class="nav-text"> JSP 初始化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-执行"><span class="nav-text"> JSP 执行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-清理"><span class="nav-text"> JSP 清理</span></a></li></ol></li></div>
             
 
           </div>
@@ -1137,7 +1150,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

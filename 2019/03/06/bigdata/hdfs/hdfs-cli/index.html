@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="HDFS 命令 列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
+  <meta name="description" content="HDFS 命令  列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HDFS 命令">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/bigdata/hdfs/hdfs-cli/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="HDFS 命令 列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
+<meta property="og:description" content="HDFS 命令  列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.175Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HDFS 命令">
-<meta name="twitter:description" content="HDFS 命令 列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
+<meta name="twitter:description" content="HDFS 命令  列出目录的内容：  $ hdfs dfs -ls /  将文件从本地文件系统加载到HDFS：  $ hdfs dfs -put songs.txt /user/adam  从HDFS读取文件内容：  $ hdfs dfs -cat /user/adam/songs.txt  更改文件的权限：  $ hdfs dfs -chmod 700 /user/adam/songs.txt">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">522</span>
+                <span title="本文字数">526</span>
               
 
               
@@ -477,7 +477,8 @@
       
 
       
-        <h1 id="HDFS-命令"><a href="#HDFS-命令" class="headerlink" title="HDFS 命令"></a>HDFS 命令</h1><ul>
+        <h1 id="hdfs-命令"><a class="markdownIt-Anchor" href="#hdfs-命令"></a> HDFS 命令</h1>
+<ul>
 <li>列出目录的内容：</li>
 </ul>
 <figure class="highlight elixir"><table><tr><td class="code"><pre><span class="line"><span class="variable">$ </span>hdfs dfs -ls /</span><br></pre></td></tr></table></figure>
@@ -492,21 +493,23 @@
 <ul>
 <li>更改文件的权限：</li>
 </ul>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">$ hdfs dfs -chmod <span class="number">700</span> <span class="regexp">/user/</span>adam<span class="regexp">/songs.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$ hdfs dfs -chmod <span class="number">700</span> /user/adam/songs.txt</span><br></pre></td></tr></table></figure>
 <ul>
 <li>将文件的复制因子设置为4：</li>
 </ul>
-<figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">$ hdfs dfs -setrep -w <span class="number">4</span> <span class="regexp">/user/</span>adam<span class="regexp">/songs.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$ hdfs dfs -setrep -w <span class="number">4</span> /user/adam/songs.txt</span><br></pre></td></tr></table></figure>
 <ul>
 <li>检查文件的大小：</li>
 </ul>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">$ hdfs dfs -du -h /user/adam/songs<span class="selector-class">.txt</span> Create <span class="selector-tag">a</span> subdirectory <span class="keyword">in</span> your home directory.</span><br><span class="line">$ hdfs dfs -mkdir songs</span><br></pre></td></tr></table></figure>
 <p>注意，相对路径总是引用执行命令的用户的主目录。HDFS上没有“当前”目录的概念（换句话说，没有“CD”命令）：</p>
 <ul>
-<li><p>将文件移到新创建的子目录：</p>
+<li>
+<p>将文件移到新创建的子目录：</p>
 <p>$ hdfs dfs -mv songs.txt songs</p>
 </li>
-<li><p>从HDFS中删除一个目录：</p>
+<li>
+<p>从HDFS中删除一个目录：</p>
 <p>$ hdfs dfs -rm -r songs</p>
 </li>
 </ul>
@@ -568,8 +571,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/Cassandra/" rel="next" title="Cassandra">
-                <i class="fa fa-chevron-left"></i> Cassandra
+              <a href="/blog/2019/03/06/programming/java/javastack/style/编程规范/" rel="next" title="编程规范">
+                <i class="fa fa-chevron-left"></i> 编程规范
               </a>
             
           </div>
@@ -578,8 +581,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/bigdata/hbase/hbase-ops/" rel="prev" title="HBase 维护">
-                HBase 维护 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring/core/README/" rel="prev" title="核心技术 Core Technologies">
+                核心技术 Core Technologies <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -651,7 +654,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -716,7 +719,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1014,7 +1019,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HDFS-命令"><span class="nav-text">HDFS 命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hdfs-命令"><span class="nav-text"> HDFS 命令</span></a></li></ol></div>
             
 
           </div>
@@ -1056,7 +1061,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

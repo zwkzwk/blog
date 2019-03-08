@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Kubernetes Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申   功能 基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性  简介Kubernetes 主控组">
+  <meta name="description" content="Kubernetes  Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申    功能  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性   简介 Kubernet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kubernetes">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/kubernetes/kubernetes/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Kubernetes Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申   功能 基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性  简介Kubernetes 主控组">
+<meta property="og:description" content="Kubernetes  Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申    功能  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性   简介 Kubernet">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/kubernetes/pod.svg">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.070Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kubernetes">
-<meta name="twitter:description" content="Kubernetes Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申   功能 基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性  简介Kubernetes 主控组">
+<meta name="twitter:description" content="Kubernetes  Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S 关键词： docker    功能 简介 基础 进阶 命令 引用和引申    功能  基于容器的应用部署、维护和滚动升级 负载均衡和服务发现 跨机器和跨地区的集群调度 自动伸缩 无状态服务和有状态服务 广泛的 Volume 支持 插件机制保证扩展性   简介 Kubernet">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/kubernetes/pod.svg">
 
 
@@ -445,7 +445,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3k</span>
+                <span title="本文字数">3.1k</span>
               
 
               
@@ -479,21 +479,23 @@
       
 
       
-        <h1 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h1><blockquote>
+        <h1 id="kubernetes"><a class="markdownIt-Anchor" href="#kubernetes"></a> Kubernetes</h1>
+<blockquote>
 <p>Kubernetes 是用于自动部署，扩展和管理 Docker 应用程序的开源系统。简称 K8S</p>
 <p>关键词： <code>docker</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#功能">功能</a></li>
-<li><a href="#简介">简介</a></li>
-<li><a href="#基础">基础</a></li>
-<li><a href="#进阶">进阶</a></li>
-<li><a href="#命令">命令</a></li>
-<li><a href="#引用和引申">引用和引申</a></li>
+<li><a href="#%E5%8A%9F%E8%83%BD">功能</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%9F%BA%E7%A1%80">基础</a></li>
+<li><a href="#%E8%BF%9B%E9%98%B6">进阶</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4">命令</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%B3">引用和引申</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><ul>
+<h2 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h2>
+<ul>
 <li>基于容器的应用部署、维护和滚动升级</li>
 <li>负载均衡和服务发现</li>
 <li>跨机器和跨地区的集群调度</li>
@@ -502,13 +504,15 @@
 <li>广泛的 Volume 支持</li>
 <li>插件机制保证扩展性</li>
 </ul>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Kubernetes 主控组件（Master） 包含三个进程，都运行在集群中的某个节上，通常这个节点被称为 master 节点。这些进程包括：<code>kube-apiserver</code>、<code>kube-controller-manager</code> 和 <code>kube-scheduler</code>。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>Kubernetes 主控组件（Master） 包含三个进程，都运行在集群中的某个节上，通常这个节点被称为 master 节点。这些进程包括：<code>kube-apiserver</code>、<code>kube-controller-manager</code> 和 <code>kube-scheduler</code>。</p>
 <p>集群中的每个非 master 节点都运行两个进程：</p>
 <ul>
 <li>kubelet，和 master 节点进行通信。</li>
 <li>kube-proxy，一种网络代理，将 Kubernetes 的网络服务代理到每个节点上。</li>
 </ul>
-<h3 id="Kubernetes-对象"><a href="#Kubernetes-对象" class="headerlink" title="Kubernetes 对象"></a>Kubernetes 对象</h3><p>Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群正在运行的其他操作的信息。</p>
+<h3 id="kubernetes-对象"><a class="markdownIt-Anchor" href="#kubernetes-对象"></a> Kubernetes 对象</h3>
+<p>Kubernetes 包含若干抽象用来表示系统状态，包括：已部署的容器化应用和负载、与它们相关的网络和磁盘资源以及有关集群正在运行的其他操作的信息。</p>
 <ul>
 <li>Pod - kubernetes 对象模型中最小的单元，它代表集群中一个正在运行的进程。</li>
 <li>Service</li>
@@ -524,25 +528,37 @@
 <li>DaemonSet</li>
 <li>Job</li>
 </ul>
-<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="客户端配置"><a href="#客户端配置" class="headerlink" title="客户端配置"></a>客户端配置</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Setup autocomplete in bash; bash-completion package should be installed first</span></span><br><span class="line"><span class="built_in">source</span> &lt;(kubectl completion bash)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View Kubernetes config</span></span><br><span class="line">kubectl config view</span><br><span class="line"></span><br><span class="line"><span class="comment"># View specific config items by json path</span></span><br><span class="line">kubectl config view -o jsonpath=<span class="string">'&#123;.users[?(@.name == "k8s")].user.password&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set credentials for foo.kuberntes.com</span></span><br><span class="line">kubectl config <span class="built_in">set</span>-credentials kubeuser/foo.kubernetes.com --username=kubeuser --password=kubepassword</span><br></pre></td></tr></table></figure>
-<h3 id="查找资源"><a href="#查找资源" class="headerlink" title="查找资源"></a>查找资源</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List all services in the namespace</span></span><br><span class="line">kubectl get services</span><br><span class="line"></span><br><span class="line"><span class="comment"># List all pods in all namespaces in wide format</span></span><br><span class="line">kubectl get pods -o wide --all-namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># List all pods in json (or yaml) format</span></span><br><span class="line">kubectl get pods -o json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Describe resource details (node, pod, svc)</span></span><br><span class="line">kubectl describe nodes my-node</span><br><span class="line"></span><br><span class="line"><span class="comment"># List services sorted by name</span></span><br><span class="line">kubectl get services --sort-by=.metadata.name</span><br><span class="line"></span><br><span class="line"><span class="comment"># List pods sorted by restart count</span></span><br><span class="line">kubectl get pods --sort-by=<span class="string">'.status.containerStatuses[0].restartCount'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rolling update pods for frontend-v1</span></span><br><span class="line">kubectl rolling-update frontend-v1 -f frontend-v2.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scale a replicaset named 'foo' to 3</span></span><br><span class="line">kubectl scale --replicas=3 rs/foo</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scale a resource specified in "foo.yaml" to 3</span></span><br><span class="line">kubectl scale --replicas=3 -f foo.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Execute a command in every pod / replica</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 0 1; <span class="keyword">do</span> kubectl <span class="built_in">exec</span> foo-<span class="variable">$i</span> -- sh -c <span class="string">'echo $(hostname) &gt; /usr/share/nginx/html/index.html'</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
-<h3 id="资源管理"><a href="#资源管理" class="headerlink" title="资源管理"></a>资源管理</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Get documentation for pod or service</span></span><br><span class="line">kubectl explain pods,svc</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create resource(s) like pods, services or daemonsets</span></span><br><span class="line">kubectl create -f ./my-manifest.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply a configuration to a resource</span></span><br><span class="line">kubectl apply -f ./my-manifest.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a single instance of Nginx</span></span><br><span class="line">kubectl run nginx --image=nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a secret with several keys</span></span><br><span class="line">cat &lt;&lt;EOF | kubectl create -f -</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Secret</span><br><span class="line">metadata:</span><br><span class="line"> name: mysecret</span><br><span class="line"><span class="built_in">type</span>: Opaque</span><br><span class="line">data:</span><br><span class="line"> password: $(<span class="built_in">echo</span> <span class="string">"s33msi4"</span> | base64)</span><br><span class="line"> username: $(<span class="built_in">echo</span> <span class="string">"jane"</span>| base64)</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete a resource</span></span><br><span class="line">kubectl delete -f ./my-manifest.yaml</span><br></pre></td></tr></table></figure>
-<h3 id="监控和日志"><a href="#监控和日志" class="headerlink" title="监控和日志"></a>监控和日志</h3><figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deploy Heapster from Github repository</span></span><br><span class="line">kubectl create -f deploy/kube-config/standalone/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for nodes</span></span><br><span class="line">kubectl top node</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for pods</span></span><br><span class="line">kubectl top pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for a given pod and its containers</span></span><br><span class="line">kubectl top pod pod_name --containers</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dump pod logs (stdout)</span></span><br><span class="line">kubectl logs pod_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stream pod container logs (stdout, multi-container case)</span></span><br><span class="line">kubectl logs -f pod_name -c my-container</span><br></pre></td></tr></table></figure>
-<h2 id="引用和引申"><a href="#引用和引申" class="headerlink" title="引用和引申"></a>引用和引申</h2><ul>
-<li>官方<ul>
+<h2 id="基础"><a class="markdownIt-Anchor" href="#基础"></a> 基础</h2>
+<h2 id="进阶"><a class="markdownIt-Anchor" href="#进阶"></a> 进阶</h2>
+<h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2>
+<h3 id="客户端配置"><a class="markdownIt-Anchor" href="#客户端配置"></a> 客户端配置</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Setup autocomplete in bash; bash-completion package should be installed first</span></span><br><span class="line"><span class="built_in">source</span> &lt;(kubectl completion bash)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View Kubernetes config</span></span><br><span class="line">kubectl config view</span><br><span class="line"></span><br><span class="line"><span class="comment"># View specific config items by json path</span></span><br><span class="line">kubectl config view -o jsonpath=<span class="string">'&#123;.users[?(@.name == "k8s")].user.password&#125;'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Set credentials for foo.kuberntes.com</span></span><br><span class="line">kubectl config <span class="built_in">set</span>-credentials kubeuser/foo.kubernetes.com --username=kubeuser --password=kubepassword</span><br></pre></td></tr></table></figure>
+<h3 id="查找资源"><a class="markdownIt-Anchor" href="#查找资源"></a> 查找资源</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># List all services in the namespace</span></span><br><span class="line">kubectl get services</span><br><span class="line"></span><br><span class="line"><span class="comment"># List all pods in all namespaces in wide format</span></span><br><span class="line">kubectl get pods -o wide --all-namespaces</span><br><span class="line"></span><br><span class="line"><span class="comment"># List all pods in json (or yaml) format</span></span><br><span class="line">kubectl get pods -o json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Describe resource details (node, pod, svc)</span></span><br><span class="line">kubectl describe nodes my-node</span><br><span class="line"></span><br><span class="line"><span class="comment"># List services sorted by name</span></span><br><span class="line">kubectl get services --sort-by=.metadata.name</span><br><span class="line"></span><br><span class="line"><span class="comment"># List pods sorted by restart count</span></span><br><span class="line">kubectl get pods --sort-by=<span class="string">'.status.containerStatuses[0].restartCount'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rolling update pods for frontend-v1</span></span><br><span class="line">kubectl rolling-update frontend-v1 -f frontend-v2.json</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scale a replicaset named 'foo' to 3</span></span><br><span class="line">kubectl scale --replicas=3 rs/foo</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scale a resource specified in "foo.yaml" to 3</span></span><br><span class="line">kubectl scale --replicas=3 -f foo.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Execute a command in every pod / replica</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 0 1; <span class="keyword">do</span> kubectl <span class="built_in">exec</span> foo-<span class="variable">$i</span> -- sh -c <span class="string">'echo $(hostname) &gt; /usr/share/nginx/html/index.html'</span>; <span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h3 id="资源管理"><a class="markdownIt-Anchor" href="#资源管理"></a> 资源管理</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Get documentation for pod or service</span></span><br><span class="line">kubectl explain pods,svc</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create resource(s) like pods, services or daemonsets</span></span><br><span class="line">kubectl create -f ./my-manifest.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply a configuration to a resource</span></span><br><span class="line">kubectl apply -f ./my-manifest.yaml</span><br><span class="line"></span><br><span class="line"><span class="comment"># Start a single instance of Nginx</span></span><br><span class="line">kubectl run nginx --image=nginx</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a secret with several keys</span></span><br><span class="line">cat &lt;&lt;EOF | kubectl create -f -</span><br><span class="line">apiVersion: v1</span><br><span class="line">kind: Secret</span><br><span class="line">metadata:</span><br><span class="line"> name: mysecret</span><br><span class="line"><span class="built_in">type</span>: Opaque</span><br><span class="line">data:</span><br><span class="line"> password: $(<span class="built_in">echo</span> <span class="string">"s33msi4"</span> | base64)</span><br><span class="line"> username: $(<span class="built_in">echo</span> <span class="string">"jane"</span>| base64)</span><br><span class="line">EOF</span><br><span class="line"></span><br><span class="line"><span class="comment"># Delete a resource</span></span><br><span class="line">kubectl delete -f ./my-manifest.yaml</span><br></pre></td></tr></table></figure>
+<h3 id="监控和日志"><a class="markdownIt-Anchor" href="#监控和日志"></a> 监控和日志</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Deploy Heapster from Github repository</span></span><br><span class="line">kubectl create -f deploy/kube-config/standalone/</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for nodes</span></span><br><span class="line">kubectl top node</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for pods</span></span><br><span class="line">kubectl top pod</span><br><span class="line"></span><br><span class="line"><span class="comment"># Show metrics for a given pod and its containers</span></span><br><span class="line">kubectl top pod pod_name --containers</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dump pod logs (stdout)</span></span><br><span class="line">kubectl logs pod_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># Stream pod container logs (stdout, multi-container case)</span></span><br><span class="line">kubectl logs -f pod_name -c my-container</span><br></pre></td></tr></table></figure>
+<h2 id="引用和引申"><a class="markdownIt-Anchor" href="#引用和引申"></a> 引用和引申</h2>
+<ul>
+<li>官方
+<ul>
 <li><a href="https://github.com/kubernetes/kubernetes" target="_blank" rel="noopener">Github</a></li>
 <li><a href="https://kubernetes.io/" target="_blank" rel="noopener">官网</a></li>
 </ul>
 </li>
-<li>教程<ul>
+<li>教程
+<ul>
 <li><a href="https://jimmysong.io/kubernetes-handbook/" target="_blank" rel="noopener">Kubernetes 中文指南</a></li>
 </ul>
 </li>
-<li>文章<ul>
+<li>文章
+<ul>
 <li><a href="https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/kubernetes.sh" target="_blank" rel="noopener">https://github.com/LeCoupa/awesome-cheatsheets/blob/master/tools/kubernetes.sh</a></li>
 </ul>
 </li>
-<li>更多资源<ul>
+<li>更多资源
+<ul>
 <li><a href="https://github.com/ramitsurana/awesome-kubernetes" target="_blank" rel="noopener">awesome-kubernetes</a></li>
 </ul>
 </li>
@@ -615,8 +631,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/docker/docker/" rel="prev" title="Docker 教程">
-                Docker 教程 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/network/physical/README/" rel="prev" title="物理层">
+                物理层 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -688,7 +704,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -753,7 +769,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1051,7 +1069,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kubernetes"><span class="nav-text">Kubernetes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Kubernetes-对象"><span class="nav-text">Kubernetes 对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-text">基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-text">进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端配置"><span class="nav-text">客户端配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找资源"><span class="nav-text">查找资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源管理"><span class="nav-text">资源管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控和日志"><span class="nav-text">监控和日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text">引用和引申</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kubernetes"><span class="nav-text"> Kubernetes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能"><span class="nav-text"> 功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kubernetes-对象"><span class="nav-text"> Kubernetes 对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-text"> 基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-text"> 进阶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text"> 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#客户端配置"><span class="nav-text"> 客户端配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查找资源"><span class="nav-text"> 查找资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源管理"><span class="nav-text"> 资源管理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#监控和日志"><span class="nav-text"> 监控和日志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text"> 引用和引申</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1093,7 +1111,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

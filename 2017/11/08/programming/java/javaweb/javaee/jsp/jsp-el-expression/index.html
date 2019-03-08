@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.9k</span>
+                <span title="本文字数">4k</span>
               
 
               
@@ -512,24 +512,26 @@
       
         <p>EL 表达式是用<code>${}</code>括起来的脚本，用来更方便地读取对象。EL 表达式写在 JSP 的 HTML 代码中，而不能写在<code>&lt;%</code>与<code>%&gt;</code>引起的 JSP 脚本中。</p>
 <p>JSP 表达式语言（EL）使得访问存储在 JavaBean 中的数据变得非常简单。JSP EL 既可以用来创建算术表达式也可以用来创建逻辑表达式。在 JSP EL 表达式内可以使用整型数，浮点数，字符串，常量 true、false，还有 null。</p>
-<h2 id="一个简单的语法"><a href="#一个简单的语法" class="headerlink" title="一个简单的语法"></a>一个简单的语法</h2><p>典型的，当您需要在 JSP 标签中指定一个属性值时，只需要简单地使用字符串即可：</p>
+<h2 id="一个简单的语法"><a class="markdownIt-Anchor" href="#一个简单的语法"></a> 一个简单的语法</h2>
+<p>典型的，当您需要在 JSP 标签中指定一个属性值时，只需要简单地使用字符串即可：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;jsp:setProperty name=<span class="string">"box"</span> property=<span class="string">"perimeter"</span> value=<span class="string">"100"</span>/&gt;</span><br></pre></td></tr></table></figure>
 <p>JSP EL 允许您指定一个表达式来表示属性值。一个简单的表达式语法如下：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;expr&#125;</span><br></pre></td></tr></table></figure>
-<p>其中，expr 指的是表达式。在 JSP EL 中通用的操作符是”.”和”[]”。这两个操作符允许您通过内嵌的 JSP 对象访问各种各样的 JavaBean 属性。</p>
+<p>其中，expr 指的是表达式。在 JSP EL 中通用的操作符是&quot;.“和”[]&quot;。这两个操作符允许您通过内嵌的 JSP 对象访问各种各样的 JavaBean 属性。</p>
 <p>举例来说，上面的<a href="jsp:setProperty" target="_blank" rel="noopener">jsp:setProperty</a>标签可以使用表达式语言改写成如下形式：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;jsp:setProperty name=<span class="string">"box"</span> property=<span class="string">"perimeter"</span></span><br><span class="line">                 value=<span class="string">"$&#123;2*box.width+2*box.height&#125;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<p>当 JSP 编译器在属性中见到”${}”格式后，它会产生代码来计算这个表达式，并且产生一个替代品来代替表达式的值。</p>
+<p>当 JSP 编译器在属性中见到&quot;${}&quot;格式后，它会产生代码来计算这个表达式，并且产生一个替代品来代替表达式的值。</p>
 <p>您也可以在标签的模板文本中使用表达式语言。比如<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>标签简单地将其主体中的文本插入到 JSP 输出中：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;jsp:text&gt;</span><br><span class="line">&lt;h1&gt;Hello JSP!&lt;/h1&gt;</span><br><span class="line">&lt;/jsp:text&gt;</span><br></pre></td></tr></table></figure>
 <p>现在，在<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>标签主体中使用表达式，就像这样：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;jsp:text&gt;</span><br><span class="line">Box Perimeter is: $&#123;<span class="number">2</span>*box.width + <span class="number">2</span>*box.height&#125;</span><br><span class="line">&lt;/jsp:text&gt;</span><br></pre></td></tr></table></figure>
-<p>在 EL 表达式中可以使用圆括号来组织子表达式。比如${(1 + 2) _ 3}等于 9，但是${1 + (2 _ 3)} 等于 7。</p>
+<p>在 EL 表达式中可以使用圆括号来组织子表达式。比如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mn>2</mn><msub><mo>)</mo><mn>3</mn></msub></mrow><mi mathvariant="normal">等</mi><mi mathvariant="normal">于</mi><mn>9</mn><mi mathvariant="normal">，</mi><mi mathvariant="normal">但</mi><mi mathvariant="normal">是</mi></mrow><annotation encoding="application/x-tex">{(1 + 2) _ 3}等于 9，但是</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">2</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span><span class="mord cjk_fallback">等</span><span class="mord cjk_fallback">于</span><span class="mord">9</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">但</span><span class="mord cjk_fallback">是</span></span></span></span>{1 + (2 _ 3)} 等于 7。</p>
 <p>想要停用对 EL 表达式的评估的话，需要使用 page 指令将 isELIgnored 属性值设为 true：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page isELIgnored =<span class="string">"true|false"</span> %&gt;</span><br></pre></td></tr></table></figure>
 <p>这样，EL 表达式就会被忽略。若设为 false，则容器将会计算 EL 表达式。</p>
 <hr>
-<h2 id="EL-中的基础操作符"><a href="#EL-中的基础操作符" class="headerlink" title="EL 中的基础操作符"></a>EL 中的基础操作符</h2><p>EL 表达式支持大部分 Java 所提供的算术和逻辑操作符：</p>
+<h2 id="el-中的基础操作符"><a class="markdownIt-Anchor" href="#el-中的基础操作符"></a> EL 中的基础操作符</h2>
+<p>EL 表达式支持大部分 Java 所提供的算术和逻辑操作符：</p>
 <table>
 <thead>
 <tr>
@@ -599,9 +601,7 @@
 <td>测试逻辑与</td>
 </tr>
 <tr>
-<td>\</td>
-<td>\</td>
-<td>or or</td>
+<td>|| or or</td>
 <td>测试逻辑或</td>
 </tr>
 <tr>
@@ -615,13 +615,15 @@
 </tbody>
 </table>
 <hr>
-<h2 id="JSP-EL-中的函数"><a href="#JSP-EL-中的函数" class="headerlink" title="JSP EL 中的函数"></a>JSP EL 中的函数</h2><p>JSP EL 允许您在表达式中使用函数。这些函数必须被定义在自定义标签库中。函数的使用语法如下：</p>
+<h2 id="jsp-el-中的函数"><a class="markdownIt-Anchor" href="#jsp-el-中的函数"></a> JSP EL 中的函数</h2>
+<p>JSP EL 允许您在表达式中使用函数。这些函数必须被定义在自定义标签库中。函数的使用语法如下：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;ns:func(param1, param2, ...)&#125;</span><br></pre></td></tr></table></figure>
 <p>ns 指的是命名空间（namespace），func 指的是函数的名称，param1 指的是第一个参数，param2 指的是第二个参数，以此类推。比如，有函数 fn:length，在 JSTL 库中定义，可以像下面这样来获取一个字符串的长度：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;fn:length(<span class="string">"Get my length"</span>)&#125;</span><br></pre></td></tr></table></figure>
 <p>要使用任何标签库中的函数，您需要将这些库安装在服务器中，然后使用<taglib>标签在 JSP 文件中包含这些库。</taglib></p>
 <hr>
-<h2 id="JSP-EL-隐含对象"><a href="#JSP-EL-隐含对象" class="headerlink" title="JSP EL 隐含对象"></a>JSP EL 隐含对象</h2><p>JSP EL 支持下表列出的隐含对象：</p>
+<h2 id="jsp-el-隐含对象"><a class="markdownIt-Anchor" href="#jsp-el-隐含对象"></a> JSP EL 隐含对象</h2>
+<p>JSP EL 支持下表列出的隐含对象：</p>
 <table>
 <thead>
 <tr>
@@ -678,20 +680,24 @@
 </table>
 <p>您可以在表达式中使用这些对象，就像使用变量一样。接下来会给出几个例子来更好的理解这个概念。</p>
 <hr>
-<h2 id="pageContext-对象"><a href="#pageContext-对象" class="headerlink" title="pageContext 对象"></a>pageContext 对象</h2><p>pageContext 对象是 JSP 中 pageContext 对象的引用。通过 pageContext 对象，您可以访问 request 对象。比如，访问 request 对象传入的查询字符串，就像这样：</p>
+<h2 id="pagecontext-对象"><a class="markdownIt-Anchor" href="#pagecontext-对象"></a> pageContext 对象</h2>
+<p>pageContext 对象是 JSP 中 pageContext 对象的引用。通过 pageContext 对象，您可以访问 request 对象。比如，访问 request 对象传入的查询字符串，就像这样：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">$&#123;pageContext.request.queryString&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="Scope-对象"><a href="#Scope-对象" class="headerlink" title="Scope 对象"></a>Scope 对象</h2><p>pageScope，requestScope，sessionScope，applicationScope 变量用来访问存储在各个作用域层次的变量。</p>
+<h2 id="scope-对象"><a class="markdownIt-Anchor" href="#scope-对象"></a> Scope 对象</h2>
+<p>pageScope，requestScope，sessionScope，applicationScope 变量用来访问存储在各个作用域层次的变量。</p>
 <p>举例来说，如果您需要显式访问在 applicationScope 层的 box 变量，可以这样来访问：applicationScope.box。</p>
 <hr>
-<h2 id="param-和-paramValues-对象"><a href="#param-和-paramValues-对象" class="headerlink" title="param 和 paramValues 对象"></a>param 和 paramValues 对象</h2><p>param 和 paramValues 对象用来访问参数值，通过使用 request.getParameter 方法和 request.getParameterValues 方法。</p>
-<p>举例来说，访问一个名为 order 的参数，可以这样使用表达式：${param.order}，或者${param[“order”]}。</p>
+<h2 id="param-和-paramvalues-对象"><a class="markdownIt-Anchor" href="#param-和-paramvalues-对象"></a> param 和 paramValues 对象</h2>
+<p>param 和 paramValues 对象用来访问参数值，通过使用 request.getParameter 方法和 request.getParameterValues 方法。</p>
+<p>举例来说，访问一个名为 order 的参数，可以这样使用表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>p</mi><mi>a</mi><mi>r</mi><mi>a</mi><mi>m</mi><mi mathvariant="normal">.</mi><mi>o</mi><mi>r</mi><mi>d</mi><mi>e</mi><mi>r</mi></mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">或</mi><mi mathvariant="normal">者</mi></mrow><annotation encoding="application/x-tex">{param.order}，或者</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">a</span><span class="mord mathdefault">m</span><span class="mord">.</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">或</span><span class="mord cjk_fallback">者</span></span></span></span>{param[“order”]}。</p>
 <p>接下来的例子表明了如何访问 request 中的 username 参数：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.io.*,java.util.*"</span> %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    String title = <span class="string">"Accessing Request Param"</span>;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;&lt;% out.print(title); %&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">&lt;h1&gt;&lt;% out.print(title); %&gt;&lt;/h1&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;div align=<span class="string">"center"</span>&gt;</span><br><span class="line">&lt;p&gt;$&#123;param["username"]&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>param 对象返回单一的字符串，而 paramValues 对象则返回一个字符串数组。</p>
 <hr>
-<h2 id="header-和-headerValues-对象"><a href="#header-和-headerValues-对象" class="headerlink" title="header 和 headerValues 对象"></a>header 和 headerValues 对象</h2><p>header 和 headerValues 对象用来访问信息头，通过使用 request.getHeader 方法和 request.getHeaders 方法。</p>
-<p>举例来说，要访问一个名为 user-agent 的信息头，可以这样使用表达式：${header.user-agent}，或者${header[“user-agent”]}。</p>
+<h2 id="header-和-headervalues-对象"><a class="markdownIt-Anchor" href="#header-和-headervalues-对象"></a> header 和 headerValues 对象</h2>
+<p>header 和 headerValues 对象用来访问信息头，通过使用 request.getHeader 方法和 request.getHeaders 方法。</p>
+<p>举例来说，要访问一个名为 user-agent 的信息头，可以这样使用表达式：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi>h</mi><mi>e</mi><mi>a</mi><mi>d</mi><mi>e</mi><mi>r</mi><mi mathvariant="normal">.</mi><mi>u</mi><mi>s</mi><mi>e</mi><mi>r</mi><mo>−</mo><mi>a</mi><mi>g</mi><mi>e</mi><mi>n</mi><mi>t</mi></mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">或</mi><mi mathvariant="normal">者</mi></mrow><annotation encoding="application/x-tex">{header.user-agent}，或者</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="mord mathdefault">e</span><span class="mord mathdefault">a</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord">.</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">t</span></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">或</span><span class="mord cjk_fallback">者</span></span></span></span>{header[“user-agent”]}。</p>
 <p>接下来的例子表明了如何访问 user-agent 信息头：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page <span class="keyword">import</span>=<span class="string">"java.io.*,java.util.*"</span> %&gt;</span><br><span class="line">&lt;%</span><br><span class="line">    String title = <span class="string">"User Agent Example"</span>;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;&lt;% out.print(title); %&gt;&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;center&gt;</span><br><span class="line">&lt;h1&gt;&lt;% out.print(title); %&gt;&lt;/h1&gt;</span><br><span class="line">&lt;/center&gt;</span><br><span class="line">&lt;div align=<span class="string">"center"</span>&gt;</span><br><span class="line">&lt;p&gt;$&#123;header["user-agent"]&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>运行结果如下：</p>
@@ -763,8 +769,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-function/" rel="next" title="JSTL 函数">
-                <i class="fa fa-chevron-left"></i> JSTL 函数
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-directive/" rel="next" title="JSP 指令">
+                <i class="fa fa-chevron-left"></i> JSP 指令
               </a>
             
           </div>
@@ -773,8 +779,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" rel="prev" title="JSP 国际化">
-                JSP 国际化 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-implicit-objects/" rel="prev" title="JSP 隐式对象">
+                JSP 隐式对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -846,7 +852,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -911,7 +917,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1209,7 +1217,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个简单的语法"><span class="nav-text">一个简单的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EL-中的基础操作符"><span class="nav-text">EL 中的基础操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-EL-中的函数"><span class="nav-text">JSP EL 中的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-EL-隐含对象"><span class="nav-text">JSP EL 隐含对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pageContext-对象"><span class="nav-text">pageContext 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scope-对象"><span class="nav-text">Scope 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#param-和-paramValues-对象"><span class="nav-text">param 和 paramValues 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#header-和-headerValues-对象"><span class="nav-text">header 和 headerValues 对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一个简单的语法"><span class="nav-text"> 一个简单的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#el-中的基础操作符"><span class="nav-text"> EL 中的基础操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-el-中的函数"><span class="nav-text"> JSP EL 中的函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-el-隐含对象"><span class="nav-text"> JSP EL 隐含对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pagecontext-对象"><span class="nav-text"> pageContext 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scope-对象"><span class="nav-text"> Scope 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#param-和-paramvalues-对象"><span class="nav-text"> param 和 paramValues 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#header-和-headervalues-对象"><span class="nav-text"> header 和 headerValues 对象</span></a></li></ol></div>
             
 
           </div>
@@ -1251,7 +1259,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

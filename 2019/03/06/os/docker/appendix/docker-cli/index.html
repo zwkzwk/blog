@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Docker 命令  镜像(Images) 容器(Container) 生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks) 生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes) 生命周期 信息   引用和引申   镜像(Images) docker image ls - 查看所有">
+  <meta name="description" content="Docker 命令   镜像(Images) 容器(Container)  生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks)  生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes)  生命周期 信息   引用和引申    镜像(Images)  docker image ls">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker 命令">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/docker/appendix/docker-cli/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Docker 命令  镜像(Images) 容器(Container) 生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks) 生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes) 生命周期 信息   引用和引申   镜像(Images) docker image ls - 查看所有">
+<meta property="og:description" content="Docker 命令   镜像(Images) 容器(Container)  生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks)  生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes)  生命周期 信息   引用和引申    镜像(Images)  docker image ls">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker 命令">
-<meta name="twitter:description" content="Docker 命令  镜像(Images) 容器(Container) 生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks) 生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes) 生命周期 信息   引用和引申   镜像(Images) docker image ls - 查看所有">
+<meta name="twitter:description" content="Docker 命令   镜像(Images) 容器(Container)  生命周期 启动和停止 信息 导入 / 导出 执行命令   网络(Networks)  生命周期 信息 链接   仓管中心和仓库(Registry &amp;amp; Repository) Dockerfile 卷标(Volumes)  生命周期 信息   引用和引申    镜像(Images)  docker image ls">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.4k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -477,34 +477,39 @@
       
 
       
-        <h1 id="Docker-命令"><a href="#Docker-命令" class="headerlink" title="Docker 命令"></a>Docker 命令</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="docker-命令"><a class="markdownIt-Anchor" href="#docker-命令"></a> Docker 命令</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#镜像images">镜像(Images)</a></li>
-<li><a href="#容器container">容器(Container)</a><ul>
-<li><a href="#生命周期">生命周期</a></li>
-<li><a href="#启动和停止">启动和停止</a></li>
-<li><a href="#信息">信息</a></li>
-<li><a href="#导入--导出">导入 / 导出</a></li>
-<li><a href="#执行命令">执行命令</a></li>
+<li><a href="#%E9%95%9C%E5%83%8Fimages">镜像(Images)</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8container">容器(Container)</a>
+<ul>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">生命周期</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2">启动和停止</a></li>
+<li><a href="#%E4%BF%A1%E6%81%AF">信息</a></li>
+<li><a href="#%E5%AF%BC%E5%85%A5--%E5%AF%BC%E5%87%BA">导入 / 导出</a></li>
+<li><a href="#%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4">执行命令</a></li>
 </ul>
 </li>
-<li><a href="#网络networks">网络(Networks)</a><ul>
-<li><a href="#生命周期-1">生命周期</a></li>
-<li><a href="#信息-1">信息</a></li>
-<li><a href="#链接">链接</a></li>
+<li><a href="#%E7%BD%91%E7%BB%9Cnetworks">网络(Networks)</a>
+<ul>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-1">生命周期</a></li>
+<li><a href="#%E4%BF%A1%E6%81%AF-1">信息</a></li>
+<li><a href="#%E9%93%BE%E6%8E%A5">链接</a></li>
 </ul>
 </li>
-<li><a href="#仓管中心和仓库registry--repository">仓管中心和仓库(Registry &amp; Repository)</a></li>
+<li><a href="#%E4%BB%93%E7%AE%A1%E4%B8%AD%E5%BF%83%E5%92%8C%E4%BB%93%E5%BA%93registry--repository">仓管中心和仓库(Registry &amp; Repository)</a></li>
 <li><a href="#dockerfile">Dockerfile</a></li>
-<li><a href="#卷标volumes">卷标(Volumes)</a><ul>
-<li><a href="#生命周期-2">生命周期</a></li>
-<li><a href="#信息-2">信息</a></li>
+<li><a href="#%E5%8D%B7%E6%A0%87volumes">卷标(Volumes)</a>
+<ul>
+<li><a href="#%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F-2">生命周期</a></li>
+<li><a href="#%E4%BF%A1%E6%81%AF-2">信息</a></li>
 </ul>
 </li>
-<li><a href="#引用和引申">引用和引申</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%B3">引用和引申</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="镜像-Images"><a href="#镜像-Images" class="headerlink" title="镜像(Images)"></a>镜像(Images)</h2><ul>
+<h2 id="镜像images"><a class="markdownIt-Anchor" href="#镜像images"></a> 镜像(Images)</h2>
+<ul>
 <li><a href="https://github.com/yeasy/docker_practice/blob/master/image/list.md" target="_blank" rel="noopener"><code>docker image ls</code></a> - 查看所有镜像。</li>
 <li><a href="https://github.com/yeasy/docker_practice/blob/master/image/rm.md" target="_blank" rel="noopener"><code>docker image rm</code></a> - 删除本地镜像。</li>
 <li><code>docker import</code> - 从压缩文件中创建镜像。</li>
@@ -517,14 +522,17 @@
 <li><code>docker history</code> - 查看镜像历史记录。</li>
 <li><code>docker tag</code> - 给镜像命名打标(tags) (本地或者仓库)。</li>
 </ul>
-<h2 id="容器-Container"><a href="#容器-Container" class="headerlink" title="容器(Container)"></a>容器(Container)</h2><h3 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
+<h2 id="容器container"><a class="markdownIt-Anchor" href="#容器container"></a> 容器(Container)</h2>
+<h3 id="生命周期"><a class="markdownIt-Anchor" href="#生命周期"></a> 生命周期</h3>
+<ul>
 <li><code>docker create</code> - 创建一个容器但是不启动。</li>
 <li><code>docker rename</code> - 允许重命名容器。</li>
 <li><code>docker run</code> - 在同一个操作中创建并启动一个容器。</li>
 <li><code>docker rm</code> - 删除容器。</li>
 <li><code>docker update</code> - 更新容器的资源限制。</li>
 </ul>
-<h3 id="启动和停止"><a href="#启动和停止" class="headerlink" title="启动和停止"></a>启动和停止</h3><ul>
+<h3 id="启动和停止"><a class="markdownIt-Anchor" href="#启动和停止"></a> 启动和停止</h3>
+<ul>
 <li><code>docker start</code> - 启动容器。</li>
 <li><code>docker stop</code> - 停止运行中的容器。</li>
 <li><code>docker restart</code> - 停止之后再启动容器。</li>
@@ -534,7 +542,8 @@
 <li><code>docker kill</code> - 向运行中容器发送 SIGKILL 指令。</li>
 <li><code>docker attach</code> - 链接到运行中容器。</li>
 </ul>
-<h3 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h3><ul>
+<h3 id="信息"><a class="markdownIt-Anchor" href="#信息"></a> 信息</h3>
+<ul>
 <li><code>docker ps</code> - 查看运行中的所有容器。</li>
 <li><code>docker logs</code> - 从容器中获取日志。(你也可以使用自定义日志驱动，不过在 1.10 中，它只支持 json-file 和 journald)</li>
 <li><code>docker inspect</code> - 查看某个容器的所有信息(包括 IP 地址)。</li>
@@ -544,28 +553,37 @@
 <li><code>docker stats</code> - 查看容器的资源使用情况统计信息。</li>
 <li><code>docker diff</code> - 查看容器的 FS 中有变化文件信息。</li>
 </ul>
-<h3 id="导入-导出"><a href="#导入-导出" class="headerlink" title="导入 / 导出"></a>导入 / 导出</h3><p>docker cp 在容器和本地文件系统之间复制文件或文件夹。<br>docker export 将容器的文件系统切换为压缩包(tarball archive stream)输出到 STDOUT。</p>
-<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><p>docker exec 在容器中执行命令。</p>
-<h2 id="网络-Networks"><a href="#网络-Networks" class="headerlink" title="网络(Networks)"></a>网络(Networks)</h2><h3 id="生命周期-1"><a href="#生命周期-1" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
+<h3 id="导入-导出"><a class="markdownIt-Anchor" href="#导入-导出"></a> 导入 / 导出</h3>
+<p>docker cp 在容器和本地文件系统之间复制文件或文件夹。<br>
+docker export 将容器的文件系统切换为压缩包(tarball archive stream)输出到 STDOUT。</p>
+<h3 id="执行命令"><a class="markdownIt-Anchor" href="#执行命令"></a> 执行命令</h3>
+<p>docker exec 在容器中执行命令。</p>
+<h2 id="网络networks"><a class="markdownIt-Anchor" href="#网络networks"></a> 网络(Networks)</h2>
+<h3 id="生命周期-2"><a class="markdownIt-Anchor" href="#生命周期-2"></a> 生命周期</h3>
+<ul>
 <li><code>docker network create</code></li>
 <li><code>docker network rm</code></li>
 </ul>
-<h3 id="信息-1"><a href="#信息-1" class="headerlink" title="信息"></a>信息</h3><ul>
+<h3 id="信息-2"><a class="markdownIt-Anchor" href="#信息-2"></a> 信息</h3>
+<ul>
 <li><code>docker network ls</code></li>
 <li><code>docker network inspect</code></li>
 </ul>
-<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><ul>
+<h3 id="链接"><a class="markdownIt-Anchor" href="#链接"></a> 链接</h3>
+<ul>
 <li><code>docker network connect</code></li>
 <li><code>docker network disconnect</code></li>
 </ul>
-<h2 id="仓管中心和仓库-Registry-amp-Repository"><a href="#仓管中心和仓库-Registry-amp-Repository" class="headerlink" title="仓管中心和仓库(Registry &amp; Repository)"></a>仓管中心和仓库(Registry &amp; Repository)</h2><ul>
+<h2 id="仓管中心和仓库registry-repository"><a class="markdownIt-Anchor" href="#仓管中心和仓库registry-repository"></a> 仓管中心和仓库(Registry &amp; Repository)</h2>
+<ul>
 <li><code>docker login</code> - 登入仓管中心。</li>
 <li><code>docker logout</code> - 登出仓管中心。</li>
 <li><code>docker search</code> - 从仓管中心检索镜像。</li>
 <li><code>docker pull</code> - 从仓管中心拉去镜像到本地。</li>
 <li><code>docker push</code> - 从本地推送镜像到仓管中心。</li>
 </ul>
-<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a>Dockerfile</h2><ul>
+<h2 id="dockerfile"><a class="markdownIt-Anchor" href="#dockerfile"></a> Dockerfile</h2>
+<ul>
 <li>.dockerignore</li>
 <li>FROM 为其他指令设置基础镜像(Base Image)。</li>
 <li>MAINTAINER 为生成的镜像设置作者字段。</li>
@@ -584,15 +602,19 @@
 <li>STOPSIGNAL 设置通过系统向容器发出退出指令。</li>
 <li>LABEL 将键值对元数据(key/value metadata)应用到你的镜像，容器，或者守护进程。</li>
 </ul>
-<h2 id="卷标-Volumes"><a href="#卷标-Volumes" class="headerlink" title="卷标(Volumes)"></a>卷标(Volumes)</h2><h3 id="生命周期-2"><a href="#生命周期-2" class="headerlink" title="生命周期"></a>生命周期</h3><ul>
+<h2 id="卷标volumes"><a class="markdownIt-Anchor" href="#卷标volumes"></a> 卷标(Volumes)</h2>
+<h3 id="生命周期-3"><a class="markdownIt-Anchor" href="#生命周期-3"></a> 生命周期</h3>
+<ul>
 <li><code>docker volume create</code></li>
 <li><code>docker volume rm</code></li>
 </ul>
-<h3 id="信息-2"><a href="#信息-2" class="headerlink" title="信息"></a>信息</h3><ul>
+<h3 id="信息-3"><a class="markdownIt-Anchor" href="#信息-3"></a> 信息</h3>
+<ul>
 <li><code>docker volume ls</code></li>
 <li><code>docker volume inspect</code></li>
 </ul>
-<h2 id="引用和引申"><a href="#引用和引申" class="headerlink" title="引用和引申"></a>引用和引申</h2><p><a href="https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn" target="_blank" rel="noopener">https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn</a></p>
+<h2 id="引用和引申"><a class="markdownIt-Anchor" href="#引用和引申"></a> 引用和引申</h2>
+<p><a href="https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn" target="_blank" rel="noopener">https://github.com/wsargent/docker-cheat-sheet/tree/master/zh-cn</a></p>
 
       
     </div>
@@ -651,8 +673,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/docker/appendix/docker-glossary/" rel="next" title="Docker 术语">
-                <i class="fa fa-chevron-left"></i> Docker 术语
+              <a href="/blog/2019/03/06/os/docker/advanced/docker-design/" rel="next" title="Docker 的设计">
+                <i class="fa fa-chevron-left"></i> Docker 的设计
               </a>
             
           </div>
@@ -661,8 +683,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/os/docker/advanced/docker-design/" rel="prev" title="Docker 的设计">
-                Docker 的设计 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/SpringApplication/" rel="prev" title="SpringApplication">
+                SpringApplication <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -734,7 +756,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -799,7 +821,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1097,7 +1121,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker-命令"><span class="nav-text">Docker 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像-Images"><span class="nav-text">镜像(Images)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器-Container"><span class="nav-text">容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止"><span class="nav-text">启动和停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息"><span class="nav-text">信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入-导出"><span class="nav-text">导入 / 导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行命令"><span class="nav-text">执行命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络-Networks"><span class="nav-text">网络(Networks)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期-1"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息-1"><span class="nav-text">信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-text">链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓管中心和仓库-Registry-amp-Repository"><span class="nav-text">仓管中心和仓库(Registry &amp; Repository)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-text">Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷标-Volumes"><span class="nav-text">卷标(Volumes)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期-2"><span class="nav-text">生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息-2"><span class="nav-text">信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text">引用和引申</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-命令"><span class="nav-text"> Docker 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#镜像images"><span class="nav-text"> 镜像(Images)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器container"><span class="nav-text"> 容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期"><span class="nav-text"> 生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动和停止"><span class="nav-text"> 启动和停止</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息"><span class="nav-text"> 信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#导入-导出"><span class="nav-text"> 导入 / 导出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行命令"><span class="nav-text"> 执行命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络networks"><span class="nav-text"> 网络(Networks)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期-2"><span class="nav-text"> 生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息-2"><span class="nav-text"> 信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接"><span class="nav-text"> 链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#仓管中心和仓库registry-repository"><span class="nav-text"> 仓管中心和仓库(Registry &amp; Repository)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dockerfile"><span class="nav-text"> Dockerfile</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卷标volumes"><span class="nav-text"> 卷标(Volumes)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生命周期-3"><span class="nav-text"> 生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信息-3"><span class="nav-text"> 信息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#引用和引申"><span class="nav-text"> 引用和引申</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1139,7 +1163,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="JDK8 升级常见问题 JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结一下">
+  <meta name="description" content="JDK8 升级常见问题  JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结">
 <meta name="keywords" content="javacore,升级">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK8 升级常见问题">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javacore/appendix/jdk8-upgrade/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="JDK8 升级常见问题 JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结一下">
+<meta property="og:description" content="JDK8 升级常见问题  JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JDK8 升级常见问题">
-<meta name="twitter:description" content="JDK8 升级常见问题 JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结一下">
+<meta name="twitter:description" content="JDK8 升级常见问题  JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。 如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。 近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结">
 
 
 
@@ -508,34 +508,47 @@
       
 
       
-        <h1 id="JDK8-升级常见问题"><a href="#JDK8-升级常见问题" class="headerlink" title="JDK8 升级常见问题"></a>JDK8 升级常见问题</h1><blockquote>
+        <h1 id="jdk8-升级常见问题"><a class="markdownIt-Anchor" href="#jdk8-升级常见问题"></a> JDK8 升级常见问题</h1>
+<blockquote>
 <p>JDK8 发布很久了，它提供了许多吸引人的新特性，能够提高编程效率。</p>
 <p>如果是新的项目，使用 JDK8 当然是最好的选择。但是，对于一些老的项目，升级到 JDK8 则存在一些兼容性问题，是否升级需要酌情考虑。</p>
 <p>近期，我在工作中遇到一个任务，将部门所有项目的 JDK 版本升级到 1.8 （老版本大多是 1.6）。在这个过程中，遇到一些问题点，并结合在网上看到的坑，在这里总结一下。</p>
 </blockquote>
-<h2 id="FAQ"><a href="#FAQ" class="headerlink" title="FAQ"></a>FAQ</h2><h3 id="Intellij-中的-JDK-环境设置"><a href="#Intellij-中的-JDK-环境设置" class="headerlink" title="Intellij 中的 JDK 环境设置"></a>Intellij 中的 JDK 环境设置</h3><h4 id="Settings"><a href="#Settings" class="headerlink" title="Settings"></a>Settings</h4><p>点击 <strong>File &gt; Settings &gt; Java Compiler</strong></p>
+<h2 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h2>
+<h3 id="intellij-中的-jdk-环境设置"><a class="markdownIt-Anchor" href="#intellij-中的-jdk-环境设置"></a> Intellij 中的 JDK 环境设置</h3>
+<h4 id="settings"><a class="markdownIt-Anchor" href="#settings"></a> Settings</h4>
+<p>点击 <strong>File &gt; Settings &gt; Java Compiler</strong></p>
 <p>Project bytecode version 选择 1.8</p>
 <p>点击 <strong>File &gt; Settings &gt; Build Tools &gt; Maven &gt; Importing</strong></p>
 <p>选择 JDK for importer 为 1.8</p>
-<h4 id="Projcet-Settings"><a href="#Projcet-Settings" class="headerlink" title="Projcet Settings"></a>Projcet Settings</h4><p><strong>Project SDK</strong> 选择 1.8</p>
-<h4 id="Application"><a href="#Application" class="headerlink" title="Application"></a>Application</h4><p>如果 web 应用的启动方式为 Application ，需要修改 JRE</p>
+<h4 id="projcet-settings"><a class="markdownIt-Anchor" href="#projcet-settings"></a> Projcet Settings</h4>
+<p><strong>Project SDK</strong> 选择 1.8</p>
+<h4 id="application"><a class="markdownIt-Anchor" href="#application"></a> Application</h4>
+<p>如果 web 应用的启动方式为 Application ，需要修改 JRE</p>
 <p>点击 <strong>Run/Debug Configurations &gt; Configuration</strong></p>
 <p>选择 JRE 为 1.8</p>
-<h3 id="Linux-环境修改"><a href="#Linux-环境修改" class="headerlink" title="Linux 环境修改"></a>Linux 环境修改</h3><h4 id="修改环境变量"><a href="#修改环境变量" class="headerlink" title="修改环境变量"></a>修改环境变量</h4><p>修改 <code>/etc/profile</code> 中的 <strong>JAVA_HOME</strong>，设置 为 jdk8 所在路径。</p>
+<h3 id="linux-环境修改"><a class="markdownIt-Anchor" href="#linux-环境修改"></a> Linux 环境修改</h3>
+<h4 id="修改环境变量"><a class="markdownIt-Anchor" href="#修改环境变量"></a> 修改环境变量</h4>
+<p>修改 <code>/etc/profile</code> 中的 <strong>JAVA_HOME</strong>，设置 为 jdk8 所在路径。</p>
 <p>修改后，执行 <code>source /etc/profile</code> 生效。</p>
 <p>编译、发布脚本中如果有 <code>export JAVA_HOME</code> ，需要注意，需要使用 jdk8 的路径。</p>
-<h4 id="修改-maven"><a href="#修改-maven" class="headerlink" title="修改 maven"></a>修改 maven</h4><p>settings.xml 中 profile 的激活条件如果是 jdk，需要修改一下 jdk 版本</p>
+<h4 id="修改-maven"><a class="markdownIt-Anchor" href="#修改-maven"></a> 修改 maven</h4>
+<p>settings.xml 中 profile 的激活条件如果是 jdk，需要修改一下 jdk 版本</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">activation</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">jdk</span>&gt;</span>1.8<span class="tag">&lt;/<span class="name">jdk</span>&gt;</span> <span class="comment">&lt;!-- 修改为 1.8 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">activation</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h4 id="修改-server"><a href="#修改-server" class="headerlink" title="修改 server"></a>修改 server</h4><p>修改 server 中的 javac 版本，以 resin 为例：</p>
+<h4 id="修改-server"><a class="markdownIt-Anchor" href="#修改-server"></a> 修改 server</h4>
+<p>修改 server 中的 javac 版本，以 resin 为例：</p>
 <p>修改 resin 配置文件中的 javac 参数。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">javac</span> <span class="attr">compiler</span>=<span class="string">"internal"</span> <span class="attr">args</span>=<span class="string">"-source 1.8"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="sun-包缺失问题"><a href="#sun-包缺失问题" class="headerlink" title="sun.* 包缺失问题"></a>sun.* 包缺失问题</h3><p>JDK8 不再提供 <code>sun.*</code> 包供开发者使用，因为这些接口不是公共接口，不能保证在所有 Java 兼容的平台上工作。</p>
+<h3 id="sun-包缺失问题"><a class="markdownIt-Anchor" href="#sun-包缺失问题"></a> sun.* 包缺失问题</h3>
+<p>JDK8 不再提供 <code>sun.*</code> 包供开发者使用，因为这些接口不是公共接口，不能保证在所有 Java 兼容的平台上工作。</p>
 <p>使用了这些 API 的程序如果要升级到 JDK 1.8 需要寻求替代方案。</p>
 <p>虽然，也可以自己导入包含 <code>sun.*</code> 接口 jar 包到 classpath 目录，但这不是一个好的做法。</p>
 <p>需要详细了解为什么不要使用 <code>sun.*</code> ，可以参考官方文档：<a href="http://www.oracle.com/technetwork/java/faq-sun-packages-142232.html" target="_blank" rel="noopener">Why Developers Should Not Write Programs That Call ‘sun’ Packages</a></p>
-<h3 id="默认安全策略修改"><a href="#默认安全策略修改" class="headerlink" title="默认安全策略修改"></a>默认安全策略修改</h3><p>升级后估计有些小伙伴在使用不安全算法时可能会发生错误，so，支持不安全算法还是有必要的</p>
+<h3 id="默认安全策略修改"><a class="markdownIt-Anchor" href="#默认安全策略修改"></a> 默认安全策略修改</h3>
+<p>升级后估计有些小伙伴在使用不安全算法时可能会发生错误，so，支持不安全算法还是有必要的</p>
 <p>找到$JAVA_HOME下 <code>jre/lib/security/java.security</code> ，将禁用的算法设置为空：<code>jdk.certpath.disabledAlgorithms=</code> 。</p>
-<h3 id="JVM参数调整"><a href="#JVM参数调整" class="headerlink" title="JVM参数调整"></a>JVM参数调整</h3><p>在jdk8中，PermSize相关的参数已经不被使用：</p>
+<h3 id="jvm参数调整"><a class="markdownIt-Anchor" href="#jvm参数调整"></a> JVM参数调整</h3>
+<p>在jdk8中，PermSize相关的参数已经不被使用：</p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">-XX:MaxPermSize=size</span><br><span class="line"></span><br><span class="line">Sets <span class="keyword">the</span> maximum permanent generation <span class="literal">space</span> size (<span class="keyword">in</span> <span class="keyword">bytes</span>). This option was deprecated <span class="keyword">in</span> JDK <span class="number">8</span>, <span class="keyword">and</span> superseded <span class="keyword">by</span> <span class="keyword">the</span> -XX:MaxMetaspaceSize option.</span><br><span class="line"></span><br><span class="line">-XX:PermSize=size</span><br><span class="line"></span><br><span class="line">Sets <span class="keyword">the</span> <span class="literal">space</span> (<span class="keyword">in</span> <span class="keyword">bytes</span>) allocated <span class="built_in">to</span> <span class="keyword">the</span> permanent generation that triggers <span class="keyword">a</span> garbage collection <span class="keyword">if</span> <span class="keyword">it</span> is exceeded. This option was deprecated un JDK <span class="number">8</span>, <span class="keyword">and</span> superseded <span class="keyword">by</span> <span class="keyword">the</span> -XX:MetaspaceSize option.</span><br></pre></td></tr></table></figure>
 <p>JDK8 中再也没有 <code>PermGen</code> 了。其中的某些部分，如被 intern 的字符串，在 JDK7 中已经移到了普通堆里。<strong>其余结构在 JDK8 中会被移到称作“Metaspace”的本机内存区中，该区域在默认情况下会自动生长，也会被垃圾回收。它有两个标记：MetaspaceSize 和 MaxMetaspaceSize。</strong></p>
 <p>-XX:MetaspaceSize=size</p>
@@ -544,11 +557,12 @@
 </blockquote>
 <p>-XX:MaxMetaspaceSize=size</p>
 <blockquote>
-<p> Sets the maximum amount of native memory that can be allocated for class metadata. By default, the size is not limited.  The amount of metadata for an application depends on the application itself, other running applications, and the amount of memory available on the system.</p>
+<p>Sets the maximum amount of native memory that can be allocated for class metadata. By default, the size is not limited.  The amount of metadata for an application depends on the application itself, other running applications, and the amount of memory available on the system.</p>
 </blockquote>
 <p>以下示例显示如何将类类元数据的上限设置为 256 MB：</p>
 <p>XX:MaxMetaspaceSize=256m</p>
-<h3 id="字节码问题"><a href="#字节码问题" class="headerlink" title="字节码问题"></a>字节码问题</h3><p>ASM 5.0 beta 开始支持 JDK8</p>
+<h3 id="字节码问题"><a class="markdownIt-Anchor" href="#字节码问题"></a> 字节码问题</h3>
+<p>ASM 5.0 beta 开始支持 JDK8</p>
 <p><strong>字节码错误</strong></p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Caused by: java<span class="selector-class">.io</span><span class="selector-class">.IOException</span>: invalid constant type: <span class="number">15</span></span><br><span class="line">	at javassist<span class="selector-class">.bytecode</span><span class="selector-class">.ConstPool</span><span class="selector-class">.readOne</span>(ConstPool<span class="selector-class">.java</span>:<span class="number">1113</span>)</span><br></pre></td></tr></table></figure>
 <ul>
@@ -564,7 +578,11 @@
 <p>有些部署工具不会删除旧版本 jar 包，所以可以尝试手动删除老版本 jar 包。</p>
 </blockquote>
 <p><a href="http://asm.ow2.org/history.html" target="_blank" rel="noopener">http://asm.ow2.org/history.html</a></p>
-<h3 id="Java连接redis启动报错Error-redis-clients-jedis-HostAndPort-cant-resolve-localhost-address"><a href="#Java连接redis启动报错Error-redis-clients-jedis-HostAndPort-cant-resolve-localhost-address" class="headerlink" title="Java连接redis启动报错Error redis clients jedis HostAndPort cant resolve localhost address"></a>Java连接redis启动报错Error redis clients jedis HostAndPort cant resolve localhost address</h3><p>错误环境:<br>本地window开发环境没有问题。上到Linux环境,启动出现问题。<br>错误信息:<br>Error redis clients jedis HostAndPort cant resolve localhost address</p>
+<h3 id="java连接redis启动报错error-redis-clients-jedis-hostandport-cant-resolve-localhost-address"><a class="markdownIt-Anchor" href="#java连接redis启动报错error-redis-clients-jedis-hostandport-cant-resolve-localhost-address"></a> Java连接redis启动报错Error redis clients jedis HostAndPort cant resolve localhost address</h3>
+<p>错误环境:<br>
+本地window开发环境没有问题。上到Linux环境,启动出现问题。<br>
+错误信息:<br>
+Error redis clients jedis HostAndPort cant resolve localhost address</p>
 <p>解决办法:</p>
 <ol>
 <li>查看Linux系统的主机名</li>
@@ -573,11 +591,13 @@
 <ol start="2">
 <li>查看/etc/hosts文件中是否有127.0.0.1对应主机名，如果没有则添加</li>
 </ol>
-<h3 id="Resin-容器指定-JDK-1-8"><a href="#Resin-容器指定-JDK-1-8" class="headerlink" title="Resin 容器指定 JDK 1.8"></a>Resin 容器指定 JDK 1.8</h3><p>如果 resin 容器原来版本低于 JDK1.8，运行 JDK 1.8 编译的 web app 时，可能会提示错误：</p>
+<h3 id="resin-容器指定-jdk-18"><a class="markdownIt-Anchor" href="#resin-容器指定-jdk-18"></a> Resin 容器指定 JDK 1.8</h3>
+<p>如果 resin 容器原来版本低于 JDK1.8，运行 JDK 1.8 编译的 web app 时，可能会提示错误：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">java<span class="selector-class">.lang</span><span class="selector-class">.UnsupportedClassVersionError</span>: PR/Sort : Unsupported major<span class="selector-class">.minor</span> version <span class="number">52.0</span></span><br></pre></td></tr></table></figure>
 <p>解决方法就是，使用 JDK 1.8 要重新编译一下。然后，我在部署时出现过编译后仍报错的情况，重启一下服务器后，问题解决，不知是什么原因。</p>
 <figure class="highlight gauss"><table><tr><td class="code"><pre><span class="line">./configure --prefix=/usr/<span class="keyword">local</span>/resin  --with-java=/usr/<span class="keyword">local</span>/jdk1<span class="number">.8</span><span class="number">.0</span>_121</span><br><span class="line"><span class="built_in">make</span> &amp; <span class="built_in">make</span> install</span><br></pre></td></tr></table></figure>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="http://www.oracle.com/technetwork/java/javase/8-compatibility-guide-2156366.html" target="_blank" rel="noopener">Compatibility Guide for JDK 8</a></li>
 <li><a href="https://yq.aliyun.com/articles/236" target="_blank" rel="noopener">Compatibility Guide for JDK 8 中文翻译</a></li>
 <li><a href="http://www.oracle.com/technetwork/java/faq-sun-packages-142232.html" target="_blank" rel="noopener">Why Developers Should Not Write Programs That Call ‘sun’ Packages</a></li>
@@ -648,8 +668,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/08/18/programming/java/javaweb/distributed/mq/ActiveMQ/" rel="next" title="ActiveMQ">
-                <i class="fa fa-chevron-left"></i> ActiveMQ
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-action/" rel="next" title="JSP 行为">
+                <i class="fa fa-chevron-left"></i> JSP 行为
               </a>
             
           </div>
@@ -658,8 +678,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/integration/spring-and-dubbo/" rel="prev" title="Spring 集成 Dubbo">
-                Spring 集成 Dubbo <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/spring/core/aop/" rel="prev" title="Spring AOP">
+                Spring AOP <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -731,7 +751,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -796,7 +816,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1094,7 +1116,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK8-升级常见问题"><span class="nav-text">JDK8 升级常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#FAQ"><span class="nav-text">FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Intellij-中的-JDK-环境设置"><span class="nav-text">Intellij 中的 JDK 环境设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Settings"><span class="nav-text">Settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Projcet-Settings"><span class="nav-text">Projcet Settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Application"><span class="nav-text">Application</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-环境修改"><span class="nav-text">Linux 环境修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改环境变量"><span class="nav-text">修改环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-maven"><span class="nav-text">修改 maven</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-server"><span class="nav-text">修改 server</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sun-包缺失问题"><span class="nav-text">sun.* 包缺失问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认安全策略修改"><span class="nav-text">默认安全策略修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM参数调整"><span class="nav-text">JVM参数调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节码问题"><span class="nav-text">字节码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java连接redis启动报错Error-redis-clients-jedis-HostAndPort-cant-resolve-localhost-address"><span class="nav-text">Java连接redis启动报错Error redis clients jedis HostAndPort cant resolve localhost address</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resin-容器指定-JDK-1-8"><span class="nav-text">Resin 容器指定 JDK 1.8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#jdk8-升级常见问题"><span class="nav-text"> JDK8 升级常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#faq"><span class="nav-text"> FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#intellij-中的-jdk-环境设置"><span class="nav-text"> Intellij 中的 JDK 环境设置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#settings"><span class="nav-text"> Settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#projcet-settings"><span class="nav-text"> Projcet Settings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#application"><span class="nav-text"> Application</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-环境修改"><span class="nav-text"> Linux 环境修改</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#修改环境变量"><span class="nav-text"> 修改环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-maven"><span class="nav-text"> 修改 maven</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改-server"><span class="nav-text"> 修改 server</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sun-包缺失问题"><span class="nav-text"> sun.* 包缺失问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#默认安全策略修改"><span class="nav-text"> 默认安全策略修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#jvm参数调整"><span class="nav-text"> JVM参数调整</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字节码问题"><span class="nav-text"> 字节码问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java连接redis启动报错error-redis-clients-jedis-hostandport-cant-resolve-localhost-address"><span class="nav-text"> Java连接redis启动报错Error redis clients jedis HostAndPort cant resolve localhost address</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#resin-容器指定-jdk-18"><span class="nav-text"> Resin 容器指定 JDK 1.8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1136,7 +1158,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

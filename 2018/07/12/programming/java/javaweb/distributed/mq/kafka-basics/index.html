@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Kafka 实战篇 Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述 1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署 2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.7. 集">
-<meta name="keywords" content="java,分布式,javaweb,mq">
+  <meta name="description" content="Kafka 实战篇  Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述  1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署  2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.">
+<meta name="keywords" content="java,javaweb,分布式,mq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Kafka 实战篇">
 <meta property="og:url" content="https://dunwu.github.io/2018/07/12/programming/java/javaweb/distributed/mq/kafka-basics/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Kafka 实战篇 Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述 1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署 2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.7. 集">
+<meta property="og:description" content="Kafka 实战篇  Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述  1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署  2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka系统结构.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/topic存储结构.png">
@@ -131,7 +131,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.790Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kafka 实战篇">
-<meta name="twitter:description" content="Kafka 实战篇 Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述 1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署 2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.7. 集">
+<meta name="twitter:description" content="Kafka 实战篇  Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。 | 官网 | 官方文档 | Github |    1. 概述  1.1. 简介 1.2. 系统结构和存储结构 1.3. 小结   2. 安装部署  2.1. 下载解压 2.2. 启动服务器 2.3. 停止服务器 2.4. 创建主题 2.5. 生产者生产消息 2.6. 消费者消费消息 2.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka系统结构.png">
 
 
@@ -522,84 +522,101 @@
       
 
       
-        <h1 id="Kafka-实战篇"><a href="#Kafka-实战篇" class="headerlink" title="Kafka 实战篇"></a>Kafka 实战篇</h1><blockquote>
+        <h1 id="kafka-实战篇"><a class="markdownIt-Anchor" href="#kafka-实战篇"></a> Kafka 实战篇</h1>
+<blockquote>
 <p>Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。</p>
 <p>| <a href="http://kafka.apache.org/" target="_blank" rel="noopener"><strong>官网</strong></a> | <a href="https://kafka.apache.org/documentation/" target="_blank" rel="noopener"><strong>官方文档</strong></a> | <a href="https://github.com/apache/kafka" target="_blank" rel="noopener"><strong>Github</strong></a> |</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-概述">1. 概述</a><ul>
-<li><a href="#11-简介">1.1. 简介</a></li>
-<li><a href="#12-系统结构和存储结构">1.2. 系统结构和存储结构</a></li>
-<li><a href="#13-小结">1.3. 小结</a></li>
+<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a>
+<ul>
+<li><a href="#11-%E7%AE%80%E4%BB%8B">1.1. 简介</a></li>
+<li><a href="#12-%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E5%92%8C%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84">1.2. 系统结构和存储结构</a></li>
+<li><a href="#13-%E5%B0%8F%E7%BB%93">1.3. 小结</a></li>
 </ul>
 </li>
-<li><a href="#2-安装部署">2. 安装部署</a><ul>
-<li><a href="#21-下载解压">2.1. 下载解压</a></li>
-<li><a href="#22-启动服务器">2.2. 启动服务器</a></li>
-<li><a href="#23-停止服务器">2.3. 停止服务器</a></li>
-<li><a href="#24-创建主题">2.4. 创建主题</a></li>
-<li><a href="#25-生产者生产消息">2.5. 生产者生产消息</a></li>
-<li><a href="#26-消费者消费消息">2.6. 消费者消费消息</a></li>
-<li><a href="#27-集群部署">2.7. 集群部署</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2">2. 安装部署</a>
+<ul>
+<li><a href="#21-%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B">2.1. 下载解压</a></li>
+<li><a href="#22-%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E5%99%A8">2.2. 启动服务器</a></li>
+<li><a href="#23-%E5%81%9C%E6%AD%A2%E6%9C%8D%E5%8A%A1%E5%99%A8">2.3. 停止服务器</a></li>
+<li><a href="#24-%E5%88%9B%E5%BB%BA%E4%B8%BB%E9%A2%98">2.4. 创建主题</a></li>
+<li><a href="#25-%E7%94%9F%E4%BA%A7%E8%80%85%E7%94%9F%E4%BA%A7%E6%B6%88%E6%81%AF">2.5. 生产者生产消息</a></li>
+<li><a href="#26-%E6%B6%88%E8%B4%B9%E8%80%85%E6%B6%88%E8%B4%B9%E6%B6%88%E6%81%AF">2.6. 消费者消费消息</a></li>
+<li><a href="#27-%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2">2.7. 集群部署</a></li>
 </ul>
 </li>
 <li><a href="#3-api">3. API</a></li>
-<li><a href="#4-生产者producer">4. 生产者（Producer）</a><ul>
-<li><a href="#41-发送消息流程">4.1. 发送消息流程</a></li>
-<li><a href="#42-发送消息方式">4.2. 发送消息方式</a></li>
+<li><a href="#4-%E7%94%9F%E4%BA%A7%E8%80%85producer">4. 生产者（Producer）</a>
+<ul>
+<li><a href="#41-%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E6%B5%81%E7%A8%8B">4.1. 发送消息流程</a></li>
+<li><a href="#42-%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF%E6%96%B9%E5%BC%8F">4.2. 发送消息方式</a></li>
 </ul>
 </li>
-<li><a href="#5-消费者consumer">5. 消费者（Consumer）</a><ul>
-<li><a href="#51-消费者和消费者群组">5.1. 消费者和消费者群组</a></li>
-<li><a href="#52-消费消息流程">5.2. 消费消息流程</a></li>
-<li><a href="#53-提交偏移量">5.3. 提交偏移量</a></li>
-<li><a href="#54-从指定偏移量获取数据">5.4. 从指定偏移量获取数据</a></li>
+<li><a href="#5-%E6%B6%88%E8%B4%B9%E8%80%85consumer">5. 消费者（Consumer）</a>
+<ul>
+<li><a href="#51-%E6%B6%88%E8%B4%B9%E8%80%85%E5%92%8C%E6%B6%88%E8%B4%B9%E8%80%85%E7%BE%A4%E7%BB%84">5.1. 消费者和消费者群组</a></li>
+<li><a href="#52-%E6%B6%88%E8%B4%B9%E6%B6%88%E6%81%AF%E6%B5%81%E7%A8%8B">5.2. 消费消息流程</a></li>
+<li><a href="#53-%E6%8F%90%E4%BA%A4%E5%81%8F%E7%A7%BB%E9%87%8F">5.3. 提交偏移量</a></li>
+<li><a href="#54-%E4%BB%8E%E6%8C%87%E5%AE%9A%E5%81%8F%E7%A7%BB%E9%87%8F%E8%8E%B7%E5%8F%96%E6%95%B0%E6%8D%AE">5.4. 从指定偏移量获取数据</a></li>
 </ul>
 </li>
-<li><a href="#6-broker">6. Broker</a><ul>
-<li><a href="#61-集群控制器">6.1. 集群控制器</a></li>
-<li><a href="#62-分区-leader-和-follower">6.2. 分区 leader 和 follower</a></li>
-<li><a href="#63-群组协调器">6.3. 群组协调器</a></li>
+<li><a href="#6-broker">6. Broker</a>
+<ul>
+<li><a href="#61-%E9%9B%86%E7%BE%A4%E6%8E%A7%E5%88%B6%E5%99%A8">6.1. 集群控制器</a></li>
+<li><a href="#62-%E5%88%86%E5%8C%BA-leader-%E5%92%8C-follower">6.2. 分区 leader 和 follower</a></li>
+<li><a href="#63-%E7%BE%A4%E7%BB%84%E5%8D%8F%E8%B0%83%E5%99%A8">6.3. 群组协调器</a></li>
 </ul>
 </li>
-<li><a href="#7-zookeeper-集群">7. Zookeeper 集群</a><ul>
-<li><a href="#71-节点信息">7.1. 节点信息</a></li>
-<li><a href="#72-zookeeper-一些总结">7.2. zookeeper 一些总结</a></li>
+<li><a href="#7-zookeeper-%E9%9B%86%E7%BE%A4">7. Zookeeper 集群</a>
+<ul>
+<li><a href="#71-%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF">7.1. 节点信息</a></li>
+<li><a href="#72-zookeeper-%E4%B8%80%E4%BA%9B%E6%80%BB%E7%BB%93">7.2. zookeeper 一些总结</a></li>
 </ul>
 </li>
-<li><a href="#8-资料">8. 资料</a></li>
+<li><a href="#8-%E8%B5%84%E6%96%99">8. 资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="1-1-简介"><a href="#1-1-简介" class="headerlink" title="1.1. 简介"></a>1.1. 简介</h3><p>Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的 MQ 中间件。具有如下特点：</p>
+<h2 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述"></a> 1. 概述</h2>
+<h3 id="11-简介"><a class="markdownIt-Anchor" href="#11-简介"></a> 1.1. 简介</h3>
+<p>Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的 MQ 中间件。具有如下特点：</p>
 <ul>
 <li>伸缩性。随着数据量增长，可以通过对 broker 集群水平扩展来提高系统性能。</li>
 <li>高性能。通过横向扩展生产者、消费者(通过消费者群组实现)和 broker（通过扩展实现系统伸缩性）可以轻松处理巨大的消息流。</li>
 <li>消息持久化。基于磁盘的数据存储，消息不会丢失。</li>
 </ul>
 <p>通过 Partition 来实现多个生产者（同一个 topic 消息根据 key 放置到一个 Partition 中）和多个消费者（一个 Partition 由消费者群组中每一个消费者来负责）。</p>
-<h3 id="1-2-系统结构和存储结构"><a href="#1-2-系统结构和存储结构" class="headerlink" title="1.2. 系统结构和存储结构"></a>1.2. 系统结构和存储结构</h3><h4 id="1-2-1-系统结构"><a href="#1-2-1-系统结构" class="headerlink" title="1.2.1. 系统结构"></a>1.2.1. 系统结构</h4><p>producer 采用 push 方式向 broker 发送消息；customer 采用 pull 方式从 broker 接受消息。</p>
+<h3 id="12-系统结构和存储结构"><a class="markdownIt-Anchor" href="#12-系统结构和存储结构"></a> 1.2. 系统结构和存储结构</h3>
+<h4 id="121-系统结构"><a class="markdownIt-Anchor" href="#121-系统结构"></a> 1.2.1. 系统结构</h4>
+<p>producer 采用 push 方式向 broker 发送消息；customer 采用 pull 方式从 broker 接受消息。</p>
 <ul>
 <li><strong>Producer</strong> - 消息生产者，负责发布消息到 Kafka Broker。</li>
 <li><strong>Consumer</strong> - 消息消费者，从 Kafka Broker 读取消息的客户端。</li>
 <li><strong>Consumer Group</strong> - 每个 Consumer 属于一个特定的 Consumer Group，若不指定 group name 则属于默认的 group。<strong>在同一个 Group 中，每一个 customer 可以消费多个 Partition，但是一个 Partition 只能指定给一个这个 Group 中一个 Customer</strong>。</li>
 <li><strong>Broker</strong> - Kafka 集群包含一个或多个服务器，这种服务器被称为 broker</li>
 </ul>
-<div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka系统结构.png"><br></div>
-
-<h4 id="1-2-2-Topic-的存储结构"><a href="#1-2-2-Topic-的存储结构" class="headerlink" title="1.2.2. Topic 的存储结构"></a>1.2.2. Topic 的存储结构</h4><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/topic存储结构.png"><br></div>
-
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka系统结构.png">
+</div>
+<h4 id="122-topic-的存储结构"><a class="markdownIt-Anchor" href="#122-topic-的存储结构"></a> 1.2.2. Topic 的存储结构</h4>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/topic存储结构.png">
+</div>
 <ul>
 <li><strong>Topic</strong> - 每条发布到 Kafka 集群的消息都有一个类别，这个类别被称为 Topic。（物理上不同 Topic 的消息分开存储，逻辑上一个 Topic 的消息虽然保存于一个或多个 broker 上，但用户只需指定消息的 Topic 即可生产或消费数据而不必关心数据存于何处）。</li>
 <li><strong>Partition</strong> - Partition 是物理上的概念，每个 Topic 包含一个或多个 Partition。为了使得 Kafka 的吞吐率可以线性提高，物理上把 Topic 分成一个或多个 Partition，每个 Partition 在物理上对应一个文件夹，该文件夹下存储这个 Partition 的所有消息和索引文件。</li>
 <li><strong>Segment</strong> - 是 Partition 目录下的文件，保存存储消息。</li>
 <li><strong>索引</strong> - 方便查询 segment</li>
 </ul>
-<h4 id="1-2-3-Segment-文件格式"><a href="#1-2-3-Segment-文件格式" class="headerlink" title="1.2.3. Segment 文件格式"></a>1.2.3. Segment 文件格式</h4><p>可以把 topic 当做一个数据表，表中每一个记录都是 key,value 形式，如下图。</p>
+<h4 id="123-segment-文件格式"><a class="markdownIt-Anchor" href="#123-segment-文件格式"></a> 1.2.3. Segment 文件格式</h4>
+<p>可以把 topic 当做一个数据表，表中每一个记录都是 key,value 形式，如下图。</p>
 <p>注意： 必须要有一个 key，如果没有，则默认会生成一个 key，可以把 key 当做一个消息的标识，同一个 key 可能有多条数据。</p>
-<div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka-segment结构.png"><br></div>
-
-<h3 id="1-3-小结"><a href="#1-3-小结" class="headerlink" title="1.3. 小结"></a>1.3. 小结</h3><p><strong>（1）一个主题存在多个分区，每一分区属于哪个 leader broker?</strong></p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/kafka/kafka-segment结构.png">
+</div>
+<h3 id="13-小结"><a class="markdownIt-Anchor" href="#13-小结"></a> 1.3. 小结</h3>
+<p><strong>（1）一个主题存在多个分区，每一分区属于哪个 leader broker?</strong></p>
 <p>在任意一个 broker 机器都有每一个分区所属 leader 的信息，所以可以通过访问任意一个 broker 获取这些信息。</p>
 <p><strong>（2）每个消费者群组对应的分区偏移量的元数据存储在哪里。</strong></p>
 <p>最新版本保存在 kafka 中，对应的主题是_consumer_offsets。老版本是在 zookeeper 中。</p>
@@ -610,78 +627,103 @@
 <p>是通过群组中成为群主的消费者执行再均衡，执行完毕之后,通过群组协调器把每一个消费者负责分区信息发送给消费者，每一个消费者只能知道它负责的分区信息。</p>
 <p><strong>（5）如何保证时序性</strong></p>
 <p>因为 kafkaf 只保证一个分区内的消息才有时序性，所以只要消息属于同一个 topic 且在同一个分区内，就可以保证 kafka 消费消息是有顺序的了。</p>
-<h2 id="2-安装部署"><a href="#2-安装部署" class="headerlink" title="2. 安装部署"></a>2. 安装部署</h2><p>环境要求：JDK8、ZooKeeper</p>
-<h3 id="2-1-下载解压"><a href="#2-1-下载解压" class="headerlink" title="2.1. 下载解压"></a>2.1. 下载解压</h3><p>进入官方下载地址：<a href="http://kafka.apache.org/downloads，选择合适版本。" target="_blank" rel="noopener">http://kafka.apache.org/downloads，选择合适版本。</a></p>
+<h2 id="2-安装部署"><a class="markdownIt-Anchor" href="#2-安装部署"></a> 2. 安装部署</h2>
+<p>环境要求：JDK8、ZooKeeper</p>
+<h3 id="21-下载解压"><a class="markdownIt-Anchor" href="#21-下载解压"></a> 2.1. 下载解压</h3>
+<p>进入官方下载地址：<a href="http://kafka.apache.org/downloads%EF%BC%8C%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%89%88%E6%9C%AC%E3%80%82" target="_blank" rel="noopener">http://kafka.apache.org/downloads，选择合适版本。</a></p>
 <p>解压到本地：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&gt; <span class="selector-tag">tar</span> <span class="selector-tag">-xzf</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span><span class="selector-class">.tgz</span></span><br><span class="line">&gt; <span class="selector-tag">cd</span> <span class="selector-tag">kafka_2</span><span class="selector-class">.11-1</span><span class="selector-class">.1</span><span class="selector-class">.0</span></span><br></pre></td></tr></table></figure>
 <p>现在您已经在您的机器上下载了最新版本的 Kafka。</p>
-<h3 id="2-2-启动服务器"><a href="#2-2-启动服务器" class="headerlink" title="2.2. 启动服务器"></a>2.2. 启动服务器</h3><p>由于 Kafka 依赖于 ZooKeeper，所以运行前需要先启动 ZooKeeper</p>
+<h3 id="22-启动服务器"><a class="markdownIt-Anchor" href="#22-启动服务器"></a> 2.2. 启动服务器</h3>
+<p>由于 Kafka 依赖于 ZooKeeper，所以运行前需要先启动 ZooKeeper</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/zookeeper-server-start<span class="selector-class">.sh</span> config/zookeeper.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">37</span>,<span class="number">495</span>] INFO Reading configuration from: config/zookeeper<span class="selector-class">.properties</span> (org<span class="selector-class">.apache</span><span class="selector-class">.zookeeper</span><span class="selector-class">.server</span><span class="selector-class">.quorum</span><span class="selector-class">.QuorumPeerConfig</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>然后，启动 Kafka</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server.properties</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">028</span>] INFO Verifying properties (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">[<span class="number">2013</span>-<span class="number">04</span>-<span class="number">22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">051</span>] INFO Property socket<span class="selector-class">.send</span><span class="selector-class">.buffer</span><span class="selector-class">.bytes</span> is overridden to <span class="number">1048576</span> (kafka<span class="selector-class">.utils</span><span class="selector-class">.VerifiableProperties</span>)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="2-3-停止服务器"><a href="#2-3-停止服务器" class="headerlink" title="2.3. 停止服务器"></a>2.3. 停止服务器</h3><p>执行所有操作后，可以使用以下命令停止服务器</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start.sh config/server.properties</span><br><span class="line">[<span class="number">2013</span><span class="number">-04</span><span class="number">-22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">028</span>] INFO Verifying properties (kafka.utils.VerifiableProperties)</span><br><span class="line">[<span class="number">2013</span><span class="number">-04</span><span class="number">-22</span> <span class="number">15</span>:<span class="number">01</span>:<span class="number">47</span>,<span class="number">051</span>] INFO Property socket.send.buffer.bytes <span class="keyword">is</span> overridden to <span class="number">1048576</span> (kafka.utils.VerifiableProperties)</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="23-停止服务器"><a class="markdownIt-Anchor" href="#23-停止服务器"></a> 2.3. 停止服务器</h3>
+<p>执行所有操作后，可以使用以下命令停止服务器</p>
 <figure class="highlight vbscript"><table><tr><td class="code"><pre><span class="line">$ bin/kafka-<span class="built_in">server</span>-<span class="keyword">stop</span>.sh config/<span class="built_in">server</span>.properties</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-创建主题"><a href="#2-4-创建主题" class="headerlink" title="2.4. 创建主题"></a>2.4. 创建主题</h3><p>创建一个名为 test 的 Topic，这个 Topic 只有一个分区以及一个备份：</p>
+<h3 id="24-创建主题"><a class="markdownIt-Anchor" href="#24-创建主题"></a> 2.4. 创建主题</h3>
+<p>创建一个名为 test 的 Topic，这个 Topic 只有一个分区以及一个备份：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">test</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-5-生产者生产消息"><a href="#2-5-生产者生产消息" class="headerlink" title="2.5. 生产者生产消息"></a>2.5. 生产者生产消息</h3><p>运行生产者，然后可以在控制台中输入一些消息，这些消息会发送到服务器：</p>
+<h3 id="25-生产者生产消息"><a class="markdownIt-Anchor" href="#25-生产者生产消息"></a> 2.5. 生产者生产消息</h3>
+<p>运行生产者，然后可以在控制台中输入一些消息，这些消息会发送到服务器：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-console-producer.<span class="keyword">sh</span> --broker-<span class="keyword">list</span> localhos<span class="variable">t:9092</span> --topic test</span><br><span class="line">This <span class="keyword">is</span> <span class="keyword">a</span> message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
-<h3 id="2-6-消费者消费消息"><a href="#2-6-消费者消费消息" class="headerlink" title="2.6. 消费者消费消息"></a>2.6. 消费者消费消息</h3><p>启动消费者，然后获得服务器中 Topic 下的消息：</p>
-<figure class="highlight coffeescript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-<span class="built_in">console</span>-consumer.sh --bootstrap-server localhost:<span class="number">9092</span> --topic test --<span class="keyword">from</span>-beginning</span><br><span class="line">This <span class="keyword">is</span> a message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
-<h3 id="2-7-集群部署"><a href="#2-7-集群部署" class="headerlink" title="2.7. 集群部署"></a>2.7. 集群部署</h3><p>复制配置为多份（Windows 使用 copy 命令代理）：</p>
+<h3 id="26-消费者消费消息"><a class="markdownIt-Anchor" href="#26-消费者消费消息"></a> 2.6. 消费者消费消息</h3>
+<p>启动消费者，然后获得服务器中 Topic 下的消息：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-console-consumer.sh --bootstrap-server localhost:<span class="number">9092</span> --topic test --<span class="keyword">from</span>-beginning</span><br><span class="line">This <span class="keyword">is</span> a message</span><br><span class="line">This <span class="keyword">is</span> another message</span><br></pre></td></tr></table></figure>
+<h3 id="27-集群部署"><a class="markdownIt-Anchor" href="#27-集群部署"></a> 2.7. 集群部署</h3>
+<p>复制配置为多份（Windows 使用 copy 命令代理）：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">1</span>.properties</span><br><span class="line">&gt; cp config/server<span class="selector-class">.properties</span> config/server-<span class="number">2</span>.properties</span><br></pre></td></tr></table></figure>
 <p>修改配置：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">config/server-1.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=1</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9093</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-1</span><br><span class="line"></span><br><span class="line">config/server-2.properties:</span><br><span class="line">    broker.<span class="attribute">id</span>=2</span><br><span class="line">    <span class="attribute">listeners</span>=PLAINTEXT://:9094</span><br><span class="line">    log.<span class="attribute">dir</span>=/tmp/kafka-logs-2</span><br></pre></td></tr></table></figure>
-<p>其中，broker.id 这个参数必须是唯一的。</p>
+<p>其中，<a href="http://broker.id" target="_blank" rel="noopener">broker.id</a> 这个参数必须是唯一的。</p>
 <p>端口故意配置的不一致，是为了可以在一台机器启动多个应用节点。</p>
 <p>根据这两份配置启动三个服务器节点：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server<span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">1</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br><span class="line">&gt; bin/kafka-server-start<span class="selector-class">.sh</span> config/server-<span class="number">2</span><span class="selector-class">.properties</span> &amp;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <p>创建一个新的 Topic 使用 三个备份：</p>
 <figure class="highlight brainfuck"><table><tr><td class="code"><pre><span class="line">&gt; <span class="comment">bin/kafka</span><span class="literal">-</span><span class="comment">topics</span><span class="string">.</span><span class="comment">sh</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">create</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">zookeeper</span> <span class="comment">localhost:2181</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">replication</span><span class="literal">-</span><span class="comment">factor</span> <span class="comment">3</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">partitions</span> <span class="comment">1</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">topic</span> <span class="comment">my</span><span class="literal">-</span><span class="comment">replicated</span><span class="literal">-</span><span class="comment">topic</span></span><br></pre></td></tr></table></figure>
 <p>查看主题：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">&gt; bin/kafka-topics.sh --describe --zookeeper localhost:2181 --topic my-replicated-topic</span></span><br><span class="line"><span class="string"></span><span class="attr">Topic:</span><span class="string">my-replicated-topic</span>   <span class="attr">PartitionCount:1</span>    <span class="attr">ReplicationFactor:3</span> <span class="attr">Configs:</span></span><br><span class="line"><span class="attr">    Topic:</span> <span class="string">my-replicated-topic</span>  <span class="attr">Partition:</span> <span class="number">0</span>    <span class="attr">Leader:</span> <span class="number">1</span>   <span class="attr">Replicas:</span> <span class="number">1</span><span class="string">,2,0</span> <span class="attr">Isr:</span> <span class="number">1</span><span class="string">,2,0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">&gt; bin/kafka-topics.sh --describe --zookeeper localhost:<span class="number">2181</span> --topic my-replicated-topic</span><br><span class="line">Topic:my-replicated-topic   PartitionCount:<span class="number">1</span>    ReplicationFactor:<span class="number">3</span> Configs:</span><br><span class="line">    Topic: my-replicated-topic  Partition: <span class="number">0</span>    Leader: <span class="number">1</span>   Replicas: <span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span> Isr: <span class="number">1</span>,<span class="number">2</span>,<span class="number">0</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>leader - 负责指定分区的所有读取和写入的节点。每个节点将成为随机选择的分区部分的领导者。</li>
 <li>replicas - 是复制此分区日志的节点列表，无论它们是否为领导者，或者即使它们当前处于活动状态。</li>
 <li>isr - 是“同步”复制品的集合。这是副本列表的子集，该列表当前处于活跃状态并且已经被领导者捕获。</li>
 </ul>
-<h2 id="3-API"><a href="#3-API" class="headerlink" title="3. API"></a>3. API</h2><p>Stream API 的 maven 依赖：</p>
+<h2 id="3-api"><a class="markdownIt-Anchor" href="#3-api"></a> 3. API</h2>
+<p>Stream API 的 maven 依赖：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.kafka<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>kafka-streams<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其他 API 的 maven 依赖：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.kafka<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>kafka-clients<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.1.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="4-生产者（Producer）"><a href="#4-生产者（Producer）" class="headerlink" title="4. 生产者（Producer）"></a>4. 生产者（Producer）</h2><h3 id="4-1-发送消息流程"><a href="#4-1-发送消息流程" class="headerlink" title="4.1. 发送消息流程"></a>4.1. 发送消息流程</h3><p>发送消息流程如下图，需要注意的有：</p>
+<h2 id="4-生产者producer"><a class="markdownIt-Anchor" href="#4-生产者producer"></a> 4. 生产者（Producer）</h2>
+<h3 id="41-发送消息流程"><a class="markdownIt-Anchor" href="#41-发送消息流程"></a> 4.1. 发送消息流程</h3>
+<p>发送消息流程如下图，需要注意的有：</p>
 <ul>
 <li>分区器 Partitioner，分区器决定了一个消息被分配到哪个分区。在我们创建消息时，我们可以选择性指定一个键值 key 或者分区 Partition，如果传入的是 key，则通过图中的分区器 Partitioner 选择一个分区来保存这个消息；如果 key 和 Partition 都没有指定，则会默认生成一个 key。</li>
 <li>批次传输。<strong>批次，就是一组消息，这些消息属于同一个主题和分区</strong>。发送时，会把消息分成批次 Batch 传输，如果每一个消息发送一次，会导致大量的网路开销，</li>
 <li>如果消息成功写入 kafka，就返回一个 RecoredMetaData 对象，它包含了主题和分区信息，以及记录在分区里的偏移量。</li>
 <li>如果消息发送失败，可以进行重试，重试次数可以在配置中指定。</li>
 </ul>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-3cfae88715795068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-3cfae88715795068.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>生产者在向 broker 发送消息时是怎么确定向哪一个 broker 发送消息？</p>
 <ul>
 <li>生产者客户端会向任一个 broker 发送一个元数据请求（MetadataRequest），获取到每一个分区对应的 leader 信息，并缓存到本地。</li>
 <li>step2:生产者在发送消息时，会指定 Partition 或者通过 key 得到到一个 Partition，然后根据 Partition 从缓存中获取相应的 leader 信息。</li>
 </ul>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-3d7aab3ba2ba13f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h3 id="4-2-发送消息方式"><a href="#4-2-发送消息方式" class="headerlink" title="4.2. 发送消息方式"></a>4.2. 发送消息方式</h3><h4 id="4-2-1-发送并忘记（fire-and-forget）"><a href="#4-2-1-发送并忘记（fire-and-forget）" class="headerlink" title="4.2.1. 发送并忘记（fire-and-forget）"></a>4.2.1. 发送并忘记（fire-and-forget）</h4><p>代码如下，直接通过 send 方法来发送</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-3d7aab3ba2ba13f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h3 id="42-发送消息方式"><a class="markdownIt-Anchor" href="#42-发送消息方式"></a> 4.2. 发送消息方式</h3>
+<h4 id="421-发送并忘记fire-and-forget"><a class="markdownIt-Anchor" href="#421-发送并忘记fire-and-forget"></a> 4.2.1. 发送并忘记（fire-and-forget）</h4>
+<p>代码如下，直接通过 send 方法来发送</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ProducerRecord&lt;String, String&gt; record =</span><br><span class="line">            <span class="keyword">new</span> ProducerRecord&lt;&gt;(<span class="string">"CustomerCountry"</span>, <span class="string">"Precision Products"</span>, <span class="string">"France"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">            producer.send(record);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-2-同步发送"><a href="#4-2-2-同步发送" class="headerlink" title="4.2.2. 同步发送"></a>4.2.2. 同步发送</h4><p>代码如下，与“发送并忘记”的方式区别在于多了一个 get()方法，会一直阻塞等待 broker 返回结果：</p>
+<h4 id="422-同步发送"><a class="markdownIt-Anchor" href="#422-同步发送"></a> 4.2.2. 同步发送</h4>
+<p>代码如下，与“发送并忘记”的方式区别在于多了一个 get()方法，会一直阻塞等待 broker 返回结果：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ProducerRecord&lt;String, String&gt; record =</span><br><span class="line">            <span class="keyword">new</span> ProducerRecord&lt;&gt;(<span class="string">"CustomerCountry"</span>, <span class="string">"Precision Products"</span>, <span class="string">"France"</span>);</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">            producer.send(record).get();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-3-异步发送"><a href="#4-2-3-异步发送" class="headerlink" title="4.2.3. 异步发送"></a>4.2.3. 异步发送</h4><p>代码如下，异步方式相对于“发送并忘记”的方式的不同在于，在异步返回时可以执行一些操作，如记录错误或者成功日志。</p>
+<h4 id="423-异步发送"><a class="markdownIt-Anchor" href="#423-异步发送"></a> 4.2.3. 异步发送</h4>
+<p>代码如下，异步方式相对于“发送并忘记”的方式的不同在于，在异步返回时可以执行一些操作，如记录错误或者成功日志。</p>
 <p>首先，定义一个 callback</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">DemoProducerCallback</span> <span class="keyword">implements</span> <span class="title">Callback</span> </span>&#123;</span><br><span class="line">      <span class="meta">@Override</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onCompletion</span><span class="params">(RecordMetadata recordMetadata, Exception e)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">               e.printStackTrace();</span><br><span class="line">             &#125;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后，使用这个 callback</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">ProducerRecord&lt;String, String&gt; record =</span><br><span class="line">            <span class="keyword">new</span> ProducerRecord&lt;&gt;(<span class="string">"CustomerCountry"</span>, <span class="string">"Biomedical Materials"</span>, <span class="string">"USA"</span>);</span><br><span class="line">producer.send(record, <span class="keyword">new</span> DemoProducerCallback());</span><br></pre></td></tr></table></figure>
-<h4 id="4-2-4-发送消息示例"><a href="#4-2-4-发送消息示例" class="headerlink" title="4.2.4. 发送消息示例"></a>4.2.4. 发送消息示例</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.KafkaProducer;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.Producer;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.ProducerConfig;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.ProducerRecord;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Kafka 生产者生产消息示例 生产者配置参考：https://kafka.apache.org/documentation/#producerconfigs</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProducerDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String HOST = <span class="string">"localhost:9092"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 指定生产者的配置</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, HOST);</span><br><span class="line">        properties.put(ProducerConfig.ACKS_CONFIG, <span class="string">"all"</span>);</span><br><span class="line">        properties.put(ProducerConfig.RETRIES_CONFIG, <span class="number">0</span>);</span><br><span class="line">        properties.put(ProducerConfig.BATCH_SIZE_CONFIG, <span class="number">16384</span>);</span><br><span class="line">        properties.put(ProducerConfig.LINGER_MS_CONFIG, <span class="number">1</span>);</span><br><span class="line">        properties.put(ProducerConfig.BUFFER_MEMORY_CONFIG, <span class="number">33554432</span>);</span><br><span class="line">        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line">        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 使用配置初始化 Kafka 生产者</span></span><br><span class="line">        Producer&lt;String, String&gt; producer = <span class="keyword">new</span> KafkaProducer&lt;&gt;(properties);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 3. 使用 send 方法发送异步消息</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">                String msg = <span class="string">"Message "</span> + i;</span><br><span class="line">                producer.send(<span class="keyword">new</span> ProducerRecord&lt;&gt;(<span class="string">"HelloWorld"</span>, msg));</span><br><span class="line">                System.out.println(<span class="string">"Sent:"</span> + msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 4. 关闭生产者</span></span><br><span class="line">            producer.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="5-消费者（Consumer）"><a href="#5-消费者（Consumer）" class="headerlink" title="5. 消费者（Consumer）"></a>5. 消费者（Consumer）</h2><h3 id="5-1-消费者和消费者群组"><a href="#5-1-消费者和消费者群组" class="headerlink" title="5.1. 消费者和消费者群组"></a>5.1. 消费者和消费者群组</h3><h4 id="5-1-1-消费者介绍"><a href="#5-1-1-消费者介绍" class="headerlink" title="5.1.1. 消费者介绍"></a>5.1.1. 消费者介绍</h4><p>消费者以<strong>pull 方式</strong>从 broker 拉取消息，消费者可以订阅一个或多个主题，然后按照消息生成顺序（<strong>kafka 只能保证分区中消息的顺序</strong>）读取消息。</p>
+<h4 id="424-发送消息示例"><a class="markdownIt-Anchor" href="#424-发送消息示例"></a> 4.2.4. 发送消息示例</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Properties;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.KafkaProducer;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.Producer;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.ProducerConfig;</span><br><span class="line"><span class="keyword">import</span> org.apache.kafka.clients.producer.ProducerRecord;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Kafka 生产者生产消息示例 生产者配置参考：https://kafka.apache.org/documentation/#producerconfigs</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ProducerDemo</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> String HOST = <span class="string">"localhost:9092"</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 1. 指定生产者的配置</span></span><br><span class="line">        Properties properties = <span class="keyword">new</span> Properties();</span><br><span class="line">        properties.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, HOST);</span><br><span class="line">        properties.put(ProducerConfig.ACKS_CONFIG, <span class="string">"all"</span>);</span><br><span class="line">        properties.put(ProducerConfig.RETRIES_CONFIG, <span class="number">0</span>);</span><br><span class="line">        properties.put(ProducerConfig.BATCH_SIZE_CONFIG, <span class="number">16384</span>);</span><br><span class="line">        properties.put(ProducerConfig.LINGER_MS_CONFIG, <span class="number">1</span>);</span><br><span class="line">        properties.put(ProducerConfig.BUFFER_MEMORY_CONFIG, <span class="number">33554432</span>);</span><br><span class="line">        properties.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line">        properties.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringSerializer"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 2. 使用配置初始化 Kafka 生产者</span></span><br><span class="line">        Producer&lt;String, String&gt; producer = <span class="keyword">new</span> KafkaProducer&lt;&gt;(properties);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 3. 使用 send 方法发送异步消息</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">                String msg = <span class="string">"Message "</span> + i;</span><br><span class="line">                producer.send(<span class="keyword">new</span> ProducerRecord&lt;&gt;(<span class="string">"HelloWorld"</span>, msg));</span><br><span class="line">                System.out.println(<span class="string">"Sent:"</span> + msg);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            <span class="comment">// 4. 关闭生产者</span></span><br><span class="line">            producer.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="5-消费者consumer"><a class="markdownIt-Anchor" href="#5-消费者consumer"></a> 5. 消费者（Consumer）</h2>
+<h3 id="51-消费者和消费者群组"><a class="markdownIt-Anchor" href="#51-消费者和消费者群组"></a> 5.1. 消费者和消费者群组</h3>
+<h4 id="511-消费者介绍"><a class="markdownIt-Anchor" href="#511-消费者介绍"></a> 5.1.1. 消费者介绍</h4>
+<p>消费者以<strong>pull 方式</strong>从 broker 拉取消息，消费者可以订阅一个或多个主题，然后按照消息生成顺序（<strong>kafka 只能保证分区中消息的顺序</strong>）读取消息。</p>
 <p><strong>一个消息消息只有在所有跟随者节点都进行了同步，才会被消费者获取到</strong>。如下图，只能消费 Message0、Message1、Message2：</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-360a63cf628c7b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h4 id="5-1-2-消费者分区组"><a href="#5-1-2-消费者分区组" class="headerlink" title="5.1.2. 消费者分区组"></a>5.1.2. 消费者分区组</h4><p>消费者群组可以实现并发的处理消息。一个消费者群组作为消费一个 topic 消息的单元，每一个 Partition 只能隶属于一个消费者群组中一个 customer，如下图</p>
-<div align="center"><br><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/6-1-259x300.png"><br></div>
-
-<h4 id="5-1-3-消费者区组的再均衡"><a href="#5-1-3-消费者区组的再均衡" class="headerlink" title="5.1.3. 消费者区组的再均衡"></a>5.1.3. 消费者区组的再均衡</h4><p>当在群组里面 新增/移除消费者 或者 新增/移除 kafka 集群 broker 节点 时，群组协调器 Broker 会触发再均衡，重新为每一个 Partition 分配消费者。<strong>再均衡期间，消费者无法读取消息，造成整个消费者群组一小段时间的不可用。</strong></p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-360a63cf628c7b3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h4 id="512-消费者分区组"><a class="markdownIt-Anchor" href="#512-消费者分区组"></a> 5.1.2. 消费者分区组</h4>
+<p>消费者群组可以实现并发的处理消息。一个消费者群组作为消费一个 topic 消息的单元，每一个 Partition 只能隶属于一个消费者群组中一个 customer，如下图</p>
+<div align="center">
+<img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/6-1-259x300.png">
+</div>
+<h4 id="513-消费者区组的再均衡"><a class="markdownIt-Anchor" href="#513-消费者区组的再均衡"></a> 5.1.3. 消费者区组的再均衡</h4>
+<p>当在群组里面 新增/移除消费者 或者 新增/移除 kafka 集群 broker 节点 时，群组协调器 Broker 会触发再均衡，重新为每一个 Partition 分配消费者。<strong>再均衡期间，消费者无法读取消息，造成整个消费者群组一小段时间的不可用。</strong></p>
 <ul>
 <li>新增消费者。customer 订阅主题之后，第一次执行 poll 方法</li>
 <li>移除消费者。执行 customer.close()操作或者消费客户端宕机，就不再通过 poll 向群组协调器发送心跳了，当群组协调器检测次消费者没有心跳，就会触发再均衡。</li>
@@ -692,7 +734,8 @@
 <p>群主分配分区的过程如下：</p>
 <ol>
 <li>群主从群组协调器获取群组成员列表，然后给每一个消费者进行分配分区 Partition。</li>
-<li>两个分配策略：Range 和 RoundRobin。<ul>
+<li>两个分配策略：Range 和 RoundRobin。
+<ul>
 <li>Range 策略，就是把若干个连续的分区分配给消费者，如存在分区 1-5，假设有 3 个消费者，则消费者 1 负责分区 1-2,消费者 2 负责分区 3-4，消费者 3 负责分区 5。</li>
 <li>RoundRoin 策略，就是把所有分区逐个分给消费者，如存在分区 1-5，假设有 3 个消费者，则分区 1-&gt;消费 1，分区 2-&gt;消费者 2，分区 3&gt;消费者 3，分区 4&gt;消费者 1，分区 5-&gt;消费者 2。</li>
 </ul>
@@ -700,9 +743,12 @@
 <li>群主分配完成之后，把分配情况发送给群组协调器。</li>
 <li>群组协调器再把这些信息发送给消费者。<strong>每一个消费者只能看到自己的分配信息，只有群主知道所有消费者的分配信息</strong>。</li>
 </ol>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-fd4ab296c5dbeb24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h3 id="5-2-消费消息流程"><a href="#5-2-消费消息流程" class="headerlink" title="5.2. 消费消息流程"></a>5.2. 消费消息流程</h3><h4 id="5-2-1-消费流程-demo"><a href="#5-2-1-消费流程-demo" class="headerlink" title="5.2.1. 消费流程 demo"></a>5.2.1. 消费流程 demo</h4><p>具体步骤如下</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-fd4ab296c5dbeb24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h3 id="52-消费消息流程"><a class="markdownIt-Anchor" href="#52-消费消息流程"></a> 5.2. 消费消息流程</h3>
+<h4 id="521-消费流程-demo"><a class="markdownIt-Anchor" href="#521-消费流程-demo"></a> 5.2.1. 消费流程 demo</h4>
+<p>具体步骤如下</p>
 <ul>
 <li>step1 创建消费者。</li>
 <li>step2 订阅主题。除了订阅主题方式外还有使用指定分组的模式，但是常用方式都是订阅主题方式</li>
@@ -712,7 +758,8 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 1.构建KafkaCustomer</span></span><br><span class="line">Consumer consumer = buildCustomer();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2.设置主题</span></span><br><span class="line">consumer.subscribe(Arrays.asList(topic));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3.接受消息</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">500</span>);</span><br><span class="line">        System.out.println(<span class="string">"customer Message---"</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)</span><br><span class="line"></span><br><span class="line">            <span class="comment">// print the offset,key and value for the consumer records.</span></span><br><span class="line">            System.out.printf(<span class="string">"offset = %d, key = %s, value = %s\n"</span>,</span><br><span class="line">                    record.offset(), record.key(), record.value());</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// 4.关闭消息</span></span><br><span class="line">        consumer.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>创建消费者的代码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Consumer <span class="title">buildCustomer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Properties props = <span class="keyword">new</span> Properties();</span><br><span class="line">    <span class="comment">// bootstrap.servers是Kafka集群的IP地址。多个时,使用逗号隔开</span></span><br><span class="line">    props.put(<span class="string">"bootstrap.servers"</span>, <span class="string">"localhost:9092"</span>);</span><br><span class="line">    <span class="comment">// 消费者群组</span></span><br><span class="line">    props.put(<span class="string">"group.id"</span>, <span class="string">"test"</span>);</span><br><span class="line">    props.put(<span class="string">"enable.auto.commit"</span>, <span class="string">"true"</span>);</span><br><span class="line">    props.put(<span class="string">"auto.commit.interval.ms"</span>, <span class="string">"1000"</span>);</span><br><span class="line">    props.put(<span class="string">"session.timeout.ms"</span>, <span class="string">"30000"</span>);</span><br><span class="line">    props.put(<span class="string">"key.deserializer"</span>,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">    props.put(<span class="string">"value.deserializer"</span>,</span><br><span class="line">            <span class="string">"org.apache.kafka.common.serialization.StringDeserializer"</span>);</span><br><span class="line">    KafkaConsumer&lt;String, String&gt; consumer = <span class="keyword">new</span> KafkaConsumer</span><br><span class="line">            &lt;String, String&gt;(props);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> consumer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-2-2-消费消息方式"><a href="#5-2-2-消费消息方式" class="headerlink" title="5.2.2. 消费消息方式"></a>5.2.2. 消费消息方式</h4><p>分为订阅主题和指定分组两种方式：</p>
+<h4 id="522-消费消息方式"><a class="markdownIt-Anchor" href="#522-消费消息方式"></a> 5.2.2. 消费消息方式</h4>
+<p>分为订阅主题和指定分组两种方式：</p>
 <ul>
 <li>消费者分组模式。通过订阅主题方式时，消费者必须加入到消费者群组中，即消费者必须有一个自己的分组；</li>
 <li>独立消费者模式。这种模式就是消费者是独立的不属于任何消费者分组，自己指定消费那些 Partition。</li>
@@ -722,18 +769,22 @@
 <p>2、独立消费者模式</p>
 <p>通过 consumer 的 assign(Collection<topicpartition> partitions)方法来为消费者指定分区。</topicpartition></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">consumeMessageForIndependentConsumer</span><span class="params">(String topic)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 1.构建KafkaCustomer</span></span><br><span class="line">    Consumer consumer = buildCustomer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.指定分区</span></span><br><span class="line">    <span class="comment">// 2.1获取可用分区</span></span><br><span class="line">    List&lt;PartitionInfo&gt; partitionInfoList = buildCustomer().partitionsFor(topic);</span><br><span class="line">    <span class="comment">// 2.2指定分区,这里是指定了所有分区,也可以指定个别的分区</span></span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">null</span> != partitionInfoList)&#123;</span><br><span class="line">        List&lt;TopicPartition&gt; partitions = Lists.newArrayList();</span><br><span class="line">        <span class="keyword">for</span>(PartitionInfo partitionInfo : partitionInfoList)&#123;</span><br><span class="line">            partitions.add(<span class="keyword">new</span> TopicPartition(partitionInfo.topic(),partitionInfo.partition()));</span><br><span class="line">        &#125;</span><br><span class="line">        consumer.assign(partitions);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.接受消息</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">500</span>);</span><br><span class="line">        System.out.println(<span class="string">"consume Message---"</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// print the offset,key and value for the consumer records.</span></span><br><span class="line">            System.out.printf(<span class="string">"offset = %d, key = %s, value = %s\n"</span>,</span><br><span class="line">                    record.offset(), record.key(), record.value());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 异步提交</span></span><br><span class="line">            consumer.commitAsync();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-2-3-轮询获取消息"><a href="#5-2-3-轮询获取消息" class="headerlink" title="5.2.3. 轮询获取消息"></a>5.2.3. 轮询获取消息</h4><p>通过 poll 来获取消息，但是获取消息时并不是立刻返回结果，需要考虑两个因素：</p>
+<h4 id="523-轮询获取消息"><a class="markdownIt-Anchor" href="#523-轮询获取消息"></a> 5.2.3. 轮询获取消息</h4>
+<p>通过 poll 来获取消息，但是获取消息时并不是立刻返回结果，需要考虑两个因素：</p>
 <ul>
 <li>消费者通过 customer.poll(time)中设置的等待时间</li>
 <li>broker 会等待累计一定量数据，然后发送给消费者。这样可以减少网络开销。</li>
 </ul>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-d7d111e7c7e7f504.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-d7d111e7c7e7f504.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>poll 处了获取消息外，还有其他作用，如下：</p>
 <ul>
 <li>发送心跳信息。消费者通过向被指派为群组协调器的 broker 发送心跳来维护他和群组的从属关系，当机器宕掉后，群组协调器触发再分配</li>
 </ul>
-<h3 id="5-3-提交偏移量"><a href="#5-3-提交偏移量" class="headerlink" title="5.3. 提交偏移量"></a>5.3. 提交偏移量</h3><h4 id="5-3-1-偏移量和提交"><a href="#5-3-1-偏移量和提交" class="headerlink" title="5.3.1. 偏移量和提交"></a>5.3.1. 偏移量和提交</h4><p>（1）偏移量</p>
+<h3 id="53-提交偏移量"><a class="markdownIt-Anchor" href="#53-提交偏移量"></a> 5.3. 提交偏移量</h3>
+<h4 id="531-偏移量和提交"><a class="markdownIt-Anchor" href="#531-偏移量和提交"></a> 5.3.1. 偏移量和提交</h4>
+<p>（1）偏移量</p>
 <p>偏移量 offeset，是指一个消息在分区中位置。在通过生产者向 kafka 推送消息返回的结果中包含了这个偏移量值，或者在消费者拉取信息时，也会包含消息的偏移量信息。</p>
 <p>（2）提交的解释</p>
 <p>我们把消息的偏移量提交到 kafka 的操作叫做<strong>提交或提交偏移量。</strong></p>
@@ -745,25 +796,31 @@
 <p>（4）提交时会遇到两个问题</p>
 <p>a. 重复处理</p>
 <p>当提交的偏移量小于客户端处理的最后一个消息的偏移量时，会出现重复处理消息的问题，如下图</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-75abe308f9cf21f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-75abe308f9cf21f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>b. 消息丢失</p>
 <p>当提交的偏移量大于客户端处理的最后端最后一个消息的偏移量，会出现消息丢失的问题，如下图：</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-68b1e5fdc020d0f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-68b1e5fdc020d0f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>（5）提交方式</p>
 <p>主要分为：自动提交和手动提交。</p>
 <p>a. 自动提交</p>
-<p>auto.commit.commit ,默认为 true 自动提交，自动提交时通过轮询方式来做，时间间通过 auto.commit.interval.ms 属性来进行设置。</p>
+<p>auto.commit.commit ,默认为 true 自动提交，自动提交时通过轮询方式来做，时间间通过 <a href="http://auto.commit.interval.ms" target="_blank" rel="noopener">auto.commit.interval.ms</a> 属性来进行设置。</p>
 <p>b. 手动提交</p>
 <p>除了自动提交，还可以进行手动提交，手动提交就是通过代码调用函数的方式提交，在使用手动提交时首先需要将 auto.commit.commit 设置为 false，目前有三种方式：同步提交、异步提交、同步和异步结合。</p>
-<h4 id="5-3-2-同步提交"><a href="#5-3-2-同步提交" class="headerlink" title="5.3.2. 同步提交"></a>5.3.2. 同步提交</h4><p>可以通过 commitSync 来进行提交，<strong>同步提交会一直提交直到成功</strong>。如下</p>
+<h4 id="532-同步提交"><a class="markdownIt-Anchor" href="#532-同步提交"></a> 5.3.2. 同步提交</h4>
+<p>可以通过 commitSync 来进行提交，<strong>同步提交会一直提交直到成功</strong>。如下</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customerMessageWithSyncCommit</span><span class="params">(String topic)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1.构建KafkaCustomer</span></span><br><span class="line">    Consumer consumer = buildCustomer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.设置主题</span></span><br><span class="line">    consumer.subscribe(Arrays.asList(topic));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.接受消息</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">500</span>);</span><br><span class="line">        System.out.println(<span class="string">"customer Message---"</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// print the offset,key and value for the consumer records.</span></span><br><span class="line">            System.out.printf(<span class="string">"offset = %d, key = %s, value = %s\n"</span>,</span><br><span class="line">                    record.offset(), record.key(), record.value());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">// 同步提交</span></span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                consumer.commitSync();</span><br><span class="line">            &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">                logger.error(<span class="string">"commit error"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-3-3-异步提交"><a href="#5-3-3-异步提交" class="headerlink" title="5.3.3. 异步提交"></a>5.3.3. 异步提交</h4><p>同步提交一个缺点是，在进行提交 commitAysnc()会阻塞整个下面流程。所以引入了异步提交 commitAsync()，如下代码，这里定义了 OffsetCommitCallback，也可以只进行 commitAsync()，不设置任何参数。</p>
+<h4 id="533-异步提交"><a class="markdownIt-Anchor" href="#533-异步提交"></a> 5.3.3. 异步提交</h4>
+<p>同步提交一个缺点是，在进行提交 commitAysnc()会阻塞整个下面流程。所以引入了异步提交 commitAsync()，如下代码，这里定义了 OffsetCommitCallback，也可以只进行 commitAsync()，不设置任何参数。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customerMessageWithAsyncCommit</span><span class="params">(String topic)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1.构建KafkaCustomer</span></span><br><span class="line">    Consumer consumer = buildCustomer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.设置主题</span></span><br><span class="line">    consumer.subscribe(Arrays.asList(topic));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.接受消息</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">        ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">500</span>);</span><br><span class="line">        System.out.println(<span class="string">"customer Message---"</span>);</span><br><span class="line">        <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// print the offset,key and value for the consumer records.</span></span><br><span class="line">            System.out.printf(<span class="string">"offset = %d, key = %s, value = %s\n"</span>,</span><br><span class="line">                    record.offset(), record.key(), record.value());</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 异步提交</span></span><br><span class="line">            consumer.commitAsync(<span class="keyword">new</span> OffsetCommitCallback() &#123;</span><br><span class="line">                <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onComplete</span><span class="params">(Map&lt;TopicPartition, OffsetAndMetadata&gt; offsets, Exception e)</span> </span>&#123;</span><br><span class="line">                    <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">                        logger.error(<span class="string">"Commit failed for offsets&#123;&#125;"</span>, offsets, e);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="5-3-4-同步和异步提交"><a href="#5-3-4-同步和异步提交" class="headerlink" title="5.3.4. 同步和异步提交"></a>5.3.4. 同步和异步提交</h4><p>代码如下：</p>
+<h4 id="534-同步和异步提交"><a class="markdownIt-Anchor" href="#534-同步和异步提交"></a> 5.3.4. 同步和异步提交</h4>
+<p>代码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">customerMessageWithSyncAndAsyncCommit</span><span class="params">(String topic)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1.构建KafkaCustomer</span></span><br><span class="line">    Consumer consumer = buildCustomer();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 2.设置主题</span></span><br><span class="line">    consumer.subscribe(Arrays.asList(topic));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 3.接受消息</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">            ConsumerRecords&lt;String, String&gt; records = consumer.poll(<span class="number">500</span>);</span><br><span class="line">            System.out.println(<span class="string">"customer Message---"</span>);</span><br><span class="line">            <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records) &#123;</span><br><span class="line"></span><br><span class="line">                <span class="comment">// print the offset,key and value for the consumer records.</span></span><br><span class="line">                System.out.printf(<span class="string">"offset = %d, key = %s, value = %s\n"</span>,</span><br><span class="line">                        record.offset(), record.key(), record.value());</span><br><span class="line"></span><br><span class="line">                <span class="comment">// 异步提交</span></span><br><span class="line">                consumer.commitAsync();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line"></span><br><span class="line">    &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">        <span class="comment">// 同步提交</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            consumer.commitSync();</span><br><span class="line">        &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">            consumer.close();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-4-从指定偏移量获取数据"><a href="#5-4-从指定偏移量获取数据" class="headerlink" title="5.4. 从指定偏移量获取数据"></a>5.4. 从指定偏移量获取数据</h3><p>我们读取消息是通过 poll 方法。它根据消费者客户端本地保存的当前偏移量来获取消息。如果我们需要从指定偏移量位置获取数据，此时就需要修改这个值为我们想要读取消息开始的地方，目前有如下三个方法：</p>
+<h3 id="54-从指定偏移量获取数据"><a class="markdownIt-Anchor" href="#54-从指定偏移量获取数据"></a> 5.4. 从指定偏移量获取数据</h3>
+<p>我们读取消息是通过 poll 方法。它根据消费者客户端本地保存的当前偏移量来获取消息。如果我们需要从指定偏移量位置获取数据，此时就需要修改这个值为我们想要读取消息开始的地方，目前有如下三个方法：</p>
 <ul>
 <li>seekToBeginning(Collection<topicpartition> partitions)。可以修改分区当前偏移量为分区的起始位置、</topicpartition></li>
 <li>seekToEnd(Collection<topicpartition> partitions)。可以修改分区当前偏移量为分区的末尾位置</topicpartition></li>
@@ -771,20 +828,27 @@
 </ul>
 <p>通过 seek(TopicPartition partition, long offset)可以实现处理消息和提交偏移量在一个事务中完成。思路就是需要在可短建立一个数据表，保证处理消息和和消息偏移量位置写入到这个数据表在一个事务中，此时就可以保证处理消息和记录偏移量要么同时成功，要么同时失败。代码如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">consumer.subscribe(topic);</span><br><span class="line"><span class="comment">// 1.第一次调用pool,加入消费者群组</span></span><br><span class="line">consumer.poll(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 2.获取负责的分区，并从本地数据库读取改分区最新偏移量，并通过seek方法修改poll获取消息的位置</span></span><br><span class="line"><span class="keyword">for</span> (TopicPartition partition: consumer.assignment())</span><br><span class="line">    consumer.seek(partition, getOffsetFromDB(partition));</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="keyword">true</span>) &#123;</span><br><span class="line">    ConsumerRecords&lt;String, String&gt; records =</span><br><span class="line">    consumer.poll(<span class="number">100</span>);</span><br><span class="line">    <span class="keyword">for</span> (ConsumerRecord&lt;String, String&gt; record : records)</span><br><span class="line">    &#123;</span><br><span class="line">        processRecord(record);</span><br><span class="line">        storeRecordInDB(record);</span><br><span class="line">        storeOffsetInDB(record.topic(), record.partition(),</span><br><span class="line">        record.offset());</span><br><span class="line">    &#125;</span><br><span class="line">    commitDBTransaction();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="6-Broker"><a href="#6-Broker" class="headerlink" title="6. Broker"></a>6. Broker</h2><h3 id="6-1-集群控制器"><a href="#6-1-集群控制器" class="headerlink" title="6.1. 集群控制器"></a>6.1. 集群控制器</h3><p>控制器除了具有一般 broker 的功能，还负责分区 leader 的选举。</p>
-<h3 id="6-2-分区-leader-和-follower"><a href="#6-2-分区-leader-和-follower" class="headerlink" title="6.2. 分区 leader 和 follower"></a>6.2. 分区 leader 和 follower</h3><p>Kafka 在 0.8 以前的版本中，如果一个 broker 机器宕机了，其上面的 Partition 都不能用了。为了实现 High Availablity，引入了复制功能，即一个 Partition 还会在其他的 broker 上面进行备份。为了实现复制功能，引入了分区 leader 和 follower：</p>
+<h2 id="6-broker"><a class="markdownIt-Anchor" href="#6-broker"></a> 6. Broker</h2>
+<h3 id="61-集群控制器"><a class="markdownIt-Anchor" href="#61-集群控制器"></a> 6.1. 集群控制器</h3>
+<p>控制器除了具有一般 broker 的功能，还负责分区 leader 的选举。</p>
+<h3 id="62-分区-leader-和-follower"><a class="markdownIt-Anchor" href="#62-分区-leader-和-follower"></a> 6.2. 分区 leader 和 follower</h3>
+<p>Kafka 在 0.8 以前的版本中，如果一个 broker 机器宕机了，其上面的 Partition 都不能用了。为了实现 High Availablity，引入了复制功能，即一个 Partition 还会在其他的 broker 上面进行备份。为了实现复制功能，引入了分区 leader 和 follower：</p>
 <p>（1）Leader 作用</p>
 <p>生产者和消费者请求都会经过这个 leader。Producer 和 Concumer 往一个 Partition 写入和读取消息时，都会首先查找这个 Partition 的 leader</p>
 <p>保存那些 follower 节点的状态与自己是一致的。</p>
 <p>（2）follower 作用：</p>
 <p>定时通过类似消费者的 poll 方法从 leader 中获取消息，进行备份</p>
 <p>同一个 topic 的不同 Partition 会分布在多个 broker 上，而且一个 Partition 还会在其他的 broker 上面进行备份，Producer 在发布消息到某个 Partition 时，先找到该 Partition 的 Leader，然后向这个 leader 推送消息；每个 Follower 都从 Leader 拉取消息，拉取消息成功之后，向 leader 发送一个 ack 确认。如下一个流程图：</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-371ef1888b65edc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h3 id="6-3-群组协调器"><a href="#6-3-群组协调器" class="headerlink" title="6.3. 群组协调器"></a>6.3. 群组协调器</h3><p>群组协调器，顾名思义就是维护消费者群组 ，消费者通过向被指派为群组协调器的 broker（不同的群组可以有不同的协调器）发送心跳来维护它们和群组的从属关系，以及它们对分区的所有权。</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-371ef1888b65edc9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h3 id="63-群组协调器"><a class="markdownIt-Anchor" href="#63-群组协调器"></a> 6.3. 群组协调器</h3>
+<p>群组协调器，顾名思义就是维护消费者群组 ，消费者通过向被指派为群组协调器的 broker（不同的群组可以有不同的协调器）发送心跳来维护它们和群组的从属关系，以及它们对分区的所有权。</p>
 <p>1、触发再均衡</p>
 <p>只要消费者以正常的时间间隔发送心跳，就会被认为是活跃的。消费者是通过 poll 获取消息时，发送的心跳的，当消费者客户端宕机之后，群组协调器在一段内没有收到心跳，则此时会认为消费者已死亡，然后触发一次再均衡。具体再均衡流程，可以参考上面的“再均衡”小节。</p>
-<h2 id="7-Zookeeper-集群"><a href="#7-Zookeeper-集群" class="headerlink" title="7. Zookeeper 集群"></a>7. Zookeeper 集群</h2><h3 id="7-1-节点信息"><a href="#7-1-节点信息" class="headerlink" title="7.1. 节点信息"></a>7.1. 节点信息</h3><p>参考：<a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+data+structures+in+Zookeeper" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/KAFKA/Kafka+data+structures+in+Zookeeper</a></p>
+<h2 id="7-zookeeper-集群"><a class="markdownIt-Anchor" href="#7-zookeeper-集群"></a> 7. Zookeeper 集群</h2>
+<h3 id="71-节点信息"><a class="markdownIt-Anchor" href="#71-节点信息"></a> 7.1. 节点信息</h3>
+<p>参考：<a href="https://cwiki.apache.org/confluence/display/KAFKA/Kafka+data+structures+in+Zookeeper" target="_blank" rel="noopener">https://cwiki.apache.org/confluence/display/KAFKA/Kafka+data+structures+in+Zookeeper</a></p>
 <p>Zookeeper 保存的就是节点信息和节点状态，不会保存 kafka 的消息信息，节点信息包括：</p>
 <ul>
 <li>broker。broer 启动时在 zookeeper 注册、并通过 watcher 监听 broker 节点变化；并且还记录 topic 和 Partition 的信息。</li>
@@ -793,9 +857,11 @@
 <li>config</li>
 <li>controller 和 controloer_epoch</li>
 </ul>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-8074b42933b41d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h4 id="7-1-1-broker"><a href="#7-1-1-broker" class="headerlink" title="7.1.1. broker"></a>7.1.1. broker</h4><p>（1）Topic 的注册信息</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-8074b42933b41d33.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h4 id="711-broker"><a class="markdownIt-Anchor" href="#711-broker"></a> 7.1.1. broker</h4>
+<p>（1）Topic 的注册信息</p>
 <p>作用：在创建 zookeeper 时，注册 topic 的 Partition 信息，包括每一个分区的复制节点 id。</p>
 <p>路径：/brokers/topics/[topic]</p>
 <p>数据格式：</p>
@@ -810,15 +876,18 @@
 <p>路径：/brokers/ids/[brokerId]</p>
 <p>数据格式：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">Schema:</span><br><span class="line">&#123; <span class="attr">"fields"</span>:</span><br><span class="line">    [ &#123;<span class="attr">"name"</span>: <span class="string">"version"</span>, <span class="attr">"type"</span>: <span class="string">"int"</span>, <span class="attr">"doc"</span>: <span class="string">"version id"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">"name"</span>: <span class="string">"host"</span>, <span class="attr">"type"</span>: <span class="string">"string"</span>, <span class="attr">"doc"</span>: <span class="string">"ip address or host name of the broker"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">"name"</span>: <span class="string">"port"</span>, <span class="attr">"type"</span>: <span class="string">"int"</span>, <span class="attr">"doc"</span>: <span class="string">"port of the broker"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">"name"</span>: <span class="string">"jmx_port"</span>, <span class="attr">"type"</span>: <span class="string">"int"</span>, <span class="attr">"doc"</span>: <span class="string">"port for jmx"</span>&#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"host"</span>: <span class="string">"192.168.1.148"</span>,</span><br><span class="line">  <span class="attr">"port"</span>: <span class="number">9092</span>,</span><br><span class="line">  <span class="attr">"jmx_port"</span>: <span class="number">9999</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="7-1-2-controller-和-controller-epoch"><a href="#7-1-2-controller-和-controller-epoch" class="headerlink" title="7.1.2. controller 和 controller_epoch"></a>7.1.2. controller 和 controller_epoch</h4><p>（1）控制器的 epoch:</p>
+<h4 id="712-controller-和-controller_epoch"><a class="markdownIt-Anchor" href="#712-controller-和-controller_epoch"></a> 7.1.2. controller 和 controller_epoch</h4>
+<p>（1）控制器的 epoch:</p>
 <p>/controller_epoch -&gt; int (epoch)</p>
 <p>（2）控制器的注册信息:</p>
 <p>/controller -&gt; int (broker id of the controller)</p>
-<h4 id="7-1-3-consumer"><a href="#7-1-3-consumer" class="headerlink" title="7.1.3. consumer"></a>7.1.3. consumer</h4><p>（1）消费者注册信息:</p>
+<h4 id="713-consumer"><a class="markdownIt-Anchor" href="#713-consumer"></a> 7.1.3. consumer</h4>
+<p>（1）消费者注册信息:</p>
 <p>路径：/consumers/[groupId]/ids/[consumerId]</p>
 <p>数据格式：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">Schema:</span><br><span class="line">&#123; <span class="attr">"fields"</span>:</span><br><span class="line">    [ &#123;<span class="attr">"name"</span>: <span class="string">"version"</span>, <span class="attr">"type"</span>: <span class="string">"int"</span>, <span class="attr">"doc"</span>: <span class="string">"version id"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">"name"</span>: <span class="string">"pattern"</span>, <span class="attr">"type"</span>: <span class="string">"string"</span>, <span class="attr">"doc"</span>: <span class="string">"can be of static, white_list or black_list"</span>&#125;,</span><br><span class="line">      &#123;<span class="attr">"name"</span>: <span class="string">"subscription"</span>, <span class="attr">"type"</span> : &#123;<span class="attr">"type"</span>: <span class="string">"map"</span>, <span class="attr">"values"</span>: &#123;<span class="attr">"type"</span>: <span class="string">"int"</span>&#125;,</span><br><span class="line">                                         <span class="attr">"doc"</span>: <span class="string">"a map from a topic or a wildcard pattern to the number of streams"</span>&#125;      &#125;    ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">A static subscription:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"pattern"</span>: <span class="string">"static"</span>,</span><br><span class="line">  <span class="attr">"subscription"</span>: &#123;<span class="attr">"topic1"</span>: <span class="number">1</span>, <span class="attr">"topic2"</span>: <span class="number">2</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">A whitelist subscription:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"pattern"</span>: <span class="string">"white_list"</span>,</span><br><span class="line">  <span class="attr">"subscription"</span>: &#123;<span class="attr">"abc"</span>: <span class="number">1</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A blacklist subscription:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"pattern"</span>: <span class="string">"black_list"</span>,</span><br><span class="line">  <span class="attr">"subscription"</span>: &#123;<span class="attr">"abc"</span>: <span class="number">1</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="7-1-4-admin"><a href="#7-1-4-admin" class="headerlink" title="7.1.4. admin"></a>7.1.4. admin</h4><p>（1）Re-assign partitions</p>
+<h4 id="714-admin"><a class="markdownIt-Anchor" href="#714-admin"></a> 7.1.4. admin</h4>
+<p>（1）Re-assign partitions</p>
 <p>路径：/admin/reassign_partitions</p>
 <p>数据格式：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"fields"</span>:[</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="attr">"name"</span>:<span class="string">"version"</span>,</span><br><span class="line">         <span class="attr">"type"</span>:<span class="string">"int"</span>,</span><br><span class="line">         <span class="attr">"doc"</span>:<span class="string">"version id"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="attr">"name"</span>:<span class="string">"partitions"</span>,</span><br><span class="line">         <span class="attr">"type"</span>:&#123;</span><br><span class="line">            <span class="attr">"type"</span>:<span class="string">"array"</span>,</span><br><span class="line">            <span class="attr">"items"</span>:&#123;</span><br><span class="line">               <span class="attr">"fields"</span>:[</span><br><span class="line">                  &#123;</span><br><span class="line">                     <span class="attr">"name"</span>:<span class="string">"topic"</span>,</span><br><span class="line">                     <span class="attr">"type"</span>:<span class="string">"string"</span>,</span><br><span class="line">                     <span class="attr">"doc"</span>:<span class="string">"topic of the partition to be reassigned"</span></span><br><span class="line">                  &#125;,</span><br><span class="line">                  &#123;</span><br><span class="line">                     <span class="attr">"name"</span>:<span class="string">"partition"</span>,</span><br><span class="line">                     <span class="attr">"type"</span>:<span class="string">"int"</span>,</span><br><span class="line">                     <span class="attr">"doc"</span>:<span class="string">"the partition to be reassigned"</span></span><br><span class="line">                  &#125;,</span><br><span class="line">                  &#123;</span><br><span class="line">                     <span class="attr">"name"</span>:<span class="string">"replicas"</span>,</span><br><span class="line">                     <span class="attr">"type"</span>:<span class="string">"array"</span>,</span><br><span class="line">                     <span class="attr">"items"</span>:<span class="string">"int"</span>,</span><br><span class="line">                     <span class="attr">"doc"</span>:<span class="string">"a list of replica ids"</span></span><br><span class="line">                  &#125;</span><br><span class="line">               ],</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="string">"doc"</span>:<span class="string">"an array of partitions to be reassigned to new replicas"</span></span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"partitions"</span>:</span><br><span class="line">     [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"topic"</span>: <span class="string">"Foo"</span>,</span><br><span class="line">            <span class="attr">"partition"</span>: <span class="number">1</span>,</span><br><span class="line">            <span class="attr">"replicas"</span>: [<span class="number">0</span>, <span class="number">1</span>, <span class="number">3</span>]</span><br><span class="line">        &#125;</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -828,12 +897,15 @@
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">   <span class="attr">"fields"</span>:[</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="attr">"name"</span>:<span class="string">"version"</span>,</span><br><span class="line">         <span class="attr">"type"</span>:<span class="string">"int"</span>,</span><br><span class="line">         <span class="attr">"doc"</span>:<span class="string">"version id"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">         <span class="attr">"name"</span>:<span class="string">"partitions"</span>,</span><br><span class="line">         <span class="attr">"type"</span>:&#123;</span><br><span class="line">            <span class="attr">"type"</span>:<span class="string">"array"</span>,</span><br><span class="line">            <span class="attr">"items"</span>:&#123;</span><br><span class="line">               <span class="attr">"fields"</span>:[</span><br><span class="line">                  &#123;</span><br><span class="line">                     <span class="attr">"name"</span>:<span class="string">"topic"</span>,</span><br><span class="line">                     <span class="attr">"type"</span>:<span class="string">"string"</span>,</span><br><span class="line">                     <span class="attr">"doc"</span>:<span class="string">"topic of the partition for which preferred replica election should be triggered"</span></span><br><span class="line">                  &#125;,</span><br><span class="line">                  &#123;</span><br><span class="line">                     <span class="attr">"name"</span>:<span class="string">"partition"</span>,</span><br><span class="line">                     <span class="attr">"type"</span>:<span class="string">"int"</span>,</span><br><span class="line">                     <span class="attr">"doc"</span>:<span class="string">"the partition for which preferred replica election should be triggered"</span></span><br><span class="line">                  &#125;</span><br><span class="line">               ],</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="string">"doc"</span>:<span class="string">"an array of partitions for which preferred replica election should be triggered"</span></span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">   ]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Example:</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"partitions"</span>:</span><br><span class="line">     [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"topic"</span>: <span class="string">"Foo"</span>,</span><br><span class="line">            <span class="attr">"partition"</span>: <span class="number">1</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"topic"</span>: <span class="string">"Bar"</span>,</span><br><span class="line">            <span class="attr">"partition"</span>: <span class="number">0</span></span><br><span class="line">        &#125;</span><br><span class="line">     ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>（3）Delete topics</p>
 <p>/admin/delete_topics/[topic_to_be_deleted] (the value of the path in empty)</p>
-<h4 id="7-1-5-config"><a href="#7-1-5-config" class="headerlink" title="7.1.5. config"></a>7.1.5. config</h4><p>Topic Configuration</p>
+<h4 id="715-config"><a class="markdownIt-Anchor" href="#715-config"></a> 7.1.5. config</h4>
+<p>Topic Configuration</p>
 <p>/config/topics/[topic_name]</p>
 <p>数据格式：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"version"</span>: <span class="number">1</span>,</span><br><span class="line">  <span class="attr">"config"</span>: &#123;</span><br><span class="line">    <span class="attr">"config.a"</span>: <span class="string">"x"</span>,</span><br><span class="line">    <span class="attr">"config.b"</span>: <span class="string">"y"</span>,</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="7-2-zookeeper-一些总结"><a href="#7-2-zookeeper-一些总结" class="headerlink" title="7.2. zookeeper 一些总结"></a>7.2. zookeeper 一些总结</h3><p>离开了 Zookeeper, Kafka 不能对 Topic 进行新增操作, 但是仍然可以 produce 和 consume 消息.</p>
-<h2 id="8-资料"><a href="#8-资料" class="headerlink" title="8. 资料"></a>8. 资料</h2><ul>
+<h3 id="72-zookeeper-一些总结"><a class="markdownIt-Anchor" href="#72-zookeeper-一些总结"></a> 7.2. zookeeper 一些总结</h3>
+<p>离开了 Zookeeper, Kafka 不能对 Topic 进行新增操作, 但是仍然可以 produce 和 consume 消息.</p>
+<h2 id="8-资料"><a class="markdownIt-Anchor" href="#8-资料"></a> 8. 资料</h2>
+<ul>
 <li><a href="http://www.heartthinkdo.com/?p=2006#233" target="_blank" rel="noopener">Kafka(03) Kafka 介绍</a></li>
 </ul>
 
@@ -889,9 +961,9 @@
           
             <a href="/blog/tags/java/" rel="tag"># java</a>
           
-            <a href="/blog/tags/分布式/" rel="tag"># 分布式</a>
-          
             <a href="/blog/tags/javaweb/" rel="tag"># javaweb</a>
+          
+            <a href="/blog/tags/分布式/" rel="tag"># 分布式</a>
           
             <a href="/blog/tags/mq/" rel="tag"># mq</a>
           
@@ -906,8 +978,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/07/10/programming/java/javaweb/distributed/rpc/zookeeper-advanced/" rel="next" title="ZooKeeper 高级篇">
-                <i class="fa fa-chevron-left"></i> ZooKeeper 高级篇
+              <a href="/blog/2018/07/12/programming/java/javaweb/distributed/rpc/zookeeper-basics/" rel="next" title="ZooKeeper 基础篇">
+                <i class="fa fa-chevron-left"></i> ZooKeeper 基础篇
               </a>
             
           </div>
@@ -916,8 +988,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/07/12/programming/java/javaweb/distributed/rpc/zookeeper-basics/" rel="prev" title="ZooKeeper 基础篇">
-                ZooKeeper 基础篇 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/07/17/programming/java/javaweb/distributed/mq/rocketmq-basics/" rel="prev" title="RocketMQ 实战篇">
+                RocketMQ 实战篇 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -989,7 +1061,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1054,7 +1126,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1352,7 +1426,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka-实战篇"><span class="nav-text">Kafka 实战篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-简介"><span class="nav-text">1.1. 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-系统结构和存储结构"><span class="nav-text">1.2. 系统结构和存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-1-系统结构"><span class="nav-text">1.2.1. 系统结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-2-Topic-的存储结构"><span class="nav-text">1.2.2. Topic 的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-3-Segment-文件格式"><span class="nav-text">1.2.3. Segment 文件格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-小结"><span class="nav-text">1.3. 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装部署"><span class="nav-text">2. 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-下载解压"><span class="nav-text">2.1. 下载解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-启动服务器"><span class="nav-text">2.2. 启动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-停止服务器"><span class="nav-text">2.3. 停止服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-创建主题"><span class="nav-text">2.4. 创建主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-生产者生产消息"><span class="nav-text">2.5. 生产者生产消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-消费者消费消息"><span class="nav-text">2.6. 消费者消费消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-集群部署"><span class="nav-text">2.7. 集群部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-API"><span class="nav-text">3. API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-生产者（Producer）"><span class="nav-text">4. 生产者（Producer）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-发送消息流程"><span class="nav-text">4.1. 发送消息流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-发送消息方式"><span class="nav-text">4.2. 发送消息方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-1-发送并忘记（fire-and-forget）"><span class="nav-text">4.2.1. 发送并忘记（fire-and-forget）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-2-同步发送"><span class="nav-text">4.2.2. 同步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-3-异步发送"><span class="nav-text">4.2.3. 异步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-2-4-发送消息示例"><span class="nav-text">4.2.4. 发送消息示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-消费者（Consumer）"><span class="nav-text">5. 消费者（Consumer）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1-消费者和消费者群组"><span class="nav-text">5.1. 消费者和消费者群组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-1-消费者介绍"><span class="nav-text">5.1.1. 消费者介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-2-消费者分区组"><span class="nav-text">5.1.2. 消费者分区组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-1-3-消费者区组的再均衡"><span class="nav-text">5.1.3. 消费者区组的再均衡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2-消费消息流程"><span class="nav-text">5.2. 消费消息流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-1-消费流程-demo"><span class="nav-text">5.2.1. 消费流程 demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-2-消费消息方式"><span class="nav-text">5.2.2. 消费消息方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-2-3-轮询获取消息"><span class="nav-text">5.2.3. 轮询获取消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-3-提交偏移量"><span class="nav-text">5.3. 提交偏移量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-1-偏移量和提交"><span class="nav-text">5.3.1. 偏移量和提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-2-同步提交"><span class="nav-text">5.3.2. 同步提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-3-异步提交"><span class="nav-text">5.3.3. 异步提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-3-4-同步和异步提交"><span class="nav-text">5.3.4. 同步和异步提交</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-4-从指定偏移量获取数据"><span class="nav-text">5.4. 从指定偏移量获取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Broker"><span class="nav-text">6. Broker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#6-1-集群控制器"><span class="nav-text">6.1. 集群控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-2-分区-leader-和-follower"><span class="nav-text">6.2. 分区 leader 和 follower</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-3-群组协调器"><span class="nav-text">6.3. 群组协调器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-Zookeeper-集群"><span class="nav-text">7. Zookeeper 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#7-1-节点信息"><span class="nav-text">7.1. 节点信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-1-broker"><span class="nav-text">7.1.1. broker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-2-controller-和-controller-epoch"><span class="nav-text">7.1.2. controller 和 controller_epoch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-3-consumer"><span class="nav-text">7.1.3. consumer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-4-admin"><span class="nav-text">7.1.4. admin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-1-5-config"><span class="nav-text">7.1.5. config</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-2-zookeeper-一些总结"><span class="nav-text">7.2. zookeeper 一些总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-资料"><span class="nav-text">8. 资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#kafka-实战篇"><span class="nav-text"> Kafka 实战篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text"> 1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-简介"><span class="nav-text"> 1.1. 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-系统结构和存储结构"><span class="nav-text"> 1.2. 系统结构和存储结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#121-系统结构"><span class="nav-text"> 1.2.1. 系统结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#122-topic-的存储结构"><span class="nav-text"> 1.2.2. Topic 的存储结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#123-segment-文件格式"><span class="nav-text"> 1.2.3. Segment 文件格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-小结"><span class="nav-text"> 1.3. 小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装部署"><span class="nav-text"> 2. 安装部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-下载解压"><span class="nav-text"> 2.1. 下载解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-启动服务器"><span class="nav-text"> 2.2. 启动服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-停止服务器"><span class="nav-text"> 2.3. 停止服务器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-创建主题"><span class="nav-text"> 2.4. 创建主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-生产者生产消息"><span class="nav-text"> 2.5. 生产者生产消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-消费者消费消息"><span class="nav-text"> 2.6. 消费者消费消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-集群部署"><span class="nav-text"> 2.7. 集群部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-api"><span class="nav-text"> 3. API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-生产者producer"><span class="nav-text"> 4. 生产者（Producer）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-发送消息流程"><span class="nav-text"> 4.1. 发送消息流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-发送消息方式"><span class="nav-text"> 4.2. 发送消息方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#421-发送并忘记fire-and-forget"><span class="nav-text"> 4.2.1. 发送并忘记（fire-and-forget）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#422-同步发送"><span class="nav-text"> 4.2.2. 同步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#423-异步发送"><span class="nav-text"> 4.2.3. 异步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#424-发送消息示例"><span class="nav-text"> 4.2.4. 发送消息示例</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-消费者consumer"><span class="nav-text"> 5. 消费者（Consumer）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#51-消费者和消费者群组"><span class="nav-text"> 5.1. 消费者和消费者群组</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#511-消费者介绍"><span class="nav-text"> 5.1.1. 消费者介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#512-消费者分区组"><span class="nav-text"> 5.1.2. 消费者分区组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#513-消费者区组的再均衡"><span class="nav-text"> 5.1.3. 消费者区组的再均衡</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#52-消费消息流程"><span class="nav-text"> 5.2. 消费消息流程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#521-消费流程-demo"><span class="nav-text"> 5.2.1. 消费流程 demo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#522-消费消息方式"><span class="nav-text"> 5.2.2. 消费消息方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#523-轮询获取消息"><span class="nav-text"> 5.2.3. 轮询获取消息</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#53-提交偏移量"><span class="nav-text"> 5.3. 提交偏移量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#531-偏移量和提交"><span class="nav-text"> 5.3.1. 偏移量和提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#532-同步提交"><span class="nav-text"> 5.3.2. 同步提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#533-异步提交"><span class="nav-text"> 5.3.3. 异步提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#534-同步和异步提交"><span class="nav-text"> 5.3.4. 同步和异步提交</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#54-从指定偏移量获取数据"><span class="nav-text"> 5.4. 从指定偏移量获取数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-broker"><span class="nav-text"> 6. Broker</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#61-集群控制器"><span class="nav-text"> 6.1. 集群控制器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#62-分区-leader-和-follower"><span class="nav-text"> 6.2. 分区 leader 和 follower</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#63-群组协调器"><span class="nav-text"> 6.3. 群组协调器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-zookeeper-集群"><span class="nav-text"> 7. Zookeeper 集群</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#71-节点信息"><span class="nav-text"> 7.1. 节点信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#711-broker"><span class="nav-text"> 7.1.1. broker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#712-controller-和-controller_epoch"><span class="nav-text"> 7.1.2. controller 和 controller_epoch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#713-consumer"><span class="nav-text"> 7.1.3. consumer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#714-admin"><span class="nav-text"> 7.1.4. admin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#715-config"><span class="nav-text"> 7.1.5. config</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#72-zookeeper-一些总结"><span class="nav-text"> 7.2. zookeeper 一些总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-资料"><span class="nav-text"> 8. 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1394,7 +1468,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Redis 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/redis/">
+  <meta name="description" content="Redis 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/re">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 安装">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/nosql/redis/install-redis/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/redis/">
+<meta property="og:description" content="Redis 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/re">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 安装">
-<meta name="twitter:description" content="Redis 安装  安装 启动 脚本   安装安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/redis/">
+<meta name="twitter:description" content="Redis 安装   安装 启动 脚本    安装 安装步骤如下： （1）下载并解压到本地 进入官网下载地址：https://redis.io/download ，选择合适的版本下载。 我选择的是最新稳定版本 4.0.8：http://download.redis.io/releases/redis-4.0.8.tar.gz 我个人喜欢存放在：/opt/redis wget -O /opt/re">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">501</span>
+                <span title="本文字数">509</span>
               
 
               
@@ -477,14 +477,16 @@
       
 
       
-        <h1 id="Redis-安装"><a href="#Redis-安装" class="headerlink" title="Redis 安装"></a>Redis 安装</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="redis-安装"><a class="markdownIt-Anchor" href="#redis-安装"></a> Redis 安装</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#安装">安装</a></li>
-<li><a href="#启动">启动</a></li>
-<li><a href="#脚本">脚本</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8">启动</a></li>
+<li><a href="#%E8%84%9A%E6%9C%AC">脚本</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>安装步骤如下：</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>安装步骤如下：</p>
 <p>（1）下载并解压到本地</p>
 <p>进入官网下载地址：<a href="https://redis.io/download" target="_blank" rel="noopener">https://redis.io/download</a> ，选择合适的版本下载。</p>
 <p>我选择的是最新稳定版本 4.0.8：<a href="http://download.redis.io/releases/redis-4.0.8.tar.gz" target="_blank" rel="noopener">http://download.redis.io/releases/redis-4.0.8.tar.gz</a></p>
@@ -493,11 +495,13 @@
 <p>（2）编译安装</p>
 <p>执行以下命令：</p>
 <figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /<span class="keyword">opt</span>/redis/redis-<span class="number">4.0</span>.<span class="number">8</span></span><br><span class="line"><span class="keyword">make</span></span><br></pre></td></tr></table></figure>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><p><strong>启动 redis 服务</strong></p>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动"></a> 启动</h2>
+<p><strong>启动 redis 服务</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/redis/redis-4.0.8/src</span></span><br><span class="line"><span class="string">./redis-server</span></span><br></pre></td></tr></table></figure>
 <p><strong>启动 redis 客户端</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> <span class="string">/opt/redis/redis-4.0.8/src</span></span><br><span class="line"><span class="string">./redis-cli</span></span><br></pre></td></tr></table></figure>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>以上两种安装方式，我都写了脚本去执行：</p>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>以上两种安装方式，我都写了脚本去执行：</p>
 <p>| <a href="https://github.com/dunwu/linux/tree/master/codes/deploy/tool/redis" target="_blank" rel="noopener">安装脚本</a> |</p>
 
       
@@ -557,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/redis/Redis配置/" rel="next" title="Redis 配置">
-                <i class="fa fa-chevron-left"></i> Redis 配置
+              <a href="/blog/2019/03/06/programming/java/javastack/javalib/mockito/" rel="next" title="mockito 快速指南">
+                <i class="fa fa-chevron-left"></i> mockito 快速指南
               </a>
             
           </div>
@@ -567,8 +571,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/redis/Redis缓存淘汰策略/" rel="prev" title="Redis 缓存淘汰策略">
-                Redis 缓存淘汰策略 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/database/nosql/redis/Redis配置/" rel="prev" title="Redis 配置">
+                Redis 配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -640,7 +644,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -705,7 +709,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1003,7 +1009,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-安装"><span class="nav-text">Redis 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text">启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-安装"><span class="nav-text"> Redis 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text"> 启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1045,7 +1051,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

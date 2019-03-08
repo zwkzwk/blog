@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Redis 持久化 Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之后重">
+  <meta name="description" content="Redis 持久化  Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之">
 <meta name="keywords" content="database,nosql,key-value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 持久化">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis持久化/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 持久化 Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之后重">
+<meta property="og:description" content="Redis 持久化  Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/Redis复制启动过程.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 持久化">
-<meta name="twitter:description" content="Redis 持久化 Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之后重">
+<meta name="twitter:description" content="Redis 持久化  Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/Redis复制启动过程.png">
 
 
@@ -510,7 +510,8 @@
       
 
       
-        <h1 id="Redis-持久化"><a href="#Redis-持久化" class="headerlink" title="Redis 持久化"></a>Redis 持久化</h1><blockquote>
+        <h1 id="redis-持久化"><a class="markdownIt-Anchor" href="#redis-持久化"></a> Redis 持久化</h1>
+<blockquote>
 <p>Redis 支持持久化，即把数据存储到硬盘中。</p>
 <p>Redis 提供了两种持久化方式：</p>
 <p><strong>RDB 快照（snapshot）</strong> - 将存在于某一时刻的所有数据都写入到硬盘中。</p>
@@ -520,36 +521,41 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#快照">快照</a><ul>
-<li><a href="#快照的原理">快照的原理</a></li>
-<li><a href="#快照的配置">快照的配置</a></li>
-<li><a href="#快照的优点">快照的优点</a></li>
-<li><a href="#快照的缺点">快照的缺点</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7">快照</a>
+<ul>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%9A%84%E5%8E%9F%E7%90%86">快照的原理</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%9A%84%E9%85%8D%E7%BD%AE">快照的配置</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%9A%84%E4%BC%98%E7%82%B9">快照的优点</a></li>
+<li><a href="#%E5%BF%AB%E7%85%A7%E7%9A%84%E7%BC%BA%E7%82%B9">快照的缺点</a></li>
 </ul>
 </li>
-<li><a href="#aof">AOF</a><ul>
-<li><a href="#aof-的原理">AOF 的原理</a></li>
-<li><a href="#aof-的配置">AOF 的配置</a></li>
-<li><a href="#重写压缩-aof">重写/压缩 AOF</a></li>
-<li><a href="#aof-的优点">AOF 的优点</a></li>
-<li><a href="#aof-的缺点">AOF 的缺点</a></li>
+<li><a href="#aof">AOF</a>
+<ul>
+<li><a href="#aof-%E7%9A%84%E5%8E%9F%E7%90%86">AOF 的原理</a></li>
+<li><a href="#aof-%E7%9A%84%E9%85%8D%E7%BD%AE">AOF 的配置</a></li>
+<li><a href="#%E9%87%8D%E5%86%99%E5%8E%8B%E7%BC%A9-aof">重写/压缩 AOF</a></li>
+<li><a href="#aof-%E7%9A%84%E4%BC%98%E7%82%B9">AOF 的优点</a></li>
+<li><a href="#aof-%E7%9A%84%E7%BC%BA%E7%82%B9">AOF 的缺点</a></li>
 </ul>
 </li>
-<li><a href="#选择持久化方式">选择持久化方式</a><ul>
-<li><a href="#怎样从快照方式切换为-aof-方式">怎样从快照方式切换为 AOF 方式</a></li>
-<li><a href="#aof-和快照之间的相互作用">AOF 和快照之间的相互作用</a></li>
+<li><a href="#%E9%80%89%E6%8B%A9%E6%8C%81%E4%B9%85%E5%8C%96%E6%96%B9%E5%BC%8F">选择持久化方式</a>
+<ul>
+<li><a href="#%E6%80%8E%E6%A0%B7%E4%BB%8E%E5%BF%AB%E7%85%A7%E6%96%B9%E5%BC%8F%E5%88%87%E6%8D%A2%E4%B8%BA-aof-%E6%96%B9%E5%BC%8F">怎样从快照方式切换为 AOF 方式</a></li>
+<li><a href="#aof-%E5%92%8C%E5%BF%AB%E7%85%A7%E4%B9%8B%E9%97%B4%E7%9A%84%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8">AOF 和快照之间的相互作用</a></li>
 </ul>
 </li>
-<li><a href="#备份">备份</a><ul>
-<li><a href="#容灾备份">容灾备份</a></li>
-<li><a href="#redis-复制的启动过程">Redis 复制的启动过程</a></li>
+<li><a href="#%E5%A4%87%E4%BB%BD">备份</a>
+<ul>
+<li><a href="#%E5%AE%B9%E7%81%BE%E5%A4%87%E4%BB%BD">容灾备份</a></li>
+<li><a href="#redis-%E5%A4%8D%E5%88%B6%E7%9A%84%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B">Redis 复制的启动过程</a></li>
 </ul>
 </li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
 <p>Redis 提供了两种持久方式：RDB 和 AOF。你可以同时开启两种持久化方式。在这种情况下, 当 redis 重启的时候会优先载入 AOF 文件来恢复原始的数据，因为在通常情况下 AOF 文件保存的数据集要比 RDB 文件保存的数据集要完整。</p>
-<h2 id="快照"><a href="#快照" class="headerlink" title="快照"></a>快照</h2><p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。在创建快照之后，用户可以对快照进行备份，可以将快照复制到其他服务器从而创建具有相同数据的服务器副本，还可以将快好留在原地以便重启服务器时使用。</p>
+<h2 id="快照"><a class="markdownIt-Anchor" href="#快照"></a> 快照</h2>
+<p>Redis 可以通过创建快照来获得存储在内存里面的数据在某个时间点上的副本。在创建快照之后，用户可以对快照进行备份，可以将快照复制到其他服务器从而创建具有相同数据的服务器副本，还可以将快好留在原地以便重启服务器时使用。</p>
 <p>根据配置，快照将被写入 <code>dbfilename</code> 选项指定的文件里面，并存储在 <code>dir</code> 选项指定的路径上面。</p>
 <p>创建快照的方法：</p>
 <ul>
@@ -563,7 +569,8 @@
 <p>使用快照持久化来保存数据是，需要记住：<strong>如果系统真的发生崩溃，用户将丢失最近一次生成快照之后更改的所有数据。</strong></p>
 <p>快照配置：</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">save</span> <span class="number">60</span> <span class="number">1000</span></span><br><span class="line">stop-writes-<span class="literal">on</span>-bgsave-<span class="literal">error</span> <span class="literal">no</span></span><br><span class="line">rdbcompression <span class="literal">yes</span></span><br><span class="line">dbfilename dump.rdb</span><br></pre></td></tr></table></figure>
-<h3 id="快照的原理"><a href="#快照的原理" class="headerlink" title="快照的原理"></a>快照的原理</h3><p>在默认情况下，Redis 将数据库快照保存在名字为 dump.rdb 的二进制文件中。你可以对 Redis 进行设置， 让它在“N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动保存一次数据集。你也可以通过调用 SAVE 或者 BGSAVE，手动让 Redis 进行数据集保存操作。这种持久化方式被称为快照。</p>
+<h3 id="快照的原理"><a class="markdownIt-Anchor" href="#快照的原理"></a> 快照的原理</h3>
+<p>在默认情况下，Redis 将数据库快照保存在名字为 dump.rdb 的二进制文件中。你可以对 Redis 进行设置， 让它在“N 秒内数据集至少有 M 个改动”这一条件被满足时， 自动保存一次数据集。你也可以通过调用 SAVE 或者 BGSAVE，手动让 Redis 进行数据集保存操作。这种持久化方式被称为快照。</p>
 <p>当 Redis 需要保存 dump.rdb 文件时， 服务器执行以下操作:</p>
 <ul>
 <li>Redis 创建一个子进程。</li>
@@ -571,29 +578,35 @@
 <li>当子进程完成对新 快照文件的写入时，Redis 用新快照文件替换原来的快照文件，并删除旧的快照文件。</li>
 </ul>
 <p>这种工作方式使得 Redis 可以从写时复制（copy-on-write）机制中获益。</p>
-<h3 id="快照的配置"><a href="#快照的配置" class="headerlink" title="快照的配置"></a>快照的配置</h3><p>比如说， 在 redis.conf 中添加如下配置，表示让 Redis 在满足“ 60 秒内有至少有 1000 个键被改动”这一条件时， 自动保存一次数据集:</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">save <span class="number">60</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
-<h3 id="快照的优点"><a href="#快照的优点" class="headerlink" title="快照的优点"></a>快照的优点</h3><ul>
+<h3 id="快照的配置"><a class="markdownIt-Anchor" href="#快照的配置"></a> 快照的配置</h3>
+<p>比如说， 在 redis.conf 中添加如下配置，表示让 Redis 在满足“ 60 秒内有至少有 1000 个键被改动”这一条件时， 自动保存一次数据集:</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">save <span class="number">60</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure>
+<h3 id="快照的优点"><a class="markdownIt-Anchor" href="#快照的优点"></a> 快照的优点</h3>
+<ul>
 <li>RDB 是一个非常紧凑的文件，它保存了某个时间点的数据集，非常适用于数据集的备份。比如你可以在每个小时报保存一下过去 24 小时内的数据，同时每天保存过去 30 天的数据，这样即使出了问题你也可以根据需求恢复到不同版本的数据集。</li>
 <li>RDB 是一个紧凑的单一文件，很方便传送到另一个远端数据中心或者亚马逊的 S3（可能加密），非常适用于灾难恢复。</li>
 <li>快照在保存 RDB 文件时父进程唯一需要做的就是 fork 出一个子进程，接下来的工作全部由子进程来做，父进程不需要再做其他 IO 操作，所以快照持久化方式可以最大化 redis 的性能。</li>
 <li>与 AOF 相比，在恢复大的数据集的时候，DB 方式会更快一些。</li>
 </ul>
-<h3 id="快照的缺点"><a href="#快照的缺点" class="headerlink" title="快照的缺点"></a>快照的缺点</h3><ul>
+<h3 id="快照的缺点"><a class="markdownIt-Anchor" href="#快照的缺点"></a> 快照的缺点</h3>
+<ul>
 <li>如果你希望在 redis 意外停止工作（例如电源中断）的情况下丢失的数据最少的话，那么 快照不适合你。虽然你可以配置不同的 save 时间点(例如每隔 5 分钟并且对数据集有 100 个写的操作)，是 Redis 要完整的保存整个数据集是一个比较繁重的工作，你通常会每隔 5 分钟或者更久做一次完整的保存，万一在 Redis 意外宕机，你可能会丢失几分钟的数据。</li>
 <li>快照需要经常 fork 子进程来保存数据集到硬盘上。当数据集比较大的时候，fork 的过程是非常耗时的，可能会导致 Redis 在一些毫秒级内不能响应客户端的请求。如果数据集巨大并且 CPU 性能不是很好的情况下，这种情况会持续 1 秒。AOF 也需要 fork，但是你可以调节重写日志文件的频率来提高数据集的耐久度。</li>
 </ul>
-<h2 id="AOF"><a href="#AOF" class="headerlink" title="AOF"></a>AOF</h2><p>AOF 持久化方式记录每次对服务器执行的写操作。当服务器重启的时候会重新执行这些命令来恢复原始的数据。</p>
+<h2 id="aof"><a class="markdownIt-Anchor" href="#aof"></a> AOF</h2>
+<p>AOF 持久化方式记录每次对服务器执行的写操作。当服务器重启的时候会重新执行这些命令来恢复原始的数据。</p>
 <p>AOF 命令以 redis 协议追加保存每次写的操作到文件末尾。Redis 还能对 AOF 文件进行后台重写。使得 AOF 文件的体积不至于过大。</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="string">appendonly</span> <span class="literal">no</span></span><br><span class="line"><span class="string">appendfsync</span> <span class="string">everysec</span></span><br><span class="line"><span class="literal">no</span><span class="bullet">-appendfsync-on-rewrite</span> <span class="literal">no</span></span><br><span class="line"><span class="string">auto-aof-rewrite-percentage</span> <span class="number">100</span></span><br><span class="line"><span class="string">auto-aof-rewrite-min-size</span> <span class="number">64</span><span class="string">mb</span></span><br></pre></td></tr></table></figure>
-<h3 id="AOF-的原理"><a href="#AOF-的原理" class="headerlink" title="AOF 的原理"></a>AOF 的原理</h3><ul>
+<h3 id="aof-的原理"><a class="markdownIt-Anchor" href="#aof-的原理"></a> AOF 的原理</h3>
+<ul>
 <li>Redis 创建一个子进程。</li>
 <li>子进程开始将新 AOF 文件的内容写入到临时文件。</li>
 <li>对于所有新执行的写入命令，父进程一边将它们累积到一个内存缓存中，一边将这些改动追加到现有 AOF 文件的末尾，这样样即使在重写的中途发生停机，现有的 AOF 文件也还是安全的。</li>
 <li>当子进程完成重写工作时，它给父进程发送一个信号，父进程在接收到信号之后，将内存缓存中的所有数据追加到新 AOF 文件的末尾。</li>
 <li>搞定！现在 Redis 原子地用新文件替换旧文件，之后所有命令都会直接追加到新 AOF 文件的末尾。</li>
 </ul>
-<h3 id="AOF-的配置"><a href="#AOF-的配置" class="headerlink" title="AOF 的配置"></a>AOF 的配置</h3><p>AOF 持久化通过在 <code>redis.conf</code> 中的 <code>appendonly yes</code> 配置选项来开启。</p>
+<h3 id="aof-的配置"><a class="markdownIt-Anchor" href="#aof-的配置"></a> AOF 的配置</h3>
+<p>AOF 持久化通过在 <code>redis.conf</code> 中的 <code>appendonly yes</code> 配置选项来开启。</p>
 <p>可以通过 <code>appendfsync</code> 配置选项来设置同步频率：</p>
 <ul>
 <li><strong>always</strong> - 每个 Redis 写命令都要同步写入硬盘。这样做会严重降低 Redis 的速度。</li>
@@ -601,7 +614,8 @@
 <li><strong>no</strong> - 让操作系统来决定应该何时进行同步。</li>
 </ul>
 <p>为了兼顾数据安全和写入性能，推荐使用 <code>appendfsync everysec</code> 选项。Redis 每秒同步一次 AOF 文件时的性能和不使用任何持久化特性时的性能相差无几。</p>
-<h3 id="重写-压缩-AOF"><a href="#重写-压缩-AOF" class="headerlink" title="重写/压缩 AOF"></a>重写/压缩 AOF</h3><p>随着 Redis 不断运行，AOF 的体积也会不断增长，这将导致两个问题：</p>
+<h3 id="重写压缩-aof"><a class="markdownIt-Anchor" href="#重写压缩-aof"></a> 重写/压缩 AOF</h3>
+<p>随着 Redis 不断运行，AOF 的体积也会不断增长，这将导致两个问题：</p>
 <ol>
 <li>AOF 耗尽磁盘可用空间。</li>
 <li>Redis 重启后需要执行 AOF 文件记录的所有写命令来还原数据集，如果 AOF 过大，则还原操作执行的时间就会非常长。</li>
@@ -611,23 +625,27 @@
 <p><code>BGREWRITEAOF</code> 命令与 <code>BGSAVE</code> 原理类似：通过创建一个子进程，然后由子进程负责对 AOF 文件进行重写。</p>
 <p>可以通过设置 <code>auto-aof-rewrite-percentage</code> 和 <code>auto-aof-rewrite-min-size</code>，使得 Redis 在满足条件时，自动执行 <code>BGREWRITEAOF</code>。</p>
 <p>假设配置如下：</p>
-<figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line"><span class="keyword">auto</span>-aof-rewrite-percentage <span class="number">100</span></span><br><span class="line"><span class="keyword">auto</span>-aof-rewrite-<span class="built_in">min</span>-<span class="built_in">size</span> <span class="number">64</span>mb</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">auto</span>-aof-rewrite-percentage <span class="number">100</span></span><br><span class="line"><span class="built_in">auto</span>-aof-rewrite-min-size <span class="number">64</span>mb</span><br></pre></td></tr></table></figure>
 <p>表明，当 AOF 大于 64MB，且 AOF 体积比上一次重写后的体积大了至少 100% 时，执行 <code>BGREWRITEAOF</code>。</p>
-<h3 id="AOF-的优点"><a href="#AOF-的优点" class="headerlink" title="AOF 的优点"></a>AOF 的优点</h3><ul>
+<h3 id="aof-的优点"><a class="markdownIt-Anchor" href="#aof-的优点"></a> AOF 的优点</h3>
+<ul>
 <li>使用 AOF 会让你的 Redis 更加耐久: 你可以使用不同的 fsync 策略：无 fsync；每秒 fsync；每次写的时候 fsync。使用默认的每秒 fsync 策略，Redis 的性能依然很好(fsync 是由后台线程进行处理的,主线程会尽力处理客户端请求)，一旦出现故障，你最多丢失 1 秒的数据。</li>
 <li>AOF 文件是一个只进行追加的日志文件，所以不需要写入 seek，即使由于某些原因(磁盘空间已满，写的过程中宕机等等)未执行完整的写入命令，你也也可使用 redis-check-aof 工具修复这些问题。</li>
 <li>Redis 可以在 AOF 文件体积变得过大时，自动地在后台对 AOF 进行重写：重写后的新 AOF 文件包含了恢复当前数据集所需的最小命令集合。整个重写操作是绝对安全的，因为 Redis 在创建新 AOF 文件的过程中，会继续将命令追加到现有的 AOF 文件里面，即使重写过程中发生停机，现有的 AOF 文件也不会丢失。而一旦新 AOF 文件创建完毕，Redis 就会从旧 AOF 文件切换到新 AOF 文件，并开始对新 AOF 文件进行追加操作。</li>
 <li>AOF 文件有序地保存了对数据库执行的所有写入操作，这些写入操作以 Redis 协议的格式保存。因此 AOF 文件的内容非常容易被人读懂，对文件进行分析（parse）也很轻松。 导出（export） AOF 文件也非常简单。举个例子，如果你不小心执行了 FLUSHALL 命令，但只要 AOF 文件未被重写，那么只要停止服务器，移除 AOF 文件末尾的 FLUSHALL 命令，并重启 Redis ，就可以将数据集恢复到 FLUSHALL 执行之前的状态。</li>
 </ul>
-<h3 id="AOF-的缺点"><a href="#AOF-的缺点" class="headerlink" title="AOF 的缺点"></a>AOF 的缺点</h3><ul>
+<h3 id="aof-的缺点"><a class="markdownIt-Anchor" href="#aof-的缺点"></a> AOF 的缺点</h3>
+<ul>
 <li>对于相同的数据集来说，AOF 文件的体积通常要大于 RDB 文件的体积。</li>
 <li>根据所使用的 fsync 策略，AOF 的速度可能会慢于快照。在一般情况下，每秒 fsync 的性能依然非常高，而关闭 fsync 可以让 AOF 的速度和快照一样快，即使在高负荷之下也是如此。不过在处理巨大的写入载入时，快照可以提供更有保证的最大延迟时间（latency）。</li>
 </ul>
-<h2 id="选择持久化方式"><a href="#选择持久化方式" class="headerlink" title="选择持久化方式"></a>选择持久化方式</h2><p>如果你只希望你的数据在服务器运行的时候存在，你可以不使用任何持久化方式。</p>
+<h2 id="选择持久化方式"><a class="markdownIt-Anchor" href="#选择持久化方式"></a> 选择持久化方式</h2>
+<p>如果你只希望你的数据在服务器运行的时候存在，你可以不使用任何持久化方式。</p>
 <p>如果你非常关心你的数据，但仍然可以承受数分钟以内的数据丢失，那么你可以只使用 快照持久化。</p>
 <p>如果你不能承受数分钟以内的数据丢失，那么你可以同时使用快照持久化和 AOF 持久化。</p>
 <p>有很多用户都只使用 AOF 持久化， 但我们并不推荐这种方式： 因为定时生成 RDB 快照（snapshot）非常便于进行数据库备份，并且快照恢复数据集的速度也要比 AOF 恢复的速度要快，除此之外，使用快照还可以避免之前提到的 AOF 程序的 bug 。</p>
-<h3 id="怎样从快照方式切换为-AOF-方式"><a href="#怎样从快照方式切换为-AOF-方式" class="headerlink" title="怎样从快照方式切换为 AOF 方式"></a>怎样从快照方式切换为 AOF 方式</h3><p>在 Redis 2.2 或以上版本，可以在不重启的情况下，从快照切换到 AOF ：</p>
+<h3 id="怎样从快照方式切换为-aof-方式"><a class="markdownIt-Anchor" href="#怎样从快照方式切换为-aof-方式"></a> 怎样从快照方式切换为 AOF 方式</h3>
+<p>在 Redis 2.2 或以上版本，可以在不重启的情况下，从快照切换到 AOF ：</p>
 <ul>
 <li>为最新的 dump.rdb 文件创建一个备份。</li>
 <li>将备份放到一个安全的地方。</li>
@@ -639,9 +657,11 @@
 </ul>
 <p>执行的第二条命令用于关闭快照功能。 这一步是可选的， 如果你愿意的话， 也可以同时使用快照和 AOF 这两种持久化功能。</p>
 <p>重要:别忘了在 redis.conf 中打开 AOF 功能！ 否则的话， 服务器重启之后， 之前通过 CONFIG SET 设置的配置就会被遗忘， 程序会按原来的配置来启动服务器。</p>
-<h3 id="AOF-和快照之间的相互作用"><a href="#AOF-和快照之间的相互作用" class="headerlink" title="AOF 和快照之间的相互作用"></a>AOF 和快照之间的相互作用</h3><p>在版本号大于等于 2.4 的 Redis 中， BGSAVE 执行的过程中， 不可以执行 BGREWRITEAOF 。 反过来说， 在 BGREWRITEAOF 执行的过程中， 也不可以执行 BGSAVE。这可以防止两个 Redis 后台进程同时对磁盘进行大量的 I/O 操作。</p>
+<h3 id="aof-和快照之间的相互作用"><a class="markdownIt-Anchor" href="#aof-和快照之间的相互作用"></a> AOF 和快照之间的相互作用</h3>
+<p>在版本号大于等于 2.4 的 Redis 中， BGSAVE 执行的过程中， 不可以执行 BGREWRITEAOF 。 反过来说， 在 BGREWRITEAOF 执行的过程中， 也不可以执行 BGSAVE。这可以防止两个 Redis 后台进程同时对磁盘进行大量的 I/O 操作。</p>
 <p>如果 BGSAVE 正在执行， 并且用户显示地调用 BGREWRITEAOF 命令， 那么服务器将向用户回复一个 OK 状态， 并告知用户， BGREWRITEAOF 已经被预定执行： 一旦 BGSAVE 执行完毕， BGREWRITEAOF 就会正式开始。 当 Redis 启动时， 如果快照持久化和 AOF 持久化都被打开了， 那么程序会优先使用 AOF 文件来恢复数据集， 因为 AOF 文件所保存的数据通常是最完整的。</p>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p><strong>务必确保你的数据有完整的备份。</strong></p>
+<h2 id="备份"><a class="markdownIt-Anchor" href="#备份"></a> 备份</h2>
+<p><strong>务必确保你的数据有完整的备份。</strong></p>
 <p>磁盘故障、节点失效，诸如此类的问题都可能让你的数据消失不见，不进行备份是非常危险的。</p>
 <p>备份 Redis 数据建议采用如下策略：</p>
 <p>备份 Redis 数据建议采用快照方式。RDB 文件一旦创建，就不会进行任何修改，所以十分安全。</p>
@@ -651,7 +671,8 @@
 <li>确保快照的备份都带有相应的日期和时间信息，每次执行定期任务脚本时，使用 find 命令来删除过期的快照：比如说，你可以保留最近 48 小时内的每小时快照，还可以保留最近一两个月的每日快照。</li>
 <li>至少每天一次，将 RDB 备份到你的数据中心之外，或者至少是备份到你运行 Redis 服务器的物理机器之外。</li>
 </ul>
-<h3 id="容灾备份"><a href="#容灾备份" class="headerlink" title="容灾备份"></a>容灾备份</h3><p>Redis 的容灾备份基本上就是对数据进行备份，并将这些备份传送到多个不同的外部数据中心。</p>
+<h3 id="容灾备份"><a class="markdownIt-Anchor" href="#容灾备份"></a> 容灾备份</h3>
+<p>Redis 的容灾备份基本上就是对数据进行备份，并将这些备份传送到多个不同的外部数据中心。</p>
 <p>容灾备份可以在 Redis 运行并产生快照的主数据中心发生严重的问题时，仍然让数据处于安全状态。</p>
 <p>以下是一些实用的容灾备份方法：</p>
 <ul>
@@ -660,14 +681,17 @@
 <li>需要注意的是，这类容灾系统如果没有小心地进行处理的话，是很容易失效的。最低限度下，你应该在文件传送完毕之后，检查所传送备份文件的体积和原始快照文件的体积是否相同。如果你使用的是 VPS ，那么还可以通过比对文件的 SHA1 校验和来确认文件是否传送完整。</li>
 </ul>
 <p>另外， 你还需要一个独立的警报系统， 让它在负责传送备份文件的传送器（transfer）失灵时通知你。</p>
-<h3 id="Redis-复制的启动过程"><a href="#Redis-复制的启动过程" class="headerlink" title="Redis 复制的启动过程"></a>Redis 复制的启动过程</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/Redis复制启动过程.png" width="400"><br></div>
-
+<h3 id="redis-复制的启动过程"><a class="markdownIt-Anchor" href="#redis-复制的启动过程"></a> Redis 复制的启动过程</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/database/redis/Redis复制启动过程.png" width="400">
+</div>
 <p>当多个从服务器尝试连接同一个主服务器时：</p>
 <ul>
 <li>上图步骤 3 尚未执行：所有从服务器都会接收到相同的快照文件和相同的缓冲区写命令。</li>
 <li>上图步骤 3 正在执行或已经执行完毕：当主服务器与较早进行连接的从服务器执行完复制所需的 5 个步骤之后，主服务器会与新连接的从服务器执行一次新的步骤 1 至步骤 5。</li>
 </ul>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://redis.io/" target="_blank" rel="noopener">Redis 官网</a></li>
 <li><a href="https://item.jd.com/11791607.html" target="_blank" rel="noopener">Redis 实战</a></li>
 <li><a href="https://redis.io/topics/persistence" target="_blank" rel="noopener">Redis Persistence</a></li>
@@ -750,8 +774,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/12/programming/java/javaweb/architecture/分布式架构/" rel="prev" title="分布式架构">
-                分布式架构 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/12/programming/java/javaweb/distributed/rpc/dubbo/" rel="prev" title="Dubbo">
+                Dubbo <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -823,7 +847,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -888,7 +912,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1186,7 +1212,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-持久化"><span class="nav-text">Redis 持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快照"><span class="nav-text">快照</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的原理"><span class="nav-text">快照的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的配置"><span class="nav-text">快照的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的优点"><span class="nav-text">快照的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的缺点"><span class="nav-text">快照的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOF"><span class="nav-text">AOF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AOF-的原理"><span class="nav-text">AOF 的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOF-的配置"><span class="nav-text">AOF 的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写-压缩-AOF"><span class="nav-text">重写/压缩 AOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOF-的优点"><span class="nav-text">AOF 的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOF-的缺点"><span class="nav-text">AOF 的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择持久化方式"><span class="nav-text">选择持久化方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#怎样从快照方式切换为-AOF-方式"><span class="nav-text">怎样从快照方式切换为 AOF 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AOF-和快照之间的相互作用"><span class="nav-text">AOF 和快照之间的相互作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份"><span class="nav-text">备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容灾备份"><span class="nav-text">容灾备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis-复制的启动过程"><span class="nav-text">Redis 复制的启动过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-持久化"><span class="nav-text"> Redis 持久化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#快照"><span class="nav-text"> 快照</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的原理"><span class="nav-text"> 快照的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的配置"><span class="nav-text"> 快照的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的优点"><span class="nav-text"> 快照的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#快照的缺点"><span class="nav-text"> 快照的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#aof"><span class="nav-text"> AOF</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#aof-的原理"><span class="nav-text"> AOF 的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aof-的配置"><span class="nav-text"> AOF 的配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重写压缩-aof"><span class="nav-text"> 重写/压缩 AOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aof-的优点"><span class="nav-text"> AOF 的优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aof-的缺点"><span class="nav-text"> AOF 的缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择持久化方式"><span class="nav-text"> 选择持久化方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#怎样从快照方式切换为-aof-方式"><span class="nav-text"> 怎样从快照方式切换为 AOF 方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#aof-和快照之间的相互作用"><span class="nav-text"> AOF 和快照之间的相互作用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备份"><span class="nav-text"> 备份</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#容灾备份"><span class="nav-text"> 容灾备份</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#redis-复制的启动过程"><span class="nav-text"> Redis 复制的启动过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1228,7 +1254,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

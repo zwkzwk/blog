@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="编写 Servlet部署 Servletweb.xml 是什么servlet 元素&amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servlet&amp;gt;元素中">
+  <meta name="description" content="编写 Servlet  部署 Servlet  web.xml 是什么  servlet 元素 &amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servle">
 <meta name="keywords" content="javaee,servlet">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaEE Servlet 示例">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-demo/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="编写 Servlet部署 Servletweb.xml 是什么servlet 元素&amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servlet&amp;gt;元素中">
+<meta property="og:description" content="编写 Servlet  部署 Servlet  web.xml 是什么  servlet 元素 &amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servle">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.913Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE Servlet 示例">
-<meta name="twitter:description" content="编写 Servlet部署 Servletweb.xml 是什么servlet 元素&amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servlet&amp;gt;元素中">
+<meta name="twitter:description" content="编写 Servlet  部署 Servlet  web.xml 是什么  servlet 元素 &amp;lt;servlet&amp;gt;元素用于注册 Servlet。 &amp;lt;servlet&amp;gt;包含有两个主要的子元素：&amp;lt;servlet-name&amp;gt;和&amp;lt;servlet-class&amp;gt;，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。 如果在&amp;lt;servle">
 
 
 
@@ -508,19 +508,26 @@
       
 
       
-        <h2 id="编写-Servlet"><a href="#编写-Servlet" class="headerlink" title="编写 Servlet"></a>编写 Servlet</h2><h3 id="部署-Servlet"><a href="#部署-Servlet" class="headerlink" title="部署 Servlet"></a>部署 Servlet</h3><h3 id="web-xml-是什么"><a href="#web-xml-是什么" class="headerlink" title="web.xml 是什么"></a>web.xml 是什么</h3><h3 id="servlet-元素"><a href="#servlet-元素" class="headerlink" title="servlet 元素"></a>servlet 元素</h3><p><code>&lt;servlet&gt;</code>元素用于注册 Servlet。</p>
+        <h2 id="编写-servlet"><a class="markdownIt-Anchor" href="#编写-servlet"></a> 编写 Servlet</h2>
+<h3 id="部署-servlet"><a class="markdownIt-Anchor" href="#部署-servlet"></a> 部署 Servlet</h3>
+<h3 id="webxml-是什么"><a class="markdownIt-Anchor" href="#webxml-是什么"></a> web.xml 是什么</h3>
+<h3 id="servlet-元素"><a class="markdownIt-Anchor" href="#servlet-元素"></a> servlet 元素</h3>
+<p><code>&lt;servlet&gt;</code>元素用于注册 Servlet。</p>
 <p><code>&lt;servlet&gt;</code>包含有两个主要的子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;servlet-class&gt;</code>，分别用于设置 Servlet 的注册名称和 Servlet 的完整类名。</p>
 <p>如果在<code>&lt;servlet&gt;</code>元素中配置了一个<code>&lt;load-on-startup&gt;</code>元素，那么 WEB 应用程序在启动时，就会装载并创建 Servlet 的实例对象、以及调用 Servlet 实例对象的 init()方法。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.zp.notes.javaee.servlet.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">load-on-startup</span>&gt;</span>1<span class="tag">&lt;/<span class="name">load-on-startup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="servlet-mapping-元素"><a href="#servlet-mapping-元素" class="headerlink" title="servlet-mapping 元素"></a>servlet-mapping 元素</h3><p><code>&lt;servlet-mapping&gt;</code>元素用于映射一个已注册的 Servlet 的一个对外访问路径。</p>
+<h3 id="servlet-mapping-元素"><a class="markdownIt-Anchor" href="#servlet-mapping-元素"></a> servlet-mapping 元素</h3>
+<p><code>&lt;servlet-mapping&gt;</code>元素用于映射一个已注册的 Servlet 的一个对外访问路径。</p>
 <p><code>&lt;servlet-mapping&gt;</code>包含有两个子元素：<code>&lt;servlet-name&gt;</code>和<code>&lt;url-pattern&gt;</code>，分别用于指定 Servlet 的注册名称和 Servlet 的对外访问路径。</p>
-<p><strong>注：同一个 Servlet 可以被映射到多个 URL 上。</strong>例：</p>
+<p>**注：同一个 Servlet 可以被映射到多个 URL 上。**例：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>org.zp.notes.javaee.servlet.HelloServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>HelloServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/HelloServlet<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/HelloServlet.asp<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/HelloServlet.jsp<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/HelloServlet.php<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/servlet/HelloServlet.aspx<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="url-pattern-的通配符"><a href="#url-pattern-的通配符" class="headerlink" title="url-pattern 的通配符"></a>url-pattern 的通配符</h3><p><code>/</code></p>
+<h3 id="url-pattern-的通配符"><a class="markdownIt-Anchor" href="#url-pattern-的通配符"></a> url-pattern 的通配符</h3>
+<p><code>/</code></p>
 <p>如果某个 Servlet 的映射路径仅仅为一个正斜杠<code>/</code>，那么这个 Servlet 就成为当前 Web 应用程序的缺省 Servlet。  凡是在<code>web.xml</code>文件中找不到匹配的<code>&lt;servlet-mapping&gt;</code>元素的 URL，它们的访问请求都将交给缺省 Servlet 处理，也就是说，缺省 Servlet 用于处理所有其他 Servlet 都不处理的访问请求。</p>
 <p><code>*</code></p>
 <p><code>*</code>可以匹配任意的字符。</p>
-<h3 id="init-param-元素和-context-param-元素"><a href="#init-param-元素和-context-param-元素" class="headerlink" title="init-param 元素和 context-param 元素"></a>init-param 元素和 context-param 元素</h3><p><code>&lt;init-param&gt;</code>标签用于为当前 servlet 配置一些初始化参数。</p>
+<h3 id="init-param-元素和-context-param-元素"><a class="markdownIt-Anchor" href="#init-param-元素和-context-param-元素"></a> init-param 元素和 context-param 元素</h3>
+<p><code>&lt;init-param&gt;</code>标签用于为当前 servlet 配置一些初始化参数。</p>
 <p><code>&lt;context-param&gt;</code>标签用于配置全局的初始化参数，所有 servlet 都可以使用。</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">version</span>=<span class="string">"3.0"</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/javaee"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/javaee</span></span></span><br><span class="line"><span class="tag"><span class="string">    http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">display-name</span>&gt;</span><span class="tag">&lt;/<span class="name">display-name</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 配置WEB应用的初始化参数 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-name</span>&gt;</span>datasource<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">param-value</span>&gt;</span>jdbc:mysql://localhost:3306/test<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">welcome-file</span>&gt;</span>index.jsp<span class="tag">&lt;/<span class="name">welcome-file</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">welcome-file-list</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -599,8 +606,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/" rel="prev" title="JavaEE 监听器">
-                JavaEE 监听器 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/" rel="prev" title="JavaEE Cookie">
+                JavaEE Cookie <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -672,7 +679,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -737,7 +744,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1035,7 +1044,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写-Servlet"><span class="nav-text">编写 Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署-Servlet"><span class="nav-text">部署 Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web-xml-是什么"><span class="nav-text">web.xml 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet-元素"><span class="nav-text">servlet 元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet-mapping-元素"><span class="nav-text">servlet-mapping 元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-pattern-的通配符"><span class="nav-text">url-pattern 的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-param-元素和-context-param-元素"><span class="nav-text">init-param 元素和 context-param 元素</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写-servlet"><span class="nav-text"> 编写 Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#部署-servlet"><span class="nav-text"> 部署 Servlet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webxml-是什么"><span class="nav-text"> web.xml 是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet-元素"><span class="nav-text"> servlet 元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#servlet-mapping-元素"><span class="nav-text"> servlet-mapping 元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#url-pattern-的通配符"><span class="nav-text"> url-pattern 的通配符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#init-param-元素和-context-param-元素"><span class="nav-text"> init-param 元素和 context-param 元素</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1077,7 +1086,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

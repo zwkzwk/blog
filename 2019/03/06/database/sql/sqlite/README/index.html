@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="SQLite SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介 优点 局限   安装 语法 大小写敏感 注释 数据库操作   数据类型 SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令 进入 SQLite">
+  <meta name="description" content="SQLite  SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介  优点 局限   安装 语法  大小写敏感 注释 数据库操作   数据类型  SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令  进入 S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SQLite">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/database/sql/sqlite/README/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SQLite SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介 优点 局限   安装 语法 大小写敏感 注释 数据库操作   数据类型 SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令 进入 SQLite">
+<meta property="og:description" content="SQLite  SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介  优点 局限   安装 语法  大小写敏感 注释 数据库操作   数据类型  SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令  进入 S">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T15:21:31.489Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SQLite">
-<meta name="twitter:description" content="SQLite SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介 优点 局限   安装 语法 大小写敏感 注释 数据库操作   数据类型 SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令 进入 SQLite">
+<meta name="twitter:description" content="SQLite  SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。    简介  优点 局限   安装 语法  大小写敏感 注释 数据库操作   数据类型  SQLite 存储类 SQLite 亲和(Affinity)类型 SQLite 亲和类型(Affinity)及类型名称 Boolean 数据类型 Date 与 Time 数据类型   命令  进入 S">
 
 
 
@@ -443,7 +443,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5k</span>
+                <span title="本文字数">5.1k</span>
               
 
               
@@ -477,42 +477,49 @@
       
 
       
-        <h1 id="SQLite"><a href="#SQLite" class="headerlink" title="SQLite"></a>SQLite</h1><blockquote>
+        <h1 id="sqlite"><a class="markdownIt-Anchor" href="#sqlite"></a> SQLite</h1>
+<blockquote>
 <p>SQLite 是一个实现了自给自足的、无服务器的、零配置的、事务性的 SQL 数据库引擎。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#简介">简介</a><ul>
-<li><a href="#优点">优点</a></li>
-<li><a href="#局限">局限</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a>
+<ul>
+<li><a href="#%E4%BC%98%E7%82%B9">优点</a></li>
+<li><a href="#%E5%B1%80%E9%99%90">局限</a></li>
 </ul>
 </li>
-<li><a href="#安装">安装</a></li>
-<li><a href="#语法">语法</a><ul>
-<li><a href="#大小写敏感">大小写敏感</a></li>
-<li><a href="#注释">注释</a></li>
-<li><a href="#数据库操作">数据库操作</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a></li>
+<li><a href="#%E8%AF%AD%E6%B3%95">语法</a>
+<ul>
+<li><a href="#%E5%A4%A7%E5%B0%8F%E5%86%99%E6%95%8F%E6%84%9F">大小写敏感</a></li>
+<li><a href="#%E6%B3%A8%E9%87%8A">注释</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C">数据库操作</a></li>
 </ul>
 </li>
-<li><a href="#数据类型">数据类型</a><ul>
-<li><a href="#sqlite-存储类">SQLite 存储类</a></li>
-<li><a href="#sqlite-亲和affinity类型">SQLite 亲和(Affinity)类型</a></li>
-<li><a href="#sqlite-亲和类型affinity及类型名称">SQLite 亲和类型(Affinity)及类型名称</a></li>
-<li><a href="#boolean-数据类型">Boolean 数据类型</a></li>
-<li><a href="#date-与-time-数据类型">Date 与 Time 数据类型</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">数据类型</a>
+<ul>
+<li><a href="#sqlite-%E5%AD%98%E5%82%A8%E7%B1%BB">SQLite 存储类</a></li>
+<li><a href="#sqlite-%E4%BA%B2%E5%92%8Caffinity%E7%B1%BB%E5%9E%8B">SQLite 亲和(Affinity)类型</a></li>
+<li><a href="#sqlite-%E4%BA%B2%E5%92%8C%E7%B1%BB%E5%9E%8Baffinity%E5%8F%8A%E7%B1%BB%E5%9E%8B%E5%90%8D%E7%A7%B0">SQLite 亲和类型(Affinity)及类型名称</a></li>
+<li><a href="#boolean-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Boolean 数据类型</a></li>
+<li><a href="#date-%E4%B8%8E-time-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">Date 与 Time 数据类型</a></li>
 </ul>
 </li>
-<li><a href="#命令">命令</a><ul>
-<li><a href="#进入-sqlite-控制台">进入 SQLite 控制台</a></li>
-<li><a href="#进入-sqlite-控制台并指定数据库">进入 SQLite 控制台并指定数据库</a></li>
-<li><a href="#退出-sqlite-控制台">退出 SQLite 控制台</a></li>
-<li><a href="#查看命令帮助">查看命令帮助</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4">命令</a>
+<ul>
+<li><a href="#%E8%BF%9B%E5%85%A5-sqlite-%E6%8E%A7%E5%88%B6%E5%8F%B0">进入 SQLite 控制台</a></li>
+<li><a href="#%E8%BF%9B%E5%85%A5-sqlite-%E6%8E%A7%E5%88%B6%E5%8F%B0%E5%B9%B6%E6%8C%87%E5%AE%9A%E6%95%B0%E6%8D%AE%E5%BA%93">进入 SQLite 控制台并指定数据库</a></li>
+<li><a href="#%E9%80%80%E5%87%BA-sqlite-%E6%8E%A7%E5%88%B6%E5%8F%B0">退出 SQLite 控制台</a></li>
+<li><a href="#%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E5%B8%AE%E5%8A%A9">查看命令帮助</a></li>
 </ul>
 </li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ul>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
+<ul>
 <li>SQLite 是自给自足的，这意味着不需要任何外部的依赖。</li>
 <li>SQLite 是无服务器的、零配置的，这意味着不需要安装或管理。</li>
 <li>SQLite 事务是完全兼容 ACID 的，允许从多个进程或线程安全访问。</li>
@@ -522,7 +529,8 @@
 <li>SQLite 使用 ANSI-C 编写的，并提供了简单和易于使用的 API。</li>
 <li>SQLite 可在 UNIX（Linux, Mac OS-X, Android, iOS）和 Windows（Win32, WinCE, WinRT）中运行。</li>
 </ul>
-<h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><table>
+<h3 id="局限"><a class="markdownIt-Anchor" href="#局限"></a> 局限</h3>
+<table>
 <thead>
 <tr>
 <th>特性</th>
@@ -556,32 +564,46 @@
 </tr>
 </tbody>
 </table>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>Sqlite 可在 UNIX（Linux, Mac OS-X, Android, iOS）和 Windows（Win32, WinCE, WinRT）中运行。</p>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<p>Sqlite 可在 UNIX（Linux, Mac OS-X, Android, iOS）和 Windows（Win32, WinCE, WinRT）中运行。</p>
 <p>一般，Linux 和 Mac 上会预安装 sqlite。如果没有安装，可以在<a href="https://www.sqlite.org/download.html" target="_blank" rel="noopener">官方下载地址</a>下载合适安装版本，自行安装。</p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><blockquote>
+<h2 id="语法"><a class="markdownIt-Anchor" href="#语法"></a> 语法</h2>
+<blockquote>
 <p>这里不会详细列举所有 SQL 语法，仅列举 SQLite 除标准 SQL 以外的，一些自身特殊的 SQL 语法。</p>
-<p>:point_right: 扩展阅读：<a href="https://github.com/dunwu/blog/blob/master/docs/database/sql/sql.md" target="_blank" rel="noopener">标准 SQL 基本语法</a></p>
+<p>👉 扩展阅读：<a href="https://github.com/dunwu/blog/blob/master/docs/database/sql/sql.md" target="_blank" rel="noopener">标准 SQL 基本语法</a></p>
 </blockquote>
-<h3 id="大小写敏感"><a href="#大小写敏感" class="headerlink" title="大小写敏感"></a>大小写敏感</h3><p>SQLite 是<strong>不区分大小写</strong>的，但也有一些命令是大小写敏感的，比如 <strong>GLOB</strong> 和 <strong>glob</strong> 在 SQLite 的语句中有不同的含义。</p>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 单行注释</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 多行注释1</span></span><br><span class="line"><span class="comment"> 多行注释2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
-<h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><h4 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h4><p>如下，创建一个名为 test 的数据库：</p>
+<h3 id="大小写敏感"><a class="markdownIt-Anchor" href="#大小写敏感"></a> 大小写敏感</h3>
+<p>SQLite 是<strong>不区分大小写</strong>的，但也有一些命令是大小写敏感的，比如 <strong>GLOB</strong> 和 <strong>glob</strong> 在 SQLite 的语句中有不同的含义。</p>
+<h3 id="注释"><a class="markdownIt-Anchor" href="#注释"></a> 注释</h3>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 单行注释</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> 多行注释1</span></span><br><span class="line"><span class="comment"> 多行注释2</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="数据库操作"><a class="markdownIt-Anchor" href="#数据库操作"></a> 数据库操作</h3>
+<h4 id="创建数据库"><a class="markdownIt-Anchor" href="#创建数据库"></a> 创建数据库</h4>
+<p>如下，创建一个名为 test 的数据库：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3 test.db</span><br><span class="line">SQLite version 3.7.17 2013-05-20 00:56:22</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</span><br><span class="line">Enter SQL statements terminated with a <span class="string">";"</span></span><br></pre></td></tr></table></figure>
-<h4 id="查看数据库"><a href="#查看数据库" class="headerlink" title="查看数据库"></a>查看数据库</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt; .databases</span><br><span class="line">seq  name             file</span><br><span class="line">---  ---------------  ----------------------------------------------------------</span><br><span class="line">0    main             /root/test.db</span><br></pre></td></tr></table></figure>
-<h4 id="退出数据库"><a href="#退出数据库" class="headerlink" title="退出数据库"></a>退出数据库</h4><figure class="highlight cos"><table><tr><td class="code"><pre><span class="line">sqlite&gt; .<span class="keyword">quit</span></span><br></pre></td></tr></table></figure>
-<h4 id="附加数据库"><a href="#附加数据库" class="headerlink" title="附加数据库"></a>附加数据库</h4><p>假设这样一种情况，当在同一时间有多个数据库可用，您想使用其中的任何一个。</p>
+<h4 id="查看数据库"><a class="markdownIt-Anchor" href="#查看数据库"></a> 查看数据库</h4>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt; .databases</span><br><span class="line">seq  name             file</span><br><span class="line">---  ---------------  ----------------------------------------------------------</span><br><span class="line">0    main             /root/test.db</span><br></pre></td></tr></table></figure>
+<h4 id="退出数据库"><a class="markdownIt-Anchor" href="#退出数据库"></a> 退出数据库</h4>
+<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line">sqlite&gt; .<span class="keyword">quit</span></span><br></pre></td></tr></table></figure>
+<h4 id="附加数据库"><a class="markdownIt-Anchor" href="#附加数据库"></a> 附加数据库</h4>
+<p>假设这样一种情况，当在同一时间有多个数据库可用，您想使用其中的任何一个。</p>
 <p>SQLite 的 <strong><code>ATTACH DATABASE</code></strong> 语句是用来选择一个特定的数据库，使用该命令后，所有的 SQLite 语句将在附加的数据库下执行。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt; ATTACH DATABASE <span class="string">'test.db'</span> AS <span class="string">'test'</span>;</span><br><span class="line">sqlite&gt; .databases</span><br><span class="line">seq  name             file</span><br><span class="line">---  ---------------  ----------------------------------------------------------</span><br><span class="line">0    main             /root/test.db</span><br><span class="line">2    <span class="built_in">test</span>             /root/test.db</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意：数据库名 <strong><code>main</code></strong> 和 <strong><code>temp</code></strong> 被保留用于主数据库和存储临时表及其他临时数据对象的数据库。这两个数据库名称可用于每个数据库连接，且不应该被用于附加，否则将得到一个警告消息。</p>
 </blockquote>
-<h4 id="分离数据库"><a href="#分离数据库" class="headerlink" title="分离数据库"></a>分离数据库</h4><p>SQLite 的 <strong><code>DETACH DATABASE</code></strong> 语句是用来把命名数据库从一个数据库连接分离和游离出来，连接是之前使用 <strong><code>ATTACH</code></strong> 语句附加的。</p>
+<h4 id="分离数据库"><a class="markdownIt-Anchor" href="#分离数据库"></a> 分离数据库</h4>
+<p>SQLite 的 <strong><code>DETACH DATABASE</code></strong> 语句是用来把命名数据库从一个数据库连接分离和游离出来，连接是之前使用 <strong><code>ATTACH</code></strong> 语句附加的。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt; .databases</span><br><span class="line">seq  name             file</span><br><span class="line">---  ---------------  ----------------------------------------------------------</span><br><span class="line">0    main             /root/test.db</span><br><span class="line">2    <span class="built_in">test</span>             /root/test.db</span><br><span class="line">sqlite&gt; DETACH DATABASE <span class="string">'test'</span>;</span><br><span class="line">sqlite&gt; .databases</span><br><span class="line">seq  name             file</span><br><span class="line">---  ---------------  ----------------------------------------------------------</span><br><span class="line">0    main             /root/test.db</span><br></pre></td></tr></table></figure>
-<h4 id="备份数据库"><a href="#备份数据库" class="headerlink" title="备份数据库"></a>备份数据库</h4><p>如下，备份 test 数据库到 <code>/home/test.sql</code></p>
+<h4 id="备份数据库"><a class="markdownIt-Anchor" href="#备份数据库"></a> 备份数据库</h4>
+<p>如下，备份 test 数据库到 <code>/home/test.sql</code></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3 test.db .dump &gt; /home/test.sql</span><br></pre></td></tr></table></figure>
-<h4 id="恢复数据库"><a href="#恢复数据库" class="headerlink" title="恢复数据库"></a>恢复数据库</h4><p>如下，根据 <code>/home/test.sql</code> 恢复 test 数据库</p>
+<h4 id="恢复数据库"><a class="markdownIt-Anchor" href="#恢复数据库"></a> 恢复数据库</h4>
+<p>如下，根据 <code>/home/test.sql</code> 恢复 test 数据库</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3 test.db &lt; test.sql</span><br></pre></td></tr></table></figure>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>SQLite 使用一个更普遍的动态类型系统。在 SQLite 中，值的数据类型与值本身是相关的，而不是与它的容器相关。</p>
-<h3 id="SQLite-存储类"><a href="#SQLite-存储类" class="headerlink" title="SQLite 存储类"></a>SQLite 存储类</h3><p>每个存储在 SQLite 数据库中的值都具有以下存储类之一：</p>
+<h2 id="数据类型"><a class="markdownIt-Anchor" href="#数据类型"></a> 数据类型</h2>
+<p>SQLite 使用一个更普遍的动态类型系统。在 SQLite 中，值的数据类型与值本身是相关的，而不是与它的容器相关。</p>
+<h3 id="sqlite-存储类"><a class="markdownIt-Anchor" href="#sqlite-存储类"></a> SQLite 存储类</h3>
+<p>每个存储在 SQLite 数据库中的值都具有以下存储类之一：</p>
 <table>
 <thead>
 <tr>
@@ -613,7 +635,8 @@
 </tbody>
 </table>
 <p>SQLite 的存储类稍微比数据类型更普遍。INTEGER 存储类，例如，包含 6 种不同的不同长度的整数数据类型。</p>
-<h3 id="SQLite-亲和-Affinity-类型"><a href="#SQLite-亲和-Affinity-类型" class="headerlink" title="SQLite 亲和(Affinity)类型"></a>SQLite 亲和(Affinity)类型</h3><p>SQLite 支持列的亲和类型概念。任何列仍然可以存储任何类型的数据，当数据插入时，该字段的数据将会优先采用亲缘类型作为该值的存储方式。SQLite 目前的版本支持以下五种亲缘类型：</p>
+<h3 id="sqlite-亲和affinity类型"><a class="markdownIt-Anchor" href="#sqlite-亲和affinity类型"></a> SQLite 亲和(Affinity)类型</h3>
+<p>SQLite 支持列的亲和类型概念。任何列仍然可以存储任何类型的数据，当数据插入时，该字段的数据将会优先采用亲缘类型作为该值的存储方式。SQLite 目前的版本支持以下五种亲缘类型：</p>
 <table>
 <thead>
 <tr>
@@ -628,7 +651,7 @@
 </tr>
 <tr>
 <td><code>NUMERIC</code></td>
-<td>当文本数据被插入到亲缘性为 NUMERIC 的字段中时，如果转换操作不会导致数据信息丢失以及完全可逆，那么 SQLite 就会将该文本数据转换为 INTEGER 或 REAL 类型的数据，如果转换失败，SQLite 仍会以 TEXT 方式存储该数据。对于 NULL 或 BLOB 类型的新数据，SQLite 将不做任何转换，直接以 NULL 或 BLOB 的方式存储该数据。需要额外说明的是，对于浮点格式的常量文本，如”30000.0”，如果该值可以转换为 INTEGER 同时又不会丢失数值信息，那么 SQLite 就会将其转换为 INTEGER 的存储方式。</td>
+<td>当文本数据被插入到亲缘性为 NUMERIC 的字段中时，如果转换操作不会导致数据信息丢失以及完全可逆，那么 SQLite 就会将该文本数据转换为 INTEGER 或 REAL 类型的数据，如果转换失败，SQLite 仍会以 TEXT 方式存储该数据。对于 NULL 或 BLOB 类型的新数据，SQLite 将不做任何转换，直接以 NULL 或 BLOB 的方式存储该数据。需要额外说明的是，对于浮点格式的常量文本，如&quot;30000.0&quot;，如果该值可以转换为 INTEGER 同时又不会丢失数值信息，那么 SQLite 就会将其转换为 INTEGER 的存储方式。</td>
 </tr>
 <tr>
 <td><code>INTEGER</code></td>
@@ -636,7 +659,7 @@
 </tr>
 <tr>
 <td><code>REAL</code></td>
-<td>其规则基本等同于 NUMERIC，唯一的差别是不会将”30000.0”这样的文本数据转换为 INTEGER 存储方式。</td>
+<td>其规则基本等同于 NUMERIC，唯一的差别是不会将&quot;30000.0&quot;这样的文本数据转换为 INTEGER 存储方式。</td>
 </tr>
 <tr>
 <td><code>NONE</code></td>
@@ -644,7 +667,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="SQLite-亲和类型-Affinity-及类型名称"><a href="#SQLite-亲和类型-Affinity-及类型名称" class="headerlink" title="SQLite 亲和类型(Affinity)及类型名称"></a>SQLite 亲和类型(Affinity)及类型名称</h3><p>下表列出了当创建 SQLite3 表时可使用的各种数据类型名称，同时也显示了相应的亲和类型：</p>
+<h3 id="sqlite-亲和类型affinity及类型名称"><a class="markdownIt-Anchor" href="#sqlite-亲和类型affinity及类型名称"></a> SQLite 亲和类型(Affinity)及类型名称</h3>
+<p>下表列出了当创建 SQLite3 表时可使用的各种数据类型名称，同时也显示了相应的亲和类型：</p>
 <table>
 <thead>
 <tr>
@@ -675,8 +699,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="Boolean-数据类型"><a href="#Boolean-数据类型" class="headerlink" title="Boolean 数据类型"></a>Boolean 数据类型</h3><p>SQLite 没有单独的 Boolean 存储类。相反，布尔值被存储为整数 0（false）和 1（true）。</p>
-<h3 id="Date-与-Time-数据类型"><a href="#Date-与-Time-数据类型" class="headerlink" title="Date 与 Time 数据类型"></a>Date 与 Time 数据类型</h3><p>SQLite 没有一个单独的用于存储日期和/或时间的存储类，但 SQLite 能够把日期和时间存储为 TEXT、REAL 或 INTEGER 值。</p>
+<h3 id="boolean-数据类型"><a class="markdownIt-Anchor" href="#boolean-数据类型"></a> Boolean 数据类型</h3>
+<p>SQLite 没有单独的 Boolean 存储类。相反，布尔值被存储为整数 0（false）和 1（true）。</p>
+<h3 id="date-与-time-数据类型"><a class="markdownIt-Anchor" href="#date-与-time-数据类型"></a> Date 与 Time 数据类型</h3>
+<p>SQLite 没有一个单独的用于存储日期和/或时间的存储类，但 SQLite 能够把日期和时间存储为 TEXT、REAL 或 INTEGER 值。</p>
 <table>
 <thead>
 <tr>
@@ -700,20 +726,28 @@
 </tbody>
 </table>
 <p>您可以以任何上述格式来存储日期和时间，并且可以使用内置的日期和时间函数来自由转换不同格式。</p>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><blockquote>
-<p>:point_right: 扩展阅读：<a href="sqlite-cli.md">SQLite 命令</a></p>
+<h2 id="命令"><a class="markdownIt-Anchor" href="#命令"></a> 命令</h2>
+<blockquote>
+<p>👉 扩展阅读：<a href="sqlite-cli.md">SQLite 命令</a></p>
 </blockquote>
-<h3 id="进入-SQLite-控制台"><a href="#进入-SQLite-控制台" class="headerlink" title="进入 SQLite 控制台"></a>进入 SQLite 控制台</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3</span><br><span class="line">SQLite version 3.7.17 2013-05-20 00:56:22</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</span><br><span class="line">Enter SQL statements terminated with a <span class="string">";"</span></span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="进入-SQLite-控制台并指定数据库"><a href="#进入-SQLite-控制台并指定数据库" class="headerlink" title="进入 SQLite 控制台并指定数据库"></a>进入 SQLite 控制台并指定数据库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3 test.db</span><br><span class="line">SQLite version 3.7.17 2013-05-20 00:56:22</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</span><br><span class="line">Enter SQL statements terminated with a <span class="string">";"</span></span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="退出-SQLite-控制台"><a href="#退出-SQLite-控制台" class="headerlink" title="退出 SQLite 控制台"></a>退出 SQLite 控制台</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt;.quit</span><br></pre></td></tr></table></figure>
-<h3 id="查看命令帮助"><a href="#查看命令帮助" class="headerlink" title="查看命令帮助"></a>查看命令帮助</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt;.<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
-<h2 id="API"><a href="#API" class="headerlink" title="API"></a>API</h2><blockquote>
-<p>:point_right: 扩展阅读：<a href="sqlite-api-java.md">SQLite Java API</a></p>
+<h3 id="进入-sqlite-控制台"><a class="markdownIt-Anchor" href="#进入-sqlite-控制台"></a> 进入 SQLite 控制台</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3</span><br><span class="line">SQLite version 3.7.17 2013-05-20 00:56:22</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</span><br><span class="line">Enter SQL statements terminated with a <span class="string">";"</span></span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="进入-sqlite-控制台并指定数据库"><a class="markdownIt-Anchor" href="#进入-sqlite-控制台并指定数据库"></a> 进入 SQLite 控制台并指定数据库</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sqlite3 test.db</span><br><span class="line">SQLite version 3.7.17 2013-05-20 00:56:22</span><br><span class="line">Enter <span class="string">".help"</span> <span class="keyword">for</span> instructions</span><br><span class="line">Enter SQL statements terminated with a <span class="string">";"</span></span><br><span class="line">sqlite&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="退出-sqlite-控制台"><a class="markdownIt-Anchor" href="#退出-sqlite-控制台"></a> 退出 SQLite 控制台</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt;.quit</span><br></pre></td></tr></table></figure>
+<h3 id="查看命令帮助"><a class="markdownIt-Anchor" href="#查看命令帮助"></a> 查看命令帮助</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">sqlite&gt;.<span class="built_in">help</span></span><br></pre></td></tr></table></figure>
+<h2 id="api"><a class="markdownIt-Anchor" href="#api"></a> API</h2>
+<blockquote>
+<p>👉 扩展阅读：<a href="sqlite-api-java.md">SQLite Java API</a></p>
 </blockquote>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
-<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<h3 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h3>
+<ul>
 <li><a href="https://www.sqlite.org/index.html" target="_blank" rel="noopener">SQLite 官网</a></li>
 <li><a href="https://www.sqlite.org/docs.html" target="_blank" rel="noopener">SQLite 官方文档</a></li>
 </ul>
@@ -858,7 +892,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -923,7 +957,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1221,7 +1257,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SQLite"><span class="nav-text">SQLite</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-text">优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局限"><span class="nav-text">局限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大小写敏感"><span class="nav-text">大小写敏感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库操作"><span class="nav-text">数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库"><span class="nav-text">创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库"><span class="nav-text">查看数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出数据库"><span class="nav-text">退出数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附加数据库"><span class="nav-text">附加数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离数据库"><span class="nav-text">分离数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备份数据库"><span class="nav-text">备份数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复数据库"><span class="nav-text">恢复数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-text">数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQLite-存储类"><span class="nav-text">SQLite 存储类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQLite-亲和-Affinity-类型"><span class="nav-text">SQLite 亲和(Affinity)类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQLite-亲和类型-Affinity-及类型名称"><span class="nav-text">SQLite 亲和类型(Affinity)及类型名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Boolean-数据类型"><span class="nav-text">Boolean 数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Date-与-Time-数据类型"><span class="nav-text">Date 与 Time 数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入-SQLite-控制台"><span class="nav-text">进入 SQLite 控制台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入-SQLite-控制台并指定数据库"><span class="nav-text">进入 SQLite 控制台并指定数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#退出-SQLite-控制台"><span class="nav-text">退出 SQLite 控制台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看命令帮助"><span class="nav-text">查看命令帮助</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#API"><span class="nav-text">API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-text">参考资料</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#sqlite"><span class="nav-text"> SQLite</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#优点"><span class="nav-text"> 优点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局限"><span class="nav-text"> 局限</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-text"> 语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#大小写敏感"><span class="nav-text"> 大小写敏感</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-text"> 注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库操作"><span class="nav-text"> 数据库操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建数据库"><span class="nav-text"> 创建数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库"><span class="nav-text"> 查看数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#退出数据库"><span class="nav-text"> 退出数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附加数据库"><span class="nav-text"> 附加数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分离数据库"><span class="nav-text"> 分离数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#备份数据库"><span class="nav-text"> 备份数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复数据库"><span class="nav-text"> 恢复数据库</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型"><span class="nav-text"> 数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sqlite-存储类"><span class="nav-text"> SQLite 存储类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sqlite-亲和affinity类型"><span class="nav-text"> SQLite 亲和(Affinity)类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sqlite-亲和类型affinity及类型名称"><span class="nav-text"> SQLite 亲和类型(Affinity)及类型名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#boolean-数据类型"><span class="nav-text"> Boolean 数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#date-与-time-数据类型"><span class="nav-text"> Date 与 Time 数据类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-text"> 命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进入-sqlite-控制台"><span class="nav-text"> 进入 SQLite 控制台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进入-sqlite-控制台并指定数据库"><span class="nav-text"> 进入 SQLite 控制台并指定数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#退出-sqlite-控制台"><span class="nav-text"> 退出 SQLite 控制台</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看命令帮助"><span class="nav-text"> 查看命令帮助</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-text"> API</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1263,7 +1299,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

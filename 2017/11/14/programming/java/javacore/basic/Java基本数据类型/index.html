@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content=":pushpin: 关键词： byte、short、int、long、float、double、char、boolean、包装类  Java 基本数据类型目录  数据类型分类 值类型和引用类型的区别 值类型   数据转换 自动转换 强制转换   装箱和拆箱 包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱      数据类型分类Java 中的数据类型有两类：  值类型（又叫内置数据类型，基">
+  <meta name="description" content="📌 关键词： byte、short、int、long、float、double、char、boolean、包装类   Java 基本数据类型  目录   数据类型分类  值类型和引用类型的区别 值类型   数据转换  自动转换 强制转换   装箱和拆箱  包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱       数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型">
 <meta name="keywords" content="javacore,basics">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 基本数据类型">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/14/programming/java/javacore/basic/Java基本数据类型/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content=":pushpin: 关键词： byte、short、int、long、float、double、char、boolean、包装类  Java 基本数据类型目录  数据类型分类 值类型和引用类型的区别 值类型   数据转换 自动转换 强制转换   装箱和拆箱 包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱      数据类型分类Java 中的数据类型有两类：  值类型（又叫内置数据类型，基">
+<meta property="og:description" content="📌 关键词： byte、short、int、long、float、double、char、boolean、包装类   Java 基本数据类型  目录   数据类型分类  值类型和引用类型的区别 值类型   数据转换  自动转换 强制转换   装箱和拆箱  包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱       数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-58d48d5d2e4a1e92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:updated_time" content="2019-03-07T08:21:31.753Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 基本数据类型">
-<meta name="twitter:description" content=":pushpin: 关键词： byte、short、int、long、float、double、char、boolean、包装类  Java 基本数据类型目录  数据类型分类 值类型和引用类型的区别 值类型   数据转换 自动转换 强制转换   装箱和拆箱 包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱      数据类型分类Java 中的数据类型有两类：  值类型（又叫内置数据类型，基">
+<meta name="twitter:description" content="📌 关键词： byte、short、int、long、float、double、char、boolean、包装类   Java 基本数据类型  目录   数据类型分类  值类型和引用类型的区别 值类型   数据转换  自动转换 强制转换   装箱和拆箱  包装类 装箱 拆箱 使用装箱的场景 自动装箱、自动拆箱       数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-58d48d5d2e4a1e92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -511,75 +511,90 @@
 
       
         <blockquote>
-<p>:pushpin: <strong>关键词：</strong> <code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>float</code>、<code>double</code>、<code>char</code>、<code>boolean</code>、包装类</p>
+<p>📌 <strong>关键词：</strong> <code>byte</code>、<code>short</code>、<code>int</code>、<code>long</code>、<code>float</code>、<code>double</code>、<code>char</code>、<code>boolean</code>、包装类</p>
 </blockquote>
-<h1 id="Java-基本数据类型"><a href="#Java-基本数据类型" class="headerlink" title="Java 基本数据类型"></a>Java 基本数据类型</h1><h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><!-- TOC depthFrom:2 depthTo:3 -->
+<h1 id="java-基本数据类型"><a class="markdownIt-Anchor" href="#java-基本数据类型"></a> Java 基本数据类型</h1>
+<h2 id="目录"><a class="markdownIt-Anchor" href="#目录"></a> 目录</h2>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#数据类型分类">数据类型分类</a><ul>
-<li><a href="#值类型和引用类型的区别">值类型和引用类型的区别</a></li>
-<li><a href="#值类型">值类型</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB">数据类型分类</a>
+<ul>
+<li><a href="#%E5%80%BC%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB">值类型和引用类型的区别</a></li>
+<li><a href="#%E5%80%BC%E7%B1%BB%E5%9E%8B">值类型</a></li>
 </ul>
 </li>
-<li><a href="#数据转换">数据转换</a><ul>
-<li><a href="#自动转换">自动转换</a></li>
-<li><a href="#强制转换">强制转换</a></li>
+<li><a href="#%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2">数据转换</a>
+<ul>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%BD%AC%E6%8D%A2">自动转换</a></li>
+<li><a href="#%E5%BC%BA%E5%88%B6%E8%BD%AC%E6%8D%A2">强制转换</a></li>
 </ul>
 </li>
-<li><a href="#装箱和拆箱">装箱和拆箱</a><ul>
-<li><a href="#包装类">包装类</a></li>
-<li><a href="#装箱">装箱</a></li>
-<li><a href="#拆箱">拆箱</a></li>
-<li><a href="#使用装箱的场景">使用装箱的场景</a></li>
-<li><a href="#自动装箱自动拆箱">自动装箱、自动拆箱</a></li>
+<li><a href="#%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1">装箱和拆箱</a>
+<ul>
+<li><a href="#%E5%8C%85%E8%A3%85%E7%B1%BB">包装类</a></li>
+<li><a href="#%E8%A3%85%E7%AE%B1">装箱</a></li>
+<li><a href="#%E6%8B%86%E7%AE%B1">拆箱</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8%E8%A3%85%E7%AE%B1%E7%9A%84%E5%9C%BA%E6%99%AF">使用装箱的场景</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E8%87%AA%E5%8A%A8%E6%8B%86%E7%AE%B1">自动装箱、自动拆箱</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-58d48d5d2e4a1e92.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="数据类型分类"><a href="#数据类型分类" class="headerlink" title="数据类型分类"></a>数据类型分类</h2><p>Java 中的数据类型有两类：</p>
+<h2 id="数据类型分类"><a class="markdownIt-Anchor" href="#数据类型分类"></a> 数据类型分类</h2>
+<p>Java 中的数据类型有两类：</p>
 <ul>
 <li>值类型（又叫内置数据类型，基本数据类型）</li>
 <li>引用类型</li>
 </ul>
-<h3 id="值类型和引用类型的区别"><a href="#值类型和引用类型的区别" class="headerlink" title="值类型和引用类型的区别"></a>值类型和引用类型的区别</h3><ul>
-<li>从概念方面来说<ul>
+<h3 id="值类型和引用类型的区别"><a class="markdownIt-Anchor" href="#值类型和引用类型的区别"></a> 值类型和引用类型的区别</h3>
+<ul>
+<li>从概念方面来说
+<ul>
 <li>基本类型：变量名指向具体的数值。</li>
 <li>引用类型：变量名指向存数据对象的内存地址。</li>
 </ul>
 </li>
-<li>从内存构建方面来说<ul>
+<li>从内存构建方面来说
+<ul>
 <li>基本类型：变量在声明之后，Java 就会立刻分配给他内存空间。</li>
 <li>引用类型：它以特殊的方式（类似 C 指针）向对象实体（具体的值），这类变量声明时不会分配内存，只是存储了一个内存地址。</li>
 </ul>
 </li>
-<li>从使用方面来说<ul>
+<li>从使用方面来说
+<ul>
 <li>基本类型：使用时需要赋具体值,判断时使用 <code>==</code> 号。</li>
 <li>引用类型：使用时可以赋 null，判断时使用 <code>equals</code> 方法。</li>
 </ul>
 </li>
 </ul>
-<h3 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h3><p>​Java 的每种基本类型所占存储空间的大小是固定的。它们的大小不像其他大多数语言那样随机器硬件架构的变化而变化。这种不变性是 Java 程序相对其他大多数语言而言，更容易移植的原因之一。</p>
+<h3 id="值类型"><a class="markdownIt-Anchor" href="#值类型"></a> 值类型</h3>
+<p>​Java 的每种基本类型所占存储空间的大小是固定的。它们的大小不像其他大多数语言那样随机器硬件架构的变化而变化。这种不变性是 Java 程序相对其他大多数语言而言，更容易移植的原因之一。</p>
 <p>所有数值类型都有正负号，所以不要去寻找无符号的数值类型。</p>
 <p>与绝大多数编程语言类似，Java 也支持数值型、字符型、布尔型数据。</p>
 <p>Java 语言提供了 <strong>8</strong> 种基本类型，大致分为 <strong>4</strong> 类</p>
 <ul>
-<li><strong>整数型</strong><ul>
+<li><strong>整数型</strong>
+<ul>
 <li><code>byte</code> - 8 位，最大存储数据量是 255，存放的数据范围是 -128 ~ 127 之间。</li>
 <li><code>short</code> - 16 位，最大数据存储量是 65536，数据范围是 -32768 ~ 32767 之间。</li>
 <li><code>int</code> - 32 位，最大数据存储容量是 2 的 32 次方减 1，数据范围是负的 2 的 31 次方到正的 2 的 31 次方减 1。</li>
 <li><code>long</code> - 64 位，最大数据存储容量是 2 的 64 次方减 1，数据范围为负的 2 的 63 次方到正的 2 的 63 次方减 1。</li>
 </ul>
 </li>
-<li><strong>浮点型</strong><ul>
+<li><strong>浮点型</strong>
+<ul>
 <li><code>float</code> - 32 位，数据范围在 3.4e-45 ~ 1.4e38，直接赋值时必须在数字后加上 f 或 F。</li>
 <li><code>double</code> - 64 位，数据范围在 4.9e-324 ~ 1.8e308，赋值时可以加 d 或 D 也可以不加。</li>
 </ul>
 </li>
-<li><strong>字符型</strong><ul>
+<li><strong>字符型</strong>
+<ul>
 <li><code>char</code> - 16 位，存储 Unicode 码，用单引号赋值。</li>
 </ul>
 </li>
-<li><strong>布尔型</strong><ul>
+<li><strong>布尔型</strong>
+<ul>
 <li><code>boolean</code> - 只有 true 和 false 两个取值。</li>
 </ul>
 </li>
@@ -589,32 +604,40 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataTypeScopeDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// byte</span></span><br><span class="line">        System.out.println(<span class="string">"基本类型：byte 二进制位数："</span> + Byte.SIZE);</span><br><span class="line">        System.out.println(<span class="string">"包装类：java.lang.Byte"</span>);</span><br><span class="line">        System.out.println(<span class="string">"最小值：Byte.MIN_VALUE="</span> + Byte.MIN_VALUE);</span><br><span class="line">        System.out.println(<span class="string">"最大值：Byte.MAX_VALUE="</span> + Byte.MAX_VALUE);</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line">基本类型：<span class="keyword">byte</span> 二进制位数：<span class="number">8</span></span><br><span class="line">包装类：java.lang.<span class="keyword">Byte</span></span><br><span class="line">最小值：<span class="keyword">Byte</span>.MIN_VALUE=-<span class="number">128</span></span><br><span class="line">最大值：<span class="keyword">Byte</span>.MAX_VALUE=<span class="number">127</span></span><br></pre></td></tr></table></figure>
-<h2 id="数据转换"><a href="#数据转换" class="headerlink" title="数据转换"></a>数据转换</h2><h3 id="自动转换"><a href="#自动转换" class="headerlink" title="自动转换"></a>自动转换</h3><p>一般情况下，定义了某数据类型的变量，就不能再随意转换。但是 JAVA 允许用户对基本类型做<strong>有限度</strong>的类型转换。</p>
+<h2 id="数据转换"><a class="markdownIt-Anchor" href="#数据转换"></a> 数据转换</h2>
+<h3 id="自动转换"><a class="markdownIt-Anchor" href="#自动转换"></a> 自动转换</h3>
+<p>一般情况下，定义了某数据类型的变量，就不能再随意转换。但是 JAVA 允许用户对基本类型做<strong>有限度</strong>的类型转换。</p>
 <p>如果符合以下条件，则 JAVA 将会自动做类型转换：</p>
 <ul>
-<li><p>由“小”数据转换为“大”数据</p>
+<li>
+<p>由“小”数据转换为“大”数据</p>
 <p>显而易见的是，“小”数据类型的数值表示范围小于“大”数据类型的数值表示范围，即精度小于“大”数据类型。</p>
 <p>所以，如果“大”数据向“小”数据转换，会丢失数据精度。比如：long 转为 int，则超出 int 表示范围的数据将会丢失，导致结果的不确定性。</p>
 <p>反之，“小”数据向“大”数据转换，则不会存在数据丢失情况。由于这个原因，这种类型转换也称为<strong>扩大转换</strong>。</p>
 <p>这些类型由“小”到“大”分别为：(byte，short，char) &lt; int &lt; long &lt; float &lt; double。</p>
 <p>这里我们所说的“大”与“小”，并不是指占用字节的多少，而是指表示值的范围的大小。</p>
 </li>
-<li><p>转换前后的数据类型要兼容</p>
+<li>
+<p>转换前后的数据类型要兼容</p>
 <p>由于 boolean 类型只能存放 true 或 false，这与整数或字符是不兼容的，因此不可以做类型转换。</p>
 </li>
-<li><p>整型类型和浮点型进行计算后，结果会转为浮点类型</p>
+<li>
+<p>整型类型和浮点型进行计算后，结果会转为浮点类型</p>
 </li>
 </ul>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">long</span> x = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">float</span> y = <span class="number">14.3f</span>;</span><br><span class="line">System.out.println(<span class="string">"x/y = "</span> + x/y);</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
-<figure class="highlight dns"><table><tr><td class="code"><pre><span class="line">x/y = <span class="number">1.9607843</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gml"><table><tr><td class="code"><pre><span class="line"><span class="symbol">x</span>/<span class="symbol">y</span> = <span class="number">1.9607843</span></span><br></pre></td></tr></table></figure>
 <p>可见 long 虽然精度大于 float 类型，但是结果为浮点数类型。</p>
-<h3 id="强制转换"><a href="#强制转换" class="headerlink" title="强制转换"></a>强制转换</h3><p>在不符合自动转换条件时或者根据用户的需要，可以对数据类型做强制的转换。</p>
+<h3 id="强制转换"><a class="markdownIt-Anchor" href="#强制转换"></a> 强制转换</h3>
+<p>在不符合自动转换条件时或者根据用户的需要，可以对数据类型做强制的转换。</p>
 <p>转换方式为：在数值的前面用一个括号 <code>()</code> 把要强制转换的类型标注出来。</p>
 <p>示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">float</span> f = <span class="number">25.5f</span>;</span><br><span class="line"><span class="keyword">int</span> x = (<span class="keyword">int</span>)f;</span><br><span class="line">System.out.println(<span class="string">"x = "</span> + x);</span><br></pre></td></tr></table></figure>
-<h2 id="装箱和拆箱"><a href="#装箱和拆箱" class="headerlink" title="装箱和拆箱"></a>装箱和拆箱</h2><h3 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h3><p>Java 中基本类型的包装类如下：</p>
+<h2 id="装箱和拆箱"><a class="markdownIt-Anchor" href="#装箱和拆箱"></a> 装箱和拆箱</h2>
+<h3 id="包装类"><a class="markdownIt-Anchor" href="#包装类"></a> 包装类</h3>
+<p>Java 中基本类型的包装类如下：</p>
 <ul>
 <li>Byte 和 byte</li>
 <li>Short 和 short</li>
@@ -625,15 +648,19 @@
 <li>Character 和 char</li>
 <li>Boolean 和 boolean</li>
 </ul>
-<h3 id="装箱"><a href="#装箱" class="headerlink" title="装箱"></a>装箱</h3><p>装箱是将值类型转换为引用类型。</p>
+<h3 id="装箱"><a class="markdownIt-Anchor" href="#装箱"></a> 装箱</h3>
+<p>装箱是将值类型转换为引用类型。</p>
 <p>例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer i1 = <span class="keyword">new</span> Integer(<span class="number">10</span>); <span class="comment">// 非自动装箱</span></span><br><span class="line">Integer i2 = <span class="number">10</span>; <span class="comment">// 自动装箱</span></span><br><span class="line">System.out.println(<span class="string">"i1 = "</span> + i1);</span><br><span class="line">System.out.println(<span class="string">"i2 = "</span> + i2);</span><br></pre></td></tr></table></figure>
-<h3 id="拆箱"><a href="#拆箱" class="headerlink" title="拆箱"></a>拆箱</h3><p>拆箱是将引用类型转换为值类型。</p>
+<h3 id="拆箱"><a class="markdownIt-Anchor" href="#拆箱"></a> 拆箱</h3>
+<p>拆箱是将引用类型转换为值类型。</p>
 <p>例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i1 = <span class="keyword">new</span> Integer(<span class="number">10</span>); <span class="comment">// 自动拆箱</span></span><br><span class="line">Integer tmp = <span class="keyword">new</span> Integer(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">int</span> i2 = tmp.intValue(); <span class="comment">// 非自动拆箱</span></span><br><span class="line">System.out.println(<span class="string">"i1 = "</span> + i1);</span><br><span class="line">System.out.println(<span class="string">"i2 = "</span> + i2);</span><br></pre></td></tr></table></figure>
-<h3 id="使用装箱的场景"><a href="#使用装箱的场景" class="headerlink" title="使用装箱的场景"></a>使用装箱的场景</h3><p>一种最普通的场景是：调用一个含类型为 Object 参数的方法，该 Object 可支持任意类型（因为 Object 是所有类的父类），以便通用。当你需要将一个值类型（如 Integer）传入时，需要装箱。</p>
+<h3 id="使用装箱的场景"><a class="markdownIt-Anchor" href="#使用装箱的场景"></a> 使用装箱的场景</h3>
+<p>一种最普通的场景是：调用一个含类型为 Object 参数的方法，该 Object 可支持任意类型（因为 Object 是所有类的父类），以便通用。当你需要将一个值类型（如 Integer）传入时，需要装箱。</p>
 <p>另一种用法是，一个非泛型的容器，同样是为了保证通用，而将元素类型定义为 Object。于是，要将值类型数据加入容器时，需要装箱。</p>
-<h3 id="自动装箱、自动拆箱"><a href="#自动装箱、自动拆箱" class="headerlink" title="自动装箱、自动拆箱"></a>自动装箱、自动拆箱</h3><p>基本数据（Primitive）型的自动装箱（boxing）拆箱（unboxing）自 JDK 5 开始提供的功能。</p>
+<h3 id="自动装箱-自动拆箱"><a class="markdownIt-Anchor" href="#自动装箱-自动拆箱"></a> 自动装箱、自动拆箱</h3>
+<p>基本数据（Primitive）型的自动装箱（boxing）拆箱（unboxing）自 JDK 5 开始提供的功能。</p>
 <p>JDK 5 之前的形式：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Integer i1 = <span class="keyword">new</span> Integer(<span class="number">10</span>); <span class="comment">// 非自动装箱</span></span><br></pre></td></tr></table></figure>
 <p>JDK 5 之后：</p>
@@ -705,8 +732,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/14/programming/java/javacore/basic/object/java-object-oriented/" rel="next" title="Java 面向对象">
-                <i class="fa fa-chevron-left"></i> Java 面向对象
+              <a href="/blog/2017/11/09/programming/java/javastack/javalib/lombok/" rel="next" title="Lombok 使用小结">
+                <i class="fa fa-chevron-left"></i> Lombok 使用小结
               </a>
             
           </div>
@@ -788,7 +815,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -853,7 +880,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1151,7 +1180,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-基本数据类型"><span class="nav-text">Java 基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型分类"><span class="nav-text">数据类型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型的区别"><span class="nav-text">值类型和引用类型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-text">值类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据转换"><span class="nav-text">数据转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动转换"><span class="nav-text">自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制转换"><span class="nav-text">强制转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-text">装箱和拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#包装类"><span class="nav-text">包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装箱"><span class="nav-text">装箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拆箱"><span class="nav-text">拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用装箱的场景"><span class="nav-text">使用装箱的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装箱、自动拆箱"><span class="nav-text">自动装箱、自动拆箱</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-基本数据类型"><span class="nav-text"> Java 基本数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#目录"><span class="nav-text"> 目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据类型分类"><span class="nav-text"> 数据类型分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型和引用类型的区别"><span class="nav-text"> 值类型和引用类型的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#值类型"><span class="nav-text"> 值类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据转换"><span class="nav-text"> 数据转换</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自动转换"><span class="nav-text"> 自动转换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制转换"><span class="nav-text"> 强制转换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#装箱和拆箱"><span class="nav-text"> 装箱和拆箱</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#包装类"><span class="nav-text"> 包装类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#装箱"><span class="nav-text"> 装箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拆箱"><span class="nav-text"> 拆箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用装箱的场景"><span class="nav-text"> 使用装箱的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动装箱-自动拆箱"><span class="nav-text"> 自动装箱、自动拆箱</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1193,7 +1222,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

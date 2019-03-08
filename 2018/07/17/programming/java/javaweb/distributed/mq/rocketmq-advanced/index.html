@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="RocketMQ 原理篇  架构 NameServer Broker Producer Consumer   关键特性以及其实现原理 顺序消息 消息重复 事务消息   资料   架构&amp;lt;/divRocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。### NameServerName">
+  <meta name="description" content="RocketMQ 原理篇   架构  NameServer Broker Producer Consumer   关键特性以及其实现原理  顺序消息 消息重复 事务消息   资料    架构   RocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。  NameServer NameS">
 <meta name="keywords" content="java,javaweb,mq">
 <meta property="og:type" content="article">
 <meta property="og:title" content="RocketMQ 原理篇">
 <meta property="og:url" content="https://dunwu.github.io/2018/07/17/programming/java/javaweb/distributed/mq/rocketmq-advanced/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="RocketMQ 原理篇  架构 NameServer Broker Producer Consumer   关键特性以及其实现原理 顺序消息 消息重复 事务消息   资料   架构&amp;lt;/divRocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。### NameServerName">
+<meta property="og:description" content="RocketMQ 原理篇   架构  NameServer Broker Producer Consumer   关键特性以及其实现原理  顺序消息 消息重复 事务消息   资料    架构   RocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。  NameServer NameS">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-arc.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-component.png">
@@ -126,7 +126,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.794Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="RocketMQ 原理篇">
-<meta name="twitter:description" content="RocketMQ 原理篇  架构 NameServer Broker Producer Consumer   关键特性以及其实现原理 顺序消息 消息重复 事务消息   资料   架构&amp;lt;/divRocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。### NameServerName">
+<meta name="twitter:description" content="RocketMQ 原理篇   架构  NameServer Broker Producer Consumer   关键特性以及其实现原理  顺序消息 消息重复 事务消息   资料    架构   RocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。  NameServer NameS">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-arc.png">
 
 
@@ -517,50 +517,96 @@
       
 
       
-        <h1 id="RocketMQ-原理篇"><a href="#RocketMQ-原理篇" class="headerlink" title="RocketMQ 原理篇"></a>RocketMQ 原理篇</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="rocketmq-原理篇"><a class="markdownIt-Anchor" href="#rocketmq-原理篇"></a> RocketMQ 原理篇</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#架构">架构</a><ul>
+<li><a href="#%E6%9E%B6%E6%9E%84">架构</a>
+<ul>
 <li><a href="#nameserver">NameServer</a></li>
 <li><a href="#broker">Broker</a></li>
 <li><a href="#producer">Producer</a></li>
 <li><a href="#consumer">Consumer</a></li>
 </ul>
 </li>
-<li><a href="#关键特性以及其实现原理">关键特性以及其实现原理</a><ul>
-<li><a href="#顺序消息">顺序消息</a></li>
-<li><a href="#消息重复">消息重复</a></li>
-<li><a href="#事务消息">事务消息</a></li>
+<li><a href="#%E5%85%B3%E9%94%AE%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E5%85%B6%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86">关键特性以及其实现原理</a>
+<ul>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E6%B6%88%E6%81%AF">顺序消息</a></li>
+<li><a href="#%E6%B6%88%E6%81%AF%E9%87%8D%E5%A4%8D">消息重复</a></li>
+<li><a href="#%E4%BA%8B%E5%8A%A1%E6%B6%88%E6%81%AF">事务消息</a></li>
 </ul>
 </li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-arc.png"><br>&lt;/div<br><br>RocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。<br><br>### NameServer<br><br>NameServer 提供轻量级的服务发现和路由能力。每个 NameServer 节点记录全部的路由信息，支持相应的读写操作，并支持快速存储扩展。<br><br>NameServer 是一个功能齐全的服务器，主要包括两个功能：<br><br>1.  Broker 管理 - NameServer 接受来自 Broker 集群的注册，并提供心跳机制来检查 Broker 节点是否存活。<br>2.  路由管理 - 每个 NameServer 将保存有关 Broker 集群的完整路由信息和客户端查询的查询队列。<br><br>RocketMQ 客户端（Producer/Consumer）将从 NameServer 查询队列路由信息。<br><br>将 NameServer 地址列表提供给客户端有四种方法：<br><br>1.  编程方式 - 类似：<code>producer.setNamesrvAddr(&quot;ip:port&quot;)</code><br>2.  Java 选项 - 使用 <code>rocketmq.namesrv.addr</code> 参数<br>3.  环境变量 - 设置环境变量 <code>NAMESRV_ADDR</code><br>4.  HTTP 端点<br><br>&gt; 更详细信息可以参考官方文档：<a href="http://rocketmq.apache.org/rocketmq/four-methods-to-feed-name-server-address-list/" target="_blank" rel="noopener">here</a><br><br>### Broker<br><br>Broker 通过提供轻量级的 TOPIC 和 QUEUE 机制来处理消息存储。它们支持 Push 和 Pull 模型，包含容错机制（2 个副本或 3 个副本），并提供强大的峰值填充和以原始时间顺序累积数千亿条消息的能力。此外，Brokers 还提供灾难恢复，丰富的指标统计和警报机制。<br><br>Broker 有几个重要的子模块：<br><br>- Remoting Module - 即代理的条目，处理来自客户端的请求。<br>- Client Manager - 管理客户（生产者/消费者）并维护消费者的主题订阅。<br>- Store 服务 - 提供简单的 API 来存储或查询物理磁盘中的消息。<br>- HA 服务 - 提供主代理和从代理之间的数据同步功能。<br>- Index 服务 - 按指定密钥构建消息索引，并提供快速消息查询。<br><br><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-component.png"><br></div>
-
-<h3 id="Producer"><a href="#Producer" class="headerlink" title="Producer"></a>Producer</h3><p>Producers 支持分布式部署。Distributed Producers 通过多种负载均衡模式向 Broker 集群发送消息。发送过程支持快速故障并具有低延迟。</p>
-<h3 id="Consumer"><a href="#Consumer" class="headerlink" title="Consumer"></a>Consumer</h3><p>Consumer 也支持 Push 和 Pull 模型中的分布式部署。它还支持群集消费和消息广播。它提供实时消息订阅机制，可以满足大多数消费者的需求。 RocketMQ 的网站为感兴趣的用户提供了一个简单的快速入门指南。</p>
-<h2 id="关键特性以及其实现原理"><a href="#关键特性以及其实现原理" class="headerlink" title="关键特性以及其实现原理"></a>关键特性以及其实现原理</h2><p>分布式消息系统作为实现分布式系统可扩展、可伸缩性的关键组件，需要具有高吞吐量、高可用等特点。而谈到消息系统的设计，就回避不了两个问题：</p>
+<h2 id="架构"><a class="markdownIt-Anchor" href="#架构"></a> 架构</h2>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-arc.png">
+</div>RocketMQ 由四部分组成：NameServer、Broker、Producer、Consumer。其中任意一个组成都可以水平扩展为集群模式，以避免单点故障问题。<p></p>
+<h3 id="nameserver"><a class="markdownIt-Anchor" href="#nameserver"></a> NameServer</h3>
+<p>NameServer 提供轻量级的服务发现和路由能力。每个 NameServer 节点记录全部的路由信息，支持相应的读写操作，并支持快速存储扩展。</p>
+<p>NameServer 是一个功能齐全的服务器，主要包括两个功能：</p>
+<ol>
+<li>Broker 管理 - NameServer 接受来自 Broker 集群的注册，并提供心跳机制来检查 Broker 节点是否存活。</li>
+<li>路由管理 - 每个 NameServer 将保存有关 Broker 集群的完整路由信息和客户端查询的查询队列。</li>
+</ol>
+<p>RocketMQ 客户端（Producer/Consumer）将从 NameServer 查询队列路由信息。</p>
+<p>将 NameServer 地址列表提供给客户端有四种方法：</p>
+<ol>
+<li>编程方式 - 类似：<code>producer.setNamesrvAddr(&quot;ip:port&quot;)</code></li>
+<li>Java 选项 - 使用 <code>rocketmq.namesrv.addr</code> 参数</li>
+<li>环境变量 - 设置环境变量 <code>NAMESRV_ADDR</code></li>
+<li>HTTP 端点</li>
+</ol>
+<blockquote>
+<p>更详细信息可以参考官方文档：<a href="http://rocketmq.apache.org/rocketmq/four-methods-to-feed-name-server-address-list/" target="_blank" rel="noopener">here</a></p>
+</blockquote>
+<h3 id="broker"><a class="markdownIt-Anchor" href="#broker"></a> Broker</h3>
+<p>Broker 通过提供轻量级的 TOPIC 和 QUEUE 机制来处理消息存储。它们支持 Push 和 Pull 模型，包含容错机制（2 个副本或 3 个副本），并提供强大的峰值填充和以原始时间顺序累积数千亿条消息的能力。此外，Brokers 还提供灾难恢复，丰富的指标统计和警报机制。</p>
+<p>Broker 有几个重要的子模块：</p>
+<ul>
+<li>Remoting Module - 即代理的条目，处理来自客户端的请求。</li>
+<li>Client Manager - 管理客户（生产者/消费者）并维护消费者的主题订阅。</li>
+<li>Store 服务 - 提供简单的 API 来存储或查询物理磁盘中的消息。</li>
+<li>HA 服务 - 提供主代理和从代理之间的数据同步功能。</li>
+<li>Index 服务 - 按指定密钥构建消息索引，并提供快速消息查询。</li>
+</ul>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-basic-component.png">
+</div>
+<h3 id="producer"><a class="markdownIt-Anchor" href="#producer"></a> Producer</h3>
+<p>Producers 支持分布式部署。Distributed Producers 通过多种负载均衡模式向 Broker 集群发送消息。发送过程支持快速故障并具有低延迟。</p>
+<h3 id="consumer"><a class="markdownIt-Anchor" href="#consumer"></a> Consumer</h3>
+<p>Consumer 也支持 Push 和 Pull 模型中的分布式部署。它还支持群集消费和消息广播。它提供实时消息订阅机制，可以满足大多数消费者的需求。 RocketMQ 的网站为感兴趣的用户提供了一个简单的快速入门指南。</p>
+<h2 id="关键特性以及其实现原理"><a class="markdownIt-Anchor" href="#关键特性以及其实现原理"></a> 关键特性以及其实现原理</h2>
+<p>分布式消息系统作为实现分布式系统可扩展、可伸缩性的关键组件，需要具有高吞吐量、高可用等特点。而谈到消息系统的设计，就回避不了两个问题：</p>
 <ol>
 <li>消息的顺序问题</li>
 <li>消息的重复问题</li>
 </ol>
-<h3 id="顺序消息"><a href="#顺序消息" class="headerlink" title="顺序消息"></a>顺序消息</h3><h4 id="第一种模型"><a href="#第一种模型" class="headerlink" title="第一种模型"></a>第一种模型</h4><p>假如生产者产生了 2 条消息：M1、M2，要保证这两条消息的顺序，应该怎样做？你脑中想到的可能是这样：</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-bb5ec534363e2fb4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<h3 id="顺序消息"><a class="markdownIt-Anchor" href="#顺序消息"></a> 顺序消息</h3>
+<h4 id="第一种模型"><a class="markdownIt-Anchor" href="#第一种模型"></a> 第一种模型</h4>
+<p>假如生产者产生了 2 条消息：M1、M2，要保证这两条消息的顺序，应该怎样做？你脑中想到的可能是这样：</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-bb5ec534363e2fb4?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>假定 M1 发送到 S1，M2 发送到 S2，如果要保证 M1 先于 M2 被消费，那么需要 M1 到达消费端被消费后，通知 S2，然后 S2 再将 M2 发送到消费端。</p>
 <p>这个模型存在的问题是，如果 M1 和 M2 分别发送到两台 Server 上，就不能保证 M1 先达到 MQ 集群，也不能保证 M1 被先消费。换个角度看，如果 M2 先于 M1 达到 MQ 集群，甚至 M2 被消费后，M1 才达到消费端，这时消息也就乱序了，说明以上模型是不能保证消息的顺序的。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-5a6313fe906a678b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
-<h4 id="第二种模型"><a href="#第二种模型" class="headerlink" title="第二种模型"></a>第二种模型</h4><p>如何才能在 MQ 集群保证消息的顺序？一种简单的方式就是将 M1、M2 发送到同一个 Server 上：</p>
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-5a6313fe906a678b?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
+<h4 id="第二种模型"><a class="markdownIt-Anchor" href="#第二种模型"></a> 第二种模型</h4>
+<p>如何才能在 MQ 集群保证消息的顺序？一种简单的方式就是将 M1、M2 发送到同一个 Server 上：</p>
 <p>这样可以保证 M1 先于 M2 到达 MQServer（生产者等待 M1 发送成功后再发送 M2），根据先达到先被消费的原则，M1 会先于 M2 被消费，这样就保证了消息的顺序。</p>
 <p>这个模型也仅仅是理论上可以保证消息的顺序，在实际场景中可能会遇到下面的问题：</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-d430f5a3ec6c48ad?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-d430f5a3ec6c48ad?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>只要将消息从一台服务器发往另一台服务器，就会存在网络延迟问题。如上图所示，如果发送 M1 耗时大于发送 M2 的耗时，那么 M2 就仍将被先消费，仍然不能保证消息的顺序。即使 M1 和 M2 同时到达消费端，由于不清楚消费端 1 和消费端 2 的负载情况，仍然有可能出现 M2 先于 M1 被消费的情况。</p>
 <p>如何解决这个问题？将 M1 和 M2 发往同一个消费者，且发送 M1 后，需要消费端响应成功后才能发送 M2。</p>
 <p>这可能产生另外的问题：如果 M1 被发送到消费端后，消费端 1 没有响应，那是继续发送 M2 呢，还是重新发送 M1？一般为了保证消息一定被消费，肯定会选择重发 M1 到另外一个消费端 2，就如下图所示。</p>
-<div align="center"><br><img src="http://upload-images.jianshu.io/upload_images/3101171-3c0e822d37a85e1e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"><br></div>
-
+<div align="center">
+<img src="http://upload-images.jianshu.io/upload_images/3101171-3c0e822d37a85e1e?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+</div>
 <p>这样的模型就严格保证消息的顺序，细心的你仍然会发现问题，消费端 1 没有响应 Server 时有两种情况，一种是 M1 确实没有到达(数据在网络传送中丢失)，另外一种消费端已经消费 M1 且已经发送响应消息，只是 MQ Server 端没有收到。如果是第二种情况，重发 M1，就会造成 M1 被重复消费。也就引入了我们要说的第二个问题，消息重复问题，这个后文会详细讲解。</p>
 <p>回过头来看消息顺序问题，严格的顺序消息非常容易理解，也可以通过文中所描述的方式来简单处理。总结起来，要实现严格的顺序消息，简单且可行的办法就是：</p>
 <p><strong>保证生产者 - MQServer - 消费者是一对一对一的关系。</strong></p>
@@ -579,7 +625,8 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// RocketMQ 通过 MessageQueueSelector 中实现的算法来确定消息发送到哪一个队列上</span></span><br><span class="line"><span class="comment">// RocketMQ 默认提供了两种 MessageQueueSelector 实现：随机/Hash</span></span><br><span class="line"><span class="comment">// 当然你可以根据业务实现自己的 MessageQueueSelector 来决定消息按照何种策略发送到消息队列中</span></span><br><span class="line">SendResult sendResult = producer.send(msg, <span class="keyword">new</span> MessageQueueSelector() &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> MessageQueue <span class="title">select</span><span class="params">(List&lt;MessageQueue&gt; mqs, Message msg, Object arg)</span> </span>&#123;</span><br><span class="line">        Integer id = (Integer) arg;</span><br><span class="line">        <span class="keyword">int</span> index = id % mqs.size();</span><br><span class="line">        <span class="keyword">return</span> mqs.get(index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, orderId);</span><br></pre></td></tr></table></figure>
 <p>在获取到路由信息以后，会根据 MessageQueueSelector 实现的算法来选择一个队列，同一个 OrderId 获取到的肯定是同一个队列。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> SendResult <span class="title">send</span><span class="params">()</span>  </span>&#123;</span><br><span class="line">    <span class="comment">// 获取topic路由信息</span></span><br><span class="line">    TopicPublishInfo topicPublishInfo = <span class="keyword">this</span>.tryToFindTopicPublishInfo(msg.getTopic());</span><br><span class="line">    <span class="keyword">if</span> (topicPublishInfo != <span class="keyword">null</span> &amp;&amp; topicPublishInfo.ok()) &#123;</span><br><span class="line">        MessageQueue mq = <span class="keyword">null</span>;</span><br><span class="line">        <span class="comment">// 根据我们的算法，选择一个发送队列</span></span><br><span class="line">        <span class="comment">// 这里的arg = orderId</span></span><br><span class="line">        mq = selector.select(topicPublishInfo.getMessageQueueList(), msg, arg);</span><br><span class="line">        <span class="keyword">if</span> (mq != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.sendKernelImpl(msg, mq, communicationMode, sendCallback, timeout);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="消息重复"><a href="#消息重复" class="headerlink" title="消息重复"></a>消息重复</h3><p>造成消息重复的根本原因是：网络不可达。只要通过网络交换数据，就无法避免这个问题。所以解决这个问题的办法就是绕过这个问题。那么问题就变成了：如果消费端收到两条一样的消息，应该怎样处理？</p>
+<h3 id="消息重复"><a class="markdownIt-Anchor" href="#消息重复"></a> 消息重复</h3>
+<p>造成消息重复的根本原因是：网络不可达。只要通过网络交换数据，就无法避免这个问题。所以解决这个问题的办法就是绕过这个问题。那么问题就变成了：如果消费端收到两条一样的消息，应该怎样处理？</p>
 <ol>
 <li>消费端处理消息的业务逻辑保持幂等性。</li>
 <li>保证每条消息都有唯一编号且保证消息处理成功与去重表的日志同时出现。</li>
@@ -589,18 +636,22 @@
 <p>第 1 条解决方案，很明显应该在消费端实现，不属于消息系统要实现的功能。</p>
 <p>第 2 条可以消息系统实现，也可以业务端实现。正常情况下出现重复消息的概率其实很小，如果由消息系统来实现的话，肯定会对消息系统的吞吐量和高可用有影响，所以最好还是由业务端自己处理消息重复的问题，这也是 RocketMQ 不解决消息重复的问题的原因。</p>
 <p><strong>RocketMQ 不保证消息不重复，如果你的业务需要保证严格的不重复消息，需要你自己在业务端去重。</strong></p>
-<h3 id="事务消息"><a href="#事务消息" class="headerlink" title="事务消息"></a>事务消息</h3><p>RocketMQ 除了支持普通消息，顺序消息，另外还支持事务消息。</p>
+<h3 id="事务消息"><a class="markdownIt-Anchor" href="#事务消息"></a> 事务消息</h3>
+<p>RocketMQ 除了支持普通消息，顺序消息，另外还支持事务消息。</p>
 <p>假设这样的场景：</p>
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-253d8bd65736694f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>图中执行本地事务（Bob 账户扣款）和发送异步消息应该保证同时成功或者同时失败，也就是扣款成功了，发送消息一定要成功，如果扣款失败了，就不能再发送消息。那问题是：我们是先扣款还是先发送消息呢？</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-088dc074c4ecd192?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>RocketMQ 分布式事务步骤：</p>
-<p>发送 Prepared 消息 2222222222222222222，并拿到接受消息的地址。<br>执行本地事务<br>通过第 1 步骤拿到的地址去访问消息，并修改消息状态。</p>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<p>发送 Prepared 消息 2222222222222222222，并拿到接受消息的地址。<br>
+执行本地事务<br>
+通过第 1 步骤拿到的地址去访问消息，并修改消息状态。</p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="http://rocketmq.apache.org/docs/quick-start/" target="_blank" rel="noopener">RocketMQ 官方文档</a></li>
 <li><a href="https://www.jianshu.com/p/453c6e7ff81c" target="_blank" rel="noopener">分布式开放消息系统(RocketMQ)的原理与实践</a></li>
 </ul>
-</div>
+
       
     </div>
 
@@ -751,7 +802,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -816,7 +867,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1114,7 +1167,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#RocketMQ-原理篇"><span class="nav-text">RocketMQ 原理篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-text">架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Producer"><span class="nav-text">Producer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consumer"><span class="nav-text">Consumer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键特性以及其实现原理"><span class="nav-text">关键特性以及其实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序消息"><span class="nav-text">顺序消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种模型"><span class="nav-text">第一种模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种模型"><span class="nav-text">第二种模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息重复"><span class="nav-text">消息重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务消息"><span class="nav-text">事务消息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rocketmq-原理篇"><span class="nav-text"> RocketMQ 原理篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#架构"><span class="nav-text"> 架构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#nameserver"><span class="nav-text"> NameServer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#broker"><span class="nav-text"> Broker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#producer"><span class="nav-text"> Producer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consumer"><span class="nav-text"> Consumer</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关键特性以及其实现原理"><span class="nav-text"> 关键特性以及其实现原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#顺序消息"><span class="nav-text"> 顺序消息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#第一种模型"><span class="nav-text"> 第一种模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#第二种模型"><span class="nav-text"> 第二种模型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消息重复"><span class="nav-text"> 消息重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事务消息"><span class="nav-text"> 事务消息</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1156,7 +1209,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

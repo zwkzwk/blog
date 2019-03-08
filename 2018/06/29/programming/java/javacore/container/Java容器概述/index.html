@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="Java 容器概述 :notebook: 本文已归档到：「blog」    容器简介 数组与容器 容器框架   容器基本机制 泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料   容器简介数组与容器Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
+  <meta name="description" content="Java 容器概述  📓 本文已归档到：「blog」    容器简介  数组与容器 容器框架   容器基本机制  泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料    容器简介  数组与容器 Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
 <meta name="keywords" content="programming,javacore,java,container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java 容器概述">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/29/programming/java/javacore/container/Java容器概述/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 容器概述 :notebook: 本文已归档到：「blog」    容器简介 数组与容器 容器框架   容器基本机制 泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料   容器简介数组与容器Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
+<meta property="og:description" content="Java 容器概述  📓 本文已归档到：「blog」    容器简介  数组与容器 容器框架   容器基本机制  泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料    容器简介  数组与容器 Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/java-container-structure.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/oop/design-patterns/iterator-pattern.png">
 <meta property="og:updated_time" content="2019-03-07T05:17:42.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 容器概述">
-<meta name="twitter:description" content="Java 容器概述 :notebook: 本文已归档到：「blog」    容器简介 数组与容器 容器框架   容器基本机制 泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料   容器简介数组与容器Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
+<meta name="twitter:description" content="Java 容器概述  📓 本文已归档到：「blog」    容器简介  数组与容器 容器框架   容器基本机制  泛型 Iterable Comparable 和 Comparator Cloneable fail-fast   同步容器和并发容器 资料    容器简介  数组与容器 Java 中常用的存储容器就是数组和容器，二者有以下区别：  数组是固定长度的；容器的长度是可变的。 数组可以">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/java-container-structure.png">
 
 
@@ -498,7 +498,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">2.7k</span>
               
 
               
@@ -532,38 +532,46 @@
       
 
       
-        <h1 id="Java-容器概述"><a href="#Java-容器概述" class="headerlink" title="Java 容器概述"></a>Java 容器概述</h1><blockquote>
-<p>:notebook: 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+        <h1 id="java-容器概述"><a class="markdownIt-Anchor" href="#java-容器概述"></a> Java 容器概述</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#容器简介">容器简介</a><ul>
-<li><a href="#数组与容器">数组与容器</a></li>
-<li><a href="#容器框架">容器框架</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E7%AE%80%E4%BB%8B">容器简介</a>
+<ul>
+<li><a href="#%E6%95%B0%E7%BB%84%E4%B8%8E%E5%AE%B9%E5%99%A8">数组与容器</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E6%A1%86%E6%9E%B6">容器框架</a></li>
 </ul>
 </li>
-<li><a href="#容器基本机制">容器基本机制</a><ul>
-<li><a href="#泛型">泛型</a></li>
+<li><a href="#%E5%AE%B9%E5%99%A8%E5%9F%BA%E6%9C%AC%E6%9C%BA%E5%88%B6">容器基本机制</a>
+<ul>
+<li><a href="#%E6%B3%9B%E5%9E%8B">泛型</a></li>
 <li><a href="#iterable">Iterable</a></li>
-<li><a href="#comparable-和-comparator">Comparable 和 Comparator</a></li>
+<li><a href="#comparable-%E5%92%8C-comparator">Comparable 和 Comparator</a></li>
 <li><a href="#cloneable">Cloneable</a></li>
 <li><a href="#fail-fast">fail-fast</a></li>
 </ul>
 </li>
-<li><a href="#同步容器和并发容器">同步容器和并发容器</a></li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%92%8C%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8">同步容器和并发容器</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="容器简介"><a href="#容器简介" class="headerlink" title="容器简介"></a>容器简介</h2><h3 id="数组与容器"><a href="#数组与容器" class="headerlink" title="数组与容器"></a>数组与容器</h3><p>Java 中常用的存储容器就是数组和容器，二者有以下区别：</p>
+<h2 id="容器简介"><a class="markdownIt-Anchor" href="#容器简介"></a> 容器简介</h2>
+<h3 id="数组与容器"><a class="markdownIt-Anchor" href="#数组与容器"></a> 数组与容器</h3>
+<p>Java 中常用的存储容器就是数组和容器，二者有以下区别：</p>
 <ol>
 <li>数组是固定长度的；容器的长度是可变的。</li>
 <li>数组可以存储基本数据类型，也可以存储引用数据类型；容器只能存储引用数据类型，基本数据类型的变量要转换成对应的包装类才能放入容器类中。</li>
 </ol>
-<h3 id="容器框架"><a href="#容器框架" class="headerlink" title="容器框架"></a>容器框架</h3><div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/java-container-structure.png" width="640"><br></div>
-
+<h3 id="容器框架"><a class="markdownIt-Anchor" href="#容器框架"></a> 容器框架</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/container/java-container-structure.png" width="640">
+</div>
 <p>Java 容器框架主要分为 Collection 和 Map 两种。其中，Collection 又分为 List、Set 以及 Queue。</p>
 <ul>
-<li><code>Collection</code> - 一个独立元素的序列，这些元素都服从一条或者多条规则。<ul>
+<li><code>Collection</code> - 一个独立元素的序列，这些元素都服从一条或者多条规则。
+<ul>
 <li><code>List</code> - 必须按照插入的顺序保存元素。</li>
 <li><code>Set</code> - 不能有重复的元素。</li>
 <li><code>Queue</code> - 按照排队规则来确定对象产生的顺序（通常与它们被插入的顺序相同）。</li>
@@ -571,45 +579,61 @@
 </li>
 <li><code>Map</code> - 一组成对的“键值对”对象，允许你使用键来查找值。</li>
 </ul>
-<h2 id="容器基本机制"><a href="#容器基本机制" class="headerlink" title="容器基本机制"></a>容器基本机制</h2><h3 id="泛型"><a href="#泛型" class="headerlink" title="泛型"></a>泛型</h3><p>Java5 引入了泛型技术。</p>
+<h2 id="容器基本机制"><a class="markdownIt-Anchor" href="#容器基本机制"></a> 容器基本机制</h2>
+<h3 id="泛型"><a class="markdownIt-Anchor" href="#泛型"></a> 泛型</h3>
+<p>Java5 引入了泛型技术。</p>
 <p>Java 容器通过泛型技术来保证其数据的类型安全。</p>
 <p>举例来说：如果有一个 List<object> 容器，Java <strong>编译器在编译时不会对原始类型进行类型安全检查</strong>，却会对带参数的类型进行检查，通过使用 Object 作为类型，可以告知编译器该方法可以接受任何类型的对象，比如 String 或 Integer。</object></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">List&lt;Object&gt; list = <span class="keyword">new</span> ArrayList&lt;Object&gt;();</span><br><span class="line">list.add(<span class="string">"123"</span>);</span><br><span class="line">list.add(<span class="number">123</span>);</span><br></pre></td></tr></table></figure>
 <p>如果没有泛型技术，如示例中的代码那样，容器中就可能存储任意数据类型，这是很危险的行为。</p>
 <blockquote>
-<p>想了解泛型技术的细节可以参考我的另一篇博文：<a href="https://github.com/dunwu/JavaCore/blob/master/docs/advanced/Java泛型.md" target="_blank" rel="noopener">Java 泛型</a></p>
+<p>想了解泛型技术的细节可以参考我的另一篇博文：<a href="https://github.com/dunwu/JavaCore/blob/master/docs/advanced/Java%E6%B3%9B%E5%9E%8B.md" target="_blank" rel="noopener">Java 泛型</a></p>
 </blockquote>
-<h3 id="Iterable"><a href="#Iterable" class="headerlink" title="Iterable"></a>Iterable</h3><p>Collection 继承了 Iterable 接口。</p>
+<h3 id="iterable"><a class="markdownIt-Anchor" href="#iterable"></a> Iterable</h3>
+<p>Collection 继承了 Iterable 接口。</p>
 <p>迭代其实我们可以简单地理解为遍历，是一个标准化遍历各类容器里面的所有对象的方法类。它是一个经典的设计模式——迭代器模式（Iterator）。</p>
 <blockquote>
 <p><strong>迭代器模式</strong></p>
 <p>目标：提供一种方法顺序访问一个聚合对象中各个元素, 而又无须暴露该对象的内部表示。</p>
 </blockquote>
-<div align="center"><br><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/oop/design-patterns/iterator-pattern.png" width="500"><br></div>
-
-<h3 id="Comparable-和-Comparator"><a href="#Comparable-和-Comparator" class="headerlink" title="Comparable 和 Comparator"></a>Comparable 和 Comparator</h3><p>Comparable 是排序接口。若一个类实现了 Comparable 接口，就意味着该类支持排序。实现了 Comparable 接口的类的对象的列表或数组可以通过 Collections.sort 或 Arrays.sort 进行自动排序。</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/oop/design-patterns/iterator-pattern.png" width="500">
+</div>
+<h3 id="comparable-和-comparator"><a class="markdownIt-Anchor" href="#comparable-和-comparator"></a> Comparable 和 Comparator</h3>
+<p>Comparable 是排序接口。若一个类实现了 Comparable 接口，就意味着该类支持排序。实现了 Comparable 接口的类的对象的列表或数组可以通过 Collections.sort 或 Arrays.sort 进行自动排序。</p>
 <p>Comparator 是比较接口，我们如果需要控制某个类的次序，而该类本身不支持排序(即没有实现 Comparable 接口)，那么我们就可以建立一个“该类的比较器”来进行排序，这个“比较器”只需要实现 Comparator 接口即可。也就是说，我们可以通过实现 Comparator 来新建一个比较器，然后通过这个比较器对类进行排序。</p>
 <p>在 Java 容器中，一些可以排序的容器，如 TreeMap、TreeSet，都可以通过传入 Comparator，来定义内部元素的排序规则。</p>
-<h3 id="Cloneable"><a href="#Cloneable" class="headerlink" title="Cloneable"></a>Cloneable</h3><p>Java 中 一个类要实现 clone 功能 必须实现 Cloneable 接口，否则在调用 clone() 时会报 CloneNotSupportedException 异常。</p>
+<h3 id="cloneable"><a class="markdownIt-Anchor" href="#cloneable"></a> Cloneable</h3>
+<p>Java 中 一个类要实现 clone 功能 必须实现 Cloneable 接口，否则在调用 clone() 时会报 CloneNotSupportedException 异常。</p>
 <p>Java 中所有类都默认继承 java.lang.Object 类，在 java.lang.Object 类中有一个方法 clone()，这个方法将返回 Object 对象的一个拷贝。Object 类里的 clone()方法仅仅用于浅拷贝（拷贝基本成员属性，对于引用类型仅返回指向改地址的引用）。</p>
 <p>如果 Java 类需要深拷贝，需要覆写 clone() 方法。</p>
-<h3 id="fail-fast"><a href="#fail-fast" class="headerlink" title="fail-fast"></a>fail-fast</h3><p>Java 容器（如：ArrayList、HashMap、TreeSet 等待）的 javadoc 中常常提到类似的描述：</p>
+<h3 id="fail-fast"><a class="markdownIt-Anchor" href="#fail-fast"></a> fail-fast</h3>
+<p>Java 容器（如：ArrayList、HashMap、TreeSet 等待）的 javadoc 中常常提到类似的描述：</p>
 <blockquote>
 <p>注意，迭代器的快速失败行为无法得到保证，因为一般来说，不可能对是否出现不同步并发修改做出任何硬性保证。快速失败（fail-fast）迭代器会尽最大努力抛出 ConcurrentModificationException。因此，为提高这类迭代器的正确性而编写一个依赖于此异常的程序是错误的做法：迭代器的快速失败行为应该仅用于检测 bug。</p>
 </blockquote>
-<h4 id="什么是-fail-fast"><a href="#什么是-fail-fast" class="headerlink" title="什么是 fail-fast"></a>什么是 fail-fast</h4><p>那么，我们不禁要问，什么是 fail-fast，为什么要有 fail-fast 机制？</p>
+<h4 id="什么是-fail-fast"><a class="markdownIt-Anchor" href="#什么是-fail-fast"></a> 什么是 fail-fast</h4>
+<p>那么，我们不禁要问，什么是 fail-fast，为什么要有 fail-fast 机制？</p>
 <p>fail-fast 是 Java 容器的一种错误检测机制。当多个线程对容器进行结构上的改变的操作时，就可能触发 fail-fast 机制。记住是有可能，而不是一定。</p>
 <p>例如：假设存在两个线程（线程 1、线程 2），线程 1 通过 Iterator 在遍历容器 A 中的元素，在某个时候线程 2 修改了容器 A 的结构（是结构上面的修改，而不是简单的修改容器元素的内容），那么这个时候程序就会抛出 ConcurrentModificationException 异常，从而产生 fail-fast 机制。</p>
-<h4 id="fail-fast-原理"><a href="#fail-fast-原理" class="headerlink" title="fail-fast 原理"></a>fail-fast 原理</h4><p>容器在迭代操作中改变元素个数都可能会导致 fail-fast。</p>
-<h4 id="解决-fail-fast"><a href="#解决-fail-fast" class="headerlink" title="解决 fail-fast"></a>解决 fail-fast</h4><ol>
+<h4 id="fail-fast-原理"><a class="markdownIt-Anchor" href="#fail-fast-原理"></a> fail-fast 原理</h4>
+<p>容器在迭代操作中改变元素个数都可能会导致 fail-fast。</p>
+<h4 id="解决-fail-fast"><a class="markdownIt-Anchor" href="#解决-fail-fast"></a> 解决 fail-fast</h4>
+<ol>
 <li>在遍历过程中所有涉及到改变容器个数的地方全部加上 synchronized 或者直接使用 Collections.synchronizedList，这样就可以解决。但是不推荐，因为增删造成的同步锁可能会阻塞遍历操作。</li>
 <li>使用并发容器，如：CopyOnWriterArrayList。</li>
 </ol>
-<h2 id="同步容器和并发容器"><a href="#同步容器和并发容器" class="headerlink" title="同步容器和并发容器"></a>同步容器和并发容器</h2><p>为了在并发环境下安全地使用容器，Java 提供了同步容器和并发容器。</p>
+<h2 id="同步容器和并发容器"><a class="markdownIt-Anchor" href="#同步容器和并发容器"></a> 同步容器和并发容器</h2>
+<p>为了在并发环境下安全地使用容器，Java 提供了同步容器和并发容器。</p>
 <blockquote>
-<p>同步容器和并发容器详情请参考：<a href="https://github.com/dunwu/JavaCore/blob/master/docs/concurrent/5-同步容器和并发容器.md" target="_blank" rel="noopener">同步容器和并发容器</a></p>
+<p>同步容器和并发容器详情请参考：<a href="https://github.com/dunwu/JavaCore/blob/master/docs/concurrent/5-%E5%90%8C%E6%AD%A5%E5%AE%B9%E5%99%A8%E5%92%8C%E5%B9%B6%E5%8F%91%E5%AE%B9%E5%99%A8.md" target="_blank" rel="noopener">同步容器和并发容器</a></p>
 </blockquote>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><p><a href="https://item.jd.com/10058164.html" target="_blank" rel="noopener">Java 编程思想（第 4 版）</a><br><a href="https://www.jianshu.com/p/589d58033841" target="_blank" rel="noopener">https://www.jianshu.com/p/589d58033841</a><br><a href="https://www.jianshu.com/p/9081017a2d67" target="_blank" rel="noopener">https://www.jianshu.com/p/9081017a2d67</a><br><a href="https://www.cnblogs.com/chenssy/p/3821328.html" target="_blank" rel="noopener">java 提高篇（三十）—–Iterator</a><br><a href="https://blog.csdn.net/chenssy/article/details/38151189" target="_blank" rel="noopener">Java 提高篇（三四）—–fail-fast 机制</a></p>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<p><a href="https://item.jd.com/10058164.html" target="_blank" rel="noopener">Java 编程思想（第 4 版）</a><br>
+<a href="https://www.jianshu.com/p/589d58033841" target="_blank" rel="noopener">https://www.jianshu.com/p/589d58033841</a><br>
+<a href="https://www.jianshu.com/p/9081017a2d67" target="_blank" rel="noopener">https://www.jianshu.com/p/9081017a2d67</a><br>
+<a href="https://www.cnblogs.com/chenssy/p/3821328.html" target="_blank" rel="noopener">java 提高篇（三十）-----Iterator</a><br>
+<a href="https://blog.csdn.net/chenssy/article/details/38151189" target="_blank" rel="noopener">Java 提高篇（三四）-----fail-fast 机制</a></p>
 
       
     </div>
@@ -763,7 +787,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -828,7 +852,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1126,7 +1152,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Java-容器概述"><span class="nav-text">Java 容器概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#容器简介"><span class="nav-text">容器简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组与容器"><span class="nav-text">数组与容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器框架"><span class="nav-text">容器框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器基本机制"><span class="nav-text">容器基本机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型"><span class="nav-text">泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterable"><span class="nav-text">Iterable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Comparable-和-Comparator"><span class="nav-text">Comparable 和 Comparator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cloneable"><span class="nav-text">Cloneable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fail-fast"><span class="nav-text">fail-fast</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-fail-fast"><span class="nav-text">什么是 fail-fast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fail-fast-原理"><span class="nav-text">fail-fast 原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决-fail-fast"><span class="nav-text">解决 fail-fast</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步容器和并发容器"><span class="nav-text">同步容器和并发容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-容器概述"><span class="nav-text"> Java 容器概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#容器简介"><span class="nav-text"> 容器简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组与容器"><span class="nav-text"> 数组与容器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#容器框架"><span class="nav-text"> 容器框架</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器基本机制"><span class="nav-text"> 容器基本机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#泛型"><span class="nav-text"> 泛型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iterable"><span class="nav-text"> Iterable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#comparable-和-comparator"><span class="nav-text"> Comparable 和 Comparator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cloneable"><span class="nav-text"> Cloneable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fail-fast"><span class="nav-text"> fail-fast</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#什么是-fail-fast"><span class="nav-text"> 什么是 fail-fast</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#fail-fast-原理"><span class="nav-text"> fail-fast 原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决-fail-fast"><span class="nav-text"> 解决 fail-fast</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#同步容器和并发容器"><span class="nav-text"> 同步容器和并发容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1168,7 +1194,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

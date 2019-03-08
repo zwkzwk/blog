@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.6k</span>
+                <span title="本文字数">5.7k</span>
               
 
               
@@ -578,12 +578,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-out-gt-标签"><a href="#lt-c-out-gt-标签" class="headerlink" title="&lt;c:out&gt; 标签"></a><code>&lt;c:out&gt;</code> 标签</h2><p><code>&lt;c:out&gt;</code>标签用来显示一个表达式的结果，与<code>&lt;%= %&gt;</code>作用相似，它们的区别就是<code>&lt;c:out&gt;</code>标签可以直接通过”.”操作符来访问属性。</p>
+<h2 id="cout-标签"><a class="markdownIt-Anchor" href="#cout-标签"></a> <code>&lt;c:out&gt;</code> 标签</h2>
+<p><code>&lt;c:out&gt;</code>标签用来显示一个表达式的结果，与<code>&lt;%= %&gt;</code>作用相似，它们的区别就是<code>&lt;c:out&gt;</code>标签可以直接通过&quot;.&quot;操作符来访问属性。</p>
 <p>举例来说，如果想要访问 customer.address.street，只需要这样写：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:out value=<span class="string">"customer.address.street"</span>&gt;</span><br></pre></td></tr></table></figure>
 <p><code>&lt;c:out&gt;</code>标签会自动忽略 XML 标记字符，所以它们不会被当做标签来处理。</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:out value=<span class="string">"&lt;string&gt;"</span> <span class="keyword">default</span>=<span class="string">"&lt;string&gt;"</span> escapeXml=<span class="string">"&lt;true|false&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:out&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式"><a class="markdownIt-Anchor" href="#语法格式"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:out value=<span class="string">"&lt;string&gt;"</span> <span class="keyword">default</span>=<span class="string">"&lt;string&gt;"</span> escapeXml=<span class="string">"&lt;true|false&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<p><code>&lt;c:out&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -614,11 +617,14 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-set-gt-标签"><a href="#lt-c-set-gt-标签" class="headerlink" title="&lt;c:set&gt; 标签"></a><code>&lt;c:set&gt;</code> 标签</h2><p><code>&lt;c:set&gt;</code>标签用于设置变量值和对象属性。</p>
+<h2 id="cset-标签"><a class="markdownIt-Anchor" href="#cset-标签"></a> <code>&lt;c:set&gt;</code> 标签</h2>
+<p><code>&lt;c:set&gt;</code>标签用于设置变量值和对象属性。</p>
 <p><code>&lt;c:set&gt;</code>标签就是<code>&lt;jsp:setProperty&gt;</code>行为标签的孪生兄弟。</p>
 <p>这个标签之所以很有用呢，是因为它会计算表达式的值，然后使用计算结果来设置 JavaBean 对象或 java.util.Map 对象的值。</p>
-<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:set</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   target=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   property=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:set&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-2"><a class="markdownIt-Anchor" href="#语法格式-2"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:set</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   target=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   property=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-2"><a class="markdownIt-Anchor" href="#属性-2"></a> 属性</h3>
+<p><code>&lt;c:set&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -662,10 +668,13 @@
 </tbody>
 </table>
 <p>如果指定了 target 属性，那么 property 属性也需要被指定。</p>
-<h2 id="lt-c-remove-gt-标签"><a href="#lt-c-remove-gt-标签" class="headerlink" title="&lt;c:remove&gt; 标签"></a><code>&lt;c:remove&gt;</code> 标签</h2><p><code>&lt;c:remove&gt;</code>标签用于移除一个变量，可以指定这个变量的作用域，若未指定，则默认为变量第一次出现的作用域。</p>
+<h2 id="cremove-标签"><a class="markdownIt-Anchor" href="#cremove-标签"></a> <code>&lt;c:remove&gt;</code> 标签</h2>
+<p><code>&lt;c:remove&gt;</code>标签用于移除一个变量，可以指定这个变量的作用域，若未指定，则默认为变量第一次出现的作用域。</p>
 <p>这个标签不是特别有用，不过可以用来确保 JSP 完成清理工作。</p>
-<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:remove <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><p><code>c:remove&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-3"><a class="markdownIt-Anchor" href="#语法格式-3"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:remove <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-3"><a class="markdownIt-Anchor" href="#属性-3"></a> 属性</h3>
+<p><code>c:remove&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -690,9 +699,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-catch-gt-标签"><a href="#lt-c-catch-gt-标签" class="headerlink" title="&lt;c:catch&gt; 标签"></a><code>&lt;c:catch&gt;</code> 标签</h2><p><code>&lt;c:catch&gt;</code> 标签主要用来处理产生错误的异常状况，并且将错误信息储存起来。</p>
-<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">catch</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/c:catch&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:catch&gt;</code>标签有如下属性：</p>
+<h2 id="ccatch-标签"><a class="markdownIt-Anchor" href="#ccatch-标签"></a> <code>&lt;c:catch&gt;</code> 标签</h2>
+<p><code>&lt;c:catch&gt;</code> 标签主要用来处理产生错误的异常状况，并且将错误信息储存起来。</p>
+<h3 id="语法格式-4"><a class="markdownIt-Anchor" href="#语法格式-4"></a> 语法格式</h3>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">catch</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/c:catch&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-4"><a class="markdownIt-Anchor" href="#属性-4"></a> 属性</h3>
+<p><code>&lt;c:catch&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -711,9 +723,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-if-gt-标签"><a href="#lt-c-if-gt-标签" class="headerlink" title="&lt;c:if&gt; 标签"></a><code>&lt;c:if&gt;</code> 标签</h2><p><code>&lt;c:if&gt;</code>标签判断表达式的值，如果表达式的值为 true 则执行其主体内容。</p>
-<h3 id="语法格式-4"><a href="#语法格式-4" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;boolean&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:if&gt;</code>标签有如下属性：</p>
+<h2 id="cif-标签"><a class="markdownIt-Anchor" href="#cif-标签"></a> <code>&lt;c:if&gt;</code> 标签</h2>
+<p><code>&lt;c:if&gt;</code>标签判断表达式的值，如果表达式的值为 true 则执行其主体内容。</p>
+<h3 id="语法格式-5"><a class="markdownIt-Anchor" href="#语法格式-5"></a> 语法格式</h3>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">if</span> test=<span class="string">"&lt;boolean&gt;"</span> <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/c:if&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-5"><a class="markdownIt-Anchor" href="#属性-5"></a> 属性</h3>
+<p><code>&lt;c:if&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -744,10 +759,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-choose-gt-lt-c-when-gt-lt-c-otherwise-gt-标签"><a href="#lt-c-choose-gt-lt-c-when-gt-lt-c-otherwise-gt-标签" class="headerlink" title="&lt;c:choose&gt;, &lt;c:when&gt;, &lt;c:otherwise&gt; 标签"></a><code>&lt;c:choose&gt;</code>, <code>&lt;c:when&gt;</code>, <code>&lt;c:otherwise&gt;</code> 标签</h2><p><code>&lt;c:choose&gt;</code>标签与 Java switch 语句的功能一样，用于在众多选项中做出选择。</p>
+<h2 id="cchoose-cwhen-cotherwise-标签"><a class="markdownIt-Anchor" href="#cchoose-cwhen-cotherwise-标签"></a> <code>&lt;c:choose&gt;</code>, <code>&lt;c:when&gt;</code>, <code>&lt;c:otherwise&gt;</code> 标签</h2>
+<p><code>&lt;c:choose&gt;</code>标签与 Java switch 语句的功能一样，用于在众多选项中做出选择。</p>
 <p>switch 语句中有 case，而<code>&lt;c:choose&gt;</code>标签中对应有<code>&lt;c:when&gt;</code>，switch 语句中有 default，而<code>&lt;c:choose&gt;</code>标签中有<code>&lt;c:otherwise&gt;</code>。</p>
-<h3 id="语法格式-5"><a href="#语法格式-5" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;boolean&gt;"</span>/&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;boolean&gt;"</span>/&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h3><ul>
+<h3 id="语法格式-6"><a class="markdownIt-Anchor" href="#语法格式-6"></a> 语法格式</h3>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;c:choose&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;boolean&gt;"</span>/&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    &lt;c:when test=<span class="string">"&lt;boolean&gt;"</span>/&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:when&gt;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">    &lt;c:otherwise&gt;</span><br><span class="line">        ...</span><br><span class="line">    &lt;/c:otherwise&gt;</span><br><span class="line">&lt;/c:choose&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-6"><a class="markdownIt-Anchor" href="#属性-6"></a> 属性</h3>
+<ul>
 <li><code>&lt;c:choose&gt;</code>标签没有属性。</li>
 <li><code>&lt;c:when&gt;</code>标签只有一个属性，在下表中有给出。</li>
 <li><code>&lt;c:otherwise&gt;</code>标签没有属性。</li>
@@ -771,10 +789,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-import-gt-标签"><a href="#lt-c-import-gt-标签" class="headerlink" title="&lt;c:import&gt; 标签"></a><code>&lt;c:import&gt;</code> 标签</h2><p><code>&lt;c:import&gt;</code>标签提供了所有<code>&lt;jsp:include&gt;</code>行为标签所具有的功能，同时也允许包含绝对 URL。</p>
+<h2 id="cimport-标签"><a class="markdownIt-Anchor" href="#cimport-标签"></a> <code>&lt;c:import&gt;</code> 标签</h2>
+<p><code>&lt;c:import&gt;</code>标签提供了所有<code>&lt;jsp:include&gt;</code>行为标签所具有的功能，同时也允许包含绝对 URL。</p>
 <p>举例来说，使用<code>&lt;c:import&gt;</code>标签可以包含一个 FTP 服务器中不同的网页内容。</p>
-<h3 id="语法格式-6"><a href="#语法格式-6" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">import</span></span><br><span class="line">   url=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   varRender=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   context=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   charEncoding=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:import&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-7"><a class="markdownIt-Anchor" href="#语法格式-7"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:<span class="keyword">import</span></span><br><span class="line">   url=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   varRender=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   context=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   charEncoding=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-7"><a class="markdownIt-Anchor" href="#属性-7"></a> 属性</h3>
+<p><code>&lt;c:import&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -823,13 +844,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-forEach-gt-lt-c-forTokens-gt-标签"><a href="#lt-c-forEach-gt-lt-c-forTokens-gt-标签" class="headerlink" title="&lt;c:forEach&gt;, &lt;c:forTokens&gt; 标签"></a><code>&lt;c:forEach&gt;</code>, <code>&lt;c:forTokens&gt;</code> 标签</h2><p><br><div align="center"><img src="http://www.runoob.com/jsp/jsp-jstl.html"></div><br></p>
+<h2 id="cforeach-cfortokens-标签"><a class="markdownIt-Anchor" href="#cforeach-cfortokens-标签"></a> <code>&lt;c:forEach&gt;</code>, <code>&lt;c:forTokens&gt;</code> 标签</h2>
+<p><br><div align="center"><img src="http://www.runoob.com/jsp/jsp-jstl.html"></div><br></p>
 <p>这些标签封装了 Java 中的 for，while，do-while 循环。</p>
 <p>相比而言，<code>&lt;c:forEach&gt;</code>标签是更加通用的标签，因为它迭代一个集合中的对象。</p>
 <p><code>&lt;c:forTokens&gt;</code>标签通过指定分隔符将字符串分隔为一个数组然后迭代它们。</p>
-<h3 id="forEach-语法格式"><a href="#forEach-语法格式" class="headerlink" title="forEach 语法格式"></a><code>forEach</code> 语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach</span><br><span class="line">    items=<span class="string">"&lt;object&gt;"</span></span><br><span class="line">    begin=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    end=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    step=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line"></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
-<h3 id="forTokens-语法格式"><a href="#forTokens-语法格式" class="headerlink" title="forTokens 语法格式"></a><code>forTokens</code> 语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:forTokens</span><br><span class="line">    items=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    delims=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    begin=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    end=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    step=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:forEach&gt;</code>标签有如下属性：</p>
+<h3 id="foreach-语法格式"><a class="markdownIt-Anchor" href="#foreach-语法格式"></a> <code>forEach</code> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:forEach</span><br><span class="line">    items=<span class="string">"&lt;object&gt;"</span></span><br><span class="line">    begin=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    end=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    step=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line"></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h3 id="fortokens-语法格式"><a class="markdownIt-Anchor" href="#fortokens-语法格式"></a> <code>forTokens</code> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:forTokens</span><br><span class="line">    items=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    delims=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    begin=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    end=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    step=<span class="string">"&lt;int&gt;"</span></span><br><span class="line">    <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">    varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-8"><a class="markdownIt-Anchor" href="#属性-8"></a> 属性</h3>
+<p><code>&lt;c:forEach&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -897,10 +922,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-param-gt-标签"><a href="#lt-c-param-gt-标签" class="headerlink" title="&lt;c:param&gt; 标签"></a><code>&lt;c:param&gt;</code> 标签</h2><p><code>&lt;c:param&gt;</code>标签用于在<code>&lt;c:url&gt;</code>标签中指定参数，而且与 URL 编码相关。</p>
+<h2 id="cparam-标签"><a class="markdownIt-Anchor" href="#cparam-标签"></a> <code>&lt;c:param&gt;</code> 标签</h2>
+<p><code>&lt;c:param&gt;</code>标签用于在<code>&lt;c:url&gt;</code>标签中指定参数，而且与 URL 编码相关。</p>
 <p>在<code>&lt;c:param&gt;</code>标签内，name 属性表明参数的名称，value 属性表明参数的值。</p>
-<h3 id="语法格式-7"><a href="#语法格式-7" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:param name=<span class="string">"&lt;string&gt;"</span> value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-8"><a href="#属性-8" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:param&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-8"><a class="markdownIt-Anchor" href="#语法格式-8"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:param name=<span class="string">"&lt;string&gt;"</span> value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-9"><a class="markdownIt-Anchor" href="#属性-9"></a> 属性</h3>
+<p><code>&lt;c:param&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -925,9 +953,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-redirect-gt-标签"><a href="#lt-c-redirect-gt-标签" class="headerlink" title="&lt;c:redirect&gt; 标签"></a><code>&lt;c:redirect&gt;</code> 标签</h2><p><code>&lt;c:redirect&gt;</code>标签通过自动重写 URL 来将浏览器重定向至一个新的 URL，它提供内容相关的 URL，并且支持 c:param 标签。</p>
-<h3 id="语法格式-8"><a href="#语法格式-8" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;c:redirect <span class="attribute">url</span>=<span class="string">"&lt;string&gt;"</span> <span class="attribute">context</span>=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-9"><a href="#属性-9" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:redirect&gt;</code>标签有如下属性：</p>
+<h2 id="credirect-标签"><a class="markdownIt-Anchor" href="#credirect-标签"></a> <code>&lt;c:redirect&gt;</code> 标签</h2>
+<p><code>&lt;c:redirect&gt;</code>标签通过自动重写 URL 来将浏览器重定向至一个新的 URL，它提供内容相关的 URL，并且支持 c:param 标签。</p>
+<h3 id="语法格式-9"><a class="markdownIt-Anchor" href="#语法格式-9"></a> 语法格式</h3>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">&lt;c:redirect <span class="attribute">url</span>=<span class="string">"&lt;string&gt;"</span> <span class="attribute">context</span>=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-10"><a class="markdownIt-Anchor" href="#属性-10"></a> 属性</h3>
+<p><code>&lt;c:redirect&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -952,12 +983,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-c-url-gt-标签"><a href="#lt-c-url-gt-标签" class="headerlink" title="&lt;c:url&gt; 标签"></a><code>&lt;c:url&gt;</code> 标签</h2><p><code>&lt;c:url&gt;</code>标签将 URL 格式化为一个字符串，然后存储在一个变量中。</p>
+<h2 id="curl-标签"><a class="markdownIt-Anchor" href="#curl-标签"></a> <code>&lt;c:url&gt;</code> 标签</h2>
+<p><code>&lt;c:url&gt;</code>标签将 URL 格式化为一个字符串，然后存储在一个变量中。</p>
 <p>这个标签在需要的时候会自动重写 URL。</p>
 <p>var 属性用于存储格式化后的 URL。</p>
 <p><code>&lt;c:url&gt;</code>标签只是用于调用<code>response.encodeURL()</code>方法的一种可选的方法。它真正的优势在于提供了合适的 URL 编码，包括<code>&lt;c:param&gt;</code>中指定的参数。</p>
-<h3 id="语法格式-9"><a href="#语法格式-9" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:url</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  context=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-10"><a href="#属性-10" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;c:url&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-10"><a class="markdownIt-Anchor" href="#语法格式-10"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;c:url</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  value=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  context=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-11"><a class="markdownIt-Anchor" href="#属性-11"></a> 属性</h3>
+<p><code>&lt;c:url&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -1060,8 +1094,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/core/aop/" rel="next" title="Spring AOP">
-                <i class="fa fa-chevron-left"></i> Spring AOP
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-xml/" rel="next" title="JSTL XML标签">
+                <i class="fa fa-chevron-left"></i> JSTL XML标签
               </a>
             
           </div>
@@ -1070,8 +1104,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/09/programming/java/spring/integration/libs/lombok/" rel="prev" title="Lombok 使用小结">
-                Lombok 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-grammar/" rel="prev" title="JSP 语法">
+                JSP 语法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1143,7 +1177,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1208,7 +1242,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1506,7 +1542,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-out-gt-标签"><span class="nav-text">&lt;c:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-set-gt-标签"><span class="nav-text">&lt;c:set&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-1"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-remove-gt-标签"><span class="nav-text">&lt;c:remove&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-catch-gt-标签"><span class="nav-text">&lt;c:catch&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-if-gt-标签"><span class="nav-text">&lt;c:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-choose-gt-lt-c-when-gt-lt-c-otherwise-gt-标签"><span class="nav-text">&lt;c:choose&gt;, &lt;c:when&gt;, &lt;c:otherwise&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-import-gt-标签"><span class="nav-text">&lt;c:import&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-forEach-gt-lt-c-forTokens-gt-标签"><span class="nav-text">&lt;c:forEach&gt;, &lt;c:forTokens&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-语法格式"><span class="nav-text">forEach 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forTokens-语法格式"><span class="nav-text">forTokens 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-param-gt-标签"><span class="nav-text">&lt;c:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-8"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-redirect-gt-标签"><span class="nav-text">&lt;c:redirect&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-8"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-9"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-c-url-gt-标签"><span class="nav-text">&lt;c:url&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-9"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-10"><span class="nav-text">属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#cout-标签"><span class="nav-text"> &lt;c:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cset-标签"><span class="nav-text"> &lt;c:set&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cremove-标签"><span class="nav-text"> &lt;c:remove&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ccatch-标签"><span class="nav-text"> &lt;c:catch&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cif-标签"><span class="nav-text"> &lt;c:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cchoose-cwhen-cotherwise-标签"><span class="nav-text"> &lt;c:choose&gt;, &lt;c:when&gt;, &lt;c:otherwise&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cimport-标签"><span class="nav-text"> &lt;c:import&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cforeach-cfortokens-标签"><span class="nav-text"> &lt;c:forEach&gt;, &lt;c:forTokens&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#foreach-语法格式"><span class="nav-text"> forEach 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#fortokens-语法格式"><span class="nav-text"> forTokens 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-8"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cparam-标签"><span class="nav-text"> &lt;c:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-8"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-9"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#credirect-标签"><span class="nav-text"> &lt;c:redirect&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-9"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-10"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#curl-标签"><span class="nav-text"> &lt;c:url&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-10"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-11"><span class="nav-text"> 属性</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1548,7 +1584,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

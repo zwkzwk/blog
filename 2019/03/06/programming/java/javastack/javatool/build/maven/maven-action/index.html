@@ -107,12 +107,12 @@
 
 
 
-  <meta name="description" content="Maven 常见问题和最佳实践  1. 常见问题 1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践 2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包     1. 常见问题1.1. IDEA 修改 JDK 版本后编译报错错误现象 修改 JDK 版本，指定 maven-compiler-plugin 的">
+  <meta name="description" content="Maven 常见问题和最佳实践   1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践  2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包      1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 错误现象 修改 JDK 版本，指定 maven-compiler-p">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven 常见问题和最佳实践">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/maven-action/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Maven 常见问题和最佳实践  1. 常见问题 1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践 2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包     1. 常见问题1.1. IDEA 修改 JDK 版本后编译报错错误现象 修改 JDK 版本，指定 maven-compiler-plugin 的">
+<meta property="og:description" content="Maven 常见问题和最佳实践   1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践  2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包      1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 错误现象 修改 JDK 版本，指定 maven-compiler-p">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203324.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203427.png">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 常见问题和最佳实践">
-<meta name="twitter:description" content="Maven 常见问题和最佳实践  1. 常见问题 1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践 2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包     1. 常见问题1.1. IDEA 修改 JDK 版本后编译报错错误现象 修改 JDK 版本，指定 maven-compiler-plugin 的">
+<meta name="twitter:description" content="Maven 常见问题和最佳实践   1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 1.2. 重复引入依赖   2. 最佳实践  2.1. 通过 bom 统一管理版本 如何打包一个可以直接运行的 Spring Boot jar 包      1. 常见问题  1.1. IDEA 修改 JDK 版本后编译报错 错误现象 修改 JDK 版本，指定 maven-compiler-p">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203324.png">
 
 
@@ -482,21 +482,26 @@
       
 
       
-        <h1 id="Maven-常见问题和最佳实践"><a href="#Maven-常见问题和最佳实践" class="headerlink" title="Maven 常见问题和最佳实践"></a>Maven 常见问题和最佳实践</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="maven-常见问题和最佳实践"><a class="markdownIt-Anchor" href="#maven-常见问题和最佳实践"></a> Maven 常见问题和最佳实践</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-常见问题">1. 常见问题</a><ul>
-<li><a href="#11-idea-修改-jdk-版本后编译报错">1.1. IDEA 修改 JDK 版本后编译报错</a></li>
-<li><a href="#12-重复引入依赖">1.2. 重复引入依赖</a></li>
+<li><a href="#1-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">1. 常见问题</a>
+<ul>
+<li><a href="#11-idea-%E4%BF%AE%E6%94%B9-jdk-%E7%89%88%E6%9C%AC%E5%90%8E%E7%BC%96%E8%AF%91%E6%8A%A5%E9%94%99">1.1. IDEA 修改 JDK 版本后编译报错</a></li>
+<li><a href="#12-%E9%87%8D%E5%A4%8D%E5%BC%95%E5%85%A5%E4%BE%9D%E8%B5%96">1.2. 重复引入依赖</a></li>
 </ul>
 </li>
-<li><a href="#2-最佳实践">2. 最佳实践</a><ul>
-<li><a href="#21-通过-bom-统一管理版本">2.1. 通过 bom 统一管理版本</a></li>
-<li><a href="#如何打包一个可以直接运行的-spring-boot-jar-包">如何打包一个可以直接运行的 Spring Boot jar 包</a></li>
+<li><a href="#2-%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5">2. 最佳实践</a>
+<ul>
+<li><a href="#21-%E9%80%9A%E8%BF%87-bom-%E7%BB%9F%E4%B8%80%E7%AE%A1%E7%90%86%E7%89%88%E6%9C%AC">2.1. 通过 bom 统一管理版本</a></li>
+<li><a href="#%E5%A6%82%E4%BD%95%E6%89%93%E5%8C%85%E4%B8%80%E4%B8%AA%E5%8F%AF%E4%BB%A5%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C%E7%9A%84-spring-boot-jar-%E5%8C%85">如何打包一个可以直接运行的 Spring Boot jar 包</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-常见问题"><a href="#1-常见问题" class="headerlink" title="1. 常见问题"></a>1. 常见问题</h2><h3 id="1-1-IDEA-修改-JDK-版本后编译报错"><a href="#1-1-IDEA-修改-JDK-版本后编译报错" class="headerlink" title="1.1. IDEA 修改 JDK 版本后编译报错"></a>1.1. IDEA 修改 JDK 版本后编译报错</h3><p><strong>错误现象</strong></p>
+<h2 id="1-常见问题"><a class="markdownIt-Anchor" href="#1-常见问题"></a> 1. 常见问题</h2>
+<h3 id="11-idea-修改-jdk-版本后编译报错"><a class="markdownIt-Anchor" href="#11-idea-修改-jdk-版本后编译报错"></a> 1.1. IDEA 修改 JDK 版本后编译报错</h3>
+<p><strong>错误现象</strong></p>
 <p>修改 JDK 版本，指定 maven-compiler-plugin 的 source 和 target 为 1.8 。</p>
 <p>然后，在 Intellij IDEA 中执行 maven 指令，报错：</p>
 <figure class="highlight smali"><table><tr><td class="code"><pre><span class="line">[ERROR] Failed to<span class="built_in"> execute </span>goal org.apache.maven.plugins:maven-compiler-plugin:3.0:compile (default-compile) on project apollo-common: Fatal error compiling: 无效的目标版本： 1.8 -&gt; [Help 1]</span><br></pre></td></tr></table></figure>
@@ -517,13 +522,17 @@
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203408.png"></div><br></p>
 <p>Runner 是否正确</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203439.png"></div><br></p>
-<h3 id="1-2-重复引入依赖"><a href="#1-2-重复引入依赖" class="headerlink" title="1.2. 重复引入依赖"></a>1.2. 重复引入依赖</h3><p>在 Idea 中，选中 Module，使用 <kbd>Ctrl+Alt+Shift+U</kbd>，打开依赖图，检索是否存在重复引用的情况。</p>
-<h2 id="2-最佳实践"><a href="#2-最佳实践" class="headerlink" title="2. 最佳实践"></a>2. 最佳实践</h2><h3 id="2-1-通过-bom-统一管理版本"><a href="#2-1-通过-bom-统一管理版本" class="headerlink" title="2.1. 通过 bom 统一管理版本"></a>2.1. 通过 bom 统一管理版本</h3><p>采用类似 spring-framework-bom 的方式统一管理依赖版本。</p>
+<h3 id="12-重复引入依赖"><a class="markdownIt-Anchor" href="#12-重复引入依赖"></a> 1.2. 重复引入依赖</h3>
+<p>在 Idea 中，选中 Module，使用 <kbd>Ctrl+Alt+Shift+U</kbd>，打开依赖图，检索是否存在重复引用的情况。</p>
+<h2 id="2-最佳实践"><a class="markdownIt-Anchor" href="#2-最佳实践"></a> 2. 最佳实践</h2>
+<h3 id="21-通过-bom-统一管理版本"><a class="markdownIt-Anchor" href="#21-通过-bom-统一管理版本"></a> 2.1. 通过 bom 统一管理版本</h3>
+<p>采用类似 spring-framework-bom 的方式统一管理依赖版本。</p>
 <p>spring-framework-bom 形式：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">project</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/POM/4.0.0"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"</span> <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">modelVersion</span>&gt;</span>4.0.0<span class="tag">&lt;/<span class="name">modelVersion</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-framework-bom<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.3.13.RELEASE<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">packaging</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">packaging</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  ...</span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">project</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其他项目引入 spring-framework-bom 来管理 spring-framework 依赖版本的方式：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencyManagement</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-framework-bom<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;spring.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">type</span>&gt;</span>pom<span class="tag">&lt;/<span class="name">type</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">scope</span>&gt;</span>import<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencyManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="如何打包一个可以直接运行的-Spring-Boot-jar-包"><a href="#如何打包一个可以直接运行的-Spring-Boot-jar-包" class="headerlink" title="如何打包一个可以直接运行的 Spring Boot jar 包"></a>如何打包一个可以直接运行的 Spring Boot jar 包</h3><p>可以使用 spring-boot-maven-plugin 插件</p>
+<h3 id="如何打包一个可以直接运行的-spring-boot-jar-包"><a class="markdownIt-Anchor" href="#如何打包一个可以直接运行的-spring-boot-jar-包"></a> 如何打包一个可以直接运行的 Spring Boot jar 包</h3>
+<p>可以使用 spring-boot-maven-plugin 插件</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">goal</span>&gt;</span>repackage<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>如果引入了第三方 jar 包，如何打包？</p>
 <p>首先，要添加依赖</p>
@@ -588,8 +597,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/style/doc-style/" rel="next" title="技术文档规范">
-                <i class="fa fa-chevron-left"></i> 技术文档规范
+              <a href="/blog/2019/03/06/bigdata/hbase/README/" rel="next" title="HBase">
+                <i class="fa fa-chevron-left"></i> HBase
               </a>
             
           </div>
@@ -598,8 +607,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/bigdata/hbase/README/" rel="prev" title="HBase">
-                HBase <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/" rel="prev" title="SpringBootTutorialCoreBanner">
+                SpringBootTutorialCoreBanner <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -671,7 +680,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -736,7 +745,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1034,7 +1045,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Maven-常见问题和最佳实践"><span class="nav-text">Maven 常见问题和最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-常见问题"><span class="nav-text">1. 常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-IDEA-修改-JDK-版本后编译报错"><span class="nav-text">1.1. IDEA 修改 JDK 版本后编译报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-重复引入依赖"><span class="nav-text">1.2. 重复引入依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-最佳实践"><span class="nav-text">2. 最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-通过-bom-统一管理版本"><span class="nav-text">2.1. 通过 bom 统一管理版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打包一个可以直接运行的-Spring-Boot-jar-包"><span class="nav-text">如何打包一个可以直接运行的 Spring Boot jar 包</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven-常见问题和最佳实践"><span class="nav-text"> Maven 常见问题和最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-常见问题"><span class="nav-text"> 1. 常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-idea-修改-jdk-版本后编译报错"><span class="nav-text"> 1.1. IDEA 修改 JDK 版本后编译报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-重复引入依赖"><span class="nav-text"> 1.2. 重复引入依赖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-最佳实践"><span class="nav-text"> 2. 最佳实践</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-通过-bom-统一管理版本"><span class="nav-text"> 2.1. 通过 bom 统一管理版本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何打包一个可以直接运行的-spring-boot-jar-包"><span class="nav-text"> 如何打包一个可以直接运行的 Spring Boot jar 包</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1076,7 +1087,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

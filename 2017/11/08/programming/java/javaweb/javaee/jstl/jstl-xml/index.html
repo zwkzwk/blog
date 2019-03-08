@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:  XercesI">
+  <meta name="description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:   Xerces">
 <meta name="keywords" content="javaee,jstl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSTL XML标签">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-xml/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:  XercesI">
+<meta property="og:description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:   Xerces">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.898Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSTL XML标签">
-<meta name="twitter:description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:  XercesI">
+<meta name="twitter:description" content="JSTL XML 标签库提供了创建和操作 XML 文档的标签。引用 XML 标签库的语法如下： &amp;lt;%@ taglib prefix=&quot;x&quot;           uri=&quot;http://java.sun.com/jsp/jstl/xml&quot; %&amp;gt; 在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的&amp;lt;Tomcat 安装目录&amp;gt;\lib下:   Xerces">
 
 
 
@@ -512,9 +512,11 @@
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"x"</span></span><br><span class="line">           uri=<span class="string">"http://java.sun.com/jsp/jstl/xml"</span> %&gt;</span><br></pre></td></tr></table></figure>
 <p>在使用 xml 标签前，你必须将 XML 和 XPath 的相关包拷贝至你的<code>&lt;Tomcat 安装目录&gt;\lib</code>下:</p>
 <ul>
-<li><p><strong>XercesImpl.jar</strong>下载地址： <a href="http://www.apache.org/dist/xerces/j/" target="_blank" rel="noopener">http://www.apache.org/dist/xerces/j/</a></p>
+<li>
+<p><strong>XercesImpl.jar</strong>下载地址： <a href="http://www.apache.org/dist/xerces/j/" target="_blank" rel="noopener">http://www.apache.org/dist/xerces/j/</a></p>
 </li>
-<li><p><strong>xalan.jar</strong>下载地址： <a href="http://xml.apache.org/xalan-j/index.html" target="_blank" rel="noopener">http://xml.apache.org/xalan-j/index.html</a></p>
+<li>
+<p><strong>xalan.jar</strong>下载地址： <a href="http://xml.apache.org/xalan-j/index.html" target="_blank" rel="noopener">http://xml.apache.org/xalan-j/index.html</a></p>
 </li>
 </ul>
 <table>
@@ -567,9 +569,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-out-gt-标签"><a href="#lt-x-out-gt-标签" class="headerlink" title="&lt;x:out&gt; 标签"></a><code>&lt;x:out&gt;</code> 标签</h2><p><code>&lt;x:out&gt;</code>标签显示 XPath 表达式的结果，与<code>&lt;%= %&gt;</code>功能相似。</p>
-<h3 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:out select=<span class="string">"&lt;string&gt;"</span> escapeXml=<span class="string">"&lt;true|false&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:out&gt;</code>标签有如下属性：</p>
+<h2 id="xout-标签"><a class="markdownIt-Anchor" href="#xout-标签"></a> <code>&lt;x:out&gt;</code> 标签</h2>
+<p><code>&lt;x:out&gt;</code>标签显示 XPath 表达式的结果，与<code>&lt;%= %&gt;</code>功能相似。</p>
+<h3 id="语法格式"><a class="markdownIt-Anchor" href="#语法格式"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:out select=<span class="string">"&lt;string&gt;"</span> escapeXml=<span class="string">"&lt;true|false&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<p><code>&lt;x:out&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -594,9 +599,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-parse-gt-标签"><a href="#lt-x-parse-gt-标签" class="headerlink" title="&lt;x:parse&gt; 标签"></a><code>&lt;x:parse&gt;</code> 标签</h2><p><code>&lt;x:parse&gt;</code>标签用来解析属性中或标签主体中的 XML 数据。</p>
-<h3 id="语法格式-1"><a href="#语法格式-1" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:parse</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  varDom=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scopeDom=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  doc=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  systemId=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  filter=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:parse&gt;</code>标签有如下属性：</p>
+<h2 id="xparse-标签"><a class="markdownIt-Anchor" href="#xparse-标签"></a> <code>&lt;x:parse&gt;</code> 标签</h2>
+<p><code>&lt;x:parse&gt;</code>标签用来解析属性中或标签主体中的 XML 数据。</p>
+<h3 id="语法格式-2"><a class="markdownIt-Anchor" href="#语法格式-2"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:parse</span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  varDom=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scopeDom=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  doc=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  systemId=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  filter=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-2"><a class="markdownIt-Anchor" href="#属性-2"></a> 属性</h3>
+<p><code>&lt;x:parse&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -657,10 +665,13 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-set-gt-标签"><a href="#lt-x-set-gt-标签" class="headerlink" title="&lt;x:set&gt; 标签"></a><code>&lt;x:set&gt;</code> 标签</h2><p><code>&lt;x:set&gt;</code>标签为 XPath 表达式的值设置一个变量。</p>
+<h2 id="xset-标签"><a class="markdownIt-Anchor" href="#xset-标签"></a> <code>&lt;x:set&gt;</code> 标签</h2>
+<p><code>&lt;x:set&gt;</code>标签为 XPath 表达式的值设置一个变量。</p>
 <p>如果 XPath 表达式的值是 boolean 类型，则<code>&lt;x:set&gt;</code>将会设置一个 java.lang.Boolean 对象，若是字符串，则设置一个 java.lang.String 对象，若是数字，则设置一个 java.lang.Number 对象。</p>
-<h3 id="语法格式-2"><a href="#语法格式-2" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:set <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> select=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:set&gt;</code>标签有如下属性：</p>
+<h3 id="语法格式-3"><a class="markdownIt-Anchor" href="#语法格式-3"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:set <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span> select=<span class="string">"&lt;string&gt;"</span> scope=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-3"><a class="markdownIt-Anchor" href="#属性-3"></a> 属性</h3>
+<p><code>&lt;x:set&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -691,9 +702,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-if-gt-标签"><a href="#lt-x-if-gt-标签" class="headerlink" title="&lt;x:if&gt; 标签"></a><code>&lt;x:if&gt;</code> 标签</h2><p><code>&lt;x:if&gt;</code>标签用于判断一个 XPath 表达式的值，若为真，则执行其主体中的内容，若为假则其主体的内容将会被忽略。</p>
-<h3 id="语法格式-3"><a href="#语法格式-3" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;x:<span class="keyword">if</span></span><br><span class="line">  select=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/x:if&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:if&gt;</code>标签有如下属性：</p>
+<h2 id="xif-标签"><a class="markdownIt-Anchor" href="#xif-标签"></a> <code>&lt;x:if&gt;</code> 标签</h2>
+<p><code>&lt;x:if&gt;</code>标签用于判断一个 XPath 表达式的值，若为真，则执行其主体中的内容，若为假则其主体的内容将会被忽略。</p>
+<h3 id="语法格式-4"><a class="markdownIt-Anchor" href="#语法格式-4"></a> 语法格式</h3>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;x:<span class="keyword">if</span></span><br><span class="line">  select=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">  scope=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">   ...</span><br><span class="line">&lt;/x:if&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-4"><a class="markdownIt-Anchor" href="#属性-4"></a> 属性</h3>
+<p><code>&lt;x:if&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -724,9 +738,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-forEach-gt-标签"><a href="#lt-x-forEach-gt-标签" class="headerlink" title="&lt;x:forEach&gt; 标签"></a><code>&lt;x:forEach&gt;</code> 标签</h2><p><code>&lt;x:forEach&gt;</code>标签用来循环遍历 XML 文档的节点。</p>
-<h3 id="语法格式-4"><a href="#语法格式-4" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:forEach</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   select=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   begin=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   end=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   step=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-4"><a href="#属性-4" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:forEach&gt;</code>标签有如下属性：</p>
+<h2 id="xforeach-标签"><a class="markdownIt-Anchor" href="#xforeach-标签"></a> <code>&lt;x:forEach&gt;</code> 标签</h2>
+<p><code>&lt;x:forEach&gt;</code>标签用来循环遍历 XML 文档的节点。</p>
+<h3 id="语法格式-5"><a class="markdownIt-Anchor" href="#语法格式-5"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:forEach</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   select=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   begin=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   end=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   step=<span class="string">"`&lt;int&gt;`"</span></span><br><span class="line">   varStatus=<span class="string">"&lt;string&gt;"</span>&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-5"><a class="markdownIt-Anchor" href="#属性-5"></a> 属性</h3>
+<p><code>&lt;x:forEach&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -775,9 +792,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-choose-gt-lt-x-when-gt-lt-x-otherwise-gt-标签"><a href="#lt-x-choose-gt-lt-x-when-gt-lt-x-otherwise-gt-标签" class="headerlink" title="&lt;x:choose&gt;, &lt;x:when&gt;, &lt;x:otherwise&gt; 标签"></a><code>&lt;x:choose&gt;</code>, <code>&lt;x:when&gt;</code>, <code>&lt;x:otherwise&gt;</code> 标签</h2><p><code>&lt;x:choose&gt;</code>标签与 Java switch 语句有相同的功能。switch 语句有 case 语句，而<code>&lt;x:choose&gt;</code>标签有<code>&lt;x:when&gt;</code>标签。switch 语句有 default 语句，而<code>&lt;x:choose&gt;</code>标签有<code>&lt;x:otherwise&gt;</code>标签。</p>
-<h3 id="语法格式-5"><a href="#语法格式-5" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;x:choose&gt;</span><br><span class="line"> &lt;x:when select=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:when&gt;</span><br><span class="line"> &lt;x:when select=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:when&gt;</span><br><span class="line">     ...</span><br><span class="line">     ...</span><br><span class="line"> &lt;x:otherwise&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:otherwise&gt;</span><br><span class="line">&lt;/x:choose&gt;`</span><br></pre></td></tr></table></figure>
-<h3 id="属性-5"><a href="#属性-5" class="headerlink" title="属性"></a>属性</h3><ul>
+<h2 id="xchoose-xwhen-xotherwise-标签"><a class="markdownIt-Anchor" href="#xchoose-xwhen-xotherwise-标签"></a> <code>&lt;x:choose&gt;</code>, <code>&lt;x:when&gt;</code>, <code>&lt;x:otherwise&gt;</code> 标签</h2>
+<p><code>&lt;x:choose&gt;</code>标签与 Java switch 语句有相同的功能。switch 语句有 case 语句，而<code>&lt;x:choose&gt;</code>标签有<code>&lt;x:when&gt;</code>标签。switch 语句有 default 语句，而<code>&lt;x:choose&gt;</code>标签有<code>&lt;x:otherwise&gt;</code>标签。</p>
+<h3 id="语法格式-6"><a class="markdownIt-Anchor" href="#语法格式-6"></a> 语法格式</h3>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;x:choose&gt;</span><br><span class="line"> &lt;x:when select=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:when&gt;</span><br><span class="line"> &lt;x:when select=<span class="string">"&lt;string&gt;"</span>&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:when&gt;</span><br><span class="line">     ...</span><br><span class="line">     ...</span><br><span class="line"> &lt;x:otherwise&gt;</span><br><span class="line">     ...</span><br><span class="line"> &lt;/x:otherwise&gt;</span><br><span class="line">&lt;/x:choose&gt;`</span><br></pre></td></tr></table></figure>
+<h3 id="属性-6"><a class="markdownIt-Anchor" href="#属性-6"></a> 属性</h3>
+<ul>
 <li><code>&lt;x:choose&gt;</code>没有属性。</li>
 <li><code>&lt;x:when&gt;</code>的属性在下表中给出。</li>
 <li><code>&lt;x:otherwise&gt;</code>没有属性。</li>
@@ -801,9 +821,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-transform-gt-标签"><a href="#lt-x-transform-gt-标签" class="headerlink" title="&lt;x:transform&gt; 标签"></a><code>&lt;x:transform&gt;</code> 标签</h2><p><code>&lt;x:transform&gt;</code>标签在 XML 文档中应用 XSL。</p>
-<h3 id="语法格式-6"><a href="#语法格式-6" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:transform</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   result=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   doc=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   docSystemId=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   xslt=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   xsltSystemId=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-6"><a href="#属性-6" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:transform&gt;</code>标签有如下属性：</p>
+<h2 id="xtransform-标签"><a class="markdownIt-Anchor" href="#xtransform-标签"></a> <code>&lt;x:transform&gt;</code> 标签</h2>
+<p><code>&lt;x:transform&gt;</code>标签在 XML 文档中应用 XSL。</p>
+<h3 id="语法格式-7"><a class="markdownIt-Anchor" href="#语法格式-7"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:transform</span><br><span class="line">   <span class="keyword">var</span>=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   scope=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   result=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   doc=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   docSystemId=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   xslt=<span class="string">"&lt;string&gt;"</span></span><br><span class="line">   xsltSystemId=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-7"><a class="markdownIt-Anchor" href="#属性-7"></a> 属性</h3>
+<p><code>&lt;x:transform&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -858,9 +881,12 @@
 </tr>
 </tbody>
 </table>
-<h2 id="lt-x-param-gt-标签"><a href="#lt-x-param-gt-标签" class="headerlink" title="&lt;x:param&gt; 标签"></a><code>&lt;x:param&gt;</code> 标签</h2><p><code>&lt;x:param&gt;</code>标签与<code>&lt;x:transform&gt;</code>标签一同使用，用于设置 XSLT 样式表的参数。</p>
-<h3 id="语法格式-7"><a href="#语法格式-7" class="headerlink" title="语法格式"></a>语法格式</h3><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:param name=<span class="string">"&lt;string&gt;"</span> value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性-7"><a href="#属性-7" class="headerlink" title="属性"></a>属性</h3><p><code>&lt;x:param&gt;</code>标签有如下属性：</p>
+<h2 id="xparam-标签"><a class="markdownIt-Anchor" href="#xparam-标签"></a> <code>&lt;x:param&gt;</code> 标签</h2>
+<p><code>&lt;x:param&gt;</code>标签与<code>&lt;x:transform&gt;</code>标签一同使用，用于设置 XSLT 样式表的参数。</p>
+<h3 id="语法格式-8"><a class="markdownIt-Anchor" href="#语法格式-8"></a> 语法格式</h3>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;x:param name=<span class="string">"&lt;string&gt;"</span> value=<span class="string">"&lt;string&gt;"</span>/&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="属性-8"><a class="markdownIt-Anchor" href="#属性-8"></a> 属性</h3>
+<p><code>&lt;x:param&gt;</code>标签有如下属性：</p>
 <table>
 <thead>
 <tr>
@@ -951,8 +977,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/" rel="next" title="JavaEE Servlet HTTP 状态码">
-                <i class="fa fa-chevron-left"></i> JavaEE Servlet HTTP 状态码
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-sql/" rel="next" title="JSTL SQL标签">
+                <i class="fa fa-chevron-left"></i> JSTL SQL标签
               </a>
             
           </div>
@@ -961,8 +987,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-grammar/" rel="prev" title="JSP 语法">
-                JSP 语法 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-core/" rel="prev" title="JSTL 核心标签">
+                JSTL 核心标签 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1034,7 +1060,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1099,7 +1125,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1397,7 +1425,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-out-gt-标签"><span class="nav-text">&lt;x:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-parse-gt-标签"><span class="nav-text">&lt;x:parse&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-1"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-1"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-set-gt-标签"><span class="nav-text">&lt;x:set&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-if-gt-标签"><span class="nav-text">&lt;x:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-forEach-gt-标签"><span class="nav-text">&lt;x:forEach&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-choose-gt-lt-x-when-gt-lt-x-otherwise-gt-标签"><span class="nav-text">&lt;x:choose&gt;, &lt;x:when&gt;, &lt;x:otherwise&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-transform-gt-标签"><span class="nav-text">&lt;x:transform&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lt-x-param-gt-标签"><span class="nav-text">&lt;x:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text">语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text">属性</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#xout-标签"><span class="nav-text"> &lt;x:out&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xparse-标签"><span class="nav-text"> &lt;x:parse&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-2"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-2"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xset-标签"><span class="nav-text"> &lt;x:set&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-3"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-3"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xif-标签"><span class="nav-text"> &lt;x:if&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-4"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-4"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xforeach-标签"><span class="nav-text"> &lt;x:forEach&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-5"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-5"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xchoose-xwhen-xotherwise-标签"><span class="nav-text"> &lt;x:choose&gt;, &lt;x:when&gt;, &lt;x:otherwise&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-6"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-6"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xtransform-标签"><span class="nav-text"> &lt;x:transform&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-7"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-7"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#xparam-标签"><span class="nav-text"> &lt;x:param&gt; 标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法格式-8"><span class="nav-text"> 语法格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#属性-8"><span class="nav-text"> 属性</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1439,7 +1467,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

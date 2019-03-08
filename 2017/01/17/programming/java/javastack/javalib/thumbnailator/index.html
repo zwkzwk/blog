@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Thumbnailator 使用小结概述Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .outputF">
+  <meta name="description" content="Thumbnailator 使用小结  概述 Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .out">
 <meta name="keywords" content="java,javalib,image">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thumbnailator 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2017/01/17/programming/java/javastack/javalib/thumbnailator/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Thumbnailator 使用小结概述Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .outputF">
+<meta property="og:description" content="Thumbnailator 使用小结  概述 Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .out">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-a01ea4515fff865d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -123,7 +123,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.588Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thumbnailator 使用小结">
-<meta name="twitter:description" content="Thumbnailator 使用小结概述Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .outputF">
+<meta name="twitter:description" content="Thumbnailator 使用小结  概述 Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .out">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -514,64 +514,84 @@
       
 
       
-        <h1 id="Thumbnailator-使用小结"><a href="#Thumbnailator-使用小结" class="headerlink" title="Thumbnailator 使用小结"></a>Thumbnailator 使用小结</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p><code>Thumbnailator</code> 是一个开源的 <strong>Java</strong> 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。</p>
+        <h1 id="thumbnailator-使用小结"><a class="markdownIt-Anchor" href="#thumbnailator-使用小结"></a> Thumbnailator 使用小结</h1>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p><code>Thumbnailator</code> 是一个开源的 <strong>Java</strong> 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。</p>
 <p>有多简单呢？简单到一行代码就可以完成图片处理。形式如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="keyword">new</span> File(<span class="string">"path/to/directory"</span>).listFiles())</span><br><span class="line">    .size(<span class="number">640</span>, <span class="number">480</span>)</span><br><span class="line">    .outputFormat(<span class="string">"jpg"</span>)</span><br><span class="line">    .toFiles(Rename.PREFIX_DOT_THUMBNAIL);</span><br></pre></td></tr></table></figure>
 <p>当然，Thumbnailator 还有一些使用细节，下面我会一一道来。</p>
-<h2 id="核心-API"><a href="#核心-API" class="headerlink" title="核心 API"></a>核心 API</h2><h3 id="Thumbnails"><a href="#Thumbnails" class="headerlink" title="Thumbnails"></a>Thumbnails</h3><p><code>Thumbnails</code> 是使用 Thumbnailator 创建缩略图的主入口。</p>
+<h2 id="核心-api"><a class="markdownIt-Anchor" href="#核心-api"></a> 核心 API</h2>
+<h3 id="thumbnails"><a class="markdownIt-Anchor" href="#thumbnails"></a> Thumbnails</h3>
+<p><code>Thumbnails</code> 是使用 Thumbnailator 创建缩略图的主入口。</p>
 <p>它提供了一组初始化 <code>Thumbnails.Builder</code> 的接口。</p>
 <p>先看下这组接口的声明：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 可变长度参数列表</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;File&gt; <span class="title">of</span><span class="params">(String... files)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;File&gt; <span class="title">of</span><span class="params">(File... files)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;URL&gt; <span class="title">of</span><span class="params">(URL... urls)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;? extends InputStream&gt; of(InputStream... inputStreams) &#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;BufferedImage&gt; <span class="title">of</span><span class="params">(BufferedImage... images)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 迭代器（所有实现 Iterable 接口的 Java 对象都可以，当然也包括 List、Set）</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;File&gt; <span class="title">fromFilenames</span><span class="params">(Iterable&lt;String&gt; files)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;File&gt; <span class="title">fromFiles</span><span class="params">(Iterable&lt;File&gt; files)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;URL&gt; <span class="title">fromURLs</span><span class="params">(Iterable&lt;URL&gt; urls)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;InputStream&gt; <span class="title">fromInputStreams</span><span class="params">(Iterable&lt;? extends InputStream&gt; inputStreams)</span> </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Builder&lt;BufferedImage&gt; <span class="title">fromImages</span><span class="params">(Iterable&lt;BufferedImage&gt; images)</span> </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
 <p>很显然，<strong>Thumbnails 允许通过传入文件名、文件、网络图的URL、图片流、图片缓存多种方式来初始化构造器</strong>。</p>
 <p>因此，你可以根据实际需求来灵活的选择图片的输入方式。</p>
 <p>需要注意一点：<strong>如果输入是多个对象（无论你是直接输入容器对象或使用可变参数方式传入多个对象），则输出也必须选用输出多个对象的方式，否则会报异常。</strong></p>
-<h3 id="Thumbnails-Builder"><a href="#Thumbnails-Builder" class="headerlink" title="Thumbnails.Builder"></a>Thumbnails.Builder</h3><p><code>Thumbnails.Builder</code> 是 <code>Thumbnails</code> 的内部静态类。它用于设置生成缩略图任务的相关参数。</p>
-<p><strong><em>注：<code>Thumbnails.Builder</code> 的构造函数是私有函数。所以，它只允许通过 <code>Thumbnails</code> 的实例化函数来进行初始化。</em></strong></p>
-<h4 id="设置参数的函数"><a href="#设置参数的函数" class="headerlink" title="设置参数的函数"></a>设置参数的函数</h4><p><code>Thumbnails.Builder</code> 提供了一组函数链形式的接口来设置缩放图参数。</p>
+<h3 id="thumbnailsbuilder"><a class="markdownIt-Anchor" href="#thumbnailsbuilder"></a> Thumbnails.Builder</h3>
+<p><code>Thumbnails.Builder</code> 是 <code>Thumbnails</code> 的内部静态类。它用于设置生成缩略图任务的相关参数。</p>
+<p><em><strong>注：<code>Thumbnails.Builder</code> 的构造函数是私有函数。所以，它只允许通过 <code>Thumbnails</code> 的实例化函数来进行初始化。</strong></em></p>
+<h4 id="设置参数的函数"><a class="markdownIt-Anchor" href="#设置参数的函数"></a> 设置参数的函数</h4>
+<p><code>Thumbnails.Builder</code> 提供了一组函数链形式的接口来设置缩放图参数。</p>
 <p>以设置大小函数为例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> Builder&lt;T&gt; <span class="title">size</span><span class="params">(<span class="keyword">int</span> width, <span class="keyword">int</span> height)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	updateStatus(Properties.SIZE, Status.ALREADY_SET);</span><br><span class="line">	updateStatus(Properties.SCALE, Status.CANNOT_SET);</span><br><span class="line">	</span><br><span class="line">	validateDimensions(width, height);</span><br><span class="line">	<span class="keyword">this</span>.width = width;</span><br><span class="line">	<span class="keyword">this</span>.height = height;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>通过返回this指针，使得设置参数函数可以以链式调用的方式来使用，形式如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="keyword">new</span> File(<span class="string">"original.jpg"</span>))</span><br><span class="line">        .size(<span class="number">160</span>, <span class="number">160</span>)</span><br><span class="line">        .rotate(<span class="number">90</span>)</span><br><span class="line">        .watermark(Positions.BOTTOM_RIGHT, ImageIO.read(<span class="keyword">new</span> File(<span class="string">"watermark.png"</span>)), <span class="number">0.5f</span>)</span><br><span class="line">        .outputQuality(<span class="number">0.8</span>)</span><br><span class="line">        .toFile(<span class="keyword">new</span> File(<span class="string">"image-with-watermark.jpg"</span>));</span><br></pre></td></tr></table></figure>
 <p>好处，不言自明：那就是大大简化了代码。</p>
-<h4 id="输出函数"><a href="#输出函数" class="headerlink" title="输出函数"></a>输出函数</h4><p><code>Thumbnails.Builder</code> 提供了一组重载函数来输出生成的缩放图。</p>
+<h4 id="输出函数"><a class="markdownIt-Anchor" href="#输出函数"></a> 输出函数</h4>
+<p><code>Thumbnails.Builder</code> 提供了一组重载函数来输出生成的缩放图。</p>
 <p>函数声明如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 返回图片缓存</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;BufferedImage&gt; <span class="title">asBufferedImages</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> BufferedImage <span class="title">asBufferedImage</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 返回文件列表</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;File&gt; <span class="title">asFiles</span><span class="params">(Iterable&lt;File&gt; iterable)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;File&gt; <span class="title">asFiles</span><span class="params">(Rename rename)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;File&gt; <span class="title">asFiles</span><span class="params">(File destinationDir, Rename rename)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 创建文件</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toFile</span><span class="params">(File outFile)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toFile</span><span class="params">(String outFilepath)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toFiles</span><span class="params">(Iterable&lt;File&gt; iterable)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toFiles</span><span class="params">(Rename rename)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toFiles</span><span class="params">(File destinationDir, Rename rename)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="comment">// 创建输出流</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toOutputStream</span><span class="params">(OutputStream os)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">toOutputStreams</span><span class="params">(Iterable&lt;? extends OutputStream&gt; iterable)</span> <span class="keyword">throws</span> IOException </span>&#123;...&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="工作流"><a href="#工作流" class="headerlink" title="工作流"></a>工作流</h3><p>Thumbnailator 的工作步骤十分简单，可分为三步：</p>
+<h3 id="工作流"><a class="markdownIt-Anchor" href="#工作流"></a> 工作流</h3>
+<p>Thumbnailator 的工作步骤十分简单，可分为三步：</p>
 <ol>
-<li><p><strong>输入</strong>：<code>Thumbnails</code> 根据输入初始化构造器—— <code>Thumbnails.Builder</code> 。</p>
+<li>
+<p><strong>输入</strong>：<code>Thumbnails</code> 根据输入初始化构造器—— <code>Thumbnails.Builder</code> 。</p>
 </li>
-<li><p><strong>设置</strong>：<code>Thumbnails.Builder</code> 设置缩放图片的参数。</p>
+<li>
+<p><strong>设置</strong>：<code>Thumbnails.Builder</code> 设置缩放图片的参数。</p>
 </li>
-<li><p><strong>输出</strong>：<code>Thumbnails.Builder</code> 输出图片文件或图片流。</p>
+<li>
+<p><strong>输出</strong>：<code>Thumbnails.Builder</code> 输出图片文件或图片流。</p>
 </li>
 </ol>
 <blockquote>
 <p>更多详情可以参考： <a href="https://coobird.github.io/thumbnailator/javadoc/0.4.8/" target="_blank" rel="noopener"><u>Thumbnailator 官网javadoc</u></a></p>
 </blockquote>
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>前文介绍了 Thumbnailator 的核心 API，接下来我们就可以通过实战来看看 Thumbnailator 究竟可以做些什么。</p>
+<h2 id="实战"><a class="markdownIt-Anchor" href="#实战"></a> 实战</h2>
+<p>前文介绍了 Thumbnailator 的核心 API，接下来我们就可以通过实战来看看 Thumbnailator 究竟可以做些什么。</p>
 <p>Thumbnailator 生成什么样的图片，是根据设置参数来决定的。</p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>maven项目中引入依赖：</p>
+<h3 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h3>
+<p>maven项目中引入依赖：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>net.coobird<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>thumbnailator<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>[0.4, 0.5)<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="图片缩放"><a href="#图片缩放" class="headerlink" title="图片缩放"></a>图片缩放</h3><p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片精确的宽度和高度，也可以用 <code>scale</code> 函数设置缩放比例。</p>
+<h3 id="图片缩放"><a class="markdownIt-Anchor" href="#图片缩放"></a> 图片缩放</h3>
+<p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片精确的宽度和高度，也可以用 <code>scale</code> 函数设置缩放比例。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.size(<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_16_16.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">2.0</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_scale_2.0.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">1.0</span>, <span class="number">0.5</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_scale_1.0_0.5.png"</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>oldFile.png</strong><br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<p><strong>newFile_scale_1.0_0.5.png</strong><br><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-a01ea4515fff865d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h3 id="图片旋转"><a href="#图片旋转" class="headerlink" title="图片旋转"></a>图片旋转</h3><p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片的旋转角度。</p>
+<p><strong>oldFile.png</strong><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p><strong>newFile_scale_1.0_0.5.png</strong><br>
+<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-a01ea4515fff865d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<h3 id="图片旋转"><a class="markdownIt-Anchor" href="#图片旋转"></a> 图片旋转</h3>
+<p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片的旋转角度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.rotate(<span class="number">90</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_rotate_90.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.rotate(<span class="number">180</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_rotate_180.png"</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>newFile_rotate_90.png</strong></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-17d54bc33b38d45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h3 id="加水印"><a href="#加水印" class="headerlink" title="加水印"></a>加水印</h3><p><code>Thumbnails.Builder</code> 的 <code>watermark</code> 函数可以为图片添加水印图片。第一个参数是水印的位置；第二个参数是水印图片的缓存数据；第三个参数是透明度。</p>
+<h3 id="加水印"><a class="markdownIt-Anchor" href="#加水印"></a> 加水印</h3>
+<p><code>Thumbnails.Builder</code> 的 <code>watermark</code> 函数可以为图片添加水印图片。第一个参数是水印的位置；第二个参数是水印图片的缓存数据；第三个参数是透明度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BufferedImage watermarkImage = ImageIO.read(<span class="keyword">new</span> File(<span class="string">"wartermarkFile.png"</span>));</span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.watermark(Positions.BOTTOM_LEFT, watermarkImage, <span class="number">0.5f</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_watermark.png"</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>wartermarkFile.png</strong></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-97909ee6c066c195.png?imageMogr2/auto-orient/strip"></div><br></p>
 <p><strong>newFile_watermark.png</strong></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-93eb7ef71b811a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h3 id="批量处理图片"><a href="#批量处理图片" class="headerlink" title="批量处理图片"></a>批量处理图片</h3><p>下面以批量给图片加水印来展示一下如何处理多个图片文件。</p>
+<h3 id="批量处理图片"><a class="markdownIt-Anchor" href="#批量处理图片"></a> 批量处理图片</h3>
+<p>下面以批量给图片加水印来展示一下如何处理多个图片文件。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BufferedImage watermarkImage = ImageIO.read(<span class="keyword">new</span> File(<span class="string">"wartermarkFile.png"</span>));</span><br><span class="line"></span><br><span class="line">File destinationDir = <span class="keyword">new</span> File(<span class="string">"D:\\watermark\\"</span>);</span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>, <span class="string">"oldFile2.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.watermark(Positions.BOTTOM_LEFT, watermarkImage, <span class="number">0.5f</span>)</span><br><span class="line">		.toFiles(destinationDir, Rename.PREFIX_DOT_THUMBNAIL);</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p><strong>需要参考完整测试例代码请</strong> <a href="https://github.com/dunwu/JavaParty/blob/master/toolbox/image/src/test/java/org/zp/image/ThumbnailatorTest.java" target="_blank" rel="noopener"><u><strong>点击这里</strong></u></a></p>
 </blockquote>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://github.com/coobird/thumbnailator/wiki/Examples" target="_blank" rel="noopener">Thumbnailator 官方示例文档</a></p>
+<h2 id="参考"><a class="markdownIt-Anchor" href="#参考"></a> 参考</h2>
+<p><a href="https://github.com/coobird/thumbnailator/wiki/Examples" target="_blank" rel="noopener">Thumbnailator 官方示例文档</a></p>
 
       
     </div>
@@ -723,7 +743,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -788,7 +808,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1086,7 +1108,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Thumbnailator-使用小结"><span class="nav-text">Thumbnailator 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心-API"><span class="nav-text">核心 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Thumbnails"><span class="nav-text">Thumbnails</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Thumbnails-Builder"><span class="nav-text">Thumbnails.Builder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置参数的函数"><span class="nav-text">设置参数的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出函数"><span class="nav-text">输出函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作流"><span class="nav-text">工作流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片缩放"><span class="nav-text">图片缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片旋转"><span class="nav-text">图片旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加水印"><span class="nav-text">加水印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量处理图片"><span class="nav-text">批量处理图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text">参考</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#thumbnailator-使用小结"><span class="nav-text"> Thumbnailator 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#核心-api"><span class="nav-text"> 核心 API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#thumbnails"><span class="nav-text"> Thumbnails</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#thumbnailsbuilder"><span class="nav-text"> Thumbnails.Builder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#设置参数的函数"><span class="nav-text"> 设置参数的函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出函数"><span class="nav-text"> 输出函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作流"><span class="nav-text"> 工作流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text"> 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片缩放"><span class="nav-text"> 图片缩放</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片旋转"><span class="nav-text"> 图片旋转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加水印"><span class="nav-text"> 加水印</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#批量处理图片"><span class="nav-text"> 批量处理图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-text"> 参考</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1128,7 +1150,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

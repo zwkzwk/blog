@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Spark  Spark 简介 Spark 概念 Spark 特点   Spark 原理 编程模型     Spark 简介Spark 概念 大规模分布式通用计算引擎 Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩展、高容错等特点">
+  <meta name="description" content="Spark   Spark 简介  Spark 概念 Spark 特点   Spark 原理  编程模型      Spark 简介  Spark 概念  大规模分布式通用计算引擎  Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩">
 <meta name="keywords" content="bigdata">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark">
 <meta property="og:url" content="https://dunwu.github.io/2018/09/03/bigdata/Spark/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Spark  Spark 简介 Spark 概念 Spark 特点   Spark 原理 编程模型     Spark 简介Spark 概念 大规模分布式通用计算引擎 Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩展、高容错等特点">
+<meta property="og:description" content="Spark   Spark 简介  Spark 概念 Spark 特点   Spark 原理  编程模型      Spark 简介  Spark 概念  大规模分布式通用计算引擎  Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark">
-<meta name="twitter:description" content="Spark  Spark 简介 Spark 概念 Spark 特点   Spark 原理 编程模型     Spark 简介Spark 概念 大规模分布式通用计算引擎 Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩展、高容错等特点">
+<meta name="twitter:description" content="Spark   Spark 简介  Spark 概念 Spark 特点   Spark 原理  编程模型      Spark 简介  Spark 概念  大规模分布式通用计算引擎  Spark Core：核心计算框架 Spark SQL：结构化数据查询 Spark Streaming：实时流处理 Spark MLib：机器学习 Spark GraphX：图计算   具有高吞吐、低延时、通用易扩">
 
 
 
@@ -508,21 +508,27 @@
       
 
       
-        <h1 id="Spark"><a href="#Spark" class="headerlink" title="Spark"></a>Spark</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="spark"><a class="markdownIt-Anchor" href="#spark"></a> Spark</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#spark-简介">Spark 简介</a><ul>
-<li><a href="#spark-概念">Spark 概念</a></li>
-<li><a href="#spark-特点">Spark 特点</a></li>
+<li><a href="#spark-%E7%AE%80%E4%BB%8B">Spark 简介</a>
+<ul>
+<li><a href="#spark-%E6%A6%82%E5%BF%B5">Spark 概念</a></li>
+<li><a href="#spark-%E7%89%B9%E7%82%B9">Spark 特点</a></li>
 </ul>
 </li>
-<li><a href="#spark-原理">Spark 原理</a><ul>
-<li><a href="#编程模型">编程模型</a></li>
+<li><a href="#spark-%E5%8E%9F%E7%90%86">Spark 原理</a>
+<ul>
+<li><a href="#%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B">编程模型</a></li>
 </ul>
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="Spark-简介"><a href="#Spark-简介" class="headerlink" title="Spark 简介"></a>Spark 简介</h2><h3 id="Spark-概念"><a href="#Spark-概念" class="headerlink" title="Spark 概念"></a>Spark 概念</h3><ul>
-<li>大规模分布式通用计算引擎<ul>
+<h2 id="spark-简介"><a class="markdownIt-Anchor" href="#spark-简介"></a> Spark 简介</h2>
+<h3 id="spark-概念"><a class="markdownIt-Anchor" href="#spark-概念"></a> Spark 概念</h3>
+<ul>
+<li>大规模分布式通用计算引擎
+<ul>
 <li>Spark Core：核心计算框架</li>
 <li>Spark SQL：结构化数据查询</li>
 <li>Spark Streaming：实时流处理</li>
@@ -534,38 +540,48 @@
 <li>采用 Scala 语言开发</li>
 <li>提供多种运行模式</li>
 </ul>
-<h3 id="Spark-特点"><a href="#Spark-特点" class="headerlink" title="Spark 特点"></a>Spark 特点</h3><ul>
-<li>计算高效<ul>
+<h3 id="spark-特点"><a class="markdownIt-Anchor" href="#spark-特点"></a> Spark 特点</h3>
+<ul>
+<li>计算高效
+<ul>
 <li>利用内存计算、Cache 缓存机制，支持迭代计算和数据共享，减少数据读取的 IO 开销</li>
 <li>利用 DAG 引擎，减少中间计算结果写入 HDFS 的开销</li>
 <li>利用多线程池模型，减少任务启动开销，避免 Shuffle 中不必要的排序和磁盘 IO 操作</li>
 </ul>
 </li>
-<li>通用易用<ul>
+<li>通用易用
+<ul>
 <li>适用于批处理、流处理、交互式计算、机器学习算法等场景</li>
 <li>提供了丰富的开发 API，支持 Scala、Java、Python、R 等</li>
 </ul>
 </li>
-<li>运行模式多样<ul>
+<li>运行模式多样
+<ul>
 <li>Local 模式</li>
 <li>Standalone 模式</li>
 <li>YARN/Mesos 模式</li>
 </ul>
 </li>
-<li>计算高效<ul>
+<li>计算高效
+<ul>
 <li>利用内存计算、Cache 缓存机制，支持迭代计算和数据共享，减少数据读取的 IO 开销</li>
 <li>利用 DAG 引擎，减少中间计算结果写入 HDFS 的开销</li>
 <li>利用多线程池模型，减少任务启动开销，避免 Shuffle 中不必要的排序和磁盘 IO 操作</li>
 </ul>
 </li>
-<li>通用易用<ul>
+<li>通用易用
+<ul>
 <li>适用于批处理、流处理、交互式计算、机器学习等场景</li>
 <li>提供了丰富的开发 API，支持 Scala、Java、Python、R 等</li>
 </ul>
 </li>
 </ul>
-<h2 id="Spark-原理"><a href="#Spark-原理" class="headerlink" title="Spark 原理"></a>Spark 原理</h2><h3 id="编程模型"><a href="#编程模型" class="headerlink" title="编程模型"></a>编程模型</h3><h4 id="RDD"><a href="#RDD" class="headerlink" title="RDD"></a>RDD</h4><ul>
-<li>弹性分布式数据集（Resilient Distributed Datesets）<ul>
+<h2 id="spark-原理"><a class="markdownIt-Anchor" href="#spark-原理"></a> Spark 原理</h2>
+<h3 id="编程模型"><a class="markdownIt-Anchor" href="#编程模型"></a> 编程模型</h3>
+<h4 id="rdd"><a class="markdownIt-Anchor" href="#rdd"></a> RDD</h4>
+<ul>
+<li>弹性分布式数据集（Resilient Distributed Datesets）
+<ul>
 <li>分布在集群中的只读对象集合</li>
 <li>由多个 Partition 组成</li>
 <li>通过转换操作构造</li>
@@ -575,29 +591,35 @@
 </li>
 <li>Spark 基于 RDD 进行计算</li>
 </ul>
-<h4 id="RDD-操作（Operator）"><a href="#RDD-操作（Operator）" class="headerlink" title="RDD 操作（Operator）"></a>RDD 操作（Operator）</h4><ul>
-<li>Transformation（转换）<ul>
+<h4 id="rdd-操作operator"><a class="markdownIt-Anchor" href="#rdd-操作operator"></a> RDD 操作（Operator）</h4>
+<ul>
+<li>Transformation（转换）
+<ul>
 <li>将 Scala 集合或 Hadoop 输入数据构造成一个新 RDD</li>
 <li>通过已有的 RDD 产生新 RDD</li>
 <li>惰性执行：只记录转换关系，不触发计算</li>
 <li>例如：map、filter、flatmap、union、distinct、sortbykey</li>
 </ul>
 </li>
-<li>Action（动作）<ul>
+<li>Action（动作）
+<ul>
 <li>通过 RDD 计算得到一个值或一组值</li>
 <li>真正触发计算</li>
 <li>例如：first、count、collect、foreach、saveAsTextFile</li>
 </ul>
 </li>
 </ul>
-<h4 id="RDD-依赖（Dependency）"><a href="#RDD-依赖（Dependency）" class="headerlink" title="RDD 依赖（Dependency）"></a>RDD 依赖（Dependency）</h4><ul>
-<li>窄依赖（Narrow Dependency）<ul>
+<h4 id="rdd-依赖dependency"><a class="markdownIt-Anchor" href="#rdd-依赖dependency"></a> RDD 依赖（Dependency）</h4>
+<ul>
+<li>窄依赖（Narrow Dependency）
+<ul>
 <li>父 RDD 中的分区最多只能被一个子 RDD 的一个分区使用</li>
 <li>子 RDD 如果有部分分区数据丢失或损坏，只需从对应的父 RDD 重新计算恢复</li>
 <li>例如：map、filter、union</li>
 </ul>
 </li>
-<li>宽依赖（Shuffle/Wide Dependency ）<ul>
+<li>宽依赖（Shuffle/Wide Dependency ）
+<ul>
 <li>子 RDD 分区依赖父 RDD 的所有分区</li>
 <li>子 RDD 如果部分或全部分区数据丢失或损坏，必须从所有父 RDD 分区重新计算</li>
 <li>相对于窄依赖，宽依赖付出的代价要高很多，尽量避免使用</li>
@@ -679,8 +701,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/09/04/bigdata/Sqoop/" rel="prev" title="Sqoop">
-                Sqoop <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/09/03/bigdata/MapReduce/" rel="prev" title="MapReduce">
+                MapReduce <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -752,7 +774,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -817,7 +839,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1115,7 +1139,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Spark"><span class="nav-text">Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-简介"><span class="nav-text">Spark 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-概念"><span class="nav-text">Spark 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-特点"><span class="nav-text">Spark 特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark-原理"><span class="nav-text">Spark 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程模型"><span class="nav-text">编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RDD"><span class="nav-text">RDD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RDD-操作（Operator）"><span class="nav-text">RDD 操作（Operator）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RDD-依赖（Dependency）"><span class="nav-text">RDD 依赖（Dependency）</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#spark"><span class="nav-text"> Spark</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#spark-简介"><span class="nav-text"> Spark 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spark-概念"><span class="nav-text"> Spark 概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark-特点"><span class="nav-text"> Spark 特点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark-原理"><span class="nav-text"> Spark 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编程模型"><span class="nav-text"> 编程模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#rdd"><span class="nav-text"> RDD</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rdd-操作operator"><span class="nav-text"> RDD 操作（Operator）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#rdd-依赖dependency"><span class="nav-text"> RDD 依赖（Dependency）</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1157,7 +1181,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

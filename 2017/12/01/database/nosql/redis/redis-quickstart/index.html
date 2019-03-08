@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Redis 快速入门  1. 概述 1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装 2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令   1. 概述1.1. 什么是 RedisRedis 是一个高性能的 key-value 数据库">
+  <meta name="description" content="Redis 快速入门   1. 概述  1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装  2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令    1. 概述  1.1. 什么是 Redis Redis 是一个高性能的 key-v">
 <meta name="keywords" content="database,key-value,cache">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 快速入门">
 <meta property="og:url" content="https://dunwu.github.io/2017/12/01/database/nosql/redis/redis-quickstart/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Redis 快速入门  1. 概述 1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装 2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令   1. 概述1.1. 什么是 RedisRedis 是一个高性能的 key-value 数据库">
+<meta property="og:description" content="Redis 快速入门   1. 概述  1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装  2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令    1. 概述  1.1. 什么是 Redis Redis 是一个高性能的 key-v">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Redis 快速入门">
-<meta name="twitter:description" content="Redis 快速入门  1. 概述 1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装 2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令   1. 概述1.1. 什么是 RedisRedis 是一个高性能的 key-value 数据库">
+<meta name="twitter:description" content="Redis 快速入门   1. 概述  1.1. 什么是 Redis 1.2. 为什么用 Redis   2. 安装  2.1. Window 下安装 2.2. Linux 下安装 2.3. Ubuntu 下安装 2.4. 启动 Redis 2.5. 查看 redis 是否启动？   3. Redis 命令    1. 概述  1.1. 什么是 Redis Redis 是一个高性能的 key-v">
 
 
 
@@ -508,36 +508,52 @@
       
 
       
-        <h1 id="Redis-快速入门"><a href="#Redis-快速入门" class="headerlink" title="Redis 快速入门"></a>Redis 快速入门</h1><!-- TOC depthFrom:2 depthTo:3 -->
+        <h1 id="redis-快速入门"><a class="markdownIt-Anchor" href="#redis-快速入门"></a> Redis 快速入门</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#1-概述">1. 概述</a><ul>
-<li><a href="#11-什么是-redis">1.1. 什么是 Redis</a></li>
-<li><a href="#12-为什么用-redis">1.2. 为什么用 Redis</a></li>
+<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a>
+<ul>
+<li><a href="#11-%E4%BB%80%E4%B9%88%E6%98%AF-redis">1.1. 什么是 Redis</a></li>
+<li><a href="#12-%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8-redis">1.2. 为什么用 Redis</a></li>
 </ul>
 </li>
-<li><a href="#2-安装">2. 安装</a><ul>
-<li><a href="#21-window-下安装">2.1. Window 下安装</a></li>
-<li><a href="#22-linux-下安装">2.2. Linux 下安装</a></li>
-<li><a href="#23-ubuntu-下安装">2.3. Ubuntu 下安装</a></li>
-<li><a href="#24-启动-redis">2.4. 启动 Redis</a></li>
-<li><a href="#25-查看-redis-是否启动">2.5. 查看 redis 是否启动？</a></li>
+<li><a href="#2-%E5%AE%89%E8%A3%85">2. 安装</a>
+<ul>
+<li><a href="#21-window-%E4%B8%8B%E5%AE%89%E8%A3%85">2.1. Window 下安装</a></li>
+<li><a href="#22-linux-%E4%B8%8B%E5%AE%89%E8%A3%85">2.2. Linux 下安装</a></li>
+<li><a href="#23-ubuntu-%E4%B8%8B%E5%AE%89%E8%A3%85">2.3. Ubuntu 下安装</a></li>
+<li><a href="#24-%E5%90%AF%E5%8A%A8-redis">2.4. 启动 Redis</a></li>
+<li><a href="#25-%E6%9F%A5%E7%9C%8B-redis-%E6%98%AF%E5%90%A6%E5%90%AF%E5%8A%A8">2.5. 查看 redis 是否启动？</a></li>
 </ul>
 </li>
-<li><a href="#3-redis-命令">3. Redis 命令</a></li>
+<li><a href="#3-redis-%E5%91%BD%E4%BB%A4">3. Redis 命令</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h2><h3 id="1-1-什么是-Redis"><a href="#1-1-什么是-Redis" class="headerlink" title="1.1. 什么是 Redis"></a>1.1. 什么是 Redis</h3><p>Redis 是一个高性能的 key-value 数据库，也可用于缓存和消息代理。</p>
-<h3 id="1-2-为什么用-Redis"><a href="#1-2-为什么用-Redis" class="headerlink" title="1.2. 为什么用 Redis"></a>1.2. 为什么用 Redis</h3><p>与其它 key - value 数据库产品相比，具有以下优势：</p>
+<h2 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述"></a> 1. 概述</h2>
+<h3 id="11-什么是-redis"><a class="markdownIt-Anchor" href="#11-什么是-redis"></a> 1.1. 什么是 Redis</h3>
+<p>Redis 是一个高性能的 key-value 数据库，也可用于缓存和消息代理。</p>
+<h3 id="12-为什么用-redis"><a class="markdownIt-Anchor" href="#12-为什么用-redis"></a> 1.2. 为什么用 Redis</h3>
+<p>与其它 key - value 数据库产品相比，具有以下优势：</p>
 <ul>
-<li><p>支持数据持久化——可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</p>
+<li>
+<p>支持数据持久化——可以将内存中的数据保存在磁盘中，重启的时候可以再次加载进行使用。</p>
 </li>
-<li><p>丰富的数据类型——Redis 支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</p>
+<li>
+<p>丰富的数据类型——Redis 支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets 数据类型操作。</p>
 </li>
-<li>支持数据的备份——数据备份采用 master-slave 模式。</li>
-<li>性能极高——Redis 能读的速度是 110000 次/s，写的速度是 81000 次/s 。</li>
-<li>原子性——Redis 的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC 指令包起来。</li>
+<li>
+<p>支持数据的备份——数据备份采用 master-slave 模式。</p>
+</li>
+<li>
+<p>性能极高——Redis 能读的速度是 110000 次/s，写的速度是 81000 次/s 。</p>
+</li>
+<li>
+<p>原子性——Redis 的所有操作都是原子性的，意思就是要么成功执行要么失败完全不执行。单个操作是原子性的。多个操作也支持事务，即原子性，通过 MULTI 和 EXEC 指令包起来。</p>
+</li>
 </ul>
-<h2 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h2><h3 id="2-1-Window-下安装"><a href="#2-1-Window-下安装" class="headerlink" title="2.1. Window 下安装"></a>2.1. Window 下安装</h3><p><strong>下载地址：</strong><a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="noopener">https://github.com/MSOpenTech/redis/releases</a>。</p>
+<h2 id="2-安装"><a class="markdownIt-Anchor" href="#2-安装"></a> 2. 安装</h2>
+<h3 id="21-window-下安装"><a class="markdownIt-Anchor" href="#21-window-下安装"></a> 2.1. Window 下安装</h3>
+<p><strong>下载地址：</strong><a href="https://github.com/MSOpenTech/redis/releases" target="_blank" rel="noopener">https://github.com/MSOpenTech/redis/releases</a>。</p>
 <p>Redis 支持 32 位和 64 位。这个需要根据你系统平台的实际情况选择，这里我们下载 <strong>Redis-x64-xxx.zip</strong>压缩包到 C 盘，解压后，将文件夹重新命名为 <strong>redis</strong>。</p>
 <p>打开一个 <strong>cmd</strong> 窗口 使用 cd 命令切换目录到 <strong>C:\redis</strong> 运行 <strong>redis-server.exe redis.windows.conf</strong> 。</p>
 <p>如果想方便的话，可以把 redis 的路径加到系统的环境变量里，这样就省得再输路径了，后面的那个 redis.windows.conf 可以省略，如果省略，会启用默认的。输入之后，会显示如下界面：</p>
@@ -545,9 +561,10 @@
 <p>切换到 redis 目录下运行 <strong>redis-cli.exe -h 127.0.0.1 -p 6379</strong> 。</p>
 <p>设置键值对 <strong>set myKey abc</strong></p>
 <p>取出键值对 <strong>get myKey</strong></p>
-<h3 id="2-2-Linux-下安装"><a href="#2-2-Linux-下安装" class="headerlink" title="2.2. Linux 下安装"></a>2.2. Linux 下安装</h3><p><strong>下载地址：</strong><a href="http://redis.io/download" target="_blank" rel="noopener">http://redis.io/download</a>，下载最新文档版本。</p>
+<h3 id="22-linux-下安装"><a class="markdownIt-Anchor" href="#22-linux-下安装"></a> 2.2. Linux 下安装</h3>
+<p><strong>下载地址：</strong><a href="http://redis.io/download" target="_blank" rel="noopener">http://redis.io/download</a>，下载最新文档版本。</p>
 <p>本教程使用的最新文档版本为 2.8.17，下载并安装：</p>
-<figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> wget http:<span class="comment">//download.redis.io/releases/redis-2.8.17.tar.gz</span></span><br><span class="line"><span class="symbol">$</span> tar xzf redis<span class="number">-2.8</span><span class="number">.17</span>.tar.gz</span><br><span class="line"><span class="symbol">$</span> cd redis<span class="number">-2.8</span><span class="number">.17</span></span><br><span class="line"><span class="symbol">$</span> make</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$ wget http:<span class="comment">//download.redis.io/releases/redis-2.8.17.tar.gz</span></span><br><span class="line">$ tar xzf redis<span class="number">-2.8</span><span class="number">.17</span>.tar.gz</span><br><span class="line">$ cd redis<span class="number">-2.8</span><span class="number">.17</span></span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
 <p>make 完后 redis-2.8.17 目录下会出现编译后的 redis 服务程序 redis-server,还有用于测试的客户端程序 redis-cli,两个程序位于安装目录 src 目录下：</p>
 <p>下面启动 redis 服务.</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">cd</span> src</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./redis-server</span></span><br></pre></td></tr></table></figure>
@@ -556,16 +573,20 @@
 <p>redis.conf 是一个默认的配置文件。我们可以根据需要使用自己的配置文件。</p>
 <p>启动 redis 服务进程后，就可以使用测试客户端程序 redis-cli 和 redis 服务交互了。 比如：</p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="symbol">$</span> cd src</span><br><span class="line"><span class="symbol">$</span> ./redis-cli</span><br><span class="line">redis&gt; <span class="keyword">set</span> foo <span class="comment">bar</span></span><br><span class="line">OK</span><br><span class="line">redis&gt; get <span class="comment">foo</span></span><br><span class="line"><span class="string">"bar"</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-3-Ubuntu-下安装"><a href="#2-3-Ubuntu-下安装" class="headerlink" title="2.3. Ubuntu 下安装"></a>2.3. Ubuntu 下安装</h3><p>在 Ubuntu 系统安装 Redi 可以使用以下命令:</p>
+<h3 id="23-ubuntu-下安装"><a class="markdownIt-Anchor" href="#23-ubuntu-下安装"></a> 2.3. Ubuntu 下安装</h3>
+<p>在 Ubuntu 系统安装 Redi 可以使用以下命令:</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> update</span><br><span class="line"><span class="variable">$sudo</span> apt-<span class="builtin-name">get</span> install redis-server</span><br></pre></td></tr></table></figure>
-<h3 id="2-4-启动-Redis"><a href="#2-4-启动-Redis" class="headerlink" title="2.4. 启动 Redis"></a>2.4. 启动 Redis</h3><figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">$ redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-5-查看-redis-是否启动？"><a href="#2-5-查看-redis-是否启动？" class="headerlink" title="2.5. 查看 redis 是否启动？"></a>2.5. 查看 redis 是否启动？</h3><figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
+<h3 id="24-启动-redis"><a class="markdownIt-Anchor" href="#24-启动-redis"></a> 2.4. 启动 Redis</h3>
+<figure class="highlight axapta"><table><tr><td class="code"><pre><span class="line">$ redis-<span class="keyword">server</span></span><br></pre></td></tr></table></figure>
+<h3 id="25-查看-redis-是否启动"><a class="markdownIt-Anchor" href="#25-查看-redis-是否启动"></a> 2.5. 查看 redis 是否启动？</h3>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
 <p>以上命令将打开以下终端：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">redis</span> 127<span class="selector-class">.0</span><span class="selector-class">.0</span><span class="selector-class">.1</span><span class="selector-pseudo">:6379</span>&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>127.0.0.1 是本机 IP ，6379 是 redis 服务端口。现在我们输入 PING 命令。</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">redis 127.0.0.1:6379&gt; ping</span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
 <p>以上说明我们已经成功安装了 redis。</p>
-<h2 id="3-Redis-命令"><a href="#3-Redis-命令" class="headerlink" title="3. Redis 命令"></a>3. Redis 命令</h2><p>Redis 命令用于在 redis 服务上执行操作。</p>
+<h2 id="3-redis-命令"><a class="markdownIt-Anchor" href="#3-redis-命令"></a> 3. Redis 命令</h2>
+<p>Redis 命令用于在 redis 服务上执行操作。</p>
 <p>要在 redis 服务上执行命令，需要先进入 redis 客户端。</p>
 <p>进入 redis 客户端的方法：</p>
 <figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">$ redis-<span class="keyword">cli</span></span><br></pre></td></tr></table></figure>
@@ -573,7 +594,7 @@
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">$ redis-cli -h host -p<span class="built_in"> port </span>-a password</span><br></pre></td></tr></table></figure>
 <p><strong>实例</strong></p>
 <p>以下实例演示了如何连接到主机为 127.0.0.1，端口为 6379 ，密码为 pass 的 redis 服务上：</p>
-<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="variable">$redis</span>-cli -h 127.0.0.1 -p 6379 -a <span class="string">"pass"</span></span><br><span class="line">redis 127.0.0.1:6379&gt;</span><br><span class="line">redis 127.0.0.1:6379&gt; PING</span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">$redis-cli -h <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span> -p <span class="number">6379</span> -a <span class="string">"pass"</span></span><br><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt;</span><br><span class="line">redis <span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">6379</span>&gt; PING</span><br><span class="line">PONG</span><br></pre></td></tr></table></figure>
 <p>更多命令行可以参考：<a href="https://redis.io/commands" target="_blank" rel="noopener">Redis 官方命令行字典</a></p>
 
       
@@ -643,8 +664,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/20/programming/shell/" rel="next" title="一篇文章让你彻底掌握 shell 语言">
-                <i class="fa fa-chevron-left"></i> 一篇文章让你彻底掌握 shell 语言
+              <a href="/blog/2017/11/20/software/README/" rel="next" title="软件工程">
+                <i class="fa fa-chevron-left"></i> 软件工程
               </a>
             
           </div>
@@ -726,7 +747,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -791,7 +812,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1089,7 +1112,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis-快速入门"><span class="nav-text">Redis 快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-什么是-Redis"><span class="nav-text">1.1. 什么是 Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-为什么用-Redis"><span class="nav-text">1.2. 为什么用 Redis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-text">2. 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-Window-下安装"><span class="nav-text">2.1. Window 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-Linux-下安装"><span class="nav-text">2.2. Linux 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-Ubuntu-下安装"><span class="nav-text">2.3. Ubuntu 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-启动-Redis"><span class="nav-text">2.4. 启动 Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-查看-redis-是否启动？"><span class="nav-text">2.5. 查看 redis 是否启动？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Redis-命令"><span class="nav-text">3. Redis 命令</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#redis-快速入门"><span class="nav-text"> Redis 快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text"> 1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-什么是-redis"><span class="nav-text"> 1.1. 什么是 Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-为什么用-redis"><span class="nav-text"> 1.2. 为什么用 Redis</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-安装"><span class="nav-text"> 2. 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-window-下安装"><span class="nav-text"> 2.1. Window 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-linux-下安装"><span class="nav-text"> 2.2. Linux 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-ubuntu-下安装"><span class="nav-text"> 2.3. Ubuntu 下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-启动-redis"><span class="nav-text"> 2.4. 启动 Redis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-查看-redis-是否启动"><span class="nav-text"> 2.5. 查看 redis 是否启动？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-redis-命令"><span class="nav-text"> 3. Redis 命令</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1131,7 +1154,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

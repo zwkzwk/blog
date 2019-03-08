@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Webpack 开发工具 ​:warning: 注意：永远不要在生产环境中使用这些工具，永远不要。  devtool当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build r">
+  <meta name="description" content="Webpack 开发工具  ​⚠️ 注意： 永远不要在生产环境中使用这些工具，永远不要。   devtool 当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build reb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack 开发工具">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/frontend/webpack/development/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Webpack 开发工具 ​:warning: 注意：永远不要在生产环境中使用这些工具，永远不要。  devtool当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build r">
+<meta property="og:description" content="Webpack 开发工具  ​⚠️ 注意： 永远不要在生产环境中使用这些工具，永远不要。   devtool 当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build reb">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:45.927Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack 开发工具">
-<meta name="twitter:description" content="Webpack 开发工具 ​:warning: 注意：永远不要在生产环境中使用这些工具，永远不要。  devtool当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build r">
+<meta name="twitter:description" content="Webpack 开发工具  ​⚠️ 注意： 永远不要在生产环境中使用这些工具，永远不要。   devtool 当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。 Source maps  试图解决这一问题。它有很多选择，各有优劣：    devtool build reb">
 
 
 
@@ -477,10 +477,13 @@
       
 
       
-        <h1 id="Webpack-开发工具"><a href="#Webpack-开发工具" class="headerlink" title="Webpack 开发工具"></a>Webpack 开发工具</h1><blockquote>
-<p>​:warning: <strong>注意：</strong><br>永远不要在生产环境中使用这些工具，永远不要。</p>
+        <h1 id="webpack-开发工具"><a class="markdownIt-Anchor" href="#webpack-开发工具"></a> Webpack 开发工具</h1>
+<blockquote>
+<p>​⚠️ <strong>注意：</strong><br>
+永远不要在生产环境中使用这些工具，永远不要。</p>
 </blockquote>
-<h2 id="devtool"><a href="#devtool" class="headerlink" title="devtool"></a>devtool</h2><p>当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。</p>
+<h2 id="devtool"><a class="markdownIt-Anchor" href="#devtool"></a> devtool</h2>
+<p>当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。</p>
 <p><strong>Source maps</strong>  试图解决这一问题。它有很多选择，各有优劣：</p>
 <table>
 <thead>
@@ -558,7 +561,8 @@
 <p>个人建议：开发环境使用 <code>cheap-module-eval-source-map</code> ；开发环境使用 <code>cheap-module-source-map</code> 。</p>
 <p>使用方式非常简单，在 <code>webpack.config.js</code> 中配置如下：</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 通过在浏览器调试工具(browser devtools)中添加元信息(meta info)增强调试</span></span><br><span class="line">  <span class="comment">// devtool: "eval", // 没有模块映射，而是命名模块。以牺牲细节达到最快。</span></span><br><span class="line">  <span class="comment">// devtool: "source-map", // 牺牲了构建速度的 `source-map' 是最详细的</span></span><br><span class="line">  <span class="comment">// devtool: "inline-source-map", // 嵌入到源文件中</span></span><br><span class="line">  <span class="comment">// devtool: "eval-source-map", // 将 SourceMap 嵌入到每个模块中</span></span><br><span class="line">  <span class="comment">// devtool: "hidden-source-map", // SourceMap 不在源文件中引用</span></span><br><span class="line">  <span class="comment">// devtool: "cheap-source-map", // 没有模块映射(module mappings)的 SourceMap 低级变体(cheap-variant)</span></span><br><span class="line">  <span class="comment">// devtool: "cheap-module-source-map", // 有模块映射(module mappings)的 SourceMap 低级变体</span></span><br><span class="line">  devtool: <span class="string">"cheap-module-eval-source-map"</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<h2 id="webpack-dev-server"><a href="#webpack-dev-server" class="headerlink" title="webpack-dev-server"></a>webpack-dev-server</h2><p><strong>webpack-dev-server</strong> 可以提供了一个服务器和实时重载（live reloading） 功能。</p>
+<h2 id="webpack-dev-server"><a class="markdownIt-Anchor" href="#webpack-dev-server"></a> webpack-dev-server</h2>
+<p><strong>webpack-dev-server</strong> 可以提供了一个服务器和实时重载（live reloading） 功能。</p>
 <p>在开始前，确定你有一个  <code>index.html</code>  文件指向你的 bundle。假设  <code>output.filename</code>  是  <code>bunlde.js</code>。</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"./dist/bundle.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>首先从 npm 安装  <code>webpack-dev-server</code>：</p>
@@ -567,7 +571,7 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ webpack-dev-server --open</span><br></pre></td></tr></table></figure>
 <p>上述命令应该自动在浏览器中打开  <code>http://localhost:8080</code>。</p>
 <blockquote>
-<p>​:pushpin: <strong>提示：</strong></p>
+<p>​📌 <strong>提示：</strong></p>
 <p>本教程中的 <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes" target="_blank" rel="noopener"><strong>示例代码</strong></a> 除了 <code>demo00</code> ，都可以使用 webpack-dev-server 命令启动服务。</p>
 </blockquote>
 <p>在你的文件中做一点更改并且保存。你应该可以在控制台中看到正在编译。编译完成之后，页面应该会刷新。如果控制台中什么都没发生，你可能需要调整下  <a href="https://doc.webpack-china.org/configuration/dev-server#devserver-watchoptions-" target="_blank" rel="noopener"><code>watchOptions</code></a>。</p>
@@ -577,15 +581,16 @@
 <p>但是，个人建议，一种更好的做法是在 <code>webpack.config.js</code> 文件中通过配置 <code>devServer</code> 属性来配置 webpack-dev-server 。</p>
 <p>更多配置项参考：<a href="https://doc.webpack-china.org/configuration/dev-server/" target="_blank" rel="noopener">官方文档 - 开发中 Server(DevServer)</a></p>
 <blockquote>
-<p>​:flashlight: <strong>示例 DEMO12：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo12/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo12" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
+<p>​🔦 <strong>示例 DEMO12：</strong> (<a href="https://dunwu.github.io/frontend-tutorial/chapter03/webpack2/demo12/dist/index.html"><strong>DEMO</strong></a> / <a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo12" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
 <p>在本示例中，devServer 配置如下：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> devServer: &#123;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   contentBase: [path.join(__dirname, <span class="string">"dist"</span>)],</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   compress: <span class="literal">true</span>,</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   port: 9000, // 启动端口号</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">   inline: <span class="literal">true</span>,</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> &#125;</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"></span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <blockquote>
 <p>执行 webpack-dev-server 后，会启动一个端口为 9000 的本地服务。</p>
 </blockquote>
-<h3 id="热模块替换（Hot-Module-Replacement）"><a href="#热模块替换（Hot-Module-Replacement）" class="headerlink" title="热模块替换（Hot Module Replacement）"></a>热模块替换（Hot Module Replacement）</h3><blockquote>
-<p>​:pushpin:​ <strong>提示：</strong></p>
+<h3 id="热模块替换hot-module-replacement"><a class="markdownIt-Anchor" href="#热模块替换hot-module-replacement"></a> 热模块替换（Hot Module Replacement）</h3>
+<blockquote>
+<p>​📌​ <strong>提示：</strong></p>
 <p>模块热替换功能一般用于开发环境。</p>
 </blockquote>
 <p>现在你有了实时重载功能，你甚至可以更进一步：Hot Module Replacement（热模块替换）。这是一个接口，使得你可以替换模块<strong>而不需要刷新页面</strong>。不用每次修改都重新启动服务，这可以极大地提高开发效率。</p>
@@ -611,7 +616,7 @@
 <p>最后，需要开启 webpack 自带的 <code>HotModuleReplacementPlugin</code> 和 <code>NamedModulesPlugin</code> 插件，启动热替换功能。</p>
 <figure class="highlight js"><table><tr><td class="code"><pre><span class="line">plugins: [</span><br><span class="line">  <span class="comment">// 开启全局的模块热替换(HMR)</span></span><br><span class="line">  <span class="keyword">new</span> webpack.HotModuleReplacementPlugin(),</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 当模块热替换(HMR)时在浏览器控制台输出对用户更友好的模块名字信息</span></span><br><span class="line">  <span class="keyword">new</span> webpack.NamedModulesPlugin(),</span><br><span class="line">],</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>​:flashlight: <strong>示例 DEMO13：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo13" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
+<p>​🔦 <strong>示例 DEMO13：</strong> (<a href="https://github.com/dunwu/frontend-tutorial/tree/master/codes/chapter03/webpack2/demo13" target="_blank" rel="noopener"><strong>SOURCE</strong></a>)</p>
 <p>在示例中，启动服务后，打开浏览器，访问 <a href="http://localhost:9000/" target="_blank" rel="noopener">http://localhost:9000/</a> 。</p>
 <p>按快捷键 <code>F12</code> 打开浏览器调试窗口，可以看到类似提示信息</p>
 <figure class="highlight prolog"><table><tr><td class="code"><pre><span class="line">&gt; [<span class="symbol">HMR</span>] <span class="symbol">Waiting</span> for update signal from <span class="symbol">WDS</span>...</span><br><span class="line">&gt; [<span class="symbol">HMR</span>] <span class="symbol">Waiting</span> for update signal from <span class="symbol">WDS</span>...</span><br><span class="line">&gt; [<span class="symbol">WDS</span>] <span class="symbol">Hot</span> <span class="symbol">Module</span> <span class="symbol">Replacement</span> enabled.</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
@@ -629,8 +634,9 @@
 <blockquote>
 <p>此时，应该看到页面内容会替换为你修改的内容。</p>
 </blockquote>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><blockquote>
-<p>:books: 拓展阅读</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<blockquote>
+<p>📚 拓展阅读</p>
 <ul>
 <li><a href="webpack.md">Webpack 入门</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
@@ -638,10 +644,11 @@
 <li><a href="code-splitting.md">Webpack 代码分离</a></li>
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
-<p>:package: 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
+<p>📦 本文归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener">我的前端技术教程系列：frontend-tutorial</a></p>
 </blockquote>
 <ul>
-<li><strong>官方资料</strong><ul>
+<li><strong>官方资料</strong>
+<ul>
 <li><a href="https://webpack.js.org/" target="_blank" rel="noopener">Webpack 官网</a></li>
 <li><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">Webpack 中文网</a></li>
 <li><a href="https://github.com/webpack/webpack" target="_blank" rel="noopener">webpack Github</a></li>
@@ -649,13 +656,15 @@
 <li><a href="http://webpack.github.io/docs/webpack-dev-server.html" target="_blank" rel="noopener">webpack-dev-server 官方文档</a></li>
 </ul>
 </li>
-<li><strong>入门资料</strong><ul>
+<li><strong>入门资料</strong>
+<ul>
 <li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="noopener">webpack-demos</a></li>
 <li><a href="https://github.com/petehunt/webpack-howto/blob/master/README-zh.md" target="_blank" rel="noopener">webpack-howto</a></li>
 <li><a href="http://zhaoda.net/webpack-handbook/index.html" target="_blank" rel="noopener">webpack-handbook</a></li>
 </ul>
 </li>
-<li><strong>教程</strong><ul>
+<li><strong>教程</strong>
+<ul>
 <li><a href="webpack-howto.md">如何学习 Webpack</a></li>
 <li><a href="concept.md">Webpack 概念</a></li>
 <li><a href="webpack.md">Webpack 入门</a></li>
@@ -664,12 +673,14 @@
 <li><a href="development.md">Webpack 开发工具</a></li>
 </ul>
 </li>
-<li><strong>文章</strong><ul>
+<li><strong>文章</strong>
+<ul>
 <li><a href="http://huangxuan.me/2015/07/09/js-module-7day/" target="_blank" rel="noopener">JavaScript 模块化七日谈</a></li>
 <li><a href="https://github.com/seajs/seajs/issues/588" target="_blank" rel="noopener">前端模块化开发那点历史</a></li>
 </ul>
 </li>
-<li><strong>更多资源</strong><ul>
+<li><strong>更多资源</strong>
+<ul>
 <li><a href="https://github.com/webpack-china/awesome-webpack-cn" target="_blank" rel="noopener">awesome-webpack-cn</a></li>
 </ul>
 </li>
@@ -815,7 +826,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -880,7 +891,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1178,7 +1191,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Webpack-开发工具"><span class="nav-text">Webpack 开发工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#devtool"><span class="nav-text">devtool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-dev-server"><span class="nav-text">webpack-dev-server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#热模块替换（Hot-Module-Replacement）"><span class="nav-text">热模块替换（Hot Module Replacement）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#webpack-开发工具"><span class="nav-text"> Webpack 开发工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#devtool"><span class="nav-text"> devtool</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack-dev-server"><span class="nav-text"> webpack-dev-server</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#热模块替换hot-module-replacement"><span class="nav-text"> 热模块替换（Hot Module Replacement）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1220,7 +1233,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

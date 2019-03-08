@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="SpringMVC 工作流程描述Spring MVC的工作流程可以用一幅图来说明：  向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的对象（">
+  <meta name="description" content="SpringMVC 工作流程描述 Spring MVC的工作流程可以用一幅图来说明：   向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的">
 <meta name="keywords" content="spring,web,mvc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SpringMVC 简介">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/spring/web/spring-mvc-introduction/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="SpringMVC 工作流程描述Spring MVC的工作流程可以用一幅图来说明：  向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的对象（">
+<meta property="og:description" content="SpringMVC 工作流程描述 Spring MVC的工作流程可以用一幅图来说明：   向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com/image/spring/web/spring-dispatcher-servlet.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:47.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SpringMVC 简介">
-<meta name="twitter:description" content="SpringMVC 工作流程描述Spring MVC的工作流程可以用一幅图来说明：  向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的对象（">
+<meta name="twitter:description" content="SpringMVC 工作流程描述 Spring MVC的工作流程可以用一幅图来说明：   向服务器发送HTTP请求，请求被前端控制器 DispatcherServlet 捕获。 DispatcherServlet 根据 -servlet.xml 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 HandlerMapping 获得该Handler配置的所有相关的">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com/image/spring/web/spring-dispatcher-servlet.png">
 
 
@@ -476,7 +476,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">882</span>
+                <span title="本文字数">886</span>
               
 
               
@@ -510,12 +510,15 @@
       
 
       
-        <h2 id="SpringMVC-工作流程描述"><a href="#SpringMVC-工作流程描述" class="headerlink" title="SpringMVC 工作流程描述"></a>SpringMVC 工作流程描述</h2><p>Spring MVC的工作流程可以用一幅图来说明：<br><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/image/spring/web/spring-dispatcher-servlet.png"></div><br></p>
+        <h2 id="springmvc-工作流程描述"><a class="markdownIt-Anchor" href="#springmvc-工作流程描述"></a> SpringMVC 工作流程描述</h2>
+<p>Spring MVC的工作流程可以用一幅图来说明：<br>
+<br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com/image/spring/web/spring-dispatcher-servlet.png"></div><br></p>
 <ol>
 <li>向服务器发送HTTP请求，请求被前端控制器 <code>DispatcherServlet</code> 捕获。</li>
 <li><code>DispatcherServlet</code> 根据 <strong><servlet-name>-servlet.xml</servlet-name></strong> 中的配置对请求的URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用 <code>HandlerMapping</code> 获得该Handler配置的所有相关的对象（包括Handler对象以及Handler对象对应的拦截器），最后以<code>HandlerExecutionChain</code> 对象的形式返回。</li>
 <li><code>DispatcherServlet</code> 根据获得的<code>Handler</code>，选择一个合适的 <code>HandlerAdapter</code>。（附注：如果成功获得<code>HandlerAdapter</code>后，此时将开始执行拦截器的preHandler(…)方法）。</li>
-<li>提取<code>Request</code>中的模型数据，填充<code>Handler</code>入参，开始执行<code>Handler</code>（<code>Controller</code>)。 在填充<code>Handler</code>的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：<ul>
+<li>提取<code>Request</code>中的模型数据，填充<code>Handler</code>入参，开始执行<code>Handler</code>（<code>Controller</code>)。 在填充<code>Handler</code>的入参过程中，根据你的配置，Spring将帮你做一些额外的工作：
+<ul>
 <li>HttpMessageConveter： 将请求消息（如Json、xml等数据）转换成一个对象，将对象转换为指定的响应信息。</li>
 <li>数据转换：对请求消息进行数据转换。如<code>String</code>转换成<code>Integer</code>、<code>Double</code>等。</li>
 <li>数据根式化：对请求消息进行数据格式化。 如将字符串转换成格式化数字或格式化日期等。</li>
@@ -595,8 +598,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" rel="next" title="JSP 国际化">
-                <i class="fa fa-chevron-left"></i> JSP 国际化
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/" rel="next" title="JavaEE Servlet HTTP 状态码">
+                <i class="fa fa-chevron-left"></i> JavaEE Servlet HTTP 状态码
               </a>
             
           </div>
@@ -605,8 +608,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-implicit-objects/" rel="prev" title="JSP 隐式对象">
-                JSP 隐式对象 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-function/" rel="prev" title="JSTL 函数">
+                JSTL 函数 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -678,7 +681,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -743,7 +746,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1041,7 +1046,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringMVC-工作流程描述"><span class="nav-text">SpringMVC 工作流程描述</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#springmvc-工作流程描述"><span class="nav-text"> SpringMVC 工作流程描述</span></a></li></ol></div>
             
 
           </div>
@@ -1083,7 +1088,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

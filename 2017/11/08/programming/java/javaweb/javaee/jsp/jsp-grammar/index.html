@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。  脚本脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签、J">
+  <meta name="description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。   脚本 脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签">
 <meta name="keywords" content="javaee,jsp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP 语法">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-grammar/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。  脚本脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签、J">
+<meta property="og:description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。   脚本 脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/jsp_hello_world.jpg">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/7B4B85CF-FE4B-43CB-AAFF-F8594AD4342C.jpg">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.863Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP 语法">
-<meta name="twitter:description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。  脚本脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签、J">
+<meta name="twitter:description" content="本小节将会简单地介绍一下 JSP 开发中的基础语法。   脚本 脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。 脚本程序的语法格式： &amp;lt;% 代码片段 %&amp;gt; 或者，您也可以编写与其等价的 XML 语句，就像下面这样： &amp;lt;jsp:scriptlet&amp;gt;   代码片段&amp;lt;/jsp:scriptlet&amp;gt; 任何文本、HTML 标签">
 <meta name="twitter:image" content="http://www.runoob.com/wp-content/uploads/2014/01/jsp_hello_world.jpg">
 
 
@@ -478,7 +478,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.9k</span>
+                <span title="本文字数">6k</span>
               
 
               
@@ -514,7 +514,8 @@
       
         <p>本小节将会简单地介绍一下 JSP 开发中的基础语法。</p>
 <hr>
-<h2 id="脚本"><a href="#脚本" class="headerlink" title="脚本"></a>脚本</h2><p>脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。</p>
+<h2 id="脚本"><a class="markdownIt-Anchor" href="#脚本"></a> 脚本</h2>
+<p>脚本程序可以包含任意量的 Java 语句、变量、方法或表达式，只要它们在脚本语言中是有效的。</p>
 <p>脚本程序的语法格式：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;% 代码片段 %&gt;</span><br></pre></td></tr></table></figure>
 <p>或者，您也可以编写与其等价的 XML 语句，就像下面这样：</p>
@@ -522,22 +523,25 @@
 <p>任何文本、HTML 标签、JSP 元素必须写在脚本程序的外面。</p>
 <p>下面给出一个示例，同时也是本教程的第一个 JSP 示例：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;&lt;title&gt;Hello World&lt;/title&gt;&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">Hello World!&lt;br/&gt;</span><br><span class="line">&lt;%</span><br><span class="line">out.println(<span class="string">"Your IP address is "</span> + request.getRemoteAddr());</span><br><span class="line">%&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong>请确保 Apache Tomcat 已经安装在 C:\apache-tomcat-7.0.2 目录下并且运行环境已经正确设置。</p>
-<p>将以上代码保存在 hello.jsp 中，然后将它放置在 C:\apache-tomcat-7.0.2\webapps\ROOT 目录下，打开浏览器并在地址栏中输入<a href="http://localhost:8080/hello.jsp。运行后得到以下结果：" target="_blank" rel="noopener">http://localhost:8080/hello.jsp。运行后得到以下结果：</a></p>
+<p>**注意：**请确保 Apache Tomcat 已经安装在 C:\apache-tomcat-7.0.2 目录下并且运行环境已经正确设置。</p>
+<p>将以上代码保存在 hello.jsp 中，然后将它放置在 C:\apache-tomcat-7.0.2\webapps\ROOT 目录下，打开浏览器并在地址栏中输入http://localhost:8080/hello.jsp。运行后得到以下结果：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/jsp_hello_world.jpg"></div><br></p>
-<h3 id="中文编码问题"><a href="#中文编码问题" class="headerlink" title="中文编码问题"></a>中文编码问题</h3><p>如果我们要在页面正常显示中文，我们需要在 JSP 文件头部添加以下代码：&lt;&gt;</p>
+<h3 id="中文编码问题"><a class="markdownIt-Anchor" href="#中文编码问题"></a> 中文编码问题</h3>
+<p>如果我们要在页面正常显示中文，我们需要在 JSP 文件头部添加以下代码：&lt;&gt;</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br></pre></td></tr></table></figure>
 <p>接下来我们将以上程序修改为：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;菜鸟教程(runoob.com)&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">Hello World!&lt;br/&gt;</span><br><span class="line">&lt;%</span><br><span class="line">out.println(<span class="string">"你的 IP 地址 "</span> + request.getRemoteAddr());</span><br><span class="line">%&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>这样中文就可以正常显示了。</p>
-<h2 id="JSP-声明"><a href="#JSP-声明" class="headerlink" title="JSP 声明"></a>JSP 声明</h2><p>一个声明语句可以声明一个或多个变量、方法，供后面的 Java 代码使用。在 JSP 文件中，您必须先声明这些变量和方法然后才能使用它们。</p>
+<h2 id="jsp-声明"><a class="markdownIt-Anchor" href="#jsp-声明"></a> JSP 声明</h2>
+<p>一个声明语句可以声明一个或多个变量、方法，供后面的 Java 代码使用。在 JSP 文件中，您必须先声明这些变量和方法然后才能使用它们。</p>
 <p>JSP 声明的语法格式：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%! declaration; [ declaration; ]+ ... %&gt;</span><br></pre></td></tr></table></figure>
 <p>或者，您也可以编写与其等价的 XML 语句，就像下面这样：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;jsp:declaration&gt;</span><br><span class="line">   代码片段</span><br><span class="line">&lt;/jsp:declaration&gt;</span><br></pre></td></tr></table></figure>
 <p>程序示例：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%! <span class="keyword">int</span> i = <span class="number">0</span>; %&gt;</span><br><span class="line">&lt;%! <span class="keyword">int</span> a, b, c; %&gt;</span><br><span class="line">&lt;%! Circle a = <span class="keyword">new</span> Circle(<span class="number">2.0</span>); %&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="JSP-表达式"><a href="#JSP-表达式" class="headerlink" title="JSP 表达式"></a>JSP 表达式</h2><p>一个 JSP 表达式中包含的脚本语言表达式，先被转化成 String，然后插入到表达式出现的地方。</p>
+<h2 id="jsp-表达式"><a class="markdownIt-Anchor" href="#jsp-表达式"></a> JSP 表达式</h2>
+<p>一个 JSP 表达式中包含的脚本语言表达式，先被转化成 String，然后插入到表达式出现的地方。</p>
 <p>由于表达式的值会被转化成 String，所以您可以在一个文本行中使用表达式而不用去管它是否是 HTML 标签。</p>
 <p>表达式元素中可以包含任何符合 Java 语言规范的表达式，但是不能使用分号来结束表达式。</p>
 <p>JSP 表达式的语法格式：</p>
@@ -547,13 +551,14 @@
 <p>程序示例：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">   今天的日期是: <span class="tag">&lt;<span class="name">%=</span> (<span class="attr">new</span> <span class="attr">java.util.Date</span>())<span class="attr">.toLocaleString</span>()%&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>运行后得到以下结果：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">今天的日期是: 2016<span class="selector-tag">-6-25</span> 13<span class="selector-pseudo">:40</span><span class="selector-pseudo">:07</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">今天的日期是: <span class="number">2016</span><span class="number">-6</span><span class="number">-25</span> <span class="number">13</span>:<span class="number">40</span>:<span class="number">07</span></span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="JSP-注释"><a href="#JSP-注释" class="headerlink" title="JSP 注释"></a>JSP 注释</h2><p>JSP 注释主要有两个作用：为代码作注释以及将某段代码注释掉。</p>
+<h2 id="jsp-注释"><a class="markdownIt-Anchor" href="#jsp-注释"></a> JSP 注释</h2>
+<p>JSP 注释主要有两个作用：为代码作注释以及将某段代码注释掉。</p>
 <p>JSP 注释的语法格式：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">    pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">&lt;title&gt;JSP注释示例&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;%-- 该部分注释在网页中不会被显示--%&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">   今天的日期是: &lt;%= (<span class="keyword">new</span> java.util.Date()).toLocaleString()%&gt;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>运行后得到以下结果：</p>
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">今天的日期是: 2016<span class="selector-tag">-6-25</span> 13<span class="selector-pseudo">:41</span><span class="selector-pseudo">:26</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">今天的日期是: <span class="number">2016</span><span class="number">-6</span><span class="number">-25</span> <span class="number">13</span>:<span class="number">41</span>:<span class="number">26</span></span><br></pre></td></tr></table></figure>
 <p>不同情况下使用注释的语法规则：</p>
 <table>
 <thead>
@@ -564,7 +569,7 @@
 </thead>
 <tbody>
 <tr>
-<td>&lt;%– 注释 –%&gt;</td>
+<td>&lt;%-- 注释 --%&gt;</td>
 <td>JSP 注释，注释内容不会被发送至浏览器甚至不会被编译</td>
 </tr>
 <tr>
@@ -572,34 +577,38 @@
 <td>HTML 注释，通过浏览器查看网页源代码时可以看见注释内容</td>
 </tr>
 <tr>
-<td>&lt;\%</td>
+<td>&lt;%</td>
 <td>代表静态 &lt;%常量</td>
 </tr>
 <tr>
-<td>%></td>
+<td>%&gt;</td>
 <td>代表静态 %&gt; 常量</td>
 </tr>
 <tr>
-<td>\’</td>
+<td>’</td>
 <td>在属性中使用的单引号</td>
 </tr>
 <tr>
-<td>\”</td>
+<td>&quot;</td>
 <td>在属性中使用的双引号</td>
 </tr>
 </tbody>
 </table>
-<h2 id="控制语句"><a href="#控制语句" class="headerlink" title="控制语句"></a>控制语句</h2><p>JSP 提供对 Java 语言的全面支持。您可以在 JSP 程序中使用 Java API 甚至建立 Java 代码块，包括判断语句和循环语句等等。</p>
-<h3 id="if…else-语句"><a href="#if…else-语句" class="headerlink" title="if…else 语句"></a>if…else 语句</h3><p><code>If…else</code>块，请看下面这个例子：</p>
+<h2 id="控制语句"><a class="markdownIt-Anchor" href="#控制语句"></a> 控制语句</h2>
+<p>JSP 提供对 Java 语言的全面支持。您可以在 JSP 程序中使用 Java API 甚至建立 Java 代码块，包括判断语句和循环语句等等。</p>
+<h3 id="ifelse-语句"><a class="markdownIt-Anchor" href="#ifelse-语句"></a> if…else 语句</h3>
+<p><code>If…else</code>块，请看下面这个例子：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">         pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;%! <span class="keyword">int</span> day = <span class="number">1</span>; %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;02.JSP语法 - if...else示例&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h3&gt;IF...ELSE 实例&lt;/h3&gt;</span><br><span class="line">&lt;% <span class="keyword">if</span> (day == <span class="number">1</span> | day == <span class="number">7</span>) &#123; %&gt;</span><br><span class="line">&lt;p&gt;今天是周末&lt;/p&gt;</span><br><span class="line">&lt;% &#125; <span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">&lt;p&gt;今天不是周末&lt;/p&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>运行后得到以下结果：</p>
 <figure class="highlight gams"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="title">IF</span></span>...<span class="keyword">ELSE</span> 实例</span><br><span class="line">今天不是周末</span><br></pre></td></tr></table></figure>
-<h3 id="switch…case-语句"><a href="#switch…case-语句" class="headerlink" title="switch…case 语句"></a>switch…case 语句</h3><p>现在来看看 switch…case 块，与 if…else 块有很大的不同，它使用 out.println()，并且整个都装在脚本程序的标签中，就像下面这样：</p>
+<h3 id="switchcase-语句"><a class="markdownIt-Anchor" href="#switchcase-语句"></a> switch…case 语句</h3>
+<p>现在来看看 switch…case 块，与 if…else 块有很大的不同，它使用 out.println()，并且整个都装在脚本程序的标签中，就像下面这样：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span></span><br><span class="line">         pageEncoding=<span class="string">"UTF-8"</span>%&gt;</span><br><span class="line">&lt;%! <span class="keyword">int</span> day = <span class="number">3</span>; %&gt;</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=<span class="string">"utf-8"</span>&gt;</span><br><span class="line">  &lt;title&gt;02.JSP语法 - switch...case示例&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h3&gt;Sswitch...case示例&lt;/h3&gt;</span><br><span class="line">&lt;%</span><br><span class="line">  <span class="keyword">switch</span>(day) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">      out.println(<span class="string">"星期天"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">      out.println(<span class="string">"星期一"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">      out.println(<span class="string">"星期二"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">      out.println(<span class="string">"星期三"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">      out.println(<span class="string">"星期四"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">5</span>:</span><br><span class="line">      out.println(<span class="string">"星期五"</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      out.println(<span class="string">"星期六"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">%&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 <p>浏览器访问，运行后得出以下结果：</p>
 <figure class="highlight autoit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">SWITCH</span>...<span class="keyword">CASE</span> 实例</span><br><span class="line"></span><br><span class="line">星期三</span><br></pre></td></tr></table></figure>
-<h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><p>在 JSP 程序中可以使用 Java 的三个基本循环类型：for，while，和 do…while。</p>
-<p>让我们来看看 for 循环的例子，以下输出的不同字体大小的”菜鸟教程”：</p>
+<h3 id="循环语句"><a class="markdownIt-Anchor" href="#循环语句"></a> 循环语句</h3>
+<p>在 JSP 程序中可以使用 Java 的三个基本循环类型：for，while，和 do…while。</p>
+<p>让我们来看看 for 循环的例子，以下输出的不同字体大小的&quot;菜鸟教程&quot;：</p>
 <figure class="highlight django"><table><tr><td class="code"><pre><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span></span><br><span class="line"><span class="xml">    pageEncoding="UTF-8"%&gt;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%!</span> <span class="attr">int</span> <span class="attr">fontSize</span>; %&gt;</span></span></span><br><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">h3</span>&gt;</span>For 循环实例<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%for</span> ( <span class="attr">fontSize</span> = <span class="string">1;</span> <span class="attr">fontSize</span> &lt;= <span class="string">3;</span> <span class="attr">fontSize</span>++)&#123; %&gt;</span></span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">"green"</span> <span class="attr">size</span>=<span class="string">"&lt;%= fontSize %&gt;"</span>&gt;</span></span></span><br><span class="line"><span class="xml">    菜鸟教程</span></span><br><span class="line"><span class="xml">   <span class="tag">&lt;/<span class="name">font</span>&gt;</span><span class="tag">&lt;<span class="name">br</span> /&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">%&#125;%</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
 <p>运行后得到以下结果：</p>
 <p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/7B4B85CF-FE4B-43CB-AAFF-F8594AD4342C.jpg"></div><br></p>
@@ -666,8 +675,7 @@
 </tr>
 <tr>
 <td>位或</td>
-<td>\</td>
-<td></td>
+<td>|</td>
 <td>左到右</td>
 </tr>
 <tr>
@@ -677,9 +685,7 @@
 </tr>
 <tr>
 <td>逻辑或</td>
-<td>\</td>
-<td>\</td>
-<td></td>
+<td>||</td>
 <td>左到右</td>
 </tr>
 <tr>
@@ -689,8 +695,7 @@
 </tr>
 <tr>
 <td>赋值</td>
-<td>= += -= *= /= %= &gt;&gt;= &lt;&lt;= &amp;= ^= \</td>
-<td>=</td>
+<td>= += -= *= /= %= &gt;&gt;= &lt;&lt;= &amp;= ^= |=</td>
 <td>右到左</td>
 </tr>
 <tr>
@@ -701,7 +706,8 @@
 </tbody>
 </table>
 <hr>
-<h2 id="JSP-字面量"><a href="#JSP-字面量" class="headerlink" title="JSP 字面量"></a>JSP 字面量</h2><p>JSP 语言定义了以下几个字面量：</p>
+<h2 id="jsp-字面量"><a class="markdownIt-Anchor" href="#jsp-字面量"></a> JSP 字面量</h2>
+<p>JSP 语言定义了以下几个字面量：</p>
 <ul>
 <li>布尔值(boolean)：true 和 false;</li>
 <li>整型(int)：与 Java 中的一样;</li>
@@ -775,8 +781,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-xml/" rel="next" title="JSTL XML标签">
-                <i class="fa fa-chevron-left"></i> JSTL XML标签
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-core/" rel="next" title="JSTL 核心标签">
+                <i class="fa fa-chevron-left"></i> JSTL 核心标签
               </a>
             
           </div>
@@ -858,7 +864,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -923,7 +929,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1221,7 +1229,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text">脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文编码问题"><span class="nav-text">中文编码问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-声明"><span class="nav-text">JSP 声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-表达式"><span class="nav-text">JSP 表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-注释"><span class="nav-text">JSP 注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制语句"><span class="nav-text">控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if…else-语句"><span class="nav-text">if…else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch…case-语句"><span class="nav-text">switch…case 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-text">循环语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JSP-字面量"><span class="nav-text">JSP 字面量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本"><span class="nav-text"> 脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#中文编码问题"><span class="nav-text"> 中文编码问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-声明"><span class="nav-text"> JSP 声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-表达式"><span class="nav-text"> JSP 表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-注释"><span class="nav-text"> JSP 注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制语句"><span class="nav-text"> 控制语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ifelse-语句"><span class="nav-text"> if…else 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switchcase-语句"><span class="nav-text"> switch…case 语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#循环语句"><span class="nav-text"> 循环语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jsp-字面量"><span class="nav-text"> JSP 字面量</span></a></li></ol></div>
             
 
           </div>
@@ -1263,7 +1271,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+  <meta name="description" content="Linux 用户管理  关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法  groupadd groupdel groupmod useradd userdel usermod passwd su sudo      Linux 用户管理要点">
 <meta name="keywords" content="linux,command">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 用户管理">
 <meta property="og:url" content="https://dunwu.github.io/2018/02/27/os/linux/cli/05.Linux用户管理/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+<meta property="og:description" content="Linux 用户管理  关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法  groupadd groupdel groupmod useradd userdel usermod passwd su sudo      Linux 用户管理要点">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 用户管理">
-<meta name="twitter:description" content="Linux 用户管理 关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法 groupadd groupdel groupmod useradd userdel usermod passwd su sudo     Linux 用户管理要点 创建用户组">
+<meta name="twitter:description" content="Linux 用户管理  关键词：groupadd, groupdel, groupmod, useradd, userdel, usermod, passwd, su, sudo    Linux 用户管理要点 命令常见用法  groupadd groupdel groupmod useradd userdel usermod passwd su sudo      Linux 用户管理要点">
 
 
 
@@ -508,13 +508,15 @@
       
 
       
-        <h1 id="Linux-用户管理"><a href="#Linux-用户管理" class="headerlink" title="Linux 用户管理"></a>Linux 用户管理</h1><blockquote>
+        <h1 id="linux-用户管理"><a class="markdownIt-Anchor" href="#linux-用户管理"></a> Linux 用户管理</h1>
+<blockquote>
 <p>关键词：<code>groupadd</code>, <code>groupdel</code>, <code>groupmod</code>, <code>useradd</code>, <code>userdel</code>, <code>usermod</code>, <code>passwd</code>, <code>su</code>, <code>sudo</code></p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#linux-用户管理要点">Linux 用户管理要点</a></li>
-<li><a href="#命令常见用法">命令常见用法</a><ul>
+<li><a href="#linux-%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E8%A6%81%E7%82%B9">Linux 用户管理要点</a></li>
+<li><a href="#%E5%91%BD%E4%BB%A4%E5%B8%B8%E8%A7%81%E7%94%A8%E6%B3%95">命令常见用法</a>
+<ul>
 <li><a href="#groupadd">groupadd</a></li>
 <li><a href="#groupdel">groupdel</a></li>
 <li><a href="#groupmod">groupmod</a></li>
@@ -528,7 +530,8 @@
 </li>
 </ul>
 <!-- /TOC -->
-<h2 id="Linux-用户管理要点"><a href="#Linux-用户管理要点" class="headerlink" title="Linux 用户管理要点"></a>Linux 用户管理要点</h2><ul>
+<h2 id="linux-用户管理要点"><a class="markdownIt-Anchor" href="#linux-用户管理要点"></a> Linux 用户管理要点</h2>
+<ul>
 <li>创建用户组 - 使用 <a href="#groupadd">groupadd</a></li>
 <li>删除用户组 - 使用 <a href="#groupdel">groupdel</a></li>
 <li>修改用户组信息 - 使用 <a href="#groupmod">groupmod</a></li>
@@ -539,66 +542,78 @@
 <li>切换用户 - 使用 <a href="#su">su</a></li>
 <li>当前用户想执行没有权限执行的命令时，使用其他用户身份去执行 - 使用 <a href="#sudo">sudo</a></li>
 </ul>
-<h2 id="命令常见用法"><a href="#命令常见用法" class="headerlink" title="命令常见用法"></a>命令常见用法</h2><h3 id="groupadd"><a href="#groupadd" class="headerlink" title="groupadd"></a>groupadd</h3><blockquote>
+<h2 id="命令常见用法"><a class="markdownIt-Anchor" href="#命令常见用法"></a> 命令常见用法</h2>
+<h3 id="groupadd"><a class="markdownIt-Anchor" href="#groupadd"></a> groupadd</h3>
+<blockquote>
 <p>groupadd 命令用于创建一个新的用户组，新用户组的信息将被添加到系统文件中。</p>
 <p>参考：<a href="http://man.linuxde.net/groupadd" target="_blank" rel="noopener">http://man.linuxde.net/groupadd</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 建立一个新组，并设置组 ID 加入系统</span></span><br><span class="line">$ groupadd -g 344 jsdigname</span><br></pre></td></tr></table></figure>
-<h3 id="groupdel"><a href="#groupdel" class="headerlink" title="groupdel"></a>groupdel</h3><blockquote>
+<h3 id="groupdel"><a class="markdownIt-Anchor" href="#groupdel"></a> groupdel</h3>
+<blockquote>
 <p>groupdel 命令用于删除指定的用户组，本命令要修改的系统文件包括 <code>/ect/group</code> 和 <code>/ect/gshadow</code>。若该群组中仍包括某些用户，则必须先删除这些用户后，方能删除群组。</p>
 <p>参考：<a href="http://man.linuxde.net/groupdel" target="_blank" rel="noopener">http://man.linuxde.net/groupdel</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ groupadd damon  <span class="comment"># 创建damon用户组</span></span><br><span class="line">$ groupdel damon  <span class="comment"># 删除这个用户组</span></span><br></pre></td></tr></table></figure>
-<h3 id="groupmod"><a href="#groupmod" class="headerlink" title="groupmod"></a>groupmod</h3><blockquote>
+<h3 id="groupmod"><a class="markdownIt-Anchor" href="#groupmod"></a> groupmod</h3>
+<blockquote>
 <p>groupmod 命令更改群组识别码或名称。需要更改群组的识别码或名称时，可用 groupmod 指令来完成这项工作。</p>
 <p>参考：<a href="http://man.linuxde.net/groupmod" target="_blank" rel="noopener">http://man.linuxde.net/groupmod</a></p>
 </blockquote>
-<h3 id="useradd"><a href="#useradd" class="headerlink" title="useradd"></a>useradd</h3><blockquote>
+<h3 id="useradd"><a class="markdownIt-Anchor" href="#useradd"></a> useradd</h3>
+<blockquote>
 <p>useradd 命令用于 Linux 中创建的新的系统用户。useradd 可用来建立用户帐号。帐号建好之后，再用 passwd 设定帐号的密码．而可用 userdel 删除帐号。使用 useradd 指令所建立的帐号，实际上是保存在 <code>/etc/passwd</code> 文本文件中。</p>
 <p>参考：<a href="http://man.linuxde.net/useradd" target="_blank" rel="noopener">http://man.linuxde.net/useradd</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 新建用户加入组</span></span><br><span class="line">$ useradd –g sales jack –G company,employees    <span class="comment"># -g：加入主要组、-G：加入次要组</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 建立一个新用户账户，并设置 ID</span></span><br><span class="line">$ useradd caojh -u 544</span><br></pre></td></tr></table></figure>
-<h3 id="userdel"><a href="#userdel" class="headerlink" title="userdel"></a>userdel</h3><blockquote>
+<h3 id="userdel"><a class="markdownIt-Anchor" href="#userdel"></a> userdel</h3>
+<blockquote>
 <p>userdel 命令用于删除给定的用户，以及与用户相关的文件。若不加选项，则仅删除用户帐号，而不删除相关文件。</p>
 <p>参考：<a href="http://man.linuxde.net/userdel" target="_blank" rel="noopener">http://man.linuxde.net/userdel</a></p>
 </blockquote>
 <p>示例：</p>
 <p>userdel 命令很简单，比如我们现在有个用户 linuxde，其 home 目录位于<code>/var</code>目录中，现在我们来删除这个用户：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ userdel linuxde       <span class="comment"># 删除用户linuxde，但不删除其家目录及文件；</span></span><br><span class="line">$ userdel -r linuxde    <span class="comment"># 删除用户linuxde，其 home 目录及文件一并删除；</span></span><br></pre></td></tr></table></figure>
-<h3 id="usermod"><a href="#usermod" class="headerlink" title="usermod"></a>usermod</h3><blockquote>
+<h3 id="usermod"><a class="markdownIt-Anchor" href="#usermod"></a> usermod</h3>
+<blockquote>
 <p>usermod 命令用于修改用户的基本信息。usermod 命令不允许你改变正在线上的使用者帐号名称。当 usermod 命令用来改变 user id，必须确认这名 user 没在电脑上执行任何程序。你需手动更改使用者的 crontab 档。也需手动更改使用者的 at 工作档。采用 NIS server 须在 server 上更动相关的 NIS 设定。</p>
 <p>参考：<a href="http://man.linuxde.net/usermod" target="_blank" rel="noopener">http://man.linuxde.net/usermod</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将 newuser2 添加到组 staff 中</span></span><br><span class="line">$ usermod -G staff newuser2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 newuser 的用户名为 newuser1</span></span><br><span class="line">$ usermod -l newuser1 newuser</span><br><span class="line"></span><br><span class="line"><span class="comment"># 锁定账号 newuser1</span></span><br><span class="line">$ usermod -L newuser1</span><br><span class="line"></span><br><span class="line"><span class="comment"># 解除对 newuser1 的锁定</span></span><br><span class="line">$ usermod -U newuser1</span><br></pre></td></tr></table></figure>
-<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><blockquote>
+<h3 id="passwd"><a class="markdownIt-Anchor" href="#passwd"></a> passwd</h3>
+<blockquote>
 <p>passwd 命令用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。</p>
 <p>参考：<a href="http://man.linuxde.net/passwd" target="_blank" rel="noopener">http://man.linuxde.net/passwd</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如果是普通用户执行 passwd 只能修改自己的密码。</span></span><br><span class="line"><span class="comment"># 如果新建用户后，要为新用户创建密码，则用 passwd 用户名，注意要以 root 用户的权限来创建。</span></span><br><span class="line">$ passwd linuxde    <span class="comment"># 更改或创建linuxde用户的密码；</span></span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">New UNIX password:          <span class="comment"># 请输入新密码；</span></span><br><span class="line">Retype new UNIX password:   <span class="comment"># 再输入一次；</span></span><br><span class="line">passwd: all authentication tokens updated successfully. <span class="comment"># 成功；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 普通用户如果想更改自己的密码，直接运行 passwd 即可，比如当前操作的用户是 linuxde。</span></span><br><span class="line">$ passwd</span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde. <span class="comment"># 更改linuxde用户的密码；</span></span><br><span class="line">(current) UNIX password:   <span class="comment"># 请输入当前密码；</span></span><br><span class="line">New UNIX password:         <span class="comment"># 请输入新密码；</span></span><br><span class="line">Retype new UNIX password:  <span class="comment"># 确认新密码；</span></span><br><span class="line">passwd: all authentication tokens updated successfully. <span class="comment"># 更改成功；</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 比如我们让某个用户不能修改密码，可以用`-l`选项来锁定：</span></span><br><span class="line">$ passwd -l linuxde    <span class="comment"># 锁定用户linuxde不能更改密码；</span></span><br><span class="line">Locking password <span class="keyword">for</span> user linuxde.</span><br><span class="line">passwd: Success           <span class="comment"># 锁定成功；</span></span><br><span class="line"></span><br><span class="line">$ su linuxde   <span class="comment"># 通过su切换到linuxde用户；</span></span><br><span class="line">$ passwd      <span class="comment"># linuxde来更改密码；</span></span><br><span class="line">Changing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">Changing password <span class="keyword">for</span> linuxde</span><br><span class="line">(current) UNIX password:          <span class="comment"># 输入linuxde的当前密码；</span></span><br><span class="line">passwd: Authentication token manipulation error     <span class="comment"># 失败，不能更改密码；</span></span><br><span class="line"></span><br><span class="line">$ passwd -d linuxde  <span class="comment"># 清除linuxde用户密码；</span></span><br><span class="line">Removing password <span class="keyword">for</span> user linuxde.</span><br><span class="line">passwd: Success                         <span class="comment"># 清除成功；</span></span><br><span class="line"></span><br><span class="line">$ passwd -S linuxde    <span class="comment"># 查询linuxde用户密码状态；</span></span><br><span class="line">Empty password.                         <span class="comment"># 空密码，也就是没有密码；</span></span><br></pre></td></tr></table></figure>
-<h3 id="su"><a href="#su" class="headerlink" title="su"></a>su</h3><blockquote>
+<h3 id="su"><a class="markdownIt-Anchor" href="#su"></a> su</h3>
+<blockquote>
 <p>su 命令用于切换当前用户身份到其他用户身份，变更时须输入所要变更的用户帐号与密码。</p>
 <p>参考：<a href="http://man.linuxde.net/su" target="_blank" rel="noopener">http://man.linuxde.net/su</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 变更帐号为 root 并在执行 ls 指令后退出变回原使用者：</span></span><br><span class="line">$ su -c ls root</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变更帐号为 root 并传入`-f`选项给新执行的 shell：</span></span><br><span class="line">$ su root -f</span><br><span class="line"></span><br><span class="line"><span class="comment"># 变更帐号为 test 并改变工作目录至 test 的家目录：</span></span><br><span class="line">$ su -<span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-<h3 id="sudo"><a href="#sudo" class="headerlink" title="sudo"></a>sudo</h3><blockquote>
+<h3 id="sudo"><a class="markdownIt-Anchor" href="#sudo"></a> sudo</h3>
+<blockquote>
 <p>sudo 命令用来以其他身份来执行命令，预设的身份为 root。在 <code>/etc/sudoers</code> 中设置了可执行 sudo 指令的用户。若其未经授权的用户企图使用 sudo，则会发出警告的邮件给管理员。用户使用 sudo 时，必须先输入密码，之后有 5 分钟的有效期限，超过期限则必须重新输入密码。</p>
 <p>参考：<a href="http://man.linuxde.net/sudo" target="_blank" rel="noopener">http://man.linuxde.net/sudo</a></p>
 </blockquote>
 <p>示例：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 指定用户执行命令</span></span><br><span class="line">$ sudo -u userb ls -l</span><br><span class="line"><span class="comment"># 列出目前的权限</span></span><br><span class="line">$ sudo -l</span><br><span class="line"><span class="comment"># 显示sudo设置</span></span><br><span class="line">$ sudo -L</span><br></pre></td></tr></table></figure>
-<h4 id="给普通用户授权-sudo"><a href="#给普通用户授权-sudo" class="headerlink" title="给普通用户授权 sudo"></a>给普通用户授权 sudo</h4><p>假设要给普通用户 mary 配置 sudo 权限：</p>
+<h4 id="给普通用户授权-sudo"><a class="markdownIt-Anchor" href="#给普通用户授权-sudo"></a> 给普通用户授权 sudo</h4>
+<p>假设要给普通用户 mary 配置 sudo 权限：</p>
 <ol>
 <li><code>/etc/sudoers</code> 文件存放了 sudo 的相关用户，但是默认是没有写权限的，所以需要设为可写：<code>chmod u+w /etc/sudoers</code></li>
-<li>在该文件中添加 <code>mary    ALL=(ALL)       ALL</code> ，保存并退出，让 mary 具有 sudo 的所有权限</li>
+<li>在该文件中添加 <code>mary ALL=(ALL) ALL</code> ，保存并退出，让 mary 具有 sudo 的所有权限</li>
 <li>再将 <code>/etc/sudoers</code> 的权限恢复到默认状态：<code>chmod u-w /etc/sudoers</code></li>
 </ol>
-<h4 id="免密码授权-sudo"><a href="#免密码授权-sudo" class="headerlink" title="免密码授权 sudo"></a>免密码授权 sudo</h4><p>与给普通用户授权 sudo 类似，区别仅在于第 2 步：<code>mary    ALL=(ALL)       NOPASSWD: ALL</code>。</p>
+<h4 id="免密码授权-sudo"><a class="markdownIt-Anchor" href="#免密码授权-sudo"></a> 免密码授权 sudo</h4>
+<p>与给普通用户授权 sudo 类似，区别仅在于第 2 步：<code>mary ALL=(ALL) NOPASSWD: ALL</code>。</p>
 
       
     </div>
@@ -675,8 +690,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/02/27/os/linux/cli/02.Linux文件目录管理/" rel="prev" title="Linux 文件目录管理命令">
-                Linux 文件目录管理命令 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/02/27/os/linux/cli/03.Linux文件内容查看编辑/" rel="prev" title="Linux 文件内容查看编辑">
+                Linux 文件内容查看编辑 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -748,7 +763,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -813,7 +828,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1111,7 +1128,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-用户管理"><span class="nav-text">Linux 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux-用户管理要点"><span class="nav-text">Linux 用户管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text">命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#groupadd"><span class="nav-text">groupadd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupdel"><span class="nav-text">groupdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupmod"><span class="nav-text">groupmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useradd"><span class="nav-text">useradd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#userdel"><span class="nav-text">userdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usermod"><span class="nav-text">usermod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-text">passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#su"><span class="nav-text">su</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sudo"><span class="nav-text">sudo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#给普通用户授权-sudo"><span class="nav-text">给普通用户授权 sudo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#免密码授权-sudo"><span class="nav-text">免密码授权 sudo</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-用户管理"><span class="nav-text"> Linux 用户管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linux-用户管理要点"><span class="nav-text"> Linux 用户管理要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令常见用法"><span class="nav-text"> 命令常见用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#groupadd"><span class="nav-text"> groupadd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupdel"><span class="nav-text"> groupdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#groupmod"><span class="nav-text"> groupmod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#useradd"><span class="nav-text"> useradd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#userdel"><span class="nav-text"> userdel</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usermod"><span class="nav-text"> usermod</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#passwd"><span class="nav-text"> passwd</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#su"><span class="nav-text"> su</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sudo"><span class="nav-text"> sudo</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#给普通用户授权-sudo"><span class="nav-text"> 给普通用户授权 sudo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#免密码授权-sudo"><span class="nav-text"> 免密码授权 sudo</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1153,7 +1170,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

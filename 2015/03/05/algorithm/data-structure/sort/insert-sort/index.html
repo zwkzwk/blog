@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="插入排序要点 直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。   先拿一张5在手里，  再摸到一张4，比5小，插到5前面，  摸到一张6，嗯，比5大，插到5后面，  摸到一张8，比6大，插到6后面，  。。。  最后一看，我靠，凑到的居然">
+  <meta name="description" content="插入排序  要点  直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想 在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。    先拿一张5在手里，   再摸到一张4，比5小，插到5前面，   摸到一张6，嗯，比5大，插到5后面，   摸到一张8，比6大，插到6后面，   。。。   最后">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="插入排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/05/algorithm/data-structure/sort/insert-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="插入排序要点 直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。   先拿一张5在手里，  再摸到一张4，比5小，插到5前面，  摸到一张6，嗯，比5大，插到5后面，  摸到一张8，比6大，插到6后面，  。。。  最后一看，我靠，凑到的居然">
+<meta property="og:description" content="插入排序  要点  直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想 在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。    先拿一张5在手里，   再摸到一张4，比5小，插到5前面，   摸到一张6，嗯，比5大，插到5后面，   摸到一张8，比6大，插到6后面，   。。。   最后">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/insert-sort.png">
 <meta property="og:updated_time" content="2019-03-07T02:24:19.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="插入排序">
-<meta name="twitter:description" content="插入排序要点 直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。   先拿一张5在手里，  再摸到一张4，比5小，插到5前面，  摸到一张6，嗯，比5大，插到5后面，  摸到一张8，比6大，插到6后面，  。。。  最后一看，我靠，凑到的居然">
+<meta name="twitter:description" content="插入排序  要点  直接插入排序是一种最简单的插入排序。 插入排序：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。   算法思想 在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。    先拿一张5在手里，   再摸到一张4，比5小，插到5前面，   摸到一张6，嗯，比5大，插到5后面，   摸到一张8，比6大，插到6后面，   。。。   最后">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/insert-sort.png">
 
 
@@ -517,41 +517,54 @@
       
 
       
-        <h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><blockquote>
+        <h1 id="插入排序"><a class="markdownIt-Anchor" href="#插入排序"></a> 插入排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<blockquote>
 <p>直接插入排序是一种最简单的<strong>插入排序</strong>。</p>
-<p><strong>插入排序</strong>：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。 </p>
+<p><strong>插入排序</strong>：每一趟将一个待排序的记录，按照其关键字的大小插入到有序队列的合适位置里，知道全部插入完成。</p>
 </blockquote>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。</p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<p>在讲解直接插入排序之前，先让我们脑补一下我们打牌的过程。</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/insert-sort.png"></div><br></p>
 <ul>
-<li><p>先拿一张5在手里，</p>
+<li>
+<p>先拿一张5在手里，</p>
 </li>
-<li><p>再摸到一张4，比5小，插到5前面，</p>
+<li>
+<p>再摸到一张4，比5小，插到5前面，</p>
 </li>
-<li><p>摸到一张6，嗯，比5大，插到5后面，</p>
+<li>
+<p>摸到一张6，嗯，比5大，插到5后面，</p>
 </li>
-<li><p>摸到一张8，比6大，插到6后面，</p>
+<li>
+<p>摸到一张8，比6大，插到6后面，</p>
 </li>
-<li><p>。。。</p>
+<li>
+<p>。。。</p>
 </li>
-<li><p>最后一看，我靠，凑到的居然是同花顺，这下牛逼大了。                               </p>
+<li>
+<p>最后一看，我靠，凑到的居然是同花顺，这下牛逼大了。</p>
 </li>
 </ul>
 <p>以上的过程，其实就是典型的<strong>直接插入排序，每次将一个新数据插入到有序队列中的合适位置里</strong>。</p>
 <p>很简单吧，接下来，我们要将这个算法转化为编程语言。</p>
 <p>假设有一组无序序列 R0, R1, … , RN-1。</p>
 <ul>
-<li><p>我们先将这个序列中下标为 0 的元素视为元素个数为 1 的有序序列。</p>
+<li>
+<p>我们先将这个序列中下标为 0 的元素视为元素个数为 1 的有序序列。</p>
 </li>
-<li><p>然后，我们要依次把 R1, R2, … , RN-1 插入到这个有序序列中。所以，我们需要一个<strong>外部循环</strong>，从下标 1 扫描到 N-1 。</p>
+<li>
+<p>然后，我们要依次把 R1, R2, … , RN-1 插入到这个有序序列中。所以，我们需要一个<strong>外部循环</strong>，从下标 1 扫描到 N-1 。</p>
 </li>
-<li><p>接下来描述插入过程。假设这是要将 Ri 插入到前面有序的序列中。由前面所述，我们可知，插入Ri时，前 i-1 个数肯定已经是有序了。</p>
+<li>
+<p>接下来描述插入过程。假设这是要将 Ri 插入到前面有序的序列中。由前面所述，我们可知，插入Ri时，前 i-1 个数肯定已经是有序了。</p>
 </li>
 </ul>
-<p>所以我们需要将Ri 和R0 ~ Ri-1 进行比较，确定要插入的合适位置。这就需要一个<strong>内部循环</strong>，我们一般是从后往前比较，即从下标 i-1 开始向 0 进行扫描。 </p>
+<p>所以我们需要将Ri 和R0 ~ Ri-1 进行比较，确定要插入的合适位置。这就需要一个<strong>内部循环</strong>，我们一般是从后往前比较，即从下标 i-1 开始向 0 进行扫描。</p>
 <p><strong>核心代码</strong></p>
  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">insertSort</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 打印第一个元素</span></span><br><span class="line">    System.out.format(<span class="string">"i = %d:\t"</span>, <span class="number">0</span>);</span><br><span class="line">    printPart(list, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 第1个数肯定是有序的，从第2个数开始遍历，依次插入有序序列</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; list.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i]; <span class="comment">// 取出第i个数，和前i-1个数比较后，插入合适位置</span></span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 因为前i-1个数都是从小到大的有序序列，所以只要当前比较的数(list[j])比temp大，就把这个数后移一位</span></span><br><span class="line">        <span class="keyword">for</span> (j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span> &amp;&amp; temp &lt; list[j]; j--) &#123;</span><br><span class="line">            list[j + <span class="number">1</span>] = list[j];</span><br><span class="line">        &#125;</span><br><span class="line">        list[j + <span class="number">1</span>] = temp;</span><br><span class="line"> </span><br><span class="line">        System.out.format(<span class="string">"i = %d:\t"</span>, i);</span><br><span class="line">        printPart(list, <span class="number">0</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>直接插入排序的算法性能</strong></p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p><strong>直接插入排序的算法性能</strong></p>
 <table>
 <thead>
 <tr>
@@ -594,12 +607,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>当数据<strong>正序</strong>时，执行效率<strong>最好</strong>，每次插入都不用移动前面的元素，时间复杂度为 <strong>O(N)</strong>。 </p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>当数据<strong>正序</strong>时，执行效率<strong>最好</strong>，每次插入都不用移动前面的元素，时间复杂度为 <strong>O(N)</strong>。</p>
 <p>当数据<strong>反序</strong>时，执行效率<strong>最差</strong>，每次插入都要前面的元素后移，时间复杂度为 <strong>O(N2)</strong>。</p>
-<p>所以，<strong>数据越接近正序，直接插入排序的算法性能越好</strong>。 </p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>由直接插入排序算法可知，我们在排序过程中，需要一个临时变量存储要插入的值，所以空间复杂度为 <strong>1</strong> 。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>直接插入排序的过程中，不需要改变相等数值元素的位置，所以它是<strong>稳定的</strong>算法。 </p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<p>所以，<strong>数据越接近正序，直接插入排序的算法性能越好</strong>。</p>
+<h3 id="空间复杂度"><a class="markdownIt-Anchor" href="#空间复杂度"></a> 空间复杂度</h3>
+<p>由直接插入排序算法可知，我们在排序过程中，需要一个临时变量存储要插入的值，所以空间复杂度为 <strong>1</strong> 。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>直接插入排序的过程中，不需要改变相等数值元素的位置，所以它是<strong>稳定的</strong>算法。</p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -750,7 +767,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -815,7 +832,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1113,7 +1132,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序"><span class="nav-text">插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#插入排序"><span class="nav-text"> 插入排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text"> 空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1155,7 +1174,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

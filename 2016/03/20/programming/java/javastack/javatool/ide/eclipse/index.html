@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Eclipse 使用小结  代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 反编译插件  JD-Eclipse Validate 优化 常用快捷键   代码智能提示Java 智能提示Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Ed">
+  <meta name="description" content="Eclipse 使用小结   代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 [反编译插件  JD-Eclipse](#反编译插件- jd-eclipse) Validate 优化 常用快捷键    代码智能提示  Java 智能提示 Window -&amp;gt; Pre">
 <meta name="keywords" content="java,javatool,IDE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Eclipse 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2016/03/20/programming/java/javastack/javatool/ide/eclipse/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Eclipse 使用小结  代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 反编译插件  JD-Eclipse Validate 优化 常用快捷键   代码智能提示Java 智能提示Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Ed">
+<meta property="og:description" content="Eclipse 使用小结   代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 [反编译插件  JD-Eclipse](#反编译插件- jd-eclipse) Validate 优化 常用快捷键    代码智能提示  Java 智能提示 Window -&amp;gt; Pre">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-1a0d2206870c6542.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-5eb9ad6afbe05289.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
@@ -149,7 +149,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.630Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Eclipse 使用小结">
-<meta name="twitter:description" content="Eclipse 使用小结  代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 反编译插件  JD-Eclipse Validate 优化 常用快捷键   代码智能提示Java 智能提示Window -&amp;gt; Preferences -&amp;gt; Java -&amp;gt; Ed">
+<meta name="twitter:description" content="Eclipse 使用小结   代码智能提示 插件安装 基本设置 设置文本文件及 JSP 文件编码 设置 JDK 本地 JavaDOC API 路径及源码路径 设置 Servlet 源码或其它 Jar 包源码 [反编译插件  JD-Eclipse](#反编译插件- jd-eclipse) Validate 优化 常用快捷键    代码智能提示  Java 智能提示 Window -&amp;gt; Pre">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101171-1a0d2206870c6542.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -540,31 +540,37 @@
       
 
       
-        <h1 id="Eclipse-使用小结"><a href="#Eclipse-使用小结" class="headerlink" title="Eclipse 使用小结"></a>Eclipse 使用小结</h1><!-- TOC depthFrom:2 depthTo:2 -->
+        <h1 id="eclipse-使用小结"><a class="markdownIt-Anchor" href="#eclipse-使用小结"></a> Eclipse 使用小结</h1>
+<!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#代码智能提示">代码智能提示</a></li>
-<li><a href="#插件安装">插件安装</a></li>
-<li><a href="#基本设置">基本设置</a></li>
-<li><a href="#设置文本文件及-jsp-文件编码">设置文本文件及 JSP 文件编码</a></li>
-<li><a href="#设置-jdk-本地-javadoc-api-路径及源码路径">设置 JDK 本地 JavaDOC API 路径及源码路径</a></li>
-<li><a href="#设置-servlet-源码或其它-jar-包源码">设置 Servlet 源码或其它 Jar 包源码</a></li>
-<li><a href="#反编译插件- jd-eclipse">反编译插件  JD-Eclipse</a></li>
-<li><a href="#validate-优化">Validate 优化</a></li>
-<li><a href="#常用快捷键">常用快捷键</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81%E6%99%BA%E8%83%BD%E6%8F%90%E7%A4%BA">代码智能提示</a></li>
+<li><a href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85">插件安装</a></li>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E8%AE%BE%E7%BD%AE">基本设置</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6%E5%8F%8A-jsp-%E6%96%87%E4%BB%B6%E7%BC%96%E7%A0%81">设置文本文件及 JSP 文件编码</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE-jdk-%E6%9C%AC%E5%9C%B0-javadoc-api-%E8%B7%AF%E5%BE%84%E5%8F%8A%E6%BA%90%E7%A0%81%E8%B7%AF%E5%BE%84">设置 JDK 本地 JavaDOC API 路径及源码路径</a></li>
+<li><a href="#%E8%AE%BE%E7%BD%AE-servlet-%E6%BA%90%E7%A0%81%E6%88%96%E5%85%B6%E5%AE%83-jar-%E5%8C%85%E6%BA%90%E7%A0%81">设置 Servlet 源码或其它 Jar 包源码</a></li>
+<li>[反编译插件  JD-Eclipse](#反编译插件- jd-eclipse)</li>
+<li><a href="#validate-%E4%BC%98%E5%8C%96">Validate 优化</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE">常用快捷键</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="代码智能提示"><a href="#代码智能提示" class="headerlink" title="代码智能提示"></a>代码智能提示</h2><h3 id="Java-智能提示"><a href="#Java-智能提示" class="headerlink" title="Java 智能提示"></a>Java 智能提示</h3><p>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist -&gt; Auto Activation</p>
+<h2 id="代码智能提示"><a class="markdownIt-Anchor" href="#代码智能提示"></a> 代码智能提示</h2>
+<h3 id="java-智能提示"><a class="markdownIt-Anchor" href="#java-智能提示"></a> Java 智能提示</h3>
+<p>Window -&gt; Preferences -&gt; Java -&gt; Editor -&gt; Content Assist -&gt; Auto Activation</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-1a0d2206870c6542.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<p>delay 是自动弹出提示框的延时时间，我们可以修改成 100 毫秒；triggers 这里默认是”.”，只要加上”abcdefghijklmnopqrstuvwxyz”或者”abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ”，嘿嘿！这下就能做到和 VS 一样的输入每个字母都能提示啦：</p>
+<p>delay 是自动弹出提示框的延时时间，我们可以修改成 100 毫秒；triggers 这里默认是&quot;.&quot;，只要加上&quot;abcdefghijklmnopqrstuvwxyz&quot;或者&quot;abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;，嘿嘿！这下就能做到和 VS 一样的输入每个字母都能提示啦：</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-5eb9ad6afbe05289.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>其它类型的文件比如 HTML、JavaScript、JSP 如果也能提供提示那不是更爽了？有了第二点设置的基础，其实这些设置都是一样的。</p>
-<h3 id="JavaScript-智能提示"><a href="#JavaScript-智能提示" class="headerlink" title="JavaScript 智能提示"></a>JavaScript 智能提示</h3><p>Window -&gt; Preferences -&gt; JavaScript-&gt; Editor -&gt; Content Assist -&gt; Auto-Activation</p>
+<h3 id="javascript-智能提示"><a class="markdownIt-Anchor" href="#javascript-智能提示"></a> JavaScript 智能提示</h3>
+<p>Window -&gt; Preferences -&gt; JavaScript-&gt; Editor -&gt; Content Assist -&gt; Auto-Activation</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-31bca3ed1b0d0050.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h3 id="HTML-智能提示"><a href="#HTML-智能提示" class="headerlink" title="HTML 智能提示"></a>HTML 智能提示</h3><p>Window -&gt; Preferences -&gt; Web -&gt; HTML Files -&gt; Editor -&gt; Content Assist -&gt; Auto-Activation</p>
+<h3 id="html-智能提示"><a class="markdownIt-Anchor" href="#html-智能提示"></a> HTML 智能提示</h3>
+<p>Window -&gt; Preferences -&gt; Web -&gt; HTML Files -&gt; Editor -&gt; Content Assist -&gt; Auto-Activation</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-7c1ce7a35793f234.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>保存后，我们再来输入看看，感觉真是不错呀：</p>
 <p><br><div align="center"><img src="http://images2015.cnblogs.com/blog/318837/201605/318837-20160519135330638-166066199.jpg"></div><br></p>
-<h2 id="插件安装"><a href="#插件安装" class="headerlink" title="插件安装"></a>插件安装</h2><p>很多教科书上说到 Eclipse 的插件安装都是通过  Help -&gt; Install New SoftWare  这种自动检索的方式，操作起来固然是方便，不过当我们不需要某种插件时不太容易找到要删除哪些内容，而且以后 Eclipse 版本升级的时候，通过这种方式安装过的插件都得再重新装一次。另外一种通过 Link 链接方式，就可以解决这些问题。</p>
+<h2 id="插件安装"><a class="markdownIt-Anchor" href="#插件安装"></a> 插件安装</h2>
+<p>很多教科书上说到 Eclipse 的插件安装都是通过  Help -&gt; Install New SoftWare  这种自动检索的方式，操作起来固然是方便，不过当我们不需要某种插件时不太容易找到要删除哪些内容，而且以后 Eclipse 版本升级的时候，通过这种方式安装过的插件都得再重新装一次。另外一种通过 Link 链接方式，就可以解决这些问题。</p>
 <p>我们以 Eclipse 的中文汉化包插件为例，先到官方提供的汉化包地址下载一个：<a href="http://www.eclipse.org/babel/downloads.php" target="_blank" rel="noopener">http://www.eclipse.org/babel/downloads.php</a>，注意选好自己的 Eclipse 版本：</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-d8a662eaba3550e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>我的版本是 Kepler，然后进入下载页面，单击红框框中的链接，即可下载汉化包了：</p>
@@ -572,16 +578,24 @@
 <p>下载完解压缩后，会有个包含 features 和 plugin 目录的 eclipse 文件夹，把这个 eclipse 放在我们的 Eclipse 安装根目录，也就是和 eclipse.exe 同一级目录下。然后仍然在这一级目录下，新建一个 links 文件夹，并在该文件夹内，建一个 language.link 的文本文件。该文本文件的名字是可以任取的，后缀名是.link，而不是.txt 哟。好了，最后一步，编辑该文件，在里面写入刚才放入的语言包的地址，并用“\”表示路径，一定要有 path=  这个前缀。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-18f74bf3080d2c1b.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>保存文件后，重新打开 Eclipse，熟悉的中文界面终于看到了。虽然汉化不完全，不过也够用了不是么。如果仍然出现的是英文，说明汉化失败，重新检查下 language.link 文件中配置的信息是否和汉化包的目录一致。　　其它的插件安装方法也是如此，当不需要某个插件时，只需删除存放插件的目录和 links 目录下相应的 link 文件，或者改变下 link 文件里面的路径变成无效路径即可；对 Eclipse 做高版本升级时，也只需把老版存放插件的目录和 links 目录复制过去就行了。</p>
-<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><p>在 Preference 的搜索项中搜索 Text Editors。<br>可以参考我的设置：<br>Show line numbers<br>Show print margin<br>Insert spaces for tabs</p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-91aa025fbe7592f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br><br>设置代码的字体类型和大小：</p>
+<h2 id="基本设置"><a class="markdownIt-Anchor" href="#基本设置"></a> 基本设置</h2>
+<p>在 Preference 的搜索项中搜索 Text Editors。<br>
+可以参考我的设置：<br>
+Show line numbers<br>
+Show print margin<br>
+Insert spaces for tabs</p>
+<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-91aa025fbe7592f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br><br>
+设置代码的字体类型和大小：</p>
 <p>Window -&gt; Preferences -&gt; General -&gt; Appearance -&gt; Content Assist -&gt; Colors and Fornts，只需修改  Basic  里面的  Text Font  就可以了。</p>
 <p>推荐 Courier New。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-49b9126aa0dd58c0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b7d6d71b2c211321.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="设置文本文件及-JSP-文件编码"><a href="#设置文本文件及-JSP-文件编码" class="headerlink" title="设置文本文件及 JSP 文件编码"></a>设置文本文件及 JSP 文件编码</h2><p>Window -&gt; Preferences -&gt; General -&gt; Workspace -&gt; Text file encoding -&gt; Other：</p>
+<h2 id="设置文本文件及-jsp-文件编码"><a class="markdownIt-Anchor" href="#设置文本文件及-jsp-文件编码"></a> 设置文本文件及 JSP 文件编码</h2>
+<p>Window -&gt; Preferences -&gt; General -&gt; Workspace -&gt; Text file encoding -&gt; Other：</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b7aa010673565c88.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b83fa3476fddde46.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="设置-JDK-本地-JavaDOC-API-路径及源码路径"><a href="#设置-JDK-本地-JavaDOC-API-路径及源码路径" class="headerlink" title="设置 JDK 本地 JavaDOC API 路径及源码路径"></a>设置 JDK 本地 JavaDOC API 路径及源码路径</h2><p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-45b5dee3d3ce917a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<h2 id="设置-jdk-本地-javadoc-api-路径及源码路径"><a class="markdownIt-Anchor" href="#设置-jdk-本地-javadoc-api-路径及源码路径"></a> 设置 JDK 本地 JavaDOC API 路径及源码路径</h2>
+<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-45b5dee3d3ce917a.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f960daf4839662e3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>还都生成的是无意义的变量名，这样可能会对含有相同类型的变量参数的调用顺序造成干扰；</p>
 <p>这种问题，我们把 JDK 或者相应 Jar 包的源码导入进去就能避免了：</p>
@@ -593,10 +607,11 @@
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e82d03ce88f64312.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>设置完，我们再来看看，幸福来的好突然有木有！</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-400b3952aa60cb8e.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="设置-Servlet-源码或其它-Jar-包源码"><a href="#设置-Servlet-源码或其它-Jar-包源码" class="headerlink" title="设置 Servlet 源码或其它 Jar 包源码"></a>设置 Servlet 源码或其它 Jar 包源码</h2><p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ec1980f58297e42c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<h2 id="设置-servlet-源码或其它-jar-包源码"><a class="markdownIt-Anchor" href="#设置-servlet-源码或其它-jar-包源码"></a> 设置 Servlet 源码或其它 Jar 包源码</h2>
+<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ec1980f58297e42c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>上一步已经设置过了 JDK 的源码或 JavaDoc 路径，为啥现在又出来了呢？其实这个不难理解，因为我们使用到的类的源码并不在 JDK 的源码包中。</p>
 <p>仔细看，我们会发现这些 Jar 包其实都在 Tomcat 根目录下的 lib 文件夹中，但是翻遍了 Tomcat 目录也没有相应的 jar 或 zip 文件呀。既然本地没有，那就去官网上找找：</p>
-<p><a href="http://tomcat.apache.org/download-70.cgi这里有Tomcat的安装包和源码包；" target="_blank" rel="noopener">http://tomcat.apache.org/download-70.cgi这里有Tomcat的安装包和源码包；</a></p>
+<p><a href="http://tomcat.apache.org/download-70.cgi%E8%BF%99%E9%87%8C%E6%9C%89Tomcat%E7%9A%84%E5%AE%89%E8%A3%85%E5%8C%85%E5%92%8C%E6%BA%90%E7%A0%81%E5%8C%85%EF%BC%9B" target="_blank" rel="noopener">http://tomcat.apache.org/download-70.cgi这里有Tomcat的安装包和源码包；</a></p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2962b9cd48422373.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>可以自定义一个专门用于存放 JavaSource 和 JavaDoc 的文件夹，把下载文件放到该目录下，</p>
 <p>然后再切换到 Eclipse 下，选中没有代码提示的类或者函数， 按下 F3，点击  Change Attached Source：</p>
@@ -606,12 +621,14 @@
 <p>然后再回过头看看我们的代码提示，友好多了：</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b27652e5ff1d6eab.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>其它 Jar 包源码的设置方式也一样。</p>
-<h2 id="反编译插件-JD-Eclipse"><a href="#反编译插件-JD-Eclipse" class="headerlink" title="反编译插件  JD-Eclipse"></a>反编译插件  JD-Eclipse</h2><p>无论是开发还是调试，反编译必不可少，每次都用 jd-gui 打开去看，多麻烦，干脆配置下 JD 插件，自动关联.class：</p>
+<h2 id="反编译插件-jd-eclipse"><a class="markdownIt-Anchor" href="#反编译插件-jd-eclipse"></a> 反编译插件  JD-Eclipse</h2>
+<p>无论是开发还是调试，反编译必不可少，每次都用 jd-gui 打开去看，多麻烦，干脆配置下 JD 插件，自动关联.class：</p>
 <p>先从  <a href="http://jd.benow.ca/" target="_blank" rel="noopener">http://jd.benow.ca/</a>  上下载离线安装包  jdeclipse_update_site.zip，解压缩后把  features、plugins  这 2 个文件夹复制到 新建文件夹  jdeclipse，然后把  jdeclipse  文件夹整个复制到 Eclipse 根目录的 dropins 文件夹下，重启 Eclipse 即可。这种方式是不是比建 link 文件更方便了？</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-403597b1b46607ef.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>打开 Eclipse，Window -&gt; Preferences -&gt; General - &gt; Editors ，把  .class  文件设置关联成  jd 插件的 editor</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-d95625fcf362526c.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<h2 id="Validate-优化"><a href="#Validate-优化" class="headerlink" title="Validate 优化"></a>Validate 优化</h2><p>我们在 eclipse 里经常看到这个进程，validating…  逐个的检查每一个文件。那么如何关闭一些 validate 操作呢？</p>
+<h2 id="validate-优化"><a class="markdownIt-Anchor" href="#validate-优化"></a> Validate 优化</h2>
+<p>我们在 eclipse 里经常看到这个进程，validating…  逐个的检查每一个文件。那么如何关闭一些 validate 操作呢？</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-8323d6f595f96fdd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>打开 eclipse，点击【window】菜单，选择【preferences】选项。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-88bd81ece1b3f29f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
@@ -622,7 +639,8 @@
 <p>最后点击【OK】按钮，保存设置。</p>
 <p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-7c6803eed8cf618a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <p>以后如果需要对文件进行校验检查的时候，在文件上点击右键，点击【Validate】进行检查。</p>
-<h2 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h2><table>
+<h2 id="常用快捷键"><a class="markdownIt-Anchor" href="#常用快捷键"></a> 常用快捷键</h2>
+<table>
 <thead>
 <tr>
 <th>快捷键</th>
@@ -1031,7 +1049,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1096,7 +1114,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1394,7 +1414,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Eclipse-使用小结"><span class="nav-text">Eclipse 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码智能提示"><span class="nav-text">代码智能提示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Java-智能提示"><span class="nav-text">Java 智能提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-智能提示"><span class="nav-text">JavaScript 智能提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-智能提示"><span class="nav-text">HTML 智能提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件安装"><span class="nav-text">插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设置"><span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置文本文件及-JSP-文件编码"><span class="nav-text">设置文本文件及 JSP 文件编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-JDK-本地-JavaDOC-API-路径及源码路径"><span class="nav-text">设置 JDK 本地 JavaDOC API 路径及源码路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-Servlet-源码或其它-Jar-包源码"><span class="nav-text">设置 Servlet 源码或其它 Jar 包源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反编译插件-JD-Eclipse"><span class="nav-text">反编译插件  JD-Eclipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Validate-优化"><span class="nav-text">Validate 优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-text">常用快捷键</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#eclipse-使用小结"><span class="nav-text"> Eclipse 使用小结</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码智能提示"><span class="nav-text"> 代码智能提示</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#java-智能提示"><span class="nav-text"> Java 智能提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-智能提示"><span class="nav-text"> JavaScript 智能提示</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#html-智能提示"><span class="nav-text"> HTML 智能提示</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件安装"><span class="nav-text"> 插件安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设置"><span class="nav-text"> 基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置文本文件及-jsp-文件编码"><span class="nav-text"> 设置文本文件及 JSP 文件编码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-jdk-本地-javadoc-api-路径及源码路径"><span class="nav-text"> 设置 JDK 本地 JavaDOC API 路径及源码路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-servlet-源码或其它-jar-包源码"><span class="nav-text"> 设置 Servlet 源码或其它 Jar 包源码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反编译插件-jd-eclipse"><span class="nav-text"> 反编译插件  JD-Eclipse</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#validate-优化"><span class="nav-text"> Validate 优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用快捷键"><span class="nav-text"> 常用快捷键</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1436,7 +1456,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

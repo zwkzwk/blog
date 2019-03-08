@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="归并排序要点 归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。  算法思想将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，得到 n/2 个长度">
+  <meta name="description" content="归并排序  要点  归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用**分治法（Divide and Conquer）**的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。   算法思想 将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="归并排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/09/algorithm/data-structure/sort/merge-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="归并排序要点 归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。  算法思想将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，得到 n/2 个长度">
+<meta property="og:description" content="归并排序  要点  归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用**分治法（Divide and Conquer）**的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。   算法思想 将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/merge-sort.png">
 <meta property="og:updated_time" content="2019-03-07T02:24:55.316Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="归并排序">
-<meta name="twitter:description" content="归并排序要点 归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用分治法（Divide and Conquer）的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。  算法思想将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，得到 n/2 个长度">
+<meta name="twitter:description" content="归并排序  要点  归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用**分治法（Divide and Conquer）**的一个非常典型的应用。 将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为二路归并。   算法思想 将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/merge-sort.png">
 
 
@@ -517,11 +517,14 @@
       
 
       
-        <h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><blockquote>
-<p>归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用<strong>分治法（Divide and Conquer）</strong>的一个非常典型的应用。</p>
+        <h1 id="归并排序"><a class="markdownIt-Anchor" href="#归并排序"></a> 归并排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<blockquote>
+<p>归并排序是建立在归并操作上的一种有效的排序算法，该算法是采用**分治法（Divide and Conquer）**的一个非常典型的应用。</p>
 <p>将已有序的子序列合并，得到完全有序的序列；即先使每个子序列有序，再使子序列段间有序。若将两个有序表合并成一个有序表，称为<strong>二路归并</strong>。</p>
 </blockquote>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，得到 n/2 个长度为2的有序表；将这些有序序列再次归并，得到 n/4 个长度为 4 的有序序列；如此反复进行下去，最后得到一个长度为 n 的有序序列。</p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<p>将待排序序列 R[0…n-1] 看成是 n 个长度为 1 的有序序列，将相邻的有序表成对归并，得到 n/2 个长度为2的有序表；将这些有序序列再次归并，得到 n/4 个长度为 4 的有序序列；如此反复进行下去，最后得到一个长度为 n 的有序序列。</p>
 <p>综上可知：</p>
 <p>归并排序其实要做两件事：</p>
 <ul>
@@ -537,14 +540,15 @@
 <p>经过这样的过程，R2已经是一个有序的序列，再将其复制回R中，一次合并排序就完成了。</p>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Merge</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> low, <span class="keyword">int</span> mid, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = low; <span class="comment">// i是第一段序列的下标</span></span><br><span class="line">    <span class="keyword">int</span> j = mid + <span class="number">1</span>; <span class="comment">// j是第二段序列的下标</span></span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">0</span>; <span class="comment">// k是临时存放合并序列的下标</span></span><br><span class="line">    <span class="keyword">int</span>[] array2 = <span class="keyword">new</span> <span class="keyword">int</span>[high - low + <span class="number">1</span>]; <span class="comment">// array2是临时合并序列</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 扫描第一段和第二段序列，直到有一个扫描结束</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= high) &#123;</span><br><span class="line">        <span class="comment">// 判断第一段和第二段取出的数哪个更小，将其存入合并序列，并继续向下扫描</span></span><br><span class="line">        <span class="keyword">if</span> (array[i] &lt;= array[j]) &#123;</span><br><span class="line">            array2[k] = array[i];</span><br><span class="line">            i++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            array2[k] = array[j];</span><br><span class="line">            j++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 若第一段序列还没扫描完，将其全部复制到合并序列</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt;= mid) &#123;</span><br><span class="line">        array2[k] = array[i];</span><br><span class="line">        i++;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 若第二段序列还没扫描完，将其全部复制到合并序列</span></span><br><span class="line">    <span class="keyword">while</span> (j &lt;= high) &#123;</span><br><span class="line">        array2[k] = array[j];</span><br><span class="line">        j++;</span><br><span class="line">        k++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 将合并序列复制到原始序列中</span></span><br><span class="line">    <span class="keyword">for</span> (k = <span class="number">0</span>, i = low; i &lt;= high; i++, k++) &#123;</span><br><span class="line">        array[i] = array2[k];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>掌握了合并的方法，接下来，让我们来了解<strong>如何分解</strong>。 </p>
+<p>掌握了合并的方法，接下来，让我们来了解<strong>如何分解</strong>。</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/merge-sort.png"></div><br></p>
 <p>在某趟归并中，设各子表的长度为 <strong>gap</strong>，则归并前 R[0…n-1] 中共有 <strong>n/gap</strong> 个有序的子表：<code>R[0...gap-1]</code>, <code>R[gap...2*gap-1]</code>, … , <code>R[(n/gap)*gap ... n-1]</code>。</p>
 <p>调用 Merge <strong>将相邻的子表归并</strong>时，必须对表的特殊情况进行特殊处理。</p>
-<p>若子表个数为奇数，则最后一个子表无须和其他子表归并（即本趟处理轮空）：若子表个数为偶数，则要注意到最后一对子表中后一个子表区间的上限为n-1。 </p>
+<p>若子表个数为奇数，则最后一个子表无须和其他子表归并（即本趟处理轮空）：若子表个数为偶数，则要注意到最后一对子表中后一个子表区间的上限为n-1。</p>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">MergePass</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> gap, <span class="keyword">int</span> length)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 归并gap长度的两个相邻子表</span></span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i + <span class="number">2</span> * gap - <span class="number">1</span> &lt; length; i = i + <span class="number">2</span> * gap) &#123;</span><br><span class="line">        Merge(array, i, i + gap - <span class="number">1</span>, i + <span class="number">2</span> * gap - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 余下两个子表，后者长度小于gap</span></span><br><span class="line">    <span class="keyword">if</span> (i + gap - <span class="number">1</span> &lt; length) &#123;</span><br><span class="line">        Merge(array, i, i + gap - <span class="number">1</span>, length - <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] sort(<span class="keyword">int</span>[] list) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> gap = <span class="number">1</span>; gap &lt; list.length; gap = <span class="number">2</span> * gap) &#123;</span><br><span class="line">        MergePass(list, gap, list.length);</span><br><span class="line">        System.out.print(<span class="string">"gap = "</span> + gap + <span class="string">":\t"</span>);</span><br><span class="line">        <span class="keyword">this</span>.printAll(list);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>归并排序算法的性能</strong></p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p><strong>归并排序算法的性能</strong></p>
 <table>
 <thead>
 <tr>
@@ -587,13 +591,18 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>归并排序的形式就是一棵二叉树，它需要遍历的次数就是二叉树的深度，而根据完全二叉树的可以得出它的时间复杂度是 <strong>O(n*log2n)</strong>。</p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>由前面的算法说明可知，算法处理过程中，需要一个大小为 <strong>n</strong> 的临时存储空间用以保存合并序列。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>在归并排序中，相等的元素的顺序不会改变，所以它是<strong>稳定的</strong>算法。</p>
-<h3 id="归并排序和堆排序、快速排序的比较"><a href="#归并排序和堆排序、快速排序的比较" class="headerlink" title="归并排序和堆排序、快速排序的比较"></a>归并排序和堆排序、快速排序的比较</h3><p>若从空间复杂度来考虑：首选堆排序，其次是快速排序，最后是归并排序。</p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>归并排序的形式就是一棵二叉树，它需要遍历的次数就是二叉树的深度，而根据完全二叉树的可以得出它的时间复杂度是 <strong>O(n*log2n)</strong>。</p>
+<h3 id="空间复杂度"><a class="markdownIt-Anchor" href="#空间复杂度"></a> 空间复杂度</h3>
+<p>由前面的算法说明可知，算法处理过程中，需要一个大小为 <strong>n</strong> 的临时存储空间用以保存合并序列。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>在归并排序中，相等的元素的顺序不会改变，所以它是<strong>稳定的</strong>算法。</p>
+<h3 id="归并排序和堆排序-快速排序的比较"><a class="markdownIt-Anchor" href="#归并排序和堆排序-快速排序的比较"></a> 归并排序和堆排序、快速排序的比较</h3>
+<p>若从空间复杂度来考虑：首选堆排序，其次是快速排序，最后是归并排序。</p>
 <p>若从稳定性来考虑，应选取归并排序，因为堆排序和快速排序都是不稳定的。</p>
-<p>若从平均情况下的排序速度考虑，应该选择快速排序。 </p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<p>若从平均情况下的排序速度考虑，应该选择快速排序。</p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -744,7 +753,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -809,7 +818,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1107,7 +1118,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-text">归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序和堆排序、快速排序的比较"><span class="nav-text">归并排序和堆排序、快速排序的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#归并排序"><span class="nav-text"> 归并排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text"> 空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归并排序和堆排序-快速排序的比较"><span class="nav-text"> 归并排序和堆排序、快速排序的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1149,7 +1160,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

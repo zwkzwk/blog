@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="Shiro Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述 Shiro 功能 Shiro 架构   认证 授权 资料   概述Shiro 功能     Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是">
+  <meta name="description" content="Shiro  Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述  Shiro 功能 Shiro 架构   认证 授权 资料    概述  Shiro 功能       Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如">
 <meta name="keywords" content="java,security,shiro">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shiro">
 <meta property="og:url" content="https://dunwu.github.io/2018/06/13/programming/java/javaweb/standalone/security/shiro/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Shiro Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述 Shiro 功能 Shiro 架构   认证 授权 资料   概述Shiro 功能     Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是">
+<meta property="og:description" content="Shiro  Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述  Shiro 功能 Shiro 架构   认证 授权 资料    概述  Shiro 功能       Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/shiro-features.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/ShiroBasicArchitecture.png">
@@ -121,7 +121,7 @@
 <meta property="og:updated_time" content="2019-03-06T08:43:46.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shiro">
-<meta name="twitter:description" content="Shiro Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述 Shiro 功能 Shiro 架构   认证 授权 资料   概述Shiro 功能     Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是">
+<meta name="twitter:description" content="Shiro  Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。    概述  Shiro 功能 Shiro 架构   认证 授权 资料    概述  Shiro 功能       Authentication - 身份认证/登录，验证用户是不是拥有相应的身份； Authorization - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/shiro-features.png">
 
 
@@ -512,23 +512,28 @@
       
 
       
-        <h1 id="Shiro"><a href="#Shiro" class="headerlink" title="Shiro"></a>Shiro</h1><blockquote>
+        <h1 id="shiro"><a class="markdownIt-Anchor" href="#shiro"></a> Shiro</h1>
+<blockquote>
 <p>Shiro 是一个安全框架，具有认证、授权、加密、会话管理功能。</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
-<li><a href="#概述">概述</a><ul>
-<li><a href="#shiro-功能">Shiro 功能</a></li>
-<li><a href="#shiro-架构">Shiro 架构</a></li>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
+<ul>
+<li><a href="#shiro-%E5%8A%9F%E8%83%BD">Shiro 功能</a></li>
+<li><a href="#shiro-%E6%9E%B6%E6%9E%84">Shiro 架构</a></li>
 </ul>
 </li>
-<li><a href="#认证">认证</a></li>
-<li><a href="#授权">授权</a></li>
-<li><a href="#资料">资料</a></li>
+<li><a href="#%E8%AE%A4%E8%AF%81">认证</a></li>
+<li><a href="#%E6%8E%88%E6%9D%83">授权</a></li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="Shiro-功能"><a href="#Shiro-功能" class="headerlink" title="Shiro 功能"></a>Shiro 功能</h3><p align="center"><br>  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/shiro-features.png"><br></p>
-
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<h3 id="shiro-功能"><a class="markdownIt-Anchor" href="#shiro-功能"></a> Shiro 功能</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/shiro-features.png">
+</p>
 <ul>
 <li><strong>Authentication</strong> - 身份认证/登录，验证用户是不是拥有相应的身份；</li>
 <li><strong>Authorization</strong> - 授权，即权限验证，验证某个已认证的用户是否拥有某个权限；即判断用户是否能做事情，常见的如：验证某个用户是否拥有某个角色。或者细粒度的验证某个用户对某个资源是否具有某个权限；</li>
@@ -542,15 +547,18 @@
 <li><strong>Remember Me</strong> - 记住我，这个是非常常见的功能，即一次登录后，下次再来的话不用登录了。</li>
 </ul>
 <p>记住一点，Shiro 不会去维护用户、维护权限；这些需要我们自己去提供；然后通过相应的接口注入给 Shiro 即可。</p>
-<h3 id="Shiro-架构"><a href="#Shiro-架构" class="headerlink" title="Shiro 架构"></a>Shiro 架构</h3><p align="center"><br>  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/ShiroBasicArchitecture.png"><br></p>
-
+<h3 id="shiro-架构"><a class="markdownIt-Anchor" href="#shiro-架构"></a> Shiro 架构</h3>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/ShiroBasicArchitecture.png">
+</p>
 <ul>
 <li><strong>Subject</strong> - 主体，代表了当前“用户”，这个用户不一定是一个具体的人，与当前应用交互的任何东西都是 Subject，如网络爬虫，机器人等；即一个抽象概念；所有 Subject 都绑定到 SecurityManager，与 Subject 的所有交互都会委托给 SecurityManager；可以把 Subject 认为是一个门面；SecurityManager 才是实际的执行者；</li>
 <li><strong>SecurityManager</strong> - 安全管理器；即所有与安全有关的操作都会与 SecurityManager 交互；且它管理着所有 Subject；可以看出它是 Shiro 的核心，它负责与后边介绍的其他组件进行交互，如果学习过 SpringMVC，你可以把它看成 DispatcherServlet 前端控制器；</li>
 <li><strong>Realm</strong> - 域，Shiro 从从 Realm 获取安全数据（如用户、角色、权限），就是说 SecurityManager 要验证用户身份，那么它需要从 Realm 获取相应的用户进行比较以确定用户身份是否合法；也需要从 Realm 得到用户相应的角色/权限进行验证用户是否能进行操作；可以把 Realm 看成 DataSource，即安全数据源。</li>
 </ul>
-<p align="center"><br>  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/ShiroArchitecture.png"><br></p>
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/standalone/security/shiro/ShiroArchitecture.png">
+</p>
 <ul>
 <li><strong>Subject</strong> - 主体，可以看到主体可以是任何可以与应用交互的“用户”；</li>
 <li><strong>SecurityManager</strong> - 相当于 SpringMVC 中的 DispatcherServlet 或者 Struts2 中的 FilterDispatcher；是 Shiro 的心脏；所有具体的交互都通过 SecurityManager 进行控制；它管理着所有 Subject、且负责进行认证和授权、及会话、缓存的管理。</li>
@@ -562,7 +570,10 @@
 <li><strong>CacheManager</strong> - 缓存控制器，来管理如用户、角色、权限等的缓存的；因为这些数据基本上很少去改变，放到缓存中后可以提高访问的性能</li>
 <li><strong>Cryptography</strong> - 密码模块，Shiro 提高了一些常见的加密组件用于如密码加密/解密的。</li>
 </ul>
-<h2 id="认证"><a href="#认证" class="headerlink" title="认证"></a>认证</h2><h2 id="授权"><a href="#授权" class="headerlink" title="授权"></a>授权</h2><h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="认证"><a class="markdownIt-Anchor" href="#认证"></a> 认证</h2>
+<h2 id="授权"><a class="markdownIt-Anchor" href="#授权"></a> 授权</h2>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="http://shiro.apache.org/reference.html" target="_blank" rel="noopener">shiro 官方文档</a></li>
 <li><a href="http://jinnianshilongnian.iteye.com/category/305053" target="_blank" rel="noopener">跟我学 Shiro</a></li>
 </ul>
@@ -644,8 +655,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/19/database/nosql/redis/Redis哨兵/" rel="prev" title="Redis 哨兵">
-                Redis 哨兵 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/06/19/database/nosql/redis/Redis复制/" rel="prev" title="Redis 复制">
+                Redis 复制 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -717,7 +728,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -782,7 +793,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1080,7 +1093,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Shiro"><span class="nav-text">Shiro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shiro-功能"><span class="nav-text">Shiro 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shiro-架构"><span class="nav-text">Shiro 架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-text">认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权"><span class="nav-text">授权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#shiro"><span class="nav-text"> Shiro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shiro-功能"><span class="nav-text"> Shiro 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shiro-架构"><span class="nav-text"> Shiro 架构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#认证"><span class="nav-text"> 认证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#授权"><span class="nav-text"> 授权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1122,7 +1135,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

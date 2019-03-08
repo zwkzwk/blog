@@ -491,43 +491,55 @@
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#概述">概述</a></li>
-<li><a href="#gitbook-安装">GitBook 安装</a></li>
-<li><a href="#gitbook-命令">GitBook 命令</a></li>
-<li><a href="#gitbook-目录结构">Gitbook 目录结构</a></li>
-<li><a href="#gitbook-配置">Gitbook 配置</a></li>
-<li><a href="#生成电子书">生成电子书</a></li>
-<li><a href="#gitbook-部署">Gitbook 部署</a></li>
-<li><a href="#资源">资源</a></li>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a></li>
+<li><a href="#gitbook-%E5%AE%89%E8%A3%85">GitBook 安装</a></li>
+<li><a href="#gitbook-%E5%91%BD%E4%BB%A4">GitBook 命令</a></li>
+<li><a href="#gitbook-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84">Gitbook 目录结构</a></li>
+<li><a href="#gitbook-%E9%85%8D%E7%BD%AE">Gitbook 配置</a></li>
+<li><a href="#%E7%94%9F%E6%88%90%E7%94%B5%E5%AD%90%E4%B9%A6">生成电子书</a></li>
+<li><a href="#gitbook-%E9%83%A8%E7%BD%B2">Gitbook 部署</a></li>
+<li><a href="#%E8%B5%84%E6%BA%90">资源</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>GitBook 是使用 GitHub / Git 和 Markdown（或 AsciiDoc）构建漂亮书籍的命令行工具（和 Node.js 库）。</p>
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p>GitBook 是使用 GitHub / Git 和 Markdown（或 AsciiDoc）构建漂亮书籍的命令行工具（和 Node.js 库）。</p>
 <p>GitBook 可以将您的内容作为网站（可定制和可扩展）或电子书（PDF，ePub 或 Mobi）输出。</p>
 <p><a href="https://www.gitbook.com/" target="_blank" rel="noopener">GitBook.com</a> 是使用 GitBook 格式创建和托管图书的在线平台。它提供托管，协作功能和易于使用的编辑器。</p>
 <p><br><div align="center"><img src="https://camo.githubusercontent.com/c1b6c55fca8e171120ce1fd73afcee699cc2a98f/68747470733a2f2f7261772e6769746875622e636f6d2f476974626f6f6b494f2f676974626f6f6b2f6d61737465722f707265766965772e706e67"></div><br></p>
-<h2 id="GitBook-安装"><a href="#GitBook-安装" class="headerlink" title="GitBook 安装"></a>GitBook 安装</h2><h3 id="本地安装"><a href="#本地安装" class="headerlink" title="本地安装"></a>本地安装</h3><h4 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h4><p>安装 GitBook 是很简单的。您的系统只需要满足这两个要求：</p>
+<h2 id="gitbook-安装"><a class="markdownIt-Anchor" href="#gitbook-安装"></a> GitBook 安装</h2>
+<h3 id="本地安装"><a class="markdownIt-Anchor" href="#本地安装"></a> 本地安装</h3>
+<h4 id="环境要求"><a class="markdownIt-Anchor" href="#环境要求"></a> 环境要求</h4>
+<p>安装 GitBook 是很简单的。您的系统只需要满足这两个要求：</p>
 <ul>
 <li>NodeJS（推荐使用 v4.0.0 及以上版本）</li>
 <li>Windows，Linux，Unix 或 Mac OS X</li>
 </ul>
-<h4 id="通过-NPM-安装"><a href="#通过-NPM-安装" class="headerlink" title="通过 NPM 安装"></a>通过 NPM 安装</h4><p>安装 GitBook 的最好办法是通过 <strong>NPM</strong>。在终端提示符下，只需运行以下命令即可安装 GitBook：</p>
+<h4 id="通过-npm-安装"><a class="markdownIt-Anchor" href="#通过-npm-安装"></a> 通过 NPM 安装</h4>
+<p>安装 GitBook 的最好办法是通过 <strong>NPM</strong>。在终端提示符下，只需运行以下命令即可安装 GitBook：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ npm install gitbook-cli -g</span><br></pre></td></tr></table></figure>
 <p><code>gitbook-cli</code> 是 GitBook 的一个命令行工具。它将自动安装所需版本的 GitBook 来构建一本书。</p>
 <p>执行下面的命令，查看 GitBook 版本，以验证安装成功。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook -V</span><br></pre></td></tr></table></figure>
-<h4 id="安装历史版本"><a href="#安装历史版本" class="headerlink" title="安装历史版本"></a>安装历史版本</h4><p><code>gitbook-cli</code>  可以轻松下载并安装其他版本的 GitBook 来测试您的书籍：</p>
+<h4 id="安装历史版本"><a class="markdownIt-Anchor" href="#安装历史版本"></a> 安装历史版本</h4>
+<p><code>gitbook-cli</code>  可以轻松下载并安装其他版本的 GitBook 来测试您的书籍：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook fetch beta</span><br></pre></td></tr></table></figure>
 <p>使用 <code>gitbook ls-remote</code>  会列举可以下载的版本。</p>
-<h3 id="创建一本书"><a href="#创建一本书" class="headerlink" title="创建一本书"></a>创建一本书</h3><h4 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h4><p>GitBook 可以设置一个样板书：</p>
+<h3 id="创建一本书"><a class="markdownIt-Anchor" href="#创建一本书"></a> 创建一本书</h3>
+<h4 id="初始化"><a class="markdownIt-Anchor" href="#初始化"></a> 初始化</h4>
+<p>GitBook 可以设置一个样板书：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook init</span><br></pre></td></tr></table></figure>
 <p>如果您希望将书籍创建到一个新目录中，可以通过运行 <code>gitbook init ./directory</code> 这样做。</p>
-<h4 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h4><p>使用下面的命令，会在项目的目录下生成一个 <code>_book</code> 目录，里面的内容为静态站点的资源文件：</p>
+<h4 id="构建"><a class="markdownIt-Anchor" href="#构建"></a> 构建</h4>
+<p>使用下面的命令，会在项目的目录下生成一个 <code>_book</code> 目录，里面的内容为静态站点的资源文件：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook build</span><br></pre></td></tr></table></figure>
-<h5 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h5><p>您可以使用选项  <code>--log=debug</code>  和  <code>--debug</code>  来获取更好的错误消息（使用堆栈跟踪）。例如：</p>
+<h5 id="debugging"><a class="markdownIt-Anchor" href="#debugging"></a> Debugging</h5>
+<p>您可以使用选项  <code>--log=debug</code>  和  <code>--debug</code>  来获取更好的错误消息（使用堆栈跟踪）。例如：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook build ./ --<span class="built_in">log</span>=debug --debug</span><br></pre></td></tr></table></figure>
-<h4 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h4><p>使用下列命令会运行一个 web 服务, 通过 <code>http://localhost:4000/</code> 可以预览书籍</p>
+<h4 id="启动服务"><a class="markdownIt-Anchor" href="#启动服务"></a> 启动服务</h4>
+<p>使用下列命令会运行一个 web 服务, 通过 <code>http://localhost:4000/</code> 可以预览书籍</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ gitbook serve</span><br></pre></td></tr></table></figure>
-<h2 id="GitBook-命令"><a href="#GitBook-命令" class="headerlink" title="GitBook 命令"></a>GitBook 命令</h2><p>这里主要介绍一下 GitBook 的命令行工具 <code>gitbook-cli</code> 的一些命令, 首先说明两点:</p>
+<h2 id="gitbook-命令"><a class="markdownIt-Anchor" href="#gitbook-命令"></a> GitBook 命令</h2>
+<p>这里主要介绍一下 GitBook 的命令行工具 <code>gitbook-cli</code> 的一些命令, 首先说明两点:</p>
 <ul>
 <li><code>gitbook-cli</code> 和 <code>gitbook</code> 是两个软件</li>
 <li><code>gitbook-cli</code> 会将下载的 gitbook 的不同版本放到 <code>\~/.gitbook</code>中, 可以通过设置<code>GITBOOK_DIR</code>环境变量来指定另外的文件夹</li>
@@ -556,7 +568,9 @@
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitbook build --<span class="built_in">log</span>=debug</span><br></pre></td></tr></table></figure>
 <p><strong>输出错误信息</strong></p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">gitbook builid --debug</span><br></pre></td></tr></table></figure>
-<h2 id="Gitbook-目录结构"><a href="#Gitbook-目录结构" class="headerlink" title="Gitbook 目录结构"></a>Gitbook 目录结构</h2><h3 id="GitBook-项目结构"><a href="#GitBook-项目结构" class="headerlink" title="GitBook 项目结构"></a>GitBook 项目结构</h3><p>GitBook 使用简单的目录结构。在 <a href="https://toolchain.gitbook.com/pages.html" target="_blank" rel="noopener">SUMMARY</a> （即 <code>SUMMARY.md</code> 文件）中列出的所有 Markdown / Asciidoc 文件将被转换为 HTML。多语言书籍结构略有不同。</p>
+<h2 id="gitbook-目录结构"><a class="markdownIt-Anchor" href="#gitbook-目录结构"></a> Gitbook 目录结构</h2>
+<h3 id="gitbook-项目结构"><a class="markdownIt-Anchor" href="#gitbook-项目结构"></a> GitBook 项目结构</h3>
+<p>GitBook 使用简单的目录结构。在 <a href="https://toolchain.gitbook.com/pages.html" target="_blank" rel="noopener">SUMMARY</a> （即 <code>SUMMARY.md</code> 文件）中列出的所有 Markdown / Asciidoc 文件将被转换为 HTML。多语言书籍结构略有不同。</p>
 <p>一个基本的 GitBook 电子书结构通常如下：</p>
 <figure class="highlight dos"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── book.json</span><br><span class="line">├── README.<span class="built_in">md</span></span><br><span class="line">├── SUMMARY.<span class="built_in">md</span></span><br><span class="line">├── chapter-<span class="number">1</span>/</span><br><span class="line">|   ├── README.<span class="built_in">md</span></span><br><span class="line">|   └── something.<span class="built_in">md</span></span><br><span class="line">└── chapter-<span class="number">2</span>/</span><br><span class="line">    ├── README.<span class="built_in">md</span></span><br><span class="line">    └── something.<span class="built_in">md</span></span><br></pre></td></tr></table></figure>
 <p>GitBook 特殊文件的功能：</p>
@@ -586,14 +600,18 @@
 </tr>
 </tbody>
 </table>
-<h4 id="静态文件和图片"><a href="#静态文件和图片" class="headerlink" title="静态文件和图片"></a>静态文件和图片</h4><p>静态文件是在  <code>SUMMARY.md</code> 中未列出的文件。除非被忽略，否则所有静态文件都将复制到输出路径。</p>
-<h4 id="忽略文件和文件夹"><a href="#忽略文件和文件夹" class="headerlink" title="忽略文件和文件夹"></a>忽略文件和文件夹</h4><p>GitBook 将读取  <code>.gitignore</code>，<code>.bookignore</code>  和  <code>.ignore</code>  文件，以获取要过滤的文件和文件夹。这些文件中的格式遵循 <code>.gitignore</code> 的规则：</p>
+<h4 id="静态文件和图片"><a class="markdownIt-Anchor" href="#静态文件和图片"></a> 静态文件和图片</h4>
+<p>静态文件是在  <code>SUMMARY.md</code> 中未列出的文件。除非被忽略，否则所有静态文件都将复制到输出路径。</p>
+<h4 id="忽略文件和文件夹"><a class="markdownIt-Anchor" href="#忽略文件和文件夹"></a> 忽略文件和文件夹</h4>
+<p>GitBook 将读取  <code>.gitignore</code>，<code>.bookignore</code>  和  <code>.ignore</code>  文件，以获取要过滤的文件和文件夹。这些文件中的格式遵循 <code>.gitignore</code> 的规则：</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line"><span class="comment"># This is a comment</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Ignore the file test.md</span></span><br><span class="line"><span class="keyword">test</span>.md</span><br><span class="line"></span><br><span class="line"><span class="comment"># Ignore everything in the directory "bin"</span></span><br><span class="line">bin/*</span><br></pre></td></tr></table></figure>
-<h4 id="项目与子目录集成"><a href="#项目与子目录集成" class="headerlink" title="项目与子目录集成"></a>项目与子目录集成</h4><p>对于软件项目，您可以使用子目录（如 <code>docs/</code> ）来存储项目文档的图书。您可以配置根选项来指示 GitBook 可以找到该图书文件的文件夹：</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── book.json</span><br><span class="line">└── docs/</span><br><span class="line">    ├── README.md</span><br><span class="line">    └── SUMMARY.md</span><br></pre></td></tr></table></figure>
+<h4 id="项目与子目录集成"><a class="markdownIt-Anchor" href="#项目与子目录集成"></a> 项目与子目录集成</h4>
+<p>对于软件项目，您可以使用子目录（如 <code>docs/</code> ）来存储项目文档的图书。您可以配置根选项来指示 GitBook 可以找到该图书文件的文件夹：</p>
+<figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">.</span><br><span class="line">├── book.json</span><br><span class="line">└── docs/</span><br><span class="line">    ├── <span class="module-access"><span class="module"><span class="identifier">README</span>.</span></span>md</span><br><span class="line">    └── <span class="module-access"><span class="module"><span class="identifier">SUMMARY</span>.</span></span>md</span><br></pre></td></tr></table></figure>
 <p>在 <code>book.json</code>  中配置以下内容：</p>
 <figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"root"</span>: <span class="string">"./docs"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h3><p>GitBook 使用  <code>SUMMARY.md</code>  文件来定义本书的章节和子章节的结构。 <code>SUMMARY.md</code> 文件用于生成本书的目录。</p>
+<h3 id="summary"><a class="markdownIt-Anchor" href="#summary"></a> Summary</h3>
+<p>GitBook 使用  <code>SUMMARY.md</code>  文件来定义本书的章节和子章节的结构。 <code>SUMMARY.md</code> 文件用于生成本书的目录。</p>
 <p><code>SUMMARY.md</code>  的格式是一个链接列表。链接的标题将作为章节的标题，链接的目标是该章节文件的路径。</p>
 <p>向父章节添加嵌套列表将创建子章节。</p>
 <p><strong>简单示例：</strong></p>
@@ -606,7 +624,8 @@
 <p>目录可以分为以标题或水平线 <code>----</code> 分隔的部分：</p>
 <figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="section"># Summary</span></span><br><span class="line"></span><br><span class="line"><span class="section">### Part I</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>[<span class="string">Writing is nice</span>](<span class="link">part1/writing.md</span>)</span><br><span class="line"><span class="bullet">* </span>[<span class="string">GitBook is nice</span>](<span class="link">part1/gitbook.md</span>)</span><br><span class="line"></span><br><span class="line"><span class="section">### Part II</span></span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>[<span class="string">We love feedback</span>](<span class="link">part2/feedback_please.md</span>)</span><br><span class="line"><span class="bullet">* </span>[<span class="string">Better tools for authors</span>](<span class="link">part2/better_tools.md</span>)</span><br><span class="line"></span><br><span class="line">----</span><br><span class="line"></span><br><span class="line"><span class="bullet">* </span>[<span class="string">Last part without title</span>](<span class="link">part3/title.md</span>)</span><br></pre></td></tr></table></figure>
 <p>Parts 只是章节组，没有专用页面，但根据主题，它将在导航中显示。</p>
-<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p><strong>Markdown 语法</strong></p>
+<h4 id="页面"><a class="markdownIt-Anchor" href="#页面"></a> 页面</h4>
+<p><strong>Markdown 语法</strong></p>
 <p>默认情况下，GitBook 的大多数文件都使用 Markdown 语法。 GitBook 推荐使用这种语法。所使用的语法类似于 <a href="https://guides.github.com/features/mastering-markdown/" target="_blank" rel="noopener">GitHub Flavored Markdown syntax</a> 。</p>
 <p>此外，你还可以选择 <a href="https://toolchain.gitbook.com/syntax/asciidoc.html" target="_blank" rel="noopener">AsciiDoc 语法</a>。</p>
 <p><strong>页面内容示例：</strong></p>
@@ -614,14 +633,17 @@
 <p><strong>页面前言</strong></p>
 <p>页面可以包含一个可选的前言。它可以用于定义页面的描述。前面的事情必须是文件中的第一件事，必须采取在三虚线之间设置的有效 YAML 的形式。这是一个基本的例子：</p>
 <figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">This</span> <span class="string">is</span> <span class="string">a</span> <span class="string">short</span> <span class="string">description</span> <span class="string">of</span> <span class="string">my</span> <span class="string">page</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The content of my page</span></span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
-<h3 id="Glossary"><a href="#Glossary" class="headerlink" title="Glossary"></a>Glossary</h3><p>允许您指定要显示为注释的术语及其各自的定义。根据这些术语，GitBook 将自动构建索引并突出显示这些术语。</p>
+<h3 id="glossary"><a class="markdownIt-Anchor" href="#glossary"></a> Glossary</h3>
+<p>允许您指定要显示为注释的术语及其各自的定义。根据这些术语，GitBook 将自动构建索引并突出显示这些术语。</p>
 <p><code>GLOSSARY.md</code>  的格式是 <code>h2</code> 标题的列表，以及描述段落：</p>
 <figure class="highlight applescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">## Term</span></span><br><span class="line">Definition <span class="keyword">for</span> this term</span><br><span class="line"></span><br><span class="line"><span class="comment">## Another term</span></span><br><span class="line">With <span class="keyword">it</span>'s definition, this can <span class="keyword">contain</span> bold <span class="built_in">text</span></span><br><span class="line"><span class="keyword">and</span> all other kinds <span class="keyword">of</span> inline markup ...</span><br></pre></td></tr></table></figure>
-<h2 id="Gitbook-配置"><a href="#Gitbook-配置" class="headerlink" title="Gitbook 配置"></a>Gitbook 配置</h2><blockquote>
+<h2 id="gitbook-配置"><a class="markdownIt-Anchor" href="#gitbook-配置"></a> Gitbook 配置</h2>
+<blockquote>
 <p>GitBook 允许您使用灵活的配置自定义您的电子书。</p>
 <p>这些选项在 <code>book.json</code> 文件中指定。对于不熟悉 JSON 语法的作者，您可以使用 <a href="http://jsonlint.com/" target="_blank" rel="noopener">JSONlint</a> 等工具验证语法。</p>
 </blockquote>
-<h3 id="常规设置"><a href="#常规设置" class="headerlink" title="常规设置"></a>常规设置</h3><table>
+<h3 id="常规设置"><a class="markdownIt-Anchor" href="#常规设置"></a> 常规设置</h3>
+<table>
 <thead>
 <tr>
 <th>变量</th>
@@ -639,15 +661,15 @@
 </tr>
 <tr>
 <td><code>title</code></td>
-<td>您的书名，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预填的。</td>
+<td>您的书名，默认值是从 README 中提取出来的。在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预填的。</td>
 </tr>
 <tr>
 <td><code>description</code></td>
-<td>您的书籍的描述，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预填的。</td>
+<td>您的书籍的描述，默认值是从 README 中提取出来的。在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预填的。</td>
 </tr>
 <tr>
 <td><code>author</code></td>
-<td>作者名。在 GitBook.com 上，这个字段是预填的。</td>
+<td>作者名。在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预填的。</td>
 </tr>
 <tr>
 <td><code>isbn</code></td>
@@ -668,11 +690,11 @@
 </tbody>
 </table>
 <p>author</p>
-<p>作者姓名，在 GitBook.com 上，这个字段是预先填写的。</p>
+<p>作者姓名，在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预先填写的。</p>
 <p>例：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">"author" : "victor zhang"</span><br></pre></td></tr></table></figure>
 <p>description</p>
-<p>电子书的描述，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预先填写的。</p>
+<p>电子书的描述，默认值是从 README 中提取出来的。在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预先填写的。</p>
 <p>例：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">"description" : "Gitbook 教程"</span><br></pre></td></tr></table></figure>
 <p>direction</p>
@@ -705,10 +727,11 @@
 <p>例如要使 <code>h1</code>、<code>h2</code> 标签有下边框， 可以在 <code>website.css</code> 中设置</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>,</span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#efeaea</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>title</p>
-<p>电子书的书名，默认值是从 README 中提取出来的。在 GitBook.com 上，这个字段是预先填写的。</p>
+<p>电子书的书名，默认值是从 README 中提取出来的。在 <a href="http://GitBook.com" target="_blank" rel="noopener">GitBook.com</a> 上，这个字段是预先填写的。</p>
 <p>例：</p>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">"title" : "gitbook-notes",</span><br></pre></td></tr></table></figure>
-<h3 id="plugins"><a href="#plugins" class="headerlink" title="plugins"></a>plugins</h3><p>插件及其配置在  <code>book.json</code> 中指定。有关详细信息。</p>
+<h3 id="plugins"><a class="markdownIt-Anchor" href="#plugins"></a> plugins</h3>
+<p>插件及其配置在  <code>book.json</code> 中指定。有关详细信息。</p>
 <p>自 3.0.0 版本开始，GitBook 可以使用主题。有关详细信息，请参阅  <a href="https://toolchain.gitbook.com/themes/" target="_blank" rel="noopener">the theming section</a> 。</p>
 <table>
 <thead>
@@ -728,9 +751,11 @@
 </tr>
 </tbody>
 </table>
-<h4 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h4><figure class="highlight"><table><tr><td class="code"><pre><span class="line">"plugins": [</span><br><span class="line">    <span class="string">"splitter"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="添加插件"><a class="markdownIt-Anchor" href="#添加插件"></a> 添加插件</h4>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">"plugins": [</span><br><span class="line">    <span class="string">"splitter"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 <p>添加新插件之后需要运行 <code>gitbook install</code> 来安装新的插件</p>
-<h3 id="去除自带插件"><a href="#去除自带插件" class="headerlink" title="去除自带插件"></a>去除自带插件</h3><p>Gitbook 默认带有 5 个插件：</p>
+<h3 id="去除自带插件"><a class="markdownIt-Anchor" href="#去除自带插件"></a> 去除自带插件</h3>
+<p>Gitbook 默认带有 5 个插件：</p>
 <ul>
 <li>highlight</li>
 <li>search</li>
@@ -739,7 +764,8 @@
 <li>livereload</li>
 </ul>
 <figure class="highlight"><table><tr><td class="code"><pre><span class="line">"plugins": [</span><br><span class="line">    <span class="string">"-search"</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-<h3 id="structure"><a href="#structure" class="headerlink" title="structure"></a>structure</h3><p>除了  <code>root</code> 属性之外，您可以指定 Readme，Summary，Glossary 和 Languages 的名称（而不是使用默认名称，如 README.md）。这些文件必须在项目的根目录下（或 <code>root</code> 的根目录，如果你在 <code>book.json</code> 中配置了  <code>root</code> 属性）。不接受的路径，如：<code>dir / MY_README.md</code>。</p>
+<h3 id="structure"><a class="markdownIt-Anchor" href="#structure"></a> structure</h3>
+<p>除了  <code>root</code> 属性之外，您可以指定 Readme，Summary，Glossary 和 Languages 的名称（而不是使用默认名称，如 <a href="http://README.md" target="_blank" rel="noopener">README.md</a>）。这些文件必须在项目的根目录下（或 <code>root</code> 的根目录，如果你在 <code>book.json</code> 中配置了  <code>root</code> 属性）。不接受的路径，如：<code>dir / MY_README.md</code>。</p>
 <table>
 <thead>
 <tr>
@@ -766,7 +792,8 @@
 </tr>
 </tbody>
 </table>
-<h3 id="pdf"><a href="#pdf" class="headerlink" title="pdf"></a>pdf</h3><p>可以使用  <code>book.json</code> 中的一组选项来定制 PDF 输出：</p>
+<h3 id="pdf"><a class="markdownIt-Anchor" href="#pdf"></a> pdf</h3>
+<p>可以使用  <code>book.json</code> 中的一组选项来定制 PDF 输出：</p>
 <table>
 <thead>
 <tr>
@@ -789,7 +816,7 @@
 </tr>
 <tr>
 <td><code>pdf.paperSize</code></td>
-<td>页面尺寸，选项有： <code>&#39;a0&#39;, &#39;a1&#39;, &#39;a2&#39;, &#39;a3&#39;, &#39;a4&#39;, &#39;a5&#39;, &#39;a6&#39;, &#39;b0&#39;, &#39;b1&#39;, &#39;b2&#39;, &#39;b3&#39;, &#39;b4&#39;, &#39;b5&#39;, &#39;b6&#39;, &#39;legal&#39;, &#39;letter&#39;</code> （默认值是 <code>a4</code>）</td>
+<td>页面尺寸，选项有： <code>'a0', 'a1', 'a2', 'a3', 'a4', 'a5', 'a6', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'legal', 'letter'</code> （默认值是 <code>a4</code>）</td>
 </tr>
 <tr>
 <td><code>pdf.margin.top</code></td>
@@ -809,17 +836,22 @@
 </tr>
 </tbody>
 </table>
-<h2 id="生成电子书"><a href="#生成电子书" class="headerlink" title="生成电子书"></a>生成电子书</h2><p>GitBook 可以生成一个网站，但也可以输出内容作为电子书（ePub，Mobi，PDF）。</p>
+<h2 id="生成电子书"><a class="markdownIt-Anchor" href="#生成电子书"></a> 生成电子书</h2>
+<p>GitBook 可以生成一个网站，但也可以输出内容作为电子书（ePub，Mobi，PDF）。</p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Generate a PDF file</span></span><br><span class="line">$ gitbook pdf <span class="string">./</span> <span class="string">./mybook.pdf</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate an ePub file</span></span><br><span class="line">$ gitbook epub <span class="string">./</span> <span class="string">./mybook.epub</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate a Mobi file</span></span><br><span class="line">$ gitbook mobi <span class="string">./</span> <span class="string">./mybook.mobi</span></span><br></pre></td></tr></table></figure>
-<h3 id="安装-ebook-convert"><a href="#安装-ebook-convert" class="headerlink" title="安装 ebook-convert"></a>安装 ebook-convert</h3><p><code>ebook-convert</code>  可以用来生成电子书（epub，mobi，pdf）。</p>
-<h4 id="GNU-Linux"><a href="#GNU-Linux" class="headerlink" title="GNU/Linux"></a>GNU/Linux</h4><p>安装  <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">Calibre application</a>.</p>
+<h3 id="安装-ebook-convert"><a class="markdownIt-Anchor" href="#安装-ebook-convert"></a> 安装 ebook-convert</h3>
+<p><code>ebook-convert</code>  可以用来生成电子书（epub，mobi，pdf）。</p>
+<h4 id="gnulinux"><a class="markdownIt-Anchor" href="#gnulinux"></a> GNU/Linux</h4>
+<p>安装  <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">Calibre application</a>.</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ sudo aptitude install calibre</span><br></pre></td></tr></table></figure>
 <p>在一些 GNU / Linux 发行版中，节点被安装为 nodejs，您需要手动创建一个符号链接：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="variable">$sudo</span> ln -s /usr/bin/nodejs /usr/bin/node</span><br></pre></td></tr></table></figure>
-<h4 id="OS-X"><a href="#OS-X" class="headerlink" title="OS X"></a>OS X</h4><p>下载  <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">Calibre application</a>。将 <code>calibre.app</code> 移动到应用程序文件夹后，创建一个符号链接到 <code>ebook-convert</code> 工具：</p>
+<h4 id="os-x"><a class="markdownIt-Anchor" href="#os-x"></a> OS X</h4>
+<p>下载  <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener">Calibre application</a>。将 <code>calibre.app</code> 移动到应用程序文件夹后，创建一个符号链接到 <code>ebook-convert</code> 工具：</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ sudo ln -s ~/Applications/calibre.app/Contents/MacOS/ebook-convert /usr/bin</span><br></pre></td></tr></table></figure>
 <p>您可以使用 $PATH 中的任何目录替换  <code>/usr/bin</code> 。</p>
-<h3 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h3><p>封面用于所有电子书格式。您可以自己提供一个，也可以使用  <a href="https://plugins.gitbook.com/plugin/autocover" target="_blank" rel="noopener">autocover plugin</a> 生成一个。</p>
+<h3 id="封面"><a class="markdownIt-Anchor" href="#封面"></a> 封面</h3>
+<p>封面用于所有电子书格式。您可以自己提供一个，也可以使用  <a href="https://plugins.gitbook.com/plugin/autocover" target="_blank" rel="noopener">autocover plugin</a> 生成一个。</p>
 <p>要提供封面，请将 <code>cover.jpg</code> 文件放在书本的根目录下。添加一个 <code>cover_small.jpg</code> 将指定一个较小版本的封面。封面应为 <code>JPEG</code> 文件。</p>
 <p>好的封面应该遵守以下准则：</p>
 <ul>
@@ -828,23 +860,26 @@
 <li>清晰可见的书名</li>
 <li>任何重要的文字应该在小版本中可见</li>
 </ul>
-<h2 id="Gitbook-部署"><a href="#Gitbook-部署" class="headerlink" title="Gitbook 部署"></a>Gitbook 部署</h2><h3 id="托管到-gitbook-com"><a href="#托管到-gitbook-com" class="headerlink" title="托管到 gitbook.com"></a>托管到 gitbook.com</h3><p><a href="https://www.gitbook.com/" target="_blank" rel="noopener">GitBook.com</a> 是使用 GitBook 格式创建和托管图书的在线平台。它提供托管，协作功能和易于使用的编辑器。</p>
+<h2 id="gitbook-部署"><a class="markdownIt-Anchor" href="#gitbook-部署"></a> Gitbook 部署</h2>
+<h3 id="托管到-gitbookcom"><a class="markdownIt-Anchor" href="#托管到-gitbookcom"></a> 托管到 <a href="http://gitbook.com" target="_blank" rel="noopener">gitbook.com</a></h3>
+<p><a href="https://www.gitbook.com/" target="_blank" rel="noopener">GitBook.com</a> 是使用 GitBook 格式创建和托管图书的在线平台。它提供托管，协作功能和易于使用的编辑器。</p>
 <p><strong>创建新书</strong></p>
 <p>如下图所示，根据个人需求，选择一个模板创建你的电子书。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/gitbook-notes/master/assets/images/gitbook-new-book.png"></div><br></p>
 <p><strong>设置书的基本信息</strong></p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/gitbook-notes/master/assets/images/gitbook-settings.png"></div><br></p>
 <p><strong>clone 到本地</strong></p>
-<p>Gitbook.com 会为每本书创建一个 git 仓库。</p>
+<p><a href="http://Gitbook.com" target="_blank" rel="noopener">Gitbook.com</a> 会为每本书创建一个 git 仓库。</p>
 <p>如下图所示，拷贝 git 地址，然后 <code>git clone</code> 到本地。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/gitbook-notes/master/assets/images/gitbook-clone.png"></div><br></p>
 <p><strong>发布</strong></p>
 <p>在本地按照 Gitbook 规范编辑电子书，然后 <code>git push</code> 到 Gitbook 的远程仓库。</p>
-<p>默认访问地址是：https://用户名.gitbooks.io/项目名/content/</p>
+<p>默认访问地址是：<a href="https://xn--eqr924avxo.gitbooks.io/%E9%A1%B9%E7%9B%AE%E5%90%8D/content/" target="_blank" rel="noopener">https://用户名.gitbooks.io/项目名/content/</a></p>
 <p>例如：我的用户名为 dunwu，一个电子书项目名为 test，则访问路径是： <code>https://dunwu.gitbooks.io/test/content/</code></p>
 <p>当然，如果你有自己的域名，也可以设置 Domains 选项，来指定访问路径为你的域。</p>
-<h3 id="托管到-Github"><a href="#托管到-Github" class="headerlink" title="托管到 Github"></a>托管到 Github</h3><p>如果你不希望使用 Gitbook 的仓库，而是想直接使用 Github 的仓库，也是可以的。</p>
-<p>首先，你需要绑定你的 Github 账号。最简单的方式当然就是登录 Gitbook.com 时使用 Github 账号登录方式了。否则，你也可以在 Account Settings 中的 Github 设置选项中去进行绑定。</p>
+<h3 id="托管到-github"><a class="markdownIt-Anchor" href="#托管到-github"></a> 托管到 Github</h3>
+<p>如果你不希望使用 Gitbook 的仓库，而是想直接使用 Github 的仓库，也是可以的。</p>
+<p>首先，你需要绑定你的 Github 账号。最简单的方式当然就是登录 <a href="http://Gitbook.com" target="_blank" rel="noopener">Gitbook.com</a> 时使用 Github 账号登录方式了。否则，你也可以在 Account Settings 中的 Github 设置选项中去进行绑定。</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/gitbook-notes/master/assets/images/gitbook-settings-github.png"></div><br></p>
 <p>绑定了 Github 账号后，你可以在新建电子书时，选择从一个指定的 Github 仓库导入电子书项目。参考下图：</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/gitbook-notes/master/assets/images/gitbook-new-book-with-github.png"></div><br></p>
@@ -853,8 +888,9 @@
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">https:<span class="string">//Github</span>用户名<span class="string">.gitbooks.io/Github</span> 仓库<span class="string">/content/</span></span><br></pre></td></tr></table></figure>
 <p>例如：我的用户名为 dunwu，Github 仓库名为 gitbook-notes，则访问路径是：</p>
 <p><a href="https://dunwu.gitbooks.io/gitbook-notes/content/" target="_blank" rel="noopener">https://dunwu.gitbooks.io/gitbook-notes/content/</a></p>
-<h4 id="托管到-Github-Pages"><a href="#托管到-Github-Pages" class="headerlink" title="托管到 Github Pages"></a>托管到 Github Pages</h4><p>也许你以前也了解 Github 的一个功能： <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 。它允许用户在 GitHub 仓库托管你的个人、组织或项目的静态页面（自动识别 html、css、javascript）。</p>
-<p><strong>建立 xxx.github.io 仓库</strong></p>
+<h4 id="托管到-github-pages"><a class="markdownIt-Anchor" href="#托管到-github-pages"></a> 托管到 Github Pages</h4>
+<p>也许你以前也了解 Github 的一个功能： <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> 。它允许用户在 GitHub 仓库托管你的个人、组织或项目的静态页面（自动识别 html、css、javascript）。</p>
+<p><strong>建立 <a href="http://xxx.github.io" target="_blank" rel="noopener">xxx.github.io</a> 仓库</strong></p>
 <p>要使用这个特性，首先，你必须建立一个严格遵循以下命名要求的仓库：<code>Github账号名.github.io</code>举例，我的 Github 账号为 dunwu，则这个仓库应该叫 <code>dunwu.github.io</code>。通常，这个仓库被用来作为个人或组织的博客。</p>
 <p><strong>建立 gh-pages 分支</strong></p>
 <p>完成第 1 步后，在任意一个 Github 仓库中建立一个名为 <code>gh-pages</code> 的分支。只要 <code>gh-pages</code> 中的内容符合一个静态站点要求，就可以在如下地址中进行访问：<code>https://Github用户名.gitbooks.io/Github 仓库</code> 。例如：我的一个 Github 仓库名为 react-notes，则访问路径是：<code>https://dunwu.github.io/react-notes</code></p>
@@ -872,17 +908,21 @@
 <p><strong>脚本</strong></p>
 <p>写一个执行 git 命令的脚本就搞定了。</p>
 <p>下面的脚本无论是在 bat 或 sh 脚本中都可以执行。</p>
-<figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> build</span><br><span class="line">git init</span><br><span class="line">git checkout -<span class="keyword">b</span> gh-pages</span><br><span class="line">git <span class="built_in">add</span> .</span><br><span class="line">git commit -<span class="keyword">am</span> <span class="string">"Update"</span></span><br><span class="line">git push git@github.<span class="keyword">com</span>:dunwu/gitbook-notes gh-pages --force<span class="comment">"</span></span><br></pre></td></tr></table></figure>
-<h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><h3 id="官方资源"><a href="#官方资源" class="headerlink" title="官方资源"></a>官方资源</h3><ul>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">cd</span> <span class="string">build</span></span><br><span class="line"><span class="attr">git</span> <span class="string">init</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout -b gh-pages</span></span><br><span class="line"><span class="attr">git</span> <span class="string">add .</span></span><br><span class="line"><span class="attr">git</span> <span class="string">commit -am "Update"</span></span><br><span class="line"><span class="attr">git</span> <span class="string">push git@github.com:dunwu/gitbook-notes gh-pages --force"</span></span><br></pre></td></tr></table></figure>
+<h2 id="资源"><a class="markdownIt-Anchor" href="#资源"></a> 资源</h2>
+<h3 id="官方资源"><a class="markdownIt-Anchor" href="#官方资源"></a> 官方资源</h3>
+<ul>
 <li><a href="https://github.com/GitbookIO/gitbook" target="_blank" rel="noopener">Gitbook Github</a></li>
 <li><a href="https://www.gitbook.com/" target="_blank" rel="noopener">Gitbook 官网</a></li>
 <li><a href="https://toolchain.gitbook.com/" target="_blank" rel="noopener">Gitbook Toolchain 文档</a></li>
 <li><a href="https://help.gitbook.com/" target="_blank" rel="noopener">Gitbook 帮助中心</a></li>
 </ul>
-<h3 id="教程资源"><a href="#教程资源" class="headerlink" title="教程资源"></a>教程资源</h3><ul>
+<h3 id="教程资源"><a class="markdownIt-Anchor" href="#教程资源"></a> 教程资源</h3>
+<ul>
 <li><a href="https://github.com/zhangjikai/gitbook-use" target="_blank" rel="noopener">gitbook-use</a> by zhangjikai</li>
 </ul>
-<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ul>
+<h3 id="工具"><a class="markdownIt-Anchor" href="#工具"></a> 工具</h3>
+<ul>
 <li><a href="https://www.gitbook.com/editor" target="_blank" rel="noopener">Gitbook 编辑器</a></li>
 </ul>
 
@@ -943,8 +983,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/summary/如何学习一门编程语言/" rel="next" title="如何学习一门编程语言">
-                <i class="fa fa-chevron-left"></i> 如何学习一门编程语言
+              <a href="/blog/2019/03/06/programming/java/javastack/style/effective/chapter03/" rel="next" title="Chapter03 对于所有对象都通用的方法">
+                <i class="fa fa-chevron-left"></i> Chapter03 对于所有对象都通用的方法
               </a>
             
           </div>
@@ -1026,7 +1066,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1091,7 +1131,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1389,7 +1431,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitBook-安装"><span class="nav-text">GitBook 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地安装"><span class="nav-text">本地安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境要求"><span class="nav-text">环境要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过-NPM-安装"><span class="nav-text">通过 NPM 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装历史版本"><span class="nav-text">安装历史版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一本书"><span class="nav-text">创建一本书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建"><span class="nav-text">构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动服务"><span class="nav-text">启动服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitBook-命令"><span class="nav-text">GitBook 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitbook-目录结构"><span class="nav-text">Gitbook 目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GitBook-项目结构"><span class="nav-text">GitBook 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件和图片"><span class="nav-text">静态文件和图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略文件和文件夹"><span class="nav-text">忽略文件和文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目与子目录集成"><span class="nav-text">项目与子目录集成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Summary"><span class="nav-text">Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面"><span class="nav-text">页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Glossary"><span class="nav-text">Glossary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitbook-配置"><span class="nav-text">Gitbook 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规设置"><span class="nav-text">常规设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-text">plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加插件"><span class="nav-text">添加插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除自带插件"><span class="nav-text">去除自带插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#structure"><span class="nav-text">structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pdf"><span class="nav-text">pdf</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成电子书"><span class="nav-text">生成电子书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-ebook-convert"><span class="nav-text">安装 ebook-convert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#GNU-Linux"><span class="nav-text">GNU/Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OS-X"><span class="nav-text">OS X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封面"><span class="nav-text">封面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Gitbook-部署"><span class="nav-text">Gitbook 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#托管到-gitbook-com"><span class="nav-text">托管到 gitbook.com</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#托管到-Github"><span class="nav-text">托管到 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#托管到-Github-Pages"><span class="nav-text">托管到 Github Pages</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text">资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#官方资源"><span class="nav-text">官方资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程资源"><span class="nav-text">教程资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-text">工具</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitbook-安装"><span class="nav-text"> GitBook 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#本地安装"><span class="nav-text"> 本地安装</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境要求"><span class="nav-text"> 环境要求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过-npm-安装"><span class="nav-text"> 通过 NPM 安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装历史版本"><span class="nav-text"> 安装历史版本</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建一本书"><span class="nav-text"> 创建一本书</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#初始化"><span class="nav-text"> 初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构建"><span class="nav-text"> 构建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动服务"><span class="nav-text"> 启动服务</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitbook-命令"><span class="nav-text"> GitBook 命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitbook-目录结构"><span class="nav-text"> Gitbook 目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#gitbook-项目结构"><span class="nav-text"> GitBook 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#静态文件和图片"><span class="nav-text"> 静态文件和图片</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#忽略文件和文件夹"><span class="nav-text"> 忽略文件和文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#项目与子目录集成"><span class="nav-text"> 项目与子目录集成</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#summary"><span class="nav-text"> Summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#页面"><span class="nav-text"> 页面</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#glossary"><span class="nav-text"> Glossary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitbook-配置"><span class="nav-text"> Gitbook 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常规设置"><span class="nav-text"> 常规设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plugins"><span class="nav-text"> plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加插件"><span class="nav-text"> 添加插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去除自带插件"><span class="nav-text"> 去除自带插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#structure"><span class="nav-text"> structure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pdf"><span class="nav-text"> pdf</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成电子书"><span class="nav-text"> 生成电子书</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-ebook-convert"><span class="nav-text"> 安装 ebook-convert</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#gnulinux"><span class="nav-text"> GNU/Linux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#os-x"><span class="nav-text"> OS X</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#封面"><span class="nav-text"> 封面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitbook-部署"><span class="nav-text"> Gitbook 部署</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#托管到-gitbookcom"><span class="nav-text"> 托管到 gitbook.com</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#托管到-github"><span class="nav-text"> 托管到 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#托管到-github-pages"><span class="nav-text"> 托管到 Github Pages</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源"><span class="nav-text"> 资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#官方资源"><span class="nav-text"> 官方资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#教程资源"><span class="nav-text"> 教程资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工具"><span class="nav-text"> 工具</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1431,7 +1473,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Elastic 技术栈之 Logstash 基础 本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门  简介Logstash 可以传输和处理你的日志、事务或其他数据。 功能Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，在输入、过滤">
+  <meta name="description" content="Elastic 技术栈之 Logstash 基础  本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门   简介 Logstash 可以传输和处理你的日志、事务或其他数据。  功能 Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，">
 <meta name="keywords" content="java,log,javatool,elastic">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Elastic 技术栈之 Logstash 基础">
 <meta property="og:url" content="https://dunwu.github.io/2017/12/26/os/linux/ops/service/elastic/elastic-logstash/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Elastic 技术栈之 Logstash 基础 本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门  简介Logstash 可以传输和处理你的日志、事务或其他数据。 功能Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，在输入、过滤">
+<meta property="og:description" content="Elastic 技术栈之 Logstash 基础  本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门   简介 Logstash 可以传输和处理你的日志、事务或其他数据。  功能 Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.elastic.co/guide/en/logstash/current/static/images/basic_logstash_pipeline.png">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.170Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elastic 技术栈之 Logstash 基础">
-<meta name="twitter:description" content="Elastic 技术栈之 Logstash 基础 本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门  简介Logstash 可以传输和处理你的日志、事务或其他数据。 功能Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，在输入、过滤">
+<meta name="twitter:description" content="Elastic 技术栈之 Logstash 基础  本文是 Elastic 技术栈（ELK）的 Logstash 应用。 如果不了解 Elastic 的安装、配置、部署，可以参考：Elastic 技术栈之快速入门   简介 Logstash 可以传输和处理你的日志、事务或其他数据。  功能 Logstash 是 Elasticsearch  的最佳数据管道。 Logstash 是插件式管理模式，">
 <meta name="twitter:image" content="https://www.elastic.co/guide/en/logstash/current/static/images/basic_logstash_pipeline.png">
 
 
@@ -510,14 +510,18 @@
       
 
       
-        <h1 id="Elastic-技术栈之-Logstash-基础"><a href="#Elastic-技术栈之-Logstash-基础" class="headerlink" title="Elastic 技术栈之 Logstash 基础"></a>Elastic 技术栈之 Logstash 基础</h1><blockquote>
+        <h1 id="elastic-技术栈之-logstash-基础"><a class="markdownIt-Anchor" href="#elastic-技术栈之-logstash-基础"></a> Elastic 技术栈之 Logstash 基础</h1>
+<blockquote>
 <p>本文是 Elastic 技术栈（ELK）的 Logstash 应用。</p>
 <p>如果不了解 Elastic 的安装、配置、部署，可以参考：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javatool/elastic/elastic-quickstart.md" target="_blank" rel="noopener">Elastic 技术栈之快速入门</a></p>
 </blockquote>
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Logstash 可以传输和处理你的日志、事务或其他数据。</p>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>Logstash 是 Elasticsearch  的最佳数据管道。</p>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>Logstash 可以传输和处理你的日志、事务或其他数据。</p>
+<h3 id="功能"><a class="markdownIt-Anchor" href="#功能"></a> 功能</h3>
+<p>Logstash 是 Elasticsearch  的最佳数据管道。</p>
 <p>Logstash 是插件式管理模式，在输入、过滤、输出以及编码过程中都可以使用插件进行定制。Logstash 社区有超过 200 种可用插件。</p>
-<h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>Logstash 有两个必要元素：<code>input</code> 和 <code>output</code> ，一个可选元素：<code>filter</code>。</p>
+<h3 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h3>
+<p>Logstash 有两个必要元素：<code>input</code> 和 <code>output</code> ，一个可选元素：<code>filter</code>。</p>
 <p>这三个元素，分别代表 Logstash 事件处理的三个阶段：输入 &gt; 过滤器 &gt; 输出。</p>
 <p><br><div align="center"><img src="https://www.elastic.co/guide/en/logstash/current/static/images/basic_logstash_pipeline.png"></div><br></p>
 <ul>
@@ -527,12 +531,15 @@
 </ul>
 <p>在实际应用场景中，通常输入、输出、过滤器不止一个。Logstash 的这三个元素都使用插件式管理方式，用户可以根据应用需要，灵活的选用各阶段需要的插件，并组合使用。</p>
 <p>后面将对插件展开讲解，暂且不表。</p>
-<h2 id="设置"><a href="#设置" class="headerlink" title="设置"></a>设置</h2><h3 id="设置文件"><a href="#设置文件" class="headerlink" title="设置文件"></a>设置文件</h3><ul>
+<h2 id="设置"><a class="markdownIt-Anchor" href="#设置"></a> 设置</h2>
+<h3 id="设置文件"><a class="markdownIt-Anchor" href="#设置文件"></a> 设置文件</h3>
+<ul>
 <li><strong><code>logstash.yml</code></strong>：logstash 的默认启动配置文件</li>
 <li><strong><code>jvm.options</code></strong>：logstash 的 JVM 配置文件。</li>
 <li><strong><code>startup.options</code></strong> (Linux)：包含系统安装脚本在 <code>/usr/share/logstash/bin</code> 中使用的选项为您的系统构建适当的启动脚本。安装 Logstash 软件包时，系统安装脚本将在安装过程结束时执行，并使用 <code>startup.options</code> 中指定的设置来设置用户，组，服务名称和服务描述等选项。</li>
 </ul>
-<h3 id="logstash-yml-设置项"><a href="#logstash-yml-设置项" class="headerlink" title="logstash.yml 设置项"></a>logstash.yml 设置项</h3><p>节选部分设置项，更多项请参考：<a href="https://www.elastic.co/guide/en/logstash/current/logstash-settings-file.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/logstash-settings-file.html</a></p>
+<h3 id="logstashyml-设置项"><a class="markdownIt-Anchor" href="#logstashyml-设置项"></a> logstash.yml 设置项</h3>
+<p>节选部分设置项，更多项请参考：<a href="https://www.elastic.co/guide/en/logstash/current/logstash-settings-file.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/logstash-settings-file.html</a></p>
 <table>
 <thead>
 <tr>
@@ -575,7 +582,7 @@
 <tr>
 <td><code>path.config</code></td>
 <td>主管道的Logstash配置路径。如果您指定一个目录或通配符，配置文件将按字母顺序从目录中读取。</td>
-<td>Platform-specific. See <a href="https://github.com/elastic/logstash/blob/6.1/docs/static/settings-file.asciidoc#dir-layout" target="_blank" rel="noopener">[dir-layout]</a>.</td>
+<td>Platform-specific. See [<a href="https://github.com/elastic/logstash/blob/6.1/docs/static/settings-file.asciidoc#dir-layout" target="_blank" rel="noopener">dir-layout]</a>.</td>
 </tr>
 <tr>
 <td><code>config.string</code></td>
@@ -640,10 +647,13 @@
 <tr>
 <td><code>path.plugins</code></td>
 <td>在哪里可以找到自定义的插件。您可以多次指定此设置以包含多个路径。</td>
+<td></td>
 </tr>
 </tbody>
 </table>
-<h2 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h2><h3 id="命令行"><a href="#命令行" class="headerlink" title="命令行"></a>命令行</h3><p>通过命令行启动 logstash 的方式如下：</p>
+<h2 id="启动"><a class="markdownIt-Anchor" href="#启动"></a> 启动</h2>
+<h3 id="命令行"><a class="markdownIt-Anchor" href="#命令行"></a> 命令行</h3>
+<p>通过命令行启动 logstash 的方式如下：</p>
 <figure class="highlight accesslog"><table><tr><td class="code"><pre><span class="line">bin/logstash <span class="string">[options]</span></span><br></pre></td></tr></table></figure>
 <p>其中 [options] 是您可以指定用于控制 Logstash 执行的命令行标志。</p>
 <p>在命令行上设置的任何标志都会覆盖 Logstash 设置文件（<code>logstash.yml</code>）中的相应设置，但设置文件本身不会更改。</p>
@@ -656,18 +666,22 @@
 <blockquote>
 <p>若想了解更多的命令行参数细节，请参考：<a href="https://www.elastic.co/guide/en/logstash/current/running-logstash-command-line.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/running-logstash-command-line.html</a></p>
 </blockquote>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>上节，我们了解到，logstash 可以执行 <code>bin/logstash -f logstash.conf</code> ，按照配置文件中的参数去覆盖默认设置文件（<code>logstash.yml</code>）中的设置。</p>
+<h3 id="配置文件"><a class="markdownIt-Anchor" href="#配置文件"></a> 配置文件</h3>
+<p>上节，我们了解到，logstash 可以执行 <code>bin/logstash -f logstash.conf</code> ，按照配置文件中的参数去覆盖默认设置文件（<code>logstash.yml</code>）中的设置。</p>
 <p>这节，我们就来学习一下这个配置文件如何配置参数。</p>
-<h4 id="配置文件结构"><a href="#配置文件结构" class="headerlink" title="配置文件结构"></a>配置文件结构</h4><p>在工作原理一节中，我们已经知道了 Logstash 主要有三个工作阶段 input 、filter、output。而 logstash 配置文件文件结构也与之相对应：</p>
+<h4 id="配置文件结构"><a class="markdownIt-Anchor" href="#配置文件结构"></a> 配置文件结构</h4>
+<p>在工作原理一节中，我们已经知道了 Logstash 主要有三个工作阶段 input 、filter、output。而 logstash 配置文件文件结构也与之相对应：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">input &#123;&#125;</span><br><span class="line"></span><br><span class="line">filter &#123;&#125;</span><br><span class="line"></span><br><span class="line">output &#123;&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>每个部分都包含一个或多个插件的配置选项。如果指定了多个过滤器，则会按照它们在配置文件中的显示顺序应用它们。</p>
 </blockquote>
-<h4 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h4><p>插件的配置由插件名称和插件的一个设置块组成。</p>
+<h4 id="插件配置"><a class="markdownIt-Anchor" href="#插件配置"></a> 插件配置</h4>
+<p>插件的配置由插件名称和插件的一个设置块组成。</p>
 <p>下面的例子中配置了两个输入文件配置：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">  file &#123;</span><br><span class="line">    path =&gt; <span class="string">"/var/log/messages"</span></span><br><span class="line">   <span class="built_in"> type </span>=&gt; <span class="string">"syslog"</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  file &#123;</span><br><span class="line">    path =&gt; <span class="string">"/var/log/apache/access.log"</span></span><br><span class="line">   <span class="built_in"> type </span>=&gt; <span class="string">"apache"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>您可以配置的设置因插件类型而异。你可以参考： <a href="https://www.elastic.co/guide/en/logstash/current/input-plugins.html" target="_blank" rel="noopener">Input Plugins</a>, <a href="https://www.elastic.co/guide/en/logstash/current/output-plugins.html" target="_blank" rel="noopener">Output Plugins</a>, <a href="https://www.elastic.co/guide/en/logstash/current/filter-plugins.html" target="_blank" rel="noopener">Filter Plugins</a>, 和 <a href="https://www.elastic.co/guide/en/logstash/current/codec-plugins.html" target="_blank" rel="noopener">Codec Plugins</a> 。</p>
-<h4 id="值类型"><a href="#值类型" class="headerlink" title="值类型"></a>值类型</h4><p>一个插件可以要求设置的值是一个特定的类型，比如布尔值，列表或哈希值。以下值类型受支持。</p>
+<h4 id="值类型"><a class="markdownIt-Anchor" href="#值类型"></a> 值类型</h4>
+<p>一个插件可以要求设置的值是一个特定的类型，比如布尔值，列表或哈希值。以下值类型受支持。</p>
 <ul>
 <li>Array</li>
 </ul>
@@ -709,54 +723,73 @@
 </ul>
 <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="attr">my_path</span> =&gt; <span class="string">"/tmp/logstash"</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li>String</li>
+<li>
+<p>String</p>
+</li>
+<li>
+<p>转义字符</p>
+</li>
 </ul>
-<ul>
-<li>转义字符</li>
-</ul>
-<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><blockquote>
+<h2 id="插件"><a class="markdownIt-Anchor" href="#插件"></a> 插件</h2>
+<h3 id="input"><a class="markdownIt-Anchor" href="#input"></a> input</h3>
+<blockquote>
 <p>Logstash 支持各种输入选择 ，可以在同一时间从众多常用来源捕捉事件。能够以连续的流式传输方式，轻松地从您的日志、指标、Web 应用、数据存储以及各种 AWS 服务采集数据。</p>
 </blockquote>
-<h4 id="常用-input-插件"><a href="#常用-input-插件" class="headerlink" title="常用 input 插件"></a>常用 input 插件</h4><ul>
+<h4 id="常用-input-插件"><a class="markdownIt-Anchor" href="#常用-input-插件"></a> 常用 input 插件</h4>
+<ul>
 <li><strong>file</strong>：从文件系统上的文件读取，就像UNIX命令 <code>tail -0F</code> 一样</li>
-<li><strong>syslog：</strong>在众所周知的端口514上侦听系统日志消息，并根据RFC3164格式进行解析</li>
-<li><strong>redis：</strong>从redis服务器读取，使用redis通道和redis列表。 Redis经常用作集中式Logstash安装中的“代理”，它将来自远程Logstash“托运人”的Logstash事件排队。</li>
-<li><strong>beats：</strong>处理由Filebeat发送的事件。</li>
+<li>**syslog：**在众所周知的端口514上侦听系统日志消息，并根据RFC3164格式进行解析</li>
+<li>**redis：**从redis服务器读取，使用redis通道和redis列表。 Redis经常用作集中式Logstash安装中的“代理”，它将来自远程Logstash“托运人”的Logstash事件排队。</li>
+<li>**beats：**处理由Filebeat发送的事件。</li>
 </ul>
 <p>更多详情请见：<a href="https://www.elastic.co/guide/en/logstash/current/input-plugins.html" target="_blank" rel="noopener">Input Plugins</a></p>
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><blockquote>
+<h3 id="filter"><a class="markdownIt-Anchor" href="#filter"></a> filter</h3>
+<blockquote>
 <p>过滤器是Logstash管道中的中间处理设备。如果符合特定条件，您可以将条件过滤器组合在一起，对事件执行操作。</p>
 </blockquote>
-<h4 id="常用-filter-插件"><a href="#常用-filter-插件" class="headerlink" title="常用 filter 插件"></a>常用 filter 插件</h4><ul>
-<li><strong>grok：</strong>解析和结构任意文本。 Grok目前是Logstash中将非结构化日志数据解析为结构化和可查询的最佳方法。</li>
-<li><p><strong>mutate：</strong>对事件字段执行一般转换。您可以重命名，删除，替换和修改事件中的字段。</p>
+<h4 id="常用-filter-插件"><a class="markdownIt-Anchor" href="#常用-filter-插件"></a> 常用 filter 插件</h4>
+<ul>
+<li>
+<p>**grok：**解析和结构任意文本。 Grok目前是Logstash中将非结构化日志数据解析为结构化和可查询的最佳方法。</p>
 </li>
-<li><p><strong>drop：</strong>完全放弃一个事件，例如调试事件。</p>
+<li>
+<p>**mutate：**对事件字段执行一般转换。您可以重命名，删除，替换和修改事件中的字段。</p>
 </li>
-<li><p><strong>clone：</strong>制作一个事件的副本，可能会添加或删除字段。</p>
+<li>
+<p>**drop：**完全放弃一个事件，例如调试事件。</p>
 </li>
-<li><p><strong>geoip：</strong>添加有关IP地址的地理位置的信息（也可以在Kibana中显示惊人的图表！）</p>
+<li>
+<p>**clone：**制作一个事件的副本，可能会添加或删除字段。</p>
+</li>
+<li>
+<p>**geoip：**添加有关IP地址的地理位置的信息（也可以在Kibana中显示惊人的图表！）</p>
 </li>
 </ul>
 <p>更多详情请见：<a href="https://www.elastic.co/guide/en/logstash/current/filter-plugins.html" target="_blank" rel="noopener">Filter Plugins</a></p>
-<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><blockquote>
+<h3 id="output"><a class="markdownIt-Anchor" href="#output"></a> output</h3>
+<blockquote>
 <p>输出是Logstash管道的最后阶段。一个事件可以通过多个输出，但是一旦所有输出处理完成，事件就完成了执行。</p>
 </blockquote>
-<h4 id="常用-output-插件"><a href="#常用-output-插件" class="headerlink" title="常用 output 插件"></a>常用 output 插件</h4><ul>
-<li><strong>elasticsearch：</strong>将事件数据发送给 Elasticsearch（推荐模式）。</li>
-<li><strong>file：</strong>将事件数据写入文件或磁盘。</li>
-<li><strong>graphite：</strong>将事件数据发送给 graphite（一个流行的开源工具，存储和绘制指标。 <a href="http://graphite.readthedocs.io/en/latest/）。" target="_blank" rel="noopener">http://graphite.readthedocs.io/en/latest/）。</a></li>
-<li><strong>statsd：</strong>将事件数据发送到 statsd （这是一种侦听统计数据的服务，如计数器和定时器，通过UDP发送并将聚合发送到一个或多个可插入的后端服务）。</li>
+<h4 id="常用-output-插件"><a class="markdownIt-Anchor" href="#常用-output-插件"></a> 常用 output 插件</h4>
+<ul>
+<li>**elasticsearch：**将事件数据发送给 Elasticsearch（推荐模式）。</li>
+<li>**file：**将事件数据写入文件或磁盘。</li>
+<li>**graphite：**将事件数据发送给 graphite（一个流行的开源工具，存储和绘制指标。 <a href="http://graphite.readthedocs.io/en/latest/%EF%BC%89%E3%80%82" target="_blank" rel="noopener">http://graphite.readthedocs.io/en/latest/）。</a></li>
+<li>**statsd：**将事件数据发送到 statsd （这是一种侦听统计数据的服务，如计数器和定时器，通过UDP发送并将聚合发送到一个或多个可插入的后端服务）。</li>
 </ul>
 <p>更多详情请见：<a href="https://www.elastic.co/guide/en/logstash/current/output-plugins.html" target="_blank" rel="noopener">Output Plugins</a></p>
-<h3 id="codec"><a href="#codec" class="headerlink" title="codec"></a>codec</h3><p>用于格式化对应的内容。</p>
-<h4 id="常用-codec-插件"><a href="#常用-codec-插件" class="headerlink" title="常用 codec 插件"></a>常用 codec 插件</h4><ul>
-<li><strong>json：</strong>以JSON格式对数据进行编码或解码。</li>
-<li><strong>multiline：</strong>将多行文本事件（如java异常和堆栈跟踪消息）合并为单个事件。</li>
+<h3 id="codec"><a class="markdownIt-Anchor" href="#codec"></a> codec</h3>
+<p>用于格式化对应的内容。</p>
+<h4 id="常用-codec-插件"><a class="markdownIt-Anchor" href="#常用-codec-插件"></a> 常用 codec 插件</h4>
+<ul>
+<li>**json：**以JSON格式对数据进行编码或解码。</li>
+<li>**multiline：**将多行文本事件（如java异常和堆栈跟踪消息）合并为单个事件。</li>
 </ul>
 <p>更多插件请见：<a href="https://www.elastic.co/guide/en/logstash/current/codec-plugins.html" target="_blank" rel="noopener">Codec Plugins</a></p>
-<h2 id="实战"><a href="#实战" class="headerlink" title="实战"></a>实战</h2><p>前面的内容都是对 Logstash 的介绍和原理说明。接下来，我们来实战一些常见的应用场景。</p>
-<h3 id="传输控制台数据"><a href="#传输控制台数据" class="headerlink" title="传输控制台数据"></a>传输控制台数据</h3><blockquote>
+<h2 id="实战"><a class="markdownIt-Anchor" href="#实战"></a> 实战</h2>
+<p>前面的内容都是对 Logstash 的介绍和原理说明。接下来，我们来实战一些常见的应用场景。</p>
+<h3 id="传输控制台数据"><a class="markdownIt-Anchor" href="#传输控制台数据"></a> 传输控制台数据</h3>
+<blockquote>
 <p>stdin input 插件从标准输入读取事件。这是最简单的 input 插件，一般用于测试场景。</p>
 </blockquote>
 <p><strong>应用</strong></p>
@@ -765,49 +798,57 @@
 <p>更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-stdin.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-stdin.html</a></p>
 <p>（2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：</p>
 <figure class="highlight lua"><table><tr><td class="code"><pre><span class="line">bin/logstash -f logstash-<span class="built_in">input</span>-<span class="built_in">stdin</span>.conf</span><br></pre></td></tr></table></figure>
-<h3 id="传输-logback-日志"><a href="#传输-logback-日志" class="headerlink" title="传输 logback 日志"></a>传输 logback 日志</h3><blockquote>
+<h3 id="传输-logback-日志"><a class="markdownIt-Anchor" href="#传输-logback-日志"></a> 传输 logback 日志</h3>
+<blockquote>
 <p>elk 默认使用的 Java 日志工具是 log4j2 ，并不支持 logback 和 log4j。</p>
 <p>想使用 logback + logstash ，可以使用 <a href="https://github.com/logstash/logstash-logback-encoder" target="_blank" rel="noopener">logstash-logback-encoder</a> 。<a href="https://github.com/logstash/logstash-logback-encoder" target="_blank" rel="noopener">logstash-logback-encoder</a> 提供了 UDP / TCP / 异步方式来传输日志数据到 logstash。</p>
 <p>如果你使用的是 log4j ，也不是不可以用这种方式，只要引入桥接 jar 包即可。如果你对 log4j 、logback ，或是桥接 jar 包不太了解，可以参考我的这篇博文：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javalib/java-log.md" target="_blank" rel="noopener">细说 Java 主流日志工具库</a> 。</p>
 </blockquote>
-<h4 id="TCP-应用"><a href="#TCP-应用" class="headerlink" title="TCP 应用"></a>TCP 应用</h4><ol>
-<li><p>logstash 配置</p>
+<h4 id="tcp-应用"><a class="markdownIt-Anchor" href="#tcp-应用"></a> TCP 应用</h4>
+<ol>
+<li>
+<p>logstash 配置</p>
 <p>（1）创建 <code>logstash-input-tcp.conf</code> ：</p>
 </li>
 </ol>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">input &#123;</span><br><span class="line">tcp &#123;</span><br><span class="line"> <span class="built_in"> port </span>=&gt; 9251</span><br><span class="line">  codec =&gt; json_lines</span><br><span class="line">  mode =&gt; server</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">output &#123;</span><br><span class="line"> elasticsearch &#123; hosts =&gt; [<span class="string">"localhost:9200"</span>] &#125;</span><br><span class="line"> stdout &#123; codec =&gt; rubydebug &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>   更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html</a></p>
-<p>   （2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：<code>bin/logstash -f logstash-input-udp.conf</code></p>
+<p>更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-tcp.html</a></p>
+<p>（2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：<code>bin/logstash -f logstash-input-udp.conf</code></p>
 <ol start="2">
-<li><p>java 应用配置</p>
+<li>
+<p>java 应用配置</p>
 <p>（1）在 Java 应用的 pom.xml 中引入 jar 包：</p>
 </li>
 </ol>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>net.logstash.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logstash-logback-encoder<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.11<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- logback 依赖包 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-core<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-classic<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>ch.qos.logback<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>logback-access<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.2.3<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>   （2）接着，在 logback.xml 中添加 appender</p>
+<p>（2）接着，在 logback.xml 中添加 appender</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"ELK-TCP"</span> <span class="attr">class</span>=<span class="string">"net.logstash.logback.appender.LogstashTcpSocketAppender"</span>&gt;</span></span><br><span class="line"> <span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment"> destination 是 logstash 服务的 host:port，</span></span><br><span class="line"><span class="comment"> 相当于和 logstash 建立了管道，将日志数据定向传输到 logstash</span></span><br><span class="line"><span class="comment"> --&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">destination</span>&gt;</span>192.168.28.32:9251<span class="tag">&lt;/<span class="name">destination</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">encoder</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> <span class="attr">class</span>=<span class="string">"net.logstash.logback.encoder.LogstashEncoder"</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"io.github.dunwu.spring"</span> <span class="attr">level</span>=<span class="string">"TRACE"</span> <span class="attr">additivity</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"ELK-TCP"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>   （3）接下来，就是 logback 的具体使用 ，如果对此不了解，不妨参考一下我的这篇博文：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javalib/java-log.md" target="_blank" rel="noopener">细说 Java 主流日志工具库</a> 。</p>
-<p>   <strong>实例：</strong><a href="https://github.com/dunwu/JavaStack/blob/master/codes/javatool/src/main/resources/logback.xml" target="_blank" rel="noopener">我的logback.xml</a></p>
-<h4 id="UDP-应用"><a href="#UDP-应用" class="headerlink" title="UDP 应用"></a>UDP 应用</h4><p>UDP 和 TCP 的使用方式大同小异。</p>
+<p>（3）接下来，就是 logback 的具体使用 ，如果对此不了解，不妨参考一下我的这篇博文：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javalib/java-log.md" target="_blank" rel="noopener">细说 Java 主流日志工具库</a> 。</p>
+<p><strong>实例：</strong><a href="https://github.com/dunwu/JavaStack/blob/master/codes/javatool/src/main/resources/logback.xml" target="_blank" rel="noopener">我的logback.xml</a></p>
+<h4 id="udp-应用"><a class="markdownIt-Anchor" href="#udp-应用"></a> UDP 应用</h4>
+<p>UDP 和 TCP 的使用方式大同小异。</p>
 <ol>
-<li><p>logstash 配置</p>
+<li>
+<p>logstash 配置</p>
 <p>（1）创建 <code>logstash-input-udp.conf</code> ：</p>
 </li>
 </ol>
 <figure class="highlight puppet"><table><tr><td class="code"><pre><span class="line"><span class="keyword">input</span> &#123;</span><br><span class="line">udp &#123;</span><br><span class="line">  <span class="attr">port</span> =&gt; <span class="number">9250</span></span><br><span class="line">  <span class="attr">codec</span> =&gt; json</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">output</span> &#123;</span><br><span class="line"> elasticsearch &#123; <span class="attr">hosts</span> =&gt; [<span class="string">"localhost:9200"</span>] &#125;</span><br><span class="line"> <span class="keyword">stdout</span> &#123; <span class="attr">codec</span> =&gt; rubydebug &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>   更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-udp.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-udp.html</a></p>
-<p>   （2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：<code>bin/logstash -f logstash-input-udp.conf</code></p>
+<p>更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-udp.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-udp.html</a></p>
+<p>（2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：<code>bin/logstash -f logstash-input-udp.conf</code></p>
 <ol start="2">
-<li><p>java 应用配置</p>
+<li>
+<p>java 应用配置</p>
 <p>（1）在 Java 应用的 pom.xml 中引入 jar 包：</p>
 <p>与 <strong>TCP 应用</strong> 一节中的引入依赖包完全相同。</p>
 <p>（2）接着，在 logback.xml 中添加 appender</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"ELK-UDP"</span> <span class="attr">class</span>=<span class="string">"net.logstash.logback.appender.LogstashSocketAppender"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">host</span>&gt;</span>192.168.28.32<span class="tag">&lt;/<span class="name">host</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span>&gt;</span>9250<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"io.github.dunwu.spring"</span> <span class="attr">level</span>=<span class="string">"TRACE"</span> <span class="attr">additivity</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"ELK-UDP"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>（3）接下来，就是 logback 的具体使用 ，如果对此不了解，不妨参考一下我的这篇博文：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javalib/java-log.md" target="_blank" rel="noopener">细说 Java 主流日志工具库</a> 。</p>
-<p><strong>实例：</strong><a href="https://github.com/dunwu/JavaStack/blob/master/codes/javatool/src/main/resources/logback.xml" target="_blank" rel="noopener">我的logback.xml</a></p>
 </li>
 </ol>
-<h3 id="传输文件"><a href="#传输文件" class="headerlink" title="传输文件"></a>传输文件</h3><blockquote>
+ <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"ELK-UDP"</span> <span class="attr">class</span>=<span class="string">"net.logstash.logback.appender.LogstashSocketAppender"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">host</span>&gt;</span>192.168.28.32<span class="tag">&lt;/<span class="name">host</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">port</span>&gt;</span>9250<span class="tag">&lt;/<span class="name">port</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"io.github.dunwu.spring"</span> <span class="attr">level</span>=<span class="string">"TRACE"</span> <span class="attr">additivity</span>=<span class="string">"false"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"ELK-UDP"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（3）接下来，就是 logback 的具体使用 ，如果对此不了解，不妨参考一下我的这篇博文：<a href="https://github.com/dunwu/JavaStack/blob/master/docs/javalib/java-log.md" target="_blank" rel="noopener">细说 Java 主流日志工具库</a> 。</p>
+<p><strong>实例：</strong><a href="https://github.com/dunwu/JavaStack/blob/master/codes/javatool/src/main/resources/logback.xml" target="_blank" rel="noopener">我的logback.xml</a></p>
+<h3 id="传输文件"><a class="markdownIt-Anchor" href="#传输文件"></a> 传输文件</h3>
+<blockquote>
 <p>在 Java Web 领域，需要用到一些重要的工具，例如 Tomcat 、Nginx 、Mysql 等。这些不属于业务应用，但是它们的日志数据对于定位问题、分析统计同样很重要。这时无法使用 logback 方式将它们的日志传输到 logstash。</p>
 <p>如何采集这些日志文件呢？别急，你可以使用 logstash 的 file input 插件。</p>
 <p>需要注意的是，传输文件这种方式，必须在日志所在的机器上部署 logstash 。</p>
@@ -818,22 +859,26 @@
 <figure class="highlight puppet"><table><tr><td class="code"><pre><span class="line"><span class="keyword">input</span> &#123;</span><br><span class="line">	file &#123;</span><br><span class="line">		<span class="attr">path</span> =&gt; [<span class="string">"/var/log/nginx/access.log"</span>]</span><br><span class="line">		<span class="attr">type</span> =&gt; <span class="string">"nginx-access-log"</span></span><br><span class="line">		<span class="attr">start_position</span> =&gt; <span class="string">"beginning"</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">output</span> &#123;</span><br><span class="line">	<span class="keyword">if</span> [<span class="built_in">type</span>] == <span class="string">"nginx-access-log"</span> &#123;</span><br><span class="line">		elasticsearch &#123;</span><br><span class="line">			<span class="attr">hosts</span> =&gt; [<span class="string">"localhost:9200"</span>]</span><br><span class="line">			<span class="attr">index</span> =&gt; <span class="string">"nginx-access-log"</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>（2）执行 logstash，使用 <code>-f</code> 来指定你的配置文件：<code>bin/logstash -f logstash-input-file.conf</code></p>
 <p>更多配置项可以参考：<a href="https://www.elastic.co/guide/en/logstash/current/plugins-inputs-file.html" target="_blank" rel="noopener">https://www.elastic.co/guide/en/logstash/current/plugins-inputs-file.html</a></p>
-<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><h3 id="启动、终止应用"><a href="#启动、终止应用" class="headerlink" title="启动、终止应用"></a>启动、终止应用</h3><p>如果你的 logstash 每次都是通过指定配置文件方式启动。不妨建立一个启动脚本。</p>
+<h2 id="小技巧"><a class="markdownIt-Anchor" href="#小技巧"></a> 小技巧</h2>
+<h3 id="启动-终止应用"><a class="markdownIt-Anchor" href="#启动-终止应用"></a> 启动、终止应用</h3>
+<p>如果你的 logstash 每次都是通过指定配置文件方式启动。不妨建立一个启动脚本。</p>
 <figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="comment"># cd xxx 进入 logstash 安装目录下的 bin 目录</span></span><br><span class="line"><span class="attribute">logstash</span> -f logstash.conf</span><br></pre></td></tr></table></figure>
 <p>如果你的 logstash 运行在 linux 系统下，不妨使用 nohup 来启动一个守护进程。这样做的好处在于，即使关闭终端，应用仍会运行。</p>
-<p><strong>创建 startup.sh</strong></p>
+<p><strong>创建 <a href="http://startup.sh" target="_blank" rel="noopener">startup.sh</a></strong></p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">nohup ./logstash -f logstash<span class="selector-class">.conf</span> &gt;&gt; nohup<span class="selector-class">.out</span> <span class="number">2</span>&gt;&amp;<span class="number">1</span> &amp;</span><br></pre></td></tr></table></figure>
 <p>终止应用没有什么好方法，你只能使用 ps -ef | grep logstash ，查出进程，将其kill 。不过，我们可以写一个脚本来干这件事：</p>
-<p><strong>创建 shutdown.sh</strong></p>
+<p><strong>创建 <a href="http://shutdown.sh" target="_blank" rel="noopener">shutdown.sh</a></strong></p>
 <p>脚本不多解释，请自行领会作用。</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">PID=`ps -ef | grep logstash | awk <span class="string">'&#123; print $2&#125;'</span> | head -n 1`</span><br><span class="line"><span class="built_in">kill</span> -9 <span class="variable">$&#123;PID&#125;</span></span><br></pre></td></tr></table></figure>
-<h2 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h2><ul>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
 <li><a href="https://www.elastic.co/guide/en/logstash/current/index.html" target="_blank" rel="noopener">Logstash 官方文档</a></li>
 <li><a href="https://github.com/logstash/logstash-logback-encoder" target="_blank" rel="noopener">logstash-logback-encoder</a></li>
 <li><a href="https://github.com/chenryn/logstash-best-practice-cn" target="_blank" rel="noopener">ELK Stack权威指南</a></li>
 <li><a href="https://github.com/judasn/Linux-Tutorial/blob/master/ELK-Install-And-Settings.md" target="_blank" rel="noopener">ELK（Elasticsearch、Logstash、Kibana）安装和配置</a></li>
 </ul>
-<h2 id="推荐阅读"><a href="#推荐阅读" class="headerlink" title="推荐阅读"></a>推荐阅读</h2><ul>
+<h2 id="推荐阅读"><a class="markdownIt-Anchor" href="#推荐阅读"></a> 推荐阅读</h2>
+<ul>
 <li><a href="https://github.com/dunwu/JavaStack/blob/master/docs/javatool/elastic/README.md" target="_blank" rel="noopener">Elastic 技术栈</a></li>
 <li><a href="https://github.com/dunwu/JavaStack" target="_blank" rel="noopener">JavaStack</a></li>
 </ul>
@@ -990,7 +1035,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1055,7 +1100,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1353,7 +1400,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Elastic-技术栈之-Logstash-基础"><span class="nav-text">Elastic 技术栈之 Logstash 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-text">功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作原理"><span class="nav-text">工作原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置"><span class="nav-text">设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置文件"><span class="nav-text">设置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logstash-yml-设置项"><span class="nav-text">logstash.yml 设置项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text">启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text">命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件结构"><span class="nav-text">配置文件结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件配置"><span class="nav-text">插件配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#值类型"><span class="nav-text">值类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-text">input</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-input-插件"><span class="nav-text">常用 input 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-text">filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-filter-插件"><span class="nav-text">常用 filter 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output"><span class="nav-text">output</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-output-插件"><span class="nav-text">常用 output 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#codec"><span class="nav-text">codec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-codec-插件"><span class="nav-text">常用 codec 插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text">实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输控制台数据"><span class="nav-text">传输控制台数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输-logback-日志"><span class="nav-text">传输 logback 日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-应用"><span class="nav-text">TCP 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UDP-应用"><span class="nav-text">UDP 应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输文件"><span class="nav-text">传输文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧"><span class="nav-text">小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动、终止应用"><span class="nav-text">启动、终止应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text">资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐阅读"><span class="nav-text">推荐阅读</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#elastic-技术栈之-logstash-基础"><span class="nav-text"> Elastic 技术栈之 Logstash 基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#功能"><span class="nav-text"> 功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工作原理"><span class="nav-text"> 工作原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置"><span class="nav-text"> 设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置文件"><span class="nav-text"> 设置文件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logstashyml-设置项"><span class="nav-text"> logstash.yml 设置项</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启动"><span class="nav-text"> 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行"><span class="nav-text"> 命令行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-text"> 配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置文件结构"><span class="nav-text"> 配置文件结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插件配置"><span class="nav-text"> 插件配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#值类型"><span class="nav-text"> 值类型</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插件"><span class="nav-text"> 插件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#input"><span class="nav-text"> input</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-input-插件"><span class="nav-text"> 常用 input 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-text"> filter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-filter-插件"><span class="nav-text"> 常用 filter 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#output"><span class="nav-text"> output</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-output-插件"><span class="nav-text"> 常用 output 插件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#codec"><span class="nav-text"> codec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用-codec-插件"><span class="nav-text"> 常用 codec 插件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战"><span class="nav-text"> 实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#传输控制台数据"><span class="nav-text"> 传输控制台数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输-logback-日志"><span class="nav-text"> 传输 logback 日志</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tcp-应用"><span class="nav-text"> TCP 应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#udp-应用"><span class="nav-text"> UDP 应用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#传输文件"><span class="nav-text"> 传输文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小技巧"><span class="nav-text"> 小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-终止应用"><span class="nav-text"> 启动、终止应用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐阅读"><span class="nav-text"> 推荐阅读</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1395,7 +1442,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

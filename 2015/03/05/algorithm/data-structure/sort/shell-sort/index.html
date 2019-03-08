@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="希尔排序要点 希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。 算法思想希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排序。 我们来通">
+  <meta name="description" content="希尔排序  要点  希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。  算法思想 希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。 随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="希尔排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/05/algorithm/data-structure/sort/shell-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="希尔排序要点 希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。 算法思想希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排序。 我们来通">
+<meta property="og:description" content="希尔排序  要点  希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。  算法思想 希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。 随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/shell-sort.png">
 <meta property="og:updated_time" content="2019-03-07T02:24:26.765Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="希尔排序">
-<meta name="twitter:description" content="希尔排序要点 希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。 算法思想希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排序。 我们来通">
+<meta name="twitter:description" content="希尔排序  要点  希尔(Shell)排序又称为缩小增量排序，它是一种插入排序。它是直接插入排序算法的一种威力加强版。  该方法因DL．Shell于1959年提出而得名。  算法思想 希尔排序的基本思想是： 把记录按步长 gap 分组，对每组记录采用直接插入排序方法进行排序。 随着步长逐渐减小，所分成的组包含的记录越来越多，当步长的值减小到 1 时，整个数据合成为一组，构成一组有序记录，则完成排">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/shell-sort.png">
 
 
@@ -483,7 +483,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">2.2k</span>
               
 
               
@@ -517,28 +517,31 @@
       
 
       
-        <h1 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><blockquote>
+        <h1 id="希尔排序"><a class="markdownIt-Anchor" href="#希尔排序"></a> 希尔排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<blockquote>
 <p>希尔(Shell)排序又称为<strong>缩小增量排序</strong>，它是一种<strong>插入排序</strong>。它<strong>是直接插入排序算法的一种威力加强版</strong>。</p>
 </blockquote>
 <p>该方法因DL．Shell于1959年提出而得名。</p>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>希尔排序的<strong>基本思想</strong>是：</p>
-<p>把记录按<strong>步长 gap</strong> 分组，对每组记录采用<strong>直接插入排序</strong>方法进行排序。<br>随着<strong>步长逐渐减小</strong>，所分成的组包含的记录越来越多，当步长的值减小到 <strong>1</strong> 时，整个数据合成为一组，构成一组有序记录，则完成排序。</p>
-<p>我们来通过演示图，更深入的理解一下这个过程。 </p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<p>希尔排序的<strong>基本思想</strong>是：</p>
+<p>把记录按<strong>步长 gap</strong> 分组，对每组记录采用<strong>直接插入排序</strong>方法进行排序。<br>
+随着<strong>步长逐渐减小</strong>，所分成的组包含的记录越来越多，当步长的值减小到 <strong>1</strong> 时，整个数据合成为一组，构成一组有序记录，则完成排序。</p>
+<p>我们来通过演示图，更深入的理解一下这个过程。</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/shell-sort.png"></div><br></p>
 <p>在上面这幅图中：</p>
 <p>初始时，有一个大小为 10 的无序序列。</p>
 <ul>
-<li><p>在<strong>第一趟排序中</strong>，我们不妨设 gap1 = N / 2 = 5，即相隔距离为 5 的元素组成一组，可以分为 5 组。</p>
+<li>
+<p>在<strong>第一趟排序中</strong>，我们不妨设 gap1 = N / 2 = 5，即相隔距离为 5 的元素组成一组，可以分为 5 组。</p>
 <p>接下来，按照直接插入排序的方法对每个组进行排序。</p>
 </li>
-</ul>
-<ul>
-<li><p>在<strong>第二趟排序中</strong>，我们把上次的 gap 缩小一半，即 gap2 = gap1 / 2 = 2 (取整数)。这样每相隔距离为 2 的元素组成一组，可以分为 2 组。</p>
+<li>
+<p>在<strong>第二趟排序中</strong>，我们把上次的 gap 缩小一半，即 gap2 = gap1 / 2 = 2 (取整数)。这样每相隔距离为 2 的元素组成一组，可以分为 2 组。</p>
 <p>按照直接插入排序的方法对每个组进行排序。</p>
 </li>
-</ul>
-<ul>
-<li><p>在<strong>第三趟排序中</strong>，再次把 gap 缩小一半，即gap3 = gap2 / 2 = 1。 这样相隔距离为 1 的元素组成一组，即只有一组。</p>
+<li>
+<p>在<strong>第三趟排序中</strong>，再次把 gap 缩小一半，即gap3 = gap2 / 2 = 1。 这样相隔距离为 1 的元素组成一组，即只有一组。</p>
 <p>按照直接插入排序的方法对每个组进行排序。此时，<strong>排序已经结束</strong>。</p>
 </li>
 </ul>
@@ -546,7 +549,8 @@
 <p>所以，希尔排序是不稳定的算法。</p>
 <p><strong>核心代码</strong></p>
  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">shellSort</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> gap = list.length / <span class="number">2</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span> &lt;= gap) &#123;</span><br><span class="line">        <span class="comment">// 把距离为 gap 的元素编为一个组，扫描所有组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = gap; i &lt; list.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> temp = list[i];</span><br><span class="line"> </span><br><span class="line">            <span class="comment">// 对距离为 gap 的元素组进行排序</span></span><br><span class="line">            <span class="keyword">for</span> (j = i - gap; j &gt;= <span class="number">0</span> &amp;&amp; temp &lt; list[j]; j = j - gap) &#123;</span><br><span class="line">                list[j + gap] = list[j];</span><br><span class="line">            &#125;</span><br><span class="line">            list[j + gap] = temp;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        System.out.format(<span class="string">"gap = %d:\t"</span>, gap);</span><br><span class="line">        printAll(list);</span><br><span class="line">        gap = gap / <span class="number">2</span>; <span class="comment">// 减小增量</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p><strong>希尔排序的算法性能</strong></p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p><strong>希尔排序的算法性能</strong></p>
 <table>
 <thead>
 <tr>
@@ -589,25 +593,34 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>步长的选择是希尔排序的重要部分。只要最终步长为1任何步长序列都可以工作。</p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>步长的选择是希尔排序的重要部分。只要最终步长为1任何步长序列都可以工作。</p>
 <p>算法最开始以一定的步长进行排序。然后会继续以一定步长进行排序，最终算法以步长为1进行排序。当步长为1时，算法变为插入排序，这就保证了数据一定会被排序。</p>
 <p>Donald Shell 最初建议步长选择为N/2并且对步长取半直到步长达到1。虽然这样取可以比O(N2)类的算法（插入排序）更好，但这样仍然有减少平均时间和最差时间的余地。可能希尔排序最重要的地方在于当用较小步长排序后，以前用的较大步长仍然是有序的。比如，如果一个数列以步长5进行了排序然后再以步长3进行排序，那么该数列不仅是以步长3有序，而且是以步长5有序。如果不是这样，那么算法在迭代过程中会打乱以前的顺序，那就不会以如此短的时间完成排序了。</p>
 <p>已知的最好步长序列是由Sedgewick提出的(1, 5, 19, 41, 109,…)，该序列的项来自这两个算式。</p>
 <p>这项研究也表明“比较在希尔排序中是最主要的操作，而不是交换。”用这样步长序列的希尔排序比插入排序和堆排序都要快，甚至在小数组中比快速排序还快，但是在涉及大量数据时希尔排序还是比快速排序慢。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>由上文的<strong>希尔排序算法演示图</strong>即可知，希尔排序中相等数据可能会交换位置，所以希尔排序是<strong>不稳定</strong>的算法。</p>
-<h3 id="直接插入排序和希尔排序的比较"><a href="#直接插入排序和希尔排序的比较" class="headerlink" title="直接插入排序和希尔排序的比较"></a>直接插入排序和希尔排序的比较</h3><ul>
-<li><p>直接插入排序是<strong>稳定的</strong>；而希尔排序是<strong>不稳定</strong>的。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>由上文的<strong>希尔排序算法演示图</strong>即可知，希尔排序中相等数据可能会交换位置，所以希尔排序是<strong>不稳定</strong>的算法。</p>
+<h3 id="直接插入排序和希尔排序的比较"><a class="markdownIt-Anchor" href="#直接插入排序和希尔排序的比较"></a> 直接插入排序和希尔排序的比较</h3>
+<ul>
+<li>
+<p>直接插入排序是<strong>稳定的</strong>；而希尔排序是<strong>不稳定</strong>的。</p>
 </li>
-<li><p>直接插入排序更适合于原始记录基本<strong>有序</strong>的集合。</p>
+<li>
+<p>直接插入排序更适合于原始记录基本<strong>有序</strong>的集合。</p>
 </li>
-<li><p>希尔排序的比较次数和移动次数都要比直接插入排序少，当N越大时，效果越明显。   </p>
+<li>
+<p>希尔排序的比较次数和移动次数都要比直接插入排序少，当N越大时，效果越明显。</p>
 </li>
-<li><p>在希尔排序中，增量序列gap的取法必须满足：<strong>最后一个步长必须是 1 。 </strong></p>
+<li>
+<p>在希尔排序中，增量序列gap的取法必须满足：**最后一个步长必须是 1 。 **</p>
 </li>
-<li><p>直接插入排序也<strong>适用于链式存储结构</strong>；希尔排序<strong>不适用于链式结构</strong>。</p>
+<li>
+<p>直接插入排序也<strong>适用于链式存储结构</strong>；希尔排序<strong>不适用于链式结构</strong>。</p>
 </li>
 </ul>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -758,7 +771,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -823,7 +836,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1121,7 +1136,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#希尔排序"><span class="nav-text">希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序和希尔排序的比较"><span class="nav-text">直接插入排序和希尔排序的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#希尔排序"><span class="nav-text"> 希尔排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接插入排序和希尔排序的比较"><span class="nav-text"> 直接插入排序和希尔排序的比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1163,7 +1178,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

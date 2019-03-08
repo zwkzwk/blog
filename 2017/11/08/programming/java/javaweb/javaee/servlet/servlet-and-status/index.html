@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="HTTP 状态码HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...  (">
+  <meta name="description" content="HTTP 状态码 HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...">
 <meta name="keywords" content="javaee,servlet,http">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaEE Servlet HTTP 状态码">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/servlet/servlet-and-status/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="HTTP 状态码HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...  (">
+<meta property="og:description" content="HTTP 状态码 HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.911Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaEE Servlet HTTP 状态码">
-<meta name="twitter:description" content="HTTP 状态码HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...  (">
+<meta name="twitter:description" content="HTTP 状态码 HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：  初始状态行 + 回车换行符（回车+换行） 零个或多个标题行+回车换行符 一个空白行，即回车换行符 一个可选的消息主体，比如文件、查询数据或查询输出  例如，服务器的响应头如下所示： HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ......HeaderN: ...">
 
 
 
@@ -508,7 +508,8 @@
       
 
       
-        <h2 id="HTTP-状态码"><a href="#HTTP-状态码" class="headerlink" title="HTTP 状态码"></a>HTTP 状态码</h2><p>HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：</p>
+        <h2 id="http-状态码"><a class="markdownIt-Anchor" href="#http-状态码"></a> HTTP 状态码</h2>
+<p>HTTP 请求和 HTTP 响应消息的格式是类似的，结构如下：</p>
 <ul>
 <li>初始状态行 + 回车换行符（回车+换行）</li>
 <li>零个或多个标题行+回车换行符</li>
@@ -726,11 +727,12 @@
 <tr>
 <td>505</td>
 <td>HTTP Version Not Supported</td>
-<td>服务器不支持”HTTP 协议”版本。</td>
+<td>服务器不支持&quot;HTTP 协议&quot;版本。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="设置-HTTP-状态码的方法"><a href="#设置-HTTP-状态码的方法" class="headerlink" title="设置 HTTP 状态码的方法"></a>设置 HTTP 状态码的方法</h2><p>下面的方法可用于在 Servlet 程序中设置 HTTP 状态码。这些方法通过  <code>HttpServletResponse</code>  对象可用。</p>
+<h2 id="设置-http-状态码的方法"><a class="markdownIt-Anchor" href="#设置-http-状态码的方法"></a> 设置 HTTP 状态码的方法</h2>
+<p>下面的方法可用于在 Servlet 程序中设置 HTTP 状态码。这些方法通过  <code>HttpServletResponse</code>  对象可用。</p>
 <table>
 <thead>
 <tr>
@@ -741,19 +743,20 @@
 <tbody>
 <tr>
 <td>1</td>
-<td><strong>public void setStatus ( int statusCode )</strong>该方法设置一个任意的状态码。setStatus 方法接受一个 int（状态码）作为参数。如果您的反应包含了一个特殊的状态码和文档，请确保在使用  <em>PrintWriter</em>  实际返回任何内容之前调用 setStatus。</td>
+<td>**public void setStatus ( int statusCode )**该方法设置一个任意的状态码。setStatus 方法接受一个 int（状态码）作为参数。如果您的反应包含了一个特殊的状态码和文档，请确保在使用  <em>PrintWriter</em>  实际返回任何内容之前调用 setStatus。</td>
 </tr>
 <tr>
 <td>2</td>
-<td><strong>public void sendRedirect(String url)</strong>该方法生成一个 302 响应，连同一个带有新文档 URL 的  <em>Location</em>  头。</td>
+<td>**public void sendRedirect(String url)**该方法生成一个 302 响应，连同一个带有新文档 URL 的  <em>Location</em>  头。</td>
 </tr>
 <tr>
 <td>3</td>
-<td><strong>public void sendError(int code, String message)</strong>该方法发送一个状态码（通常为 404），连同一个在 HTML 文档内部自动格式化并发送到客户端的短消息。</td>
+<td>**public void sendError(int code, String message)**该方法发送一个状态码（通常为 404），连同一个在 HTML 文档内部自动格式化并发送到客户端的短消息。</td>
 </tr>
 </tbody>
 </table>
-<h2 id="HTTP-状态码实例"><a href="#HTTP-状态码实例" class="headerlink" title="HTTP 状态码实例"></a>HTTP 状态码实例</h2><p>下面的例子把 407 错误代码发送到客户端浏览器，浏览器会显示 “Need authentication!!!” 消息。</p>
+<h2 id="http-状态码实例"><a class="markdownIt-Anchor" href="#http-状态码实例"></a> HTTP 状态码实例</h2>
+<p>下面的例子把 407 错误代码发送到客户端浏览器，浏览器会显示 “Need authentication!!!” 消息。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 导入必需的 java 库</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 扩展 HttpServlet 类</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">showError</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 处理 GET 方法请求的方法</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                    HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">            <span class="keyword">throws</span> ServletException, IOException</span></span><br><span class="line"><span class="function">  </span>&#123;</span><br><span class="line">      <span class="comment">// 设置错误代码和原因</span></span><br><span class="line">      response.sendError(<span class="number">407</span>, <span class="string">"Need authentication!!!"</span> );</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 处理 POST 方法请求的方法</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,</span></span></span><br><span class="line"><span class="function"><span class="params">                     HttpServletResponse response)</span></span></span><br><span class="line"><span class="function">      <span class="keyword">throws</span> ServletException, IOException </span>&#123;</span><br><span class="line">     doGet(request, response);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>现在，调用上面的 Servlet 将显示以下结果：</p>
 <figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">HTTP Status 407 - Need authentication!!!</span><br><span class="line">type Status report</span><br><span class="line">message Need authentication!!!</span><br><span class="line">description The<span class="built_in"> client </span>must first authenticate itself with the<span class="built_in"> proxy </span>(Need authentication!!!).</span><br><span class="line">Apache Tomcat/5.5.29</span><br></pre></td></tr></table></figure>
@@ -825,8 +828,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/" rel="next" title="JavaEE Cookie">
-                <i class="fa fa-chevron-left"></i> JavaEE Cookie
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/session/" rel="next" title="JavaEE Session">
+                <i class="fa fa-chevron-left"></i> JavaEE Session
               </a>
             
           </div>
@@ -835,8 +838,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-xml/" rel="prev" title="JSTL XML标签">
-                JSTL XML标签 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/spring/web/spring-mvc-introduction/" rel="prev" title="SpringMVC 简介">
+                SpringMVC 简介 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -908,7 +911,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -973,7 +976,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1271,7 +1276,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-状态码"><span class="nav-text">HTTP 状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-HTTP-状态码的方法"><span class="nav-text">设置 HTTP 状态码的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP-状态码实例"><span class="nav-text">HTTP 状态码实例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#http-状态码"><span class="nav-text"> HTTP 状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置-http-状态码的方法"><span class="nav-text"> 设置 HTTP 状态码的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#http-状态码实例"><span class="nav-text"> HTTP 状态码实例</span></a></li></ol></div>
             
 
           </div>
@@ -1313,7 +1318,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

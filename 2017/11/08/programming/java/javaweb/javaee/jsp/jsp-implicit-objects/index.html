@@ -556,14 +556,17 @@
 </tr>
 </tbody>
 </table>
-<h2 id="request-对象"><a href="#request-对象" class="headerlink" title="request 对象"></a>request 对象</h2><p><code>request</code>对象是<code>javax.servlet.http.HttpServletRequest</code> 类的实例。</p>
+<h2 id="request-对象"><a class="markdownIt-Anchor" href="#request-对象"></a> request 对象</h2>
+<p><code>request</code>对象是<code>javax.servlet.http.HttpServletRequest</code> 类的实例。</p>
 <p>每当客户端请求一个 JSP 页面时，JSP 引擎就会制造一个新的<code>request</code>对象来代表这个请求。</p>
 <p><code>request</code>对象提供了一系列方法来获取 HTTP 头信息，cookies，HTTP 方法等等。</p>
-<h2 id="response-对象"><a href="#response-对象" class="headerlink" title="response 对象"></a>response 对象</h2><p><code>response</code>对象是<code>javax.servlet.http.HttpServletResponse</code>类的实例。</p>
+<h2 id="response-对象"><a class="markdownIt-Anchor" href="#response-对象"></a> response 对象</h2>
+<p><code>response</code>对象是<code>javax.servlet.http.HttpServletResponse</code>类的实例。</p>
 <p>当服务器创建<code>request</code>对象时会同时创建用于响应这个客户端的<code>response</code>对象。</p>
 <p><code>response</code>对象也定义了处理 HTTP 头模块的接口。通过这个对象，开发者们可以添加新的 cookies，时间戳，HTTP 状态码等等。</p>
-<h2 id="out-对象"><a href="#out-对象" class="headerlink" title="out 对象"></a>out 对象</h2><p><code>out</code>对象是<code>javax.servlet.jsp.JspWriter</code>类的实例，用来在<code>response</code>对象中写入内容。</p>
-<p>最初的<code>JspWriter</code>类对象根据页面是否有缓存来进行不同的实例化操作。可以在<code>page</code>指令中使用<code>buffered=&#39;false&#39;</code>属性来轻松关闭缓存。</p>
+<h2 id="out-对象"><a class="markdownIt-Anchor" href="#out-对象"></a> out 对象</h2>
+<p><code>out</code>对象是<code>javax.servlet.jsp.JspWriter</code>类的实例，用来在<code>response</code>对象中写入内容。</p>
+<p>最初的<code>JspWriter</code>类对象根据页面是否有缓存来进行不同的实例化操作。可以在<code>page</code>指令中使用<code>buffered='false'</code>属性来轻松关闭缓存。</p>
 <p><code>JspWriter</code>类包含了大部分<code>java.io.PrintWriter</code>类中的方法。不过，<code>JspWriter</code>新增了一些专为处理缓存而设计的方法。还有就是，<code>JspWriter</code>类会抛出<code>IOExceptions</code>异常，而<code>PrintWriter</code>不会。</p>
 <p>下表列出了我们将会用来输出<code>boolean</code>，<code>char</code>，<code>int</code>，<code>double</code>，<code>String</code>，<code>object</code>等类型数据的重要方法：</p>
 <table>
@@ -588,26 +591,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="session-对象"><a href="#session-对象" class="headerlink" title="session 对象"></a>session 对象</h2><p><code>session</code>对象是<code>javax.servlet.http.HttpSession</code>类的实例。和 Java Servlets 中的<code>session</code>对象有一样的行为。</p>
+<h2 id="session-对象"><a class="markdownIt-Anchor" href="#session-对象"></a> session 对象</h2>
+<p><code>session</code>对象是<code>javax.servlet.http.HttpSession</code>类的实例。和 Java Servlets 中的<code>session</code>对象有一样的行为。</p>
 <p><code>session</code>对象用来跟踪在各个客户端请求间的会话。</p>
-<h2 id="application-对象"><a href="#application-对象" class="headerlink" title="application 对象"></a>application 对象</h2><p><code>application</code>对象直接包装了 servlet 的<code>ServletContext</code>类的对象，是<code>javax.servlet.ServletContext</code>类的实例。</p>
+<h2 id="application-对象"><a class="markdownIt-Anchor" href="#application-对象"></a> application 对象</h2>
+<p><code>application</code>对象直接包装了 servlet 的<code>ServletContext</code>类的对象，是<code>javax.servlet.ServletContext</code>类的实例。</p>
 <p>这个对象在 JSP 页面的整个生命周期中都代表着这个 JSP 页面。这个对象在 JSP 页面初始化时被创建，随着<code>jspDestroy()</code>方法的调用而被移除。</p>
 <p>通过向<code>application</code>中添加属性，则所有组成您 web 应用的 JSP 文件都能访问到这些属性。</p>
-<h2 id="config-对象"><a href="#config-对象" class="headerlink" title="config 对象"></a>config 对象</h2><p><code>config</code>对象是<code>javax.servlet.ServletConfig</code>类的实例，直接包装了 servlet 的<code>ServletConfig</code>类的对象。</p>
+<h2 id="config-对象"><a class="markdownIt-Anchor" href="#config-对象"></a> config 对象</h2>
+<p><code>config</code>对象是<code>javax.servlet.ServletConfig</code>类的实例，直接包装了 servlet 的<code>ServletConfig</code>类的对象。</p>
 <p>这个对象允许开发者访问 Servlet 或者 JSP 引擎的初始化参数，比如文件路径等。</p>
 <p>以下是 config 对象的使用方法，不是很重要，所以不常用：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">config.getServletName();</span><br></pre></td></tr></table></figure>
 <p>它返回包含在<code>&lt;servlet-name&gt;</code>元素中的 servlet 名字，注意，<code>&lt;servlet-name&gt;</code>元素在<code>WEB-INF\web.xml</code>文件中定义。</p>
-<h2 id="pageContext-对象"><a href="#pageContext-对象" class="headerlink" title="pageContext 对象"></a>pageContext 对象</h2><p><code>pageContext</code>对象是<code>javax.servlet.jsp.PageContext</code>类的实例，用来代表整个 JSP 页面。</p>
+<h2 id="pagecontext-对象"><a class="markdownIt-Anchor" href="#pagecontext-对象"></a> pageContext 对象</h2>
+<p><code>pageContext</code>对象是<code>javax.servlet.jsp.PageContext</code>类的实例，用来代表整个 JSP 页面。</p>
 <p>这个对象主要用来访问页面信息，同时过滤掉大部分实现细节。</p>
 <p>这个对象存储了<code>request</code>对象和<code>response</code>对象的引用。<code>application</code>对象，<code>config</code>对象，<code>session</code>对象，<code>out</code>对象可以通过访问这个对象的属性来导出。</p>
 <p><code>pageContext</code>对象也包含了传给 JSP 页面的指令信息，包括缓存信息，ErrorPage URL,页面 scope 等。</p>
 <p><code>PageContext</code>类定义了一些字段，包括 PAGE_SCOPE，REQUEST_SCOPE，SESSION_SCOPE， APPLICATION_SCOPE。它也提供了 40 余种方法，有一半继承自<code>javax.servlet.jsp.JspContext</code> 类。</p>
 <p>其中一个重要的方法就是<code>removeArribute()</code>，它可接受一个或两个参数。比如，pageContext.removeArribute(“attrName”)移除四个 scope 中相关属性，但是下面这种方法只移除特定 scope 中的相关属性：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">pageContext.removeAttribute(<span class="string">"attrName"</span>, PAGE_SCOPE);</span><br></pre></td></tr></table></figure>
-<h2 id="page-对象"><a href="#page-对象" class="headerlink" title="page 对象"></a>page 对象</h2><p>这个对象就是页面实例的引用。它可以被看做是整个 JSP 页面的代表。</p>
+<h2 id="page-对象"><a class="markdownIt-Anchor" href="#page-对象"></a> page 对象</h2>
+<p>这个对象就是页面实例的引用。它可以被看做是整个 JSP 页面的代表。</p>
 <p><code>page</code>对象就是<code>this</code>对象的同义词。</p>
-<h2 id="exception-对象"><a href="#exception-对象" class="headerlink" title="exception 对象"></a>exception 对象</h2><p><code>exception</code>对象包装了从先前页面中抛出的异常信息。它通常被用来产生对出错条件的适当响应。</p>
+<h2 id="exception-对象"><a class="markdownIt-Anchor" href="#exception-对象"></a> exception 对象</h2>
+<p><code>exception</code>对象包装了从先前页面中抛出的异常信息。它通常被用来产生对出错条件的适当响应。</p>
 
       
     </div>
@@ -674,8 +683,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/web/spring-mvc-introduction/" rel="next" title="SpringMVC 简介">
-                <i class="fa fa-chevron-left"></i> SpringMVC 简介
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-el-expression/" rel="next" title="JSP 表达式语言">
+                <i class="fa fa-chevron-left"></i> JSP 表达式语言
               </a>
             
           </div>
@@ -757,7 +766,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -822,7 +831,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1120,7 +1131,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#request-对象"><span class="nav-text">request 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#response-对象"><span class="nav-text">response 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#out-对象"><span class="nav-text">out 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-对象"><span class="nav-text">session 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application-对象"><span class="nav-text">application 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config-对象"><span class="nav-text">config 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pageContext-对象"><span class="nav-text">pageContext 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page-对象"><span class="nav-text">page 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exception-对象"><span class="nav-text">exception 对象</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#request-对象"><span class="nav-text"> request 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#response-对象"><span class="nav-text"> response 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#out-对象"><span class="nav-text"> out 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#session-对象"><span class="nav-text"> session 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#application-对象"><span class="nav-text"> application 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config-对象"><span class="nav-text"> config 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pagecontext-对象"><span class="nav-text"> pageContext 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page-对象"><span class="nav-text"> page 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#exception-对象"><span class="nav-text"> exception 对象</span></a></li></ol></div>
             
 
           </div>
@@ -1162,7 +1173,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

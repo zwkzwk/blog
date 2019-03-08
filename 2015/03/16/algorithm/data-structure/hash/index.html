@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="哈希表 关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容   简介 哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语言（如">
+  <meta name="description" content="哈希表  关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容    简介  哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语">
 <meta name="keywords" content="data-structure,hash">
 <meta property="og:type" content="article">
 <meta property="og:title" content="哈希表">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/16/algorithm/data-structure/hash/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="哈希表 关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容   简介 哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语言（如">
+<meta property="og:description" content="哈希表  关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容    简介  哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数示例.png">
 <meta property="og:updated_time" content="2019-03-07T02:28:04.390Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="哈希表">
-<meta name="twitter:description" content="哈希表 关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容   简介 哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语言（如">
+<meta name="twitter:description" content="哈希表  关键词： hash, 哈希表, 哈希函数    简介 原理 更多内容    简介  哈希表是一种使用哈希函数组织数据，以支持快速插入和搜索的数据结构。 有两种不同类型的哈希表：哈希集合和哈希映射。  哈希集合是集合数据结构的实现之一，用于存储非重复值。 哈希映射是映射 数据结构的实现之一，用于存储(key, value)键值对。  在标准模板库的帮助下，哈希表是易于使用的。大多数常见语">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数.png">
 
 
@@ -518,17 +518,19 @@
       
 
       
-        <h1 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h1><blockquote>
+        <h1 id="哈希表"><a class="markdownIt-Anchor" href="#哈希表"></a> 哈希表</h1>
+<blockquote>
 <p>关键词： hash, 哈希表, 哈希函数</p>
 </blockquote>
 <!-- TOC depthFrom:2 depthTo:2 -->
 <ul>
-<li><a href="#简介">简介</a></li>
-<li><a href="#原理">原理</a></li>
-<li><a href="#更多内容">更多内容</a></li>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E5%8E%9F%E7%90%86">原理</a></li>
+<li><a href="#%E6%9B%B4%E5%A4%9A%E5%86%85%E5%AE%B9">更多内容</a></li>
 </ul>
 <!-- /TOC -->
-<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><hr>
+<h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<hr>
 <p><code>哈希表</code>是一种使用<code>哈希函数</code>组织数据，以支持快速插入和搜索的数据结构。</p>
 <p>有两种不同类型的哈希表：哈希集合和哈希映射。</p>
 <ul>
@@ -537,31 +539,38 @@
 </ul>
 <p>在<code>标准模板库</code>的帮助下，哈希表是<code>易于使用的</code>。大多数常见语言（如 Java，C ++ 和 Python）都支持哈希集合和哈希映射。</p>
 <p>通过选择合适的哈希函数，哈希表可以在插入和搜索方面实现<code>出色的性能</code>。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><hr>
+<h2 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h2>
+<hr>
 <p>哈希表的关键思想是使用哈希函数将键映射到存储桶。更确切地说，</p>
 <ol>
 <li>当我们插入一个新的键时，哈希函数将决定该键应该分配到哪个桶中，并将该键存储在相应的桶中；</li>
 <li>当我们想要搜索一个键时，哈希表将使用相同的哈希函数来查找对应的桶，并只在特定的桶中进行搜索。</li>
 </ol>
-<h3 id="哈希函数示例"><a href="#哈希函数示例" class="headerlink" title="哈希函数示例"></a>哈希函数示例</h3><p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数.png"></div><br></p>
+<h3 id="哈希函数示例"><a class="markdownIt-Anchor" href="#哈希函数示例"></a> 哈希函数示例</h3>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数.png"></div><br></p>
 <p>在示例中，我们使用 y = x ％ 5 作为哈希函数。让我们使用这个例子来完成插入和搜索策略：</p>
 <ol>
-<li>插入：我们通过哈希函数解析键，将它们映射到相应的桶中。<ul>
+<li>插入：我们通过哈希函数解析键，将它们映射到相应的桶中。
+<ul>
 <li>例如，1987 分配给桶 2，而 24 分配给桶 4。</li>
 </ul>
 </li>
-<li>搜索：我们通过相同的哈希函数解析键，并仅在特定存储桶中搜索。<ul>
+<li>搜索：我们通过相同的哈希函数解析键，并仅在特定存储桶中搜索。
+<ul>
 <li>如果我们搜索 1987，我们将使用相同的哈希函数将 1987 映射到 2。因此我们在桶 2 中搜索，我们在那个桶中成功找到了 1987。</li>
 <li>例如，如果我们搜索 23，将映射 23 到 3，并在桶 3 中搜索。我们发现 23 不在桶 3 中，这意味着 23 不在哈希表中。</li>
 </ul>
 </li>
 </ol>
-<h3 id="哈希表的关键"><a href="#哈希表的关键" class="headerlink" title="哈希表的关键"></a>哈希表的关键</h3><h4 id="1-哈希函数"><a href="#1-哈希函数" class="headerlink" title="1. 哈希函数"></a>1. 哈希函数</h4><p>哈希函数是哈希表中最重要的组件，该哈希表用于将键映射到特定的桶。在上一节的示例中，我们使用 <code>y = x % 5</code> 作为散列函数，其中 <code>x</code> 是键值，<code>y</code> 是分配的桶的索引。</p>
+<h3 id="哈希表的关键"><a class="markdownIt-Anchor" href="#哈希表的关键"></a> 哈希表的关键</h3>
+<h4 id="1-哈希函数"><a class="markdownIt-Anchor" href="#1-哈希函数"></a> 1. 哈希函数</h4>
+<p>哈希函数是哈希表中最重要的组件，该哈希表用于将键映射到特定的桶。在上一节的示例中，我们使用 <code>y = x % 5</code> 作为散列函数，其中 <code>x</code> 是键值，<code>y</code> 是分配的桶的索引。</p>
 <p>散列函数将取决于<code>键值的范围</code>和<code>桶的数量。</code></p>
 <p>下面是一些哈希函数的示例：</p>
 <p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/data-structure/hash/哈希函数示例.png"></div><br></p>
 <p>哈希函数的设计是一个开放的问题。其思想是尽可能将键分配到桶中，理想情况下，完美的哈希函数将是键和桶之间的一对一映射。然而，在大多数情况下，哈希函数并不完美，它需要在桶的数量和桶的容量之间进行权衡。</p>
-<h4 id="2-冲突解决"><a href="#2-冲突解决" class="headerlink" title="2. 冲突解决"></a>2. 冲突解决</h4><p>理想情况下，如果我们的哈希函数是完美的一对一映射，我们将不需要处理冲突。不幸的是，在大多数情况下，冲突几乎是不可避免的。例如，在我们之前的哈希函数（<em>y = x ％ 5</em>）中，1987 和 2 都分配给了桶 2，这是一个<code>冲突</code>。</p>
+<h4 id="2-冲突解决"><a class="markdownIt-Anchor" href="#2-冲突解决"></a> 2. 冲突解决</h4>
+<p>理想情况下，如果我们的哈希函数是完美的一对一映射，我们将不需要处理冲突。不幸的是，在大多数情况下，冲突几乎是不可避免的。例如，在我们之前的哈希函数（<em>y = x ％ 5</em>）中，1987 和 2 都分配给了桶 2，这是一个<code>冲突</code>。</p>
 <p>冲突解决算法应该解决以下几个问题：</p>
 <ol>
 <li>如何组织在同一个桶中的值？</li>
@@ -570,8 +579,9 @@
 </ol>
 <p>根据我们的哈希函数，这些问题与<code>桶的容量</code>和可能映射到<code>同一个桶</code>的<code>键的数目</code>有关。</p>
 <p>让我们假设存储最大键数的桶有 <code>N</code> 个键。</p>
-<p>通常，如果 _N_ 是常数且很小，我们可以简单地使用一个数组将键存储在同一个桶中。如果 _N_ 是可变的或很大，我们可能需要使用<code>高度平衡的二叉树</code>来代替。</p>
-<h2 id="更多内容"><a href="#更多内容" class="headerlink" title="更多内容"></a>更多内容</h2><p><a href="https://leetcode-cn.com/explore/learn/card/hash-table/" target="_blank" rel="noopener">https://leetcode-cn.com/explore/learn/card/hash-table/</a></p>
+<p>通常，如果 <em>N</em> 是常数且很小，我们可以简单地使用一个数组将键存储在同一个桶中。如果 <em>N</em> 是可变的或很大，我们可能需要使用<code>高度平衡的二叉树</code>来代替。</p>
+<h2 id="更多内容"><a class="markdownIt-Anchor" href="#更多内容"></a> 更多内容</h2>
+<p><a href="https://leetcode-cn.com/explore/learn/card/hash-table/" target="_blank" rel="noopener">https://leetcode-cn.com/explore/learn/card/hash-table/</a></p>
 
       
     </div>
@@ -721,7 +731,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -786,7 +796,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1084,7 +1096,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希表"><span class="nav-text">哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text">原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希函数示例"><span class="nav-text">哈希函数示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表的关键"><span class="nav-text">哈希表的关键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-哈希函数"><span class="nav-text">1. 哈希函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-冲突解决"><span class="nav-text">2. 冲突解决</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text">更多内容</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#哈希表"><span class="nav-text"> 哈希表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-text"> 原理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希函数示例"><span class="nav-text"> 哈希函数示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希表的关键"><span class="nav-text"> 哈希表的关键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-哈希函数"><span class="nav-text"> 1. 哈希函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-冲突解决"><span class="nav-text"> 2. 冲突解决</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更多内容"><span class="nav-text"> 更多内容</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1126,7 +1138,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

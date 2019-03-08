@@ -107,17 +107,17 @@
 
 
 
-  <meta name="description" content="Linux 典型运维应用 :bulb: 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。  网络操作无法访问外网域名（1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig 查">
+  <meta name="description" content="Linux 典型运维应用  💡 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。   网络操作  无法访问外网域名 （1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 典型运维应用">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/os/linux/ops/linux典型运维应用/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Linux 典型运维应用 :bulb: 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。  网络操作无法访问外网域名（1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig 查">
+<meta property="og:description" content="Linux 典型运维应用  💡 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。   网络操作  无法访问外网域名 （1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.146Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 典型运维应用">
-<meta name="twitter:description" content="Linux 典型运维应用 :bulb: 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。  网络操作无法访问外网域名（1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig 查">
+<meta name="twitter:description" content="Linux 典型运维应用  💡 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。   网络操作  无法访问外网域名 （1）在 hosts 中添加本机实际 IP 和本机实际域名的映射 echo &quot;192.168.0.1 hostname&quot; &amp;gt;&amp;gt; /etc/hosts 如果不知道本机域名，使用 hostname 命令查一下；如果不知道本机实际 IP，使用 ifconfig">
 
 
 
@@ -477,10 +477,13 @@
       
 
       
-        <h1 id="Linux-典型运维应用"><a href="#Linux-典型运维应用" class="headerlink" title="Linux 典型运维应用"></a>Linux 典型运维应用</h1><blockquote>
-<p>:bulb: 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。</p>
+        <h1 id="linux-典型运维应用"><a class="markdownIt-Anchor" href="#linux-典型运维应用"></a> Linux 典型运维应用</h1>
+<blockquote>
+<p>💡 如果没有特殊说明，本文的案例都是针对 Centos 发行版本。</p>
 </blockquote>
-<h2 id="网络操作"><a href="#网络操作" class="headerlink" title="网络操作"></a>网络操作</h2><h3 id="无法访问外网域名"><a href="#无法访问外网域名" class="headerlink" title="无法访问外网域名"></a>无法访问外网域名</h3><p>（1）在 hosts 中添加本机实际 IP 和本机实际域名的映射</p>
+<h2 id="网络操作"><a class="markdownIt-Anchor" href="#网络操作"></a> 网络操作</h2>
+<h3 id="无法访问外网域名"><a class="markdownIt-Anchor" href="#无法访问外网域名"></a> 无法访问外网域名</h3>
+<p>（1）在 hosts 中添加本机实际 IP 和本机实际域名的映射</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"192.168.0.1 hostname"</span> &gt;&gt; /etc/hosts</span><br></pre></td></tr></table></figure>
 <p>如果不知道本机域名，使用 <code>hostname</code> 命令查一下；如果不知道本机实际 IP，使用 <code>ifconfig</code> 查一下。</p>
 <p>（2）配置信赖的 DNS 服务器</p>
@@ -492,28 +495,33 @@
 <p>👉 参考：<a href="https://www.zhihu.com/question/32229915" target="_blank" rel="noopener">公共 DNS 哪家强</a></p>
 </blockquote>
 <p>（3）测试一下能否 ping 通 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
-<h3 id="开启、关闭防火墙"><a href="#开启、关闭防火墙" class="headerlink" title="开启、关闭防火墙"></a>开启、关闭防火墙</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 开启防火墙 22 端口</span></span><br><span class="line">iptables -I INPUT -p tcp --dport 22 -j accept</span><br><span class="line"></span><br><span class="line"><span class="comment"># 彻底关闭防火墙</span></span><br><span class="line">sudo systemctl status firewalld.service</span><br><span class="line">sudo systemctl stop firewalld.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
+<h3 id="开启-关闭防火墙"><a class="markdownIt-Anchor" href="#开启-关闭防火墙"></a> 开启、关闭防火墙</h3>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 开启防火墙 22 端口</span></span><br><span class="line">iptables -I INPUT -p tcp --dport 22 -j accept</span><br><span class="line"></span><br><span class="line"><span class="comment"># 彻底关闭防火墙</span></span><br><span class="line">sudo systemctl status firewalld.service</span><br><span class="line">sudo systemctl stop firewalld.service</span><br><span class="line">sudo systemctl <span class="built_in">disable</span> firewalld.service</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>:point_right: 参考：<a href="https://www.cnblogs.com/moxiaoan/p/5683743.html" target="_blank" rel="noopener">https://www.cnblogs.com/moxiaoan/p/5683743.html</a></p>
+<p>👉 参考：<a href="https://www.cnblogs.com/moxiaoan/p/5683743.html" target="_blank" rel="noopener">https://www.cnblogs.com/moxiaoan/p/5683743.html</a></p>
 </blockquote>
-<h2 id="系统维护"><a href="#系统维护" class="headerlink" title="系统维护"></a>系统维护</h2><h3 id="使用-NTP-进行时间同步"><a href="#使用-NTP-进行时间同步" class="headerlink" title="使用 NTP 进行时间同步"></a>使用 NTP 进行时间同步</h3><p>（1）先安装时钟同步工具 ntp</p>
+<h2 id="系统维护"><a class="markdownIt-Anchor" href="#系统维护"></a> 系统维护</h2>
+<h3 id="使用-ntp-进行时间同步"><a class="markdownIt-Anchor" href="#使用-ntp-进行时间同步"></a> 使用 NTP 进行时间同步</h3>
+<p>（1）先安装时钟同步工具 ntp</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">yum -y <span class="keyword">install</span> ntp</span><br></pre></td></tr></table></figure>
 <p>ntp 的配置文件路径为： <code>/etc/ntp.conf</code></p>
 <p>（2）启动 NTP 服务</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl start ntpd.service</span><br></pre></td></tr></table></figure>
 <p>（3）放开防火墙 123 端口</p>
 <p>NTP 服务的端口是 123,使用的是 udp 协议，所以 NTP 服务器的防火墙必须对外开放 udp 123 这个端口。</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">/sbin/iptables -A INPUT -p UDP -i eth0 -s <span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">24</span> --dport <span class="number">123</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">/sbin/iptables -A INPUT -p UDP -i eth0 -s <span class="number">192.168</span><span class="number">.0</span><span class="number">.0</span>/<span class="number">24</span> --dport <span class="number">123</span> -j ACCEPT</span><br></pre></td></tr></table></figure>
 <p>（4）执行时间同步</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">/usr/sbin/ntpdate ntp<span class="selector-class">.sjtu</span><span class="selector-class">.edu</span><span class="selector-class">.cn</span></span><br></pre></td></tr></table></figure>
-<p>ntp.sjtu.edu.cn 是上海交通大学 ntp 服务器。</p>
+<p><a href="http://ntp.sjtu.edu.cn" target="_blank" rel="noopener">ntp.sjtu.edu.cn</a> 是上海交通大学 ntp 服务器。</p>
 <p>（5）自动定时同步时间</p>
 <p>执行如下命令，就可以在每天凌晨 3 点同步系统时间：</p>
 <figure class="highlight ruby"><table><tr><td class="code"><pre><span class="line">echo <span class="string">"* 3 * * * /usr/sbin/ntpdate ntp.sjtu.edu.cn"</span> <span class="meta">&gt;&gt; </span>/etc/crontab</span><br><span class="line">systemctl restart crond.service</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>:point_right: 参考：<a href="https://www.cnblogs.com/quchunhui/p/7658853.html" target="_blank" rel="noopener">https://www.cnblogs.com/quchunhui/p/7658853.html</a></p>
+<p>👉 参考：<a href="https://www.cnblogs.com/quchunhui/p/7658853.html" target="_blank" rel="noopener">https://www.cnblogs.com/quchunhui/p/7658853.html</a></p>
 </blockquote>
-<h2 id="自动化脚本"><a href="#自动化脚本" class="headerlink" title="自动化脚本"></a>自动化脚本</h2><h3 id="Linux-开机自启动脚本"><a href="#Linux-开机自启动脚本" class="headerlink" title="Linux 开机自启动脚本"></a>Linux 开机自启动脚本</h3><p>（1）在 <code>/etc/rc.local</code> 文件中添加命令</p>
+<h2 id="自动化脚本"><a class="markdownIt-Anchor" href="#自动化脚本"></a> 自动化脚本</h2>
+<h3 id="linux-开机自启动脚本"><a class="markdownIt-Anchor" href="#linux-开机自启动脚本"></a> Linux 开机自启动脚本</h3>
+<p>（1）在 <code>/etc/rc.local</code> 文件中添加命令</p>
 <p>如果不想将脚本粘来粘去，或创建链接，可以在 <code>/etc/rc.local</code> 文件中添加启动命令</p>
 <ol>
 <li>先修改好脚本，使其所有模块都能在任意目录启动时正常执行;</li>
@@ -535,26 +543,31 @@
 <p>（2）查看当前系统的启动级别</p>
 <figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ runlevel</span><br><span class="line">N 3</span><br></pre></td></tr></table></figure>
 <p>（3）设定启动级别</p>
-<figure class="highlight lsl"><table><tr><td class="code"><pre><span class="line">#  <span class="number">98</span> 为启动序号</span><br><span class="line">#  <span class="number">2</span> 是系统的运行级别，可自己调整，注意不要忘了结尾的句点</span><br><span class="line">$ update-rc.d mysql start <span class="number">98</span> <span class="number">2</span> .</span><br></pre></td></tr></table></figure>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">#  <span class="number">98</span> 为启动序号</span><br><span class="line">#  <span class="number">2</span> 是系统的运行级别，可自己调整，注意不要忘了结尾的句点</span><br><span class="line">$ update-rc.d mysql start <span class="number">98</span> <span class="number">2</span> .</span><br></pre></td></tr></table></figure>
 <p>现在我们到 /etc/rc2.d 下，就多了一个 S98mysql 这样的符号链接。</p>
 <p>（4）重启系统，验证设置是否有效。</p>
 <p>（5）移除符号链接</p>
 <p>当你需要移除这个符号连接时，方法有三种：</p>
 <ol>
-<li><p>直接到 <code>/etc/rc2.d</code> 下删掉相应的链接，当然不是最好的方法；</p>
+<li>
+<p>直接到 <code>/etc/rc2.d</code> 下删掉相应的链接，当然不是最好的方法；</p>
 </li>
-<li><p>推荐做法：<code>update-rc.d -f s10 remove</code></p>
+<li>
+<p>推荐做法：<code>update-rc.d -f s10 remove</code></p>
 </li>
-<li>如果 update-rc.d 命令你不熟悉，还可以试试看 rcconf 这个命令，也很方便。</li>
+<li>
+<p>如果 update-rc.d 命令你不熟悉，还可以试试看 rcconf 这个命令，也很方便。</p>
+</li>
 </ol>
 <blockquote>
-<p>:point_right: 参考：</p>
+<p>👉 参考：</p>
 <ul>
 <li><a href="https://blog.csdn.net/linuxshine/article/details/50717272" target="_blank" rel="noopener">https://blog.csdn.net/linuxshine/article/details/50717272</a></li>
 <li><a href="https://www.cnblogs.com/ssooking/p/6094740.html" target="_blank" rel="noopener">https://www.cnblogs.com/ssooking/p/6094740.html</a></li>
 </ul>
 </blockquote>
-<h3 id="定时执行脚本"><a href="#定时执行脚本" class="headerlink" title="定时执行脚本"></a>定时执行脚本</h3><p>（1）安装crontab</p>
+<h3 id="定时执行脚本"><a class="markdownIt-Anchor" href="#定时执行脚本"></a> 定时执行脚本</h3>
+<p>（1）安装crontab</p>
 <p>（2）开启crontab服务</p>
 <p>开机自动启动 crond 服务：<code>chkconfig crond on</code></p>
 <p>或者，按以下命令手动启动：</p>
@@ -563,14 +576,16 @@
 <p>有两种方法：</p>
 <ul>
 <li>在命令行输入：<code>crontab -e</code> 然后添加相应的任务，存盘退出。</li>
-<li>直接编辑 <code>/etc/crontab</code> 文件，即 <code>vi /etc/crontab</code>，添加相应的任务。 </li>
+<li>直接编辑 <code>/etc/crontab</code> 文件，即 <code>vi /etc/crontab</code>，添加相应的任务。</li>
 </ul>
 <p>示例：</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">SHELL=/bin/bash</span><br><span class="line">PATH=/sbin:/bin:/usr/sbin:/usr/bin</span><br><span class="line">MAILTO=root</span><br><span class="line"></span><br><span class="line"><span class="comment"># For details see man 4 crontabs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Example of job definition:</span></span><br><span class="line"><span class="comment"># .---------------- minute (0 - 59)</span></span><br><span class="line"><span class="comment"># |  .------------- hour (0 - 23)</span></span><br><span class="line"><span class="comment"># |  |  .---------- day of month (1 - 31)</span></span><br><span class="line"><span class="comment"># |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...</span></span><br><span class="line"><span class="comment"># |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat</span></span><br><span class="line"><span class="comment"># |  |  |  |  |</span></span><br><span class="line"><span class="comment"># *  *  *  *  * user-name  command to be executed</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 每天早上3点时钟同步</span></span><br><span class="line">* 3 * * * /usr/sbin/ntpdate ntp.sjtu.edu.cn</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 每两个小时以root身份执行 /home/hello.sh 脚本</span></span><br><span class="line">0 */2 * * * root /home/hello.sh</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>👉 参考：<a href="https://blog.csdn.net/z_yong_cool/article/details/79288397" target="_blank" rel="noopener">https://blog.csdn.net/z_yong_cool/article/details/79288397</a></p>
 </blockquote>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><h3 id="设置-Linux-启动模式"><a href="#设置-Linux-启动模式" class="headerlink" title="设置 Linux 启动模式"></a>设置 Linux 启动模式</h3><ol>
+<h2 id="配置"><a class="markdownIt-Anchor" href="#配置"></a> 配置</h2>
+<h3 id="设置-linux-启动模式"><a class="markdownIt-Anchor" href="#设置-linux-启动模式"></a> 设置 Linux 启动模式</h3>
+<ol>
 <li>停机(记得不要把 initdefault 配置为 0，因为这样会使 Linux 不能启动)</li>
 <li>单用户模式，就像 Win9X 下的安全模式</li>
 <li>多用户，但是没有 NFS</li>
@@ -722,7 +737,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -787,7 +802,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1085,7 +1102,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-典型运维应用"><span class="nav-text">Linux 典型运维应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-text">网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法访问外网域名"><span class="nav-text">无法访问外网域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启、关闭防火墙"><span class="nav-text">开启、关闭防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统维护"><span class="nav-text">系统维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-NTP-进行时间同步"><span class="nav-text">使用 NTP 进行时间同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化脚本"><span class="nav-text">自动化脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux-开机自启动脚本"><span class="nav-text">Linux 开机自启动脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时执行脚本"><span class="nav-text">定时执行脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-Linux-启动模式"><span class="nav-text">设置 Linux 启动模式</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux-典型运维应用"><span class="nav-text"> Linux 典型运维应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络操作"><span class="nav-text"> 网络操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法访问外网域名"><span class="nav-text"> 无法访问外网域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开启-关闭防火墙"><span class="nav-text"> 开启、关闭防火墙</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统维护"><span class="nav-text"> 系统维护</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-ntp-进行时间同步"><span class="nav-text"> 使用 NTP 进行时间同步</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化脚本"><span class="nav-text"> 自动化脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-开机自启动脚本"><span class="nav-text"> Linux 开机自启动脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定时执行脚本"><span class="nav-text"> 定时执行脚本</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置"><span class="nav-text"> 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#设置-linux-启动模式"><span class="nav-text"> 设置 Linux 启动模式</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1127,7 +1144,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

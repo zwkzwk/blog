@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="概述JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;gt">
+  <meta name="description" content="概述 JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;">
 <meta name="keywords" content="javaee,jsp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JSP 指令">
 <meta property="og:url" content="https://dunwu.github.io/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-directive/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="概述JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;gt">
+<meta property="og:description" content="概述 JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-03-06T08:43:46.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP 指令">
-<meta name="twitter:description" content="概述JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;gt">
+<meta name="twitter:description" content="概述 JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。 JSP 指令以开&amp;lt;%@开始，以%&amp;gt;结束。 JSP 指令语法格式如下： &amp;lt;%@ directive attribute=&quot;value&quot; %&amp;gt; 指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。 JSP 中的三种指令标签：    指令 描述     &amp;lt;%@ page … %&amp;">
 
 
 
@@ -508,7 +508,8 @@
       
 
       
-        <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。</p>
+        <h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<p>JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。</p>
 <p>JSP 指令以开<code>&lt;%@</code>开始，以<code>%&gt;</code>结束。</p>
 <p>JSP 指令语法格式如下：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ directive attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
@@ -536,14 +537,16 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Page-指令"><a href="#Page-指令" class="headerlink" title="Page 指令"></a>Page 指令</h2><p>Page 指令为容器提供当前页面的使用说明。一个 JSP 页面可以包含多个<code>page</code>指令。</p>
+<h2 id="page-指令"><a class="markdownIt-Anchor" href="#page-指令"></a> Page 指令</h2>
+<p>Page 指令为容器提供当前页面的使用说明。一个 JSP 页面可以包含多个<code>page</code>指令。</p>
 <p>Page 指令的语法格式：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
 <p>等价的 XML 格式：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;jsp:directive.page attribute=<span class="string">"value"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <p>例：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page language=<span class="string">"java"</span> contentType=<span class="string">"text/html; charset=UTF-8"</span> pageEncoding=<span class="string">"UTF-8"</span> %&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><p>下表列出与 Page 指令相关的属性：</p>
+<h3 id="属性"><a class="markdownIt-Anchor" href="#属性"></a> 属性</h3>
+<p>下表列出与 Page 指令相关的属性：</p>
 <table>
 <thead>
 <tr>
@@ -606,7 +609,8 @@
 </tr>
 </tbody>
 </table>
-<h2 id="Include-指令"><a href="#Include-指令" class="headerlink" title="Include 指令"></a>Include 指令</h2><p>JSP 可以通过<code>include</code>指令来包含其他文件。</p>
+<h2 id="include-指令"><a class="markdownIt-Anchor" href="#include-指令"></a> Include 指令</h2>
+<p>JSP 可以通过<code>include</code>指令来包含其他文件。</p>
 <p>被包含的文件可以是 JSP 文件、HTML 文件或文本文件。包含的文件就好像是该 JSP 文件的一部分，会被同时编译执行。</p>
 <p>Include 指令的语法格式如下：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"文件相对 url 地址"</span> %&gt;</span><br></pre></td></tr></table></figure>
@@ -614,7 +618,8 @@
 <p>如果您没有给文件关联一个路径，JSP 编译器默认在当前路径下寻找。</p>
 <p>等价的 XML 语法：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;jsp:directive.include file=<span class="string">"文件相对 url 地址"</span> /&gt;</span><br></pre></td></tr></table></figure>
-<h2 id="Taglib-指令"><a href="#Taglib-指令" class="headerlink" title="Taglib 指令"></a>Taglib 指令</h2><p>JSP 允许用户自定义标签，一个自定义标签库就是自定义标签的集合。</p>
+<h2 id="taglib-指令"><a class="markdownIt-Anchor" href="#taglib-指令"></a> Taglib 指令</h2>
+<p>JSP 允许用户自定义标签，一个自定义标签库就是自定义标签的集合。</p>
 <p><code>taglib</code>指令引入一个自定义标签集合的定义，包括库路径、自定义标签。</p>
 <p><code>taglib</code>指令的语法：</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"uri"</span> prefix=<span class="string">"prefixOfTag"</span> %&gt;</span><br></pre></td></tr></table></figure>
@@ -687,8 +692,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/core/ioc/" rel="next" title="Spring IoC">
-                <i class="fa fa-chevron-left"></i> Spring IoC
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/" rel="next" title="JavaEE 监听器">
+                <i class="fa fa-chevron-left"></i> JavaEE 监听器
               </a>
             
           </div>
@@ -697,8 +702,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/programming/java/spring/web/spring-websocket/" rel="prev" title="Spring 和 WebSocket">
-                Spring 和 WebSocket <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-el-expression/" rel="prev" title="JSP 表达式语言">
+                JSP 表达式语言 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -770,7 +775,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -835,7 +840,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1133,7 +1140,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Page-指令"><span class="nav-text">Page 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Include-指令"><span class="nav-text">Include 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Taglib-指令"><span class="nav-text">Taglib 指令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#page-指令"><span class="nav-text"> Page 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-text"> 属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#include-指令"><span class="nav-text"> Include 指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#taglib-指令"><span class="nav-text"> Taglib 指令</span></a></li></ol></div>
             
 
           </div>
@@ -1175,7 +1182,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 

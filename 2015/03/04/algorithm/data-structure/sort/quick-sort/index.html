@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="快速排序要点 快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。 算法思想它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，演示了快速排">
+  <meta name="description" content="快速排序  要点  快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。  算法思想 它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，">
 <meta name="keywords" content="data-structure,sort">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速排序">
 <meta property="og:url" content="https://dunwu.github.io/2015/03/04/algorithm/data-structure/sort/quick-sort/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="快速排序要点 快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。 算法思想它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，演示了快速排">
+<meta property="og:description" content="快速排序  要点  快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。  算法思想 它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/quick-sort.png">
 <meta property="og:updated_time" content="2019-03-07T02:24:12.115Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序">
-<meta name="twitter:description" content="快速排序要点 快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。 算法思想它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，演示了快速排">
+<meta name="twitter:description" content="快速排序  要点  快速排序是一种交换排序。  快速排序由C. A. R. Hoare在1962年提出。  算法思想 它的基本思想是： 通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。 然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。 详细的图解往往比大堆的文字更有说明力，所以直接上图：  上图中，">
 <meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/quick-sort.png">
 
 
@@ -483,7 +483,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">2.2k</span>
               
 
               
@@ -517,33 +517,43 @@
       
 
       
-        <h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><blockquote>
+        <h1 id="快速排序"><a class="markdownIt-Anchor" href="#快速排序"></a> 快速排序</h1>
+<h2 id="要点"><a class="markdownIt-Anchor" href="#要点"></a> 要点</h2>
+<blockquote>
 <p>快速排序是一种交换排序。</p>
 </blockquote>
 <p>快速排序由C. A. R. Hoare在1962年提出。</p>
-<h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p>它的基本思想是：</p>
+<h2 id="算法思想"><a class="markdownIt-Anchor" href="#算法思想"></a> 算法思想</h2>
+<p>它的基本思想是：</p>
 <p>通过一趟排序将要排序的数据分割成独立的两部分：分割点左边都是比它小的数，右边都是比它大的数。</p>
 <p>然后再按此方法对这两部分数据分别进行快速排序，整个排序过程可以递归进行，以此达到整个数据变成有序序列。</p>
 <p>详细的图解往往比大堆的文字更有说明力，所以直接上图：</p>
 <p><br><div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/algorithm/sort/quick-sort.png"></div><br></p>
 <p>上图中，演示了快速排序的处理过程：</p>
 <ol>
-<li><p>初始状态为一组无序的数组：2、4、5、1、3。</p>
+<li>
+<p>初始状态为一组无序的数组：2、4、5、1、3。</p>
 </li>
-<li><p>经过以上操作步骤后，完成了第一次的排序，得到新的数组：1、2、5、4、3。</p>
+<li>
+<p>经过以上操作步骤后，完成了第一次的排序，得到新的数组：1、2、5、4、3。</p>
 </li>
-<li><p>新的数组中，以 2 为分割点，左边都是比 2 小的数，右边都是比 2 大的数。</p>
+<li>
+<p>新的数组中，以 2 为分割点，左边都是比 2 小的数，右边都是比 2 大的数。</p>
 </li>
-<li><p>因为2已经在数组中找到了合适的位置，所以不用再动。</p>
+<li>
+<p>因为2已经在数组中找到了合适的位置，所以不用再动。</p>
 </li>
-<li><p>2左边的数组只有一个元素 1，所以显然不用再排序，位置也被确定。（注：这种情况时，left指针和right指针显然是重合的。因此在代码中，我们可以通过设置判定条件left必须小于right，如果不满足，则不用排序了）。</p>
+<li>
+<p>2左边的数组只有一个元素 1，所以显然不用再排序，位置也被确定。（注：这种情况时，left指针和right指针显然是重合的。因此在代码中，我们可以通过设置判定条件left必须小于right，如果不满足，则不用排序了）。</p>
 </li>
-<li><p>而对于2右边的数组 5、4、3，设置left指向 5，right指向 3，开始继续重复图中的一、二、三、四步骤，对新的数组进行排序。</p>
+<li>
+<p>而对于2右边的数组 5、4、3，设置left指向 5，right指向 3，开始继续重复图中的一、二、三、四步骤，对新的数组进行排序。</p>
 </li>
 </ol>
 <p><strong>核心代码</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">division</span><span class="params">(<span class="keyword">int</span>[] list, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 以最左边的数(left)为基准</span></span><br><span class="line">    <span class="keyword">int</span> base = list[left];</span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="comment">// 从序列右端开始，向左遍历，直到找到小于base的数</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right &amp;&amp; list[right] &gt;= base)</span><br><span class="line">            right--;</span><br><span class="line">        <span class="comment">// 找到了比base小的元素，将这个元素放到最左边的位置</span></span><br><span class="line">        list[left] = list[right];</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 从序列左端开始，向右遍历，直到找到大于base的数</span></span><br><span class="line">        <span class="keyword">while</span> (left &lt; right &amp;&amp; list[left] &lt;= base)</span><br><span class="line">            left++;</span><br><span class="line">        <span class="comment">// 找到了比base大的元素，将这个元素放到最右边的位置</span></span><br><span class="line">        list[right] = list[left];</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 最后将base放到left位置。此时，left位置的左侧数值应该都比left小；</span></span><br><span class="line">    <span class="comment">// 而left位置的右侧数值应该都比left大。</span></span><br><span class="line">    list[left] = base;</span><br><span class="line">    <span class="keyword">return</span> left;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span>[] list, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line"> </span><br><span class="line">    <span class="comment">// 左下标一定小于右下标，否则就越界了</span></span><br><span class="line">    <span class="keyword">if</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="comment">// 对数组进行分割，取出下次分割的基准标号</span></span><br><span class="line">        <span class="keyword">int</span> base = division(list, left, right);</span><br><span class="line"> </span><br><span class="line">        System.out.format(<span class="string">"base = %d:\t"</span>, list[base]);</span><br><span class="line">        printPart(list, left, right);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 对“基准标号“左侧的一组数值进行递归的切割，以至于将这些数值完整的排序</span></span><br><span class="line">        quickSort(list, left, base - <span class="number">1</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">// 对“基准标号“右侧的一组数值进行递归的切割，以至于将这些数值完整的排序</span></span><br><span class="line">        quickSort(list, base + <span class="number">1</span>, right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="算法分析"><a href="#算法分析" class="headerlink" title="算法分析"></a>算法分析</h2><p>快速排序算法的性能</p>
+<h2 id="算法分析"><a class="markdownIt-Anchor" href="#算法分析"></a> 算法分析</h2>
+<p>快速排序算法的性能</p>
 <table>
 <thead>
 <tr>
@@ -586,12 +596,16 @@
 </tr>
 </tbody>
 </table>
-<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>当数据有序时，以第一个关键字为基准分为两个子序列，前一个子序列为空，此时执行效率最差。</p>
+<h3 id="时间复杂度"><a class="markdownIt-Anchor" href="#时间复杂度"></a> 时间复杂度</h3>
+<p>当数据有序时，以第一个关键字为基准分为两个子序列，前一个子序列为空，此时执行效率最差。</p>
 <p>而当数据随机分布时，以第一个关键字为基准分为两个子序列，两个子序列的元素个数接近相等，此时执行效率最好。</p>
 <p>所以，数据越随机分布时，快速排序性能越好；数据越接近有序，快速排序性能越差。</p>
-<h3 id="空间复杂度"><a href="#空间复杂度" class="headerlink" title="空间复杂度"></a>空间复杂度</h3><p>快速排序在每次分割的过程中，需要 1 个空间存储基准值。而快速排序的大概需要 Nlog2N 次的分割处理，所以占用空间也是 Nlog2N 个。</p>
-<h3 id="算法稳定性"><a href="#算法稳定性" class="headerlink" title="算法稳定性"></a>算法稳定性</h3><p>在快速排序中，相等元素可能会因为分区而交换顺序，所以它是不稳定的算法。</p>
-<h2 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h2><p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
+<h3 id="空间复杂度"><a class="markdownIt-Anchor" href="#空间复杂度"></a> 空间复杂度</h3>
+<p>快速排序在每次分割的过程中，需要 1 个空间存储基准值。而快速排序的大概需要 Nlog2N 次的分割处理，所以占用空间也是 Nlog2N 个。</p>
+<h3 id="算法稳定性"><a class="markdownIt-Anchor" href="#算法稳定性"></a> 算法稳定性</h3>
+<p>在快速排序中，相等元素可能会因为分区而交换顺序，所以它是不稳定的算法。</p>
+<h2 id="示例代码"><a class="markdownIt-Anchor" href="#示例代码"></a> 示例代码</h2>
+<p><a href="https://github.com/dunwu/algorithm-notes/blob/master/codes/src/test/java/io/github/dunwu/algorithm/sort/SortStrategyTest.java" target="_blank" rel="noopener">我的 Github 测试例</a></p>
 <p>样本包含：数组个数为奇数、偶数的情况；元素重复或不重复的情况。且样本均为随机样本，实测有效。</p>
 
       
@@ -742,7 +756,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">358</span>
+                    <span class="site-state-item-count">357</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -807,7 +821,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">26</span>
+                      
+                    
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1105,7 +1121,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-text">快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text">要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text">算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text">时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text">空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text">算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text">示例代码</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快速排序"><span class="nav-text"> 快速排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要点"><span class="nav-text"> 要点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法思想"><span class="nav-text"> 算法思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法分析"><span class="nav-text"> 算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#时间复杂度"><span class="nav-text"> 时间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间复杂度"><span class="nav-text"> 空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法稳定性"><span class="nav-text"> 算法稳定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#示例代码"><span class="nav-text"> 示例代码</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1147,7 +1163,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:17</span>
+    <span title="站点阅读时长">31:30</span>
   
 </div>
 
