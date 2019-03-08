@@ -107,22 +107,22 @@
 
 
 
-  <meta name="description" content="运行时数据区域  📓 本文已归档到：「blog」    运行时数据区域  程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存         程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着">
+  <meta name="description" content="运行时数据区域  📓 本文已归档到：「blog」    程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存 参考资料       程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着一个栈帧在">
 <meta name="keywords" content="programming,java,javacore,jvm,memory">
 <meta property="og:type" content="article">
 <meta property="og:title" content="运行时数据区域">
 <meta property="og:url" content="https://dunwu.github.io/2018/05/29/programming/java/javacore/jvm/运行时数据区域/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="运行时数据区域  📓 本文已归档到：「blog」    运行时数据区域  程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存         程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着">
+<meta property="og:description" content="运行时数据区域  📓 本文已归档到：「blog」    程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存 参考资料       程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着一个栈帧在">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-运行时数据区域.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-虚拟机栈.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-本地方法栈.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-堆.gif">
-<meta property="og:updated_time" content="2019-03-07T05:14:14.972Z">
+<meta property="og:updated_time" content="2019-03-08T14:26:40.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="运行时数据区域">
-<meta name="twitter:description" content="运行时数据区域  📓 本文已归档到：「blog」    运行时数据区域  程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存         程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着">
+<meta name="twitter:description" content="运行时数据区域  📓 本文已归档到：「blog」    程序计数器 虚拟机栈 本地方法栈 堆 方法区 运行时常量池 直接内存 参考资料       程序计数器 记录正在执行的虚拟机字节码指令的地址（如果正在执行的是本地方法则为空）。  虚拟机栈 每个 Java 方法在执行的同时会创建一个栈帧用于存储局部变量表、操作数栈、常量池引用等信息。每一个方法从调用直至执行完成的过程，就对应着一个栈帧在">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-运行时数据区域.png">
 
 
@@ -433,7 +433,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 13:14:14" itemprop="dateModified" datetime="2019-03-07T13:14:14+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-08 22:26:40" itemprop="dateModified" datetime="2019-03-08T22:26:40+08:00">2019-03-08</time>
               
             
           </span>
@@ -538,9 +538,7 @@
 <blockquote>
 <p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
-<!-- TOC -->
-<ul>
-<li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E6%95%B0%E6%8D%AE%E5%8C%BA%E5%9F%9F">运行时数据区域</a>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#%E7%A8%8B%E5%BA%8F%E8%AE%A1%E6%95%B0%E5%99%A8">程序计数器</a></li>
 <li><a href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%A0%88">虚拟机栈</a></li>
@@ -549,8 +547,7 @@
 <li><a href="#%E6%96%B9%E6%B3%95%E5%8C%BA">方法区</a></li>
 <li><a href="#%E8%BF%90%E8%A1%8C%E6%97%B6%E5%B8%B8%E9%87%8F%E6%B1%A0">运行时常量池</a></li>
 <li><a href="#%E7%9B%B4%E6%8E%A5%E5%86%85%E5%AD%98">直接内存</a></li>
-</ul>
-</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <div align="center">
@@ -607,6 +604,11 @@
 <p>除了在编译期生成的常量，还允许动态生成，例如 String 类的 intern()。这部分常量也会被放入运行时常量池。</p>
 <h2 id="直接内存"><a class="markdownIt-Anchor" href="#直接内存"></a> 直接内存</h2>
 <p>在 JDK 1.4 中新加入了 NIO 类，它可以使用 Native 函数库直接分配堆外内存，然后通过一个存储在 Java 堆里的 DirectByteBuffer 对象作为这块内存的引用进行操作。这样能在一些场景中显著提高性能，因为避免了在 Java 堆和 Native 堆中来回复制数据。</p>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://item.jd.com/11252778.html" target="_blank" rel="noopener">深入理解 Java 虚拟机：JVM 高级特性与最佳实践（第 2 版）</a></li>
+<li><a href="https://www.douban.com/doulist/2545443/" target="_blank" rel="noopener">从表到里学习 JVM 实现</a></li>
+</ul>
 
       
     </div>
@@ -679,8 +681,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/类加载机制/" rel="next" title="类加载机制">
-                <i class="fa fa-chevron-left"></i> 类加载机制
+              <a href="/blog/2018/05/24/programming/java/javacore/concurrent/原子变量类/" rel="next" title="原子变量类">
+                <i class="fa fa-chevron-left"></i> 原子变量类
               </a>
             
           </div>
@@ -689,8 +691,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/垃圾收集/" rel="prev" title="垃圾收集">
-                垃圾收集 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/29/programming/java/javacore/jvm/JVM调优/" rel="prev" title="JVM 调优">
+                JVM 调优 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -762,7 +764,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">354</span>
+                    <span class="site-state-item-count">342</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1076,9 +1078,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">115</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1157,7 +1157,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时数据区域"><span class="nav-text"> 运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序计数器"><span class="nav-text"> 程序计数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机栈"><span class="nav-text"> 虚拟机栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地方法栈"><span class="nav-text"> 本地方法栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-text"> 堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法区"><span class="nav-text"> 方法区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时常量池"><span class="nav-text"> 运行时常量池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接内存"><span class="nav-text"> 直接内存</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时数据区域"><span class="nav-text"> 运行时数据区域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#程序计数器"><span class="nav-text"> 程序计数器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟机栈"><span class="nav-text"> 虚拟机栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地方法栈"><span class="nav-text"> 本地方法栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆"><span class="nav-text"> 堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法区"><span class="nav-text"> 方法区</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运行时常量池"><span class="nav-text"> 运行时常量池</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接内存"><span class="nav-text"> 直接内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1199,7 +1199,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:30</span>
+    <span title="站点阅读时长">31:21</span>
   
 </div>
 

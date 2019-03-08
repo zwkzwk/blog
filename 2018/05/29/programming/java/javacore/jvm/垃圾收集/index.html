@@ -107,13 +107,13 @@
 
 
 
-  <meta name="description" content="垃圾收集  📓 本文已归档到：「blog」    垃圾收集  判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scaven">
+  <meta name="description" content="垃圾收集  📓 本文已归档到：「blog」    判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scavenge 收集器">
 <meta name="keywords" content="programming,java,javacore,jvm,gc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="垃圾收集">
 <meta property="og:url" content="https://dunwu.github.io/2018/05/29/programming/java/javacore/jvm/垃圾收集/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="垃圾收集  📓 本文已归档到：「blog」    垃圾收集  判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scaven">
+<meta property="og:description" content="垃圾收集  📓 本文已归档到：「blog」    判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scavenge 收集器">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集可达性分析算法.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集算法-标记清除.jpg">
@@ -128,10 +128,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集器-Hotspot-heap-structure.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集器-G1-heap-allocation.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集器-G1.jpg">
-<meta property="og:updated_time" content="2019-03-07T05:14:08.020Z">
+<meta property="og:updated_time" content="2019-03-08T14:25:59.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="垃圾收集">
-<meta name="twitter:description" content="垃圾收集  📓 本文已归档到：「blog」    垃圾收集  判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scaven">
+<meta name="twitter:description" content="垃圾收集  📓 本文已归档到：「blog」    判断一个对象是否可回收  1. 引用计数算法 2. 可达性分析算法 3. 引用类型 4. 方法区的回收 5. finalize()   垃圾收集算法  1. 标记 - 清除 2. 标记 - 整理 3. 复制 4. 分代收集   垃圾收集器  1. Serial 收集器 2. ParNew 收集器 3. Parallel Scavenge 收集器">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-垃圾收集可达性分析算法.png">
 
 
@@ -442,7 +442,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 13:14:08" itemprop="dateModified" datetime="2019-03-07T13:14:08+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-08 22:25:59" itemprop="dateModified" datetime="2019-03-08T22:25:59+08:00">2019-03-08</time>
               
             
           </span>
@@ -547,9 +547,7 @@
 <blockquote>
 <p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
-<!-- TOC -->
-<ul>
-<li><a href="#%E5%9E%83%E5%9C%BE%E6%94%B6%E9%9B%86">垃圾收集</a>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E5%AF%B9%E8%B1%A1%E6%98%AF%E5%90%A6%E5%8F%AF%E5%9B%9E%E6%94%B6">判断一个对象是否可回收</a>
 <ul>
@@ -587,8 +585,7 @@
 <li><a href="#3-full-gc-%E7%9A%84%E8%A7%A6%E5%8F%91%E6%9D%A1%E4%BB%B6">3. Full GC 的触发条件</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <p>程序计数器、虚拟机栈和本地方法栈这三个区域属于线程私有的，只存在于线程的生命周期内，线程结束之后也会消失，因此不需要对这三个区域进行垃圾回收。垃圾回收主要是针对 Java 堆和方法区进行。</p>
@@ -871,6 +868,11 @@
 <p>在 JDK 1.7 及以前，HotSpot 虚拟机中的方法区是用永久代实现的，永久代中存放的为一些 Class 的信息、常量、静态变量等数据，当系统中要加载的类、反射的类和调用的方法较多时，永久代可能会被占满，在未配置为采用 CMS GC 的情况下也会执行 Full GC。如果经过 Full GC 仍然回收不了，那么虚拟机会抛出 java.lang.OutOfMemoryError，为避免以上原因引起的 Full GC，可采用的方法为增大永久代空间或转为使用 CMS GC。</p>
 <p><strong>（五）Concurrent Mode Failure</strong></p>
 <p>执行 CMS GC 的过程中同时有对象要放入老年代，而此时老年代空间不足（有时候“空间不足”是 CMS GC 时当前的浮动垃圾过多导致暂时性的空间不足触发 Full GC），便会报 Concurrent Mode Failure 错误，并触发 Full GC。</p>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://item.jd.com/11252778.html" target="_blank" rel="noopener">深入理解 Java 虚拟机：JVM 高级特性与最佳实践（第 2 版）</a></li>
+<li><a href="https://www.douban.com/doulist/2545443/" target="_blank" rel="noopener">从表到里学习 JVM 实现</a></li>
+</ul>
 
       
     </div>
@@ -943,8 +945,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/运行时数据区域/" rel="next" title="运行时数据区域">
-                <i class="fa fa-chevron-left"></i> 运行时数据区域
+              <a href="/blog/2018/05/29/programming/java/javacore/jvm/类加载机制/" rel="next" title="类加载机制">
+                <i class="fa fa-chevron-left"></i> 类加载机制
               </a>
             
           </div>
@@ -953,8 +955,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/JVM调优/" rel="prev" title="JVM 调优">
-                JVM 调优 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/31/programming/java/javacore/container/java-container-map/" rel="prev" title="Java 容器之 Map">
+                Java 容器之 Map <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1026,7 +1028,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">354</span>
+                    <span class="site-state-item-count">342</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1340,9 +1342,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">115</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1421,7 +1421,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集"><span class="nav-text"> 垃圾收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断一个对象是否可回收"><span class="nav-text"> 判断一个对象是否可回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引用计数算法"><span class="nav-text"> 1. 引用计数算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-可达性分析算法"><span class="nav-text"> 2. 可达性分析算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引用类型"><span class="nav-text"> 3. 引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-方法区的回收"><span class="nav-text"> 4. 方法区的回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-finalize"><span class="nav-text"> 5. finalize()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集算法"><span class="nav-text"> 垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标记-清除"><span class="nav-text"> 1. 标记 - 清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-标记-整理"><span class="nav-text"> 2. 标记 - 整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-复制"><span class="nav-text"> 3. 复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分代收集"><span class="nav-text"> 4. 分代收集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-text"> 垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-serial-收集器"><span class="nav-text"> 1. Serial 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-parnew-收集器"><span class="nav-text"> 2. ParNew 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-parallel-scavenge-收集器"><span class="nav-text"> 3. Parallel Scavenge 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-serial-old-收集器"><span class="nav-text"> 4. Serial Old 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-parallel-old-收集器"><span class="nav-text"> 5. Parallel Old 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-cms-收集器"><span class="nav-text"> 6. CMS 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-g1-收集器"><span class="nav-text"> 7. G1 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-比较"><span class="nav-text"> 8. 比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配与回收策略"><span class="nav-text"> 内存分配与回收策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-minor-gc-和-full-gc"><span class="nav-text"> 1. Minor GC 和 Full GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内存分配策略"><span class="nav-text"> 2. 内存分配策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-full-gc-的触发条件"><span class="nav-text"> 3. Full GC 的触发条件</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#垃圾收集"><span class="nav-text"> 垃圾收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断一个对象是否可回收"><span class="nav-text"> 判断一个对象是否可回收</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-引用计数算法"><span class="nav-text"> 1. 引用计数算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-可达性分析算法"><span class="nav-text"> 2. 可达性分析算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引用类型"><span class="nav-text"> 3. 引用类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-方法区的回收"><span class="nav-text"> 4. 方法区的回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-finalize"><span class="nav-text"> 5. finalize()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集算法"><span class="nav-text"> 垃圾收集算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-标记-清除"><span class="nav-text"> 1. 标记 - 清除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-标记-整理"><span class="nav-text"> 2. 标记 - 整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-复制"><span class="nav-text"> 3. 复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-分代收集"><span class="nav-text"> 4. 分代收集</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#垃圾收集器"><span class="nav-text"> 垃圾收集器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-serial-收集器"><span class="nav-text"> 1. Serial 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-parnew-收集器"><span class="nav-text"> 2. ParNew 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-parallel-scavenge-收集器"><span class="nav-text"> 3. Parallel Scavenge 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-serial-old-收集器"><span class="nav-text"> 4. Serial Old 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-parallel-old-收集器"><span class="nav-text"> 5. Parallel Old 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-cms-收集器"><span class="nav-text"> 6. CMS 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-g1-收集器"><span class="nav-text"> 7. G1 收集器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-比较"><span class="nav-text"> 8. 比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内存分配与回收策略"><span class="nav-text"> 内存分配与回收策略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-minor-gc-和-full-gc"><span class="nav-text"> 1. Minor GC 和 Full GC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-内存分配策略"><span class="nav-text"> 2. 内存分配策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-full-gc-的触发条件"><span class="nav-text"> 3. Full GC 的触发条件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1463,7 +1463,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:30</span>
+    <span title="站点阅读时长">31:21</span>
   
 </div>
 

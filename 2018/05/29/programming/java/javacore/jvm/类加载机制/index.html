@@ -107,20 +107,20 @@
 
 
 
-  <meta name="description" content="类加载机制  📓 本文已归档到：「blog」    类加载机制  类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现       类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准">
+  <meta name="description" content="类加载机制  📓 本文已归档到：「blog」    类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现   参考资料   类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准备（Pr">
 <meta name="keywords" content="programming,java,javacore,jvm,ClassLoader">
 <meta property="og:type" content="article">
 <meta property="og:title" content="类加载机制">
 <meta property="og:url" content="https://dunwu.github.io/2018/05/29/programming/java/javacore/jvm/类加载机制/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="类加载机制  📓 本文已归档到：「blog」    类加载机制  类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现       类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准">
+<meta property="og:description" content="类加载机制  📓 本文已归档到：「blog」    类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现   参考资料   类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准备（Pr">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-类加载-生命周期.jpg">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-类加载-双亲委派.png">
-<meta property="og:updated_time" content="2019-03-07T05:14:11.503Z">
+<meta property="og:updated_time" content="2019-03-08T14:26:33.915Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="类加载机制">
-<meta name="twitter:description" content="类加载机制  📓 本文已归档到：「blog」    类加载机制  类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现       类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准">
+<meta name="twitter:description" content="类加载机制  📓 本文已归档到：「blog」    类的生命周期 类初始化时机 类加载过程  1. 加载 2. 验证 3. 准备 4. 解析 5. 初始化   类加载器  类与类加载器 类加载器分类 双亲委派模型 自定义类加载器实现   参考资料   类是在运行期间动态加载的。  类的生命周期    包括以下 7 个阶段：  加载（Loading） 验证（Verification） 准备（Pr">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/jvm/jmm-类加载-生命周期.jpg">
 
 
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-07 13:14:11" itemprop="dateModified" datetime="2019-03-07T13:14:11+08:00">2019-03-07</time>
+                <time title="修改时间：2019-03-08 22:26:33" itemprop="dateModified" datetime="2019-03-08T22:26:33+08:00">2019-03-08</time>
               
             
           </span>
@@ -536,9 +536,7 @@
 <blockquote>
 <p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
 </blockquote>
-<!-- TOC -->
-<ul>
-<li><a href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6">类加载机制</a>
+<!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#%E7%B1%BB%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">类的生命周期</a></li>
 <li><a href="#%E7%B1%BB%E5%88%9D%E5%A7%8B%E5%8C%96%E6%97%B6%E6%9C%BA">类初始化时机</a></li>
@@ -559,8 +557,7 @@
 <li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8%E5%AE%9E%E7%8E%B0">自定义类加载器实现</a></li>
 </ul>
 </li>
-</ul>
-</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <p>类是在运行期间动态加载的。</p>
@@ -720,6 +717,11 @@
 <p>FileSystemClassLoader 是自定义类加载器，继承自 java.lang.ClassLoader，用于加载文件系统上的类。它首先根据类的全名在文件系统上查找类的字节代码文件（.class 文件），然后读取该文件内容，最后通过 defineClass() 方法来把这些字节代码转换成 java.lang.Class 类的实例。</p>
 <p>java.lang.ClassLoader 类的方法 loadClass() 实现了双亲委派模型的逻辑，因此自定义类加载器一般不去重写它，而是通过重写 findClass() 方法。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">FileSystemClassLoader</span> <span class="keyword">extends</span> <span class="title">ClassLoader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> String rootDir;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">FileSystemClassLoader</span><span class="params">(String rootDir)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.rootDir = rootDir;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">protected</span> Class&lt;?&gt; findClass(String name) <span class="keyword">throws</span> ClassNotFoundException &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] classData = getClassData(name);</span><br><span class="line">        <span class="keyword">if</span> (classData == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> ClassNotFoundException();</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> defineClass(name, classData, <span class="number">0</span>, classData.length);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">byte</span>[] getClassData(String className) &#123;</span><br><span class="line">        String path = classNameToPath(className);</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            InputStream ins = <span class="keyword">new</span> FileInputStream(path);</span><br><span class="line">            ByteArrayOutputStream baos = <span class="keyword">new</span> ByteArrayOutputStream();</span><br><span class="line">            <span class="keyword">int</span> bufferSize = <span class="number">4096</span>;</span><br><span class="line">            <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[bufferSize];</span><br><span class="line">            <span class="keyword">int</span> bytesNumRead;</span><br><span class="line">            <span class="keyword">while</span> ((bytesNumRead = ins.read(buffer)) != -<span class="number">1</span>) &#123;</span><br><span class="line">                baos.write(buffer, <span class="number">0</span>, bytesNumRead);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> baos.toByteArray();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> String <span class="title">classNameToPath</span><span class="params">(String className)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> rootDir + File.separatorChar</span><br><span class="line">                + className.replace(<span class="string">'.'</span>, File.separatorChar) + <span class="string">".class"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://item.jd.com/11252778.html" target="_blank" rel="noopener">深入理解 Java 虚拟机：JVM 高级特性与最佳实践（第 2 版）</a></li>
+<li><a href="https://www.douban.com/doulist/2545443/" target="_blank" rel="noopener">从表到里学习 JVM 实现</a></li>
+</ul>
 
       
     </div>
@@ -792,8 +794,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/05/24/programming/java/javacore/concurrent/原子变量类/" rel="next" title="原子变量类">
-                <i class="fa fa-chevron-left"></i> 原子变量类
+              <a href="/blog/2018/05/29/programming/java/javacore/jvm/JVM调优/" rel="next" title="JVM 调优">
+                <i class="fa fa-chevron-left"></i> JVM 调优
               </a>
             
           </div>
@@ -802,8 +804,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/29/programming/java/javacore/jvm/运行时数据区域/" rel="prev" title="运行时数据区域">
-                运行时数据区域 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/29/programming/java/javacore/jvm/垃圾收集/" rel="prev" title="垃圾收集">
+                垃圾收集 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -875,7 +877,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">354</span>
+                    <span class="site-state-item-count">342</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1189,9 +1191,7 @@
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">116</span>
+                    <span class="site-state-item-count">115</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1270,7 +1270,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类加载机制"><span class="nav-text"> 类加载机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的生命周期"><span class="nav-text"> 类的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类初始化时机"><span class="nav-text"> 类初始化时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载过程"><span class="nav-text"> 类加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-加载"><span class="nav-text"> 1. 加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-验证"><span class="nav-text"> 2. 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-准备"><span class="nav-text"> 3. 准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-解析"><span class="nav-text"> 4. 解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-初始化"><span class="nav-text"> 5. 初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器"><span class="nav-text"> 类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类与类加载器"><span class="nav-text"> 类与类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器分类"><span class="nav-text"> 类加载器分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双亲委派模型"><span class="nav-text"> 双亲委派模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义类加载器实现"><span class="nav-text"> 自定义类加载器实现</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类加载机制"><span class="nav-text"> 类加载机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#类的生命周期"><span class="nav-text"> 类的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类初始化时机"><span class="nav-text"> 类初始化时机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载过程"><span class="nav-text"> 类加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-加载"><span class="nav-text"> 1. 加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-验证"><span class="nav-text"> 2. 验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-准备"><span class="nav-text"> 3. 准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-解析"><span class="nav-text"> 4. 解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-初始化"><span class="nav-text"> 5. 初始化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类加载器"><span class="nav-text"> 类加载器</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类与类加载器"><span class="nav-text"> 类与类加载器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类加载器分类"><span class="nav-text"> 类加载器分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双亲委派模型"><span class="nav-text"> 双亲委派模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义类加载器实现"><span class="nav-text"> 自定义类加载器实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1312,7 +1312,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:30</span>
+    <span title="站点阅读时长">31:21</span>
   
 </div>
 
