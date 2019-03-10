@@ -460,32 +460,6 @@
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/2019/03/06/programming/README/"/>
-    <id>https://dunwu.github.io/2019/03/06/programming/README/</id>
-    <published>2019-03-06T08:38:12.313Z</published>
-    <updated>2019-03-07T10:13:59.236Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="编程语言"><a class="markdownIt-Anchor" href="#编程语言"></a> 编程语言</h2><blockquote><p>☕️ <strong>编程语言</strong></p><p>任何建筑都是一砖一瓦的堆砌，任何软件都是通过编程语言一行一行编写的。每种编程语言都有自身的优缺点，有适合的应用场景。编程语言那么多，人生苦胆，不可能全部掌握。但是，作为程序员，至少应该精通一门高级编程语言，一门脚本语言。所谓一通百通，万变不离其宗，精通一两门编程语言后，自然会发现语言之间也有很多相似性。</p></blockquote><ul><li><a href="java">Java</a></li><li><a href="python.md">Python</a></li><li><a href="shell.md">Shell</a> - 关键词：解释器、注释、变量、Shell 扩展、数组、运算符、语句、函数、流和重定向、Debugging</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;编程语言&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#编程语言&quot;&gt;&lt;/a&gt; 编程语言&lt;/h2&gt;
-&lt;blockquote&gt;
-&lt;p&gt;☕️ &lt;strong&gt;编程语言&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;任何建筑都是一砖一瓦的堆砌，任何软件都是通
-      
-    
-    </summary>
-    
-    
-      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
     <link href="https://dunwu.github.io/2019/03/06/os/README/"/>
     <id>https://dunwu.github.io/2019/03/06/os/README/</id>
     <published>2019-03-06T08:38:11.904Z</published>
@@ -530,6 +504,31 @@
     
     </summary>
     
+    
+  </entry>
+  
+  <entry>
+    <title></title>
+    <link href="https://dunwu.github.io/2019/03/06/frontend/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/frontend/README/</id>
+    <published>2019-03-06T08:38:11.236Z</published>
+    <updated>2019-03-07T10:13:59.074Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前端技术"><a class="markdownIt-Anchor" href="#前端技术"></a> 前端技术</h1><blockquote><p>🎯 所有配套源码整理归档在 <a href="https://github.com/dunwu/frontend-tutorial" target="_blank" rel="noopener"><strong>frontend-tutorial</strong></a> 项目中。</p></blockquote><h2 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 📝 知识点</h2><h3 id="base"><a class="markdownIt-Anchor" href="#base"></a> Base</h3><blockquote><p>前端 web 技术的基石： <code>html</code> + <code>css</code> + <code>js</code></p><ul><li>HTML 定义了网页的内容。</li><li>CSS 定义了网页的样式。</li><li>JavaScript 定义了网页的行为。</li></ul></blockquote><ul><li><a href="base/html.md">Html</a></li><li><a href="base/css.md">Css</a></li><li><a href="base/js.md">Javascript</a></li></ul><h3 id="nodejs-npm-yarn"><a class="markdownIt-Anchor" href="#nodejs-npm-yarn"></a> Nodejs, Npm, Yarn</h3><blockquote><p>Nodejs 和包管理器</p><p>流行： <code>npm</code>, <code>yarn</code></p></blockquote><ul><li><a href="nodejs/nodejs.md">Nodejs</a> - 关键词： <code>nodejs</code>, <code>REPL</code>， <code>require</code>, <code>exports</code></li><li><a href="nodejs/npm.md">Npm</a> - 关键词： <code>nodejs</code>, <code>包管理</code>, <code>npm</code>, <code>cnpm</code>, <code>package.json</code>, <code>node_modules</code></li><li><a href="nodejs/yarn.md">Yarn</a> - 关键词： <code>nodejs</code>, <code>包管理</code>, <code>yarn</code>, <code>yarn.lock</code></li></ul><h3 id="es6-typescript-babel"><a class="markdownIt-Anchor" href="#es6-typescript-babel"></a> ES6, TypeScript, Babel</h3><blockquote><p>下一代 Javascript 语言</p></blockquote><ul><li><a href="es6/ES6.md">ES6</a> - 关键词： <code>ES6</code>, <code>ECMAScript</code>, <code>arrow</code>, <code>this</code>, <code>let</code>, <code>const</code>, <code>class</code>, <code>extends</code>, <code>super</code>, <code>arrow</code> …</li><li><a href="es6/babel.md">Babel</a> - 关键词： <code>babel-cli</code>, <code>.babelrc</code>, <code>preset</code>, <code>polyfill</code></li><li><a href="es6/typescript.md">TypeScript</a> - 关键词： <code>typescript</code>, <code>tsc</code></li></ul><h3 id="bundlers"><a class="markdownIt-Anchor" href="#bundlers"></a> Bundlers</h3><blockquote><p>捆绑资源管理器</p><p>流行： <code>Webpack</code></p></blockquote><ul><li><a href="webpack/webpack.md">Webpack 入门</a></li><li><a href="webpack/concept.md">Webpack 概念</a></li><li><a href="webpack/asset-management.md">Webpack 资源管理</a></li><li><a href="webpack/code-splitting.md">Webpack 代码分离</a></li><li><a href="webpack/development.md">Webpack 开发工具</a></li></ul><h3 id="qa"><a class="markdownIt-Anchor" href="#qa"></a> QA</h3><blockquote><p>静态检查工具、代码格式化工具</p><p>流行： <code>JSLint</code>, <code>JSHint</code>, <code>ESLint</code>, <code>Prettier</code>, <code>Standard</code>, <code>TSlint</code></p></blockquote><ul><li><a href="qa/qa-summary.md">JavaScript QA 工具总结</a></li><li><a href="qa/eslint.md">eslint</a></li></ul><h3 id="mvc-react-vue-angular"><a class="markdownIt-Anchor" href="#mvc-react-vue-angular"></a> MVC - React, Vue, Angular</h3><ul><li><a href="mvc/Angular,React,Vue%E6%AF%94%E8%BE%83.md">Angular,React,Vue 比较</a></li></ul><h4 id="react-技术栈"><a class="markdownIt-Anchor" href="#react-技术栈"></a> React 技术栈</h4><ul><li><a href="mvc/react/react.md">React</a></li></ul><h4 id="vue-技术栈"><a class="markdownIt-Anchor" href="#vue-技术栈"></a> Vue 技术栈</h4><h4 id="angular-技术栈"><a class="markdownIt-Anchor" href="#angular-技术栈"></a> Angular 技术栈</h4><ul><li><a href="mvc/angular/angular.md">Angular</a></li></ul><h2 id="传送门"><a class="markdownIt-Anchor" href="#传送门"></a> 🚪 传送门</h2><p>| <a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">回首頁</a> |</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;前端技术&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#前端技术&quot;&gt;&lt;/a&gt; 前端技术&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;🎯 所有配套源码整理归档在 &lt;a href=&quot;https://github.com/dunwu/fron
+      
+    
+    </summary>
+    
+    
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
