@@ -107,19 +107,19 @@
 
 
 
-  <meta name="description" content="Java 枚举  知识点   概念 enum 的全称为 enumeration， 是 JDK 1.5 中引入的新特性。 在 Java 中，被 enum 关键字修饰的类型就是枚举类型。形式如下： enum Color &amp;#123; RED, GREEN, BLUE &amp;#125; 如果枚举不添加任何方法，枚举值默认为从 0 开始的有序数值。以 Color 枚举类型举例，它的枚举常量依次为 RED：0">
-<meta name="keywords" content="javacore,basics">
+  <meta name="description" content="深入理解 Java 枚举类型  📓 本文已归档到：「blog」    知识点 概念  枚举类型的本质   枚举的方法 枚举的特性  枚举可以添加方法 枚举可以实现接口 枚举不可以继承   枚举的应用场景  组织常量 switch 状态机 组织枚举 策略枚举   EnumSet 和 EnumMap 小结 参考资料    知识点   概念 enum 的全称为 enumeration， 是 JDK">
+<meta name="keywords" content="programming,java,javacore,basic,enum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 枚举">
-<meta property="og:url" content="https://dunwu.github.io/2016/11/24/programming/java/javacore/basic/Java枚举/index.html">
+<meta property="og:title" content="深入理解 Java 枚举类型">
+<meta property="og:url" content="https://dunwu.github.io/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="Java 枚举  知识点   概念 enum 的全称为 enumeration， 是 JDK 1.5 中引入的新特性。 在 Java 中，被 enum 关键字修饰的类型就是枚举类型。形式如下： enum Color &amp;#123; RED, GREEN, BLUE &amp;#125; 如果枚举不添加任何方法，枚举值默认为从 0 开始的有序数值。以 Color 枚举类型举例，它的枚举常量依次为 RED：0">
+<meta property="og:description" content="深入理解 Java 枚举类型  📓 本文已归档到：「blog」    知识点 概念  枚举类型的本质   枚举的方法 枚举的特性  枚举可以添加方法 枚举可以实现接口 枚举不可以继承   枚举的应用场景  组织常量 switch 状态机 组织枚举 策略枚举   EnumSet 和 EnumMap 小结 参考资料    知识点   概念 enum 的全称为 enumeration， 是 JDK">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-9c7b947d48b0de29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-03-06T08:43:46.398Z">
+<meta property="og:updated_time" content="2019-03-11T10:54:51.755Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 枚举">
-<meta name="twitter:description" content="Java 枚举  知识点   概念 enum 的全称为 enumeration， 是 JDK 1.5 中引入的新特性。 在 Java 中，被 enum 关键字修饰的类型就是枚举类型。形式如下： enum Color &amp;#123; RED, GREEN, BLUE &amp;#125; 如果枚举不添加任何方法，枚举值默认为从 0 开始的有序数值。以 Color 枚举类型举例，它的枚举常量依次为 RED：0">
+<meta name="twitter:title" content="深入理解 Java 枚举类型">
+<meta name="twitter:description" content="深入理解 Java 枚举类型  📓 本文已归档到：「blog」    知识点 概念  枚举类型的本质   枚举的方法 枚举的特性  枚举可以添加方法 枚举可以实现接口 枚举不可以继承   枚举的应用场景  组织常量 switch 状态机 组织枚举 策略枚举   EnumSet 和 EnumMap 小结 参考资料    知识点   概念 enum 的全称为 enumeration， 是 JDK">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-9c7b947d48b0de29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -129,7 +129,7 @@
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2016/11/24/programming/java/javacore/basic/Java枚举/">
+  <link rel="canonical" href="https://dunwu.github.io/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/">
 
 
 
@@ -139,7 +139,7 @@
   };
 </script>
 
-  <title>Java 枚举 | 张鹏的博客</title>
+  <title>深入理解 Java 枚举类型 | 张鹏的博客</title>
   
 
 
@@ -370,7 +370,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/11/24/programming/java/javacore/basic/Java枚举/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -387,7 +387,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java 枚举<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/Java枚举.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">深入理解 Java 枚举类型<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/深入理解Java枚举类型.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -413,7 +413,7 @@
                 
               
 
-              <time title="创建时间：2016-11-24 00:00:00" itemprop="dateCreated datePublished" datetime="2016-11-24T00:00:00+08:00">2016-11-24</time>
+              <time title="创建时间：2018-04-24 19:45:00" itemprop="dateCreated datePublished" datetime="2018-04-24T19:45:00+08:00">2018-04-24</time>
             
 
             
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-06 16:43:46" itemprop="dateModified" datetime="2019-03-06T16:43:46+08:00">2019-03-06</time>
+                <time title="修改时间：2019-03-11 18:54:51" itemprop="dateModified" datetime="2019-03-11T18:54:51+08:00">2019-03-11</time>
               
             
           </span>
@@ -447,7 +447,28 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/basic/" itemprop="url" rel="index"><span itemprop="name">basic</span></a></span>
 
                 
                 
@@ -510,7 +531,39 @@
       
 
       
-        <h1 id="java-枚举"><a class="markdownIt-Anchor" href="#java-枚举"></a> Java 枚举</h1>
+        <h1 id="深入理解-java-枚举类型"><a class="markdownIt-Anchor" href="#深入理解-java-枚举类型"></a> 深入理解 Java 枚举类型</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#%E7%9F%A5%E8%AF%86%E7%82%B9">知识点</a></li>
+<li><a href="#%E6%A6%82%E5%BF%B5">概念</a>
+<ul>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%9C%AC%E8%B4%A8">枚举类型的本质</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%9A%84%E6%96%B9%E6%B3%95">枚举的方法</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%9A%84%E7%89%B9%E6%80%A7">枚举的特性</a>
+<ul>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E5%8F%AF%E4%BB%A5%E6%B7%BB%E5%8A%A0%E6%96%B9%E6%B3%95">枚举可以添加方法</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E5%8F%AF%E4%BB%A5%E5%AE%9E%E7%8E%B0%E6%8E%A5%E5%8F%A3">枚举可以实现接口</a></li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E4%B8%8D%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF">枚举不可以继承</a></li>
+</ul>
+</li>
+<li><a href="#%E6%9E%9A%E4%B8%BE%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">枚举的应用场景</a>
+<ul>
+<li><a href="#%E7%BB%84%E7%BB%87%E5%B8%B8%E9%87%8F">组织常量</a></li>
+<li><a href="#switch-%E7%8A%B6%E6%80%81%E6%9C%BA">switch 状态机</a></li>
+<li><a href="#%E7%BB%84%E7%BB%87%E6%9E%9A%E4%B8%BE">组织枚举</a></li>
+<li><a href="#%E7%AD%96%E7%95%A5%E6%9E%9A%E4%B8%BE">策略枚举</a></li>
+</ul>
+</li>
+<li><a href="#enumset-%E5%92%8C-enummap">EnumSet 和 EnumMap</a></li>
+<li><a href="#%E5%B0%8F%E7%BB%93">小结</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+<!-- /TOC -->
 <h2 id="知识点"><a class="markdownIt-Anchor" href="#知识点"></a> 知识点</h2>
 <p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-9c7b947d48b0de29.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
 <h2 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h2>
@@ -598,6 +651,11 @@
 <p><code>EnumSet</code> 是枚举类型的高性能 <code>Set</code> 实现。它要求放入它的枚举常量必须属于同一枚举类型。<br>
 <code>EnumMap</code> 是专门为枚举类型量身定做的 <code>Map</code> 实现。虽然使用其它的 Map 实现（如 HashMap）也能完成枚举类型实例到值得映射，但是使用 EnumMap 会更加高效：它只能接收同一枚举类型的实例作为键值，并且由于枚举类型实例的数量相对固定并且有限，所以 EnumMap 使用数组来存放与枚举类型对应的值。这使得 EnumMap 的效率非常高。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// EnumSet的使用</span></span><br><span class="line">System.out.println(<span class="string">"EnumSet展示"</span>);</span><br><span class="line">EnumSet&lt;ErrorCodeEn&gt; errSet = EnumSet.allOf(ErrorCodeEn.class);</span><br><span class="line"><span class="keyword">for</span> (ErrorCodeEn e : errSet) &#123;</span><br><span class="line">    System.out.println(e.name() + <span class="string">" : "</span> + e.ordinal());</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// EnumMap的使用</span></span><br><span class="line">System.out.println(<span class="string">"EnumMap展示"</span>);</span><br><span class="line">EnumMap&lt;StateMachine.Signal, String&gt; errMap = <span class="keyword">new</span> EnumMap(StateMachine.Signal.class);</span><br><span class="line">errMap.put(StateMachine.Signal.RED, <span class="string">"红灯"</span>);</span><br><span class="line">errMap.put(StateMachine.Signal.YELLOW, <span class="string">"黄灯"</span>);</span><br><span class="line">errMap.put(StateMachine.Signal.GREEN, <span class="string">"绿灯"</span>);</span><br><span class="line"><span class="keyword">for</span> (Iterator&lt;Map.Entry&lt;StateMachine.Signal, String&gt;&gt; iter = errMap.entrySet().iterator(); iter.hasNext();) &#123;</span><br><span class="line">    Map.Entry&lt;StateMachine.Signal, String&gt; entry = iter.next();</span><br><span class="line">    System.out.println(entry.getKey().name() + <span class="string">" : "</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://blog.csdn.net/javazejian/article/details/71333103#enumset%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90" target="_blank" rel="noopener">深入理解Java枚举类型(enum)</a></li>
+</ul>
 
       
     </div>
@@ -636,7 +694,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2016/11/24/programming/java/javacore/basic/Java枚举/" title="Java 枚举">https://dunwu.github.io/2016/11/24/programming/java/javacore/basic/Java枚举/</a>
+    <a href="https://dunwu.github.io/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/" title="深入理解 Java 枚举类型">https://dunwu.github.io/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -649,9 +707,15 @@
       
         <div class="post-tags">
           
+            <a href="/blog/tags/programming/" rel="tag"># programming</a>
+          
+            <a href="/blog/tags/java/" rel="tag"># java</a>
+          
             <a href="/blog/tags/javacore/" rel="tag"># javacore</a>
           
-            <a href="/blog/tags/basics/" rel="tag"># basics</a>
+            <a href="/blog/tags/basic/" rel="tag"># basic</a>
+          
+            <a href="/blog/tags/enum/" rel="tag"># enum</a>
           
         </div>
       
@@ -664,8 +728,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2016/11/03/programming/java/javacore/advanced/Java正则/" rel="next" title="Java 正则">
-                <i class="fa fa-chevron-left"></i> Java 正则
+              <a href="/blog/2018/04/24/programming/java/javacore/basic/深入理解Java基本数据类型/" rel="next" title="深入理解 Java 基本数据类型">
+                <i class="fa fa-chevron-left"></i> 深入理解 Java 基本数据类型
               </a>
             
           </div>
@@ -674,8 +738,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/01/03/os/linux/ops/service/elastic/elastic-beats/" rel="prev" title="Elastic 技术栈之 Filebeat">
-                Elastic 技术栈之 Filebeat <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/05/10/programming/java/javacore/concurrent/Java并发面试题集/" rel="prev" title="Java 并发面试题总结">
+                Java 并发面试题总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -747,7 +811,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">340</span>
+                    <span class="site-state-item-count">341</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1067,7 +1131,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">117</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">119</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1146,7 +1214,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#java-枚举"><span class="nav-text"> Java 枚举</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text"> 知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举类型的本质"><span class="nav-text"> 枚举类型的本质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的方法"><span class="nav-text"> 枚举的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的特性"><span class="nav-text"> 枚举的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举可以添加方法"><span class="nav-text"> 枚举可以添加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java-不允许使用-为枚举常量赋值"><span class="nav-text"> Java 不允许使用 = 为枚举常量赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举可以添加普通方法-静态方法-抽象方法-构造方法"><span class="nav-text"> 枚举可以添加普通方法、静态方法、抽象方法、构造方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举可以实现接口"><span class="nav-text"> 枚举可以实现接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举不可以继承"><span class="nav-text"> 枚举不可以继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的应用场景"><span class="nav-text"> 枚举的应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织常量"><span class="nav-text"> 组织常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举声明的格式"><span class="nav-text"> 枚举声明的格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-状态机"><span class="nav-text"> switch 状态机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组织枚举"><span class="nav-text"> 组织枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略枚举"><span class="nav-text"> 策略枚举</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumset-和-enummap"><span class="nav-text"> EnumSet 和 EnumMap</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-java-枚举类型"><span class="nav-text"> 深入理解 Java 枚举类型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点"><span class="nav-text"> 知识点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举类型的本质"><span class="nav-text"> 枚举类型的本质</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的方法"><span class="nav-text"> 枚举的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的特性"><span class="nav-text"> 枚举的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举可以添加方法"><span class="nav-text"> 枚举可以添加方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#java-不允许使用-为枚举常量赋值"><span class="nav-text"> Java 不允许使用 = 为枚举常量赋值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举可以添加普通方法-静态方法-抽象方法-构造方法"><span class="nav-text"> 枚举可以添加普通方法、静态方法、抽象方法、构造方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举可以实现接口"><span class="nav-text"> 枚举可以实现接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#枚举不可以继承"><span class="nav-text"> 枚举不可以继承</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举的应用场景"><span class="nav-text"> 枚举的应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#组织常量"><span class="nav-text"> 组织常量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#枚举声明的格式"><span class="nav-text"> 枚举声明的格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-状态机"><span class="nav-text"> switch 状态机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组织枚举"><span class="nav-text"> 组织枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略枚举"><span class="nav-text"> 策略枚举</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#enumset-和-enummap"><span class="nav-text"> EnumSet 和 EnumMap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-text"> 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1188,7 +1256,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:12</span>
+    <span title="站点阅读时长">31:24</span>
   
 </div>
 

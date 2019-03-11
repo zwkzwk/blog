@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="深入理解 Java 基本数据类型   数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，包括 String、数组）   值类型">
+  <meta name="description" content="深入理解 Java 基本数据类型  📓 本文已归档到：「blog」    数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，">
 <meta name="keywords" content="programming,java,javacore,basic,datatype">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深入理解 Java 基本数据类型">
 <meta property="og:url" content="https://dunwu.github.io/2018/04/24/programming/java/javacore/basic/深入理解Java基本数据类型/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="深入理解 Java 基本数据类型   数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，包括 String、数组）   值类型">
+<meta property="og:description" content="深入理解 Java 基本数据类型  📓 本文已归档到：「blog」    数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-10T14:11:03.765Z">
+<meta property="og:updated_time" content="2019-03-11T10:54:51.740Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解 Java 基本数据类型">
-<meta name="twitter:description" content="深入理解 Java 基本数据类型   数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，包括 String、数组）   值类型">
+<meta name="twitter:description" content="深入理解 Java 基本数据类型  📓 本文已归档到：「blog」    数据类型分类  值类型 值类型和引用类型的区别   数据转换  自动转换 强制转换   装箱和拆箱  包装类、装箱、拆箱 自动装箱、自动拆箱 装箱、拆箱的应用和注意点   小结 参考资料    数据类型分类 Java 中的数据类型有两类：  值类型（又叫内置数据类型，基本数据类型） 引用类型（除值类型以外，都是引用类型，">
 
 
 
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-10 22:11:03" itemprop="dateModified" datetime="2019-03-10T22:11:03+08:00">2019-03-10</time>
+                <time title="修改时间：2019-03-11 18:54:51" itemprop="dateModified" datetime="2019-03-11T18:54:51+08:00">2019-03-11</time>
               
             
           </span>
@@ -530,6 +530,9 @@
 
       
         <h1 id="深入理解-java-基本数据类型"><a class="markdownIt-Anchor" href="#深入理解-java-基本数据类型"></a> 深入理解 Java 基本数据类型</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+</blockquote>
 <!-- TOC depthFrom:2 depthTo:3 -->
 <ul>
 <li><a href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%88%86%E7%B1%BB">数据类型分类</a>
@@ -617,7 +620,7 @@
 <h2 id="数据转换"><a class="markdownIt-Anchor" href="#数据转换"></a> 数据转换</h2>
 <p>Java 中，数据类型转换有两种方式：</p>
 <ul>
-<li>自动换行</li>
+<li>自动转换</li>
 <li>强制转换</li>
 </ul>
 <h3 id="自动转换"><a class="markdownIt-Anchor" href="#自动转换"></a> 自动转换</h3>
@@ -834,8 +837,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/05/10/programming/java/javacore/concurrent/Java并发面试题集/" rel="prev" title="Java 并发面试题总结">
-                Java 并发面试题总结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/04/24/programming/java/javacore/basic/深入理解Java枚举类型/" rel="prev" title="深入理解 Java 枚举类型">
+                深入理解 Java 枚举类型 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -907,7 +910,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">340</span>
+                    <span class="site-state-item-count">341</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1227,7 +1230,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">117</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">119</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1348,7 +1355,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:12</span>
+    <span title="站点阅读时长">31:24</span>
   
 </div>
 
