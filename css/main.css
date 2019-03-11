@@ -2025,7 +2025,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #13704d;
+  background: #ba47ec;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2792,27 +2792,7 @@ embed {
   display: inline-block;
 }
 body {
-  position: relative;
-  font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 14px;
-  line-height: 2;
-  color: #555;
   background: url("http://dunwu.test.upcdn.net/images/others/theme_yellow_flower.jpg") no-repeat center 0 #fff4e6;
-}
-@media (max-width: 767px) {
-  body {
-    padding-right: 0 !important;
-  }
-}
-@media (min-width: 768px) and (max-width: 991px) {
-  body {
-    padding-right: 0 !important;
-  }
-}
-@media (min-width: 1200px) {
-  body {
-    font-size: 16px;
-  }
 }
 .post {
   margin-top: 60px;
@@ -2825,30 +2805,69 @@ body {
 .posts-expand .post-eof {
   display: none;
 }
-.btn {
-  display: inline-block;
-  padding: 0 20px;
-  font-size: 14px;
-  color: #fff;
-  background: #222;
-  border: 2px solid #222;
-  text-decoration: none;
-  border-radius: 4px;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-  line-height: 2;
+.brand {
+  background: #f1aaa6;
+  border-radius: 6px;
+  -webkit-box-shadow: 1px 1px 4px #888;
 }
-.btn:hover {
-  border-color: #222;
-  color: #222;
+.headband {
+  background-color: #f1aaa6;
+}
+.btn {
+  background-color: #f1aaa6;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 1px 1px 4px #888;
+}
+.sidebar-toggle {
+  background-color: #5f899f;
+}
+.page-post-detail .sidebar-toggle-line {
   background: #fff;
 }
-.btn + .btn {
-  margin: 0 0 8px 8px;
+.back-to-top {
+  background-color: #5f899f;
 }
-.btn .fa-fw {
-  width: 1.285714285714286em;
-  text-align: left;
+svg,
+.github-corner {
+  fill: #f1aaa6 !important;
+}
+code {
+  color: #f14e32;
+  border-radius: 3px;
+  -webkit-box-shadow: 0.5px 0.5px 1px #888;
+  -moz-box-shadow: 0.5px 0.5px 1px #888;
+}
+.highlight {
+  border-radius: 6px;
+  -webkit-box-shadow: 0.5px 0.5px 1px #888;
+  -moz-box-shadow: 0.5px 0.5px 1px #888;
+}
+.posts-expand .post-body img {
+  padding: 0;
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px 8px #888;
+  -moz-box-shadow: 2px 2px 2px #888;
+}
+a {
+  color: #399ab2;
+}
+a:hover {
+  color: #f00;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #37839d;
+  text-shadow: 0 -1px 5px rgba(0,0,0,0.4);
+}
+.posts-expand .post-title-link {
+  color: #37839d;
+  text-shadow: 0 -1px 5px rgba(0,0,0,0.4);
+}
+blockquote {
+  background-color: #fff2c9;
 }

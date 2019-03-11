@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/jdk/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/svn/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -404,7 +404,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/jdk/" class="post-title-link" itemprop="url">JDK 安装</a>
+                <a href="/blog/2019/03/06/os/linux/ops/service/svn/" class="post-title-link" itemprop="url">Svn 安装、配置、使用指南</a>
               
             
           </h1>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.8k</span>
+                <span title="本文字数">2.1k</span>
               
 
               
@@ -511,36 +511,26 @@
         
           
             <p>
-               JDK 安装
-
-关键词：JDK, JAVA_HOME, CLASSPATH, PATH
-
+               Svn 安装、配置、使用指南
+Svn 是 Subversion 的简称，是一个开放源代码的版本控制系统，它采用了分支管理系统。
 
 
-JDK 安装步骤
-Windows 系统安装方法
-Linux 系统安装方法
+1. 安装配置
 
-RedHat 发行版本使用 rpm 安装方法
-
-
-参考资料
-
-
- JDK 安装步骤
-JDK 安装步骤：
-（1）下载 JDK
-a. 进入 Java 官网下载页面；
-b. 选择需要的版本：
-
-c. 选择对应操作系统的安装包：
-Win
+1.1. 安装 svn
+1.2. 创建 svn 仓库
+1.3. 配置 svnserve.conf
+1.4. 配置 passwd
+1.5. 配置 authz
+1.6. 启动关闭 svn
+1.7. 开机自启动 svn 方法
+1.8. svn 客户端访问
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/jdk/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/svn/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -604,7 +594,7 @@ Win
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/jenkins/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/zookeeper/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -624,7 +614,7 @@ Win
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/jenkins/" class="post-title-link" itemprop="url">Jenkins 安装</a>
+                <a href="/blog/2019/03/06/os/linux/ops/service/zookeeper/" class="post-title-link" itemprop="url">ZooKeeper 安装部署</a>
               
             
           </h1>
@@ -694,7 +684,7 @@ Win
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.3k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -708,7 +698,7 @@ Win
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -731,40 +721,30 @@ Win
         
           
             <p>
-               Jenkins 安装
+               ZooKeeper 安装部署
 
-环境要求
-
-JDK：JDK7+，官网推荐是 JDK 8
+环境要求：JDK6+
 
 
 
-
-安装
-启动
-脚本
-FAQ
-
-登录密码
-忘记密码
-卡在 check 页面
-卡在 getting startted 页面
+下载解压 ZooKeeper
+创建配置文件
+启动 ZooKeeper 服务器
+启动 CLI
+停止 ZooKeeper 服务器
 
 
-参考资料
+在安装 ZooKeeper 之前，请确保你的系统是在以下任一操作系统上运行：
 
-
- 安装
-安装步骤如下：
-（1）下载并解压到本地
-进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。
-我选择的是最新稳定 war
+任意 Linux OS - 支持开发和部署。适合演示应用程序。
+Windows OS - 仅支持开发。
+Mac OS - 仅支持
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/jenkins/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/zookeeper/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -828,7 +808,7 @@ FAQ
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/kafka/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/communication/network-transport/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -848,7 +828,7 @@ FAQ
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/kafka/" class="post-title-link" itemprop="url">Kafka 安装部署</a>
+                <a href="/blog/2019/03/06/communication/network-transport/" class="post-title-link" itemprop="url">计算机网络之传输层</a>
               
             
           </h1>
@@ -890,11 +870,29 @@ FAQ
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-11 18:54:51" itemprop="dateModified" datetime="2019-03-11T18:54:51+08:00">2019-03-11</time>
+                <time title="修改时间：2019-03-11 18:54:50" itemprop="dateModified" datetime="2019-03-11T18:54:50+08:00">2019-03-11</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/communication/" itemprop="url" rel="index"><span itemprop="name">communication</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -918,7 +916,7 @@ FAQ
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.6k</span>
+                <span title="本文字数">3.8k</span>
               
 
               
@@ -932,7 +930,7 @@ FAQ
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -955,35 +953,26 @@ FAQ
         
           
             <p>
-               Kafka 安装部署
+               计算机网络之传输层
 
-环境要求：
-
-JDK8
-ZooKeeper
+网络层只把分组发送到目的主机，但是真正通信的并不是主机而是主机中的进程。传输层提供了进程间的逻辑通信，传输层向高层用户屏蔽了下面网络层的核心细节，使应用程序看起来像是在两个传输层实体之间有一条端到端的逻辑通信信道。
 
 
 
-
-下载解压
-启动服务器
-停止服务器
-创建主题
-生产者生产消息
-消费者消费消息
-集群部署
-
-
- 下载解压
-进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。
-解压到本地：
-&gt; tar -xzf kafka_2.11-1.1.0.tgz&gt; cd kafka_2.11
+UDP 和 TCP 的特点
+UDP 首部格式
+TCP 首部格式
+TCP 的三次握手
+TCP 的四次挥手
+TCP 可靠传输
+TCP 滑动窗口
+TCP 流量控
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/kafka/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/communication/network-transport/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1047,7 +1036,7 @@ ZooKeeper
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/nexus/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-install/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1067,7 +1056,7 @@ ZooKeeper
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/nexus/" class="post-title-link" itemprop="url">Nexus 安装</a>
+                <a href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-install/" class="post-title-link" itemprop="url">Gitlab 安装</a>
               
             
           </h1>
@@ -1137,7 +1126,7 @@ ZooKeeper
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.7k</span>
+                <span title="本文字数">4.6k</span>
               
 
               
@@ -1174,38 +1163,41 @@ ZooKeeper
         
           
             <p>
-               Nexus 安装
+               Gitlab 安装
 
-关键词：maven, nexus, settings.xml, pom.xml
-环境要求：
-
-Nexus 3.13.0
-JDK 1.8
-Maven 3.5.4
+环境：
+OS: CentOS7
 
 
 
+安装 gitlab
 
-下载安装 Nexus
-启动停止 Nexus
-使用 Nexus
-
-配置 settings.xml
-配置 pom.xml
-执行 maven 构建
+常规安装 gitlab
+Docker 安装 gitlab
 
 
-参考资料
+安装 gitlab-ci-multi-runner
+
+常规安装 gitlab-ci-multi-runner
+Docker 安装 gitlab-ci-multi-runner
 
 
- 下载安装 Nexus
-进入官方下载地址，选择合适
+自签名证书
+
+创建证书
+
+
+gitlab 配置
+更多内容
+
+
+ 安装 gi
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/nexus/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-install/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1948,259 +1940,6 @@ Maven 3.5.4
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/architecture/分布式原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张鹏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2018/10/13/design/architecture/分布式原理/" class="post-title-link" itemprop="url">分布式原理</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-13 22:48:00" itemprop="dateCreated datePublished" datetime="2018-10-13T22:48:00+08:00">2018-10-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-11 18:54:50" itemprop="dateModified" datetime="2019-03-11T18:54:50+08:00">2019-03-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/design/" itemprop="url" rel="index"><span itemprop="name">design</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/design/architecture/" itemprop="url" rel="index"><span itemprop="name">architecture</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">9.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">9 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               分布式原理
-
-
-1. 分布式术语
-
-1.1. 异常
-1.2. 超时
-1.3. 衡量指标
-
-
-2. 数据分布
-
-2.1. 哈希分布
-2.2. 顺序分布
-2.3. 负载均衡
-
-
-3. 分布式理论
-
-3.1. CAP
-3.2. BASE
-
-
-4. 分布式事务问题
-
-4.1. 两阶段提交（2PC）
-4.2. 补偿事务（TCC）
-4.3. 本地消息表（异步确保）
-4.4. MQ 事务消息
-
-
-5. 共识性
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2018/10/13/design/architecture/分布式原理/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/refactor/代码坏味道之代码臃肿/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2617,6 +2356,259 @@ Maven 3.5.4
           
             <div class="post-button text-center">
               <a class="btn" href="/blog/2018/10/13/design/architecture/负载均衡/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/10/13/design/architecture/分布式原理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2018/10/13/design/architecture/分布式原理/" class="post-title-link" itemprop="url">分布式原理</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-10-13 22:48:00" itemprop="dateCreated datePublished" datetime="2018-10-13T22:48:00+08:00">2018-10-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-11 18:54:50" itemprop="dateModified" datetime="2019-03-11T18:54:50+08:00">2019-03-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/design/" itemprop="url" rel="index"><span itemprop="name">design</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/design/architecture/" itemprop="url" rel="index"><span itemprop="name">architecture</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">9.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               分布式原理
+
+
+1. 分布式术语
+
+1.1. 异常
+1.2. 超时
+1.3. 衡量指标
+
+
+2. 数据分布
+
+2.1. 哈希分布
+2.2. 顺序分布
+2.3. 负载均衡
+
+
+3. 分布式理论
+
+3.1. CAP
+3.2. BASE
+
+
+4. 分布式事务问题
+
+4.1. 两阶段提交（2PC）
+4.2. 补偿事务（TCC）
+4.3. 本地消息表（异步确保）
+4.4. MQ 事务消息
+
+
+5. 共识性
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2018/10/13/design/architecture/分布式原理/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -3309,82 +3301,6 @@ Maven 3.5.4
 
 
   
-  <style>
-    .copy-btn {
-      display: inline-block;
-      padding: 6px 12px;
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 20px;
-      color: #333;
-      white-space: nowrap;
-      vertical-align: middle;
-      cursor: pointer;
-      
-        background-color: #eee;
-        background-image: linear-gradient(#fcfcfc, #eee);
-        border: 1px solid #d5d5d5;
-        border-radius: 3px;
-      
-      user-select: none;
-      outline: 0;
-    }
-
-    .highlight-wrap .copy-btn {
-      transition: opacity .3s ease-in-out;
-      opacity: 0;
-      padding: 2px 6px;
-      position: absolute;
-      
-        right: 4px;
-        top: 8px;
-      
-    }
-
-    .highlight-wrap:hover .copy-btn,
-    .highlight-wrap .copy-btn:focus {
-      opacity: 1;
-    }
-
-    .highlight-wrap {
-      position: relative;
-    }
-  </style>
-  <script>
-    $('.highlight').each(function(i, e) {
-      var $wrap = $('<div>').addClass('highlight-wrap');
-      $(e).after($wrap);
-      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function(e) {
-        var code = $(this).parent().find('.code').find('.line').map(function(i, e) {
-          return $(e).text();
-        }).toArray().join('\n');
-        var ta = document.createElement('textarea');
-        var yPosition = window.pageYOffset || document.documentElement.scrollTop;
-        ta.style.top = yPosition + 'px'; // Prevent page scroll
-        ta.style.position = 'absolute';
-        ta.style.opacity = '0';
-        ta.readOnly = true;
-        ta.value = code;
-        document.body.appendChild(ta);
-        ta.select();
-        ta.setSelectionRange(0, code.length);
-        ta.readOnly = false;
-        var result = document.execCommand('copy');
-        
-          if (result) $(this).text('复制成功');
-          else $(this).text('复制失败');
-        
-        ta.blur(); // For iOS
-        $(this).blur();
-      })).on('mouseleave', function(e) {
-        var $b = $(this).find('.copy-btn');
-        setTimeout(function() {
-          $b.text('复制');
-        }, 300);
-      }).append(e);
-    })
-  </script>
-
 
 </body>
 </html>
