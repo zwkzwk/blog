@@ -817,7 +817,7 @@ Lombok 是一种 Java 实用工具，可用来帮助开发人员消除 Java 的�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -837,7 +837,7 @@ Lombok 是一种 Java 实用工具，可用来帮助开发人员消除 Java 的�
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/" class="post-title-link" itemprop="url">JavaEE Cookie</a>
+                <a href="/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/" class="post-title-link" itemprop="url">Spring 集成调度器</a>
               
             
           </h1>
@@ -896,7 +896,7 @@ Lombok 是一种 Java 实用工具，可用来帮助开发人员消除 Java 的�
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaee/" itemprop="url" rel="index"><span itemprop="name">javaee</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
 
                 
                 
@@ -925,7 +925,7 @@ Lombok 是一种 Java 实用工具，可用来帮助开发人员消除 Java 的�
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">11k</span>
+                <span title="本文字数">10k</span>
               
 
               
@@ -962,19 +962,20 @@ Lombok 是一种 Java 实用工具，可用来帮助开发人员消除 Java 的�
         
           
             <p>
-              由于 Http 是一种无状态的协议，服务器单从网络连接上无从知道客户身份。
-会话跟踪是 Web 程序中常用的技术，用来跟踪用户的整个会话。常用会话跟踪技术是 Cookie 与 Session。
- Cookie 是什么？
-Cookie 实际上是存储在客户端上的文本信息，并保留了各种跟踪的信息。
-Cookie 工作步骤：
+               概述
+如果想在Spring中使用任务调度功能，除了集成调度框架Quartz这种方式，也可以使用Spring自己的调度任务框架。
+使用Spring的调度框架，优点是：支持注解@Scheduler，可以省去大量的配置。
+ 实时触发调度任务
+ TaskScheduler接口
+Spring3引入了TaskScheduler接口，这个接口定义了调度任务的抽象方法。
+TaskScheduler接口的声明：
 
-客户端请求服务器，如果服务器需要记录该用户的状态，就是用 response 向
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/session/cookie/#more" rel="contents">
+              <a class="btn" href="/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1038,7 +1039,7 @@ Cookie 工作步骤：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-sql/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1058,7 +1059,7 @@ Cookie 工作步骤：
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-sql/" class="post-title-link" itemprop="url">JSTL SQL标签</a>
+                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/" class="post-title-link" itemprop="url">JavaEE 监听器</a>
               
             
           </h1>
@@ -1146,7 +1147,7 @@ Cookie 工作步骤：
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.5k</span>
+                <span title="本文字数">3.7k</span>
               
 
               
@@ -1160,7 +1161,7 @@ Cookie 工作步骤：
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -1183,25 +1184,236 @@ Cookie 工作步骤：
         
           
             <p>
-              JSTL SQL 标签库提供了与关系型数据库（Oracle，MySQL，SQL Server 等等）进行交互的标签。引用 SQL 标签库的语法如下：
-&lt;%@ taglib prefix="sql"           uri="http://java.sun.com/jsp/jstl/sql" %&gt;
-
-
-
-标签
-描述
-
-
-
-
-&lt;sql:setDataSource&gt;
-指定数据
+              监听器是一个专门用于对其他对象身上发生的事件或状态改变进行监听和相应处理的对象，当被监视的对象发生情况时，立即采取相应的行动。监听器其实就是一个实现特定接口的普通 java 程序，这个程序专门用于监听另一个 java 对象的方法调用或属性改变，当被监听对象发生上述事件后，监听器某个方法立即被执行。
+ 概述
+JavaWeb 中的监听器是 Servlet 规范中定义的一种特殊类，它用于监听 web 应
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/jstl/jstl-sql/#more" rel="contents">
+              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/listener/listener/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="张鹏的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/" class="post-title-link" itemprop="url">JSP 国际化</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2017-11-08T00:00:00+08:00">2017-11-08</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-11 18:54:52" itemprop="dateModified" datetime="2019-03-11T18:54:52+08:00">2019-03-11</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaee/" itemprop="url" rel="index"><span itemprop="name">javaee</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+              在开始前，需要解释几个重要的概念：
+
+国际化（i18n）：表明一个页面根据访问者的语言或国家来呈现不同的翻译版本。
+本地化（l10n）：向网站添加资源，以使它适应不同的地区和文化。比如网站的印度语版本。
+区域：这是一个特定的区域或文化，通常认为是一个语言标志和国家标志通过下划线连接起来。比如&quot;en_US&quot;代表美国英语地区。
+
+如果想要建立一个全球化的网站，就需要关心一系列项目。
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-locale/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1924,7 +2136,7 @@ Session
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-implicit-objects/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-directive/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1944,7 +2156,7 @@ Session
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-implicit-objects/" class="post-title-link" itemprop="url">JSP 隐式对象</a>
+                <a href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-directive/" class="post-title-link" itemprop="url">JSP 指令</a>
               
             
           </h1>
@@ -2032,7 +2244,7 @@ Session
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.5k</span>
+                <span title="本文字数">1.6k</span>
               
 
               
@@ -2046,243 +2258,7 @@ Session
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              JSP 隐式对象是 JSP 容器为每个页面提供的 Java 对象，开发者可以直接使用它们而不用显式声明。JSP 隐式对象也被称为预定义变量。
-JSP 所支持的九大隐式对象：
-
-
-
-对象
-描述
-
-
-
-
-request
-HttpServletRequest类的实例
-
-
-response
-HttpServletResponse类的实例
-
-
-out
-PrintWriter类的实例，用于把结果输出至网页上
-
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-implicit-objects/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张鹏的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/" class="post-title-link" itemprop="url">Spring 集成调度器</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2017-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2017-11-08T00:00:00+08:00">2017-11-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-11 18:54:52" itemprop="dateModified" datetime="2019-03-11T18:54:52+08:00">2019-03-11</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/spring/" itemprop="url" rel="index"><span itemprop="name">spring</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">10k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">10 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -2306,19 +2282,28 @@ PrintWriter类的实例，用于把结果输出至网页上
           
             <p>
                概述
-如果想在Spring中使用任务调度功能，除了集成调度框架Quartz这种方式，也可以使用Spring自己的调度任务框架。
-使用Spring的调度框架，优点是：支持注解@Scheduler，可以省去大量的配置。
- 实时触发调度任务
- TaskScheduler接口
-Spring3引入了TaskScheduler接口，这个接口定义了调度任务的抽象方法。
-TaskScheduler接口的声明：
+JSP 指令用来设置整个 JSP 页面相关的属性，如网页的编码方式和脚本语言。
+JSP 指令以开&lt;%@开始，以%&gt;结束。
+JSP 指令语法格式如下：
+&lt;%@ directive attribute="value" %&gt;
+指令可以有很多个属性，它们以键值对的形式存在，并用逗号隔开。
+JSP 中的三种指令标签：
 
+
+
+指令
+描述
+
+
+
+
+&lt;%@ page … %&
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2017/11/08/programming/java/spring/integration/spring-and-scheduler/#more" rel="contents">
+              <a class="btn" href="/blog/2017/11/08/programming/java/javaweb/javaee/jsp/jsp-directive/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>

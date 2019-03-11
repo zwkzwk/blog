@@ -152,7 +152,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/long-parameter-list-2.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-parameter-object-before.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/introduce-parameter-object-after.png">
-<meta property="og:updated_time" content="2019-03-11T10:54:51.106Z">
+<meta property="og:updated_time" content="2019-03-11T15:14:00.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码坏味道之代码臃肿">
 <meta name="twitter:description" content="代码坏味道之代码臃肿  📓 本文已归档到：「blog」 翻译自：https://sourcemaking.com/refactoring/smells/bloaters   代码臃肿(Bloated)这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。">
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-11 18:54:51" itemprop="dateModified" datetime="2019-03-11T18:54:51+08:00">2019-03-11</time>
+                <time title="修改时间：2019-03-11 23:14:00" itemprop="dateModified" datetime="2019-03-11T23:14:00+08:00">2019-03-11</time>
               
             
           </span>
@@ -789,7 +789,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">calculateTotal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">double</span> basePrice = quantity * itemPrice;</span><br><span class="line">  <span class="keyword">if</span> (basePrice &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice * <span class="number">0.95</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice * <span class="number">0.98</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>解决</strong></p>
 <p>将整个表达式移动到一个独立的函数中并返回结果。使用查询函数来替代使用变量。如果需要，可以在其他函数中合并新函数。</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">calculateTotal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">double</span> basePrice = quantity * itemPrice;</span><br><span class="line">  <span class="keyword">if</span> (basePrice &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice * <span class="number">0.95</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice * <span class="number">0.98</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">calculateTotal</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (basePrice() &gt; <span class="number">1000</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice() * <span class="number">0.95</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> basePrice() * <span class="number">0.98</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">basePrice</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> quantity * itemPrice;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="引入参数对象introduce-parameter-object-3"><a class="markdownIt-Anchor" href="#引入参数对象introduce-parameter-object-3"></a> 引入参数对象(Introduce Parameter Object)</h4>
 <p><strong>问题</strong></p>
 <p>某些参数总是很自然地同时出现。</p>
@@ -948,8 +948,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/architecture/负载均衡/" rel="next" title="负载均衡">
-                <i class="fa fa-chevron-left"></i> 负载均衡
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之变革的障碍/" rel="next" title="代码坏味道之变革的障碍">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之变革的障碍
               </a>
             
           </div>
@@ -958,8 +958,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/17/communication/dns/" rel="prev" title="网络协议之 DNS">
-                网络协议之 DNS <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之滥用面向对象/" rel="prev" title="代码坏味道之滥用面向对象">
+                代码坏味道之滥用面向对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

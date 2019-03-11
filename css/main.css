@@ -2025,7 +2025,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ba47ec;
+  background: #1affff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2870,4 +2870,12 @@ h6 {
 }
 blockquote {
   background-color: #fff2c9;
+}
+table {
+  -webkit-box-shadow: 0 0 4px #888;
+  -moz-box-shadow: 0 0 4px #888;
+}
+th {
+  background-color: #61c0c4;
+  color: #fff;
 }
