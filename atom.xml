@@ -3,11 +3,11 @@
   <title>张鹏的博客</title>
   
   <subtitle>大道至简，知易行难</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://dunwu.github.io/blog/"/>
+  <link href="https://dunwu.github.io/"/>
   <updated>2019-03-13T11:15:42.842Z</updated>
-  <id>https://dunwu.github.io/blog/</id>
+  <id>https://dunwu.github.io/</id>
   
   <author>
     <name>Zhang Peng</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Java 基础语法特性</title>
-    <link href="https://dunwu.github.io/blog/2019/03/10/programming/java/javacore/basic/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7/"/>
-    <id>https://dunwu.github.io/blog/2019/03/10/programming/java/javacore/basic/Java基础语法特性/</id>
+    <link href="https://dunwu.github.io/2019/03/10/programming/java/javacore/basic/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E7%89%B9%E6%80%A7/"/>
+    <id>https://dunwu.github.io/2019/03/10/programming/java/javacore/basic/Java基础语法特性/</id>
     <published>2019-03-10T14:28:00.000Z</published>
     <updated>2019-03-13T11:15:42.842Z</updated>
     
@@ -36,29 +36,29 @@
     
     </summary>
     
-      <category term="programming" scheme="https://dunwu.github.io/blog/categories/programming/"/>
+      <category term="programming" scheme="https://dunwu.github.io/categories/programming/"/>
     
-      <category term="java" scheme="https://dunwu.github.io/blog/categories/programming/java/"/>
+      <category term="java" scheme="https://dunwu.github.io/categories/programming/java/"/>
     
-      <category term="javacore" scheme="https://dunwu.github.io/blog/categories/programming/java/javacore/"/>
+      <category term="javacore" scheme="https://dunwu.github.io/categories/programming/java/javacore/"/>
     
-      <category term="basic" scheme="https://dunwu.github.io/blog/categories/programming/java/javacore/basic/"/>
+      <category term="basic" scheme="https://dunwu.github.io/categories/programming/java/javacore/basic/"/>
     
     
-      <category term="programming" scheme="https://dunwu.github.io/blog/tags/programming/"/>
+      <category term="programming" scheme="https://dunwu.github.io/tags/programming/"/>
     
-      <category term="java" scheme="https://dunwu.github.io/blog/tags/java/"/>
+      <category term="java" scheme="https://dunwu.github.io/tags/java/"/>
     
-      <category term="javacore" scheme="https://dunwu.github.io/blog/tags/javacore/"/>
+      <category term="javacore" scheme="https://dunwu.github.io/tags/javacore/"/>
     
-      <category term="basic" scheme="https://dunwu.github.io/blog/tags/basic/"/>
+      <category term="basic" scheme="https://dunwu.github.io/tags/basic/"/>
     
   </entry>
   
   <entry>
     <title>Title</title>
-    <link href="https://dunwu.github.io/blog/2019/03/08/design/architecture/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/08/design/architecture/README/</id>
+    <link href="https://dunwu.github.io/2019/03/08/design/architecture/README/"/>
+    <id>https://dunwu.github.io/2019/03/08/design/architecture/README/</id>
     <published>2019-03-08T05:16:53.000Z</published>
     <updated>2019-03-13T11:15:40.660Z</updated>
     
@@ -75,21 +75,21 @@
     
     </summary>
     
-      <category term="design" scheme="https://dunwu.github.io/blog/categories/design/"/>
+      <category term="design" scheme="https://dunwu.github.io/categories/design/"/>
     
-      <category term="architecture" scheme="https://dunwu.github.io/blog/categories/design/architecture/"/>
+      <category term="architecture" scheme="https://dunwu.github.io/categories/design/architecture/"/>
     
     
-      <category term="design" scheme="https://dunwu.github.io/blog/tags/design/"/>
+      <category term="design" scheme="https://dunwu.github.io/tags/design/"/>
     
-      <category term="architecture" scheme="https://dunwu.github.io/blog/tags/architecture/"/>
+      <category term="architecture" scheme="https://dunwu.github.io/tags/architecture/"/>
     
   </entry>
   
   <entry>
     <title>分布式技术面试题</title>
-    <link href="https://dunwu.github.io/blog/2019/03/08/design/architecture/%E5%88%86%E5%B8%83%E5%BC%8F%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
-    <id>https://dunwu.github.io/blog/2019/03/08/design/architecture/分布式技术面试题/</id>
+    <link href="https://dunwu.github.io/2019/03/08/design/architecture/%E5%88%86%E5%B8%83%E5%BC%8F%E6%8A%80%E6%9C%AF%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>https://dunwu.github.io/2019/03/08/design/architecture/分布式技术面试题/</id>
     <published>2019-03-08T03:35:31.770Z</published>
     <updated>2019-03-13T11:15:40.699Z</updated>
     
@@ -107,25 +107,25 @@
     
     </summary>
     
-      <category term="design" scheme="https://dunwu.github.io/blog/categories/design/"/>
+      <category term="design" scheme="https://dunwu.github.io/categories/design/"/>
     
-      <category term="architecture" scheme="https://dunwu.github.io/blog/categories/design/architecture/"/>
+      <category term="architecture" scheme="https://dunwu.github.io/categories/design/architecture/"/>
     
     
-      <category term="design" scheme="https://dunwu.github.io/blog/tags/design/"/>
+      <category term="design" scheme="https://dunwu.github.io/tags/design/"/>
     
-      <category term="architecture" scheme="https://dunwu.github.io/blog/tags/architecture/"/>
+      <category term="architecture" scheme="https://dunwu.github.io/tags/architecture/"/>
     
-      <category term="distributed" scheme="https://dunwu.github.io/blog/tags/distributed/"/>
+      <category term="distributed" scheme="https://dunwu.github.io/tags/distributed/"/>
     
-      <category term="interview" scheme="https://dunwu.github.io/blog/tags/interview/"/>
+      <category term="interview" scheme="https://dunwu.github.io/tags/interview/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/07/programming/java/javaweb/tools/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/07/programming/java/javaweb/tools/README/</id>
+    <link href="https://dunwu.github.io/2019/03/07/programming/java/javaweb/tools/README/"/>
+    <id>https://dunwu.github.io/2019/03/07/programming/java/javaweb/tools/README/</id>
     <published>2019-03-07T10:18:42.486Z</published>
     <updated>2019-03-13T11:15:44.677Z</updated>
     
@@ -145,14 +145,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/web/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/spring/web/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/spring/web/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/spring/web/README/</id>
     <published>2019-03-06T08:38:13.369Z</published>
     <updated>2019-03-13T11:15:44.756Z</updated>
     
@@ -171,14 +171,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/introduction/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/spring/introduction/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/spring/introduction/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/spring/introduction/README/</id>
     <published>2019-03-06T08:38:13.347Z</published>
     <updated>2019-03-13T11:15:44.746Z</updated>
     
@@ -195,14 +195,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/integration/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/spring/integration/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/spring/integration/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/spring/integration/README/</id>
     <published>2019-03-06T08:38:13.311Z</published>
     <updated>2019-03-13T11:15:44.731Z</updated>
     
@@ -219,14 +219,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/data/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/spring/data/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/spring/data/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/spring/data/README/</id>
     <published>2019-03-06T08:38:13.263Z</published>
     <updated>2019-03-13T11:15:44.715Z</updated>
     
@@ -243,14 +243,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/appendix/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/spring/appendix/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/spring/appendix/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/spring/appendix/README/</id>
     <published>2019-03-06T08:38:13.221Z</published>
     <updated>2019-03-13T11:15:44.687Z</updated>
     
@@ -267,14 +267,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/standalone/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/standalone/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javaweb/standalone/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javaweb/standalone/README/</id>
     <published>2019-03-06T08:38:13.138Z</published>
     <updated>2019-03-13T11:15:44.662Z</updated>
     
@@ -294,14 +294,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/javaee/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/javaee/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javaweb/javaee/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javaweb/javaee/README/</id>
     <published>2019-03-06T08:38:12.988Z</published>
     <updated>2019-03-13T11:15:44.596Z</updated>
     
@@ -319,14 +319,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/README/</id>
     <published>2019-03-06T08:38:12.757Z</published>
     <updated>2019-03-13T11:15:44.313Z</updated>
     
@@ -345,14 +345,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/README/</id>
     <published>2019-03-06T08:38:12.720Z</published>
     <updated>2019-03-13T11:15:44.327Z</updated>
     
@@ -370,14 +370,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/README/</id>
     <published>2019-03-06T08:38:12.706Z</published>
     <updated>2019-03-13T11:15:44.362Z</updated>
     
@@ -395,14 +395,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javalib/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javalib/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javalib/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javastack/javalib/README/</id>
     <published>2019-03-06T08:38:12.685Z</published>
     <updated>2019-03-13T11:15:44.222Z</updated>
     
@@ -419,14 +419,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/appendix/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/appendix/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javastack/appendix/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javastack/appendix/README/</id>
     <published>2019-03-06T08:38:12.622Z</published>
     <updated>2019-03-13T11:15:43.978Z</updated>
     
@@ -443,14 +443,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/programming/java/javacore/concurrent/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/programming/java/javacore/concurrent/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/programming/java/javacore/concurrent/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/programming/java/javacore/concurrent/README/</id>
     <published>2019-03-06T08:38:12.520Z</published>
     <updated>2019-03-13T11:15:42.989Z</updated>
     
@@ -467,14 +467,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/os/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/os/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/os/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/os/README/</id>
     <published>2019-03-06T08:38:11.904Z</published>
     <updated>2019-03-13T11:15:42.678Z</updated>
     
@@ -492,14 +492,14 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
   <entry>
     <title>React 快速入门</title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/frontend/mvc/react/react/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/frontend/mvc/react/react/</id>
+    <link href="https://dunwu.github.io/2019/03/06/frontend/mvc/react/react/"/>
+    <id>https://dunwu.github.io/2019/03/06/frontend/mvc/react/react/</id>
     <published>2019-03-06T08:38:11.317Z</published>
     <updated>2019-03-13T11:15:41.102Z</updated>
     
@@ -522,8 +522,8 @@
   
   <entry>
     <title></title>
-    <link href="https://dunwu.github.io/blog/2019/03/06/frontend/README/"/>
-    <id>https://dunwu.github.io/blog/2019/03/06/frontend/README/</id>
+    <link href="https://dunwu.github.io/2019/03/06/frontend/README/"/>
+    <id>https://dunwu.github.io/2019/03/06/frontend/README/</id>
     <published>2019-03-06T08:38:11.236Z</published>
     <updated>2019-03-13T11:15:41.228Z</updated>
     
@@ -541,7 +541,7 @@
     </summary>
     
     
-      <category term="hide" scheme="https://dunwu.github.io/blog/tags/hide/"/>
+      <category term="hide" scheme="https://dunwu.github.io/tags/hide/"/>
     
   </entry>
   
