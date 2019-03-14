@@ -57,21 +57,21 @@
 
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -82,7 +82,7 @@
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
@@ -111,7 +111,7 @@
 <meta name="keywords" content="programming,java,javacore,jdk8,encode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JDK8 快速指南">
-<meta property="og:url" content="https://dunwu.github.io/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/index.html">
+<meta property="og:url" content="https://dunwu.github.io/blog/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/index.html">
 <meta property="og:site_name" content="张鹏的博客">
 <meta property="og:description" content="JDK8 快速指南  JDK8 升级常见问题章节是我个人的经验整理。其他内容基本翻译自 java8-tutorial 📓 本文已归档到：「blog」    Default Methods for Interfaces(接口的默认方法) Lambda expressions(Lambda 表达式) Functional Interfaces(函数接口) Method and Constructo">
 <meta property="og:locale" content="zh-CN">
@@ -122,12 +122,12 @@
 
 
 
-  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="张鹏的博客" type="application/atom+xml">
 
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/">
+  <link rel="canonical" href="https://dunwu.github.io/blog/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/">
 
 
 
@@ -194,7 +194,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">张鹏的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -237,7 +237,7 @@
 
     
 
-    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -254,7 +254,7 @@
 
     
 
-    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
         
@@ -271,7 +271,7 @@
 
     
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -288,7 +288,7 @@
 
     
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -305,7 +305,7 @@
 
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -373,7 +373,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -445,28 +445,28 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/advanced/" itemprop="url" rel="index"><span itemprop="name">advanced</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/programming/java/javacore/advanced/" itemprop="url" rel="index"><span itemprop="name">advanced</span></a></span>
 
                 
                 
@@ -856,7 +856,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/" title="JDK8 快速指南">https://dunwu.github.io/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/</a>
+    <a href="https://dunwu.github.io/blog/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/" title="JDK8 快速指南">https://dunwu.github.io/blog/2017/11/14/programming/java/javacore/advanced/jdk8-quickstart/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -869,15 +869,15 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
       
         <div class="post-tags">
           
-            <a href="/blog/tags/programming/" rel="tag"># programming</a>
+            <a href="/tags/programming/" rel="tag"># programming</a>
           
-            <a href="/blog/tags/java/" rel="tag"># java</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-            <a href="/blog/tags/javacore/" rel="tag"># javacore</a>
+            <a href="/tags/javacore/" rel="tag"># javacore</a>
           
-            <a href="/blog/tags/jdk8/" rel="tag"># jdk8</a>
+            <a href="/tags/jdk8/" rel="tag"># jdk8</a>
           
-            <a href="/blog/tags/encode/" rel="tag"># encode</a>
+            <a href="/tags/encode/" rel="tag"># encode</a>
           
         </div>
       
@@ -890,7 +890,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/09/programming/java/javastack/javalib/lombok/" rel="next" title="Lombok 使用小结">
+              <a href="/2017/11/09/programming/java/javastack/javalib/lombok/" rel="next" title="Lombok 使用小结">
                 <i class="fa fa-chevron-left"></i> Lombok 使用小结
               </a>
             
@@ -900,7 +900,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/17/os/linux/tool/vim/" rel="prev" title="Vim 快速指南">
+              <a href="/2017/11/17/os/linux/tool/vim/" rel="prev" title="Vim 快速指南">
                 Vim 快速指南 <i class="fa fa-chevron-right"></i>
               </a>
             
@@ -960,7 +960,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Zhang Peng">
             
               <p class="site-author-name" itemprop="name">Zhang Peng</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -971,7 +971,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/blog/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">327</span>
                     <span class="site-state-item-name">日志</span>
@@ -983,7 +983,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/blog/categories/index.html">
+                  <a href="/categories/index.html">
                     
                     
                       
@@ -1056,7 +1056,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/blog/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -1323,7 +1323,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
 
           
             <div class="feed-link motion-element">
-              <a href="/blog/atom.xml" rel="alternate">
+              <a href="/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -1366,7 +1366,7 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
               
               
               
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
              </div>
           
 
@@ -1519,13 +1519,13 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
 
 
   
-  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
@@ -1534,30 +1534,30 @@ Error redis clients jedis HostAndPort cant resolve localhost address</p>
   
 
 
-  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+  <script src="/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+  <script src="/js/src/motion.js?v=7.0.1"></script>
 
 
 
   
-  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
 
 
 
   
 
 
-  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
 
 
   

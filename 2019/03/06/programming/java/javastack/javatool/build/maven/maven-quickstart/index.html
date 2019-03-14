@@ -57,21 +57,21 @@
 
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -82,7 +82,7 @@
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
@@ -110,7 +110,7 @@
   <meta name="description" content="Maven 快速指南   简介  Maven 是什么 Maven 的生命周期 Maven 的标准工程结构 Maven 的&amp;quot;约定优于配置&amp;quot; Maven 的版本规范   安装  配置环境变量 本地仓储配置   第一个 Maven 工程  在 Eclipse 中创建 Maven 工程 使用 Maven 进行构建   使用指导  如何添加外部依赖 jar 包 如何寻找 jar 包 如">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven 快速指南">
-<meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/index.html">
+<meta property="og:url" content="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/index.html">
 <meta property="og:site_name" content="张鹏的博客">
 <meta property="og:description" content="Maven 快速指南   简介  Maven 是什么 Maven 的生命周期 Maven 的标准工程结构 Maven 的&amp;quot;约定优于配置&amp;quot; Maven 的版本规范   安装  配置环境变量 本地仓储配置   第一个 Maven 工程  在 Eclipse 中创建 Maven 工程 使用 Maven 进行构建   使用指导  如何添加外部依赖 jar 包 如何寻找 jar 包 如">
 <meta property="og:locale" content="zh-CN">
@@ -135,12 +135,12 @@
 
 
 
-  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="张鹏的博客" type="application/atom+xml">
 
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/">
+  <link rel="canonical" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/">
 
 
 
@@ -207,7 +207,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">张鹏的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -250,7 +250,7 @@
 
     
 
-    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -267,7 +267,7 @@
 
     
 
-    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
         
@@ -284,7 +284,7 @@
 
     
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -301,7 +301,7 @@
 
     
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -318,7 +318,7 @@
 
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -386,7 +386,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -844,7 +844,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" title="Maven 快速指南">https://dunwu.github.io/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/</a>
+    <a href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" title="Maven 快速指南">https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -864,8 +864,8 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/database/sql/postgresql/" rel="next" title="PostgreSQL 快速指南">
-                <i class="fa fa-chevron-left"></i> PostgreSQL 快速指南
+              <a href="/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/" rel="next" title="MyBatis 指南">
+                <i class="fa fa-chevron-left"></i> MyBatis 指南
               </a>
             
           </div>
@@ -874,8 +874,8 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/database/nosql/Cassandra/" rel="prev" title="Cassandra">
-                Cassandra <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/" rel="prev" title="SpringBootTutorialCoreBanner">
+                SpringBootTutorialCoreBanner <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -934,7 +934,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Zhang Peng">
             
               <p class="site-author-name" itemprop="name">Zhang Peng</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -945,7 +945,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/blog/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">327</span>
                     <span class="site-state-item-name">日志</span>
@@ -957,7 +957,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/blog/categories/index.html">
+                  <a href="/categories/index.html">
                     
                     
                       
@@ -1030,7 +1030,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/blog/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -1297,7 +1297,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
 
           
             <div class="feed-link motion-element">
-              <a href="/blog/atom.xml" rel="alternate">
+              <a href="/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -1340,7 +1340,7 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
               
               
               
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
              </div>
           
 
@@ -1493,13 +1493,13 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
 
 
   
-  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
@@ -1508,30 +1508,30 @@ maven-help-plugin 是一个小巧的辅助工具，最简单的<strong>help:syst
   
 
 
-  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+  <script src="/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+  <script src="/js/src/motion.js?v=7.0.1"></script>
 
 
 
   
-  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
 
 
 
   
 
 
-  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
 
 
   

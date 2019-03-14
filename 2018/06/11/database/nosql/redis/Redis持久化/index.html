@@ -57,21 +57,21 @@
 
 
 
-<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+<link rel="stylesheet" href="/css/main.css?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=7.0.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.0.1">
 
 
-  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=7.0.1" color="#222">
 
 
 
@@ -82,7 +82,7 @@
 <script id="hexo.configurations">
   var NexT = window.NexT || {};
   var CONFIG = {
-    root: '/blog/',
+    root: '/',
     scheme: 'Muse',
     version: '7.0.1',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
@@ -111,7 +111,7 @@
 <meta name="keywords" content="database,nosql,key-value">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis 持久化">
-<meta property="og:url" content="https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis持久化/index.html">
+<meta property="og:url" content="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis持久化/index.html">
 <meta property="og:site_name" content="张鹏的博客">
 <meta property="og:description" content="Redis 持久化  Redis 支持持久化，即把数据存储到硬盘中。 Redis 提供了两种持久化方式： RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到硬盘中。 只追加文件（append-only file，AOF） - 它会在执行写命令时，将被执行的写命令复制到硬盘中。 这两种持久化方式既可以同时使用，也可以单独使用。 将内存中的数据存储到硬盘的一个主要原因是为了在之">
 <meta property="og:locale" content="zh-CN">
@@ -124,12 +124,12 @@
 
 
 
-  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="张鹏的博客" type="application/atom+xml">
 
 
 
 
-  <link rel="canonical" href="https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis持久化/">
+  <link rel="canonical" href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis持久化/">
 
 
 
@@ -196,7 +196,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/blog/" class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">张鹏的博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -239,7 +239,7 @@
 
     
 
-    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
 
   </li>
         
@@ -256,7 +256,7 @@
 
     
 
-    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
 
   </li>
         
@@ -273,7 +273,7 @@
 
     
 
-    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
 
   </li>
         
@@ -290,7 +290,7 @@
 
     
 
-    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
 
   </li>
         
@@ -307,7 +307,7 @@
 
     
 
-    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
 
   </li>
 
@@ -375,7 +375,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
       <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -447,7 +447,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/database/" itemprop="url" rel="index"><span itemprop="name">database</span></a></span>
 
                 
                 
@@ -734,7 +734,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis持久化/" title="Redis 持久化">https://dunwu.github.io/2018/06/11/database/nosql/redis/Redis持久化/</a>
+    <a href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis持久化/" title="Redis 持久化">https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis持久化/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -747,11 +747,11 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/database/" rel="tag"># database</a>
+            <a href="/tags/database/" rel="tag"># database</a>
           
-            <a href="/blog/tags/nosql/" rel="tag"># nosql</a>
+            <a href="/tags/nosql/" rel="tag"># nosql</a>
           
-            <a href="/blog/tags/key-value/" rel="tag"># key-value</a>
+            <a href="/tags/key-value/" rel="tag"># key-value</a>
           
         </div>
       
@@ -764,8 +764,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/06/09/programming/java/javaweb/distributed/cache/redis/" rel="next" title="Redis">
-                <i class="fa fa-chevron-left"></i> Redis
+              <a href="/2018/06/09/database/nosql/redis/Redis数据类型/" rel="next" title="Redis 数据类型">
+                <i class="fa fa-chevron-left"></i> Redis 数据类型
               </a>
             
           </div>
@@ -774,8 +774,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/06/11/database/nosql/redis/Redis事件/" rel="prev" title="Redis 事件">
-                Redis 事件 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/11/database/nosql/redis/Redis事务/" rel="prev" title="Redis 事务">
+                Redis 事务 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -834,7 +834,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
-              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Zhang Peng">
             
               <p class="site-author-name" itemprop="name">Zhang Peng</p>
               <p class="site-description motion-element" itemprop="description"></p>
@@ -845,7 +845,7 @@
               
                 <div class="site-state-item site-state-posts">
                 
-                  <a href="/blog/archives/">
+                  <a href="/archives/">
                 
                     <span class="site-state-item-count">327</span>
                     <span class="site-state-item-name">日志</span>
@@ -857,7 +857,7 @@
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/blog/categories/index.html">
+                  <a href="/categories/index.html">
                     
                     
                       
@@ -930,7 +930,7 @@
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/blog/tags/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -1197,7 +1197,7 @@
 
           
             <div class="feed-link motion-element">
-              <a href="/blog/atom.xml" rel="alternate">
+              <a href="/atom.xml" rel="alternate">
                 <i class="fa fa-rss"></i>
                 RSS
               </a>
@@ -1240,7 +1240,7 @@
               
               
               
-              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
              </div>
           
 
@@ -1393,13 +1393,13 @@
 
 
   
-  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+  <script src="/lib/jquery/index.js?v=2.1.3"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
 
   
-  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
 
   
   <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
@@ -1408,30 +1408,30 @@
   
 
 
-  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+  <script src="/js/src/utils.js?v=7.0.1"></script>
 
-  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
-
-
-
-  
-  
-
-
-  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+  <script src="/js/src/motion.js?v=7.0.1"></script>
 
 
 
   
-  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
-<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+  
+
+
+  <script src="/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
 
 
 
   
 
 
-  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+  <script src="/js/src/bootstrap.js?v=7.0.1"></script>
 
 
   
