@@ -107,19 +107,20 @@
 
 
 
-  <meta name="description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 异常处理  throw 和 throws try、catch 和 finally   异常链 异常注意事项  异常覆盖 异常的继承 异常和线程   最佳实践 小结">
+  <meta name="description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 抛出异常 捕获异常 异常链 异常注意事项  finally 覆盖异常 覆盖抛出异常的方法 异常和线程   最佳实践 小结 参考资料    异常框架   Throw">
 <meta name="keywords" content="programming,java,javacore,basic,exception">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深入理解Java异常">
+<meta property="og:title" content="深入理解 Java 异常">
 <meta property="og:url" content="https://dunwu.github.io/2015/04/25/programming/java/javacore/basic/深入理解Java异常/index.html">
 <meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 异常处理  throw 和 throws try、catch 和 finally   异常链 异常注意事项  异常覆盖 异常的继承 异常和线程   最佳实践 小结">
+<meta property="og:description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 抛出异常 捕获异常 异常链 异常注意事项  finally 覆盖异常 覆盖抛出异常的方法 异常和线程   最佳实践 小结 参考资料    异常框架   Throw">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1552274131681.png">
-<meta property="og:updated_time" content="2019-03-11T10:57:08.675Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1552359822097.png">
+<meta property="og:updated_time" content="2019-03-13T11:15:42.867Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深入理解Java异常">
-<meta name="twitter:description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 异常处理  throw 和 throws try、catch 和 finally   异常链 异常注意事项  异常覆盖 异常的继承 异常和线程   最佳实践 小结">
+<meta name="twitter:title" content="深入理解 Java 异常">
+<meta name="twitter:description" content="深入理解 Java 异常  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    异常框架  Throwable Error Exception RuntimeException   自定义异常 抛出异常 捕获异常 异常链 异常注意事项  finally 覆盖异常 覆盖抛出异常的方法 异常和线程   最佳实践 小结 参考资料    异常框架   Throw">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1552274131681.png">
 
 
@@ -139,7 +140,7 @@
   };
 </script>
 
-  <title>深入理解Java异常 | 张鹏的博客</title>
+  <title>深入理解 Java 异常 | 张鹏的博客</title>
   
 
 
@@ -387,7 +388,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">深入理解Java异常<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/深入理解Java异常.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h1 class="post-title" itemprop="name headline">深入理解 Java 异常<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/深入理解Java异常.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -430,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-11 18:57:08" itemprop="dateModified" datetime="2019-03-11T18:57:08+08:00">2019-03-11</time>
+                <time title="修改时间：2019-03-13 19:15:42" itemprop="dateModified" datetime="2019-03-13T19:15:42+08:00">2019-03-13</time>
               
             
           </span>
@@ -547,17 +548,13 @@
 </ul>
 </li>
 <li><a href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8">自定义异常</a></li>
-<li><a href="#%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">异常处理</a>
-<ul>
-<li><a href="#throw-%E5%92%8C-throws">throw 和 throws</a></li>
-<li><a href="#trycatch-%E5%92%8C-finally">try、catch 和 finally</a></li>
-</ul>
-</li>
+<li><a href="#%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8">抛出异常</a></li>
+<li><a href="#%E6%8D%95%E8%8E%B7%E5%BC%82%E5%B8%B8">捕获异常</a></li>
 <li><a href="#%E5%BC%82%E5%B8%B8%E9%93%BE">异常链</a></li>
 <li><a href="#%E5%BC%82%E5%B8%B8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">异常注意事项</a>
 <ul>
-<li><a href="#%E5%BC%82%E5%B8%B8%E8%A6%86%E7%9B%96">异常覆盖</a></li>
-<li><a href="#%E5%BC%82%E5%B8%B8%E7%9A%84%E7%BB%A7%E6%89%BF">异常的继承</a></li>
+<li><a href="#finally-%E8%A6%86%E7%9B%96%E5%BC%82%E5%B8%B8">finally 覆盖异常</a></li>
+<li><a href="#%E8%A6%86%E7%9B%96%E6%8A%9B%E5%87%BA%E5%BC%82%E5%B8%B8%E7%9A%84%E6%96%B9%E6%B3%95">覆盖抛出异常的方法</a></li>
 <li><a href="#%E5%BC%82%E5%B8%B8%E5%92%8C%E7%BA%BF%E7%A8%8B">异常和线程</a></li>
 </ul>
 </li>
@@ -581,7 +578,7 @@
 <li><code>toString</code> - 使用 <code>getMessage</code> 的结果返回代表 <code>Throwable</code> 对象的字符串。</li>
 </ul>
 <h3 id="error"><a class="markdownIt-Anchor" href="#error"></a> Error</h3>
-<p><code>Error</code> 是 <code>Throwable</code> 的一个子类。**<code>Error</code> 表示合理的应用程序不应该尝试捕获的严重问题。**大多数此类错误都是异常情况。<strong>编译器不会检查 <code>Error</code>。</strong></p>
+<p><code>Error</code> 是 <code>Throwable</code> 的一个子类。<strong><code>Error</code> 表示合理的应用程序不应该尝试捕获的严重问题</strong>。大多数此类错误都是异常情况。<strong>编译器不会检查 <code>Error</code></strong>。</p>
 <p>常见 <code>Error</code>：</p>
 <ul>
 <li><code>AssertionError</code> - 断言错误。</li>
@@ -637,13 +634,14 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyExceptionDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> MyException(<span class="string">"自定义异常"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">MyException</span> <span class="keyword">extends</span> <span class="title">RuntimeException</span> </span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MyException</span><span class="params">(String message)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(message);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">Exception <span class="keyword">in</span> thread <span class="string">"main"</span> io<span class="selector-class">.github</span><span class="selector-class">.dunwu</span><span class="selector-class">.javacore</span><span class="selector-class">.exception</span><span class="selector-class">.MyExceptionDemo</span><span class="variable">$MyException</span>: 自定义异常</span><br><span class="line">	at io<span class="selector-class">.github</span><span class="selector-class">.dunwu</span><span class="selector-class">.javacore</span><span class="selector-class">.exception</span><span class="selector-class">.MyExceptionDemo</span><span class="selector-class">.main</span>(MyExceptionDemo<span class="selector-class">.java</span>:<span class="number">9</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="异常处理"><a class="markdownIt-Anchor" href="#异常处理"></a> 异常处理</h2>
-<h3 id="throw-和-throws"><a class="markdownIt-Anchor" href="#throw-和-throws"></a> throw 和 throws</h3>
-<p>如果想在程序中明确地引发异常，则需要用到 <code>throw</code> 和 <code>throws</code> 。</p>
+<h2 id="抛出异常"><a class="markdownIt-Anchor" href="#抛出异常"></a> 抛出异常</h2>
+<p>如果想在程序中明确地抛出异常，需要用到 <code>throw</code> 和 <code>throws</code> 。</p>
+<p>如果一个方法没有捕获一个检查性异常，那么该方法必须使用 <code>throws</code> 关键字来声明。<code>throws</code> 关键字放在方法签名的尾部。</p>
 <p><code>throw</code> 示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThrowDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"抛出一个异常"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            System.out.println(e);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        f();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">java<span class="selector-class">.lang</span><span class="selector-class">.RuntimeException</span>: 抛出一个异常</span><br></pre></td></tr></table></figure>
+<p>也可以使用 <code>throw</code> 关键字抛出一个异常，无论它是新实例化的还是刚捕获到的。</p>
 <p><code>throws</code> 示例：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ThrowsDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f1</span><span class="params">()</span> <span class="keyword">throws</span> NoSuchMethodException, NoSuchFieldException </span>&#123;</span><br><span class="line">        Field field = Integer.class.getDeclaredField(<span class="string">"digits"</span>);</span><br><span class="line">        <span class="keyword">if</span> (field != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"反射获取 digits 方法成功"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        Method method = String.class.getMethod(<span class="string">"toString"</span>, <span class="keyword">int</span>.class);</span><br><span class="line">        <span class="keyword">if</span> (method != <span class="keyword">null</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">"反射获取 toString 方法成功"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">f2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            <span class="comment">// 调用 f1 处，如果不用 try catch ，编译时会报错</span></span><br><span class="line">            f1();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchMethodException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (NoSuchFieldException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        f2();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>输出：</p>
@@ -653,8 +651,8 @@
 <li>throws 使用在函数上，throw 使用在函数内。</li>
 <li>throws 后面跟异常类，可以跟多个，用逗号区别；throw 后面跟的是异常对象。</li>
 </ul>
-<h3 id="try-catch-和-finally"><a class="markdownIt-Anchor" href="#try-catch-和-finally"></a> try、catch 和 finally</h3>
-<p>**使用 try 和 catch 关键字可以捕获异常。**try catch 代码块放在异常可能发生的地方。</p>
+<h2 id="捕获异常"><a class="markdownIt-Anchor" href="#捕获异常"></a> 捕获异常</h2>
+<p><strong>使用 try 和 catch 关键字可以捕获异常</strong>。try catch 代码块放在异常可能发生的地方。</p>
 <p>它的语法形式如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    <span class="comment">// 可能会发生异常的代码块</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception e1) &#123;</span><br><span class="line">    <span class="comment">// 捕获并处理try抛出的异常类型Exception</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (Exception2 e2) &#123;</span><br><span class="line">    <span class="comment">// 捕获并处理try抛出的异常类型Exception2</span></span><br><span class="line">&#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    <span class="comment">// 无论是否发生异常，都将执行的代码块</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>此外，JDK7 以后，<code>catch</code> 多种异常时，也可以像下面这样简化代码：</p>
@@ -727,9 +725,10 @@
 </ul>
 </blockquote>
 <h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/1552359822097.png"></div><br></p>
 <p>（1）<strong><code>Throwable</code> 是 Java 语言中所有错误（<code>Error</code>）和异常（<code>Exception</code>）的超类。</strong></p>
-<p>（2）<code>Error</code> 是 <code>Throwable</code> 的一个子类。**<code>Error</code> 表示合理的应用程序不应该尝试捕获的严重问题。**大多数此类错误都是异常情况。<strong>编译器不会检查 <code>Error</code>。</strong></p>
-<p>（3）<code>Exception</code> 是 <code>Throwable</code> 的一个子类。**<code>Exception</code> 表示合理的应用程序可能想要捕获的条件。编译器会检查 <code>Exception</code> 异常。**此类异常，要么通过 <code>throws</code> 进行声明抛出，要么通过 <code>try catch</code> 进行捕获处理，否则不能通过编译。</p>
+<p>（2）<code>Error</code> 是 <code>Throwable</code> 的一个子类。<strong><code>Error</code> 表示合理的应用程序不应该尝试捕获的严重问题</strong>。大多数此类错误都是异常情况。<strong>编译器不会检查 <code>Error</code>。</strong></p>
+<p>（3）<code>Exception</code> 是 <code>Throwable</code> 的一个子类。<strong><code>Exception</code> 表示合理的应用程序可能想要捕获的条件。编译器会检查 <code>Exception</code> 异常</strong>。此类异常，要么通过 <code>throws</code> 进行声明抛出，要么通过 <code>try catch</code> 进行捕获处理，否则不能通过编译。</p>
 <p>（4）<code>RuntimeException</code> 是 <code>Exception</code> 的一个子类。<code>RuntimeException</code> 是那些可能在 Java 虚拟机正常运行期间抛出的异常的超类。**编译器不会检查 <code>RuntimeException</code> 异常。**当程序中可能出现这类异常时，倘若既没有通过 <code>throws</code> 声明抛出它，也没有用 <code>try catch</code> 语句捕获它，程序还是会编译通过。</p>
 <p>（5）<strong>自定义一个异常类，只需要继承 <code>Exception</code> 或 <code>RuntimeException</code> 即可。</strong></p>
 <p>（6）如果想在程序中明确地引发异常，则需要用到 <code>throw</code> 和 <code>throws</code> 。</p>
@@ -791,7 +790,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://dunwu.github.io/2015/04/25/programming/java/javacore/basic/深入理解Java异常/" title="深入理解Java异常">https://dunwu.github.io/2015/04/25/programming/java/javacore/basic/深入理解Java异常/</a>
+    <a href="https://dunwu.github.io/2015/04/25/programming/java/javacore/basic/深入理解Java异常/" title="深入理解 Java 异常">https://dunwu.github.io/2015/04/25/programming/java/javacore/basic/深入理解Java异常/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -908,7 +907,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">341</span>
+                    <span class="site-state-item-count">327</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1232,7 +1231,23 @@
                     
                       
                     
-                    <span class="site-state-item-count">119</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">127</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1311,7 +1326,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-java-异常"><span class="nav-text"> 深入理解 Java 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常框架"><span class="nav-text"> 异常框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#throwable"><span class="nav-text"> Throwable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error"><span class="nav-text"> Error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exception"><span class="nav-text"> Exception</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtimeexception"><span class="nav-text"> RuntimeException</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义异常"><span class="nav-text"> 自定义异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-text"> 异常处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#throw-和-throws"><span class="nav-text"> throw 和 throws</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#try-catch-和-finally"><span class="nav-text"> try、catch 和 finally</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常链"><span class="nav-text"> 异常链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常注意事项"><span class="nav-text"> 异常注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#finally-覆盖异常"><span class="nav-text"> finally 覆盖异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖抛出异常的方法"><span class="nav-text"> 覆盖抛出异常的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常和线程"><span class="nav-text"> 异常和线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-text"> 最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-text"> 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-java-异常"><span class="nav-text"> 深入理解 Java 异常</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常框架"><span class="nav-text"> 异常框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#throwable"><span class="nav-text"> Throwable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#error"><span class="nav-text"> Error</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#exception"><span class="nav-text"> Exception</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#runtimeexception"><span class="nav-text"> RuntimeException</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自定义异常"><span class="nav-text"> 自定义异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#抛出异常"><span class="nav-text"> 抛出异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#捕获异常"><span class="nav-text"> 捕获异常</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常链"><span class="nav-text"> 异常链</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#异常注意事项"><span class="nav-text"> 异常注意事项</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#finally-覆盖异常"><span class="nav-text"> finally 覆盖异常</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖抛出异常的方法"><span class="nav-text"> 覆盖抛出异常的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常和线程"><span class="nav-text"> 异常和线程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最佳实践"><span class="nav-text"> 最佳实践</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-text"> 小结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1344,7 +1359,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">2.1m</span>
+    <span title="站点总字数">2m</span>
   
 
   
@@ -1353,7 +1368,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:24</span>
+    <span title="站点阅读时长">30:46</span>
   
 </div>
 
