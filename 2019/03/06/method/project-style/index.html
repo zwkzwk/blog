@@ -107,22 +107,24 @@
 
 
 
-  <meta name="description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   目录名 文件名    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes：代码目录。 configurations：配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos：示例目录。 docs：文档目录。 libs：第三方库文">
+  <meta name="description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   命名规则  目录名 文件名   Java 日志规范 参考资料    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes - 代码目录。 configurations - 配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos">
 <meta name="keywords" content="method,project">
 <meta property="og:type" content="article">
 <meta property="og:title" content="项目规范">
 <meta property="og:url" content="https://dunwu.github.io/2019/03/06/method/project-style/index.html">
-<meta property="og:site_name" content="张鹏的博客">
-<meta property="og:description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   目录名 文件名    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes：代码目录。 configurations：配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos：示例目录。 docs：文档目录。 libs：第三方库文">
+<meta property="og:site_name" content="静默虚空的博客">
+<meta property="og:description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   命名规则  目录名 文件名   Java 日志规范 参考资料    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes - 代码目录。 configurations - 配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-13T11:15:41.278Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback/log-pattern.png">
+<meta property="og:updated_time" content="2019-03-18T06:14:43.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="项目规范">
-<meta name="twitter:description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   目录名 文件名    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes：代码目录。 configurations：配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos：示例目录。 docs：文档目录。 libs：第三方库文">
+<meta name="twitter:description" content="项目规范  软件项目开发规范。    项目结构  目录 文件   命名规则  目录名 文件名   Java 日志规范 参考资料    项目结构 以下为项目根目录下的文件和目录的组织结构：  目录 codes - 代码目录。 configurations - 配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。 demos">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback/log-pattern.png">
 
 
 
-  <link rel="alternate" href="/blog/atom.xml" title="张鹏的博客" type="application/atom+xml">
+  <link rel="alternate" href="/blog/atom.xml" title="静默虚空的博客" type="application/atom+xml">
 
 
 
@@ -137,7 +139,7 @@
   };
 </script>
 
-  <title>项目规范 | 张鹏的博客</title>
+  <title>项目规范 | 静默虚空的博客</title>
   
 
 
@@ -196,7 +198,7 @@
     <div class="custom-logo-site-title">
       <a href="/blog/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">张鹏的博客</span>
+        <span class="site-title">静默虚空的博客</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -377,7 +379,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="张鹏的博客">
+      <meta itemprop="name" content="静默虚空的博客">
     </span>
 
     
@@ -428,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-13 19:15:41" itemprop="dateModified" datetime="2019-03-13T19:15:41+08:00">2019-03-13</time>
+                <time title="修改时间：2019-03-18 14:14:43" itemprop="dateModified" datetime="2019-03-18T14:14:43+08:00">2019-03-18</time>
               
             
           </span>
@@ -474,7 +476,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">995</span>
+                <span title="本文字数">3.4k</span>
               
 
               
@@ -488,7 +490,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -520,27 +522,34 @@
 <li><a href="#%E6%96%87%E4%BB%B6">文件</a></li>
 </ul>
 </li>
+<li><a href="#%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99">命名规则</a>
+<ul>
 <li><a href="#%E7%9B%AE%E5%BD%95%E5%90%8D">目录名</a></li>
 <li><a href="#%E6%96%87%E4%BB%B6%E5%90%8D">文件名</a></li>
+</ul>
+</li>
+<li><a href="#java-%E6%97%A5%E5%BF%97%E8%A7%84%E8%8C%83">Java 日志规范</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
 </ul>
 <!-- /TOC -->
 <h2 id="项目结构"><a class="markdownIt-Anchor" href="#项目结构"></a> 项目结构</h2>
 <p>以下为项目根目录下的文件和目录的组织结构：</p>
 <h3 id="目录"><a class="markdownIt-Anchor" href="#目录"></a> 目录</h3>
-<p><strong>codes</strong>：代码目录。</p>
-<p><strong>configurations</strong>：配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。</p>
-<p><strong>demos</strong>：示例目录。</p>
-<p><strong>docs</strong>：文档目录。</p>
-<p><strong>libs</strong>：第三方库文件。</p>
-<p><strong>scripts</strong>：脚本目录。一般存放用于启动、构建项目的可执行脚本文件。</p>
-<p><strong>packages</strong>：打包文件目录。Java 项目中可能是 jar、war 等；前端项目中可能是 zip、rar 等；电子书项目中可能是 pdf 等。</p>
+<p><strong>codes</strong> - 代码目录。<br>
+<strong>configurations</strong> - 配置目录。一般存放项目相关的配置文件。如 maven 的 settings.xml，nginx 的 nginx.conf 等。<br>
+<strong>demos</strong> - 示例目录。<br>
+<strong>docs</strong> - 文档目录。<br>
+<strong>libs</strong> - 第三方库文件。<br>
+<strong>scripts</strong> - 脚本目录。一般存放用于启动、构建项目的可执行脚本文件。<br>
+<strong>packages</strong> - 打包文件目录。Java 项目中可能是 jar、war 等；前端项目中可能是 zip、rar 等；电子书项目中可能是 pdf 等。</p>
 <h3 id="文件"><a class="markdownIt-Anchor" href="#文件"></a> 文件</h3>
-<p><strong>.gitignore</strong>：git 忽略规则。</p>
-<p><strong>.gitattributes</strong>：git 属性规则。</p>
-<p><strong>.editorconfig</strong>：编辑器书写规则。</p>
-<p><strong><a href="http://README.md" target="_blank" rel="noopener">README.md</a></strong>：项目说明文件。</p>
-<p><strong>LICENSE</strong>：开源协议。如果项目是开源文件，需要添加。</p>
-<h2 id="目录名"><a class="markdownIt-Anchor" href="#目录名"></a> 目录名</h2>
+<p><strong>.gitignore</strong> - git 忽略规则。<br>
+<strong>.gitattributes</strong> - git 属性规则。<br>
+<strong>.editorconfig</strong> - 编辑器书写规则。<br>
+<strong><a href="http://README.md" target="_blank" rel="noopener">README.md</a></strong> - 项目说明文件。<br>
+<strong>LICENSE</strong> - 开源协议。如果项目是开源文件，需要添加。</p>
+<h2 id="命名规则"><a class="markdownIt-Anchor" href="#命名规则"></a> 命名规则</h2>
+<h3 id="目录名"><a class="markdownIt-Anchor" href="#目录名"></a> 目录名</h3>
 <p>目录名必须使用半角字符，不得使用全角字符。这也意味着，中文不能用于文件名。</p>
 <p>目录名建议只使用小写字母，不使用大写字母。</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">不佳： <span class="keyword">Test</span></span><br><span class="line">正确： <span class="keyword">test</span></span><br></pre></td></tr></table></figure>
@@ -548,7 +557,7 @@
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">不佳： <span class="number">1</span>-demo</span><br><span class="line">正确： demo1</span><br></pre></td></tr></table></figure>
 <p>目录名包含多个单词时，单词之间建议使用半角的连词线（<code>-</code>）分隔。</p>
 <figure class="highlight armasm"><table><tr><td class="code"><pre><span class="line">不佳： common_demo</span><br><span class="line">正确： <span class="meta">common</span>-demo</span><br></pre></td></tr></table></figure>
-<h2 id="文件名"><a class="markdownIt-Anchor" href="#文件名"></a> 文件名</h2>
+<h3 id="文件名"><a class="markdownIt-Anchor" href="#文件名"></a> 文件名</h3>
 <p>文档的文件名不得含有空格。</p>
 <p>文件名必须使用半角字符，不得使用全角字符。这也意味着，中文不能用于文件名。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">错误： 名词解释<span class="selector-class">.md</span></span><br><span class="line">正确： <span class="selector-tag">glossary</span><span class="selector-class">.md</span></span><br></pre></td></tr></table></figure>
@@ -558,6 +567,64 @@
 <p>一些约定俗成的习惯可以保持传统写法，如：Java 的文件名一般使用驼峰命名法，且首字母大写；配置文件 <code>applicationContext.xml</code> ；React 中的 JSX 组件文件名一般使用驼峰命名法，且首字母大写等。</p>
 <p>文件名包含多个单词时，单词之间建议使用半角的连词线（<code>-</code>）分隔。</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line">不佳：<span class="selector-tag">advanced_usage</span><span class="selector-class">.md</span></span><br><span class="line">正确：<span class="selector-tag">advanced-usage</span><span class="selector-class">.md</span></span><br></pre></td></tr></table></figure>
+<h2 id="java-日志规范"><a class="markdownIt-Anchor" href="#java-日志规范"></a> Java 日志规范</h2>
+<blockquote>
+<p>这里基于<a href="https://yq.aliyun.com/attachment/download/?id=4942" target="_blank" rel="noopener">阿里巴巴 Java 开发手册</a>日志规约章节，结合自己的开发经验做了一些增删和调整。</p>
+</blockquote>
+<ol>
+<li>【强制】应用中不可直接使用日志系统（Log4j、Logback）中的 API，而应依赖使用日志框架 SLF4J 中的 API，使用门面模式的日志框架，有利于维护和各个类的日志处理方式统一。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger logger = LoggerFactory.getLogger(Abc.class);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>
+<p>【强制】日志文件推荐至少保存 <code>30</code> 天，因为有些异常具备以“周”为频次发生的特点。</p>
+</li>
+<li>
+<p>【强制】应用中的扩展日志（如打点、临时监控、访问日志等）命名方式：<code>appName_logType_logName.log</code>。logType:日志类型，推荐分类有 stats/desc/monitor/visit 等；logName:日志描述。这种命名的好处：通过文件名就可知道日志文件属于什么应用，什么类型，什么目的，也有利于归类查找。</p>
+</li>
+</ol>
+<p><strong>正例</strong>：mppserver 应用中单独监控时区转换异常，如：<code>mppserver_monitor_timeZoneConvert.log</code></p>
+<p><strong>说明</strong>：推荐对日志进行分类，如将错误日志和业务日志分开存放，便于开发人员查看，也便于通过日志对系统进行及时监控。</p>
+<ol start="4">
+<li>【强制】对 <code>trace/debug/info</code> 级别的日志输出，必须使用条件输出形式或者使用占位符的方式。</li>
+</ol>
+<p>说明：<code>logger.debug(&quot;Processing trade with id: &quot; + id + &quot; and symbol: &quot; + symbol);</code> 如果日志级别是 warn，上述日志不会打印，但是会执行字符串拼接操作，如果 symbol 是对象，会执行 toString()方法，浪费了系统资源，执行了上述操作，最终日志却没有打印。</p>
+<p><strong>正例：（条件）</strong></p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (logger.isDebugEnabled()) &#123;</span><br><span class="line">logger.<span class="builtin-name">debug</span>(<span class="string">"Processing trade with id: "</span> + id + <span class="string">" and symbol: "</span> + symbol);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>正例：（占位符）</strong></p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">logger</span><span class="selector-class">.debug</span>("<span class="selector-tag">Processing</span> <span class="selector-tag">trade</span> <span class="selector-tag">with</span> <span class="selector-tag">id</span>: &#123;&#125; <span class="selector-tag">and</span> <span class="selector-tag">symbol</span> : &#123;&#125; ", <span class="selector-tag">id</span>, <span class="selector-tag">symbol</span>);</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>【强制】避免重复打印日志，浪费磁盘空间。务必在 <code>log4j.xml</code> 或 <code>logback.xml</code> 中设置 <code>additivity=false</code>。</li>
+</ol>
+<p><strong>正例</strong>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"com.taobao.dubbo.config"</span> <span class="attr">additivity</span>=<span class="string">"false"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>【强制】异常信息应该包括两类信息：案发现场信息和异常堆栈信息。如果不处理，那么通过关键字 throws 往上抛出。</li>
+</ol>
+<p><strong>正例</strong>：logger.error(各类参数或者对象 toString + “_” + e.getMessage(), e);</p>
+<ol start="9">
+<li>【强制】日志格式遵循如下格式：</li>
+</ol>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback/log-pattern.png"></div><br></p>
+<p>打印出的日志信息如：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">2018<span class="selector-tag">-03-29</span> 15<span class="selector-pseudo">:06</span><span class="selector-pseudo">:57.277</span> <span class="selector-attr">[javalib]</span> <span class="selector-attr">[main]</span> <span class="selector-attr">[TRACE]</span> <span class="selector-tag">i</span><span class="selector-class">.g</span><span class="selector-class">.dunwu</span><span class="selector-class">.javalib</span><span class="selector-class">.log</span><span class="selector-class">.LogbackDemo</span><span class="selector-id">#main</span> <span class="selector-tag">-</span> 这是一条 <span class="selector-tag">trace</span> 日志记录</span><br><span class="line">2018<span class="selector-tag">-03-29</span> 15<span class="selector-pseudo">:06</span><span class="selector-pseudo">:57.282</span> <span class="selector-attr">[javalib]</span> <span class="selector-attr">[main]</span> <span class="selector-attr">[DEBUG]</span> <span class="selector-tag">i</span><span class="selector-class">.g</span><span class="selector-class">.dunwu</span><span class="selector-class">.javalib</span><span class="selector-class">.log</span><span class="selector-class">.LogbackDemo</span><span class="selector-id">#main</span> <span class="selector-tag">-</span> 这是一条 <span class="selector-tag">debug</span> 日志记录</span><br><span class="line">2018<span class="selector-tag">-03-29</span> 15<span class="selector-pseudo">:06</span><span class="selector-pseudo">:57.282</span> <span class="selector-attr">[javalib]</span> <span class="selector-attr">[main]</span> <span class="selector-attr">[INFO]</span> <span class="selector-tag">i</span><span class="selector-class">.g</span><span class="selector-class">.dunwu</span><span class="selector-class">.javalib</span><span class="selector-class">.log</span><span class="selector-class">.LogbackDemo</span><span class="selector-id">#main</span> <span class="selector-tag">-</span> 这是一条 <span class="selector-tag">info</span> 日志记录</span><br><span class="line">2018<span class="selector-tag">-03-29</span> 15<span class="selector-pseudo">:06</span><span class="selector-pseudo">:57.282</span> <span class="selector-attr">[javalib]</span> <span class="selector-attr">[main]</span> <span class="selector-attr">[WARN]</span> <span class="selector-tag">i</span><span class="selector-class">.g</span><span class="selector-class">.dunwu</span><span class="selector-class">.javalib</span><span class="selector-class">.log</span><span class="selector-class">.LogbackDemo</span><span class="selector-id">#main</span> <span class="selector-tag">-</span> 这是一条 <span class="selector-tag">warn</span> 日志记录</span><br><span class="line">2018<span class="selector-tag">-03-29</span> 15<span class="selector-pseudo">:06</span><span class="selector-pseudo">:57.282</span> <span class="selector-attr">[javalib]</span> <span class="selector-attr">[main]</span> <span class="selector-attr">[ERROR]</span> <span class="selector-tag">i</span><span class="selector-class">.g</span><span class="selector-class">.dunwu</span><span class="selector-class">.javalib</span><span class="selector-class">.log</span><span class="selector-class">.LogbackDemo</span><span class="selector-id">#main</span> <span class="selector-tag">-</span> 这是一条 <span class="selector-tag">error</span> 日志记录</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>【参考】slf4j 支持的日志级别，按照级别从低到高，分别为：<code>trace &lt; debug &lt; info &lt; warn &lt; error</code>。</li>
+</ol>
+<p>建议只使用 <code>debug &lt; info &lt; warn &lt; error</code> 四个级别。</p>
+<ul>
+<li><code>error</code> 日志级别只记录系统逻辑出错、异常等重要的错误信息。如非必要，请不要在此场景打出 error 级别。</li>
+<li><code>warn</code> 日志级别记录用户输入参数错误的情况，避免用户投诉时，无所适从。</li>
+<li><code>info</code> 日志级别记录业务逻辑中一些重要步骤信息。</li>
+<li><code>debug</code> 日志级别记录一些用于调试的信息。</li>
+</ul>
+<ol start="10">
+<li>【参考】有一些第三方框架或库的日志对于排查问题具有一定的帮助，如 Spring、Dubbo、Mybatis 等。这些框架所使用的日志库未必和本项目一样，为了避免出现日志无法输出的问题，请引入对应的桥接 jar 包。</li>
+</ol>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://yq.aliyun.com/attachment/download/?id=4942" target="_blank" rel="noopener">阿里巴巴 Java 开发手册</a>日志规约章节</li>
+</ul>
 
       
     </div>
@@ -580,30 +647,6 @@
     
 
     
-      <div>
-        
-
-
-
-
-  
-
-
-
-<ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>本文作者： </strong>Zhang Peng</li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    
-    <a href="https://dunwu.github.io/2019/03/06/method/project-style/" title="项目规范">https://dunwu.github.io/2019/03/06/method/project-style/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
-</ul>
-
-      </div>
-    
 
     <footer class="post-footer">
       
@@ -624,8 +667,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-action/" rel="next" title="Maven 常见问题和最佳实践">
-                <i class="fa fa-chevron-left"></i> Maven 常见问题和最佳实践
+              <a href="/blog/2019/03/06/programming/java/spring-boot/core/SpringApplication/" rel="next" title="SpringApplication">
+                <i class="fa fa-chevron-left"></i> SpringApplication
               </a>
             
           </div>
@@ -634,8 +677,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" rel="prev" title="Maven 快速指南">
-                Maven 快速指南 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/frontend/qa/qa-summary/" rel="prev" title="JavaScript QA 工具总结">
+                JavaScript QA 工具总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -707,7 +750,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">327</span>
+                    <span class="site-state-item-count">332</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -780,7 +823,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">30</span>
+                      
+                    
+                    <span class="site-state-item-count">31</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1047,7 +1092,27 @@
                     
                       
                     
-                    <span class="site-state-item-count">127</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">137</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1126,7 +1191,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目规范"><span class="nav-text"> 项目规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构"><span class="nav-text"> 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-text"> 目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件"><span class="nav-text"> 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目录名"><span class="nav-text"> 目录名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件名"><span class="nav-text"> 文件名</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目规范"><span class="nav-text"> 项目规范</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#项目结构"><span class="nav-text"> 项目结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录"><span class="nav-text"> 目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件"><span class="nav-text"> 文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则"><span class="nav-text"> 命名规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#目录名"><span class="nav-text"> 目录名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件名"><span class="nav-text"> 文件名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java-日志规范"><span class="nav-text"> Java 日志规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1159,7 +1224,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">2m</span>
+    <span title="站点总字数">2.1m</span>
   
 
   
@@ -1168,7 +1233,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">30:46</span>
+    <span title="站点阅读时长">31:07</span>
   
 </div>
 

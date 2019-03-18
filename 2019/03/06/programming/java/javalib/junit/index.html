@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="JUnit 快速指南  version: junit5    1. 安装 2. JUnit 注解 3. 编写单元测试  3.1. 基本的单元测试类和方法 3.2. 定制测试类和方法的显示名称 3.3. 断言（Assertions） 3.4. 假想（Assumptions） 3.5. 禁用 3.6. 测试条件 3.7. 嵌套测试 3.8. 重复测试 3.9. 参数化测试   4. 引用和引申">
+<meta name="keywords" content="programming,java,javalib,test">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JUnit 快速指南">
+<meta property="og:url" content="https://dunwu.github.io/2019/03/06/programming/java/javalib/junit/index.html">
+<meta property="og:site_name" content="静默虚空的博客">
+<meta property="og:description" content="JUnit 快速指南  version: junit5    1. 安装 2. JUnit 注解 3. 编写单元测试  3.1. 基本的单元测试类和方法 3.2. 定制测试类和方法的显示名称 3.3. 断言（Assertions） 3.4. 假想（Assumptions） 3.5. 禁用 3.6. 测试条件 3.7. 嵌套测试 3.8. 重复测试 3.9. 参数化测试   4. 引用和引申">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/test/junit/junit5-components.png">
+<meta property="og:updated_time" content="2019-03-18T11:25:21.411Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JUnit 快速指南">
+<meta name="twitter:description" content="JUnit 快速指南  version: junit5    1. 安装 2. JUnit 注解 3. 编写单元测试  3.1. 基本的单元测试类和方法 3.2. 定制测试类和方法的显示名称 3.3. 断言（Assertions） 3.4. 假想（Assumptions） 3.5. 禁用 3.6. 测试条件 3.7. 嵌套测试 3.8. 重复测试 3.9. 参数化测试   4. 引用和引申">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/test/junit/junit5-components.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="静默虚空的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2019/03/06/programming/java/javalib/junit/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JUnit 快速指南 | 静默虚空的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静默虚空的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">大道至简，知易行难</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javalib/junit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JUnit 快速指南<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javalib/junit.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-18 19:25:21" itemprop="dateModified" datetime="2019-03-18T19:25:21+08:00">2019-03-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">16k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">15 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="junit-快速指南"><a class="markdownIt-Anchor" href="#junit-快速指南"></a> JUnit 快速指南</h1>
+<blockquote>
+<p>version: junit5</p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#1-%E5%AE%89%E8%A3%85">1. 安装</a></li>
+<li><a href="#2-junit-%E6%B3%A8%E8%A7%A3">2. JUnit 注解</a></li>
+<li><a href="#3-%E7%BC%96%E5%86%99%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95">3. 编写单元测试</a>
+<ul>
+<li><a href="#31-%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95">3.1. 基本的单元测试类和方法</a></li>
+<li><a href="#32-%E5%AE%9A%E5%88%B6%E6%B5%8B%E8%AF%95%E7%B1%BB%E5%92%8C%E6%96%B9%E6%B3%95%E7%9A%84%E6%98%BE%E7%A4%BA%E5%90%8D%E7%A7%B0">3.2. 定制测试类和方法的显示名称</a></li>
+<li><a href="#33-%E6%96%AD%E8%A8%80assertions">3.3. 断言（Assertions）</a></li>
+<li><a href="#34-%E5%81%87%E6%83%B3assumptions">3.4. 假想（Assumptions）</a></li>
+<li><a href="#35-%E7%A6%81%E7%94%A8">3.5. 禁用</a></li>
+<li><a href="#36-%E6%B5%8B%E8%AF%95%E6%9D%A1%E4%BB%B6">3.6. 测试条件</a></li>
+<li><a href="#37-%E5%B5%8C%E5%A5%97%E6%B5%8B%E8%AF%95">3.7. 嵌套测试</a></li>
+<li><a href="#38-%E9%87%8D%E5%A4%8D%E6%B5%8B%E8%AF%95">3.8. 重复测试</a></li>
+<li><a href="#39-%E5%8F%82%E6%95%B0%E5%8C%96%E6%B5%8B%E8%AF%95">3.9. 参数化测试</a></li>
+</ul>
+</li>
+<li><a href="#4-%E5%BC%95%E7%94%A8%E5%92%8C%E5%BC%95%E7%94%B3">4. 引用和引申</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="1-安装"><a class="markdownIt-Anchor" href="#1-安装"></a> 1. 安装</h2>
+<p>在 pom 中添加依赖</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">junit.jupiter.version</span>&gt;</span>5.3.2<span class="tag">&lt;/<span class="name">junit.jupiter.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.jupiter<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-jupiter-api<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;junit.jupiter.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.jupiter<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-jupiter-params<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;junit.jupiter.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.junit.jupiter<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>junit-jupiter-engine<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;junit.jupiter.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">scope</span>&gt;</span>test<span class="tag">&lt;/<span class="name">scope</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>组件间依赖关系：</p>
+<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/test/junit/junit5-components.png"></div><br></p>
+<h2 id="2-junit-注解"><a class="markdownIt-Anchor" href="#2-junit-注解"></a> 2. JUnit 注解</h2>
+<table>
+<thead>
+<tr>
+<th>Annotation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>@Test</code></td>
+<td>Denotes that a method is a test method. Unlike JUnit 4’s <code>@Test</code> annotation, this annotation does not declare any attributes, since test extensions in JUnit Jupiter operate based on their own dedicated annotations. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@ParameterizedTest</code></td>
+<td>Denotes that a method is a <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-parameterized-tests" target="_blank" rel="noopener">parameterized test</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@RepeatedTest</code></td>
+<td>Denotes that a method is a test template for a <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-repeated-tests" target="_blank" rel="noopener">repeated test</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@TestFactory</code></td>
+<td>Denotes that a method is a test factory for <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-dynamic-tests" target="_blank" rel="noopener">dynamic tests</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@TestInstance</code></td>
+<td>Used to configure the <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle" target="_blank" rel="noopener">test instance lifecycle</a> for the annotated test class. Such annotations are <em>inherited</em>.</td>
+</tr>
+<tr>
+<td><code>@TestTemplate</code></td>
+<td>Denotes that a method is a <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-templates" target="_blank" rel="noopener">template for test cases</a> designed to be invoked multiple times depending on the number of invocation contexts returned by the registered <a href="https://junit.org/junit5/docs/current/user-guide/#extensions-test-templates" target="_blank" rel="noopener">providers</a>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@DisplayName</code></td>
+<td>Declares a custom display name for the test class or test method. Such annotations are not <em>inherited</em>.</td>
+</tr>
+<tr>
+<td><code>@BeforeEach</code></td>
+<td>Denotes that the annotated method should be executed <em>before</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4’s <code>@Before</code>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@AfterEach</code></td>
+<td>Denotes that the annotated method should be executed <em>after</em> <strong>each</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, or <code>@TestFactory</code> method in the current class; analogous to JUnit 4’s <code>@After</code>. Such methods are <em>inherited</em> unless they are <em>overridden</em>.</td>
+</tr>
+<tr>
+<td><code>@BeforeAll</code></td>
+<td>Denotes that the annotated method should be executed <em>before</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4’s <code>@BeforeClass</code>. Such methods are <em>inherited</em> (unless they are <em>hidden</em> or <em>overridden</em>) and must be <code>static</code> (unless the “per-class” <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle" target="_blank" rel="noopener">test instance lifecycle</a> is used).</td>
+</tr>
+<tr>
+<td><code>@AfterAll</code></td>
+<td>Denotes that the annotated method should be executed <em>after</em> <strong>all</strong> <code>@Test</code>, <code>@RepeatedTest</code>, <code>@ParameterizedTest</code>, and <code>@TestFactory</code> methods in the current class; analogous to JUnit 4’s <code>@AfterClass</code>. Such methods are <em>inherited</em> (unless they are <em>hidden</em> or <em>overridden</em>) and must be <code>static</code> (unless the “per-class” <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle" target="_blank" rel="noopener">test instance lifecycle</a> is used).</td>
+</tr>
+<tr>
+<td><code>@Nested</code></td>
+<td>Denotes that the annotated class is a nested, non-static test class. <code>@BeforeAll</code> and <code>@AfterAll</code>methods cannot be used directly in a <code>@Nested</code> test class unless the “per-class” <a href="https://junit.org/junit5/docs/current/user-guide/#writing-tests-test-instance-lifecycle" target="_blank" rel="noopener">test instance lifecycle</a> is used. Such annotations are not <em>inherited</em>.</td>
+</tr>
+<tr>
+<td><code>@Tag</code></td>
+<td>Used to declare <em>tags</em> for filtering tests, either at the class or method level; analogous to test groups in TestNG or Categories in JUnit 4. Such annotations are <em>inherited</em> at the class level but not at the method level.</td>
+</tr>
+<tr>
+<td><code>@Disabled</code></td>
+<td>Used to <em>disable</em> a test class or test method; analogous to JUnit 4’s <code>@Ignore</code>. Such annotations are not <em>inherited</em>.</td>
+</tr>
+<tr>
+<td><code>@ExtendWith</code></td>
+<td>Used to register custom <a href="https://junit.org/junit5/docs/current/user-guide/#extensions" target="_blank" rel="noopener">extensions</a>. Such annotations are <em>inherited</em>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-编写单元测试"><a class="markdownIt-Anchor" href="#3-编写单元测试"></a> 3. 编写单元测试</h2>
+<h3 id="31-基本的单元测试类和方法"><a class="markdownIt-Anchor" href="#31-基本的单元测试类和方法"></a> 3.1. 基本的单元测试类和方法</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.*;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.Logger;</span><br><span class="line"><span class="keyword">import</span> org.slf4j.LoggerFactory;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Junit5StandardTests</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> Logger LOGGER = LoggerFactory.getLogger(Junit5StandardTests.class);</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeAll</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">beforeAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call beforeAll()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">beforeEach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call beforeEach()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">succeedingTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call succeedingTest()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">failingTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call failingTest()"</span>);</span><br><span class="line">        <span class="comment">// fail("a failing test");</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Disabled</span>(<span class="string">"for demonstration purposes"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">skippedTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call skippedTest()"</span>);</span><br><span class="line">        <span class="comment">// not executed</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">afterEach</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call afterEach()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@AfterAll</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">afterAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        LOGGER.info(<span class="string">"call afterAll()"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="32-定制测试类和方法的显示名称"><a class="markdownIt-Anchor" href="#32-定制测试类和方法的显示名称"></a> 3.2. 定制测试类和方法的显示名称</h3>
+<p>支持普通字符、特殊符号、emoji</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.DisplayName;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="meta">@DisplayName</span>(<span class="string">"A special test case"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JunitDisplayNameDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"Custom test name containing spaces"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWithDisplayNameContainingSpaces</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"╯°□°）╯"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWithDisplayNameContainingSpecialCharacters</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"😱"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWithDisplayNameContainingEmoji</span><span class="params">()</span> </span>&#123; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="33-断言assertions"><a class="markdownIt-Anchor" href="#33-断言assertions"></a> 3.3. 断言（Assertions）</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeAll;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.time.Duration.ofMillis;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.time.Duration.ofMinutes;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AssertionsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Person person;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeAll</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">beforeAll</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        person = <span class="keyword">new</span> Person(<span class="string">"John"</span>, <span class="string">"Doe"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">standardAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">        assertEquals(<span class="number">4</span>, <span class="number">4</span>, <span class="string">"The optional assertion message is now the last parameter."</span>);</span><br><span class="line">        assertTrue(<span class="string">'a'</span> &lt; <span class="string">'b'</span>, () -&gt; <span class="string">"Assertion messages can be lazily evaluated -- "</span></span><br><span class="line">            + <span class="string">"to avoid constructing complex messages unnecessarily."</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">groupedAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// In a grouped assertion all assertions are executed, and any</span></span><br><span class="line">        <span class="comment">// failures will be reported together.</span></span><br><span class="line">        assertAll(<span class="string">"person"</span>, () -&gt; assertEquals(<span class="string">"John"</span>, person.getFirstName()),</span><br><span class="line">            () -&gt; assertEquals(<span class="string">"Doe"</span>, person.getLastName()));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">dependentAssertions</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// Within a code block, if an assertion fails the</span></span><br><span class="line">        <span class="comment">// subsequent code in the same block will be skipped.</span></span><br><span class="line">        assertAll(<span class="string">"properties"</span>, () -&gt; &#123;</span><br><span class="line">            String firstName = person.getFirstName();</span><br><span class="line">            assertNotNull(firstName);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Executed only if the previous assertion is valid.</span></span><br><span class="line">            assertAll(<span class="string">"first name"</span>, () -&gt; assertTrue(firstName.startsWith(<span class="string">"J"</span>)),</span><br><span class="line">                () -&gt; assertTrue(firstName.endsWith(<span class="string">"n"</span>)));</span><br><span class="line">        &#125;, () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Grouped assertion, so processed independently</span></span><br><span class="line">            <span class="comment">// of results of first name assertions.</span></span><br><span class="line">            String lastName = person.getLastName();</span><br><span class="line">            assertNotNull(lastName);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// Executed only if the previous assertion is valid.</span></span><br><span class="line">            assertAll(<span class="string">"last name"</span>, () -&gt; assertTrue(lastName.startsWith(<span class="string">"D"</span>)),</span><br><span class="line">                () -&gt; assertTrue(lastName.endsWith(<span class="string">"e"</span>)));</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">exceptionTesting</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Throwable exception = assertThrows(IllegalArgumentException.class, () -&gt; &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"a message"</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">        assertEquals(<span class="string">"a message"</span>, exception.getMessage());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion succeeds.</span></span><br><span class="line">        assertTimeout(ofMinutes(<span class="number">2</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Perform task that takes less than 2 minutes.</span></span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceededWithResult</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion succeeds, and returns the supplied object.</span></span><br><span class="line">        String actualResult = assertTimeout(ofMinutes(<span class="number">2</span>), () -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"a result"</span>;</span><br><span class="line">        &#125;);</span><br><span class="line">        assertEquals(<span class="string">"a result"</span>, actualResult);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutNotExceededWithMethod</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion invokes a method reference and returns an object.</span></span><br><span class="line">        String actualGreeting = assertTimeout(ofMinutes(<span class="number">2</span>), AssertionsDemo::greeting);</span><br><span class="line">        assertEquals(<span class="string">"Hello, World!"</span>, actualGreeting);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutExceeded</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion fails with an error message similar to:</span></span><br><span class="line">        <span class="comment">// execution exceeded timeout of 10 ms by 91 ms</span></span><br><span class="line">        assertTimeout(ofMillis(<span class="number">10</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Simulate task that takes more than 10 ms.</span></span><br><span class="line">            Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">timeoutExceededWithPreemptiveTermination</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// The following assertion fails with an error message similar to:</span></span><br><span class="line">        <span class="comment">// execution timed out after 10 ms</span></span><br><span class="line">        assertTimeoutPreemptively(ofMillis(<span class="number">10</span>), () -&gt; &#123;</span><br><span class="line">            <span class="comment">// Simulate task that takes more than 10 ms.</span></span><br><span class="line">            Thread.sleep(<span class="number">100</span>);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> String <span class="title">greeting</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Hello, World!"</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="34-假想assumptions"><a class="markdownIt-Anchor" href="#34-假想assumptions"></a> 3.4. 假想（Assumptions）</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assumptions.assumeTrue;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assumptions.assumingThat;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AssumptionsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testOnlyOnCiServer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assumeTrue(<span class="string">"CI"</span>.equals(System.getenv(<span class="string">"ENV"</span>)));</span><br><span class="line">        <span class="comment">// remainder of test</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testOnlyOnDeveloperWorkstation</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assumeTrue(<span class="string">"DEV"</span>.equals(System.getenv(<span class="string">"ENV"</span>)),</span><br><span class="line">            () -&gt; <span class="string">"Aborting test: not on developer workstation"</span>);</span><br><span class="line">        <span class="comment">// remainder of test</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testInAllEnvironments</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        assumingThat(<span class="string">"CI"</span>.equals(System.getenv(<span class="string">"ENV"</span>)),</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                <span class="comment">// perform these assertions only on the CI server</span></span><br><span class="line">                assertEquals(<span class="number">2</span>, <span class="number">2</span>);</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// perform these assertions in all environments</span></span><br><span class="line">        assertEquals(<span class="string">"a string"</span>, <span class="string">"a string"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="35-禁用"><a class="markdownIt-Anchor" href="#35-禁用"></a> 3.5. 禁用</h3>
+<p>禁用单元测试类示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Disabled;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Disabled</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DisabledClassDemo</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWillBeSkipped</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>禁用单元测试方法示例：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Disabled;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DisabledTestsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Disabled</span></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWillBeSkipped</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">testWillBeExecuted</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="36-测试条件"><a class="markdownIt-Anchor" href="#36-测试条件"></a> 3.6. 测试条件</h3>
+<h4 id="操作系统条件"><a class="markdownIt-Anchor" href="#操作系统条件"></a> 操作系统条件</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledOnOs</span>(MAC)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onlyOnMacOs</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@TestOnMac</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">testOnMac</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledOnOs</span>(&#123; LINUX, MAC &#125;)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onLinuxOrMac</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@DisabledOnOs</span>(WINDOWS)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">notOnWindows</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="meta">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledOnOs</span>(MAC)</span><br><span class="line"><span class="meta">@interface</span> TestOnMac &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="java-运行时版本条件"><a class="markdownIt-Anchor" href="#java-运行时版本条件"></a> Java 运行时版本条件</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledOnJre</span>(JAVA_8)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onlyOnJava8</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledOnJre</span>(&#123; JAVA_9, JAVA_10 &#125;)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onJava9Or10</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@DisabledOnJre</span>(JAVA_9)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">notOnJava9</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="系统属性条件"><a class="markdownIt-Anchor" href="#系统属性条件"></a> 系统属性条件</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@EnabledIfSystemProperty</span>(named = <span class="string">"os.arch"</span>, matches = <span class="string">".*64.*"</span>)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">onlyOn64BitArchitectures</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="meta">@DisabledIfSystemProperty</span>(named = <span class="string">"ci-server"</span>, matches = <span class="string">"true"</span>)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">notOnCiServer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="37-嵌套测试"><a class="markdownIt-Anchor" href="#37-嵌套测试"></a> 3.7. 嵌套测试</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertFalse;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertThrows;</span><br><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertTrue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.EmptyStackException;</span><br><span class="line"><span class="keyword">import</span> java.util.Stack;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.DisplayName;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Nested;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.Test;</span><br><span class="line"></span><br><span class="line"><span class="meta">@DisplayName</span>(<span class="string">"A stack"</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestingAStackDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    Stack&lt;Object&gt; stack;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"is instantiated with new Stack()"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">isInstantiatedWithNew</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Nested</span></span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"when new"</span>)</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">WhenNew</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@BeforeEach</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">createNewStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Test</span></span><br><span class="line">        <span class="meta">@DisplayName</span>(<span class="string">"is empty"</span>)</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">isEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            assertTrue(stack.isEmpty());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Test</span></span><br><span class="line">        <span class="meta">@DisplayName</span>(<span class="string">"throws EmptyStackException when popped"</span>)</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">throwsExceptionWhenPopped</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            assertThrows(EmptyStackException.class, () -&gt; stack.pop());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Test</span></span><br><span class="line">        <span class="meta">@DisplayName</span>(<span class="string">"throws EmptyStackException when peeked"</span>)</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">throwsExceptionWhenPeeked</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            assertThrows(EmptyStackException.class, () -&gt; stack.peek());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="meta">@Nested</span></span><br><span class="line">        <span class="meta">@DisplayName</span>(<span class="string">"after pushing an element"</span>)</span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">AfterPushing</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">            String anElement = <span class="string">"an element"</span>;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@BeforeEach</span></span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">pushAnElement</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                stack.push(anElement);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Test</span></span><br><span class="line">            <span class="meta">@DisplayName</span>(<span class="string">"it is no longer empty"</span>)</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">isNotEmpty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                assertFalse(stack.isEmpty());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Test</span></span><br><span class="line">            <span class="meta">@DisplayName</span>(<span class="string">"returns the element when popped and is empty"</span>)</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">returnElementWhenPopped</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                assertEquals(anElement, stack.pop());</span><br><span class="line">                assertTrue(stack.isEmpty());</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Test</span></span><br><span class="line">            <span class="meta">@DisplayName</span>(<span class="string">"returns the element when peeked but remains not empty"</span>)</span><br><span class="line">            <span class="function"><span class="keyword">void</span> <span class="title">returnElementWhenPeeked</span><span class="params">()</span> </span>&#123;</span><br><span class="line">                assertEquals(anElement, stack.peek());</span><br><span class="line">                assertFalse(stack.isEmpty());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="38-重复测试"><a class="markdownIt-Anchor" href="#38-重复测试"></a> 3.8. 重复测试</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="keyword">static</span> org.junit.jupiter.api.Assertions.assertEquals;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.logging.Logger;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.BeforeEach;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.DisplayName;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.RepeatedTest;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.RepetitionInfo;</span><br><span class="line"><span class="keyword">import</span> org.junit.jupiter.api.TestInfo;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RepeatedTestsDemo</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> Logger logger = <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeEach</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">beforeEach</span><span class="params">(TestInfo testInfo, RepetitionInfo repetitionInfo)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> currentRepetition = repetitionInfo.getCurrentRepetition();</span><br><span class="line">        <span class="keyword">int</span> totalRepetitions = repetitionInfo.getTotalRepetitions();</span><br><span class="line">        String methodName = testInfo.getTestMethod().get().getName();</span><br><span class="line">        logger.info(String.format(<span class="string">"About to execute repetition %d of %d for %s"</span>, <span class="comment">//</span></span><br><span class="line">            currentRepetition, totalRepetitions, methodName));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RepeatedTest</span>(<span class="number">10</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">repeatedTest</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RepeatedTest</span>(<span class="number">5</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">repeatedTestWithRepetitionInfo</span><span class="params">(RepetitionInfo repetitionInfo)</span> </span>&#123;</span><br><span class="line">        assertEquals(<span class="number">5</span>, repetitionInfo.getTotalRepetitions());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RepeatedTest</span>(value = <span class="number">1</span>, name = <span class="string">"&#123;displayName&#125; &#123;currentRepetition&#125;/&#123;totalRepetitions&#125;"</span>)</span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"Repeat!"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">customDisplayName</span><span class="params">(TestInfo testInfo)</span> </span>&#123;</span><br><span class="line">        assertEquals(testInfo.getDisplayName(), <span class="string">"Repeat! 1/1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RepeatedTest</span>(value = <span class="number">1</span>, name = RepeatedTest.LONG_DISPLAY_NAME)</span><br><span class="line">    <span class="meta">@DisplayName</span>(<span class="string">"Details..."</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">customDisplayNameWithLongPattern</span><span class="params">(TestInfo testInfo)</span> </span>&#123;</span><br><span class="line">        assertEquals(testInfo.getDisplayName(), <span class="string">"Details... :: repetition 1 of 1"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@RepeatedTest</span>(value = <span class="number">5</span>, name = <span class="string">"Wiederholung &#123;currentRepetition&#125; von &#123;totalRepetitions&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">repeatedTestInGerman</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="39-参数化测试"><a class="markdownIt-Anchor" href="#39-参数化测试"></a> 3.9. 参数化测试</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ParameterizedTest</span></span><br><span class="line"><span class="meta">@ValueSource</span>(strings = &#123; <span class="string">"racecar"</span>, <span class="string">"radar"</span>, <span class="string">"able was I ere I saw elba"</span> &#125;)</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">palindromes</span><span class="params">(String candidate)</span> </span>&#123;</span><br><span class="line">    assertTrue(isPalindrome(candidate));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-引用和引申"><a class="markdownIt-Anchor" href="#4-引用和引申"></a> 4. 引用和引申</h2>
+<ul>
+<li><a href="https://github.com/junit-team/junit5" target="_blank" rel="noopener">Github</a></li>
+<li><a href="https://junit.org/junit5/docs/current/user-guide/" target="_blank" rel="noopener">官方用户手册</a></li>
+<li><a href="https://junit.org/junit5/docs/current/api/" target="_blank" rel="noopener">Javadoc</a></li>
+<li><a href="https://junit.org/junit5/docs/current/release-notes/" target="_blank" rel="noopener">版本声明</a></li>
+<li><a href="https://github.com/junit-team/junit5-samples" target="_blank" rel="noopener">官方示例</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/programming/" rel="tag"># programming</a>
+          
+            <a href="/blog/tags/java/" rel="tag"># java</a>
+          
+            <a href="/blog/tags/javalib/" rel="tag"># javalib</a>
+          
+            <a href="/blog/tags/test/" rel="tag"># test</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2019/03/06/os/linux/ops/service/zookeeper/" rel="next" title="ZooKeeper 安装部署">
+                <i class="fa fa-chevron-left"></i> ZooKeeper 安装部署
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2019/03/06/algorithm/data-structure/heap/" rel="prev" title="堆">
+                堆 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">332</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">31</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">137</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#junit-快速指南"><span class="nav-text"> JUnit 快速指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-安装"><span class="nav-text"> 1. 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-junit-注解"><span class="nav-text"> 2. JUnit 注解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-编写单元测试"><span class="nav-text"> 3. 编写单元测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#31-基本的单元测试类和方法"><span class="nav-text"> 3.1. 基本的单元测试类和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-定制测试类和方法的显示名称"><span class="nav-text"> 3.2. 定制测试类和方法的显示名称</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-断言assertions"><span class="nav-text"> 3.3. 断言（Assertions）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-假想assumptions"><span class="nav-text"> 3.4. 假想（Assumptions）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-禁用"><span class="nav-text"> 3.5. 禁用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-测试条件"><span class="nav-text"> 3.6. 测试条件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作系统条件"><span class="nav-text"> 操作系统条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-运行时版本条件"><span class="nav-text"> Java 运行时版本条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系统属性条件"><span class="nav-text"> 系统属性条件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-嵌套测试"><span class="nav-text"> 3.7. 嵌套测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-重复测试"><span class="nav-text"> 3.8. 重复测试</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39-参数化测试"><span class="nav-text"> 3.9. 参数化测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-引用和引申"><span class="nav-text"> 4. 引用和引申</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:07</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+</body>
+</html>
