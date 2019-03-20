@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/basics/docker-services/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/kafka/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -404,7 +404,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/docker/basics/docker-services/" class="post-title-link" itemprop="url">Docker 服务</a>
+                <a href="/blog/2019/03/06/os/linux/ops/service/kafka/" class="post-title-link" itemprop="url">Kafka 安装部署</a>
               
             
           </h2>
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:18" itemprop="dateModified" datetime="2019-03-15T17:22:18+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:31" itemprop="dateModified" datetime="2019-03-19T21:31:31+08:00">2019-03-19</time>
               
             
           </span>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">699</span>
+                <span title="本文字数">2.6k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -511,16 +511,35 @@
         
           
             <p>
-               Docker 服务
- 关于服务
-在分布式应用程序中，应用程序的不同部分被称为“服务”。例如，如果您想象一个视频共享网站，它可能包含用于将应用程序数据存储在数据库中的服务，用户上传文件后在后台传输的服务，前端应用服务等等。
-服务实际上只是“生产环境中的容器”。一个服务只运行一个镜像，但它需要制定镜像的运行方式 - 应该使用哪个端口，容器应该运行多少副本，以便服务具有所需的容量，以及等等。缩放服务会
+               Kafka 安装部署
+
+环境要求：
+
+JDK8
+ZooKeeper
+
+
+
+
+下载解压
+启动服务器
+停止服务器
+创建主题
+生产者生产消息
+消费者消费消息
+集群部署
+
+
+ 下载解压
+进入官方下载地址：http://kafka.apache.org/downloads，选择合适版本。
+解压到本地：
+&gt; tar -xzf kafka_2.11-1.1.0.tgz&gt; cd kafka_2.11
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/docker/basics/docker-services/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/kafka/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -584,7 +603,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/practice/docker-install-nginx/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/jdk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -604,7 +623,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/docker/practice/docker-install-nginx/" class="post-title-link" itemprop="url">Docker 安装 Nginx</a>
+                <a href="/blog/2019/03/06/os/linux/ops/service/jdk/" class="post-title-link" itemprop="url">JDK 安装</a>
               
             
           </h2>
@@ -646,7 +665,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:18" itemprop="dateModified" datetime="2019-03-15T17:22:18+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:31" itemprop="dateModified" datetime="2019-03-19T21:31:31+08:00">2019-03-19</time>
               
             
           </span>
@@ -674,7 +693,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">934</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -688,7 +707,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -711,19 +730,36 @@
         
           
             <p>
-               Docker 安装 Nginx
+               JDK 安装
 
-实测环境：Centos
+关键词：JDK, JAVA_HOME, CLASSPATH, PATH
 
- 查看可用镜像
-执行 docker search nginx 命令查看可用镜像：
-# docker search nginxINDEX       NAME                                                             DESCRIPTION                   
+
+
+JDK 安装步骤
+Windows 系统安装方法
+Linux 系统安装方法
+
+RedHat 发行版本使用 rpm 安装方法
+
+
+参考资料
+
+
+ JDK 安装步骤
+JDK 安装步骤：
+（1）下载 JDK
+a. 进入 Java 官网下载页面；
+b. 选择需要的版本：
+
+c. 选择对应操作系统的安装包：
+Win
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/docker/practice/docker-install-nginx/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/jdk/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -787,7 +823,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/appendix/resources/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -807,7 +843,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/" class="post-title-link" itemprop="url">SpringBootTutorialCoreBanner</a>
+                <a href="/blog/2019/03/06/programming/java/spring/appendix/resources/" class="post-title-link" itemprop="url">资源</a>
               
             
           </h2>
@@ -849,7 +885,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:19" itemprop="dateModified" datetime="2019-03-15T17:22:19+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:33" itemprop="dateModified" datetime="2019-03-19T21:31:33+08:00">2019-03-19</time>
               
             
           </span>
@@ -877,7 +913,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3k</span>
+                <span title="本文字数">186</span>
               
 
               
@@ -891,7 +927,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -914,28 +950,501 @@
         
           
             <p>
-               SpringBootTutorialCoreBanner
+               资源
+ 官方资源
+
+
+https://spring.io/
+
+
+Spring Framework 官方文档
+
+
+Spring Framework Github
+
+
+ 教程资源
+
+跟我学 Spring3 by zhangkaitao
+
+ 入门资源
+
+Spring初学快速入门 by 易百
+
+ 进阶资源
+ 整合资源
+
+Springside4 by Calvin Xiao
+
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/programming/java/spring/appendix/resources/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javalib/javamail/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/programming/java/javalib/javamail/" class="post-title-link" itemprop="url">JavaMail 使用小结</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-19 21:31:32" itemprop="dateModified" datetime="2019-03-19T21:31:32+08:00">2019-03-19</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               JavaMail 使用小结
+ 概述
+ 邮件相关的标准
+厂商所提供的 JavaMail 服务程序可以有选择地实现某些邮件协议，常见的邮件协议包括：
+
+SMTP(Simple Mail Transfer Protocol) ：即简单邮件传输协议，它是一组用于由源地址到目的地址传送邮件的规则，由它来控制信件的中转方式。
+POP3(Post Office Protocol - Version 3) ：即
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/programming/java/javalib/javamail/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/base/html/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/frontend/base/html/" class="post-title-link" itemprop="url">Html 快速入门</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-19 21:31:29" itemprop="dateModified" datetime="2019-03-19T21:31:29+08:00">2019-03-19</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">11k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">10 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               Html 快速入门
+
+超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
+关键词： 标签, 元素, 属性
+
+
 
 
 简介
 
-变量
-配置
-编程
+什么是 HTML？
+HTML 文档 = 网页
+HTML 结构
+HTML 标签
+HTML 元素
+HTML 属性
 
 
-源码
-更多内容
+Quickstart
+
+基础
+样式
+链接、锚点、图片
+列表
+表单
+表格
+区块
+框架
 
 
-Spring Boot 启动时默认会显示以下 logo：
-  .   ____          _            __ _ _ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \( ( )\___ | '_ | '_| | '_ \/ _` | \
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/frontend/base/html/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -999,7 +1508,7 @@ Spring Boot 启动时默认会显示以下 logo：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/basics/docker-image/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/es6/babel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1019,7 +1528,7 @@ Spring Boot 启动时默认会显示以下 logo：
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/docker/basics/docker-image/" class="post-title-link" itemprop="url">Docker 镜像</a>
+                <a href="/blog/2019/03/06/frontend/es6/babel/" class="post-title-link" itemprop="url">Babel 教程</a>
               
             
           </h2>
@@ -1061,7 +1570,7 @@ Spring Boot 启动时默认会显示以下 logo：
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:17" itemprop="dateModified" datetime="2019-03-15T17:22:17+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:29" itemprop="dateModified" datetime="2019-03-19T21:31:29+08:00">2019-03-19</time>
               
             
           </span>
@@ -1089,7 +1598,7 @@ Spring Boot 启动时默认会显示以下 logo：
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">16k</span>
+                <span title="本文字数">8.8k</span>
               
 
               
@@ -1103,7 +1612,7 @@ Spring Boot 启动时默认会显示以下 logo：
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">15 分钟</span>
+                <span title="阅读时长">8 分钟</span>
               
             </div>
           
@@ -1126,42 +1635,18 @@ Spring Boot 启动时默认会显示以下 logo：
         
           
             <p>
-               Docker 镜像
+               Babel 教程
 
-
-获取镜像
-
-运行
-
-
-列出镜像
-
-镜像体积
-虚悬镜像
-中间层镜像
-列出部分镜像
-以特定格式显示
-
-
-删除本地镜像
-
-用 ID、镜像名、摘要删除镜像
-Untagged 和 Deleted
-用 docker image ls 命令来配合
-CentOS/RHEL 的用户需要注意的事项
-
-
-使用 Dockerfile 定制镜像
-
-构建镜像
-镜像构建上下文（Context）
-其它 
+Babel 是一个通用的多用途 JavaScript 编译器。
+⚠ 注意：
+Babel 可以与很多构建工具（如 Browserify、Grunt、Gulp 等）进行集成。由于本教程选择 Webpack ，所以只讲解与 Webpack 的集成。想了解如何与其它工具集成，请参考：官方文档 - installation
+关键词： babel-cli, .babelrc, prese
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/docker/basics/docker-image/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/frontend/es6/babel/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1225,7 +1710,7 @@ CentOS/RHEL 的用户需要注意的事项
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-ci/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/nodejs/npm/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1245,7 +1730,7 @@ CentOS/RHEL 的用户需要注意的事项
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-ci/" class="post-title-link" itemprop="url">Gitlab</a>
+                <a href="/blog/2019/03/06/frontend/nodejs/npm/" class="post-title-link" itemprop="url">Npm 入门</a>
               
             
           </h2>
@@ -1287,7 +1772,7 @@ CentOS/RHEL 的用户需要注意的事项
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:18" itemprop="dateModified" datetime="2019-03-15T17:22:18+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
               
             
           </span>
@@ -1315,7 +1800,233 @@ CentOS/RHEL 的用户需要注意的事项
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9</span>
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               Npm 入门
+
+Npm 是随同 Nodejs 一起安装的 js 包管理工具。
+关键词： nodejs, 包管理, npm, cnpm, package.json, node_modules
+
+
+
+简介
+安装
+Npm 工作流
+Npm 常用命令
+
+初始化新项目
+安装模块
+卸载模块
+更新模块
+管理配置文件
+发布包
+执行脚本
+查看安装信息
+
+
+配置文件
+
+package 版本
+版本号
+
+
+npm 扩展
+
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/frontend/nodejs/npm/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/appendix/docker-glossary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/os/docker/appendix/docker-glossary/" class="post-title-link" itemprop="url">Docker 术语</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">598</span>
               
 
               
@@ -1352,218 +2063,17 @@ CentOS/RHEL 的用户需要注意的事项
         
           
             <p>
-               Gitlab
+               Docker 术语
 
-
-              
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/gitlab/gitlab-ci/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/elastic/README/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/os/linux/ops/service/elastic/README/" class="post-title-link" itemprop="url">Elastic 技术栈</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-15 17:22:18" itemprop="dateModified" datetime="2019-03-15T17:22:18+08:00">2019-03-15</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">486</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Elastic 技术栈
-
-Elastic 技术栈通常被用来作为日志中心。
-ELK 是 elastic 公司旗下三款产品 ElasticSearch 、Logstash 、Kibana 的首字母组合。
-ElasticSearch 是一个基于 Lucene 构建的开源，分布式，RESTful 搜索引擎。
-Logstash 传输和处理你的日志、事务或其他数据。
-Kibana 将 Elasticsear
+Docker 镜像(Images)：Docker 镜像是用于创建 Docker 容器的模板。
+Docker 容器(Container)：容器是独立运行的一个或一组应用。
+Docker 客户端(Client)：Docker 客户端通过命令行或者其他工具使用 Docker API (https://docs.docker.com/reference/api/docker_rem
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/elastic/README/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/docker/appendix/docker-glossary/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1627,7 +2137,7 @@ Kibana 将 Elasticsear
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis-mapper/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/appendix/docker-cli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1647,7 +2157,7 @@ Kibana 将 Elasticsear
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis-mapper/" class="post-title-link" itemprop="url">Mapper 指南</a>
+                <a href="/blog/2019/03/06/os/docker/appendix/docker-cli/" class="post-title-link" itemprop="url">Docker 命令</a>
               
             
           </h2>
@@ -1689,7 +2199,7 @@ Kibana 将 Elasticsear
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:19" itemprop="dateModified" datetime="2019-03-15T17:22:19+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
               
             
           </span>
@@ -1754,34 +2264,46 @@ Kibana 将 Elasticsear
         
           
             <p>
-               Mapper 指南
+               Docker 命令
 
 
-快速入门
+镜像(Images)
+容器(Container)
 
-安装
-配置实体类
-创建 Mapper 接口
-配置通用 Mapper
-简单使用
+生命周期
+启动和停止
+信息
+导入 / 导出
+执行命令
 
 
-集成通用 Mapper
-对象关系映射
-配置
+网络(Networks)
+
+生命周期
+信息
+链接
+
+
+仓管中心和仓库(Registry &amp; Repository)
+Dockerfile
+卷标(Volumes)
+
+生命周期
+信息
+
+
 引用和引申
 
 
- 快速入门
- 安装
-在 Maven 项目的 pom.xml 中添加通用 Mapper 依赖
-&lt;dependency&gt;    &lt;groupId&gt;tk.mybatis&lt;/groupId&gt; 
+ 镜像(Images)
+
+docker image ls
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis-mapper/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/docker/appendix/docker-cli/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1845,7 +2367,7 @@ Kibana 将 Elasticsear
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring-boot/web/sbe-web-json/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/appendix/docker-resources/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1865,7 +2387,7 @@ Kibana 将 Elasticsear
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/programming/java/spring-boot/web/sbe-web-json/" class="post-title-link" itemprop="url">SpringBootTutorialWebJson</a>
+                <a href="/blog/2019/03/06/os/docker/appendix/docker-resources/" class="post-title-link" itemprop="url">Docker 资源</a>
               
             
           </h2>
@@ -1907,7 +2429,7 @@ Kibana 将 Elasticsear
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-15 17:22:19" itemprop="dateModified" datetime="2019-03-15T17:22:19+08:00">2019-03-15</time>
+                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
               
             
           </span>
@@ -1935,7 +2457,7 @@ Kibana 将 Elasticsear
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9.4k</span>
+                <span title="本文字数">829</span>
               
 
               
@@ -1949,7 +2471,7 @@ Kibana 将 Elasticsear
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">9 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -1972,480 +2494,20 @@ Kibana 将 Elasticsear
         
           
             <p>
-               SpringBootTutorialWebJson
+               Docker 资源
+ Docker 官方资源
 
-
-简介
-
-Spring Boot 支持的 Json 库
-Spring Web 中的序列化、反序列化
-
-
-指定类的 Json 序列化、反序列化
-@JsonTest
-Spring Boot 中的 json 配置
-
-Jackson 配置
-GSON 配置
-
-
-Spring Boot 中使用 Fastjson
-示例源码
-更多内容
-
-
- 简介
- Spri
+Docker 官网：http://www.docker.com
+Docker Github：https://github.com/moby/moby
+Docker 官方文档：https://docs.docker.com/
+Docker windows 入门：https://docs.docker.com/windows/
+Docker Linux
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/programming/java/spring-boot/web/sbe-web-json/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/jenkins/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/os/linux/ops/service/jenkins/" class="post-title-link" itemprop="url">Jenkins 安装</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-15 17:22:18" itemprop="dateModified" datetime="2019-03-15T17:22:18+08:00">2019-03-15</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Jenkins 安装
-
-环境要求
-
-JDK：JDK7+，官网推荐是 JDK 8
-
-
-
-
-安装
-启动
-脚本
-FAQ
-
-登录密码
-忘记密码
-卡在 check 页面
-卡在 getting startted 页面
-
-
-参考资料
-
-
- 安装
-安装步骤如下：
-（1）下载并解压到本地
-进入官网下载地址：https://jenkins.io/download/ ，选择合适的版本下载。
-我选择的是最新稳定 war
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/jenkins/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/database/sql/关系型数据库面试题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/database/sql/关系型数据库面试题/" class="post-title-link" itemprop="url">关系型数据库面试题</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-15 17:22:16" itemprop="dateModified" datetime="2019-03-15T17:22:16+08:00">2019-03-15</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">7 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               关系型数据库面试题
-
-
-1. 存储引擎
-
-1.1. mysql 有哪些存储引擎？有什么区别？
-
-
-2. 索引
-
-2.1. 数据库索引有哪些数据结构？
-2.2. B-Tree 和 B+Tree 有什么区别？
-2.3. 索引原则有哪些？
-
-
-3. 事务
-
-3.1. 数据库事务隔离级别？事务隔离级别分别解决什么问题？
-3.2. 如何解决分布式事务？若出现网络问题或宕机问题，如何解决？
-
-
-4. 锁
-
-
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/database/sql/关系型数据库面试题/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/docker/appendix/docker-resources/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2498,7 +2560,7 @@ FAQ
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/31/">31</a><a class="extend next" rel="next" href="/blog/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/blog/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/32/">32</a><a class="extend next" rel="next" href="/blog/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2617,7 +2679,9 @@ FAQ
                     
                       
                     
-                    <span class="site-state-item-count">31</span>
+                      
+                    
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2904,7 +2968,9 @@ FAQ
                     
                       
                     
-                    <span class="site-state-item-count">137</span>
+                      
+                    
+                    <span class="site-state-item-count">138</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3008,7 +3074,7 @@ FAQ
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:07</span>
+    <span title="站点阅读时长">31:25</span>
   
 </div>
 

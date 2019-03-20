@@ -107,18 +107,18 @@
 
 
 
-  <meta name="description" content="全面了解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。   方法的使用  方法定义 方法定义语法格式： [修饰符] 返回值类型 方法名([参数类型 参数名])&amp;#123;    ...    方法体    ...    return 返回值;&amp;#125; 示例： public static void main(String[] args) &amp;#123;    System.o">
+  <meta name="description" content="深入理解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。 📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    方法的使用  方法定义 方法的调用   方法的注意点  值传递和引用传递   方法修饰符  访问控制修饰符 static final default abstract synchronized   特殊方法  main 方法 构">
 <meta name="keywords" content="method,programming,java,javacore,basic">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java 方法">
+<meta property="og:title" content="深入理解Java方法">
 <meta property="og:url" content="https://dunwu.github.io/2016/02/04/programming/java/javacore/basic/Java方法/index.html">
 <meta property="og:site_name" content="静默虚空的博客">
-<meta property="og:description" content="全面了解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。   方法的使用  方法定义 方法定义语法格式： [修饰符] 返回值类型 方法名([参数类型 参数名])&amp;#123;    ...    方法体    ...    return 返回值;&amp;#125; 示例： public static void main(String[] args) &amp;#123;    System.o">
+<meta property="og:description" content="深入理解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。 📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    方法的使用  方法定义 方法的调用   方法的注意点  值传递和引用传递   方法修饰符  访问控制修饰符 static final default abstract synchronized   特殊方法  main 方法 构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T15:43:29.899Z">
+<meta property="og:updated_time" content="2019-03-19T13:31:31.487Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java 方法">
-<meta name="twitter:description" content="全面了解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。   方法的使用  方法定义 方法定义语法格式： [修饰符] 返回值类型 方法名([参数类型 参数名])&amp;#123;    ...    方法体    ...    return 返回值;&amp;#125; 示例： public static void main(String[] args) &amp;#123;    System.o">
+<meta name="twitter:title" content="深入理解Java方法">
+<meta name="twitter:description" content="深入理解 Java 方法  方法（有的人喜欢叫函数）是一段可重用的代码段。 📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    方法的使用  方法定义 方法的调用   方法的注意点  值传递和引用传递   方法修饰符  访问控制修饰符 static final default abstract synchronized   特殊方法  main 方法 构">
 
 
 
@@ -137,7 +137,7 @@
   };
 </script>
 
-  <title>Java 方法 | 静默虚空的博客</title>
+  <title>深入理解Java方法 | 静默虚空的博客</title>
   
 
 
@@ -385,7 +385,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Java 方法<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/Java方法.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+          <h2 class="post-title" itemprop="name headline">深入理解Java方法<a href="https://github.com/dunwu/blog/blob/master/source/_posts/programming/java/javacore/basic/Java方法.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
 
               
             
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-16 23:43:29" itemprop="dateModified" datetime="2019-03-16T23:43:29+08:00">2019-03-16</time>
+                <time title="修改时间：2019-03-19 21:31:31" itemprop="dateModified" datetime="2019-03-19T21:31:31+08:00">2019-03-19</time>
               
             
           </span>
@@ -495,7 +495,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.9k</span>
+                <span title="本文字数">9.1k</span>
               
 
               
@@ -529,10 +529,47 @@
       
 
       
-        <h1 id="全面了解-java-方法"><a class="markdownIt-Anchor" href="#全面了解-java-方法"></a> 全面了解 Java 方法</h1>
+        <h1 id="深入理解-java-方法"><a class="markdownIt-Anchor" href="#深入理解-java-方法"></a> 深入理解 Java 方法</h1>
 <blockquote>
 <p><strong>方法（有的人喜欢叫函数）是一段可重用的代码段。</strong></p>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog" target="_blank" rel="noopener">blog</a>」</p>
+<p>⌨️ 本文中的示例代码已归档到：「<a href="https://github.com/dunwu/javacore/tree/master/codes/basics/src/main/java/io/github/dunwu/javacore/array" target="_blank" rel="noopener">javacore</a>」</p>
 </blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#%E6%96%B9%E6%B3%95%E7%9A%84%E4%BD%BF%E7%94%A8">方法的使用</a>
+<ul>
+<li><a href="#%E6%96%B9%E6%B3%95%E5%AE%9A%E4%B9%89">方法定义</a></li>
+<li><a href="#%E6%96%B9%E6%B3%95%E7%9A%84%E8%B0%83%E7%94%A8">方法的调用</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B9%E6%B3%95%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9">方法的注意点</a>
+<ul>
+<li><a href="#%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92">值传递和引用传递</a></li>
+</ul>
+</li>
+<li><a href="#%E6%96%B9%E6%B3%95%E4%BF%AE%E9%A5%B0%E7%AC%A6">方法修饰符</a>
+<ul>
+<li><a href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6">访问控制修饰符</a></li>
+<li><a href="#static">static</a></li>
+<li><a href="#final">final</a></li>
+<li><a href="#default">default</a></li>
+<li><a href="#abstract">abstract</a></li>
+<li><a href="#synchronized">synchronized</a></li>
+</ul>
+</li>
+<li><a href="#%E7%89%B9%E6%AE%8A%E6%96%B9%E6%B3%95">特殊方法</a>
+<ul>
+<li><a href="#main-%E6%96%B9%E6%B3%95">main 方法</a></li>
+<li><a href="#%E6%9E%84%E9%80%A0%E6%96%B9%E6%B3%95">构造方法</a></li>
+<li><a href="#%E5%8F%98%E5%8F%82%E6%96%B9%E6%B3%95">变参方法</a></li>
+<li><a href="#finalize-%E6%96%B9%E6%B3%95">finalize() 方法</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A6%86%E5%86%99%E5%92%8C%E9%87%8D%E8%BD%BD">覆写和重载</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+<!-- /TOC -->
 <h2 id="方法的使用"><a class="markdownIt-Anchor" href="#方法的使用"></a> 方法的使用</h2>
 <h3 id="方法定义"><a class="markdownIt-Anchor" href="#方法定义"></a> 方法定义</h3>
 <p>方法定义语法格式：</p>
@@ -737,8 +774,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2016/02/04/programming/java/javacore/basic/深入理解Java方法/" rel="next" title="深入理解Java方法">
-                <i class="fa fa-chevron-left"></i> 深入理解Java方法
+              <a href="/blog/2016/01/20/programming/java/javacore/advanced/Java本地化/" rel="next" title="Java 本地化">
+                <i class="fa fa-chevron-left"></i> Java 本地化
               </a>
             
           </div>
@@ -747,8 +784,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2016/03/20/programming/java/javastack/javatool/ide/intellij/" rel="prev" title="Intellij IDEA 使用小结">
-                Intellij IDEA 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2016/02/04/programming/java/javacore/basic/Java面向对象/" rel="prev" title="Java 面向对象">
+                Java 面向对象 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -895,7 +932,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">31</span>
+                      
+                    
+                    <span class="site-state-item-count">32</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1182,7 +1221,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">137</span>
+                      
+                    
+                    <span class="site-state-item-count">138</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1261,7 +1302,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#全面了解-java-方法"><span class="nav-text"> 全面了解 Java 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法的使用"><span class="nav-text"> 方法的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法定义"><span class="nav-text"> 方法定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的调用"><span class="nav-text"> 方法的调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归调用"><span class="nav-text"> 递归调用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法的注意点"><span class="nav-text"> 方法的注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值传递和引用传递"><span class="nav-text"> 值传递和引用传递</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法修饰符"><span class="nav-text"> 方法修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制修饰符"><span class="nav-text"> 访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-text"> static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final"><span class="nav-text"> final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#default"><span class="nav-text"> default</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text"> abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized"><span class="nav-text"> synchronized</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊方法"><span class="nav-text"> 特殊方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-方法"><span class="nav-text"> main 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-text"> 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变参方法"><span class="nav-text"> 变参方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finalize-方法"><span class="nav-text"> finalize() 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆写和重载"><span class="nav-text"> 覆写和重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#深入理解-java-方法"><span class="nav-text"> 深入理解 Java 方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方法的使用"><span class="nav-text"> 方法的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法定义"><span class="nav-text"> 方法定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法的调用"><span class="nav-text"> 方法的调用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#递归调用"><span class="nav-text"> 递归调用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法的注意点"><span class="nav-text"> 方法的注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#值传递和引用传递"><span class="nav-text"> 值传递和引用传递</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法修饰符"><span class="nav-text"> 方法修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问控制修饰符"><span class="nav-text"> 访问控制修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#static"><span class="nav-text"> static</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#final"><span class="nav-text"> final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#default"><span class="nav-text"> default</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text"> abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#synchronized"><span class="nav-text"> synchronized</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊方法"><span class="nav-text"> 特殊方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#main-方法"><span class="nav-text"> main 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#构造方法"><span class="nav-text"> 构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变参方法"><span class="nav-text"> 变参方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#finalize-方法"><span class="nav-text"> finalize() 方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#覆写和重载"><span class="nav-text"> 覆写和重载</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1303,7 +1344,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:07</span>
+    <span title="站点阅读时长">31:25</span>
   
 </div>
 
