@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:33" itemprop="dateModified" datetime="2019-03-19T21:31:33+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:13" itemprop="dateModified" datetime="2019-03-22T12:08:13+08:00">2019-03-22</time>
               
             
           </span>
@@ -634,7 +634,7 @@ Dubbo 的三个关键功能：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis事务/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis发布订阅/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -654,7 +654,7 @@ Dubbo 的三个关键功能：
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2018/06/11/database/nosql/redis/Redis事务/" class="post-title-link" itemprop="url">Redis 事务</a>
+                <a href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/" class="post-title-link" itemprop="url">Redis 发布订阅</a>
               
             
           </h2>
@@ -696,7 +696,7 @@ Dubbo 的三个关键功能：
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -742,7 +742,7 @@ Dubbo 的三个关键功能：
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.9k</span>
+                <span title="本文字数">428</span>
               
 
               
@@ -756,7 +756,7 @@ Dubbo 的三个关键功能：
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -779,34 +779,36 @@ Dubbo 的三个关键功能：
         
           
             <p>
-               Redis 事务
+               Redis 发布订阅
+Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。
 
 
-事务简介
-EXEC
-MULTI
-DISCARD
-WATCH
 
-取消 WATCH 的场景
-使用 WATCH 创建原子操作
+命令
+描述
 
 
-Redis 不支持回滚
-Redis 脚本和事务
-资料
 
 
- 事务简介
-事务可以一次执行多个命令，并且有以下两个重要的保证：
+SUBSCRIBE
+订阅给定的一个或多个频道。
 
-事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断
+
+UNSUBSCRIBE
+退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。
+
+
+PUBLISH
+向给定频道发送消息。
+
+
+
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2018/06/11/database/nosql/redis/Redis事务/#more" rel="contents">
+              <a class="btn" href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -932,7 +934,7 @@ Redis 脚本和事务
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1153,7 +1155,7 @@ Redis 基于 Reactor 模式开发了自己的网络事件处理器，使用 I/O 
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:29" itemprop="dateModified" datetime="2019-03-19T21:31:29+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1313,7 +1315,7 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis发布订阅/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/11/database/nosql/redis/Redis事务/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1333,7 +1335,7 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/" class="post-title-link" itemprop="url">Redis 发布订阅</a>
+                <a href="/blog/2018/06/11/database/nosql/redis/Redis事务/" class="post-title-link" itemprop="url">Redis 事务</a>
               
             
           </h2>
@@ -1375,7 +1377,7 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1421,7 +1423,7 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">428</span>
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -1435,7 +1437,7 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -1458,36 +1460,34 @@ RDB 快照（snapshot） - 将存在于某一时刻的所有数据都写入到�
         
           
             <p>
-               Redis 发布订阅
-Redis 通过 PUBLISH 、SUBSCRIBE 等命令实现了订阅与发布模式，这个功能提供两种信息机制，分别是订阅/发布到频道和订阅/发布到模式。
+               Redis 事务
 
 
+事务简介
+EXEC
+MULTI
+DISCARD
+WATCH
 
-命令
-描述
-
-
-
-
-SUBSCRIBE
-订阅给定的一个或多个频道。
-
-
-UNSUBSCRIBE
-退订给定的一个或多个频道，如果执行时灭有给定任何频道，那么退订所有频道。
+取消 WATCH 的场景
+使用 WATCH 创建原子操作
 
 
-PUBLISH
-向给定频道发送消息。
+Redis 不支持回滚
+Redis 脚本和事务
+资料
 
 
+ 事务简介
+事务可以一次执行多个命令，并且有以下两个重要的保证：
 
+事务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2018/06/11/database/nosql/redis/Redis发布订阅/#more" rel="contents">
+              <a class="btn" href="/blog/2018/06/11/database/nosql/redis/Redis事务/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1613,7 +1613,7 @@ PUBLISH
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:29" itemprop="dateModified" datetime="2019-03-19T21:31:29+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:11" itemprop="dateModified" datetime="2019-03-22T12:08:11+08:00">2019-03-22</time>
               
             
           </span>
@@ -1860,7 +1860,7 @@ SET
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:33" itemprop="dateModified" datetime="2019-03-19T21:31:33+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:13" itemprop="dateModified" datetime="2019-03-22T12:08:13+08:00">2019-03-22</time>
               
             
           </span>
@@ -2039,6 +2039,255 @@ SET
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/04/programming/java/javacore/Java序列化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2018/06/04/programming/java/javacore/Java序列化/" class="post-title-link" itemprop="url">深入理解 Java 序列化</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-04 17:59:00" itemprop="dateCreated datePublished" datetime="2018-06-04T17:59:00+08:00">2018-06-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-22 12:53:11" itemprop="dateModified" datetime="2019-03-22T12:53:11+08:00">2019-03-22</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">12k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               深入理解 Java 序列化
+
+📓 本文已归档到：「blog」
+⌨️ 本文中的示例代码已归档到：「javacore」
+
+
+
+简介
+序列化和反序列化
+Serializable 接口
+
+serialVersionUID
+
+
+默认序列化机制
+非默认序列化机制
+
+transient 关键字
+Externalizable 接口
+Externalizable 接口的替代方法
+readResolve() 方法
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2018/06/04/programming/java/javacore/Java序列化/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/04/programming/java/javacore/io/Java序列化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2101,7 +2350,7 @@ SET
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:31" itemprop="dateModified" datetime="2019-03-19T21:31:31+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:12" itemprop="dateModified" datetime="2019-03-22T12:08:12+08:00">2019-03-22</time>
               
             
           </span>
@@ -2298,7 +2547,7 @@ Externaliza
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/02/programming/java/javacore/advanced/Java泛型/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/02/programming/java/javacore/Java泛型/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -2318,7 +2567,7 @@ Externaliza
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2018/06/02/programming/java/javacore/advanced/Java泛型/" class="post-title-link" itemprop="url">Java 泛型</a>
+                <a href="/blog/2018/06/02/programming/java/javacore/Java泛型/" class="post-title-link" itemprop="url">深入理解 Java 泛型</a>
               
             
           </h2>
@@ -2360,7 +2609,7 @@ Externaliza
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:31" itemprop="dateModified" datetime="2019-03-19T21:31:31+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:13" itemprop="dateModified" datetime="2019-03-22T12:08:13+08:00">2019-03-22</time>
               
             
           </span>
@@ -2395,13 +2644,6 @@ Externaliza
 
                 
                 
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javacore/advanced/" itemprop="url" rel="index"><span itemprop="name">advanced</span></a></span>
-
-                
-                
               
             </span>
           
@@ -2427,7 +2669,7 @@ Externaliza
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.2k</span>
+                <span title="本文字数">14k</span>
               
 
               
@@ -2441,7 +2683,7 @@ Externaliza
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">12 分钟</span>
               
             </div>
           
@@ -2464,265 +2706,51 @@ Externaliza
         
           
             <p>
-               Java 泛型
+               深入理解 Java 泛型
 
 📓 本文已归档到：「blog」
+⌨️ 本文中的示例代码已归档到：「javacore」
 
 
 
-泛型简介
+为什么需要泛型
+泛型类型
+
+泛型类
 泛型接口
+
+
 泛型方法
-
-泛型方法与可变参数
-
-
 类型擦除
+泛型和继承
+类型边界
+类型通配符
 
-擦除的问题
+上界通配符
+下界通配符
+无界通配符
+通配符和向上转型
 
 
-擦除补偿
-边界
+泛型的约束
+泛型最佳实践
+
+泛型命名
+使用泛型的建议
+
+
+小结
 参考资料
 
 
- 泛型简介
-一般的类和方法，只能使用具体的类型：要么是基本类型，要么是自定义的类。如果要编写可以应用于多种类型的代码，这种刻板的限制对代码的束缚就会很大。
-JDK5 引入了泛型机制。泛型实现了参数化类型的概念，使代码可以应用于
+ 为什么需要泛型
+JDK5 引入了
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2018/06/02/programming/java/javacore/advanced/Java泛型/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/06/01/algorithm/data-structure/tree/red-black-tree/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2018/06/01/algorithm/data-structure/tree/red-black-tree/" class="post-title-link" itemprop="url">红黑树</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-06-01 00:00:00" itemprop="dateCreated datePublished" datetime="2018-06-01T00:00:00+08:00">2018-06-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">7.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">7 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               红黑树
-
-红黑树（英语：Red–black tree）是一种自平衡二叉查找树，是在计算机科学中用到的一种数据结构，典型的用途是实现关联数组。它是复杂的，但它的操作有着良好的最坏情况运行时间，并且在实践中是高效的：它可以在 O(log⁡2N)O(\log_2 N)O(log2​N) 时间内做查找，插入和删除，这里的 n 是树中元素的数目。
-
- 红黑树的性质
-红黑树，顾名思义，通过红黑两种颜色域保证
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2018/06/01/algorithm/data-structure/tree/red-black-tree/#more" rel="contents">
+              <a class="btn" href="/blog/2018/06/02/programming/java/javacore/Java泛型/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2819,7 +2847,7 @@ JDK5 引入了泛型机制。泛型实现了参数化类型的概念，使代码
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">332</span>
+                    <span class="site-state-item-count">333</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2892,11 +2920,7 @@ JDK5 引入了泛型机制。泛型实现了参数化类型的概念，使代码
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3183,9 +3207,7 @@ JDK5 引入了泛型机制。泛型实现了参数化类型的概念，使代码
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">137</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3289,7 +3311,7 @@ JDK5 引入了泛型机制。泛型实现了参数化类型的概念，使代码
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:25</span>
+    <span title="站点阅读时长">31:45</span>
   
 </div>
 

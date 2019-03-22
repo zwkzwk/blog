@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/linux/ops/service/elastic/elastic-kibana/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -404,7 +404,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/linux/ops/service/elastic/elastic-kibana/" class="post-title-link" itemprop="url">Elastic 技术栈之 Kibana</a>
+                <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/" class="post-title-link" itemprop="url">SpringBootTutorialCoreBanner</a>
               
             
           </h2>
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:14" itemprop="dateModified" datetime="2019-03-22T12:08:14+08:00">2019-03-22</time>
               
             
           </span>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">5.6k</span>
+                <span title="本文字数">3k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">5 分钟</span>
+                <span title="阅读时长">3 分钟</span>
               
             </div>
           
@@ -511,18 +511,28 @@
         
           
             <p>
-               Elastic 技术栈之 Kibana
- Discover
-单击侧面导航栏中的 Discover ，可以显示 Kibana 的数据查询功能功能。
+               SpringBootTutorialCoreBanner
 
-在搜索栏中，您可以输入Elasticsearch查询条件来搜索您的数据。您可以在 Discover 页面中浏览结果并在 Visualize 页面中创建已保存搜索条件的可视化。
-当前索引模式显示在查询栏下方。索引模式确定提交查询时搜索哪些索引。要搜索一
+
+简介
+
+变量
+配置
+编程
+
+
+源码
+更多内容
+
+
+Spring Boot 启动时默认会显示以下 logo：
+  .   ____          _            __ _ _ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \( ( )\___ | '_ | '_| | '_ \/ _` | \
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/linux/ops/service/elastic/elastic-kibana/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-banner/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -586,7 +596,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/bigdata/hbase/hbase-ops/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-profile/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -606,7 +616,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/bigdata/hbase/hbase-ops/" class="post-title-link" itemprop="url">HBase 维护</a>
+                <a href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-profile/" class="post-title-link" itemprop="url">SpringBootTutorialCoreProfile</a>
               
             
           </h2>
@@ -648,7 +658,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:14" itemprop="dateModified" datetime="2019-03-22T12:08:14+08:00">2019-03-22</time>
               
             
           </span>
@@ -676,7 +686,639 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.8k</span>
+                <span title="本文字数">3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">3 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               SpringBootTutorialCoreProfile
+
+一个应用为了在不同的环境下工作，常常会有不同的配置，代码逻辑处理。Spring Boot 对此提供了简便的支持。
+关键词： @Profile、spring.profiles.active
+
+
+
+区分环境的配置
+
+properties 配置
+yml 配置
+
+
+区分环境的代码
+
+修饰类
+修饰注解
+修饰方法
+
+
+激活 profile
+
+插件
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/programming/java/spring-boot/core/sbe-core-profile/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/data/spring-and-jdbc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/programming/java/spring/data/spring-and-jdbc/" class="post-title-link" itemprop="url">Spring 中使用 JDBC 访问数据</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-22 12:08:14" itemprop="dateModified" datetime="2019-03-22T12:08:14+08:00">2019-03-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">3.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               Spring 中使用 JDBC 访问数据
+ 准备
+使用 Spring 的 JDBC 功能，你需要在 pom.xml 中引入以下依赖：
+&lt;dependency&gt;  &lt;groupId&gt;org.springframework&lt;/groupId&gt;  &lt;artifactId&gt;spring-jdbc&lt;/artifactId&gt;  &lt;versio
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/programming/java/spring/data/spring-and-jdbc/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/" class="post-title-link" itemprop="url">MyBatis 指南</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-22 12:08:14" itemprop="dateModified" datetime="2019-03-22T12:08:14+08:00">2019-03-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">13k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">11 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               MyBatis 指南
+
+MyBatis 的前身就是 iBatis ，是一个作用在数据持久层的对象关系映射（Object Relational Mapping，简称 ORM）框架。
+
+
+
+简介
+
+MyBatis vs. Hibernate
+
+
+快速入门
+
+安装
+从 XML 中构建 SqlSessionFactory
+不使用 XML 构建 SqlSessionFactory
+从 SqlSession
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/bigdata/hbase/README/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/bigdata/hbase/README/" class="post-title-link" itemprop="url">HBase</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.9k</span>
               
 
               
@@ -713,29 +1355,45 @@
         
           
             <p>
-               HBase 维护
+               HBase
 
 
-配置文件
-环境要求
-引用和引申
+简介
+基础
+原理
 
-引申
+数据模型
+HBase 架构
+
+
+HBase 和 RDBMS
+API
+附录
+
+命令行
+
+
+更多内容
+
+扩展阅读
+参考资料
 
 
 
 
- 配置文件
+ 简介
+HBase 是建立在 HDFS 基础上的面向列的分布式数据库。
 
-backup-masters - 默认情况下不存在。列出主服务器应在其上启动备份主进程的主机，每行一个主机。
-hadoop-metrics2-hbase.properties - 用于连接 HBase Hadoop 的 Metrics2 框架。
-hbase-env.cmd and hbase-env.sh - 用
+HBase 参考了谷歌的 BigTable 建模，实现的编程语言为 Java。
+它是 Hadoop 项目的子项目，运行于 HDFS 文件系统之上。
+
+HBase
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/bigdata/hbase/hbase-ops/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/bigdata/hbase/README/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -861,7 +1519,7 @@ hbase-env.cmd and hbase-env.sh - 用
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1013,7 +1671,7 @@ https://blog.csdn.net/u010967382/article/details/38046821
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/bigdata/hdfs/hdfs-cli/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/bigdata/hbase/hbase-ops/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1033,7 +1691,7 @@ https://blog.csdn.net/u010967382/article/details/38046821
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/bigdata/hdfs/hdfs-cli/" class="post-title-link" itemprop="url">HDFS 命令</a>
+                <a href="/blog/2019/03/06/bigdata/hbase/hbase-ops/" class="post-title-link" itemprop="url">HBase 维护</a>
               
             
           </h2>
@@ -1075,7 +1733,7 @@ https://blog.csdn.net/u010967382/article/details/38046821
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1103,7 +1761,7 @@ https://blog.csdn.net/u010967382/article/details/38046821
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">526</span>
+                <span title="本文字数">1.8k</span>
               
 
               
@@ -1117,7 +1775,7 @@ https://blog.csdn.net/u010967382/article/details/38046821
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -1140,29 +1798,29 @@ https://blog.csdn.net/u010967382/article/details/38046821
         
           
             <p>
-               HDFS 命令
+               HBase 维护
 
-列出目录的内容：
 
-$ hdfs dfs -ls /
+配置文件
+环境要求
+引用和引申
 
-将文件从本地文件系统加载到HDFS：
+引申
 
-$ hdfs dfs -put songs.txt /user/adam
 
-从HDFS读取文件内容：
 
-$ hdfs dfs -cat /user/adam/songs.txt
 
-更改文件的权限：
+ 配置文件
 
-$ hdfs dfs -chmod 700 /user/adam/songs.txt
+backup-masters - 默认情况下不存在。列出主服务器应在其上启动备份主进程的主机，每行一个主机。
+hadoop-metrics2-hbase.properties - 用于连接 HBase Hadoop 的 Metrics2 框架。
+hbase-env.cmd and hbase-env.sh - 用
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/bigdata/hdfs/hdfs-cli/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/bigdata/hbase/hbase-ops/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1226,7 +1884,7 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/communication/network-physical/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/bigdata/hbase/hbase-cli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1246,7 +1904,7 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/communication/network-physical/" class="post-title-link" itemprop="url">计算机网络之物理层</a>
+                <a href="/blog/2019/03/06/bigdata/hbase/hbase-cli/" class="post-title-link" itemprop="url">HBase 命令</a>
               
             
           </h2>
@@ -1288,247 +1946,7 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/communication/" itemprop="url" rel="index"><span itemprop="name">communication</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.1k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               计算机网络之物理层
-
-摘要
-物理层（Physical Layer） - 物理层只接收和发送一串比特(bit)流，不考虑信息的意义和信息结构。
-
-数据单元：比特流。
-典型设备：光纤、同轴电缆、双绞线、中继器和集线器。
-
-
-
-
-通信系统模型
-通信方式
-通信信号
-调制解调
-
-基本带通调制方法
-
-
-通信媒介
-信道复用
-
-
- 通信系统模型
-
-通信系统模型分为三大部分：源系统（包括信源和发送器）、传输系统、
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/communication/network-physical/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/" class="post-title-link" itemprop="url">Maven 快速指南</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-19 21:31:32" itemprop="dateModified" datetime="2019-03-19T21:31:32+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1556,7 +1974,7 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">14k</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -1570,7 +1988,7 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">12 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -1593,41 +2011,34 @@ $ hdfs dfs -chmod 700 /user/adam/songs.txt
         
           
             <p>
-               Maven 快速指南
+               HBase 命令
 
 
-简介
-
-Maven 是什么
-Maven 的生命周期
-Maven 的标准工程结构
-Maven 的&quot;约定优于配置&quot;
-Maven 的版本规范
-
-
-安装
-
-配置环境变量
-本地仓储配置
+1. 连接 HBase
+2. 查询帮助
+3. 创建表
+4. 查看表信息
+5. 查看表详细信息
+6. 向表中写数据
+7. 扫描表
+8. 查询 row
+9. 禁用、启用表
+10. 删除表
+11. 停止 HBase
 
 
-第一个 Maven 工程
-
-在 Eclipse 中创建 Maven 工程
-使用 Maven 进行构建
-
-
-使用指导
-
-如何添加外部依赖 jar 包
-如何寻找 jar 包
-如
+ 1. 连接 HBase
+$ ./bin/hbase shellhbase(main):001:0&gt;
+ 2. 查询帮助
+help
+ 3. 创建表
+creat
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/programming/java/javastack/javatool/build/maven/maven-quickstart/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/bigdata/hbase/hbase-cli/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1753,7 +2164,7 @@ Maven 的版本规范
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:28" itemprop="dateModified" datetime="2019-03-19T21:31:28+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:10" itemprop="dateModified" datetime="2019-03-22T12:08:10+08:00">2019-03-22</time>
               
             
           </span>
@@ -1910,7 +2321,7 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/database/sql/postgresql/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/spring/data/data-access-in-spring/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1930,7 +2341,7 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/database/sql/postgresql/" class="post-title-link" itemprop="url">PostgreSQL 快速指南</a>
+                <a href="/blog/2019/03/06/programming/java/spring/data/data-access-in-spring/" class="post-title-link" itemprop="url">Spring 的数据访问策略</a>
               
             
           </h2>
@@ -1972,7 +2383,7 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-19 21:31:29" itemprop="dateModified" datetime="2019-03-19T21:31:29+08:00">2019-03-19</time>
+                <time title="修改时间：2019-03-22 12:08:14" itemprop="dateModified" datetime="2019-03-22T12:08:14+08:00">2019-03-22</time>
               
             
           </span>
@@ -2000,7 +2411,7 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">725</span>
               
 
               
@@ -2014,7 +2425,7 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -2037,484 +2448,16 @@ Apache Cassandra 是一套开源分布式 Key-Value 存储系统。它最初由 
         
           
             <p>
-               PostgreSQL 快速指南
-
-PostgreSQL 是一个关系型数据库（RDBM）。
-关键词：Database, RDBM, psql
-
-
-
-
-安装
-添加新用户和新数据库
-登录数据库
-控制台命令
-数据库操作
-备份和恢复
-参考资料
-
-
- 安装
-
-本文仅以运行在 Centos 环境下举例。
-
-进入官方下载页面，根据操作系统选择合适版本。
-官方下载页面要求用户选择相应版本，然后动态的给出安装提示，
+               Spring 的数据访问策略
+Spring 的目标之一，就是允许开发人员在开发过程中能够遵循面向对象（OO）原则中的“针对接口编程”。Spring 对数据访问的支持也不例外。
+DAO 是 Data Access Object 的缩写，即数据访问对象。它提供了数据读写到数据库中的一种方式。
+Spring 支持 DAO 技术主要目的是：使得切换持久化技术十分方便，如 JDBC、JPA、ORM 等。这
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/database/sql/postgresql/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/" class="post-title-link" itemprop="url">MyBatis 指南</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-19 21:31:33" itemprop="dateModified" datetime="2019-03-19T21:31:33+08:00">2019-03-19</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">13k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">11 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               MyBatis 指南
-
-MyBatis 的前身就是 iBatis ，是一个作用在数据持久层的对象关系映射（Object Relational Mapping，简称 ORM）框架。
-
-
-
-简介
-
-MyBatis vs. Hibernate
-
-
-快速入门
-
-安装
-从 XML 中构建 SqlSessionFactory
-不使用 XML 构建 SqlSessionFactory
-从 SqlSession
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/programming/java/javaweb/standalone/orm/mybatis/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/method/doc-style/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/method/doc-style/" class="post-title-link" itemprop="url">合理编排你的技术文档</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-19 21:31:30" itemprop="dateModified" datetime="2019-03-19T21:31:30+08:00">2019-03-19</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/method/" itemprop="url" rel="index"><span itemprop="name">method</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">6.4k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">6 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               技术文档规范
-
-文档采用 Markdown 语法书写。
-📚 「参考」Markdown 语法可以参考：
-
-https://github.com/guodongxiaren/README
-https://github.com/tchapi/markdown-cheatsheet
-
-
-
-
-1. 标题
-
-1.1. 标题层级
-1.2. 标题原则
-
-
-2. 文本
-
-2.1. 字间距
-2.2. 句子
-2.3
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/method/doc-style/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/programming/java/spring/data/data-access-in-spring/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2611,7 +2554,7 @@ https://github.com/tchapi/markdown-cheatsheet
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">332</span>
+                    <span class="site-state-item-count">333</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2684,11 +2627,7 @@ https://github.com/tchapi/markdown-cheatsheet
                     
                       
                     
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-count">30</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2975,9 +2914,7 @@ https://github.com/tchapi/markdown-cheatsheet
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">138</span>
+                    <span class="site-state-item-count">137</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3081,7 +3018,7 @@ https://github.com/tchapi/markdown-cheatsheet
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:25</span>
+    <span title="站点阅读时长">31:45</span>
   
 </div>
 
