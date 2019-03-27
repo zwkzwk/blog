@@ -1,0 +1,1486 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="ZooKeeper 高级篇  ZooKeeper 是一个分布式应用协调系统，已经用到了许多分布式项目中，用来完成统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等工作。 本文侧重于总结 ZooKeeper 工作原理。    1. 概述  1.1. ZooKeeper 是什么？ 1.2. ZooKeeper 提供了什么？ 1.3. Zookeeper 的特性 1.4. 工作原理 1.5">
+<meta name="keywords" content="rpc,分布式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ZooKeeper 高级篇">
+<meta property="og:url" content="https://dunwu.github.io/2018/07/10/java/javaweb/distributed/rpc/zookeeper-advanced/index.html">
+<meta property="og:site_name" content="静默虚空的博客">
+<meta property="og:description" content="ZooKeeper 高级篇  ZooKeeper 是一个分布式应用协调系统，已经用到了许多分布式项目中，用来完成统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等工作。 本文侧重于总结 ZooKeeper 工作原理。    1. 概述  1.1. ZooKeeper 是什么？ 1.2. ZooKeeper 提供了什么？ 1.3. Zookeeper 的特性 1.4. 工作原理 1.5">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/zookeeper-service.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper数据结构.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper配置管理.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper集群管理结构.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/ZooKeeper选举流程图.jpg">
+<meta property="og:updated_time" content="2019-03-26T15:47:29.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ZooKeeper 高级篇">
+<meta name="twitter:description" content="ZooKeeper 高级篇  ZooKeeper 是一个分布式应用协调系统，已经用到了许多分布式项目中，用来完成统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等工作。 本文侧重于总结 ZooKeeper 工作原理。    1. 概述  1.1. ZooKeeper 是什么？ 1.2. ZooKeeper 提供了什么？ 1.3. Zookeeper 的特性 1.4. 工作原理 1.5">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/zookeeper-service.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="静默虚空的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2018/07/10/java/javaweb/distributed/rpc/zookeeper-advanced/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>ZooKeeper 高级篇 | 静默虚空的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静默虚空的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">大道至简，知易行难</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/07/10/java/javaweb/distributed/rpc/zookeeper-advanced/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">ZooKeeper 高级篇<a href="https://github.com/dunwu/blog/blob/master/source/_posts/java/javaweb/distributed/rpc/zookeeper-advanced.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-10 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-10T00:00:00+08:00">2018-07-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/分布式/" itemprop="url" rel="index"><span itemprop="name">分布式</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">6 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="zookeeper-高级篇"><a class="markdownIt-Anchor" href="#zookeeper-高级篇"></a> ZooKeeper 高级篇</h1>
+<blockquote>
+<p>ZooKeeper 是一个分布式应用协调系统，已经用到了许多分布式项目中，用来完成统一命名服务、状态同步服务、集群管理、分布式应用配置项的管理等工作。</p>
+<p>本文侧重于总结 ZooKeeper 工作原理。</p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#1-%E6%A6%82%E8%BF%B0">1. 概述</a>
+<ul>
+<li><a href="#11-zookeeper-%E6%98%AF%E4%BB%80%E4%B9%88">1.1. ZooKeeper 是什么？</a></li>
+<li><a href="#12-zookeeper-%E6%8F%90%E4%BE%9B%E4%BA%86%E4%BB%80%E4%B9%88">1.2. ZooKeeper 提供了什么？</a></li>
+<li><a href="#13-zookeeper-%E7%9A%84%E7%89%B9%E6%80%A7">1.3. Zookeeper 的特性</a></li>
+<li><a href="#14-%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86">1.4. 工作原理</a></li>
+<li><a href="#15-server-%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81">1.5. Server 工作状态</a></li>
+</ul>
+</li>
+<li><a href="#2-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F">2. 文件系统</a>
+<ul>
+<li><a href="#21-znode-%E7%B1%BB%E5%9E%8B">2.1. znode 类型</a></li>
+</ul>
+</li>
+<li><a href="#3-%E9%80%9A%E7%9F%A5%E6%9C%BA%E5%88%B6">3. 通知机制</a></li>
+<li><a href="#4-%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF">4. 应用场景</a>
+<ul>
+<li><a href="#41-%E7%BB%9F%E4%B8%80%E5%91%BD%E5%90%8D%E6%9C%8D%E5%8A%A1name-service">4.1. 统一命名服务（Name Service）</a></li>
+<li><a href="#42-%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86configuration-management">4.2. 配置管理（Configuration Management）</a></li>
+<li><a href="#43-%E9%9B%86%E7%BE%A4%E7%AE%A1%E7%90%86group-membership">4.3. 集群管理（Group Membership）</a></li>
+<li><a href="#44-%E5%88%86%E5%B8%83%E5%BC%8F%E9%94%81">4.4. 分布式锁</a></li>
+<li><a href="#45-%E9%98%9F%E5%88%97%E7%AE%A1%E7%90%86">4.5. 队列管理</a></li>
+</ul>
+</li>
+<li><a href="#5-%E5%A4%8D%E5%88%B6">5. 复制</a></li>
+<li><a href="#6-%E9%80%89%E4%B8%BE%E6%B5%81%E7%A8%8B">6. 选举流程</a></li>
+<li><a href="#7-%E5%90%8C%E6%AD%A5%E6%B5%81%E7%A8%8B">7. 同步流程</a></li>
+<li><a href="#8-%E8%B5%84%E6%BA%90">8. 资源</a>
+<ul>
+<li><a href="#81-%E5%AE%98%E6%96%B9%E8%B5%84%E6%BA%90">8.1. 官方资源</a></li>
+<li><a href="#82-%E6%96%87%E7%AB%A0">8.2. 文章</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+<h2 id="1-概述"><a class="markdownIt-Anchor" href="#1-概述"></a> 1. 概述</h2>
+<h3 id="11-zookeeper-是什么"><a class="markdownIt-Anchor" href="#11-zookeeper-是什么"></a> 1.1. ZooKeeper 是什么？</h3>
+<p>ZooKeeper 作为一个分布式的服务框架，主要用来解决分布式集群中应用系统的一致性问题，它能提供基于类似于文件系统的目录节点树方式的数据存储，但是 ZooKeeper 并不是用来专门存储数据的，它的作用主要是用来维护和监控你存储的数据的状态变化。通过监控这些数据状态的变化，从而可以达到基于数据的集群管理。</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/zookeeper-service.png">
+</div>
+<h3 id="12-zookeeper-提供了什么"><a class="markdownIt-Anchor" href="#12-zookeeper-提供了什么"></a> 1.2. ZooKeeper 提供了什么？</h3>
+<ol>
+<li>文件系统</li>
+<li>通知机制</li>
+</ol>
+<h3 id="13-zookeeper-的特性"><a class="markdownIt-Anchor" href="#13-zookeeper-的特性"></a> 1.3. Zookeeper 的特性</h3>
+<ul>
+<li>最终一致性：client 不论连接到哪个 Server，展示给它都是同一个视图，这是 zookeeper 最重要的性能。</li>
+<li>可靠性：具有简单、健壮、良好的性能，如果消息被到一台服务器接受，那么它将被所有的服务器接受。</li>
+<li>实时性：Zookeeper 保证客户端将在一个时间间隔范围内获得服务器的更新信息，或者服务器失效的信息。但由于网络延时等原因，Zookeeper 不能保证两个客户端能同时得到刚更新的数据，如果需要最新数据，应该在读数据之前调用 sync()接口。</li>
+<li>等待无关（wait-free）：慢的或者失效的 client 不得干预快速的 client 的请求，使得每个 client 都能有效的等待。</li>
+<li>原子性：更新只能成功或者失败，没有中间状态。</li>
+<li>顺序性：包括全局有序和偏序两种：全局有序是指如果在一台服务器上消息 a 在消息 b 前发布，则在所有 Server 上消息 a 都将在消息 b 前被发布；偏序是指如果一个消息 b 在消息 a 后被同一个发送者发布，a 必将排在 b 前面。</li>
+</ul>
+<h3 id="14-工作原理"><a class="markdownIt-Anchor" href="#14-工作原理"></a> 1.4. 工作原理</h3>
+<p>ZooKeeper 的核心是原子广播，这个机制保证了各个 Server 之间的同步。实现这个机制的协议叫做 Zab 协议。Zab 协议有两种模式，它们分别是恢复模式（选主）和广播模式（同步）。当服务启动或者在领导者崩溃后，Zab 就进入了恢复模式，当领导者被选举出来，且大多数 Server 完成了和 leader 的状态同步以后，恢复模式就结束了。状态同步保证了 leader 和 Server 具有相同的系统状态。</p>
+<p>为了保证事务的顺序一致性，ZooKeeper 采用了递增的事务 id 号（zxid）来标识事务。所有的提议（proposal）都在被提出的时候加上了 zxid。实现中 zxid 是一个 64 位的数字，它高 32 位是 epoch 用来标识 leader 关系是否改变，每次一个 leader 被选出来，它都会有一个新的 epoch，标识当前属于那个 leader 的统治时期。低 32 位用于递增计数。</p>
+<h3 id="15-server-工作状态"><a class="markdownIt-Anchor" href="#15-server-工作状态"></a> 1.5. Server 工作状态</h3>
+<p>每个 Server 在工作过程中有三种状态：</p>
+<ul>
+<li>LOOKING - 当前 Server 不知道 leader 是谁，正在搜寻</li>
+<li>LEADING - 当前 Server 即为选举出来的 leader</li>
+<li>FOLLOWING - leader 已经选举出来，当前 Server 与之同步</li>
+</ul>
+<h2 id="2-文件系统"><a class="markdownIt-Anchor" href="#2-文件系统"></a> 2. 文件系统</h2>
+<p>ZooKeeper 会维护一个具有层次关系的数据结构，它非常类似于一个标准的文件系统，如下图所示：</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper数据结构.gif">
+</div>
+<p>ZooKeeper 这种数据结构有如下这些特点：</p>
+<ul>
+<li>每个子目录项如 NameService 都被称作为 znode，这个 znode 是被它所在的路径唯一标识，如 Server1 这个 znode 的标识为 /NameService/Server1</li>
+<li>znode 可以有子节点目录，并且每个 znode 可以存储数据，注意 EPHEMERAL 类型的目录节点不能有子节点目录</li>
+<li>znode 是有版本的，每个 znode 中存储的数据可以有多个版本，也就是一个访问路径中可以存储多份数据</li>
+<li>znode 可以是临时节点，一旦创建这个 znode 的客户端与服务器失去联系，这个 znode 也将自动删除，ZooKeeper 的客户端和服务器通信采用长连接方式，每个客户端和服务器通过心跳来保持连接，这个连接状态称为 session，如果 znode 是临时节点，这个 session 失效，znode 也就删除了</li>
+<li>znode 的目录名可以自动编号，如 App1 已经存在，再创建的话，将会自动命名为 App2</li>
+<li>znode 可以被监控，包括这个目录节点中存储的数据的修改，子节点目录的变化等，一旦变化可以通知设置监控的客户端，这个是 ZooKeeper 的核心特性，ZooKeeper 的很多功能都是基于这个特性实现的，后面在典型的应用场景中会有实例介绍</li>
+</ul>
+<h3 id="21-znode-类型"><a class="markdownIt-Anchor" href="#21-znode-类型"></a> 2.1. znode 类型</h3>
+<ol>
+<li>PERSISTENT(持久化目录节点) - 客户端与 zookeeper 断开连接后，该节点依旧存在</li>
+<li>PERSISTENT_SEQUENTIAL(持久化顺序编号目录节点) - 客户端与 zookeeper 断开连接后，该节点依旧存在，只是 Zookeeper 给该节点名称进行顺序编号</li>
+<li>EPHEMERAL(临时目录节点) - 客户端与 zookeeper 断开连接后，该节点被删除</li>
+<li>EPHEMERAL_SEQUENTIAL(临时顺序编号目录节点) - 客户端与 zookeeper 断开连接后，该节点被删除，只是 Zookeeper 给该节点名称进行顺序编号</li>
+</ol>
+<h2 id="3-通知机制"><a class="markdownIt-Anchor" href="#3-通知机制"></a> 3. 通知机制</h2>
+<p>客户端注册监听它关心的目录节点，当目录节点发生变化（数据改变、被删除、子目录节点增加删除）时，zookeeper 会通知客户端。</p>
+<h2 id="4-应用场景"><a class="markdownIt-Anchor" href="#4-应用场景"></a> 4. 应用场景</h2>
+<h3 id="41-统一命名服务name-service"><a class="markdownIt-Anchor" href="#41-统一命名服务name-service"></a> 4.1. 统一命名服务（Name Service）</h3>
+<p>分布式应用中，通常需要有一套完整的命名规则，既能够产生唯一的名称又便于人识别和记住，通常情况下用树形的名称结构是一个理想的选择，树形的名称结构是一个有层次的目录结构，既对人友好又不会重复。说到这里你可能想到了 JNDI，没错 ZooKeeper 的 Name Service 与 JNDI 能够完成的功能是差不多的，它们都是将有层次的目录结构关联到一定资源上，但是 ZooKeeper 的 Name Service 更加是广泛意义上的关联，也许你并不需要将名称关联到特定资源上，你可能只需要一个不会重复名称，就像数据库中产生一个唯一的数字主键一样。</p>
+<p>Name Service 已经是 ZooKeeper 内置的功能，你只要调用 ZooKeeper 的 API 就能实现。如调用 create 接口就可以很容易创建一个目录节点。</p>
+<h3 id="42-配置管理configuration-management"><a class="markdownIt-Anchor" href="#42-配置管理configuration-management"></a> 4.2. 配置管理（Configuration Management）</h3>
+<p>配置的管理在分布式应用环境中很常见，例如同一个应用系统需要多台 PC Server 运行，但是它们运行的应用系统的某些配置项是相同的，如果要修改这些相同的配置项，那么就必须同时修改每台运行这个应用系统的 PC Server，这样非常麻烦而且容易出错。</p>
+<p>像这样的配置信息完全可以交给 ZooKeeper 来管理，将配置信息保存在 ZooKeeper 的某个目录节点中，然后将所有需要修改的应用机器监控配置信息的状态，一旦配置信息发生变化，每台应用机器就会收到 ZooKeeper 的通知，然后从 ZooKeeper 获取新的配置信息应用到系统中。</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper配置管理.gif">
+</div>
+<h3 id="43-集群管理group-membership"><a class="markdownIt-Anchor" href="#43-集群管理group-membership"></a> 4.3. 集群管理（Group Membership）</h3>
+<p>ZooKeeper 能够很容易的实现集群管理的功能，如有多台 Server 组成一个服务集群，那么必须要一个“总管”知道当前集群中每台机器的服务状态，一旦有机器不能提供服务，集群中其它集群必须知道，从而做出调整重新分配服务策略。同样当增加集群的服务能力时，就会增加一台或多台 Server，同样也必须让“总管”知道。</p>
+<p>ZooKeeper 不仅能够帮你维护当前的集群中机器的服务状态，而且能够帮你选出一个“总管”，让这个总管来管理集群，这就是 ZooKeeper 的另一个功能 Leader Election。</p>
+<p>它们的实现方式都是在 ZooKeeper 上创建一个 EPHEMERAL 类型的目录节点，然后每个 Server 在它们创建目录节点的父目录节点上调用 getChildren(String path, boolean watch) 方法并设置 watch 为 true，由于是 EPHEMERAL 目录节点，当创建它的 Server 死去，这个目录节点也随之被删除，所以 Children 将会变化，这时 getChildren 上的 Watch 将会被调用，所以其它 Server 就知道已经有某台 Server 死去了。新增 Server 也是同样的原理。</p>
+<p>ZooKeeper 如何实现 Leader Election，也就是选出一个 Master Server。和前面的一样每台 Server 创建一个 EPHEMERAL 目录节点，不同的是它还是一个 SEQUENTIAL 目录节点，所以它是个 EPHEMERAL_SEQUENTIAL 目录节点。之所以它是 EPHEMERAL_SEQUENTIAL 目录节点，是因为我们可以给每台 Server 编号，我们可以选择当前是最小编号的 Server 为 Master，假如这个最小编号的 Server 死去，由于是 EPHEMERAL 节点，死去的 Server 对应的节点也被删除，所以当前的节点列表中又出现一个最小编号的节点，我们就选择这个节点为当前 Master。这样就实现了动态选择 Master，避免了传统意义上单 Master 容易出现单点故障的问题。</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/Zookeeper集群管理结构.gif">
+</div>
+<h3 id="44-分布式锁"><a class="markdownIt-Anchor" href="#44-分布式锁"></a> 4.4. 分布式锁</h3>
+<p>ZooKeeper 实现分布式锁的步骤：</p>
+<ol>
+<li>创建一个目录 mylock；</li>
+<li>线程 A 想获取锁就在 mylock 目录下创建临时顺序节点；</li>
+<li>获取 mylock 目录下所有的子节点，然后获取比自己小的兄弟节点，如果不存在，则说明当前线程顺序号最小，获得锁；</li>
+<li>线程 B 获取所有节点，判断自己不是最小节点，设置监听比自己次小的节点；</li>
+<li>线程 A 处理完，删除自己的节点，线程 B 监听到变更事件，判断自己是不是最小的节点，如果是则获得锁。</li>
+</ol>
+<p>ZooKeeper 版本的分布式锁问题相对比较来说少。</p>
+<ul>
+<li>锁的占用时间限制：redis 就有占用时间限制，而 ZooKeeper 则没有，最主要的原因是 redis 目前没有办法知道已经获取锁的客户端的状态，是已经挂了呢还是正在执行耗时较长的业务逻辑。而 ZooKeeper 通过临时节点就能清晰知道，如果临时节点存在说明还在执行业务逻辑，如果临时节点不存在说明已经执行完毕释放锁或者是挂了。由此看来 redis 如果能像 ZooKeeper 一样添加一些与客户端绑定的临时键，也是一大好事。</li>
+<li>是否单点故障：redis 本身有很多中玩法，如客户端一致性 hash，服务器端 sentinel 方案或者 cluster 方案，很难做到一种分布式锁方式能应对所有这些方案。而 ZooKeeper 只有一种玩法，多台机器的节点数据是一致的，没有 redis 的那么多的麻烦因素要考虑。</li>
+</ul>
+<p>总体上来说 ZooKeeper 实现分布式锁更加的简单，可靠性更高。但 ZooKeeper 因为需要频繁的创建和删除节点，性能上不如 Redis 方式。</p>
+<h3 id="45-队列管理"><a class="markdownIt-Anchor" href="#45-队列管理"></a> 4.5. 队列管理</h3>
+<p>ZooKeeper 可以处理两种类型的队列：</p>
+<ol>
+<li>当一个队列的成员都聚齐时，这个队列才可用，否则一直等待所有成员到达，这种是同步队列。</li>
+<li>队列按照 FIFO 方式进行入队和出队操作，例如实现生产者和消费者模型。</li>
+</ol>
+<p>同步队列用 ZooKeeper 实现的实现思路如下：</p>
+<p>创建一个父目录 /synchronizing，每个成员都监控标志（Set Watch）位目录 /synchronizing/start 是否存在，然后每个成员都加入这个队列，加入队列的方式就是创建 /synchronizing/member_i 的临时目录节点，然后每个成员获取 / synchronizing 目录的所有目录节点，也就是 member_i。判断 i 的值是否已经是成员的个数，如果小于成员个数等待 /synchronizing/start 的出现，如果已经相等就创建 /synchronizing/start。</p>
+<h2 id="5-复制"><a class="markdownIt-Anchor" href="#5-复制"></a> 5. 复制</h2>
+<p>ZooKeeper 作为一个集群提供一致的数据服务，自然，它要在所有机器间做数据复制。</p>
+<p>从客户端读写访问的透明度来看，数据复制集群系统分下面两种：</p>
+<ul>
+<li>写主(WriteMaster) ：对数据的修改提交给指定的节点。读无此限制，可以读取任何一个节点。这种情况下客户端需要对读与写进行区别，俗称读写分离；</li>
+<li>写任意(Write Any)：对数据的修改可提交给任意的节点，跟读一样。这种情况下，客户端对集群节点的角色与变化透明。</li>
+</ul>
+<p>对 ZooKeeper 来说，它采用的方式是写任意。通过增加机器，它的读吞吐能力和响应能力扩展性非常好，而写，随着机器的增多吞吐能力肯定下降（这也是它建立 observer 的原因），而响应能力则取决于具体实现方式，是延迟复制保持最终一致性，还是立即复制快速响应。</p>
+<h2 id="6-选举流程"><a class="markdownIt-Anchor" href="#6-选举流程"></a> 6. 选举流程</h2>
+<p>选举状态：</p>
+<ul>
+<li>LOOKING，竞选状态。</li>
+<li>FOLLOWING，随从状态，同步 leader 状态，参与投票。</li>
+<li>OBSERVING，观察状态,同步 leader 状态，不参与投票。</li>
+<li>LEADING，领导者状态。</li>
+</ul>
+<p>ZooKeeper 选举流程基于 Paxos 算法。</p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/rpc/zookeeper/ZooKeeper选举流程图.jpg" width="640">
+</div>
+<ol>
+<li>选举线程由当前 Server 发起选举的线程担任，其主要功能是对投票结果进行统计，并选出推荐的 Server；</li>
+<li>选举线程首先向所有 Server 发起一次询问(包括自己)；</li>
+<li>选举线程收到回复后，验证是否是自己发起的询问(验证 zxid 是否一致)，然后获取对方的 id(myid)，并存储到当前询问对象列表中，最后获取对方提议的 leader 相关信息(id,zxid)，并将这些信息存储到当次选举的投票记录表中；</li>
+<li>收到所有 Server 回复以后，就计算出 zxid 最大的那个 Server，并将这个 Server 相关信息设置成下一次要投票的 Server；</li>
+<li>线程将当前 zxid 最大的 Server 设置为当前 Server 要推荐的 Leader，如果此时获胜的 Server 获得 n/2 + 1 的 Server 票数，设置当前推荐的 leader 为获胜的 Server，将根据获胜的 Server 相关信息设置自己的状态，否则，继续这个过程，直到 leader 被选举出来。 通过流程分析我们可以得出：要使 Leader 获得多数 Server 的支持，则 Server 总数必须是奇数 2n+1，且存活的 Server 的数目不得少于 n+1. 每个 Server 启动后都会重复以上流程。在恢复模式下，如果是刚从崩溃状态恢复的或者刚启动的 server 还会从磁盘快照中恢复数据和会话信息，zk 会记录事务日志并定期进行快照，方便在恢复时进行状态恢复。</li>
+</ol>
+<p>述 Leader 选择过程中的状态变化，这是假设全部实例中均没有数据，假设服务器启动顺序分别为：A,B,C。</p>
+<h2 id="7-同步流程"><a class="markdownIt-Anchor" href="#7-同步流程"></a> 7. 同步流程</h2>
+<p>选完 Leader 以后，zk 就进入状态同步过程。</p>
+<ol>
+<li>Leader 等待 server 连接；</li>
+<li>Follower 连接 leader，将最大的 zxid 发送给 leader；</li>
+<li>Leader 根据 follower 的 zxid 确定同步点；</li>
+<li>完成同步后通知 follower 已经成为 uptodate 状态；</li>
+<li>Follower 收到 uptodate 消息后，又可以重新接受 client 的请求进行服务了。</li>
+</ol>
+<h2 id="8-资源"><a class="markdownIt-Anchor" href="#8-资源"></a> 8. 资源</h2>
+<h3 id="81-官方资源"><a class="markdownIt-Anchor" href="#81-官方资源"></a> 8.1. 官方资源</h3>
+<p>| <a href="http://zookeeper.apache.org/" target="_blank" rel="noopener">官网</a> | <a href="https://cwiki.apache.org/confluence/display/ZOOKEEPER" target="_blank" rel="noopener">官网文档</a> | <a href="https://github.com/apache/zookeeper" target="_blank" rel="noopener">Github</a> |</p>
+<h3 id="82-文章"><a class="markdownIt-Anchor" href="#82-文章"></a> 8.2. 文章</h3>
+<p><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-zookeeper/index.html" target="_blank" rel="noopener">分布式服务框架 ZooKeeper – 管理分布式环境中的数据</a><br>
+<a href="https://www.cnblogs.com/felixzh/p/5869212.html" target="_blank" rel="noopener">ZooKeeper 的功能以及工作原理</a></p>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/rpc/" rel="tag"># rpc</a>
+          
+            <a href="/blog/tags/分布式/" rel="tag"># 分布式</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/07/09/design/architecture/分布式技术实现/" rel="next" title="分布式技术实现">
+                <i class="fa fa-chevron-left"></i> 分布式技术实现
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/07/12/java/javaweb/distributed/mq/kafka-basics/" rel="prev" title="Kafka 实战篇">
+                Kafka 实战篇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#zookeeper-高级篇"><span class="nav-text"> ZooKeeper 高级篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-概述"><span class="nav-text"> 1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#11-zookeeper-是什么"><span class="nav-text"> 1.1. ZooKeeper 是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-zookeeper-提供了什么"><span class="nav-text"> 1.2. ZooKeeper 提供了什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-zookeeper-的特性"><span class="nav-text"> 1.3. Zookeeper 的特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-工作原理"><span class="nav-text"> 1.4. 工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-server-工作状态"><span class="nav-text"> 1.5. Server 工作状态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-文件系统"><span class="nav-text"> 2. 文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#21-znode-类型"><span class="nav-text"> 2.1. znode 类型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-通知机制"><span class="nav-text"> 3. 通知机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-应用场景"><span class="nav-text"> 4. 应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#41-统一命名服务name-service"><span class="nav-text"> 4.1. 统一命名服务（Name Service）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-配置管理configuration-management"><span class="nav-text"> 4.2. 配置管理（Configuration Management）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#43-集群管理group-membership"><span class="nav-text"> 4.3. 集群管理（Group Membership）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#44-分布式锁"><span class="nav-text"> 4.4. 分布式锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#45-队列管理"><span class="nav-text"> 4.5. 队列管理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-复制"><span class="nav-text"> 5. 复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-选举流程"><span class="nav-text"> 6. 选举流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-同步流程"><span class="nav-text"> 7. 同步流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-资源"><span class="nav-text"> 8. 资源</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#81-官方资源"><span class="nav-text"> 8.1. 官方资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#82-文章"><span class="nav-text"> 8.2. 文章</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:49</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+</body>
+</html>

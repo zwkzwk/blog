@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="RocketMQ 实战篇   概述  简介 核心概念   安装  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器   API  Producer Consumer FAQ   资料    概述  简介 RocketMQ 是一款开源的分布式消息队列，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。 RocketMQ 被阿里巴巴捐赠给">
+<meta name="keywords" content="java,javaweb,mq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RocketMQ 实战篇">
+<meta property="og:url" content="https://dunwu.github.io/2018/07/17/java/javaweb/distributed/mq/rocketmq-basics/index.html">
+<meta property="og:site_name" content="静默虚空的博客">
+<meta property="og:description" content="RocketMQ 实战篇   概述  简介 核心概念   安装  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器   API  Producer Consumer FAQ   资料    概述  简介 RocketMQ 是一款开源的分布式消息队列，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。 RocketMQ 被阿里巴巴捐赠给">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-model.png">
+<meta property="og:updated_time" content="2019-03-26T15:47:29.601Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RocketMQ 实战篇">
+<meta name="twitter:description" content="RocketMQ 实战篇   概述  简介 核心概念   安装  环境要求 下载解压 启动 Name Server 启动 Broker 收发消息 关闭服务器   API  Producer Consumer FAQ   资料    概述  简介 RocketMQ 是一款开源的分布式消息队列，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。 RocketMQ 被阿里巴巴捐赠给">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-model.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="静默虚空的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2018/07/17/java/javaweb/distributed/mq/rocketmq-basics/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>RocketMQ 实战篇 | 静默虚空的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静默虚空的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">大道至简，知易行难</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2018/07/17/java/javaweb/distributed/mq/rocketmq-basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">RocketMQ 实战篇<a href="https://github.com/dunwu/blog/blob/master/source/_posts/java/javaweb/distributed/mq/rocketmq-basics.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-07-17 00:00:00" itemprop="dateCreated datePublished" datetime="2018-07-17T00:00:00+08:00">2018-07-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javaweb/" itemprop="url" rel="index"><span itemprop="name">javaweb</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">9.5k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="rocketmq-实战篇"><a class="markdownIt-Anchor" href="#rocketmq-实战篇"></a> RocketMQ 实战篇</h1>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#%E6%A6%82%E8%BF%B0">概述</a>
+<ul>
+<li><a href="#%E7%AE%80%E4%BB%8B">简介</a></li>
+<li><a href="#%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5">核心概念</a></li>
+</ul>
+</li>
+<li><a href="#%E5%AE%89%E8%A3%85">安装</a>
+<ul>
+<li><a href="#%E7%8E%AF%E5%A2%83%E8%A6%81%E6%B1%82">环境要求</a></li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E8%A7%A3%E5%8E%8B">下载解压</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8-name-server">启动 Name Server</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8-broker">启动 Broker</a></li>
+<li><a href="#%E6%94%B6%E5%8F%91%E6%B6%88%E6%81%AF">收发消息</a></li>
+<li><a href="#%E5%85%B3%E9%97%AD%E6%9C%8D%E5%8A%A1%E5%99%A8">关闭服务器</a></li>
+</ul>
+</li>
+<li><a href="#api">API</a>
+<ul>
+<li><a href="#producer">Producer</a></li>
+<li><a href="#consumer">Consumer</a></li>
+<li><a href="#faq">FAQ</a></li>
+</ul>
+</li>
+<li><a href="#%E8%B5%84%E6%96%99">资料</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="概述"><a class="markdownIt-Anchor" href="#概述"></a> 概述</h2>
+<h3 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h3>
+<p>RocketMQ 是一款开源的分布式消息队列，基于高可用分布式集群技术，提供低延时的、高可靠的消息发布与订阅服务。</p>
+<p>RocketMQ 被阿里巴巴捐赠给 Apache，成为 Apache 的孵化项目。</p>
+<h3 id="核心概念"><a class="markdownIt-Anchor" href="#核心概念"></a> 核心概念</h3>
+<div align="center">
+<img src="https://raw.githubusercontent.com/dunwu/JavaWeb/master/images/distributed/mq/rocketmq/rmq-model.png">
+</div>
+<p>RocketMQ 有以下核心概念：</p>
+<ul>
+<li><strong>Producer</strong> - 将业务应用程序系统生成的消息发送给代理。RocketMQ 提供多种发送范例：同步，异步和单向。
+<ul>
+<li><strong>Producer Group</strong> - 具有相同角色的 Producer 组合在一起。如果原始 Producer 在事务之后崩溃，则代理可以联系同一 Producer 组的不同 Producer 实例以提交或回滚事务。<strong><em>警告：考虑到提供的 Producer 在发送消息方面足够强大，每个 Producer 组只允许一个实例，以避免不必要的生成器实例初始化。</em></strong></li>
+</ul>
+</li>
+<li><strong>Consumer</strong> - Consumer 从 Broker 那里获取消息并将其提供给应用程序。从用户应用的角度来看，提供了两种类型的 Consumer：
+<ul>
+<li><strong>PullConsumer</strong> - PullConsumer 积极地从 Broker 那里获取消息。一旦提取了批量消息，用户应用程序就会启动消费过程。</li>
+<li><strong>PushConsumer</strong> - PushConsumer 封装消息提取，消费进度并维护其他内部工作，为最终用户留下回调接口，这个借口会在消息到达时被执行。</li>
+<li><strong>Consumer Group</strong> - 完全相同角色的 Consumer 被组合在一起并命名为 Consumer Group。Consumer Group 是一个很好的概念，在消息消费方面实现负载平衡和容错目标非常容易。<strong><em>警告：Consumer Group 中的 Consumer 实例必须具有完全相同的主题订阅。</em></strong></li>
+</ul>
+</li>
+<li><strong>Broker</strong> - Broker 是 RocketMQ 的主要组成部分。它接收从 Producer 发送的消息，存储它们并准备处理来自 Consumer 的消费请求。它还存储与消息相关的元数据，包括 Consumer Group，消耗进度偏移和主题/队列信息。</li>
+<li>Name Server - 充当路由信息提供者。Producer/Consumer 客户查找主题以查找相应的 Broker 列表。</li>
+<li><strong>Topic</strong> - 是 Producer 传递消息和 Consumer 提取消息的类别。</li>
+<li><strong>Message</strong> - 是要传递的信息。消息必须有一个主题，可以将其解释为您要发送给的邮件地址。消息还可以具有可选 Tag 和额外的键值对。例如，您可以为消息设置业务密钥，并在代理服务器上查找消息以诊断开发期间的问题。
+<ul>
+<li><strong>Message Queue</strong> - 主题被划分为一个或多个子主题“消息队列”。</li>
+<li><strong>Tag</strong> - 即子主题，为用户提供了额外的灵活性。对于 Tag，来自同一业务模块的具有不同目的的消息可以具有相同的主题和不同的 Tag。</li>
+</ul>
+</li>
+</ul>
+<h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
+<h3 id="环境要求"><a class="markdownIt-Anchor" href="#环境要求"></a> 环境要求</h3>
+<ul>
+<li>推荐 64 位操作系统：Linux/Unix/Mac</li>
+<li>64bit JDK 1.8+</li>
+<li>Maven 3.2.x</li>
+<li>Git</li>
+</ul>
+<h3 id="下载解压"><a class="markdownIt-Anchor" href="#下载解压"></a> 下载解压</h3>
+<p>进入官方下载地址：<a href="https://rocketmq.apache.org/dowloading/releases/%EF%BC%8C%E9%80%89%E6%8B%A9%E5%90%88%E9%80%82%E7%89%88%E6%9C%AC" target="_blank" rel="noopener">https://rocketmq.apache.org/dowloading/releases/，选择合适版本</a></p>
+<p>建议选择 binary 版本。</p>
+<p>解压到本地：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; unzip rocketmq-all-4.2.0-source-release.zip</span><br><span class="line">&gt; <span class="built_in">cd</span> rocketmq-all-4.2.0/</span><br></pre></td></tr></table></figure>
+<h3 id="启动-name-server"><a class="markdownIt-Anchor" href="#启动-name-server"></a> 启动 Name Server</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqnamesrv &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/namesrv.log</span><br><span class="line">The Name Server boot success...</span><br></pre></td></tr></table></figure>
+<h3 id="启动-broker"><a class="markdownIt-Anchor" href="#启动-broker"></a> 启动 Broker</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br><span class="line">&gt; tail -f ~/logs/rocketmqlogs/broker.log</span><br><span class="line">The broker[%s, 172.30.30.233:10911] boot success...</span><br></pre></td></tr></table></figure>
+<h3 id="收发消息"><a class="markdownIt-Anchor" href="#收发消息"></a> 收发消息</h3>
+<p>执行收发消息操作之前，不许告诉客户端命名服务器的位置。在 RocketMQ 中有多种方法来实现这个目的。这里，我们使用最简单的方法——设置环境变量 <code>NAMESRV_ADDR</code> ：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; <span class="built_in">export</span> NAMESRV_ADDR=localhost:9876</span><br><span class="line">&gt; sh bin/tools.sh org.apache.rocketmq.example.quickstart.Producer</span><br><span class="line">SendResult [sendStatus=SEND_OK, msgId= ...</span><br><span class="line"></span><br><span class="line">&gt; sh bin/tools.sh org.apache.rocketmq.example.quickstart.Consumer</span><br><span class="line">ConsumeMessageThread_%d Receive New Messages: [MessageExt...</span><br></pre></td></tr></table></figure>
+<h3 id="关闭服务器"><a class="markdownIt-Anchor" href="#关闭服务器"></a> 关闭服务器</h3>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">&gt; sh bin/mqshutdown broker</span><br><span class="line">The mqbroker(36695) is running...</span><br><span class="line">Send shutdown request to mqbroker(36695) OK</span><br><span class="line"></span><br><span class="line">&gt; sh bin/mqshutdown namesrv</span><br><span class="line">The mqnamesrv(36664) is running...</span><br><span class="line">Send shutdown request to mqnamesrv(36664) OK</span><br></pre></td></tr></table></figure>
+<h2 id="api"><a class="markdownIt-Anchor" href="#api"></a> API</h2>
+<p>首先在项目中引入 maven 依赖：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.rocketmq<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>rocketmq-client<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>4.2.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="producer"><a class="markdownIt-Anchor" href="#producer"></a> Producer</h3>
+<p>Producer 在 RocketMQ 中负责发送消息。</p>
+<p>RocketMQ 有三种消息发送方式：</p>
+<ul>
+<li>可靠的同步发送</li>
+<li>可靠的异步发送</li>
+<li>单项发送</li>
+</ul>
+<h4 id="可靠的同步发送"><a class="markdownIt-Anchor" href="#可靠的同步发送"></a> 可靠的同步发送</h4>
+<p>可靠的同步传输用于广泛的场景，如重要的通知消息，短信通知，短信营销系统等。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SyncProducer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//Instantiate with a producer group name.</span></span><br><span class="line">        DefaultMQProducer producer = <span class="keyword">new</span></span><br><span class="line">            DefaultMQProducer(<span class="string">"please_rename_unique_group_name"</span>);</span><br><span class="line">        <span class="comment">//Launch the instance.</span></span><br><span class="line">        producer.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="comment">//Create a message instance, specifying topic, tag and message body.</span></span><br><span class="line">            Message msg = <span class="keyword">new</span> Message(<span class="string">"TopicTest"</span> <span class="comment">/* Topic */</span>,</span><br><span class="line">                <span class="string">"TagA"</span> <span class="comment">/* Tag */</span>,</span><br><span class="line">                (<span class="string">"Hello RocketMQ "</span> +</span><br><span class="line">                    i).getBytes(RemotingHelper.DEFAULT_CHARSET) <span class="comment">/* Message body */</span></span><br><span class="line">            );</span><br><span class="line">            <span class="comment">//Call send message to deliver message to one of brokers.</span></span><br><span class="line">            SendResult sendResult = producer.send(msg);</span><br><span class="line">            System.out.printf(<span class="string">"%s%n"</span>, sendResult);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Shut down once the producer instance is not longer in use.</span></span><br><span class="line">        producer.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="可靠的异步发送"><a class="markdownIt-Anchor" href="#可靠的异步发送"></a> 可靠的异步发送</h4>
+<p>异步传输通常用于响应时间敏感的业务场景。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AsyncProducer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        <span class="comment">//Instantiate with a producer group name.</span></span><br><span class="line">        DefaultMQProducer producer = <span class="keyword">new</span> DefaultMQProducer(<span class="string">"ExampleProducerGroup"</span>);</span><br><span class="line">        <span class="comment">//Launch the instance.</span></span><br><span class="line">        producer.start();</span><br><span class="line">        producer.setRetryTimesWhenSendAsyncFailed(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">                <span class="keyword">final</span> <span class="keyword">int</span> index = i;</span><br><span class="line">                <span class="comment">//Create a message instance, specifying topic, tag and message body.</span></span><br><span class="line">                Message msg = <span class="keyword">new</span> Message(<span class="string">"TopicTest"</span>,</span><br><span class="line">                    <span class="string">"TagA"</span>,</span><br><span class="line">                    <span class="string">"OrderID188"</span>,</span><br><span class="line">                    <span class="string">"Hello world"</span>.getBytes(RemotingHelper.DEFAULT_CHARSET));</span><br><span class="line">                producer.send(msg, <span class="keyword">new</span> SendCallback() &#123;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onSuccess</span><span class="params">(SendResult sendResult)</span> </span>&#123;</span><br><span class="line">                        System.out.printf(<span class="string">"%-10d OK %s %n"</span>, index,</span><br><span class="line">                            sendResult.getMsgId());</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="meta">@Override</span></span><br><span class="line">                    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onException</span><span class="params">(Throwable e)</span> </span>&#123;</span><br><span class="line">                        System.out.printf(<span class="string">"%-10d Exception %s %n"</span>, index, e);</span><br><span class="line">                        e.printStackTrace();</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Shut down once the producer instance is not longer in use.</span></span><br><span class="line">        producer.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="单向传输"><a class="markdownIt-Anchor" href="#单向传输"></a> 单向传输</h4>
+<p>单向传输用于需要中等可靠性的情况，例如日志收集。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OnewayProducer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">        <span class="comment">//Instantiate with a producer group name.</span></span><br><span class="line">        DefaultMQProducer producer = <span class="keyword">new</span> DefaultMQProducer(<span class="string">"ExampleProducerGroup"</span>);</span><br><span class="line">        <span class="comment">//Launch the instance.</span></span><br><span class="line">        producer.start();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) &#123;</span><br><span class="line">            <span class="comment">//Create a message instance, specifying topic, tag and message body.</span></span><br><span class="line">            Message msg = <span class="keyword">new</span> Message(<span class="string">"TopicTest"</span> <span class="comment">/* Topic */</span>,</span><br><span class="line">                <span class="string">"TagA"</span> <span class="comment">/* Tag */</span>,</span><br><span class="line">                (<span class="string">"Hello RocketMQ "</span> +</span><br><span class="line">                    i).getBytes(RemotingHelper.DEFAULT_CHARSET) <span class="comment">/* Message body */</span></span><br><span class="line">            );</span><br><span class="line">            <span class="comment">//Call send message to deliver message to one of brokers.</span></span><br><span class="line">            producer.sendOneway(msg);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Shut down once the producer instance is not longer in use.</span></span><br><span class="line">        producer.shutdown();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="consumer"><a class="markdownIt-Anchor" href="#consumer"></a> Consumer</h3>
+<p>Consumer 在 RocketMQ 中负责接收消息。</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OrderedConsumer</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        DefaultMQPushConsumer consumer = <span class="keyword">new</span> DefaultMQPushConsumer(<span class="string">"example_group_name"</span>);</span><br><span class="line">        consumer.setNamesrvAddr(RocketConfig.HOST);</span><br><span class="line"></span><br><span class="line">        consumer.setConsumeFromWhere(ConsumeFromWhere.CONSUME_FROM_FIRST_OFFSET);</span><br><span class="line"></span><br><span class="line">        consumer.subscribe(<span class="string">"TopicTest"</span>, <span class="string">"TagA || TagC || TagD"</span>);</span><br><span class="line"></span><br><span class="line">        consumer.registerMessageListener(<span class="keyword">new</span> MessageListenerOrderly() &#123;</span><br><span class="line"></span><br><span class="line">            AtomicLong consumeTimes = <span class="keyword">new</span> AtomicLong(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">public</span> ConsumeOrderlyStatus <span class="title">consumeMessage</span><span class="params">(List&lt;MessageExt&gt; msgs,</span></span></span><br><span class="line"><span class="function"><span class="params">                ConsumeOrderlyContext context)</span> </span>&#123;</span><br><span class="line">                context.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">                System.out.printf(Thread.currentThread().getName() + <span class="string">" Receive New Messages: "</span> + msgs + <span class="string">"%n"</span>);</span><br><span class="line">                <span class="keyword">this</span>.consumeTimes.incrementAndGet();</span><br><span class="line">                <span class="keyword">if</span> ((<span class="keyword">this</span>.consumeTimes.get() % <span class="number">2</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ConsumeOrderlyStatus.SUCCESS;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((<span class="keyword">this</span>.consumeTimes.get() % <span class="number">3</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ConsumeOrderlyStatus.ROLLBACK;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((<span class="keyword">this</span>.consumeTimes.get() % <span class="number">4</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> ConsumeOrderlyStatus.COMMIT;</span><br><span class="line">                &#125; <span class="keyword">else</span> <span class="keyword">if</span> ((<span class="keyword">this</span>.consumeTimes.get() % <span class="number">5</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">                    context.setSuspendCurrentQueueTimeMillis(<span class="number">3000</span>);</span><br><span class="line">                    <span class="keyword">return</span> ConsumeOrderlyStatus.SUSPEND_CURRENT_QUEUE_A_MOMENT;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> ConsumeOrderlyStatus.SUCCESS;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        consumer.start();</span><br><span class="line"></span><br><span class="line">        System.out.printf(<span class="string">"Consumer Started.%n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="faq"><a class="markdownIt-Anchor" href="#faq"></a> FAQ</h3>
+<h4 id="connect-to-172170110909-failed"><a class="markdownIt-Anchor" href="#connect-to-172170110909-failed"></a> connect to &lt;172.17.0.1:10909&gt; failed</h4>
+<p>启动后，Producer 客户端连接 RocketMQ 时报错：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">org.apache.rocketmq.remoting.exception.RemotingConnectException: connect to &lt;<span class="number">172.17</span>.0.1:<span class="number">10909</span>&gt; failed</span><br><span class="line">    at org.apache.rocketmq.remoting.netty.NettyRemotingClient.invokeSync(NettyRemotingClient.java:<span class="number">357</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessageSync(MQClientAPIImpl.java:<span class="number">343</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessage(MQClientAPIImpl.java:<span class="number">327</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.MQClientAPIImpl.sendMessage(MQClientAPIImpl.java:<span class="number">290</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendKernelImpl(DefaultMQProducerImpl.java:<span class="number">688</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.sendSelectImpl(DefaultMQProducerImpl.java:<span class="number">901</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:<span class="number">878</span>)</span><br><span class="line">    at org.apache.rocketmq.client.impl.producer.DefaultMQProducerImpl.send(DefaultMQProducerImpl.java:<span class="number">873</span>)</span><br><span class="line">    at org.apache.rocketmq.client.producer.DefaultMQProducer.send(DefaultMQProducer.java:<span class="number">369</span>)</span><br><span class="line">    at com.emrubik.uc.mdm.sync.utils.MdmInit.sendMessage(MdmInit.java:<span class="number">62</span>)</span><br><span class="line">    at com.emrubik.uc.mdm.sync.utils.MdmInit.main(MdmInit.java:<span class="number">2149</span>)</span><br></pre></td></tr></table></figure>
+<p>原因：RocketMQ 部署在虚拟机上，内网 ip 为 10.10.30.63，该虚拟机一个 docker0 网卡，ip 为 172.17.0.1。RocketMQ broker 启动时默认使用了 docker0 网卡，Producer 客户端无法连接 172.17.0.1，造成以上问题。</p>
+<p>解决方案</p>
+<p>（1）干掉 docker0 网卡或修改网卡名称</p>
+<p>（2）停掉 broker，修改 broker 配置文件，重启 broker。</p>
+<p>修改 conf/broker.conf，增加两行来指定启动 broker 的 IP：</p>
+<figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">namesrvAddr = <span class="number">10.10</span><span class="number">.30</span><span class="number">.63</span>:<span class="number">9876</span></span><br><span class="line">brokerIP1 = <span class="number">10.10</span><span class="number">.30</span><span class="number">.63</span></span><br></pre></td></tr></table></figure>
+<p>启动时需要指定配置文件</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">nohup sh bin/mqbroker -n localhost:9876 -c conf/broker.conf &amp;</span><br></pre></td></tr></table></figure>
+<h2 id="资料"><a class="markdownIt-Anchor" href="#资料"></a> 资料</h2>
+<ul>
+<li><a href="http://rocketmq.apache.org/docs/quick-start/" target="_blank" rel="noopener">RocketMQ 官方文档</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/java/" rel="tag"># java</a>
+          
+            <a href="/blog/tags/javaweb/" rel="tag"># javaweb</a>
+          
+            <a href="/blog/tags/mq/" rel="tag"># mq</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2018/07/17/java/javaweb/distributed/mq/rocketmq-advanced/" rel="next" title="RocketMQ 原理篇">
+                <i class="fa fa-chevron-left"></i> RocketMQ 原理篇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2018/08/02/java/spring/spring-interview/" rel="prev" title="Spring 常见面试问题">
+                Spring 常见面试问题 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rocketmq-实战篇"><span class="nav-text"> RocketMQ 实战篇</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-text"> 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#核心概念"><span class="nav-text"> 核心概念</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-text"> 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境要求"><span class="nav-text"> 环境要求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#下载解压"><span class="nav-text"> 下载解压</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-name-server"><span class="nav-text"> 启动 Name Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动-broker"><span class="nav-text"> 启动 Broker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收发消息"><span class="nav-text"> 收发消息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关闭服务器"><span class="nav-text"> 关闭服务器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#api"><span class="nav-text"> API</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#producer"><span class="nav-text"> Producer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠的同步发送"><span class="nav-text"> 可靠的同步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可靠的异步发送"><span class="nav-text"> 可靠的异步发送</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单向传输"><span class="nav-text"> 单向传输</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consumer"><span class="nav-text"> Consumer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#faq"><span class="nav-text"> FAQ</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#connect-to-172170110909-failed"><span class="nav-text"> connect to &lt;172.17.0.1:10909&gt; failed</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资料"><span class="nav-text"> 资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:49</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+</body>
+</html>
