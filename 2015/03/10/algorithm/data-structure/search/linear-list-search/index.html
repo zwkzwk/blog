@@ -118,7 +118,7 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip">
-<meta property="og:updated_time" content="2019-03-26T15:47:24.737Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:44.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="线性表的查找">
 <meta name="twitter:description" content="线性表的查找  概念  什么是查找？ 查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。  查找算法的分类 若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表； 否则，称之为静态查找表。 此外，如果查找的全过程都在内存中进行，称之为内查找； 反之，如果查找过程中需要访问外存，称之为外查找。  查找算法性能比较的标准 ——平均查找长度ASL（Av">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:24" itemprop="dateModified" datetime="2019-03-26T23:47:24+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:44" itemprop="dateModified" datetime="2019-04-16T20:14:44+08:00">2019-04-16</time>
               
             
           </span>
@@ -531,7 +531,7 @@
 <h3 id="查找算法性能比较的标准"><a class="markdownIt-Anchor" href="#查找算法性能比较的标准"></a> 查找算法性能比较的标准</h3>
 <p><strong>——平均查找长度ASL（Average Search Length）</strong></p>
 <p>由于查找算法的主要运算是关键字的比较过程，所以通常把查找过程中对关键字需要执行的<strong>平均比较长度</strong>（也称为<strong>平均比较次数</strong>）作为衡量一个查找算法效率优劣的比较标准。</p>
-<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-a38f84148d091364.gif?imageMogr2/auto-orient/strip"></div>
 <p><strong>选取查找算法的因素</strong></p>
 <p>(1) 使用什么数据存储结构（如线性表、树形表等）。</p>
 <p>(2) 表中的次序，即对无序表还是有序表进行查找。</p>
@@ -582,7 +582,7 @@
 <p>如上将表均匀分成b块后，抽取各块中的<strong>最大关键字</strong>和<strong>起始位置</strong>构成一个索引表IDX[0…b-1]。</p>
 <p>由于表R是分块有序的，所以<strong>索引表是一个递增有序表</strong>。</p>
 <p>下图就是一个分块查找表的存储结构示意图</p>
-<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-b7ad44c68d0c3c75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <p><strong>基本思想</strong></p>
 <p>分块查找算法有两个处理步骤：</p>
 <p><strong>(1) 首先查找索引表</strong></p>
@@ -591,7 +591,7 @@
 <p><strong>(2) 然后在已确定的块中进行顺序查找</strong></p>
 <p>因为块中不一定是有序的，所以只能使用顺序查找。</p>
 <p><strong>代码范例</strong></p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-2737612c781e66e8.gif?imageMogr2/auto-orient/strip"></div>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BlockSearch</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">IndexType</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> key; <span class="comment">// 分块中的最大值</span></span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> link; <span class="comment">// 分块的起始位置</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 建立索引方法，n 是线性表最大长度，gap是分块的最大长度</span></span><br><span class="line">    <span class="keyword">public</span> IndexType[] createIndex(<span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> gap) &#123;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>, max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = n / gap;</span><br><span class="line">        IndexType[] idxGroup = <span class="keyword">new</span> IndexType[num]; <span class="comment">// 根据步长数分配索引数组大小</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (i &lt; num) &#123;</span><br><span class="line">            j = <span class="number">0</span>;</span><br><span class="line">            idxGroup[i] = <span class="keyword">new</span> IndexType();</span><br><span class="line">            idxGroup[i].link = gap * i; <span class="comment">// 确定当前索引组的第一个元素位置</span></span><br><span class="line">            max = list[gap * i]; <span class="comment">// 每次假设当前组的第一个数为最大值</span></span><br><span class="line">            <span class="comment">// 遍历这个分块，找到最大值</span></span><br><span class="line">            <span class="keyword">while</span> (j &lt; gap) &#123;</span><br><span class="line">                <span class="keyword">if</span> (max &lt; list[gap * i + j]) &#123;</span><br><span class="line">                    max = list[gap * i + j];</span><br><span class="line">                &#125;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            idxGroup[i].key = max;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> idxGroup;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 分块查找算法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">blockSearch</span><span class="params">(IndexType[] idxGroup, <span class="keyword">int</span> m, <span class="keyword">int</span>[] list, <span class="keyword">int</span> n, <span class="keyword">int</span> key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> low = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> high = m -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> gap = n / m; <span class="comment">// 分块大小等于线性表长度除以组数</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 先在索引表中进行二分查找，找到的位置存放在 low 中</span></span><br><span class="line">        <span class="keyword">while</span> (low &lt;= high) &#123;</span><br><span class="line">            mid = (low + high) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (idxGroup[mid].key &gt;= key) &#123;</span><br><span class="line">                high = mid - <span class="number">1</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                low = mid + <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 在索引表中查找成功后，再在线性表的指定块中进行顺序查找</span></span><br><span class="line">        <span class="keyword">if</span> (low &lt; m) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = idxGroup[low].link; i &lt; idxGroup[low].link + gap; i++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (list[i] == key)</span><br><span class="line">                    <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印完整序列</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printAll</span><span class="params">(<span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> value : list) &#123;</span><br><span class="line">            System.out.print(value + <span class="string">" "</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 打印索引表</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printIDX</span><span class="params">(IndexType[] list)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"构造索引表如下："</span>);</span><br><span class="line">        <span class="keyword">for</span> (IndexType elem : list) &#123;</span><br><span class="line">            System.out.format(<span class="string">"key = %d, link = %d\n"</span>, elem.key, elem.link);</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> key = <span class="number">85</span>;</span><br><span class="line">        <span class="keyword">int</span> array[] = &#123; <span class="number">8</span>, <span class="number">14</span>, <span class="number">6</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">34</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">31</span>, <span class="number">40</span>, <span class="number">38</span>, <span class="number">54</span>, <span class="number">66</span>, <span class="number">46</span>, <span class="number">71</span>, <span class="number">78</span>, <span class="number">68</span>, <span class="number">80</span>, <span class="number">85</span> &#125;;</span><br><span class="line">        BlockSearch search = <span class="keyword">new</span> BlockSearch();</span><br><span class="line"></span><br><span class="line">        System.out.print(<span class="string">"线性表: "</span>);</span><br><span class="line">        search.printAll(array);</span><br><span class="line"></span><br><span class="line">        IndexType[] idxGroup = search.createIndex(array, array.length, <span class="number">5</span>);</span><br><span class="line">        search.printIDX(idxGroup);</span><br><span class="line">        <span class="keyword">int</span> pos = search.blockSearch(idxGroup, idxGroup.length, array,</span><br><span class="line">                array.length, key);</span><br><span class="line">        <span class="keyword">if</span> (-<span class="number">1</span> == pos) &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d失败"</span>, key);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.format(<span class="string">"查找key = %d成功，位置为%d"</span>, key, pos);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>运行结果</strong></p>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">线性表: <span class="number">8</span> <span class="number">14</span> <span class="number">6</span> <span class="number">9</span> <span class="number">10</span> <span class="number">22</span> <span class="number">34</span> <span class="number">18</span> <span class="number">19</span> <span class="number">31</span> <span class="number">40</span> <span class="number">38</span> <span class="number">54</span> <span class="number">66</span> <span class="number">46</span> <span class="number">71</span> <span class="number">78</span> <span class="number">68</span> <span class="number">80</span> <span class="number">85</span> </span><br><span class="line">构造索引表如下：</span><br><span class="line">key = <span class="number">14</span>, link = <span class="number">0</span></span><br><span class="line">key = <span class="number">34</span>, link = <span class="number">5</span></span><br><span class="line">key = <span class="number">66</span>, link = <span class="number">10</span></span><br><span class="line">key = <span class="number">85</span>, link = <span class="number">15</span></span><br><span class="line"></span><br><span class="line">查找key = <span class="number">85</span>成功，位置为<span class="number">19</span></span><br></pre></td></tr></table></figure>
@@ -729,7 +729,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -806,7 +806,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1085,19 +1087,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1218,7 +1208,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

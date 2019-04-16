@@ -117,7 +117,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129163100.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:31.695Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:49.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Gitlab 安装">
 <meta name="twitter:description" content="Gitlab 安装  环境： OS: CentOS7    安装 gitlab  常规安装 gitlab Docker 安装 gitlab   安装 gitlab-ci-multi-runner  常规安装 gitlab-ci-multi-runner Docker 安装 gitlab-ci-multi-runner   自签名证书  创建证书   gitlab 配置 更多内容    安装 gi">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:31" itemprop="dateModified" datetime="2019-03-26T23:47:31+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:49" itemprop="dateModified" datetime="2019-04-16T20:14:49+08:00">2019-04-16</time>
               
             
           </span>
@@ -524,7 +524,7 @@
 <h2 id="安装-gitlab"><a class="markdownIt-Anchor" href="#安装-gitlab"></a> 安装 gitlab</h2>
 <h3 id="常规安装-gitlab"><a class="markdownIt-Anchor" href="#常规安装-gitlab"></a> 常规安装 gitlab</h3>
 <p>进入官方下载地址：<a href="https://about.gitlab.com/install/" target="_blank" rel="noopener">https://about.gitlab.com/install/</a> ，如下图，选择合适的版本。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129155838.png"></div>
 <p>以 CentOS7 为例：</p>
 <h4 id="安装和配置必要依赖"><a class="markdownIt-Anchor" href="#安装和配置必要依赖"></a> 安装和配置必要依赖</h4>
 <p>在系统防火墙中启用 HTTP 和 SSH</p>
@@ -542,7 +542,7 @@
 <figure class="highlight awk"><table><tr><td class="code"><pre><span class="line">docker pull docker.io<span class="regexp">/gitlab/gi</span>tlab-ce</span><br></pre></td></tr></table></figure>
 <p>启动</p>
 <figure class="highlight jboss-cli"><table><tr><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">    <span class="params">--hostname</span> gitlab.zp.io \</span><br><span class="line">    <span class="params">--publish</span> 8443<span class="function">:443</span> <span class="params">--publish</span> 80<span class="function">:80</span> <span class="params">--publish</span> 2222<span class="function">:22</span> \</span><br><span class="line">    <span class="params">--name</span> gitlab \</span><br><span class="line">    <span class="params">--restart</span> always \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/config:<span class="string">/etc/gitlab</span> \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/logs:<span class="string">/var/log/gitlab</span> \</span><br><span class="line">    <span class="params">--volume</span> $GITLAB_HOME/data:<span class="string">/var/opt/gitlab</span> \</span><br><span class="line">    gitlab/gitlab-ce</span><br></pre></td></tr></table></figure>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190131150515.png"></div>
 <h2 id="安装-gitlab-ci-multi-runner"><a class="markdownIt-Anchor" href="#安装-gitlab-ci-multi-runner"></a> 安装 gitlab-ci-multi-runner</h2>
 <blockquote>
 <p>参考：<a href="https://docs.gitlab.com/runner/install/" target="_blank" rel="noopener">https://docs.gitlab.com/runner/install/</a></p>
@@ -563,7 +563,7 @@
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">sudo gitlab-runner <span class="keyword">register</span></span><br></pre></td></tr></table></figure>
 <p>（2）输入 Gitlab URL 和 令牌</p>
 <p>URL 和令牌信息在 Gitlab 的 Runner 管理页面获取：</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129163100.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20190129163100.png"></div>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Please enter <span class="keyword">the</span> gitlab-ci coordinator <span class="built_in">URL</span> (e.g. <span class="keyword">https</span>://gitlab.com )</span><br><span class="line"><span class="keyword">https</span>://gitlab.com</span><br><span class="line"></span><br><span class="line">Please enter <span class="keyword">the</span> gitlab-ci <span class="keyword">token</span> <span class="keyword">for</span> this runner</span><br><span class="line">xxx</span><br></pre></td></tr></table></figure>
 <p>（3）输入 Runner 的描述</p>
 <figure class="highlight cs"><table><tr><td class="code"><pre><span class="line">Please enter the gitlab-ci description <span class="keyword">for</span> <span class="keyword">this</span> runner</span><br><span class="line">[<span class="meta">hostame</span>] my-runner</span><br></pre></td></tr></table></figure>
@@ -649,8 +649,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/os/docker/appendix/docker-glossary/" rel="next" title="Docker 术语">
-                <i class="fa fa-chevron-left"></i> Docker 术语
+              <a href="/blog/2019/03/06/os/docker/basics/docker-helloworld/" rel="next" title="Docker 之 Hello World">
+                <i class="fa fa-chevron-left"></i> Docker 之 Hello World
               </a>
             
           </div>
@@ -732,7 +732,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -809,7 +809,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1088,19 +1090,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1221,7 +1211,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

@@ -118,7 +118,7 @@
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/6AC33FBA-0B76-4BFD-A690-E856E9E01900.jpg">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/D7AD87A8-3392-4D4E-8731-18806B0644CD.jpg">
 <meta property="og:image" content="http://www.runoob.com/wp-content/uploads/2014/01/7D8C47F0-0DDE-4F1D-8BE1-B2C9C955683E.jpg">
-<meta property="og:updated_time" content="2019-03-26T15:47:29.760Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:47.686Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP 行为">
 <meta name="twitter:description" content="JSP 行为是一组 JSP 内置的标签，只需要书写很少的标记代码就能使用 JSP 提供的丰富功能。JSP 行为是对常用的 JSP 功能的抽象与封装，包括两种，自定义 JSP 行为与标准 JSP 行为。 与 JSP 指令元素不同的是，JSP 动作元素在请求处理阶段起作用。JSP 动作元素是用 XML 语法写成的。 利用 JSP 动作可以动态地插入文件、重用 JavaBean 组件、把用户重定向到另外">
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
               
             
           </span>
@@ -702,12 +702,12 @@
 <figure class="highlight reasonml"><table><tr><td class="code"><pre><span class="line">$ javac <span class="module-access"><span class="module"><span class="identifier">TestBean</span>.</span></span>java</span><br></pre></td></tr></table></figure>
 <p>编译完成后会在当前目录下生成一个  <strong>TestBean.class</strong>  文件， 将该文件拷贝至当前 JSP 项目的  <strong>WebContent/WEB-INF/classes/com/runoob/main</strong>  下( com/runoob/main 包路径，没有需要手动创建)。</p>
 <p>下面是一个 Eclipse 中目录结构图：</p>
-<p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/6AC33FBA-0B76-4BFD-A690-E856E9E01900.jpg"></div><br></p>
+<div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/6AC33FBA-0B76-4BFD-A690-E856E9E01900.jpg"></div>
 <p>下面是一个很简单的例子，它的功能是装载一个 Bean，然后设置/读取它的 message 属性。</p>
 <p>现在让我们在 main.jsp 文件中调用该 Bean:</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>Jsp 使用 JavaBean 实例<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:useBean</span> <span class="attr">id</span>=<span class="string">"test"</span> <span class="attr">class</span>=<span class="string">"com.runoob.main.TestBean"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:setProperty</span> <span class="attr">name</span>=<span class="string">"test"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">property</span>=<span class="string">"message"</span></span></span><br><span class="line"><span class="tag">                    <span class="attr">value</span>=<span class="string">"菜鸟教程..."</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>输出信息....<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:getProperty</span> <span class="attr">name</span>=<span class="string">"test"</span> <span class="attr">property</span>=<span class="string">"message"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器访问，执行以上文件，输出如下所示：</p>
-<p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/D7AD87A8-3392-4D4E-8731-18806B0644CD.jpg"></div><br></p>
+<div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/D7AD87A8-3392-4D4E-8731-18806B0644CD.jpg"></div>
 <hr>
 <h2 id="jspforward"><a class="markdownIt-Anchor" href="#jspforward"></a> <a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a></h2>
 <p>jsp:forward 动作把请求转到另外的页面。jsp:forward 标记只有一个属性 page。语法格式如下所示：</p>
@@ -749,7 +749,7 @@
 <p>以下实例动态定义了 XML 元素：</p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">%@</span> <span class="attr">page</span> <span class="attr">language</span>=<span class="string">"java"</span> <span class="attr">contentType</span>=<span class="string">"text/html; charset=UTF-8"</span></span></span><br><span class="line"><span class="tag">    <span class="attr">pageEncoding</span>=<span class="string">"UTF-8"</span>%&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>菜鸟教程(runoob.com)<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:element</span> <span class="attr">name</span>=<span class="string">"xmlElement"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:attribute</span> <span class="attr">name</span>=<span class="string">"xmlElementAttr"</span>&gt;</span></span><br><span class="line">   属性值</span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:attribute</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">jsp:body</span>&gt;</span></span><br><span class="line">   XML 元素的主体</span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">jsp:element</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器访问以下页面，输出结果如下所示：</p>
-<p><br><div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/7D8C47F0-0DDE-4F1D-8BE1-B2C9C955683E.jpg"></div><br></p>
+<div align="center"><img src="http://www.runoob.com/wp-content/uploads/2014/01/7D8C47F0-0DDE-4F1D-8BE1-B2C9C955683E.jpg"></div>
 <hr>
 <h2 id="jsptext"><a class="markdownIt-Anchor" href="#jsptext"></a> <a href="jsp:text" target="_blank" rel="noopener">jsp:text</a></h2>
 <p><a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>动作元素允许在 JSP 页面和文档中使用写入文本的模板，语法格式如下：</p>
@@ -801,8 +801,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/java/javaweb/javaee/servlet/servlet-and-status/" rel="next" title="JavaEE Servlet HTTP 状态码">
-                <i class="fa fa-chevron-left"></i> JavaEE Servlet HTTP 状态码
+              <a href="/blog/2017/11/08/java/javaweb/javaee/jsp/jsp-grammar/" rel="next" title="JSP 语法">
+                <i class="fa fa-chevron-left"></i> JSP 语法
               </a>
             
           </div>
@@ -811,8 +811,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/java/javaweb/javaee/jstl/jstl-xml/" rel="prev" title="JSTL XML标签">
-                JSTL XML标签 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/java/javaweb/javaee/jstl/jstl-core/" rel="prev" title="JSTL 核心标签">
+                JSTL 核心标签 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -884,7 +884,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -961,7 +961,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1240,19 +1242,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1373,7 +1363,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

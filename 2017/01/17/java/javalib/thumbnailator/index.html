@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="Thumbnailator 使用小结  概述 Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .out">
-<meta name="keywords" content="programming,java,javalib,image">
+<meta name="keywords" content="java,javalib,image">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thumbnailator 使用小结">
 <meta property="og:url" content="https://dunwu.github.io/2017/01/17/java/javalib/thumbnailator/index.html">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-17d54bc33b38d45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-97909ee6c066c195.png?imageMogr2/auto-orient/strip">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-93eb7ef71b811a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-03-26T15:47:29.164Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:47.184Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thumbnailator 使用小结">
 <meta name="twitter:description" content="Thumbnailator 使用小结  概述 Thumbnailator 是一个开源的 Java 项目，它提供了非常简单的 API 来对图片进行缩放、旋转以及加水印的处理。 有多简单呢？简单到一行代码就可以完成图片处理。形式如下： Thumbnails.of(new File(&quot;path/to/directory&quot;).listFiles())    .size(640, 480)    .out">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
               
             
           </span>
@@ -451,21 +451,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
 
                 
                 
@@ -582,22 +575,22 @@
 <h3 id="图片缩放"><a class="markdownIt-Anchor" href="#图片缩放"></a> 图片缩放</h3>
 <p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片精确的宽度和高度，也可以用 <code>scale</code> 函数设置缩放比例。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.size(<span class="number">16</span>, <span class="number">16</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_16_16.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">2.0</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_scale_2.0.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">1.0</span>, <span class="number">0.5</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_scale_1.0_0.5.png"</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>oldFile.png</strong><br>
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
-<p><strong>newFile_scale_1.0_0.5.png</strong><br>
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-a01ea4515fff865d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<p><strong>oldFile.png</strong></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-ba63439898602e8f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
+<p><strong>newFile_scale_1.0_0.5.png</strong></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-a01ea4515fff865d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <h3 id="图片旋转"><a class="markdownIt-Anchor" href="#图片旋转"></a> 图片旋转</h3>
 <p><code>Thumbnails.Builder</code> 的 <code>size</code> 函数可以设置新图片的旋转角度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.rotate(<span class="number">90</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_rotate_90.png"</span>);</span><br><span class="line"></span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.rotate(<span class="number">180</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_rotate_180.png"</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>newFile_rotate_90.png</strong></p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-17d54bc33b38d45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-17d54bc33b38d45b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <h3 id="加水印"><a class="markdownIt-Anchor" href="#加水印"></a> 加水印</h3>
 <p><code>Thumbnails.Builder</code> 的 <code>watermark</code> 函数可以为图片添加水印图片。第一个参数是水印的位置；第二个参数是水印图片的缓存数据；第三个参数是透明度。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BufferedImage watermarkImage = ImageIO.read(<span class="keyword">new</span> File(<span class="string">"wartermarkFile.png"</span>));</span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.watermark(Positions.BOTTOM_LEFT, watermarkImage, <span class="number">0.5f</span>)</span><br><span class="line">		.toFile(<span class="string">"newFile_watermark.png"</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>wartermarkFile.png</strong></p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-97909ee6c066c195.png?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-97909ee6c066c195.png?imageMogr2/auto-orient/strip"></div>
 <p><strong>newFile_watermark.png</strong></p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-93eb7ef71b811a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-93eb7ef71b811a0c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <h3 id="批量处理图片"><a class="markdownIt-Anchor" href="#批量处理图片"></a> 批量处理图片</h3>
 <p>下面以批量给图片加水印来展示一下如何处理多个图片文件。</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">BufferedImage watermarkImage = ImageIO.read(<span class="keyword">new</span> File(<span class="string">"wartermarkFile.png"</span>));</span><br><span class="line"></span><br><span class="line">File destinationDir = <span class="keyword">new</span> File(<span class="string">"D:\\watermark\\"</span>);</span><br><span class="line">Thumbnails.of(<span class="string">"oldFile.png"</span>, <span class="string">"oldFile2.png"</span>)</span><br><span class="line">		.scale(<span class="number">0.8</span>)</span><br><span class="line">		.watermark(Positions.BOTTOM_LEFT, watermarkImage, <span class="number">0.5f</span>)</span><br><span class="line">		.toFiles(destinationDir, Rename.PREFIX_DOT_THUMBNAIL);</span><br></pre></td></tr></table></figure>
@@ -633,8 +626,6 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/programming/" rel="tag"># programming</a>
-          
             <a href="/blog/tags/java/" rel="tag"># java</a>
           
             <a href="/blog/tags/javalib/" rel="tag"># javalib</a>
@@ -652,8 +643,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/01/03/os/linux/ops/service/elastic/elastic-beats/" rel="next" title="Elastic 技术栈之 Filebeat">
-                <i class="fa fa-chevron-left"></i> Elastic 技术栈之 Filebeat
+              <a href="/blog/2017/01/17/java/javalib/zxing/" rel="next" title="ZXing 使用小结">
+                <i class="fa fa-chevron-left"></i> ZXing 使用小结
               </a>
             
           </div>
@@ -662,8 +653,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/01/17/java/javalib/zxing/" rel="prev" title="ZXing 使用小结">
-                ZXing 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/08/18/java/javalib/jsoup/" rel="prev" title="jsoup 使用小结">
+                jsoup 使用小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -735,7 +726,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -812,7 +803,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1091,19 +1084,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1224,7 +1205,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

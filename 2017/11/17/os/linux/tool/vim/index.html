@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-02.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-01.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-02.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:31.867Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:49.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vim 快速指南">
 <meta name="twitter:description" content="Vim 快速指南   1. 概念  1.1. 什么是 vim 1.2. Vim 的模式   2. Vim 渐进学习  2.1. 存活 2.2. 感觉良好 2.3. 更好，更强，更快 2.4. Vim 超能力   3. Vim Cheat Sheet  3.1. 经典版 3.2. 入门版 3.3. 进阶版 3.4. 增强版 3.5. 文字版   4. 资料    1. 概念  1.1. 什么是 v">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:31" itemprop="dateModified" datetime="2019-03-26T23:47:31+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:49" itemprop="dateModified" datetime="2019-04-16T20:14:49+08:00">2019-04-16</time>
               
             
           </span>
@@ -708,7 +708,7 @@
 </blockquote>
 </li>
 </ol>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-46f752c581d79057.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <p>下面，让我来说说最强的光标移动：</p>
 <blockquote>
 <ul>
@@ -749,10 +749,10 @@
 <li><code>fa</code> → 到下一个为 a 的字符处，你也可以 fs 到下一个为 s 的字符。</li>
 <li><code>t,</code> → 到逗号前的第一个字符。逗号可以变成其它字符。</li>
 <li><code>3fa</code> → 在当前行查找第三个出现的 a。</li>
-<li><code>F</code> 和 <code>T</code> → 和 <code>f</code> 和 <code>t</code> 一样，只不过是相反方向。<br>
-<br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></li>
+<li><code>F</code> 和 <code>T</code> → 和 <code>f</code> 和 <code>t</code> 一样，只不过是相反方向。</li>
 </ul>
 </blockquote>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-00835b8316330c58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <p>还有一个很有用的命令是 <code>dt&quot;</code> → 删除所有的内容，直到遇到双引号—— <code>&quot;。</code></p>
 <h4 id="区域选择-actionaobject-或-actioniobject"><a class="markdownIt-Anchor" href="#区域选择-actionaobject-或-actioniobject"></a> 区域选择 <code>&lt;action&gt;a&lt;object&gt;</code> 或 <code>&lt;action&gt;i&lt;object&gt;</code></h4>
 <p>在 visual 模式下，这些命令很强大，其命令格式为</p>
@@ -772,7 +772,7 @@
 <li><code>v2a)</code> → 会选择 <code>(map (+) (&quot;foo&quot;))</code></li>
 </ul>
 </blockquote>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-0b109d66a6111c83.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <h4 id="块操作-c-v"><a class="markdownIt-Anchor" href="#块操作-c-v"></a> 块操作: <code>&lt;C-v&gt;</code></h4>
 <p>块操作，典型的操作： <code>0 &lt;C-v&gt; &lt;C-d&gt; I-- [ESC]</code></p>
 <ul>
@@ -781,11 +781,11 @@
 <li><code>&lt;C-d&gt;</code> → 向下移动 (你也可以使用 hjkl 来移动光标，或是使用%，或是别的)</li>
 <li><code>I-- [ESC]</code> → I 是插入，插入“<code>--</code>”，按 ESC 键来为每一行生效。</li>
 </ul>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-8b093a0f65707949.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-8b093a0f65707949.gif?imageMogr2/auto-orient/strip"></div>
 <p>在 Windows 下的 vim，你需要使用 <code>&lt;C-q&gt;</code> 而不是 <code>&lt;C-v&gt;</code> ，<code>&lt;C-v&gt;</code> 是拷贝剪贴板。</p>
 <h4 id="自动提示-c-n-和-c-p"><a class="markdownIt-Anchor" href="#自动提示-c-n-和-c-p"></a> 自动提示： <code>&lt;C-n&gt;</code> 和 <code>&lt;C-p&gt;</code></h4>
 <p>在 Insert 模式下，你可以输入一个词的开头，然后按 <code>&lt;C-p&gt;或是&lt;C-n&gt;，自动补齐功能就出现了……</code></p>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e2ae877e67880ff7.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-e2ae877e67880ff7.gif?imageMogr2/auto-orient/strip"></div>
 <h4 id="宏录制-qa-操作序列-q-a"><a class="markdownIt-Anchor" href="#宏录制-qa-操作序列-q-a"></a> 宏录制： <code>qa</code> 操作序列 <code>q</code>, <code>@a</code>, <code>@@</code></h4>
 <ul>
 <li><code>qa</code> 把你的操作记录在寄存器 <code>a。</code></li>
@@ -827,7 +827,7 @@
 </li>
 </ul>
 </blockquote>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f1889f8bca723964.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f1889f8bca723964.gif?imageMogr2/auto-orient/strip"></div>
 <h4 id="可视化选择-vvc-v"><a class="markdownIt-Anchor" href="#可视化选择-vvc-v"></a> 可视化选择： <code>v</code>,<code>V</code>,<code>&lt;C-v&gt;</code></h4>
 <p>前面，我们看到了 <code>&lt;C-v&gt;</code>的示例 （在 Windows 下应该是<c-q>），我们可以使用 <code>v</code> 和 <code>V</code>。一但被选好了，你可以做下面的事：</c-q></p>
 <ul>
@@ -835,7 +835,7 @@
 <li><code>&lt;</code> 或 <code>&gt;</code> → 左右缩进</li>
 <li><code>=</code> → 自动给缩进 （注：这个功能相当强大，我太喜欢了）</li>
 </ul>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-fe1e19983fca213f.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-fe1e19983fca213f.gif?imageMogr2/auto-orient/strip"></div>
 <p>在所有被选择的行后加上点东西：</p>
 <ul>
 <li><code>&lt;C-v&gt;</code></li>
@@ -843,7 +843,7 @@
 <li><code>$</code> 到行最后</li>
 <li><code>A</code>, 输入字符串，按 <code>ESC。</code></li>
 </ul>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b192601247334c4e.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-b192601247334c4e.gif?imageMogr2/auto-orient/strip"></div>
 <h4 id="分屏-split-和-vsplit"><a class="markdownIt-Anchor" href="#分屏-split-和-vsplit"></a> 分屏: <code>:split</code> 和 <code>vsplit</code>.</h4>
 <p>下面是主要的命令，你可以使用 VIM 的帮助 <code>:help split</code>. 你可以参考本站以前的一篇文章<a href="https://coolshell.cn/articles/1679.html" target="_blank" rel="noopener">VIM 分屏</a>。</p>
 <blockquote>
@@ -854,7 +854,7 @@
 <li><code>&lt;C-w&gt;+</code> (或 <code>&lt;C-w&gt;-</code>) : 增加尺寸</li>
 </ul>
 </blockquote>
-<p><br><div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f329d01e299cb366.gif?imageMogr2/auto-orient/strip"></div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-f329d01e299cb366.gif?imageMogr2/auto-orient/strip"></div>
 <h2 id="3-vim-cheat-sheet"><a class="markdownIt-Anchor" href="#3-vim-cheat-sheet"></a> 3. Vim Cheat Sheet</h2>
 <blockquote>
 <p>本节内容的原文地址：<a href="http://cenalulu.github.io/linux/all-vim-cheatsheat/" target="_blank" rel="noopener">http://cenalulu.github.io/linux/all-vim-cheatsheat/</a></p>
@@ -862,20 +862,20 @@
 <h3 id="31-经典版"><a class="markdownIt-Anchor" href="#31-经典版"></a> 3.1. 经典版</h3>
 <p>下面这个键位图应该是大家最常看见的经典版了。其实这个版本是一系列的入门教程键位图的组合结果。要查看不同编辑模式下的键位图，可以看<a href="http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html" target="_blank" rel="noopener">这里打包下载</a></p>
 <p>此外，<a href="http://blog.ngedit.com/vi-vim-cheat-sheet-sch.gif" target="_blank" rel="noopener">这里</a>还有简体中文版。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet.png"></div>
 <h3 id="32-入门版"><a class="markdownIt-Anchor" href="#32-入门版"></a> 3.2. 入门版</h3>
 <p>基本操作的入门版。<a href="https://github.com/ahrencode/Miscellaneous" target="_blank" rel="noopener">原版出处</a>还有 keynote 版本可供 DIY 以及其他相关有用的 cheatsheet。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/basic-vim-cheat-sheet.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/basic-vim-cheat-sheet.png"></div>
 <h3 id="33-进阶版"><a class="markdownIt-Anchor" href="#33-进阶版"></a> 3.3. 进阶版</h3>
 <p>下图是 300DPI 的超清大图，另外<a href="http://michael.peopleofhonoronly.com/vim/" target="_blank" rel="noopener">查看原文</a>还有更多版本：黑白，低分辨率，色盲等</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-for-programmers.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-for-programmers.png"></div>
 <h3 id="34-增强版"><a class="markdownIt-Anchor" href="#34-增强版"></a> 3.4. 增强版</h3>
 <p>下图是一个更新时间较新的现代版，含有的信息也更丰富。<a href="http://vimcheatsheet.com/" target="_blank" rel="noopener">原文链接</a></p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-02.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-02.png"></div>
 <h3 id="35-文字版"><a class="markdownIt-Anchor" href="#35-文字版"></a> 3.5. 文字版</h3>
 <p><a href="http://tnerual.eriogerg.free.fr/vimqrc.pdf" target="_blank" rel="noopener">原文链接</a></p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-01.png"></div><br></p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-02.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-01.png"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/os/vim/vim-cheat-sheet-text-02.png"></div>
 <h2 id="4-资料"><a class="markdownIt-Anchor" href="#4-资料"></a> 4. 资料</h2>
 <ul>
 <li><a href="https://coolshell.cn/articles/5426.html" target="_blank" rel="noopener">简明 VIM 练级攻略</a> ，Vim 渐进学习内容来源于这篇文章，作为 Vim 新手，我觉得入门效果很好。</li>
@@ -935,8 +935,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/20/method/software-engineering/" rel="prev" title="软件工程与项目管理">
-                软件工程与项目管理 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/20/programming/shell/" rel="prev" title="一篇文章让你彻底掌握 shell 语言">
+                一篇文章让你彻底掌握 shell 语言 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1008,7 +1008,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1085,7 +1085,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1364,19 +1366,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1497,7 +1487,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

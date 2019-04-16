@@ -384,7 +384,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/javaweb/javaee/jsp/taglib/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/webpack/concept/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -404,7 +404,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/java/javaweb/javaee/jsp/taglib/" class="post-title-link" itemprop="url">未命名</a>
+                <a href="/blog/2019/03/06/frontend/webpack/concept/" class="post-title-link" itemprop="url">Webpack 概念</a>
               
             
           </h2>
@@ -446,7 +446,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
               
             
           </span>
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">329</span>
+                <span title="本文字数">6.1k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">6 分钟</span>
               
             </div>
           
@@ -511,17 +511,15 @@
         
           
             <p>
-              自定义标签是用户定义的JSP语言元素。
-当JSP页面包含一个自定义标签时将被转化为servlet，标签转化为对被称为tag handler的对象的操作，即当servlet执行时Web container调用那些操作。
-JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JSP页面。 JSP 2.0规范中引入Simple Tag Handlers来编写这些自定义标记。
-编写自定义步骤的方法
-任何
+               Webpack 概念
+webpack  是一个现代的 JavaScript 应用程序的模块打包器(module bundler)。当 webpack 处理应用程序时，它会递归地构建一个依赖关系图表(dependency graph)，其中包含应用程序需要的每个模块，然后将所有这些模块打包成少量的  bundle - 通常只有一个，由浏览器加载。
+学习 webpack，需要先了解几个核心概念，下面
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/java/javaweb/javaee/jsp/taglib/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/frontend/webpack/concept/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -585,7 +583,7 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/docker-introduction/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/webpack/development/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -605,7 +603,7 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/os/docker/docker-introduction/" class="post-title-link" itemprop="url">Docker 简介</a>
+                <a href="/blog/2019/03/06/frontend/webpack/development/" class="post-title-link" itemprop="url">Webpack 开发工具</a>
               
             
           </h2>
@@ -647,7 +645,7 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:31" itemprop="dateModified" datetime="2019-03-26T23:47:31+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
               
             
           </span>
@@ -675,7 +673,7 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.9k</span>
+                <span title="本文字数">5.9k</span>
               
 
               
@@ -689,7 +687,7 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">5 分钟</span>
               
             </div>
           
@@ -712,21 +710,26 @@ JSP标签扩展可以让你创建新的标签并且可以直接插入到一个JS
         
           
             <p>
-               Docker 简介
+               Webpack 开发工具
 
-Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口。
+​⚠️ 注意：
+永远不要在生产环境中使用这些工具，永远不要。
 
- 概述
- Docker 是什么
-Docker 是开发，传输和运行应用程序的开放平台。
-Docker 使您能够将应用程序与基础架构分开，以便快速交付软件。
-借助 Docker，您可以像管理应用程序一样管理基础架构。通过利用 Docker 的方法快速进行运输，测试和部署代码，您可以显著缩短编写代码和
+ devtool
+当 JavaScript 异常抛出时，你常会想知道这个错误发生在哪个文件的哪一行。然而因为 webpack 将文件输出为一个或多个 bundle，所以 追踪这一错误会很不方便。
+Source maps  试图解决这一问题。它有很多选择，各有优劣：
+
+
+
+devtool
+build
+reb
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/os/docker/docker-introduction/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/frontend/webpack/development/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -790,7 +793,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/database/sql/关系型数据库面试题/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/communication/network-application/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -810,7 +813,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/database/sql/关系型数据库面试题/" class="post-title-link" itemprop="url">关系型数据库面试题</a>
+                <a href="/blog/2019/03/06/communication/network-application/" class="post-title-link" itemprop="url">计算机网络之应用层</a>
               
             
           </h2>
@@ -852,11 +855,29 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/communication/" itemprop="url" rel="index"><span itemprop="name">communication</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -880,7 +901,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8k</span>
+                <span title="本文字数">4.2k</span>
               
 
               
@@ -894,7 +915,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">7 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -917,36 +938,41 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
         
           
             <p>
-               关系型数据库面试题
+               计算机网络之应用层
 
 
-1. 存储引擎
+HTTP
+DNS
+FTP
+DHCP
+TELNET
+电子邮件协议
 
-1.1. mysql 有哪些存储引擎？有什么区别？
-
-
-2. 索引
-
-2.1. 数据库索引有哪些数据结构？
-2.2. B-Tree 和 B+Tree 有什么区别？
-2.3. 索引原则有哪些？
-
-
-3. 事务
-
-3.1. 数据库事务隔离级别？事务隔离级别分别解决什么问题？
-3.2. 如何解决分布式事务？若出现网络问题或宕机问题，如何解决？
+1. SMTP
+2. POP3
+3. IMAP
 
 
-4. 锁
+常用端口
+Web 页面请求过程
+
+1. DHCP 配置主机信息
+2. ARP 解析 MAC 地址
+3. DNS 解析域名
+4. HTTP 请求页面
 
 
+
+
+ HTTP
+
+超文本传输协议（英语：HyperText Transfer Protocol，缩写：H
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/database/sql/关系型数据库面试题/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/communication/network-application/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1010,7 +1036,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/javastack/javatool/ide/vscode/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/appendix/docker-cli/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1030,7 +1056,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/java/javastack/javatool/ide/vscode/" class="post-title-link" itemprop="url">vscode</a>
+                <a href="/blog/2019/03/06/os/docker/appendix/docker-cli/" class="post-title-link" itemprop="url">Docker 命令</a>
               
             
           </h2>
@@ -1072,7 +1098,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:49" itemprop="dateModified" datetime="2019-04-16T20:14:49+08:00">2019-04-16</time>
               
             
           </span>
@@ -1100,7 +1126,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">709</span>
+                <span title="本文字数">2.5k</span>
               
 
               
@@ -1114,7 +1140,7 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -1137,28 +1163,46 @@ Docker 使您能够将应用程序与基础架构分开，以便快速交付软�
         
           
             <p>
-               vscode
- 快捷键
- 命令面板（Command Palette）
-根据您当前的上下文访问所有可用命令。
+               Docker 命令
 
-Mac: cmd+shift+p or f1
-Windows / Linux: ctrl+shift+p or f1
 
- 快速打开文件（Quick Open）
+镜像(Images)
+容器(Container)
 
-Mac: cmd+p
-Windows / Linux: ctrl+p
+生命周期
+启动和停止
+信息
+导入 / 导出
+执行命令
 
- Status Bar
 
-Mac: shift+cmd
+网络(Networks)
+
+生命周期
+信息
+链接
+
+
+仓管中心和仓库(Registry &amp; Repository)
+Dockerfile
+卷标(Volumes)
+
+生命周期
+信息
+
+
+引用和引申
+
+
+ 镜像(Images)
+
+docker image ls
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/java/javastack/javatool/ide/vscode/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/os/docker/appendix/docker-cli/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1222,7 +1266,7 @@ Mac: shift+cmd
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/base/css/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/database/sql/关系型数据库基本原理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1242,7 +1286,7 @@ Mac: shift+cmd
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/frontend/base/css/" class="post-title-link" itemprop="url">CSS 快速入门</a>
+                <a href="/blog/2019/03/06/database/sql/关系型数据库基本原理/" class="post-title-link" itemprop="url">关系型数据库基本原理</a>
               
             
           </h2>
@@ -1284,7 +1328,7 @@ Mac: shift+cmd
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
@@ -1312,7 +1356,7 @@ Mac: shift+cmd
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">17k</span>
+                <span title="本文字数">14k</span>
               
 
               
@@ -1326,7 +1370,7 @@ Mac: shift+cmd
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">15 分钟</span>
+                <span title="阅读时长">13 分钟</span>
               
             </div>
           
@@ -1349,39 +1393,39 @@ Mac: shift+cmd
         
           
             <p>
-               CSS 快速入门
+               关系型数据库基本原理
 
-层叠样式表（英语：Cascading Style Sheets，简写 CSS），又称串樣式列表、级联样式表、串接样式表、階層式樣式表，一种用来为结构化文档（如 HTML 文档或 XML 应用）添加样式（字体、间距和颜色等）的计算机语言。
-关键词： css
-
+本文所述内容主要针对的是关系型数据库，nosql 数据库并不适用。
 
 
-简介
-框模型
 
-圆角边框
-边框阴影
-边框图片
+1. 索引
 
-
-样式
-
-背景
-文本
-字体
+1.1. 索引的优点和缺点
+1.2. 索引类型
+1.3. 索引数据结构
+1.4. 索引原则
 
 
-布局
+2. 事务
 
-创建多列
-规定列之间的间隔
+2.1. ACID
+2.2. 并发一致性问题
+2.3. 事务隔离级别
+2.4. 死锁
 
+
+3. 并发控制
+
+3.1. 锁粒度
+3.2. 数据库锁的类型
+3.3. 数据库锁的协议
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/frontend/base/css/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/database/sql/关系型数据库基本原理/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1507,7 +1551,7 @@ Mac: shift+cmd
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
               
             
           </span>
@@ -1690,229 +1734,6 @@ UML 图类型如下图所示：
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/database/sql/关系型数据库基本原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2019/03/06/database/sql/关系型数据库基本原理/" class="post-title-link" itemprop="url">关系型数据库基本原理</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">14k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">13 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               关系型数据库基本原理
-
-本文所述内容主要针对的是关系型数据库，nosql 数据库并不适用。
-
-
-
-1. 索引
-
-1.1. 索引的优点和缺点
-1.2. 索引类型
-1.3. 索引数据结构
-1.4. 索引原则
-
-
-2. 事务
-
-2.1. ACID
-2.2. 并发一致性问题
-2.3. 事务隔离级别
-2.4. 死锁
-
-
-3. 并发控制
-
-3.1. 锁粒度
-3.2. 数据库锁的类型
-3.3. 数据库锁的协议
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/database/sql/关系型数据库基本原理/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/os/docker/basics/docker-container/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1975,7 +1796,7 @@ UML 图类型如下图所示：
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:31" itemprop="dateModified" datetime="2019-03-26T23:47:31+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:49" itemprop="dateModified" datetime="2019-04-16T20:14:49+08:00">2019-04-16</time>
               
             
           </span>
@@ -2139,7 +1960,7 @@ exec 命令
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/spring-boot/web/sbe-web-json/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/spring-boot/data/sbe-data-jdbc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -2159,7 +1980,7 @@ exec 命令
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/java/spring-boot/web/sbe-web-json/" class="post-title-link" itemprop="url">SpringBootTutorialWebJson</a>
+                <a href="/blog/2019/03/06/java/spring-boot/data/sbe-data-jdbc/" class="post-title-link" itemprop="url">SpringBootTutorialDataJdbc</a>
               
             
           </h2>
@@ -2201,7 +2022,7 @@ exec 命令
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:30" itemprop="dateModified" datetime="2019-03-26T23:47:30+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:48" itemprop="dateModified" datetime="2019-04-16T20:14:48+08:00">2019-04-16</time>
               
             
           </span>
@@ -2229,7 +2050,7 @@ exec 命令
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9.4k</span>
+                <span title="本文字数">4.1k</span>
               
 
               
@@ -2243,7 +2064,7 @@ exec 命令
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">9 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -2266,36 +2087,36 @@ exec 命令
         
           
             <p>
-               SpringBootTutorialWebJson
+               SpringBootTutorialDataJdbc
 
 
 简介
+API
 
-Spring Boot 支持的 Json 库
-Spring Web 中的序列化、反序列化
-
-
-指定类的 Json 序列化、反序列化
-@JsonTest
-Spring Boot 中的 json 配置
-
-Jackson 配置
-GSON 配置
+execute
+update
+query
 
 
-Spring Boot 中使用 Fastjson
-示例源码
+实战
+
+配置数据源
+注入 JdbcTemplate
+完整示例
+
+
 更多内容
 
 
  简介
- Spri
+Spring Data 包含对 JDBC 的存储库支持，并将自动为 CrudRepository 上的方法生成 SQL。对于更高级的查询，提供了 @Query 注解。
+当 classpath
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/java/spring-boot/web/sbe-web-json/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/java/spring-boot/data/sbe-data-jdbc/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2359,7 +2180,7 @@ Spring Boot 中使用 Fastjson
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/frontend/base/html/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/spring-boot/core/sbe-core-retry/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -2379,7 +2200,7 @@ Spring Boot 中使用 Fastjson
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2019/03/06/frontend/base/html/" class="post-title-link" itemprop="url">Html 快速入门</a>
+                <a href="/blog/2019/03/06/java/spring-boot/core/sbe-core-retry/" class="post-title-link" itemprop="url">SpringBootTutorialCoreRetry</a>
               
             
           </h2>
@@ -2421,7 +2242,7 @@ Spring Boot 中使用 Fastjson
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:48" itemprop="dateModified" datetime="2019-04-16T20:14:48+08:00">2019-04-16</time>
               
             
           </span>
@@ -2449,7 +2270,7 @@ Spring Boot 中使用 Fastjson
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">11k</span>
+                <span title="本文字数">593</span>
               
 
               
@@ -2463,7 +2284,7 @@ Spring Boot 中使用 Fastjson
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">10 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -2486,43 +2307,236 @@ Spring Boot 中使用 Fastjson
         
           
             <p>
-               Html 快速入门
-
-超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。
-关键词： 标签, 元素, 属性
+               SpringBootTutorialCoreRetry
 
 
+源码
+更多内容
 
 
-简介
-
-什么是 HTML？
-HTML 文档 = 网页
-HTML 结构
-HTML 标签
-HTML 元素
-HTML 属性
-
-
-Quickstart
-
-基础
-样式
-链接、锚点、图片
-列表
-表单
-表格
-区块
-框架
-
-
-
+ 简介
+ 开启 Retry
+使用 @EnableRetry 注解开启 Retry 功能。
+import org.springframework.boot.SpringApplication;import org.springframework.boot.autoconfigure.SpringBootApplicat
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2019/03/06/frontend/base/html/#more" rel="contents">
+              <a class="btn" href="/blog/2019/03/06/java/spring-boot/core/sbe-core-retry/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2019/03/06/java/spring-boot/data/sbe-data-elasticsearch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2019/03/06/java/spring-boot/data/sbe-data-elasticsearch/" class="post-title-link" itemprop="url">SpringBootTutorialDataElasticsearch</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-06 00:00:00" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">2019-03-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-16 20:14:48" itemprop="dateModified" datetime="2019-04-16T20:14:48+08:00">2019-04-16</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               SpringBootTutorialDataElasticsearch
+
+
+简介
+
+通过 REST 客户端连接 Elasticsearch
+通过 Jest 连接 Elasticsearch
+通过 Spring Data 访问 Elasticsearch
+Elasticsearch Repositories
+
+
+源码
+更多内容
+
+
+ 简介
+Elasticsearch 是一个开源的、分布式的搜索和分
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2019/03/06/java/spring-boot/data/sbe-data-elasticsearch/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2619,7 +2633,7 @@ Quickstart
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2696,7 +2710,9 @@ Quickstart
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2975,19 +2991,7 @@ Quickstart
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3091,7 +3095,7 @@ Quickstart
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

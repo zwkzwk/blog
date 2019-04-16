@@ -116,8 +116,8 @@
 <meta property="og:description" content="深入理解 Java 数组  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    简介  数组的特性 数组和容器 Java 数组的本质是对象 Java 数组和内存   声明数组 创建数组  数组维度的形式 数组维度的大小   访问数组 数组的引用 泛型和数组 多维数组 Arrays 类 小结 参考资料    简介  数组的特性 数组对于每一门编程语言来说都">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1552473482942.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1552475700514.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:27.642Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/1553753908349.png">
+<meta property="og:updated_time" content="2019-04-16T12:14:46.617Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深入理解 Java 数组">
 <meta name="twitter:description" content="深入理解 Java 数组  📓 本文已归档到：「blog」 ⌨️ 本文中的示例代码已归档到：「javacore」    简介  数组的特性 数组和容器 Java 数组的本质是对象 Java 数组和内存   声明数组 创建数组  数组维度的形式 数组维度的大小   访问数组 数组的引用 泛型和数组 多维数组 Arrays 类 小结 参考资料    简介  数组的特性 数组对于每一门编程语言来说都">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:27" itemprop="dateModified" datetime="2019-03-26T23:47:27+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
               
             
           </span>
@@ -484,7 +484,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.1k</span>
+                <span title="本文字数">7.6k</span>
               
 
               
@@ -586,15 +586,13 @@
 <h2 id="创建数组"><a class="markdownIt-Anchor" href="#创建数组"></a> 创建数组</h2>
 <p>Java 语言使用 <code>new</code> 操作符来创建数组。有两种创建数组方式：</p>
 <ul>
-<li>
-<p>指定数组维度</p>
+<li>指定数组维度
 <ul>
 <li>为数组开辟指定大小的数组维度。</li>
 <li>如果数组元素是基础数据类型，会将每个元素设为默认值；如果是引用类型，元素值为 <code>null</code>。</li>
 </ul>
 </li>
-<li>
-<p>不指定数组维度</p>
+<li>不指定数组维度
 <ul>
 <li>用花括号中的实际元素初始化数组，数组大小与元素数相同。</li>
 </ul>
@@ -604,7 +602,7 @@
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] array1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>]; <span class="comment">// 指定数组维度</span></span><br><span class="line">        <span class="keyword">int</span>[] array2 = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span> &#125;; <span class="comment">// 不指定数组维度</span></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"array1 size is "</span> + array1.length);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> item : array1) &#123;</span><br><span class="line">            System.out.println(item);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"array2 size is "</span> + array1.length);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> item : array2) &#123;</span><br><span class="line">            System.out.println(item);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Output:</span></span><br><span class="line"><span class="comment">// array1 size is 2</span></span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// 0</span></span><br><span class="line"><span class="comment">// array2 size is 2</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>💡 <strong>说明</strong><br>
-请注意数组 array1 中的元素虽然没有初始化，但是 length 和指定的数组维度是一样的。这表明<strong>无论后面是否初始化数组中的元素，数组都已经开辟了相应的内存</strong>。</p>
+请注意数组 array1 中的元素虽然没有初始化，但是 length 和指定的数组维度是一样的。这表明<strong>指定数组维度后，无论后面是否初始化数组中的元素，数组都已经开辟了相应的内存</strong>。</p>
 <p>数组 array1 中的元素都被设为默认值。</p>
 </blockquote>
 <p>示例 2：</p>
@@ -677,41 +675,7 @@
 <p>扩展阅读：<a href="https://juejin.im/post/5a6ade5c518825733e60acb8" target="_blank" rel="noopener">https://juejin.im/post/5a6ade5c518825733e60acb8</a></p>
 </blockquote>
 <h2 id="小结"><a class="markdownIt-Anchor" href="#小结"></a> 小结</h2>
-<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/1552475700514.png"></div>
-<p>（1）数组特性</p>
-<ul>
-<li><strong>Java 中，数组是一种引用类型。</strong></li>
-<li><strong>Java 中，数组是用来存储固定大小的同类型元素。</strong></li>
-<li><strong>数组的定义和使用需要通过方括号 <code>[]</code>。</strong></li>
-</ul>
-<p>（2）数组和容器</p>
-<ul>
-<li>
-<p>大多数情况下，应该选择容器存储数据。</p>
-</li>
-<li>
-<p><strong>数组的效率要高于容器</strong></p>
-</li>
-<li>
-<p><strong>数组可以持有值类型，而容器则不能</strong></p>
-</li>
-</ul>
-<p>（3）<strong>Java 数组的本质是对象</strong>。</p>
-<p>（4）Java 数组和内存</p>
-<ul>
-<li>数组引用（数组指针）存储在栈中。</li>
-<li>数组元素值存储在堆中。</li>
-</ul>
-<p>（5）声明数组有两种方式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr1; <span class="comment">// 推荐风格</span></span><br><span class="line"><span class="keyword">int</span> arr2[]; <span class="comment">// 效果相同</span></span><br></pre></td></tr></table></figure>
-<p>（6）创建数组有两种方式：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] array1 = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span>]; <span class="comment">// 指定数组维度</span></span><br><span class="line"><span class="keyword">int</span>[] array2 = <span class="keyword">new</span> <span class="keyword">int</span>[] &#123; <span class="number">1</span>, <span class="number">2</span> &#125;; <span class="comment">// 不指定数组维度</span></span><br></pre></td></tr></table></figure>
-<p><strong>Java 数组的数组维度可以是常量、变量、表达式，只要转换为整数即可</strong>。</p>
-<p><strong>数组过大，可能会导致栈溢出</strong>。超过一定数值，甚至编译器就会报错。</p>
-<p>（7）<strong>Java 中，可以通过在 <code>[]</code> 中指定下标，访问数组元素，下标位置从 0 开始。</strong></p>
-<p>（8）数组可以作为函数的入参或返回值。</p>
-<p>（9）多维数组可视为数组的数组。</p>
-<p>（10）Arrays 类是一个很有用的数组工具类。</p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/1553753908349.png"></div>
 <h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
 <ul>
 <li><a href="https://book.douban.com/subject/2130190/" target="_blank" rel="noopener">Java 编程思想</a></li>
@@ -850,7 +814,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -927,7 +891,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1206,19 +1172,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1339,7 +1293,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094954067.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095440002.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095610521.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:25.578Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:45.053Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络之应用层">
 <meta name="twitter:description" content="计算机网络之应用层   HTTP DNS FTP DHCP TELNET 电子邮件协议  1. SMTP 2. POP3 3. IMAP   常用端口 Web 页面请求过程  1. DHCP 配置主机信息 2. ARP 解析 MAC 地址 3. DNS 解析域名 4. HTTP 请求页面      HTTP  超文本传输协议（英语：HyperText Transfer Protocol，缩写：H">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:25" itemprop="dateModified" datetime="2019-03-26T23:47:25+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
@@ -541,7 +541,7 @@
 </ul>
 <!-- /TOC -->
 <h2 id="http"><a class="markdownIt-Anchor" href="#http"></a> HTTP</h2>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551096916007.png"></div>
 <p>超文本传输协议（英语：HyperText Transfer Protocol，缩写：HTTP）是一种用于分布式、协作式和超媒体信息系统的应用层协议。HTTP 是万维网的数据通信的基础。</p>
 <p>设计 HTTP 最初的目的是为了提供一种发布和接收 HTML 页面的方法。通过 HTTP 或者 HTTPS 协议请求的资源由统一资源标识符（Uniform Resource Identifiers，URI）来标识。</p>
 <p>安全套接字层超文本传输协议 HTTPS 为了数据传输的安全，HTTPS 在 HTTP 的基础上加入了 SSL 协议，SSL 依靠证书来验证服务器的身份，并为浏览器和服务器之间的通信加密。</p>
@@ -550,9 +550,9 @@
 </blockquote>
 <h2 id="dns"><a class="markdownIt-Anchor" href="#dns"></a> DNS</h2>
 <p>域名服务器 DNS 是一个分布式数据库，提供了主机名和 IP 地址之间相互转换的服务。这里的分布式数据库是指，每个站点只保留它自己的那部分数据。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094759786.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094759786.png"></div>
 <p>域名具有层次结构，从上到下依次为：根域名、顶级域名、二级域名。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094954067.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551094954067.png"></div>
 <p>DNS 可以使用 UDP 或者 TCP 进行传输，使用的端口号都为 53。大多数情况下 DNS 使用 UDP 进行传输，这就要求域名解析器和域名服务器都必须自己处理超时和重传来保证可靠性。在两种情况下会使用 TCP 进行传输：</p>
 <ul>
 <li>如果返回的响应超过的 512 字节（UDP 最大只支持 512 字节的数据）。</li>
@@ -568,7 +568,7 @@
 <li>数据连接：用来传送一个文件数据。</li>
 </ul>
 <p>根据数据连接是否是服务器端主动建立，FTP 有主动和被动两种模式：</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095440002.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095440002.png"></div>
 <ul>
 <li>主动模式：服务器端主动建立数据连接，其中服务器端的端口号为 20，客户端的端口号随机，但是必须大于 1024，因为 0~1023 是熟知端口号。</li>
 <li>被动模式：客户端主动建立数据连接，其中客户端的端口号由客户端自己指定，服务器端的端口号随机。</li>
@@ -585,7 +585,7 @@
 <li>如果客户端选择了某个 DHCP 服务器提供的信息，那么就发送 Request 报文给该 DHCP 服务器。</li>
 <li>DHCP 服务器发送 Ack 报文，表示客户端此时可以使用提供给它的信息。</li>
 </ol>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095610521.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/network/application/1551095610521.png"></div>
 <h2 id="telnet"><a class="markdownIt-Anchor" href="#telnet"></a> TELNET</h2>
 <p>远程登录协议 TELNET 用于登录到远程主机上，并且远程主机上的输出也会返回。</p>
 <p>TELNET 可以适应许多计算机和操作系统的差异，例如不同操作系统系统的换行符定义。</p>
@@ -757,8 +757,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2019/03/06/java/spring/appendix/resources/" rel="next" title="资源">
-                <i class="fa fa-chevron-left"></i> 资源
+              <a href="/blog/2019/03/06/os/docker/appendix/docker-cli/" rel="next" title="Docker 命令">
+                <i class="fa fa-chevron-left"></i> Docker 命令
               </a>
             
           </div>
@@ -767,8 +767,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2019/03/06/java/javastack/appendix/resources/" rel="prev" title="Java 资源">
-                Java 资源 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2019/03/06/frontend/webpack/development/" rel="prev" title="Webpack 开发工具">
+                Webpack 开发工具 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -840,7 +840,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -917,7 +917,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1196,19 +1198,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1329,7 +1319,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

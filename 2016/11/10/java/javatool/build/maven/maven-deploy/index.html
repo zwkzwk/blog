@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+  
+  
+    
+      
+    
+    
+      
+    
+  <script src="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/pace.min.js"></script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pace/1.0.2/themes/blue/pace-theme-minimal.min.css">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.0.1">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.0.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.0.1">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.0.1" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Muse',
+    version: '7.0.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true,"dimmer":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Maven 教程之发布 jar 到私服或中央仓库  📓 本文已归档到：「blog」    发布 jar 包到中央仓库  在 Sonatype 创建 Issue 使用 GPG 生成公私钥对 Maven 配置 部署和发布   部署 maven 私服  下载安装 Nexus 启动停止 Nexus 使用 Nexus   参考资料    发布 jar 包到中央仓库  为了避免重复造轮子，相信每个 Jav">
+<meta name="keywords" content="java,javatool,build">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 教程之部署私服或中央仓库">
+<meta property="og:url" content="https://dunwu.github.io/2016/11/10/java/javatool/build/maven/maven-deploy/index.html">
+<meta property="og:site_name" content="静默虚空的博客">
+<meta property="og:description" content="Maven 教程之发布 jar 到私服或中央仓库  📓 本文已归档到：「blog」    发布 jar 包到中央仓库  在 Sonatype 创建 Issue 使用 GPG 生成公私钥对 Maven 配置 部署和发布   部署 maven 私服  下载安装 Nexus 启动停止 Nexus 使用 Nexus   参考资料    发布 jar 包到中央仓库  为了避免重复造轮子，相信每个 Jav">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106143734.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203029.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203156.png">
+<meta property="og:updated_time" content="2019-04-16T12:52:45.751Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Maven 教程之部署私服或中央仓库">
+<meta name="twitter:description" content="Maven 教程之发布 jar 到私服或中央仓库  📓 本文已归档到：「blog」    发布 jar 包到中央仓库  在 Sonatype 创建 Issue 使用 GPG 生成公私钥对 Maven 配置 部署和发布   部署 maven 私服  下载安装 Nexus 启动停止 Nexus 使用 Nexus   参考资料    发布 jar 包到中央仓库  为了避免重复造轮子，相信每个 Jav">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106143734.png">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="静默虚空的博客" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="https://dunwu.github.io/2016/11/10/java/javatool/build/maven/maven-deploy/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Maven 教程之部署私服或中央仓库 | 静默虚空的博客</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">静默虚空的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">大道至简，知易行难</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+  
+  
+  
+  
+
+  
+
+  <a href="https://github.com/dunwu" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
+
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/11/10/java/javatool/build/maven/maven-deploy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Maven 教程之部署私服或中央仓库<a href="https://github.com/dunwu/blog/blob/master/source/_posts/java/javatool/build/maven/maven-deploy.md" class="post-edit-link" title="编辑" rel="noopener" target="_blank"><i class="fa fa-pencil"></i></a>
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-11-10 11:18:00" itemprop="dateCreated datePublished" datetime="2016-11-10T11:18:00+08:00">2016-11-10</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-16 20:52:45" itemprop="dateModified" datetime="2019-04-16T20:52:45+08:00">2019-04-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javatool/" itemprop="url" rel="index"><span itemprop="name">javatool</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">13k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">12 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="maven-教程之发布-jar-到私服或中央仓库"><a class="markdownIt-Anchor" href="#maven-教程之发布-jar-到私服或中央仓库"></a> Maven 教程之发布 jar 到私服或中央仓库</h1>
+<blockquote>
+<p>📓 本文已归档到：「<a href="https://github.com/dunwu/blog/blob/master/source/_posts/java/javatool/build/maven/" target="_blank" rel="noopener">blog</a>」</p>
+</blockquote>
+<!-- TOC depthFrom:2 depthTo:3 -->
+<ul>
+<li><a href="#%E5%8F%91%E5%B8%83-jar-%E5%8C%85%E5%88%B0%E4%B8%AD%E5%A4%AE%E4%BB%93%E5%BA%93">发布 jar 包到中央仓库</a>
+<ul>
+<li><a href="#%E5%9C%A8-sonatype-%E5%88%9B%E5%BB%BA-issue">在 Sonatype 创建 Issue</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-gpg-%E7%94%9F%E6%88%90%E5%85%AC%E7%A7%81%E9%92%A5%E5%AF%B9">使用 GPG 生成公私钥对</a></li>
+<li><a href="#maven-%E9%85%8D%E7%BD%AE">Maven 配置</a></li>
+<li><a href="#%E9%83%A8%E7%BD%B2%E5%92%8C%E5%8F%91%E5%B8%83">部署和发布</a></li>
+</ul>
+</li>
+<li><a href="#%E9%83%A8%E7%BD%B2-maven-%E7%A7%81%E6%9C%8D">部署 maven 私服</a>
+<ul>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%AE%89%E8%A3%85-nexus">下载安装 Nexus</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2-nexus">启动停止 Nexus</a></li>
+<li><a href="#%E4%BD%BF%E7%94%A8-nexus">使用 Nexus</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99">参考资料</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="发布-jar-包到中央仓库"><a class="markdownIt-Anchor" href="#发布-jar-包到中央仓库"></a> 发布 jar 包到中央仓库</h2>
+<blockquote>
+<p>为了避免重复造轮子，相信每个 Java 程序员都想打造自己的脚手架或工具包（自己定制的往往才是最适合自己的）。那么如何将自己的脚手架发布到中央仓库呢？下面我们将一步步来实现。</p>
+</blockquote>
+<h3 id="在-sonatype-创建-issue"><a class="markdownIt-Anchor" href="#在-sonatype-创建-issue"></a> 在 Sonatype 创建 Issue</h3>
+<p>（1）注册 Sonatype 账号</p>
+<p>发布 Java 包到 Maven 中央仓库，首先需要在 <a href="https://issues.sonatype.org/secure/Dashboard.jspa" target="_blank" rel="noopener">Sonatype</a> 网站创建一个工单(Issues)。</p>
+<p>第一次使用这个网站的时候需要注册自己的帐号（这个帐号和密码需要记住，后面会用到）。</p>
+<p>（2）创建 Issue</p>
+<p>注册账号成功后，根据你 Java 包的功能分别写上<code>Summary</code>、<code>Description</code>、<code>Group Id</code>、<code>SCM url</code>以及<code>Project URL</code>等必要信息，可以参见我之前创建的 Issue：<a href="https://issues.sonatype.org/browse/OSSRH-36187" target="_blank" rel="noopener">OSSRH-36187</a>。</p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181106143734.png"></div>
+<p>创建完之后需要等待 Sonatype 的工作人员审核处理，审核时间还是很快的，我的审核差不多等待了两小时。当 Issue 的 Status 变为<code>RESOLVED</code>后，就可以进行下一步操作了。</p>
+<blockquote>
+<p>说明：如果你的 Group Id 填写的是自己的网站（我的就是这种情况），Sonatype 的工作人员会询问你那个 Group Id 是不是你的域名，你只需要在上面回答是就行，然后就会通过审核。</p>
+</blockquote>
+<h3 id="使用-gpg-生成公私钥对"><a class="markdownIt-Anchor" href="#使用-gpg-生成公私钥对"></a> 使用 GPG 生成公私钥对</h3>
+<p>（1）安装 Gpg4win</p>
+<p>Windows 系统，可以下载 Gpg4win 软件来生成密钥对。</p>
+<p><a href="https://www.gpg4win.org/download.html" target="_blank" rel="noopener">Gpg4win 下载地址</a></p>
+<p>安装后，执行命令 gpg --version 检查是否安装成功。</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><span class="line"><span class="attr">C</span>:<span class="string">\Program Files (x86)\GnuPG\bin&gt;gpg --version</span></span><br><span class="line"><span class="attr">gpg</span> <span class="string">(GnuPG) 2.2.10</span></span><br><span class="line"><span class="attr">libgcrypt</span> <span class="string">1.8.3</span></span><br><span class="line"><span class="attr">Copyright</span> <span class="string">(C) 2018 Free Software Foundation, Inc.</span></span><br><span class="line"><span class="attr">License</span> <span class="string">GPLv3+: GNU GPL version 3 or later &lt;https://gnu.org/licenses/gpl.html&gt;</span></span><br><span class="line"><span class="attr">This</span> <span class="string">is free software: you are free to change and redistribute it.</span></span><br><span class="line"><span class="attr">There</span> <span class="string">is NO WARRANTY, to the exdunwu permitted by law.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Home</span>: <span class="string">C:/Users/Administrator/AppData/Roaming/gnupg</span></span><br><span class="line"><span class="attr">Supported</span> <span class="string">algorithms:</span></span><br><span class="line"><span class="attr">Pubkey</span>: <span class="string">RSA, ELG, DSA, ECDH, ECDSA, EDDSA</span></span><br><span class="line"><span class="attr">Cipher</span>: <span class="string">IDEA, 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH,</span></span><br><span class="line">        <span class="meta">CAMELLIA128,</span> <span class="string">CAMELLIA192, CAMELLIA256</span></span><br><span class="line"><span class="attr">Hash</span>: <span class="string">SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224</span></span><br><span class="line"><span class="attr">Compression</span>: <span class="string">Uncompressed, ZIP, ZLIB, BZIP2</span></span><br></pre></td></tr></table></figure>
+<p>（2）生成密钥对</p>
+<p>执行命令 <code>gpg --gen-key</code></p>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><span class="line">C:\Program Files (x86)\GnuPG\bin&gt;gpg --gen-key</span><br><span class="line">gpg (GnuPG) 2.2.10; Copyright (C) 2018 Free Software Foundation, Inc.</span><br><span class="line">This is free software: you are free <span class="keyword">to</span> change <span class="keyword">and</span> redistribute it.</span><br><span class="line">There is <span class="literal">NO</span> WARRANTY, <span class="keyword">to</span> the exdunwu permitted by law.</span><br><span class="line"></span><br><span class="line">Note: Use <span class="string">"gpg --full-generate-key"</span> <span class="keyword">for</span> a full featured key generation dialog.</span><br><span class="line"></span><br><span class="line">GnuPG needs <span class="keyword">to</span> construct a<span class="built_in"> user </span>ID <span class="keyword">to</span> identify your key.</span><br><span class="line"></span><br><span class="line">Real name: Zhang Peng</span><br><span class="line">Email address: forbreak@163.com</span><br><span class="line">You selected this USER-ID:</span><br><span class="line">    <span class="string">"Zhang Peng &lt;forbreak@163.com&gt;"</span></span><br><span class="line"></span><br><span class="line">Change (N)ame, (E)mail, <span class="keyword">or</span> (O)kay/(Q)uit? O</span><br></pre></td></tr></table></figure>
+<p>说明：按照提示，依次输入用户名、邮箱。</p>
+<p>（3）查看公钥</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="function">C:\<span class="title">Program</span> <span class="title">Files</span> (<span class="title">x86</span>)\<span class="title">GnuPG</span>\<span class="title">bin</span>&gt;<span class="title">gpg</span> --<span class="title">list</span>-<span class="title">keys</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">gpg</span>: <span class="title">checking</span> <span class="title">the</span> <span class="title">trustdb</span></span></span><br><span class="line"><span class="function"><span class="title">gpg</span>: <span class="title">marginals</span> <span class="title">needed</span>: 3  <span class="title">completes</span> <span class="title">needed</span>: 1  <span class="title">trust</span> <span class="title">model</span>: <span class="title">pgp</span></span></span><br><span class="line"><span class="function"><span class="title">gpg</span>: <span class="title">depth</span>: 0  <span class="title">valid</span>:   2  <span class="title">signed</span>:   0  <span class="title">trust</span>: 0-, 0<span class="title">q</span>, 0<span class="title">n</span>, 0<span class="title">m</span>, 0<span class="title">f</span>, 2<span class="title">u</span></span></span><br><span class="line"><span class="function"><span class="title">gpg</span>: <span class="title">next</span> <span class="title">trustdb</span> <span class="title">check</span> <span class="title">due</span> <span class="title">at</span> 2020-11-05</span></span><br><span class="line"><span class="function"><span class="title">C</span>:/<span class="title">Users</span>/<span class="title">Administrator</span>/<span class="title">AppData</span>/<span class="title">Roaming</span>/<span class="title">gnupg</span>/<span class="title">pubring.kbx</span></span></span><br><span class="line"><span class="function">--------------------------------------------------------</span></span><br><span class="line"><span class="function"><span class="title">pub</span>   <span class="title">rsa2048</span> 2018-11-06 [<span class="title">SC</span>] [<span class="title">expires</span>: 2020-11-06]</span></span><br><span class="line"><span class="function">      <span class="title">E4CE537A3803D49C35332221A306519BAFF57F60</span></span></span><br><span class="line"><span class="function"><span class="title">uid</span>           [<span class="title">ultimate</span>] <span class="title">forbreak</span> &lt;<span class="title">forbreak</span>@163.<span class="title">com</span>&gt;</span></span><br><span class="line"><span class="function"><span class="title">sub</span>   <span class="title">rsa2048</span> 2018-11-06 [<span class="title">E</span>] [<span class="title">expires</span>: 2020-11-06]</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：其中，E4CE537A3803D49C35332221A306519BAFF57F60 就是公钥</p>
+</blockquote>
+<p>（4）将公钥发布到 PGP 密钥服务器</p>
+<p>执行 <code>gpg --keyserver hkp://pool.sks-keyservers.net --send-keys</code> 发布公钥：</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">C:</span>\Program Files (x86)\GnuPG\bin&gt;gpg --keyserver <span class="string">hkp:</span><span class="comment">//pool.sks-keyservers.net --send-keys E4CE537A3803D49C35332221A306519BAFF57F60</span></span><br><span class="line"><span class="string">gpg:</span> sending key A306519BAFF57F60 to <span class="string">hkp:</span><span class="comment">//pool.sks-keyservers.net</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：有可能出现 gpg: keyserver receive failed: No dat 错误，等大约 30 分钟后再执行就不会报错了。</p>
+</blockquote>
+<p>（5）查看公钥是否发布成功</p>
+<p>执行 <code>gpg --keyserver hkp://pool.sks-keyservers.net --recv-keys</code> 查看公钥是否发布成功。</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="string">C:</span>\Program Files (x86)\GnuPG\bin&gt;gpg --keyserver <span class="string">hkp:</span><span class="comment">//pool.sks-keyservers.net --recv-keys E4CE537A3803D49C35332221A306519BAFF57F60</span></span><br><span class="line"><span class="string">gpg:</span> key <span class="string">A306519BAFF57F60:</span> <span class="string">"forbreak &lt;forbreak@163.com&gt;"</span> not changed</span><br><span class="line"><span class="string">gpg:</span> Total number <span class="string">processed:</span> <span class="number">1</span></span><br><span class="line"><span class="string">gpg:</span>              <span class="string">unchanged:</span> <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<h3 id="maven-配置"><a class="markdownIt-Anchor" href="#maven-配置"></a> Maven 配置</h3>
+<p>完成了前两个章节的准备工作，就可以将 jar 包上传到中央仓库了。当然了，我们还要对 maven 做一些配置。</p>
+<h4 id="settingsxml-配置"><a class="markdownIt-Anchor" href="#settingsxml-配置"></a> settings.xml 配置</h4>
+<p>一份完整的 settings.xml 配置示例如下：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginGroup</span>&gt;</span>org.sonatype.plugins<span class="tag">&lt;/<span class="name">pluginGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 用户名、密码就是 Sonatype 账号、密码 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype-staging<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- 使用 aliyun maven 仓库加速下载 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>nexus-aliyun<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">name</span>&gt;</span>Aliyun<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://maven.aliyun.com/nexus/condunwu/groups/public<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- gpg 的密码，注意，这里不是指公钥 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gpg.executable</span>&gt;</span>C:/Program Files (x86)/GnuPG/bin/gpg.exe<span class="tag">&lt;/<span class="name">gpg.executable</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">gpg.passphrase</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">gpg.passphrase</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>sonatype<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="pomxml-配置"><a class="markdownIt-Anchor" href="#pomxml-配置"></a> pom.xml 配置</h4>
+<p>（1）添加 licenses、scm、developers 配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">licenses</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">license</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>The Apache Software License, Version 2.0<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://www.apache.org/licenses/LICENSE-2.0.txt<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">distribution</span>&gt;</span>repo<span class="tag">&lt;/<span class="name">distribution</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">license</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">licenses</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">developers</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">developer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>xxxxxx<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">email</span>&gt;</span>forbreak@163.com<span class="tag">&lt;/<span class="name">email</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://github.com/dunwu<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">developer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">developers</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">scm</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://github.com/dunwu/dunwu<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">connection</span>&gt;</span>git@github.com:dunwu/dunwu.git<span class="tag">&lt;/<span class="name">connection</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">developerConnection</span>&gt;</span>https://github.com/dunwu<span class="tag">&lt;/<span class="name">developerConnection</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">scm</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>（2）添加 distributionManagement 配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype-snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://oss.sonatype.org/content/repositories/snapshots<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype-staging<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>https://oss.sonatype.org/service/local/staging/deploy/maven2<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>说明：<code>&lt;snapshotRepository&gt;</code> 指定的是 snapshot 仓库地址；<code>&lt;repository&gt;</code> 指定的是 staging （正式版）仓库地址。需要留意的是，这里的 id 需要和 settings.xml 中的 <code>&lt;server&gt;</code> 的 id 保持一致。</p>
+</blockquote>
+<p>（3）添加 profiles 配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>sonatype<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.sonatype.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>nexus-staging-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6.7<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">extensions</span>&gt;</span>true<span class="tag">&lt;/<span class="name">extensions</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">serverId</span>&gt;</span>sonatype-snapshots<span class="tag">&lt;/<span class="name">serverId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">nexusUrl</span>&gt;</span>https://oss.sonatype.org/<span class="tag">&lt;/<span class="name">nexusUrl</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">autoReleaseAfterClose</span>&gt;</span>true<span class="tag">&lt;/<span class="name">autoReleaseAfterClose</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-javadoc-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">failOnError</span>&gt;</span>false<span class="tag">&lt;/<span class="name">failOnError</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">quiet</span>&gt;</span>true<span class="tag">&lt;/<span class="name">quiet</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">id</span>&gt;</span>attach-javadocs<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">goal</span>&gt;</span>jar<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-gpg-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.6<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">id</span>&gt;</span>sign-artifacts<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">phase</span>&gt;</span>verify<span class="tag">&lt;/<span class="name">phase</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">goal</span>&gt;</span>sign<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">              <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="部署和发布"><a class="markdownIt-Anchor" href="#部署和发布"></a> 部署和发布</h3>
+<p>按照上面的步骤配置完后，一切都已经 OK。</p>
+<p>此时，使用 <code>mvn clean deploy -P sonatype</code> 命令就可以发布 jar 包到中央仓库了：</p>
+<blockquote>
+<p>说明：-P 参数后面的 sonatype 需要和 pom.xml 中 <code>&lt;profile&gt;</code> 的 id 保持一致，才能激活 profile。</p>
+</blockquote>
+<h2 id="部署-maven-私服"><a class="markdownIt-Anchor" href="#部署-maven-私服"></a> 部署 maven 私服</h2>
+<blockquote>
+<p>工作中，Java 程序员开发的商用 Java 项目，一般不想发布到中央仓库，使得人人尽知。这时，我们就需要搭建私服，将 maven 服务器部署在公司内部网络，从而避免 jar 包流传出去。怎么做呢，让我们来一步步学习吧。</p>
+</blockquote>
+<h3 id="下载安装-nexus"><a class="markdownIt-Anchor" href="#下载安装-nexus"></a> 下载安装 Nexus</h3>
+<p>进入<a href="https://www.sonatype.com/download-oss-sonatype" target="_blank" rel="noopener">官方下载地址</a>，选择合适版本下载。</p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203029.png"></div>
+<p>本人希望将 Nexus 部署在 Linux 机器，所以选用的是 Unix 版本。</p>
+<p>这里，如果想通过命令方式直接下载（比如用脚本安装），可以在<a href="https://help.sonatype.com/repomanager3/download/download-archives---repository-manager-3" target="_blank" rel="noopener">官方历史发布版本页面</a>中找到合适版本，然后执行以下命令：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">wget -O /opt/maven/nexus-unix.tar.gz http://download.sonatype.com/nexus/3/nexus-3.13.0-01-unix.tar.gz</span><br><span class="line">tar -zxf nexus-unix.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压后，有两个目录：</p>
+<ul>
+<li>nexus-3.13.0-01 - 包含了 Nexus 运行所需要的文件。是 Nexus 运行必须的。</li>
+<li>sonatype-work - 包含了 Nexus 生成的配置文件、日志文件、仓库文件等。当我们需要备份 Nexus 的时候默认备份此目录即可。</li>
+</ul>
+<h3 id="启动停止-nexus"><a class="markdownIt-Anchor" href="#启动停止-nexus"></a> 启动停止 Nexus</h3>
+<p>进入 nexus-3.13.0-01/bin 目录，有一个可执行脚本 nexus。</p>
+<p>执行 <code>./nexus</code>，可以查看允许执行的参数，如下所示，含义可谓一目了然：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line">$ ./nexus</span><br><span class="line">Usage: ./nexus &#123;start|stop|run|run-redirect|status|restart|force-reload&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>启动 nexus - <code>./nexus start</code></li>
+<li>停止 nexus -</li>
+</ul>
+<p>启动成功后，在浏览器中访问 <code>http://&lt;ip&gt;:8081</code>，欢迎页面如下图所示：</p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203131.png"></div>
+<p>点击右上角 Sign in 登录，默认用户名/密码为：admin/admin123。</p>
+<p>有必要提一下的是，在 Nexus 的 Repositories 管理页面，展示了可用的 maven 仓库，如下图所示：</p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/snap/20181127203156.png"></div>
+<blockquote>
+<p>说明：</p>
+<ul>
+<li>maven-central - maven 中央库（如果没有配置 mirror，默认就从这里下载 jar 包），从 <a href="https://repo1.maven.org/maven2/" target="_blank" rel="noopener">https://repo1.maven.org/maven2/</a> 获取资源</li>
+<li>maven-releases - 存储私有仓库的发行版 jar 包</li>
+<li>maven-snapshots - 存储私有仓库的快照版（调试版本） jar 包</li>
+<li>maven-public - 私有仓库的公共空间，把上面三个仓库组合在一起对外提供服务，在本地 maven 基础配置 settings.xml 中使用。</li>
+</ul>
+</blockquote>
+<h3 id="使用-nexus"><a class="markdownIt-Anchor" href="#使用-nexus"></a> 使用 Nexus</h3>
+<p>如果要使用 Nexus，还必须在 settings.xml 和 pom.xml 中配置认证信息。</p>
+<h4 id="配置-settingsxml"><a class="markdownIt-Anchor" href="#配置-settingsxml"></a> 配置 settings.xml</h4>
+<p>一份完整的 <code>settings.xml</code>：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">settings</span> <span class="attr">xmlns</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0"</span></span></span><br><span class="line"><span class="tag">  <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">pluginGroup</span>&gt;</span>org.sonatype.plugins<span class="tag">&lt;/<span class="name">pluginGroup</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">pluginGroups</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- Maven 私服账号信息 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">username</span>&gt;</span>admin<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">password</span>&gt;</span>admin123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!-- jar 包下载地址 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">mirrors</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">mirror</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>public<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">mirrorOf</span>&gt;</span>*<span class="tag">&lt;/<span class="name">mirrorOf</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-public/<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">mirror</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">mirrors</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">profiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">profile</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">id</span>&gt;</span>zp<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">repositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://central<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">repositories</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">pluginRepositories</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">pluginRepository</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">id</span>&gt;</span>central<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://central<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">releases</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">releases</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">snapshots</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">enabled</span>&gt;</span>true<span class="tag">&lt;/<span class="name">enabled</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">updatePolicy</span>&gt;</span>always<span class="tag">&lt;/<span class="name">updatePolicy</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">snapshots</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">pluginRepository</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">pluginRepositories</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">profile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">profiles</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">activeProfile</span>&gt;</span>zp<span class="tag">&lt;/<span class="name">activeProfile</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">activeProfiles</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">settings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置-pomxml"><a class="markdownIt-Anchor" href="#配置-pomxml"></a> 配置 pom.xml</h4>
+<p>在 pom.xml 中添加如下配置：</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">distributionManagement</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">repository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>releases<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Releases<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-releases<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span>&gt;</span>snapshots<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">name</span>&gt;</span>Snapshot<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url</span>&gt;</span>http://10.255.255.224:8081/repository/maven-snapshots<span class="tag">&lt;/<span class="name">url</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">snapshotRepository</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">distributionManagement</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：</p>
+<ul>
+<li><code>&lt;repository&gt;</code> 和 <code>&lt;snapshotRepository&gt;</code> 的 id 必须和 <code>settings.xml</code> 配置文件中的 <code>&lt;server&gt;</code> 标签中的 id 匹配。</li>
+<li><code>&lt;url&gt;</code> 标签的地址需要和 maven 私服的地址匹配。</li>
+</ul>
+</blockquote>
+<h4 id="执行-maven-构建"><a class="markdownIt-Anchor" href="#执行-maven-构建"></a> 执行 maven 构建</h4>
+<p>如果要使用 settings.xml 中的私服配置，必须通过指定 <code>-P zp</code> 来激活 profile。</p>
+<p>示例：</p>
+<figure class="highlight sh"><table><tr><td class="code"><pre><span class="line"><span class="comment">## 编译并打包 maven 项目</span></span><br><span class="line">$ mvn clean package -Dmaven.skip.test=<span class="literal">true</span> -P zp</span><br><span class="line"></span><br><span class="line"><span class="comment">## 编译并上传 maven 交付件（jar 包）</span></span><br><span class="line">$ mvn clean deploy -Dmaven.skip.test=<span class="literal">true</span> -P zp</span><br></pre></td></tr></table></figure>
+<h2 id="参考资料"><a class="markdownIt-Anchor" href="#参考资料"></a> 参考资料</h2>
+<ul>
+<li><a href="https://www.jianshu.com/p/8c3d7fb09bce" target="_blank" rel="noopener">https://www.jianshu.com/p/8c3d7fb09bce</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/07/gpg.html</a></li>
+<li><a href="https://www.cnblogs.com/hoobey/p/6102382.html" target="_blank" rel="noopener">https://www.cnblogs.com/hoobey/p/6102382.html</a></li>
+<li><a href="https://blog.csdn.net/wzygis/article/details/49276779" target="_blank" rel="noopener">https://blog.csdn.net/wzygis/article/details/49276779</a></li>
+<li><a href="https://blog.csdn.net/clj198606061111/article/details/52200928" target="_blank" rel="noopener">https://blog.csdn.net/clj198606061111/article/details/52200928</a></li>
+</ul>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/java/" rel="tag"># java</a>
+          
+            <a href="/blog/tags/javatool/" rel="tag"># javatool</a>
+          
+            <a href="/blog/tags/build/" rel="tag"># build</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/2016/11/10/java/javatool/build/maven/maven-settings/" rel="next" title="Maven 教程之 settings.xml 详解">
+                <i class="fa fa-chevron-left"></i> Maven 教程之 settings.xml 详解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/2016/11/10/java/javatool/build/maven/maven-pom/" rel="prev" title="Maven 教程之 pom.xml 详解">
+                Maven 教程之 pom.xml 详解 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/blog/images/avatar.gif" alt="Zhang Peng">
+            
+              <p class="site-author-name" itemprop="name">Zhang Peng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">325</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/blog/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">33</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/blog/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">133</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/dunwu" title="GitHub &rarr; https://github.com/dunwu" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:forbreak@163.com" title="E-Mail &rarr; mailto:forbreak@163.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            </div>
+          
+
+          
+             <div class="cc-license motion-element" itemprop="license">
+              
+              
+                
+              
+              
+              
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/blog/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+             </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#maven-教程之发布-jar-到私服或中央仓库"><span class="nav-text"> Maven 教程之发布 jar 到私服或中央仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#发布-jar-包到中央仓库"><span class="nav-text"> 发布 jar 包到中央仓库</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#在-sonatype-创建-issue"><span class="nav-text"> 在 Sonatype 创建 Issue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-gpg-生成公私钥对"><span class="nav-text"> 使用 GPG 生成公私钥对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven-配置"><span class="nav-text"> Maven 配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#settingsxml-配置"><span class="nav-text"> settings.xml 配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#pomxml-配置"><span class="nav-text"> pom.xml 配置</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署和发布"><span class="nav-text"> 部署和发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署-maven-私服"><span class="nav-text"> 部署 maven 私服</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#下载安装-nexus"><span class="nav-text"> 下载安装 Nexus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动停止-nexus"><span class="nav-text"> 启动停止 Nexus</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-nexus"><span class="nav-text"> 使用 Nexus</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-settingsxml"><span class="nav-text"> 配置 settings.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置-pomxml"><span class="nav-text"> 配置 pom.xml</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行-maven-构建"><span class="nav-text"> 执行 maven 构建</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-text"> 参考资料</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-paper-plane"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Zhang Peng</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+    <span title="站点总字数">2.1m</span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    
+    <span title="站点阅读时长">31:53</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
+    
+      
+    
+  
+  <script color="107,97,95" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-reading-progress@1/reading_progress.min.js"></script>
+
+
+  
+
+
+  <script src="/blog/js/src/utils.js?v=7.0.1"></script>
+
+  <script src="/blog/js/src/motion.js?v=7.0.1"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/src/schemes/muse.js?v=7.0.1"></script>
+
+
+
+  
+  <script src="/blog/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/blog/js/src/post-details.js?v=7.0.1"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/src/bootstrap.js?v=7.0.1"></script>
+
+
+  
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  
+    
+  
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-bookmark@1/bookmark.min.js"></script>
+  <script>
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+
+</body>
+</html>

@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://sishuok.com/forum/upload/2012/2/19/a02c1e3154ef4be3f15fb91275a26494__1.JPG">
 <meta property="og:image" content="http://sishuok.com/forum/upload/2012/2/19/6fdf1048726cc2edcac4fca685f050ac__2.JPG">
-<meta property="og:updated_time" content="2019-03-26T15:47:30.569Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:48.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring IoC">
 <meta name="twitter:description" content="IoC   IoC 概念  IoC 是什么 IoC 能做什么 依赖注入 IoC 和 DI IoC 容器 Bean   IoC 容器  核心接口 IoC 容器工作步骤 Bean 概述 依赖   IoC 容器配置  Xml 配置 注解配置 Java 配置      IoC 概念  IoC 是什么  IoC，是 Inversion of Control 的缩写，即控制反转。  上层模块不应该依赖于下层">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:30" itemprop="dateModified" datetime="2019-03-26T23:47:30+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:48" itemprop="dateModified" datetime="2019-04-16T20:14:48+08:00">2019-04-16</time>
               
             
           </span>
@@ -557,10 +557,10 @@
 <li>**为何是反转，哪些方面反转了：**有反转就有正转，传统应用程序是由我们自己在对象中主动控制去直接获取依赖对象，也就是正转；而反转则是由容器来帮忙创建及注入依赖对象；为何是反转？因为由容器帮我们查找及注入依赖对象，对象只是被动的接受依赖对象，所以是反转；哪些方面反转了？依赖对象的获取被反转了。</li>
 </ul>
 <p>用图例说明一下，传统程序设计如图 2-1，都是主动去创建相关对象然后再组合起来：</p>
-<p><br><div align="center"><img src="http://sishuok.com/forum/upload/2012/2/19/a02c1e3154ef4be3f15fb91275a26494__1.JPG"></div><br></p>
+<div align="center"><img src="http://sishuok.com/forum/upload/2012/2/19/a02c1e3154ef4be3f15fb91275a26494__1.JPG"></div>
 <p>图 2-1 传统应用程序示意图</p>
 <p>当有了 IoC/DI 的容器后，在客户端类中不再主动去创建这些对象了，如图 2-2 所示:</p>
-<p><br><div align="center"><img src="http://sishuok.com/forum/upload/2012/2/19/6fdf1048726cc2edcac4fca685f050ac__2.JPG"></div><br></p>
+<div align="center"><img src="http://sishuok.com/forum/upload/2012/2/19/6fdf1048726cc2edcac4fca685f050ac__2.JPG"></div>
 <p>图 2-2 有 IoC/DI 容器后程序结构示意图</p>
 <h3 id="ioc-能做什么"><a class="markdownIt-Anchor" href="#ioc-能做什么"></a> IoC 能做什么</h3>
 <p>IoC 不是一种技术，只是一种思想，一个重要的面向对象编程的法则，它能指导我们如何设计出松耦合、更优良的程序。传统应用程序都是由我们在类内部主动创建依赖对象，从而导致类与类之间高耦合，难于测试；有了 IoC 容器后，把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以对象与对象之间是松散耦合，这样也方便测试，利于功能复用，更重要的是使得程序的整个体系结构变得非常灵活。</p>
@@ -914,8 +914,8 @@ public class AppConfig {
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/11/08/java/javaweb/javaee/servlet/servlet-demo/" rel="next" title="JavaEE Servlet 示例">
-                <i class="fa fa-chevron-left"></i> JavaEE Servlet 示例
+              <a href="/blog/2017/11/08/java/javaweb/javaee/jstl/jstl-xml/" rel="next" title="JSTL XML标签">
+                <i class="fa fa-chevron-left"></i> JSTL XML标签
               </a>
             
           </div>
@@ -924,8 +924,8 @@ public class AppConfig {
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/11/08/java/javaweb/javaee/jsp/jsp-introduction/" rel="prev" title="JSP 概述">
-                JSP 概述 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/11/08/java/javaweb/javaee/servlet/servlet-and-status/" rel="prev" title="JavaEE Servlet HTTP 状态码">
+                JavaEE Servlet HTTP 状态码 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -997,7 +997,7 @@ public class AppConfig {
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1074,7 +1074,9 @@ public class AppConfig {
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1353,19 +1355,7 @@ public class AppConfig {
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1486,7 +1476,7 @@ public class AppConfig {
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

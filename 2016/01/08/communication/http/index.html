@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="网络协议之 HTTP  📓 本文已归档到：「blog」    HTTP 是什么？ 实例 工作原理 特点 客户端请求消息 服务器响应消息 HTTP 状态码 更多内容    HTTP 是什么？ HTTP（HyperText Transfer Protocol，超文本传输协议）是 WWW (World Wide Web)实现数据通信的基石。 HTTP 是由 IETF(Internet Enginee">
-<meta name="keywords" content="communication,network,protocol,application">
+<meta name="keywords" content="communication,network,application,protocol">
 <meta property="og:type" content="article">
 <meta property="og:title" content="网络协议之 HTTP">
 <meta property="og:url" content="https://dunwu.github.io/2016/01/08/communication/http/index.html">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221141668-2097587842.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142028-743579086.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142606-879279999.jpg">
-<meta property="og:updated_time" content="2019-03-26T15:47:25.524Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:44.986Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="网络协议之 HTTP">
 <meta name="twitter:description" content="网络协议之 HTTP  📓 本文已归档到：「blog」    HTTP 是什么？ 实例 工作原理 特点 客户端请求消息 服务器响应消息 HTTP 状态码 更多内容    HTTP 是什么？ HTTP（HyperText Transfer Protocol，超文本传输协议）是 WWW (World Wide Web)实现数据通信的基石。 HTTP 是由 IETF(Internet Enginee">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:25" itemprop="dateModified" datetime="2019-03-26T23:47:25+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:44" itemprop="dateModified" datetime="2019-04-16T20:14:44+08:00">2019-04-16</time>
               
             
           </span>
@@ -538,9 +538,9 @@
 <p>如果你学习过计算机网络，熟悉 OSI 模型，那么你可以跳过这个实例了。</p>
 <p>而不了解 OSI 模型的朋友，不妨通过一个实例来对 HTTP 报文有一个感性的认识。</p>
 <p>以下是使用 wireshark 抓取的一个实际访问百度首页的 HTTP GET 报文：</p>
-<p><br><div align="center"><img src="http://images2015.cnblogs.com/blog/318837/201601/318837-20160108221137996-786139964.png"></div><br></p>
+<div align="center"><img src="http://images2015.cnblogs.com/blog/318837/201601/318837-20160108221137996-786139964.png"></div>
 <p>可以清楚的看到它的层级结构如下图，经过了层层的包装。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221140731-222242798.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221140731-222242798.png"></div>
 <h2 id="工作原理"><a class="markdownIt-Anchor" href="#工作原理"></a> 工作原理</h2>
 <p>HTTP 工作于 <strong>Client/Server</strong> 模型上。</p>
 <p>客户端和服务器之间的通信采用 <strong>request/response</strong> 机制。</p>
@@ -565,13 +565,13 @@
 <p>一个 HTTP&quot;服务器&quot;同样也是一个应用程序（通常是一个 Web 服务，如 Apache Web 服务器或 IIS 服务器等），通过接收客户端的请求并向客户端发送 HTTP 响应数据。</p>
 <p>HTTP 使用统一资源标识符（Uniform Resource Identifiers, URI）来传输数据和建立连接。</p>
 <p>一旦建立连接后，数据消息就通过类似 Internet 邮件所使用的格式[RFC5322]和多用途 Internet 邮件扩展（MIME）[RFC2045]来传送。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221141668-2097587842.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221141668-2097587842.png"></div>
 <h2 id="客户端请求消息"><a class="markdownIt-Anchor" href="#客户端请求消息"></a> 客户端请求消息</h2>
 <p>客户端发送一个 HTTP 请求到服务器的请求消息包括以下格式：请求行（request line）、请求头部（header）、空行和请求数据四个部分组成，下图给出了请求报文的一般格式。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142028-743579086.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142028-743579086.png"></div>
 <h2 id="服务器响应消息"><a class="markdownIt-Anchor" href="#服务器响应消息"></a> 服务器响应消息</h2>
 <p>HTTP 响应也由四个部分组成，分别是：状态行、消息报头、空行和响应正文。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142606-879279999.jpg"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/318837/201601/318837-20160108221142606-879279999.jpg"></div>
 <h1 id="http-请求"><a class="markdownIt-Anchor" href="#http-请求"></a> HTTP 请求</h1>
 <p>根据 HTTP 标准，HTTP 请求可以使用多种请求方法。</p>
 <p><strong>HTTP1.0</strong>定义了三种请求方法： <strong>GET</strong>, <strong>POST</strong> 和 <strong>HEAD</strong>方法。</p>
@@ -982,9 +982,9 @@
           
             <a href="/blog/tags/network/" rel="tag"># network</a>
           
-            <a href="/blog/tags/protocol/" rel="tag"># protocol</a>
-          
             <a href="/blog/tags/application/" rel="tag"># application</a>
+          
+            <a href="/blog/tags/protocol/" rel="tag"># protocol</a>
           
         </div>
       
@@ -1080,7 +1080,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1157,7 +1157,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1436,19 +1438,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1569,7 +1559,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

@@ -108,7 +108,7 @@
 
 
   <meta name="description" content="细说 Java 主流日志工具库  在项目开发中，为了跟踪代码的运行情况，常常要使用日志来记录信息。 在 Java 世界，有很多的日志工具库来实现日志功能，避免了我们重复造轮子。 我们先来逐一了解一下主流日志工具。 📓 本文已归档到：「blog」    日志框架  java.util.logging (JUL) Log4j Logback Log4j2 Log4j vs Logback vs L">
-<meta name="keywords" content="programming,java,javalib,log,slf4j,logback,log4j,common-logging">
+<meta name="keywords" content="java,javalib,log">
 <meta property="og:type" content="article">
 <meta property="og:title" content="细说 Java 主流日志工具库">
 <meta property="og:url" content="https://dunwu.github.io/2016/10/14/java/javalib/java-log/index.html">
@@ -120,7 +120,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/slf4j-bind-strategy.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-configuration.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-appender.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:28.978Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:47.022Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="细说 Java 主流日志工具库">
 <meta name="twitter:description" content="细说 Java 主流日志工具库  在项目开发中，为了跟踪代码的运行情况，常常要使用日志来记录信息。 在 Java 世界，有很多的日志工具库来实现日志功能，避免了我们重复造轮子。 我们先来逐一了解一下主流日志工具。 📓 本文已归档到：「blog」    日志框架  java.util.logging (JUL) Log4j Logback Log4j2 Log4j vs Logback vs L">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:28" itemprop="dateModified" datetime="2019-03-26T23:47:28+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
               
             
           </span>
@@ -451,21 +451,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/" itemprop="url" rel="index"><span itemprop="name">programming</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/programming/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javalib/" itemprop="url" rel="index"><span itemprop="name">javalib</span></a></span>
 
                 
                 
@@ -606,7 +599,7 @@
 <p><a href="http://logging.apache.org/log4j/2.x/" target="_blank" rel="noopener">官网地址</a></p>
 <p>按照官方的说法，Log4j2 是 Log4j 和 Logback 的替代。</p>
 <p>Log4j2 架构：</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/log4j2-architecture.jpg"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/log4j2-architecture.jpg"></div>
 <h3 id="log4j-vs-logback-vs-log4j2"><a class="markdownIt-Anchor" href="#log4j-vs-logback-vs-log4j2"></a> Log4j vs Logback vs Log4j2</h3>
 <p>按照官方的说法，<strong>Log4j2 大大优于 Log4j 和 Logback。</strong></p>
 <p>那么，Log4j2 相比于先问世的 Log4j 和 Logback，它具有哪些优势呢？</p>
@@ -635,7 +628,7 @@
 <p>什么，作者又是 Ceki Gulcu！这位大神写了 Log4j、Logback 和 slf4j，专注日志组件开发五百年，一直只能超越自己。</p>
 <p>类似于 Common-Logging，slf4j 是对不同日志框架提供的一个 API 封装，可以在部署的时候不修改任何配置即可接入一种日志实现方案。但是，slf4j 在<strong>编译时</strong>静态绑定真正的 Log 库。使用 SLF4J 时，如果你需要使用某一种日志实现，那么你必须选择正确的 SLF4J 的 jar 包的集合（各种桥接包）。</p>
 <p><a href="http://www.slf4j.org/" target="_blank" rel="noopener">官网地址</a></p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/slf4j-to-other-log.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/slf4j-to-other-log.png"></div>
 <h3 id="common-logging-vs-slf4j"><a class="markdownIt-Anchor" href="#common-logging-vs-slf4j"></a> common-logging vs slf4j</h3>
 <p>slf4j 库类似于 Apache Common-Logging。但是，他在编译时静态绑定真正的日志库。这点似乎很麻烦，其实也不过是导入桥接 jar 包而已。</p>
 <p>slf4j 一大亮点是提供了更方便的日志记录方式：</p>
@@ -675,7 +668,7 @@
 <p>在介绍解决方案前，先提一个概念——桥接</p>
 <p><strong>什么是桥接呢</strong></p>
 <p>假如你正在开发应用程序所调用的组件当中已经使用了 common-logging，这时你需要 jcl-over-slf4j.jar 把日志信息输出重定向到 slf4j-api，slf4j-api 再去调用 slf4j 实际依赖的日志组件。这个过程称为桥接。下图是官方的 slf4j 桥接策略图：</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/slf4j-bind-strategy.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/slf4j-bind-strategy.png"></div>
 <p>从图中应该可以看出，无论你的老项目中使用的是 common-logging 或是直接使用 log4j、java.util.logging，都可以使用对应的桥接 jar 包来解决兼容问题。</p>
 <p><strong>slf4j 兼容 common-logging</strong></p>
 <figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.slf4j<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>jcl-over-slf4j<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.7.12<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -714,7 +707,7 @@
 </ul>
 </li>
 </ul>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-configuration.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-configuration.png"></div>
 <h3 id="appender"><a class="markdownIt-Anchor" href="#appender"></a> <code>&lt;appender&gt;</code></h3>
 <ul>
 <li>作用：将记录日志的任务委托给名为 appender 的组件。</li>
@@ -772,7 +765,7 @@
 </ul>
 </li>
 </ul>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-appender.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/log/logback-appender.png"></div>
 <h3 id="logger"><a class="markdownIt-Anchor" href="#logger"></a> <code>&lt;logger&gt;</code></h3>
 <ul>
 <li>作用：设置 logger。</li>
@@ -853,21 +846,11 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/programming/" rel="tag"># programming</a>
-          
             <a href="/blog/tags/java/" rel="tag"># java</a>
           
             <a href="/blog/tags/javalib/" rel="tag"># javalib</a>
           
             <a href="/blog/tags/log/" rel="tag"># log</a>
-          
-            <a href="/blog/tags/slf4j/" rel="tag"># slf4j</a>
-          
-            <a href="/blog/tags/logback/" rel="tag"># logback</a>
-          
-            <a href="/blog/tags/log4j/" rel="tag"># log4j</a>
-          
-            <a href="/blog/tags/common-logging/" rel="tag"># common-logging</a>
           
         </div>
       
@@ -963,7 +946,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1040,7 +1023,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1319,19 +1304,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1452,7 +1425,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

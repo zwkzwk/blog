@@ -146,7 +146,7 @@
 <meta property="og:image" content="http://www.heartthinkdo.com/wp-content/uploads/2018/05/2-1-300x149.png">
 <meta property="og:image" content="http://www.heartthinkdo.com/wp-content/uploads/2018/05/31.png">
 <meta property="og:image" content="http://www.heartthinkdo.com/wp-content/uploads/2018/05/32.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:29.525Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:47.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kafka">
 <meta name="twitter:description" content="Kafka  Kafka 是一个分布式的、可水平扩展的、基于发布/订阅模式的、支持容错的消息系统。    1. 概述  1.1. 分布式 1.2. 容错 1.3. 提交日志 1.4. 消息队列 1.5. 为什么要使用消息系统 1.6. Kafka 的关键功能 1.7. Kafka 基本概念 1.8. Kafka 核心 API 1.9. Topic 和日志   2. Kafka 工作原理 3. 持">
@@ -460,7 +460,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:29" itemprop="dateModified" datetime="2019-03-26T23:47:29+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
               
             
           </span>
@@ -761,9 +761,9 @@
 <li>Sequence Numbler。（对于每个 PID，该 Producer 发送数据的每个&lt;Topic, Partition&gt;都对应一个从 0 开始单调递增的 Sequence Number。</li>
 </ul>
 <p>Broker 端在缓存中保存了这 seq number，对于接收的每条消息，如果其序号比 Broker 缓存中序号大于 1 则接受它，否则将其丢弃。这样就可以实现了消息重复提交了。但是，只能保证单个 Producer 对于同一个&lt;Topic, Partition&gt;的 Exactly Once 语义。不能保证同一个 Producer 一个 topic 不同的 partion 幂等。</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-1.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-1.png"></div>
 <p>实现幂等之后</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/2.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/2.png"></div>
 <h4 id="712-生成-pid-的流程"><a class="markdownIt-Anchor" href="#712-生成-pid-的流程"></a> 7.1.2. 生成 PID 的流程</h4>
 <p>在执行创建事务时，如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Producer&lt;String, String&gt; producer = <span class="keyword">new</span> KafkaProducer&lt;String, String&gt;(props);</span><br></pre></td></tr></table></figure>
@@ -851,9 +851,9 @@
 </ul>
 <h5 id="tranaction-id-productid-和-epoch"><a class="markdownIt-Anchor" href="#tranaction-id-productid-和-epoch"></a> tranaction id 、productid 和 epoch</h5>
 <p><strong>一个 app 有一个 tid，同一个应用的不同实例 PID 是一样的，只是 epoch 的值不同</strong>。如：</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/3-1.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/3-1.png"></div>
 <p>同一份代码运行两个实例，分步执行如下：<em>在实例 1 没有进行提交事务前，开始执行实例 2 的初始化事务</em></p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/4-1-1024x458.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/4-1-1024x458.png"></div>
 <p><strong>step1 实例 1-初始化事务</strong>。的打印出对应 productId 和 epoch，信息如下：</p>
 <p>[2018-04-21 20:56:23,106] INFO [TransactionCoordinator id=0] Initialized transactionalId first-transactional with producerId 8000 and producer epoch 123 on partition __transaction_state-12 (kafka.coordinator.transaction.TransactionCoordinator)</p>
 <p><strong>step2 实例 1-发送消息。</strong></p>
@@ -863,7 +863,7 @@
 <p>org.apache.kafka.common.errors.ProducerFencedException: Producer attempted an operation with an old epoch. Either there is a newer producer with the same transactionalId, or the producer’s transaction has been expired by the broker.</p>
 <p><strong>step5 实例 2-提交事务</strong></p>
 <p>为了避免这种错误，同一个事务 ID，只有保证如下顺序 epch 小 producer 执行 init-transaction 和 committransaction，然后 epoch 较大的 procuder 才能开始执行 init-transaction 和 commit-transaction，如下顺序：</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/80061024.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/80061024.png"></div>
 <p>有了 transactionId 后，Kafka 可保证：</p>
 <ul>
 <li>跨 Session 的数据幂等发送。当具有相同 Transaction ID 的新的 Producer 实例被创建且工作时，旧的且拥有相同 Transaction ID 的 Producer 将不再工作【上面的实例可以验证】。kafka 保证了关联同一个事务的所有 producer（一个应用有多个实例）必须按照顺序初始化事务、和提交事务，否则就会有问题，这保证了同一事务 ID 中消息是有序的（不同实例得按顺序创建事务和提交事务）。</li>
@@ -875,7 +875,7 @@
 <p>创建消费者代码</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">====================================</span><br><span class="line">类名：DefaultKafkaProducerFactory</span><br><span class="line">====================================</span><br><span class="line"><span class="function"><span class="keyword">protected</span> Producer&lt;K, V&gt; <span class="title">createTransactionalProducer</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Producer&lt;K, V&gt; producer = <span class="keyword">this</span>.cache.poll();</span><br><span class="line">    <span class="keyword">if</span> (producer == <span class="keyword">null</span>) &#123;</span><br><span class="line">        Map&lt;String, Object&gt; configs = <span class="keyword">new</span> HashMap&lt;&gt;(<span class="keyword">this</span>.configs);</span><br><span class="line">        <span class="comment">// 对于每一次生成producer时，都设置一个不同的transactionId</span></span><br><span class="line">        configs.put(ProducerConfig.TRANSACTIONAL_ID_CONFIG,</span><br><span class="line">                <span class="keyword">this</span>.transactionIdPrefix + <span class="keyword">this</span>.transactionIdSuffix.getAndIncrement());</span><br><span class="line">        producer = <span class="keyword">new</span> KafkaProducer&lt;K, V&gt;(configs, <span class="keyword">this</span>.keySerializer, <span class="keyword">this</span>.valueSerializer);</span><br><span class="line">        <span class="comment">// 1.初始化话事务。</span></span><br><span class="line">        producer.initTransactions();</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CloseSafeProducer&lt;K, V&gt;(producer, <span class="keyword">this</span>.cache);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> producer;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="854-consume-transform-produce-的流程"><a class="markdownIt-Anchor" href="#854-consume-transform-produce-的流程"></a> 8.5.4. Consume-transform-Produce 的流程</h4>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/Snip20180504_56.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/Snip20180504_56.png"></div>
 <p><strong>流程 1</strong> **：**查找 Tranaction Corordinator。</p>
 <p>Producer 向任意一个 brokers 发送 FindCoordinatorRequest 请求来获取 Transaction Coordinator 的地址。</p>
 <p>**流程 2：**初始化事务 initTransaction</p>
@@ -894,7 +894,7 @@
 <figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="type">AddPartitionsToTxnRequest</span> =&gt; <span class="type">TransactionalId</span> <span class="type">PID</span> <span class="type">Epoch</span> [<span class="type">Topic</span> [<span class="type">Partition</span>]]</span><br><span class="line"> <span class="type">TransactionalId</span> =&gt; <span class="built_in">string</span></span><br><span class="line"> <span class="type">PID</span> =&gt; <span class="built_in">int64</span></span><br><span class="line"> <span class="type">Epoch</span> =&gt; int16</span><br><span class="line"> <span class="type">Topic</span> =&gt; <span class="built_in">string</span></span><br><span class="line"> <span class="type">Partition</span> =&gt; <span class="built_in">int32</span></span><br></pre></td></tr></table></figure>
 <p><strong>流程 4.2：</strong> producer#send 发送 ProduceRequst</p>
 <p>生产者发送数据，虽然没有还没有执行 commit 或者 absrot，但是此时消息已经保存到 kafka 上，可以参考如下图断点位置处，此时已经可以查看到消息了，而且即使后面执行 abort，消息也不会删除，只是更改状态字段标识消息为 abort 状态。</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/62059279-1024x437.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/62059279-1024x437.png"></div>
 <p><strong>流程 4.3：</strong> AddOffsetCommitsToTxnRequest</p>
 <p>Producer 通过 KafkaProducer.sendOffsetsToTransaction 向事务协调器器发送一个 AddOffesetCommitsToTxnRequests：</p>
 <figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="type">AddOffsetsToTxnRequest</span> =&gt; <span class="type">TransactionalId</span> <span class="type">PID</span> <span class="type">Epoch</span> <span class="type">ConsumerGroupID</span></span><br><span class="line"> <span class="type">TransactionalId</span> =&gt; <span class="built_in">string</span></span><br><span class="line"> <span class="type">PID</span> =&gt; <span class="built_in">int64</span></span><br><span class="line"> <span class="type">Epoch</span> =&gt; int16</span><br><span class="line"> <span class="type">ConsumerGroupID</span> =&gt; <span class="built_in">string</span></span><br></pre></td></tr></table></figure>
@@ -922,21 +922,21 @@
 </ul>
 <h5 id="文件类型和查看命令"><a class="markdownIt-Anchor" href="#文件类型和查看命令"></a> 文件类型和查看命令</h5>
 <p>kafka 文件主要包括 broker 的 data（主题：test）、事务协调器对应的 transaction_log（主题：__tranaction_state）、偏移量信息（主题:_consumer_offsets）三种类型。如下图</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-2-207x300.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-2-207x300.png"></div>
 <p>这三种文件类型其实都是 topic 的分区，所以对于每一个目录都包含*.log、*.index、<em>.timeindex、</em>.txnindex 文件（仅这个文件是为了实现事务属性引入的）。segment 和 segmengt 对应 index、timeindex、txnindex 文件命名中序号表示的是第几个消息。如下图中，00000000000000368769.index 和 00000000000000568769.log 中“368969”就是表示文件中存储的第一个消息是 468969 个消息。</p>
 <p>对于索引文案包含两部分：</p>
 <ul>
 <li>baseOffset：索引对应 segment 文件中的第几条 message。</li>
 <li>position：在 segment 中的绝对位置。</li>
 </ul>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/67930538-300x179.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/67930538-300x179.png"></div>
 <p>查看文件内容：</p>
 <p>bin/kafka-run-class.sh kafka.tools.DumpLogSegments –files /Users/wuzhonghu/data/kafka-logs/firtstopic-0/00000000000000000002.log –print-data-log</p>
 <h5 id="controlmessage-和-transaction-markers"><a class="markdownIt-Anchor" href="#controlmessage-和-transaction-markers"></a> ControlMessage 和 Transaction markers</h5>
 <p>Trasaction markers 就是 kafka 为了实现事务定义的 Controll Message。这个消息和数据消息都存放在 log 中，在 Consumer 读取事务消息时有用，可以参考下面章节-4.5.1 老版本-读取事务消息顺序。</p>
 <h5 id="transaction-coordinator-和-transaction-log"><a class="markdownIt-Anchor" href="#transaction-coordinator-和-transaction-log"></a> Transaction Coordinator 和 Transaction Log</h5>
 <p>Transaction Log 如下放置在“_tranaction_state”主题下面，默认是 50 个分区，每一个分区中文件格式和 broker 存储消息是一样的,都有 log/index/timeindex 文件，如下：</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/57646045.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/57646045.png"></div>
 <h4 id="855-消费读取事务消息read_commited"><a class="markdownIt-Anchor" href="#855-消费读取事务消息read_commited"></a> 8.5.5. 消费读取事务消息(READ_COMMITED)</h4>
 <p>Consumer 为了实现事务，新增了一个 isolation.level 配置，有两个值如下，</p>
 <ul>
@@ -946,7 +946,7 @@
 <p>在本小节中我们主要讲 READ_COMMITED 模式下读取消息的流程的两种版本的演化</p>
 <h5 id="老版本-读取事务消息顺序"><a class="markdownIt-Anchor" href="#老版本-读取事务消息顺序"></a> 老版本-读取事务消息顺序</h5>
 <p>如下图中，按顺序保存到 broker 中消息有：事务 1 消息 T1-M1、对于事务 2 的消息有 T2-M1、事务 1 消息 T1-M2、非事务消息 M1，最终到达 client 端的循序是 M1-&gt; T2-M1 -&gt; T1-M1 -&gt; T1-M2。</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/84999567.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/84999567.png"></div>
 <p>具体步骤如下：</p>
 <ul>
 <li><strong>step1</strong> Consumer 接受到事务消息 T1-M1、T2-M2、T1-M2 和非事务消息 M1，因为没有收到事务 T1 和 T2 的控制消息，所以此时把事务相关消息 T1-M1、T2-M2、T1-M2 保存到内存，然后只把非事务消息 M1 返回给 client。</li>
@@ -975,38 +975,38 @@
 <ul>
 <li>存放数据的 log</li>
 </ul>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-3.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/1-3.png"></div>
 <ul>
 <li>存放 Absort Index 的内容如下：</li>
 </ul>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/3-2.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/3-2.png"></div>
 <p>执行读取数据流程如下：</p>
 <p><strong>step1:</strong> 假设 consumer 读取数据的 fetched offsets 的区间是 0 到 4。</p>
 <ul>
 <li>首先，broker 读取 data log 中数据</li>
 </ul>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/11-1.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/11-1.png"></div>
 <ul>
 <li>然后，broker 依次读取 abort index 的内容，发现 LSO 大于等于 4 就停止。如上可以获取到 P2 对应的 offset 从 2 到 5 的消息都是被丢弃的：</li>
 </ul>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/12-1.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/12-1.png"></div>
 <ul>
 <li>最后，broker 将上面 data log 和 abort index 中满足条件的数据返回给 consumer。</li>
 </ul>
 <p>**step2 ：**在 consumer 端根据 absrot index 中返回的内容，过滤丢弃的消息，最终给用户消息为</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/13-300x103.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/13-300x103.png"></div>
 <h5 id="absorted-transaction-index"><a class="markdownIt-Anchor" href="#absorted-transaction-index"></a> Absorted Transaction Index</h5>
 <p>在 broker 中数据中新增一个索引文件，保存 aborted tranasation 对应的 offsets，只有事务执行 abort 时，才会往这个文件新增一个记录，初始这个文件是不存在的，只有第一条 abort 时，才会创建这个文件。</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/2-1-300x149.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/2-1-300x149.png"></div>
 <p>这个索引文件结构的每一行结构是 TransactionEntry：</p>
 <figure class="highlight ocaml"><table><tr><td class="code"><pre><span class="line"><span class="type">Version</span> =&gt; int16</span><br><span class="line"> <span class="type">PID</span> =&gt; <span class="built_in">int64</span></span><br><span class="line"> <span class="type">FirstOffset</span> =&gt; <span class="built_in">int64</span></span><br><span class="line"> <span class="type">LastOffset</span> =&gt; <span class="built_in">int64</span></span><br><span class="line"> <span class="type">LastStableOffset</span> =&gt; <span class="built_in">int64</span></span><br></pre></td></tr></table></figure>
 <p>当 broker 接受到控制消息（producer 执行 commitTransaction()或者 abortTransaction()）时, 执行如下操作:</p>
 <p>(1)计算 LSO。</p>
 <p>Broker 在缓存中维护了所有处于运行状态的事务对应的 initial offsets,LSO 的值就是这些 offsets 中最小值-1。</p>
 <p>举例说明下 LSO 的计算，对于一个 data log 中内如如下</p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/31.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/31.png"></div>
 <p>对应的 abort index 文件中内如如下：<strong>LSO 是递增的</strong></p>
-<p><br><div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/32.png"></div><br></p>
+<div align="center"><img src="http://www.heartthinkdo.com/wp-content/uploads/2018/05/32.png"></div>
 <p>(2)第二步 如果事务是提交状态，则在索引文件中新增 TransactionEntry。</p>
 <p>(3)第三步 从 active 的 tranaction set 中移除这个 transaton，然后更新 LSO。</p>
 <h5 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h5>
@@ -1163,7 +1163,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1240,7 +1240,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1519,19 +1521,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1652,7 +1642,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

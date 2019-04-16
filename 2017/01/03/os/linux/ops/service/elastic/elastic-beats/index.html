@@ -117,7 +117,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png">
 <meta property="og:image" content="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:31.595Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:49.447Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Elastic 技术栈之 Filebeat">
 <meta name="twitter:description" content="Elastic 技术栈之 Filebeat  简介 Beats 是安装在服务器上的数据中转代理。 Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。  Beats 有多种类型，可以根据实际应用需要选择合适的类型。 常用的类型有：  **Packetbeat：**网络数据包分析器，提供有关您的应用程序服务器之间交换的事务的信息。 **Filebeat：**">
@@ -431,7 +431,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:31" itemprop="dateModified" datetime="2019-03-26T23:47:31+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:49" itemprop="dateModified" datetime="2019-04-16T20:14:49+08:00">2019-04-16</time>
               
             
           </span>
@@ -515,7 +515,7 @@
 <h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
 <p>Beats 是安装在服务器上的数据中转代理。</p>
 <p>Beats 可以将数据直接传输到 Elasticsearch 或传输到 Logstash 。</p>
-<p><br><div align="center"><img src="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png"></div><br></p>
+<div align="center"><img src="https://www.elastic.co/guide/en/beats/libbeat/current/images/beats-platform.png"></div>
 <p>Beats 有多种类型，可以根据实际应用需要选择合适的类型。</p>
 <p>常用的类型有：</p>
 <ul>
@@ -535,7 +535,7 @@
 <p>在任何环境下，应用程序都有停机的可能性。 Filebeat 读取并转发日志行，如果中断，则会记住所有事件恢复联机状态时所在位置。</p>
 <p>Filebeat带有内部模块（auditd，Apache，Nginx，System和MySQL），可通过一个指定命令来简化通用日志格式的收集，解析和可视化。</p>
 <p>FileBeat 不会让你的管道超负荷。FileBeat 如果是向 Logstash 传输数据，当 Logstash 忙于处理数据，会通知 FileBeat 放慢读取速度。一旦拥塞得到解决，FileBeat 将恢复到原来的速度并继续传播。</p>
-<p><br><div align="center"><img src="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png"></div><br></p>
+<div align="center"><img src="https://www.elastic.co/guide/en/beats/filebeat/current/images/filebeat.png"></div>
 <h2 id="安装"><a class="markdownIt-Anchor" href="#安装"></a> 安装</h2>
 <p>Unix / Linux 系统建议使用下面方式安装，因为比较通用。</p>
 <figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">wget https:<span class="comment">//artifacts.elastic.co/downloads/beats/filebeat/filebeat-6.1.1-linux-x86_64.tar.gz</span></span><br><span class="line">tar -zxf filebeat-<span class="number">6.1</span>.<span class="number">1</span>-linux-x86_64<span class="selector-class">.tar</span><span class="selector-class">.gz</span></span><br></pre></td></tr></table></figure>
@@ -689,8 +689,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2016/11/03/java/javacore/advanced/Java正则/" rel="next" title="Java 正则">
-                <i class="fa fa-chevron-left"></i> Java 正则
+              <a href="/blog/2016/11/10/java/javatool/build/maven/maven-pom/" rel="next" title="Maven 教程之 pom.xml 详解">
+                <i class="fa fa-chevron-left"></i> Maven 教程之 pom.xml 详解
               </a>
             
           </div>
@@ -699,8 +699,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/01/17/java/javalib/thumbnailator/" rel="prev" title="Thumbnailator 使用小结">
-                Thumbnailator 使用小结 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/01/17/java/javalib/zxing/" rel="prev" title="ZXing 使用小结">
+                ZXing 使用小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -772,7 +772,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -849,7 +849,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1128,19 +1130,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1261,7 +1251,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

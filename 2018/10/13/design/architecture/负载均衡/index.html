@@ -130,7 +130,7 @@
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202054421-2015542569.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202100921-915093452.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227220009109-1768809526.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:26.670Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:45.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="负载均衡">
 <meta name="twitter:description" content="负载均衡   1. 负载均衡原理 2. 负载均衡分类  2.1. DNS 负载均衡 2.2. IP 负载均衡 2.3. 链路层负载均衡 2.4. 混合型负载均衡   3. 负载均衡算法  3.1. 轮询 3.2. 随机 3.3. 最少连接 3.4. Hash（源地址散列） 3.5. 加权   4. 硬件负载均衡 5. Ngnix 负载均衡  5.1. Ngnix 特点 5.2. Ngnix 功能">
@@ -444,7 +444,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
@@ -581,7 +581,7 @@
 <!-- /TOC -->
 <h2 id="1-负载均衡原理"><a class="markdownIt-Anchor" href="#1-负载均衡原理"></a> 1. 负载均衡原理</h2>
 <p>系统的扩展可分为纵向（垂直）扩展和横向（水平）扩展。纵向扩展，是从单机的角度通过增加硬件处理能力，比如 CPU 处理能力，内存容量，磁盘等方面，实现服务器处理能力的提升，不能满足大型分布式系统（网站），大流量，高并发，海量数据的问题。因此需要采用横向扩展的方式，通过添加机器来满足大型网站服务的处理能力。比如：一台机器不能满足，则增加两台或者多台机器，共同承担访问压力。这就是典型的集群和负载均衡架构：如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194550278-786046258.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194550278-786046258.png"></div>
 <ul>
 <li>应用集群：将同一应用部署到多台机器上，组成处理集群，接收负载均衡设备分发的请求，进行处理，并返回相应数据。</li>
 <li>负载均衡设备：将用户访问的请求，根据负载均衡算法，分发到集群中的一台处理服务器。（一种把网络请求分散到一个服务器集群中的可用服务器上去的设备）</li>
@@ -605,7 +605,7 @@
 <p>根据实现技术不同，可分为 DNS 负载均衡，HTTP 负载均衡，IP 负载均衡，链路层负载均衡等。</p>
 <h3 id="21-dns-负载均衡"><a class="markdownIt-Anchor" href="#21-dns-负载均衡"></a> 2.1. DNS 负载均衡</h3>
 <p>最早的负载均衡技术，利用域名解析实现负载均衡，在 DNS 服务器，配置多个 A 记录，这些 A 记录对应的服务器构成集群。大型网站总是部分使用 DNS 解析，作为第一级负载均衡。如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194538622-1255166256.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194538622-1255166256.png"></div>
 <p>优点</p>
 <ol>
 <li>使用简单：负载均衡工作，交给 DNS 服务器处理，省掉了负载均衡服务器维护的麻烦</li>
@@ -619,12 +619,12 @@
 </ol>
 <p>实践建议</p>
 <p>将 DNS 作为第一级负载均衡，A 记录对应着内部负载均衡的 IP 地址，通过内部负载均衡将请求分发到真实的 Web 服务器上。一般用于互联网公司，复杂的业务系统不合适使用。如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194500497-164261027.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213194500497-164261027.png"></div>
 <h3 id="22-ip-负载均衡"><a class="markdownIt-Anchor" href="#22-ip-负载均衡"></a> 2.2. IP 负载均衡</h3>
 <p>在网络层通过修改请求目标地址进行负载均衡。</p>
 <p>用户请求数据包，到达负载均衡服务器后，负载均衡服务器在操作系统内核进程获取网络数据包，根据负载均衡算法得到一台真实服务器地址，然后将请求目的地址修改为，获得的真实 ip 地址，不需要经过用户进程处理。</p>
 <p>真实服务器处理完成后，响应数据包回到负载均衡服务器，负载均衡服务器，再将数据包源地址修改为自身的 ip 地址，发送给用户浏览器。如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213195925966-1272593644.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213195925966-1272593644.png"></div>
 <p>IP 负载均衡，真实物理服务器返回给负载均衡服务器，存在两种方式：</p>
 <ol>
 <li>负载均衡服务器在修改目的 ip 地址的同时修改源地址。将数据包源地址设为自身盘，即源地址转换（snat）。</li>
@@ -636,7 +636,7 @@
 <p>在通信协议的数据链路层修改 mac 地址，进行负载均衡。</p>
 <p>数据分发时，不修改 ip 地址，指修改目标 mac 地址，配置真实物理服务器集群所有机器虚拟 ip 和负载均衡服务器 ip 地址一致，达到不修改数据包的源地址和目标地址，进行数据分发的目的。</p>
 <p>实际处理服务器 ip 和数据请求目的 ip 一致，不需要经过负载均衡服务器进行地址转换，可将响应数据包直接返回给用户浏览器，避免负载均衡服务器网卡带宽成为瓶颈。也称为直接路由模式（DR 模式）。如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213195947762-1630980523.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213195947762-1630980523.png"></div>
 <p>优点：性能好；</p>
 <p>缺点：配置复杂；</p>
 <p>实践建议：DR 模式是目前使用最广泛的一种负载均衡方式。</p>
@@ -644,10 +644,10 @@
 <p>由于多个服务器群内硬件设备、各自的规模、提供的服务等的差异，可以考虑给每个服务器群采用最合适的负载均衡方式，然后又在这多个服务器群间再一次负载均衡或群集起来以一个整体向外界提供服务（即把这多个服务器群当做一个新的服务器群），从而达到最佳的性能。将这种方式称之为混合型负载均衡。</p>
 <p>此种方式有时也用于单台均衡设备的性能不能满足大量连接请求的情况下。是目前大型互联网公司，普遍使用的方式。</p>
 <p>方式一，如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213200106747-94797427.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213200106747-94797427.png"></div>
 <p>以上模式适合有动静分离的场景，反向代理服务器（集群）可以起到缓存和动态请求分发的作用，当时静态资源缓存在代理服务器时，则直接返回到浏览器。如果动态页面则请求后面的应用负载均衡（应用集群）。</p>
 <p>方式二，如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213200117825-1452672107.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151213200117825-1452672107.png"></div>
 <p>以上模式，适合动态请求场景。</p>
 <p>因混合模式，可以根据具体场景，灵活搭配各种方式，以上两种方式仅供参考。</p>
 <h2 id="3-负载均衡算法"><a class="markdownIt-Anchor" href="#3-负载均衡算法"></a> 3. 负载均衡算法</h2>
@@ -722,13 +722,13 @@
 <p>Nginx 的高并发，官方测试支持 5 万并发连接。实际生产环境能到 2-3 万并发连接数。10000 个非活跃的 HTTP keep-alive 连接仅占用约 2.5MB 内存。三万并发连接下，10 个 Nginx 进程，消耗内存 150M。淘宝 tengine 团队测试结果是“24G 内存机器上，处理并发请求可达 200 万”。</p>
 <h3 id="53-ngnix-架构"><a class="markdownIt-Anchor" href="#53-ngnix-架构"></a> 5.3. Ngnix 架构</h3>
 <h4 id="nginx-的基本工作模式"><a class="markdownIt-Anchor" href="#nginx-的基本工作模式"></a> Nginx 的基本工作模式</h4>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227195943640-864372763.jpg"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227195943640-864372763.jpg"></div>
 <p>一个 master 进程，生成一个或者多个 worker 进程。但是这里 master 是使用 root 身份启动的，因为 nginx 要工作在 80 端口。而只有管理员才有权限启动小于低于 1023 的端口。master 主要是负责的作用只是启动 worker，加载配置文件，负责系统的平滑升级。其它的工作是交给 worker。那么当 worker 被启动之后，也只是负责一些 web 最简单的工作，而其他的工作都是有 worker 中调用的模块来实现的。</p>
 <p>模块之间是以流水线的方式实现功能的。流水线，指的是一个用户请求，由多个模块组合各自的功能依次实现完成的。比如：第一个模块只负责分析请求首部，第二个模块只负责查找数据，第三个模块只负责压缩数据，依次完成各自工作。来实现整个工作的完成。</p>
 <p>他们是如何实现热部署的呢？其实是这样的，我们前面说 master 不负责具体的工作，而是调用 worker 工作，他只是负责读取配置文件，因此当一个模块修改或者配置文件发生变化，是由 master 进行读取，因此此时不会影响到 worker 工作。在 master 进行读取配置文件之后，不会立即的把修改的配置文件告知 worker。而是让被修改的 worker 继续使用老的配置文件工作，当 worker 工作完毕之后，直接当掉这个子进程，更换新的子进程，使用新的规则。</p>
 <h4 id="nginx-支持的-sendfile-机制"><a class="markdownIt-Anchor" href="#nginx-支持的-sendfile-机制"></a> Nginx 支持的 sendfile 机制</h4>
 <p>Sendfile 机制，用户将请求发给内核，内核根据用户的请求调用相应用户进程，进程在处理时需要资源。此时再把请求发给内核（进程没有直接 IO 的能力），由内核加载数据。内核查找到数据之后，会把数据复制给用户进程，由用户进程对数据进行封装，之后交给内核，内核在进行 tcp/ip 首部的封装，最后再发给客户端。这个功能用户进程只是发生了一个封装报文的过程，却要绕一大圈。因此 nginx 引入了 sendfile 机制，使得内核在接受到数据之后，不再依靠用户进程给予封装，而是自己查找自己封装，减少了一个很长一段时间的浪费，这是一个提升性能的核心点。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227195957171-1801771404.jpg"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227195957171-1801771404.jpg"></div>
 <p>以上内容摘自网友发布的文章，简单一句话是资源的处理，直接通过内核层进行数据传递，避免了数据传递到应用层，应用层再传递到内核层的开销。</p>
 <p>目前高并发的处理，一般都采用 sendfile 模式。通过直接操作内核层数据，减少应用与内核层数据传递。</p>
 <h4 id="nginx-通信模型io-复用机制"><a class="markdownIt-Anchor" href="#nginx-通信模型io-复用机制"></a> Nginx 通信模型（I/O 复用机制）</h4>
@@ -741,11 +741,11 @@
 <p>nginx 的负载均衡策略可以划分为两大类：内置策略和扩展策略。内置策略包含加权轮询和 ip hash，在默认情况下这两种策略会编译进 nginx 内核，只需在 nginx 配置中指明参数即可。扩展策略有很多，如 fair、通用 hash、consistent hash 等，默认不编译进 nginx 内核。由于在 nginx 版本升级中负载均衡的代码没有本质性的变化，因此下面将以 nginx1.0.15 稳定版为例，从源码角度分析各个策略。</p>
 <h4 id="加权轮询weighted-round-robin"><a class="markdownIt-Anchor" href="#加权轮询weighted-round-robin"></a> 加权轮询（weighted round robin）</h4>
 <p>轮询的原理很简单，首先我们介绍一下轮询的基本流程。如下是处理一次请求的流程图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227201913984-412518987.jpg"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227201913984-412518987.jpg"></div>
 <p>图中有两点需要注意，第一，如果可以把加权轮询算法分为先深搜索和先广搜索，那么 nginx 采用的是先深搜索算法，即将首先将请求都分给高权重的机器，直到该机器的权值降到了比其他机器低，才开始将请求分给下一个高权重的机器；第二，当所有后端机器都 down 掉时，nginx 会立即将所有机器的标志位清成初始状态，以避免造成所有的机器都处在 timeout 的状态，从而导致整个前端被夯住。</p>
 <h4 id="ip-hash"><a class="markdownIt-Anchor" href="#ip-hash"></a> ip hash</h4>
 <p>ip hash 是 nginx 内置的另一个负载均衡的策略，流程和轮询很类似，只是其中的算法和具体的策略有些变化，如下图所示：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227201851812-352858632.jpg"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227201851812-352858632.jpg"></div>
 <h4 id="fair"><a class="markdownIt-Anchor" href="#fair"></a> fair</h4>
 <p>fair 策略是扩展策略，默认不被编译进 nginx 内核。其原理是根据后端服务器的响应时间判断负载情况，从中选出负载最轻的机器进行分流。这种策略具有很强的自适应性，但是实际的网络环境往往不是那么简单，因此要慎用。</p>
 <h4 id="通用-hash-一致性-hash"><a class="markdownIt-Anchor" href="#通用-hash-一致性-hash"></a> 通用 hash、一致性 hash</h4>
@@ -753,13 +753,13 @@
 <h3 id="55-ngnix-场景"><a class="markdownIt-Anchor" href="#55-ngnix-场景"></a> 5.5. Ngnix 场景</h3>
 <p>Ngnix 一般作为入口负载均衡或内部负载均衡，结合反向代理服务器使用。以下架构示例，仅供参考，具体使用根据场景而定。</p>
 <h4 id="入口负载均衡架构"><a class="markdownIt-Anchor" href="#入口负载均衡架构"></a> 入口负载均衡架构</h4>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202044781-2116477406.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202044781-2116477406.png"></div>
 <p>Ngnix 服务器在用户访问的最前端。根据用户请求再转发到具体的应用服务器或二级负载均衡服务器（LVS）</p>
 <h4 id="内部负载均衡架构"><a class="markdownIt-Anchor" href="#内部负载均衡架构"></a> 内部负载均衡架构</h4>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202054421-2015542569.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202054421-2015542569.png"></div>
 <p>LVS 作为入口负载均衡，将请求转发到二级 Ngnix 服务器，Ngnix 再根据请求转发到具体的应用服务器。</p>
 <h4 id="ngnix-高可用"><a class="markdownIt-Anchor" href="#ngnix-高可用"></a> Ngnix 高可用</h4>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202100921-915093452.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227202100921-915093452.png"></div>
 <p>分布式系统中，应用只部署一台服务器会存在单点故障，负载均衡同样有类似的问题。一般可采用主备或负载均衡设备集群的方式节约单点故障或高并发请求分流。</p>
 <p>Ngnix 高可用，至少包含两个 Ngnix 服务器，一台主服务器，一台备服务器，之间使用 Keepalived 做健康监控和故障检测。开放 VIP 端口，通过防火墙进行外部映射。</p>
 <p>DNS 解析公网的 IP 实际为 VIP。</p>
@@ -787,7 +787,7 @@
 <h3 id="62-lvs-架构"><a class="markdownIt-Anchor" href="#62-lvs-架构"></a> 6.2. LVS 架构</h3>
 <p>LVS 架设的服务器集群系统有三个部分组成：最前端的负载均衡层（Loader Balancer），中间的服务器群组层，用 Server Array 表示，最底层的数据共享存储层，用 Shared Storage 表示。在用户看来所有的应用都是透明的，用户只是在使用一个虚拟服务器提供的高性能服务。</p>
 <p>LVS 的体系架构如图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227220009109-1768809526.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151227220009109-1768809526.png"></div>
 <p>LVS 的各个层次的详细介绍：</p>
 <p>Load Balancer 层：位于整个集群系统的最前端，有一台或者多台负载调度器（Director Server）组成，LVS 模块就安装在 Director Server 上，而 Director 的主要作用类似于一个路由器，它含有完成 LVS 功能所设定的路由表，通过这些路由表把用户的请求分发给 Server Array 层的应用服务器（Real Server）上。同时，在 Director Server 上还要安装对 Real Server 服务的监控模块 Ldirectord，此模块用于监测各个 Real Server 服务的健康状况。在 Real Server 不可用时把它从 LVS 路由表中剔除，恢复时重新加入。</p>
 <p>Server Array 层：由一组实际运行应用服务的机器组成，Real Server 可以是 WEB 服务器、MAIL 服务器、FTP 服务器、DNS 服务器、视频服务器中的一个或者多个，每个 Real Server 之间通过高速的 LAN 或分布在各地的 WAN 相连接。在实际的应用中，Director Server 也可以同时兼任 Real Server 的角色。</p>
@@ -881,8 +881,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/refactor/代码坏味道之代码臃肿/" rel="next" title="代码坏味道之代码臃肿">
-                <i class="fa fa-chevron-left"></i> 代码坏味道之代码臃肿
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之变革的障碍/" rel="next" title="代码坏味道之变革的障碍">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之变革的障碍
               </a>
             
           </div>
@@ -964,7 +964,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1041,7 +1041,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1320,19 +1322,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1453,7 +1443,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

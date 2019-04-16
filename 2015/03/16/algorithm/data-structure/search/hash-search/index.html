@@ -115,13 +115,14 @@
 <meta property="og:site_name" content="静默虚空的博客">
 <meta property="og:description" content="Hash 表的查找  要点  哈希表和哈希函数 在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 ">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/3101171-c14e03882e8a0f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2019-03-26T15:47:24.704Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:44.401Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hash 表的查找">
 <meta name="twitter:description" content="Hash 表的查找  要点  哈希表和哈希函数 在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。 以上描述，如果通过数学形式来描述就是： 若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。 注">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 ">
 
 
 
@@ -431,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:24" itemprop="dateModified" datetime="2019-03-26T23:47:24+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:44" itemprop="dateModified" datetime="2019-04-16T20:14:44+08:00">2019-04-16</time>
               
             
           </span>
@@ -484,7 +485,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">4.4k</span>
+                <span title="本文字数">4.3k</span>
               
 
               
@@ -529,7 +530,7 @@
 <p>若 key1 ≠ key2 ，而 f(key1) = f(key2)，这种情况称为<strong>冲突(Collision)</strong>。</p>
 <p>根据哈希函数f(key)和处理冲突的方法将一组关键字映射到一个有限的连续的地址集（区间）上，并以关键字在地址集中的“像”作为记录在表中的存储位置，这一映射过程称为<strong>构造哈希表</strong>。</p>
 <p>构造哈希表这个场景就像汽车找停车位，如果车位被人占了，只能找空的地方停。</p>
-<p><br><div align="center">&lt;img src=“<a href="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" target="_blank" rel="noopener">http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip|imageView2/2/w/1240</a> “点击查看源网页””/&gt;</div><br></p>
+<div align="center"><img src="http://upload-images.jianshu.io/upload_images/3101171-4f4e0c3def86f7bb.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240 " 点击查看源网页""></div>
 <h2 id="构造哈希表"><a class="markdownIt-Anchor" href="#构造哈希表"></a> 构造哈希表</h2>
 <p>由以上内容可知，哈希查找本身其实不费吹灰之力，问题的关键在于如何构造哈希表和处理冲突。</p>
 <p>常见的构造哈希表的方法有 <code>5</code> 种：</p>
@@ -560,7 +561,7 @@
 <p>若要将一组关键字序列 {1, 9, 25, 11, 12, 35, 17, 29} 存放到哈希表中。</p>
 <p>采用除留余数法构造哈希表；采用开放定址法处理冲突。</p>
 <p>不妨设选取的p和m为13，由 f(key) = key % 13 可以得到下表。</p>
-<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-06a789e7f9b31da6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <p>需要注意的是，在上图中有两个关键字的探查次数为 2 ，其他都是1。</p>
 <p>这个过程是这样的：</p>
 <p>a. 12 % 13 结果是12，而它的前面有个 25 ，25 % 13 也是12，存在冲突。</p>
@@ -572,7 +573,7 @@
 <p>在这种方法中，哈希表中每个单元存放的不再是记录本身，而是相应同义词单链表的头指针。</p>
 <p><strong>示例</strong></p>
 <p>如果对开放定址法示例中提到的序列使用拉链法，得到的结果如下图所示：</p>
-<p><br><div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-c14e03882e8a0f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div><br></p>
+<div align="center"><img src="https://upload-images.jianshu.io/upload_images/3101171-c14e03882e8a0f3a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></div>
 <h2 id="实现一个哈希表"><a class="markdownIt-Anchor" href="#实现一个哈希表"></a> 实现一个哈希表</h2>
 <p>假设要实现一个哈希表，要求</p>
 <p>a. 哈希函数采用<strong>除留余数法</strong>，即 f(key) = key % p (p ≤ m)</p>
@@ -724,7 +725,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -801,7 +802,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1080,19 +1083,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1213,7 +1204,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

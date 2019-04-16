@@ -127,7 +127,7 @@
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062916952-1233076938.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062938155-1893082140.png">
 <meta property="og:image" content="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062949187-431217543.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:26.512Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:45.867Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="大型分布式网站架构">
 <meta name="twitter:description" content="大型分布式网站架构  📓 本文已归档到：「blog」    1. 大型分布式网站架构概述  1.1. 大型网站的特点 1.2. 大型网站架构目标 1.3. 大型网站架构模式 1.4. 高性能架构 1.5. 高可用架构 1.6. 可伸缩架构 1.7. 可扩展架构 1.8. 安全架构 1.9. 敏捷性 1.10. 大型架构举例   2. 电商网站架构案例  2.1. 网站初级架构 2.2. 系统容">
@@ -441,7 +441,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
@@ -632,7 +632,7 @@
 <p>网站的架构设计，运维管理要适应变化，提供高伸缩性，高扩展性。方便的应对快速的业务发展，突增高流量访问等要求。</p>
 <p>除上面介绍的架构要素外，还需要引入敏捷管理，敏捷开发的思想。使业务，产品，技术，运维统一起来，随需应变，快速响应。</p>
 <h3 id="110-大型架构举例"><a class="markdownIt-Anchor" href="#110-大型架构举例"></a> 1.10. 大型架构举例</h3>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151116062211858-1998556963.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151116062211858-1998556963.png"></div>
 <p>以上采用七层逻辑架构，第一层客户层，第二层前端优化层，第三层应用层，第四层服务层，第五层数据存储层，第六层大数据存储层，第七层大数据处理层。</p>
 <p>客户层：支持 PC 浏览器和手机 APP。差别是手机 APP 可以直接访问通过 IP 访问，反向代理服务器。</p>
 <p>前端层：使用 DNS 负载均衡，CDN 本地加速以及反向代理服务；</p>
@@ -646,9 +646,9 @@
 <p>一般网站，刚开始的做法，是三台服务器，一台部署应用，一台部署数据库，一台部署 NFS 文件系统。</p>
 <p>这是前几年比较传统的做法，之前见到一个网站 10 万多会员，垂直服装设计门户，N 多图片。使用了一台服务器部署了应用，数据库以及图片存储。出现了很多性能问题。</p>
 <p>如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130071801546-1010554271.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130071801546-1010554271.png"></div>
 <p>但是，目前主流的网站架构已经发生了翻天覆地的变化。一般都会采用集群的方式，进行高可用设计。至少是下面这个样子。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130071816093-197013108.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130071816093-197013108.png"></div>
 <p>（1） 使用集群对应用服务器进行冗余，实现高可用；（负载均衡设备可与应用一块部署）</p>
 <p>使用数据库主备模式，实现数据备份和高可用；</p>
 <h3 id="22-系统容量预估"><a class="markdownIt-Anchor" href="#22-系统容量预估"></a> 2.2. 系统容量预估</h3>
@@ -700,9 +700,9 @@
 <p>业务拆分作用：提升为子系统可由专门的团队和部门负责，专业的人做专业的事，解决模块之间耦合以及扩展性问题；每个子系统单独部署，避免集中部署导致一个应用挂了，全部应用不可用的问题。</p>
 <p>等级定义作用：用于流量突发时，对关键应用进行保护，实现优雅降级；保护关键应用不受到影响。</p>
 <p>拆分后的架构图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073032968-1952416935.png"></div><br></p>
-<p>参考部署方案 2<br>
-<br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073047530-940494801.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073032968-1952416935.png"></div>
+<p>参考部署方案 2</p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073047530-940494801.png"></div>
 <p>（1） 如上图每个应用单独部署</p>
 <p>（2） 核心系统和非核心系统组合部署</p>
 <h4 id="应用集群部署分布式集群负载均衡"><a class="markdownIt-Anchor" href="#应用集群部署分布式集群负载均衡"></a> 应用集群部署（分布式，集群，负载均衡）</h4>
@@ -710,19 +710,19 @@
 <p>​ 集群部署：电商网站的高可用要求，每个应用至少部署两台服务器进行集群部署；</p>
 <p>​ 负载均衡：是高可用系统必须的，一般应用通过负载均衡实现高可用，分布式服务通过内置的负载均衡实现高可用，关系型数据库通过主备方式实现高可用。</p>
 <p>集群部署后架构图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073058983-1408763899.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073058983-1408763899.png"></div>
 <h4 id="多级缓存"><a class="markdownIt-Anchor" href="#多级缓存"></a> 多级缓存</h4>
 <p>缓存按照存放的位置一般可分为两类：本地缓存和分布式缓存。本案例采用二级缓存的方式，进行缓存的设计。一级缓存为本地缓存，二级缓存为分布式缓存。（还有页面缓存，片段缓存等，那是更细粒度的划分）</p>
 <p>一级缓存，缓存数据字典，和常用热点数据等基本不可变/有规则变化的信息，二级缓存缓存需要的所有缓存。当一级缓存过期或不可用时，访问二级缓存的数据。如果二级缓存也没有，则访问数据库。</p>
 <p>缓存的比例，一般 1:4，即可考虑使用缓存。（理论上是 1:2 即可）。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073113483-523713370.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073113483-523713370.png"></div>
 <p>​ 根据业务特性可使用以下缓存过期策略：</p>
 <p>（1） 缓存自动过期；</p>
 <p>（2） 缓存触发过期；</p>
 <h4 id="单点登录分布式-session"><a class="markdownIt-Anchor" href="#单点登录分布式-session"></a> 单点登录（分布式 Session）</h4>
 <p>系统分割为多个子系统，独立部署后，不可避免的会遇到会话管理的问题。一般可采用 Session 同步，Cookies，分布式 Session 方式。电商网站一般采用分布式 Session 实现。</p>
 <p>再进一步可以根据分布式 Session，建立完善的单点登录或账户管理系统。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073125015-707498377.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201511/820332-20151130073125015-707498377.png"></div>
 <p>​ 流程说明</p>
 <p>（1） 用户第一次登录时，将会话信息（用户 Id 和用户信息），比如以用户 Id 为 Key，写入分布式 Session；</p>
 <p>（2） 用户再次登录时，获取分布式 Session，是否有会话信息，如果没有则调到登录页；</p>
@@ -733,7 +733,7 @@
 <p>大型网站需要存储海量的数据，为达到海量数据存储，高可用，高性能一般采用冗余的方式进行系统设计。一般有两种方式读写分离和分库分表。</p>
 <p>读写分离：一般解决读比例远大于写比例的场景，可采用一主一备，一主多备或多主多备方式。</p>
 <p>本案例在业务拆分的基础上，结合分库分表和读写分离。如下图：</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062903515-1864482914.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062903515-1864482914.png"></div>
 <p>（1） 业务拆分后：每个子系统需要单独的库；</p>
 <p>（2） 如果单独的库太大，可以根据业务特性，进行再次分库，比如商品分类库，产品库；</p>
 <p>（3） 分库后，如果表中有数据量很大的，则进行分表，一般可以按照 Id，时间等进行分表；（高级的用法是一致性 Hash）</p>
@@ -742,19 +742,19 @@
 <p>分库分表后序列的问题，JOIN，事务的问题，会在分库分表主题分享中，介绍。</p>
 <h4 id="服务化"><a class="markdownIt-Anchor" href="#服务化"></a> 服务化</h4>
 <p>​将多个子系统公用的功能/模块，进行抽取，作为公用服务使用。比如本案例的会员子系统就可以抽取为公用的服务。</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062916952-1233076938.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062916952-1233076938.png"></div>
 <h4 id="消息队列"><a class="markdownIt-Anchor" href="#消息队列"></a> 消息队列</h4>
 <p>​ 消息队列可以解决子系统/模块之间的耦合，实现异步，高可用，高性能的系统。是分布式系统的标准配置。本案例中，消息队列主要应用在购物，配送环节。</p>
 <p>（1） 用户下单后，写入消息队列，后直接返回客户端；</p>
 <p>（2） 库存子系统：读取消息队列信息，完成减库存；</p>
 <p>（3） 配送子系统：读取消息队列信息，进行配送；</p>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062938155-1893082140.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062938155-1893082140.png"></div>
 <p>目前使用较多的 MQ 有 Active MQ,Rabbit MQ,Zero MQ，MS MQ 等，需要根据具体的业务场景进行选择。建议可以研究下 Rabbit MQ。</p>
 <h4 id="其他架构技术"><a class="markdownIt-Anchor" href="#其他架构技术"></a> 其他架构（技术）</h4>
 <p>除了以上介绍的业务拆分，应用集群，多级缓存，单点登录，数据库集群，服务化，消息队列外。还有 CDN，反向代理，分布式文件系统，大数据处理等系统。</p>
 <p>此处不详细介绍，大家可以问度娘/Google，有机会的话也可以分享给大家。</p>
 <h3 id="25-架构总结"><a class="markdownIt-Anchor" href="#25-架构总结"></a> 2.5. 架构总结</h3>
-<p><br><div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062949187-431217543.png"></div><br></p>
+<div align="center"><img src="https://images2015.cnblogs.com/blog/820332/201512/820332-20151201062949187-431217543.png"></div>
 <p>以上是本次分享的架构总结，其中细节可参考前面分享的内容。其中还有很多可以优化和细化的地方，因为是案例分享，主要针对重要部分做了介绍，工作中需要大家根据具体的业务场景进行架构设计。</p>
 <p>以上是电商网站架构案例的分享一共有三篇，从电商网站的需求，到单机架构，逐步演变为常用的，可供参考的分布式架构的原型。除具备功能需求外，还具备一定的高性能，高可用，可伸缩，可扩展等非功能质量需求（架构目标）。</p>
 <h2 id="3-资料"><a class="markdownIt-Anchor" href="#3-资料"></a> 3. 资料</h2>
@@ -806,8 +806,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/07/05/design/architecture/网站的安全架构/" rel="next" title="网站的安全架构">
-                <i class="fa fa-chevron-left"></i> 网站的安全架构
+              <a href="/blog/2018/07/05/java/javaweb/distributed/mq/分布式消息队列/" rel="next" title="分布式消息队列">
+                <i class="fa fa-chevron-left"></i> 分布式消息队列
               </a>
             
           </div>
@@ -816,8 +816,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/07/05/design/architecture/网站的伸缩性架构/" rel="prev" title="网站的伸缩性架构">
-                网站的伸缩性架构 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/07/05/design/architecture/分布式架构/" rel="prev" title="分布式架构">
+                分布式架构 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -889,7 +889,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -966,7 +966,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1245,19 +1247,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1378,7 +1368,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 

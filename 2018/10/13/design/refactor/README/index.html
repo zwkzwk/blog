@@ -116,7 +116,7 @@
 <meta property="og:description" content="代码的坏味道和重构  📓 本文已归档到：「blog」    症与药  对代码的坏味道的思考 重构的原则   代码的坏味道  代码坏味道之代码臃肿 代码坏味道之滥用面向对象 代码坏味道之变革的障碍 代码坏味道之非必要的 代码坏味道之耦合   扩展阅读 参考资料   第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png">
-<meta property="og:updated_time" content="2019-03-26T15:47:26.686Z">
+<meta property="og:updated_time" content="2019-04-16T12:14:45.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="代码的坏味道和重构">
 <meta name="twitter:description" content="代码的坏味道和重构  📓 本文已归档到：「blog」    症与药  对代码的坏味道的思考 重构的原则   代码的坏味道  代码坏味道之代码臃肿 代码坏味道之滥用面向对象 代码坏味道之变革的障碍 代码坏味道之非必要的 代码坏味道之耦合   扩展阅读 参考资料   第一次读《重构:改善既有代码的设计》时，我曾整理过一个简单的笔记。最近，因为参与一个重构项目，再一次温习了《重构:改善既有代码的设计">
@@ -430,7 +430,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-03-26 23:47:26" itemprop="dateModified" datetime="2019-03-26T23:47:26+08:00">2019-03-26</time>
+                <time title="修改时间：2019-04-16 20:14:45" itemprop="dateModified" datetime="2019-04-16T20:14:45+08:00">2019-04-16</time>
               
             
           </span>
@@ -642,7 +642,7 @@
 <p><u><strong><em>此处为分割线。下面是代码的坏味道系列。。。</em></strong></u></p>
 <h2 id="代码的坏味道"><a class="markdownIt-Anchor" href="#代码的坏味道"></a> 代码的坏味道</h2>
 <p>《重构:改善既有代码的设计》中介绍了 22 种代码的坏味道以及重构手法。这些坏味道可以进一步归类。我总觉得将事物分类有助于理解和记忆。所以本系列将坏味道按照特性分类，然后逐一讲解。</p>
-<p><br><div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png"></div><br></p>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/design/refactor/code-smell.png"></div>
 <h3 id="代码坏味道之代码臃肿"><a class="markdownIt-Anchor" href="#代码坏味道之代码臃肿"></a> 代码坏味道之代码臃肿</h3>
 <blockquote>
 <p><strong><a href="https://github.com/dunwu/blog/blob/master/source/_posts/design/refactor/%E4%BB%A3%E7%A0%81%E5%9D%8F%E5%91%B3%E9%81%93%E4%B9%8B%E4%BB%A3%E7%A0%81%E8%87%83%E8%82%BF.md" target="_blank" rel="noopener">代码臃肿(Bloated)</a>这组坏味道意味着：代码中的类、函数、字段没有经过合理的组织，只是简单的堆砌起来。这一类型的问题通常在代码的初期并不明显，但是随着代码规模的增长而逐渐积累（特别是当没有人努力去根除它们时）。</strong></p>
@@ -753,8 +753,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2018/10/13/design/architecture/分布式原理/" rel="next" title="分布式原理">
-                <i class="fa fa-chevron-left"></i> 分布式原理
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之非必要的/" rel="next" title="代码坏味道之非必要的">
+                <i class="fa fa-chevron-left"></i> 代码坏味道之非必要的
               </a>
             
           </div>
@@ -763,8 +763,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2018/10/17/communication/dns/" rel="prev" title="网络协议之 DNS">
-                网络协议之 DNS <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2018/10/13/design/refactor/代码坏味道之变革的障碍/" rel="prev" title="代码坏味道之变革的障碍">
+                代码坏味道之变革的障碍 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -836,7 +836,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">326</span>
+                    <span class="site-state-item-count">325</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -913,7 +913,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">32</span>
+                      
+                    
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1192,19 +1194,7 @@
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">139</span>
+                    <span class="site-state-item-count">133</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1325,7 +1315,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">31:53</span>
   
 </div>
 
