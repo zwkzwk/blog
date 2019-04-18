@@ -115,14 +115,14 @@
 <meta property="og:site_name" content="静默虚空的博客">
 <meta property="og:description" content="ActiveMQ   1. JMS 基本概念  1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源    1. JMS 基本概念 JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif">
-<meta property="og:updated_time" content="2019-04-16T12:14:47.448Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-pointToPoint.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-publishSubscribe.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-publishSubscribe.gif">
+<meta property="og:updated_time" content="2019-04-18T07:08:28.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ActiveMQ">
 <meta name="twitter:description" content="ActiveMQ   1. JMS 基本概念  1.1. 消息模型 1.2. JMS 编程模型   2. 安装 3. 项目中的应用 4. 资源    1. JMS 基本概念 JMS 即 Java 消息服务（Java Message Service）API，是一个 Java 平台中关于面向消息中间件的 API。它用于在两个应用程序之间，或分布式系统中发送消息，进行异步通信。Java 消息服务是一个">
-<meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-pointToPoint.gif">
 
 
 
@@ -432,7 +432,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-18 15:08:28" itemprop="dateModified" datetime="2019-04-18T15:08:28+08:00">2019-04-18</time>
               
             
           </span>
@@ -535,21 +535,21 @@
 <li>Publish/Subscribe(Pub/Sub)</li>
 </ul>
 <h4 id="p2p-的特点"><a class="markdownIt-Anchor" href="#p2p-的特点"></a> P2P 的特点</h4>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-pointToPoint.gif"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-pointToPoint.gif"></div>
 <p>在点对点的消息系统中，消息分发给一个单独的使用者。点对点消息往往与队列 <code>javax.jms.Queue</code> 相关联。</p>
 <p>每个消息只有一个消费者（Consumer）(即一旦被消费，消息就不再在消息队列中)。</p>
 <p>发送者和接收者之间在时间上没有依赖性，也就是说当发送者发送了消息之后，不管接收者有没有正在运行，它不会影响到消息被发送到队列。</p>
 <p>接收者在成功接收消息之后需向队列应答成功。</p>
 <p>如果你希望发送的每个消息都应该被成功处理的话，那么你需要 P2P 模式。</p>
 <h4 id="pubsub-的特点"><a class="markdownIt-Anchor" href="#pubsub-的特点"></a> Pub/Sub 的特点</h4>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-publishSubscribe.gif"></div>
 <p>发布/订阅消息系统支持一个事件驱动模型，消息生产者和消费者都参与消息的传递。生产者发布事件，而使用者订阅感兴趣的事件，并使用事件。该类型消息一般与特定的主题 <code>javax.jms.Topic</code> 关联。</p>
 <p>每个消息可以有多个消费者。</p>
 <p>发布者和订阅者之间有时间上的依赖性。针对某个主题（Topic）的订阅者，它必须创建一个订阅者之后，才能消费发布者的消息，而且为了消费消息，订阅者必须保持运行的状态。</p>
 <p>为了缓和这样严格的时间相关性，JMS 允许订阅者创建一个可持久化的订阅。这样，即使订阅者没有被激活（运行），它也能接收到发布者的消息。</p>
 <p>如果你希望发送的消息可以不被做任何处理、或者被一个消息者处理、或者可以被多个消费者处理的话，那么可以采用 Pub/Sub 模型。</p>
 <h3 id="12-jms-编程模型"><a class="markdownIt-Anchor" href="#12-jms-编程模型"></a> 1.2. JMS 编程模型</h3>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/java/libs/activemq/jms-publishSubscribe.gif"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/javalib/jms/jms-publishSubscribe.gif"></div>
 <h4 id="connectionfactory"><a class="markdownIt-Anchor" href="#connectionfactory"></a> ConnectionFactory</h4>
 <p>创建 <code>Connection</code> 对象的工厂，针对两种不同的 jms 消息模型，分别有 <code>QueueConnectionFactory</code> 和<code>TopicConnectionFactory</code> 两种。可以通过 JNDI 来查找 <code>ConnectionFactory</code> 对象。</p>
 <h4 id="connection"><a class="markdownIt-Anchor" href="#connection"></a> Connection</h4>
@@ -716,8 +716,8 @@ Passwort: admin</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/2017/08/18/java/javalib/jsoup/" rel="next" title="jsoup 使用小结">
-                <i class="fa fa-chevron-left"></i> jsoup 使用小结
+              <a href="/blog/2017/01/17/java/javalib/thumbnailator/" rel="next" title="Thumbnailator 使用小结">
+                <i class="fa fa-chevron-left"></i> Thumbnailator 使用小结
               </a>
             
           </div>
@@ -726,8 +726,8 @@ Passwort: admin</p>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/2017/08/22/java/javacore/basics/Java注解/" rel="prev" title="深入理解 Java 注解">
-                深入理解 Java 注解 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/2017/08/18/java/javalib/jsoup/" rel="prev" title="jsoup 使用小结">
+                jsoup 使用小结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -799,7 +799,7 @@ Passwort: admin</p>
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">325</span>
+                    <span class="site-state-item-count">317</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1278,7 +1278,7 @@ Passwort: admin</p>
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:53</span>
+    <span title="站点阅读时长">31:49</span>
   
 </div>
 

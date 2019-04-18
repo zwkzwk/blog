@@ -115,16 +115,16 @@
 <meta property="og:site_name" content="静默虚空的博客">
 <meta property="og:description" content="Java 编码和加密  📓 本文已归档到：「blog」    术语 Base64 编码  算法简述 算法实现   对称加密  算法简述 算法实现   非对称加密  算法简述 算法实现   消息摘要  算法简述 算法实现   数字签名  算法简述 算法实现   参考资料    术语  明文(Plaintext)：指待加密信息。明文可以是文本文件、图片文件、二进制数据等。 密文(Ciphertex">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/symmetric-encryption.png">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/symmetric-encryption-progress.png">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/password-based-encryption-progress.png">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/asymmetric-encryption.png">
-<meta property="og:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/java-message-digest-process.jpg">
-<meta property="og:updated_time" content="2019-04-16T12:14:46.525Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/symmetric-encryption.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/symmetric-encryption-progress.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/password-based-encryption-progress.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/asymmetric-encryption.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/java-message-digest-process.jpg">
+<meta property="og:updated_time" content="2019-04-18T07:11:37.444Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java 编码和加密">
 <meta name="twitter:description" content="Java 编码和加密  📓 本文已归档到：「blog」    术语 Base64 编码  算法简述 算法实现   对称加密  算法简述 算法实现   非对称加密  算法简述 算法实现   消息摘要  算法简述 算法实现   数字签名  算法简述 算法实现   参考资料    术语  明文(Plaintext)：指待加密信息。明文可以是文本文件、图片文件、二进制数据等。 密文(Ciphertex">
-<meta name="twitter:image" content="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/symmetric-encryption.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/symmetric-encryption.png">
 
 
 
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-18 15:11:37" itemprop="dateModified" datetime="2019-04-18T15:11:37+08:00">2019-04-18</time>
               
             
           </span>
@@ -802,9 +802,9 @@
 <p>对称加密体制分为两种：</p>
 <p>一种是对明文的单个位（或字节）进行运算，称为流密码，也称为序列密码；</p>
 <p>一种是把明文信息划分为不同的组（或块）结构，分别对每个组（或块）进行加密、解密，称为分组密码。</p>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/symmetric-encryption.png"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/symmetric-encryption.png"></div>
 <p>假设甲乙方作为通信双方。假定甲乙双方在消息传递前已商定加密算法，欲完成一次消息传递需要经过如下步骤。</p>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/symmetric-encryption-progress.png"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/symmetric-encryption-progress.png"></div>
 <h4 id="工作模式"><a class="markdownIt-Anchor" href="#工作模式"></a> 工作模式</h4>
 <p>以 DES 算法的工作模式为例，DES 算法根据其加密算法所定义的明文分组的大小（56 位），将数据分割成若干 56 位的加密区块，再以加密区块为单位，分别进行加密处理。如果最后剩下不足一个区块的大小，称之为<strong>短块</strong>。短块的处理方法有填充法、流密码加密法、密文挪用技术。</p>
 <p>根据数据加密时每个加密区块见得关联方式来区分，可以分为以下种工作模式：</p>
@@ -858,7 +858,7 @@
 <p>基于口令加密(Password Based Encryption, PBE)是一种基于口令加密的算法。其特点是：口令由用户自己掌管，采用随机数（这里叫做盐）杂凑多重加密等方法保证数据的安全性。</p>
 <p>PBE 没有密钥概念，密钥在其他对称加密算法中是经过计算得出的，PBE 则使用口令替代了密钥。</p>
 <p>流程：</p>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/password-based-encryption-progress.png"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/password-based-encryption-progress.png"></div>
 <p>步骤如下：</p>
 <p><strong>（1）产生盐</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">SecureRandom secureRandom = <span class="keyword">new</span> SecureRandom();</span><br><span class="line"><span class="keyword">byte</span>[] salt = secureRandom.generateSeed(<span class="number">8</span>); <span class="comment">// 盐长度必须为8字节</span></span><br></pre></td></tr></table></figure>
@@ -877,7 +877,7 @@
 <h5 id="缺点-2"><a class="markdownIt-Anchor" href="#缺点-2"></a> 缺点</h5>
 <p>算法比对称算法更复杂，因此加密、解密速度都比对称算法慢很多。</p>
 <h4 id="原理-3"><a class="markdownIt-Anchor" href="#原理-3"></a> 原理</h4>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/asymmetric-encryption.png"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/asymmetric-encryption.png"></div>
 <p>非对称加密算法实现机密信息交换的基本过程是：甲方生成一对密钥并将其中的一把作为公用密钥向其它方公开；得到该公用密钥的乙方使用该密钥对机密信息进行加密后再发送给甲方；甲方再用自己保存的另一把专用密钥对加密后的信息进行解密。</p>
 <p>另一方面，甲方可以使用乙方的公钥对机密信息进行签名后再发送给乙方；乙方再用自己的私匙对数据进行验证。</p>
 <p>甲方只能用其私钥解密，由其公钥加密后的任何信息。 非对称加密算法的保密性比较好，它消除了最终用户交换密钥的需要。</p>
@@ -930,7 +930,7 @@
 <h4 id="原理-5"><a class="markdownIt-Anchor" href="#原理-5"></a> 原理</h4>
 <p>数字签名算法包含签名和验证两项操作，遵循私钥签名，公钥验证的方式。</p>
 <p>签名时要使用私钥和待签名数据，验证时则需要公钥、签名值和待签名数据，其核心算法主要是消息摘要算法。</p>
-<div align="center"><img src="http://oyz7npk35.bkt.clouddn.com//image/javase/encode/java-message-digest-process.jpg"></div>
+<div align="center"><img src="https://raw.githubusercontent.com/dunwu/images/master/images/java/advanced/java-message-digest-process.jpg"></div>
 <h4 id="常用算法-4"><a class="markdownIt-Anchor" href="#常用算法-4"></a> 常用算法</h4>
 <p>RSA、DSA、ECDSA</p>
 <h3 id="算法实现-5"><a class="markdownIt-Anchor" href="#算法实现-5"></a> 算法实现</h3>
@@ -1078,7 +1078,7 @@
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">325</span>
+                    <span class="site-state-item-count">317</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1557,7 +1557,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:53</span>
+    <span title="站点阅读时长">31:49</span>
   
 </div>
 
