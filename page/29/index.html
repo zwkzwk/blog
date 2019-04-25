@@ -181,7 +181,7 @@
   
 
   <div class="container sidebar-position-left 
-  ">
+  page-home">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -307,36 +307,43 @@
 
       
       
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>搜索</a>
+        </li>
+      
     </ul>
   
 
   
     
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
   
 
-
   
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
 
+
+
+    </div>
   
 </nav>
 
@@ -384,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/07/20/java/javacore/advanced/Java编码和加密/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/03/16/algorithm/data-structure/search/hash-search/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -404,7 +411,7 @@
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2016/07/20/java/javacore/advanced/Java编码和加密/" class="post-title-link" itemprop="url">Java 编码和加密</a>
+                <a href="/blog/2015/03/16/algorithm/data-structure/search/hash-search/" class="post-title-link" itemprop="url">Hash 表的查找</a>
               
             
           </h2>
@@ -429,7 +436,7 @@
                 
               
 
-              <time title="创建时间：2016-07-20 14:46:00" itemprop="dateCreated datePublished" datetime="2016-07-20T14:46:00+08:00">2016-07-20</time>
+              <time title="创建时间：2015-03-16 14:19:00" itemprop="dateCreated datePublished" datetime="2015-03-16T14:19:00+08:00">2015-03-16</time>
             
 
             
@@ -446,7 +453,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-18 15:11:37" itemprop="dateModified" datetime="2019-04-18T15:11:37+08:00">2019-04-18</time>
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
               
             
           </span>
@@ -463,14 +470,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
 
                 
                 
@@ -499,7 +506,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">23k</span>
+                <span title="本文字数">4.3k</span>
               
 
               
@@ -513,7 +520,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">21 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -536,56 +543,19 @@
         
           
             <p>
-               Java 编码和加密
-
-📓 本文已归档到：「blog」
-
-
-
-术语
-Base64 编码
-
-算法简述
-算法实现
-
-
-对称加密
-
-算法简述
-算法实现
-
-
-非对称加密
-
-算法简述
-算法实现
-
-
-消息摘要
-
-算法简述
-算法实现
-
-
-数字签名
-
-算法简述
-算法实现
-
-
-参考资料
-
-
- 术语
-
-明文(Plaintext)：指待加密信息。明文可以是文本文件、图片文件、二进制数据等。
-密文(Ciphertex
+               Hash 表的查找
+ 要点
+ 哈希表和哈希函数
+在记录的存储位置和它的关键字之间是建立一个确定的对应关系（映射函数），使每个关键字和一个存储位置能唯一对应。这个映射函数称为哈希函数，根据这个原则建立的表称为哈希表(Hash Table)，也叫散列表。
+以上描述，如果通过数学形式来描述就是：
+若查找关键字为 key，则其值存放在 f(key) 的存储位置上。由此，不需比较便可直接取得所查记录。
+注
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/07/20/java/javacore/advanced/Java编码和加密/#more" rel="contents">
+              <a class="btn" href="/blog/2015/03/16/algorithm/data-structure/search/hash-search/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -649,7 +619,7 @@ Base64 编码
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/06/16/java/javatool/build/maven/maven-quickstart/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/03/10/algorithm/data-structure/search/linear-list-search/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -669,7 +639,7 @@ Base64 编码
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2016/06/16/java/javatool/build/maven/maven-quickstart/" class="post-title-link" itemprop="url">Maven 教程之入门指南</a>
+                <a href="/blog/2015/03/10/algorithm/data-structure/search/linear-list-search/" class="post-title-link" itemprop="url">线性表的查找</a>
               
             
           </h2>
@@ -694,7 +664,7 @@ Base64 编码
                 
               
 
-              <time title="创建时间：2016-06-16 16:18:00" itemprop="dateCreated datePublished" datetime="2016-06-16T16:18:00+08:00">2016-06-16</time>
+              <time title="创建时间：2015-03-10 18:29:00" itemprop="dateCreated datePublished" datetime="2015-03-10T18:29:00+08:00">2015-03-10</time>
             
 
             
@@ -711,7 +681,7 @@ Base64 编码
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:35:07" itemprop="dateModified" datetime="2019-04-16T20:35:07+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
               
             
           </span>
@@ -728,14 +698,14 @@ Base64 编码
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javatool/" itemprop="url" rel="index"><span itemprop="name">javatool</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
 
                 
                 
@@ -764,249 +734,7 @@ Base64 编码
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">17k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">16 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Maven 教程之入门指南
-
-📓 本文已归档到：「blog」
-
-
-
-简介
-
-Maven 是什么
-Maven 的生命周期
-Maven 的标准工程结构
-Maven 的&quot;约定优于配置&quot;
-Maven 的版本规范
-
-
-安装
-
-配置环境变量
-本地仓储配置
-
-
-第一个 Maven 工程
-
-在 Intellij 中创建 Maven 工程
-在 Eclipse 中创建 Maven 工程
-
-
-使
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/06/16/java/javatool/build/maven/maven-quickstart/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/03/20/java/javatool/ide/eclipse/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2016/03/20/java/javatool/ide/eclipse/" class="post-title-link" itemprop="url">Eclipse 使用小结</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-03-20 00:00:00" itemprop="dateCreated datePublished" datetime="2016-03-20T00:00:00+08:00">2016-03-20</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javatool/" itemprop="url" rel="index"><span itemprop="name">javatool</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">5.5k</span>
+                <span title="本文字数">5.6k</span>
               
 
               
@@ -1043,29 +771,23 @@ Maven 的版本规范
         
           
             <p>
-               Eclipse 使用小结
-
-
-代码智能提示
-插件安装
-基本设置
-设置文本文件及 JSP 文件编码
-设置 JDK 本地 JavaDOC API 路径及源码路径
-设置 Servlet 源码或其它 Jar 包源码
-[反编译插件  JD-Eclipse](#反编译插件- jd-eclipse)
-Validate 优化
-常用快捷键
-
-
- 代码智能提示
- Java 智能提示
-Window -&gt; Pre
+               线性表的查找
+ 概念
+ 什么是查找？
+查找是根据给定的某个值，在表中确定一个关键字的值等于给定值的记录或数据元素。
+ 查找算法的分类
+若在查找的同时对表记录做修改操作（如插入和删除），则相应的表称之为动态查找表；
+否则，称之为静态查找表。
+此外，如果查找的全过程都在内存中进行，称之为内查找；
+反之，如果查找过程中需要访问外存，称之为外查找。
+ 查找算法性能比较的标准
+——平均查找长度ASL（Av
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/03/20/java/javatool/ide/eclipse/#more" rel="contents">
+              <a class="btn" href="/blog/2015/03/10/algorithm/data-structure/search/linear-list-search/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1129,7 +851,7 @@ Window -&gt; Pre
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/03/20/java/javatool/ide/intellij/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/03/03/algorithm/data-structure/sort/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1149,7 +871,7 @@ Window -&gt; Pre
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2016/03/20/java/javatool/ide/intellij/" class="post-title-link" itemprop="url">Intellij IDEA 使用小结</a>
+                <a href="/blog/2015/03/03/algorithm/data-structure/sort/" class="post-title-link" itemprop="url">细说排序算法</a>
               
             
           </h2>
@@ -1174,7 +896,7 @@ Window -&gt; Pre
                 
               
 
-              <time title="创建时间：2016-03-20 00:00:00" itemprop="dateCreated datePublished" datetime="2016-03-20T00:00:00+08:00">2016-03-20</time>
+              <time title="创建时间：2015-03-03 17:37:00" itemprop="dateCreated datePublished" datetime="2015-03-03T17:37:00+08:00">2015-03-03</time>
             
 
             
@@ -1191,7 +913,7 @@ Window -&gt; Pre
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:47" itemprop="dateModified" datetime="2019-04-16T20:14:47+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
               
             
           </span>
@@ -1208,7 +930,7 @@ Window -&gt; Pre
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/javatool/" itemprop="url" rel="index"><span itemprop="name">javatool</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
                 
                 
@@ -1237,7 +959,7 @@ Window -&gt; Pre
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.8k</span>
+                <span title="本文字数">16k</span>
               
 
               
@@ -1251,7 +973,7 @@ Window -&gt; Pre
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">15 分钟</span>
               
             </div>
           
@@ -1274,40 +996,60 @@ Window -&gt; Pre
         
           
             <p>
-               Intellij IDEA 使用小结
+               细说排序算法
 
-
-快捷键
-插件
-个性化
-破解
-参考资料
-
-
- 快捷键
- 核心快捷键
-IntelliJ IDEA 作为一个以快捷键为中心的 IDE，为大多数操作建议了键盘快捷键。在这个主题中，您可以找到最不可缺少的列表，使 IntelliJ IDEA 轻松实现第一步。
-核心快捷键表
+📓 本文已归档到：「blog」
+⌨️ 本文中的示例代码已归档到：「algorithm-tutorial」
 
 
 
-操作
-快捷键
+冒泡排序
+
+要点
+算法思想
+算法分析
+示例代码
 
 
+快速排序
+
+要点
+算法思想
+算法分析
+示例代码
 
 
-根据名称查找操作
-Ctrl+Shift+A
+插入排序
+
+要点
+算法思想
+算法分析
+示例代码
 
 
-显示可用  意图
+希尔排序
+
+要点
+算法思想
+算法分析
+示例代码
+
+
+简单选择排序
+
+要点
+算法思想
+算法分析
+示例代码
+
+
+堆排
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/03/20/java/javatool/ide/intellij/#more" rel="contents">
+              <a class="btn" href="/blog/2015/03/03/algorithm/data-structure/sort/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -1371,7 +1113,7 @@ Ctrl+Shift+A
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/02/04/java/javacore/basics/Java类和对象/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2014/10/14/java/javacore/basics/Java数组/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -1391,7 +1133,7 @@ Ctrl+Shift+A
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2016/02/04/java/javacore/basics/Java类和对象/" class="post-title-link" itemprop="url">Java 面向对象</a>
+                <a href="/blog/2014/10/14/java/javacore/basics/Java数组/" class="post-title-link" itemprop="url">深入理解 Java 数组</a>
               
             
           </h2>
@@ -1416,7 +1158,7 @@ Ctrl+Shift+A
                 
               
 
-              <time title="创建时间：2016-02-04 21:12:00" itemprop="dateCreated datePublished" datetime="2016-02-04T21:12:00+08:00">2016-02-04</time>
+              <time title="创建时间：2014-10-14 10:15:00" itemprop="dateCreated datePublished" datetime="2014-10-14T10:15:00+08:00">2014-10-14</time>
             
 
             
@@ -1433,257 +1175,7 @@ Ctrl+Shift+A
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">5.8k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">5 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Java 面向对象
-
-在深入理解 Java 基本数据类型中我们了解 Java 中支持的基本数据类型（值类型）。本文开始讲解 Java 中重要的引用类型——类。
-
-
-
-对象
-类
-
-构造方法
-创建对象
-访问实例变量和方法
-
-
-访问权限控制
-
-Java 包
-访问权限修饰关键字
-
-
-接口
-抽象类
-内部类
-参考资料
-
-
- 对象
-每种编程语言，都有自己的操纵内存中元素的方式。
-Java 中提供了基本数据类型
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/02/04/java/javacore/basics/Java类和对象/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/02/04/java/javacore/basics/Java方法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2016/02/04/java/javacore/basics/Java方法/" class="post-title-link" itemprop="url">深入理解Java方法</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-02-04 21:12:00" itemprop="dateCreated datePublished" datetime="2016-02-04T21:12:00+08:00">2016-02-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-24 19:49:30" itemprop="dateModified" datetime="2019-04-24T19:49:30+08:00">2019-04-24</time>
               
             
           </span>
@@ -1736,7 +1228,7 @@ Java 中提供了基本数据类型
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">9k</span>
+                <span title="本文字数">7.6k</span>
               
 
               
@@ -1750,7 +1242,7 @@ Java 中提供了基本数据类型
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 分钟</span>
+                <span title="阅读时长">7 分钟</span>
               
             </div>
           
@@ -1773,280 +1265,46 @@ Java 中提供了基本数据类型
         
           
             <p>
-               深入理解 Java 方法
+               深入理解 Java 数组
 
-方法（有的人喜欢叫函数）是一段可重用的代码段。
 📓 本文已归档到：「blog」
 ⌨️ 本文中的示例代码已归档到：「javacore」
 
 
 
-方法的使用
+简介
 
-方法定义
-方法的调用
-
-
-方法参数
-方法修饰符
-
-访问控制修饰符
-static
-final
-default
-abstract
-synchronized
+数组的特性
+数组和容器
+Java 数组的本质是对象
+Java 数组和内存
 
 
-特殊方法
+声明数组
+创建数组
 
-main 方法
-构造方法
-变参方法
-final
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/02/04/java/javacore/basics/Java方法/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
+数组维度的形式
+数组维度的大小
 
 
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/02/04/java/javacore/basics/Java面向对象/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2016/02/04/java/javacore/basics/Java面向对象/" class="post-title-link" itemprop="url">Java 面向对象</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-02-04 21:12:00" itemprop="dateCreated datePublished" datetime="2016-02-04T21:12:00+08:00">2016-02-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 20:16:24" itemprop="dateModified" datetime="2019-04-16T20:16:24+08:00">2019-04-16</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.6k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Java 面向对象
-
-在深入理解 Java 基本数据类型中我们了解 Java 中支持的基本数据类型（值类型）。本文开始讲解 Java 中重要的引用类型——类。
-
-
-- [封装](#封装)
-- [继承](#继承)
-- [多态](#多态)
-
-
+访问数组
+数组的引用
+泛型和数组
+多维数组
+Arrays 类
+小结
 参考资料
 
 
- 封装
-封装（Encapsulation）是指一种将抽象性函式接口的实现细节部份包装、隐藏起来的方法。
-封装最主要的作用在于我们能修改自己的实现
+ 简介
+ 数组的特性
+数组对于每一门编程语言来说都
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/02/04/java/javacore/basics/Java面向对象/#more" rel="contents">
+              <a class="btn" href="/blog/2014/10/14/java/javacore/basics/Java数组/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2110,7 +1368,7 @@ final
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/01/20/java/javacore/advanced/Java本地化/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2014/07/02/communication/icmp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -2130,7 +1388,7 @@ final
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2016/01/20/java/javacore/advanced/Java本地化/" class="post-title-link" itemprop="url">Java 本地化</a>
+                <a href="/blog/2014/07/02/communication/icmp/" class="post-title-link" itemprop="url">ICMP</a>
               
             
           </h2>
@@ -2155,7 +1413,7 @@ final
                 
               
 
-              <time title="创建时间：2016-01-20 17:46:00" itemprop="dateCreated datePublished" datetime="2016-01-20T17:46:00+08:00">2016-01-20</time>
+              <time title="创建时间：2014-07-02 20:54:00" itemprop="dateCreated datePublished" datetime="2014-07-02T20:54:00+08:00">2014-07-02</time>
             
 
             
@@ -2172,258 +1430,7 @@ final
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
-
-                
-                
-                  ，
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">6.9k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">6 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-               Java 本地化
-
-📓 本文已归档到：「blog」
-
-
-
-背景知识
-
-语言编码、国家/地区编码
-字符编码
-
-
-Java 中实现本地化
-
-定义不同语种的模板
-选择语种
-加载指定语种的模板
-
-
-支持本地化的工具类
-
-NumberFormat
-DateFormat
-MessageFormat
-
-
-
-
- 背景知识
-通讯的发达，使得世界各地交流越来越紧密。许多的软件产品也要面向世界上不同国家的用户。其中
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/01/20/java/javacore/advanced/Java本地化/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2016/01/08/communication/http/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Zhang Peng">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/blog/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="静默虚空的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/blog/2016/01/08/communication/http/" class="post-title-link" itemprop="url">网络协议之 HTTP</a>
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2016-01-08 22:14:00" itemprop="dateCreated datePublished" datetime="2016-01-08T22:14:00+08:00">2016-01-08</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-16 20:14:44" itemprop="dateModified" datetime="2019-04-16T20:14:44+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-24 19:49:20" itemprop="dateModified" datetime="2019-04-24T19:49:20+08:00">2019-04-24</time>
               
             
           </span>
@@ -2469,7 +1476,7 @@ MessageFormat
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">6.3k</span>
+                <span title="本文字数">4.3k</span>
               
 
               
@@ -2483,7 +1490,7 @@ MessageFormat
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -2506,31 +1513,26 @@ MessageFormat
         
           
             <p>
-               网络协议之 HTTP
+               ICMP
 
 📓 本文已归档到：「blog」
 
 
 
-HTTP 是什么？
-实例
-工作原理
-特点
-客户端请求消息
-服务器响应消息
-HTTP 状态码
-更多内容
-
-
- HTTP 是什么？
-HTTP（HyperText Transfer Protocol，超文本传输协议）是 WWW (World Wide Web)实现数据通信的基石。
-HTTP 是由 IETF(Internet Enginee
+ICMP 简介
+ICMP 类型
+目的不可达(Destination Unreachable Message)
+超时(Time Exceeded Message)
+参数错误报文(Parameter Problem Message)
+源冷却(Source Quench Message)
+重定向(Redirect Message)
+请求回显或回显应答
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2016/01/08/communication/http/#more" rel="contents">
+              <a class="btn" href="/blog/2014/07/02/communication/icmp/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2594,7 +1596,7 @@ HTTP 是由 IETF(Internet Enginee
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2015/05/28/java/javacore/basics/Java控制语句/">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2014/06/15/algorithm/data-structure/tree/binary-tree/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Peng">
@@ -2614,7 +1616,7 @@ HTTP 是由 IETF(Internet Enginee
           <h2 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/blog/2015/05/28/java/javacore/basics/Java控制语句/" class="post-title-link" itemprop="url">Java 控制语句</a>
+                <a href="/blog/2014/06/15/algorithm/data-structure/tree/binary-tree/" class="post-title-link" itemprop="url">二叉树</a>
               
             
           </h2>
@@ -2639,7 +1641,7 @@ HTTP 是由 IETF(Internet Enginee
                 
               
 
-              <time title="创建时间：2015-05-28 10:58:00" itemprop="dateCreated datePublished" datetime="2015-05-28T10:58:00+08:00">2015-05-28</time>
+              <time title="创建时间：2014-06-15 15:39:00" itemprop="dateCreated datePublished" datetime="2014-06-15T15:39:00+08:00">2014-06-15</time>
             
 
             
@@ -2656,7 +1658,7 @@ HTTP 是由 IETF(Internet Enginee
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-04-16 20:14:46" itemprop="dateModified" datetime="2019-04-16T20:14:46+08:00">2019-04-16</time>
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
               
             
           </span>
@@ -2673,14 +1675,14 @@ HTTP 是由 IETF(Internet Enginee
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/java/javacore/" itemprop="url" rel="index"><span itemprop="name">javacore</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
 
                 
                 
@@ -2709,7 +1711,7 @@ HTTP 是由 IETF(Internet Enginee
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">8.3k</span>
+                <span title="本文字数">429</span>
               
 
               
@@ -2723,7 +1725,7 @@ HTTP 是由 IETF(Internet Enginee
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">8 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -2746,40 +1748,490 @@ HTTP 是由 IETF(Internet Enginee
         
           
             <p>
-               Java 控制语句
-
-📓 本文已归档到：「blog」
-⌨️ 本文中的示例代码已归档到：「javacore」
+               二叉树
 
 
 
-选择语句
+简介
 
-if 语句
-if…else 语句
-if…else if…else 语句
-嵌套的 if…else 语句
-switch 语句
+二叉树的性质
+满二叉树
+完全二叉树
 
 
-循环语句
-
-while 循环
-do while 循环
-for 循环
-foreach 循环
 
 
-中断语句
+ 简介
+二叉树是 N 个节点的有限集合，它或者是空树，或者是由一个根节点及两棵不想交的且分别称为左右子树的二叉树所组成。
+ 二叉树的性质
 
-break 关键字
-continue 
+二叉树第 i 层上的结点数目最多为 2i-1 (i≥1)。
+深度为 k 的二叉树至多有 2k-1 个结点(k≥1)。
+包含 n 个结点的二叉树的高度至少为 log2(n+1)。
+在任意一棵二叉
               ...
             </p>
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/blog/2015/05/28/java/javacore/basics/Java控制语句/#more" rel="contents">
+              <a class="btn" href="/blog/2014/06/15/algorithm/data-structure/tree/binary-tree/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2014/06/11/algorithm/data-structure/queue/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2014/06/11/algorithm/data-structure/queue/" class="post-title-link" itemprop="url">队列</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2014-06-11 22:01:00" itemprop="dateCreated datePublished" datetime="2014-06-11T22:01:00+08:00">2014-06-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">141</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               队列
+队列是元素的集合，其包含了两个基本操作：入队（enqueue） 操作可以用于将元素插入到队列中，而出队（dequeue）操作则是将元素从队列中移除。
+遵循先入先出原则 (FIFO)。
+时间复杂度：
+
+索引: O(n)
+搜索: O(n)
+插入: O(1)
+移除: O(1)
+
+
+              
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2014/06/11/algorithm/data-structure/queue/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dunwu.github.io/blog/2014/01/25/algorithm/data-structure/stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Zhang Peng">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="静默虚空的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/blog/2014/01/25/algorithm/data-structure/stack/" class="post-title-link" itemprop="url">堆栈</a>
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2014-01-25 16:46:00" itemprop="dateCreated datePublished" datetime="2014-01-25T16:46:00+08:00">2014-01-25</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-04-24 19:49:17" itemprop="dateModified" datetime="2019-04-24T19:49:17+08:00">2019-04-24</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/" itemprop="url" rel="index"><span itemprop="name">algorithm</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/algorithm/data-structure/" itemprop="url" rel="index"><span itemprop="name">data-structure</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">466</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>
+               堆栈
+
+堆栈（英语：stack）又称为栈或堆叠，是计算机科学中一种特殊的串列形式的抽象数据类型，其特殊之处在于只能允许在链表或数组的一端（称为堆栈顶端指针，英语：top）进行加入数据（英语：push）和输出数据（英语：pop）的运算。另外堆栈也可以用一维数组或链表的形式来完成。堆栈的另外一个相对的操作方式称为队列。
+由于堆栈数据结构只允许在一端进行操作，因而按照后进先出（LIFO, Last I
+              ...
+            </p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/blog/2014/01/25/algorithm/data-structure/stack/#more" rel="contents">
                 阅读全文 &raquo;
               </a>
             </div>
@@ -2832,7 +2284,7 @@ continue
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/blog/page/28/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/28/">28</a><span class="page-number current">29</span><a class="page-number" href="/blog/page/30/">30</a><a class="page-number" href="/blog/page/31/">31</a><a class="extend next" rel="next" href="/blog/page/30/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/blog/page/28/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/blog/">1</a><span class="space">&hellip;</span><a class="page-number" href="/blog/page/28/">28</a><span class="page-number current">29</span>
   </nav>
 
 
@@ -2876,7 +2328,7 @@ continue
                 
                   <a href="/blog/archives/">
                 
-                    <span class="site-state-item-count">317</span>
+                    <span class="site-state-item-count">288</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2955,7 +2407,9 @@ continue
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -3228,13 +2682,7 @@ continue
                     
                       
                     
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">133</span>
+                    <span class="site-state-item-count">130</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -3329,7 +2777,7 @@ continue
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">2.1m</span>
+    <span title="站点总字数">2m</span>
   
 
   
@@ -3338,7 +2786,7 @@ continue
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">31:49</span>
+    <span title="站点阅读时长">30:27</span>
   
 </div>
 
@@ -3466,6 +2914,326 @@ continue
 
 
   
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/blog/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
 
 
 
