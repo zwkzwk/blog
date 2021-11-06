@@ -1,11 +1,11 @@
 ---
-title: 程序员玩转 Windows
-categories: ['os']
-tags: ['os', 'windows']
-date: 2019-03-22 15:53
+title:  Windows 常用技巧总结
+categories: ['操作系统']
+tags: ['操作系统', 'Windows']
+date: 2019-05-07 20:35
 ---
 
-# 程序员玩转 Windows
+# Windows 常用技巧总结
 
 <!-- TOC depthFrom:2 depthTo:3 -->
 
