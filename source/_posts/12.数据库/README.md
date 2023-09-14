@@ -26,7 +26,7 @@ hidden: true
   </a>
 
   <a href="https://github.com/dunwu/db-tutorial/commits/master">
-      <img alt="commit" class="no-zoom" src="https://img.shields.io/github/workflow/status/dunwu/db-tutorial/CI?style=for-the-badge">
+      <img alt="build" class="no-zoom" src="https://img.shields.io/github/actions/workflow/status/dunwu/db-tutorial/deploy.yml?style=for-the-badge">
   </a>
 
   <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">
@@ -48,28 +48,28 @@ hidden: true
 
 #### 分布式理论
 
-- [分布式理论](https://dunwu.github.io/waterdrop/pages/367308/)
-- [深入剖析共识性算法 Paxos](https://dunwu.github.io/waterdrop/pages/874539/)
-- [深入剖析共识性算法 Raft](https://dunwu.github.io/waterdrop/pages/e40812/)
-- [分布式算法 Gossip](https://dunwu.github.io/waterdrop/pages/d15993/)
+- [分布式一致性](https://dunwu.github.io/blog/pages/dac0e2/)
+- [深入剖析共识性算法 Paxos](https://dunwu.github.io/blog/pages/874539/)
+- [深入剖析共识性算法 Raft](https://dunwu.github.io/blog/pages/e40812/)
+- [分布式算法 Gossip](https://dunwu.github.io/blog/pages/d15993/)
 
 #### 分布式关键技术
 
 ##### 流量调度
 
-- [流量控制](https://dunwu.github.io/waterdrop/pages/282676/)
-- [深入浅出负载均衡](https://dunwu.github.io/waterdrop/pages/b7ca44/)
-- [服务路由](https://dunwu.github.io/waterdrop/pages/d04ece/)
-- [分布式会话基本原理](https://dunwu.github.io/waterdrop/pages/3e66c2/)
+- [流量控制](https://dunwu.github.io/blog/pages/282676/)
+- [负载均衡](https://dunwu.github.io/blog/pages/98a1c1/)
+- [服务路由](https://dunwu.github.io/blog/pages/d04ece/)
+- [分布式会话基本原理](https://dunwu.github.io/blog/pages/3e66c2/)
 
 ##### 数据调度
 
-- [缓存基本原理](https://dunwu.github.io/waterdrop/pages/471208/)
-- [读写分离基本原理](https://dunwu.github.io/waterdrop/pages/7da6ca/)
-- [分库分表基本原理](https://dunwu.github.io/waterdrop/pages/103382/)
-- [分布式 ID 基本原理](https://dunwu.github.io/waterdrop/pages/0b2e59/)
-- [分布式事务基本原理](https://dunwu.github.io/waterdrop/pages/910bad/)
-- [分布式锁基本原理](https://dunwu.github.io/waterdrop/pages/69360c/)
+- [缓存基本原理](https://dunwu.github.io/blog/pages/471208/)
+- [读写分离基本原理](https://dunwu.github.io/blog/pages/7da6ca/)
+- [分库分表基本原理](https://dunwu.github.io/blog/pages/103382/)
+- [分布式 ID 基本原理](https://dunwu.github.io/blog/pages/0b2e59/)
+- [分布式事务基本原理](https://dunwu.github.io/blog/pages/910bad/)
+- [分布式锁基本原理](https://dunwu.github.io/blog/pages/69360c/)
 
 ### 其他
 
@@ -155,12 +155,16 @@ hidden: true
 
 ### HBase
 
-> [HBase](https://dunwu.github.io/bigdata-tutorial/hbase) 📚 因为常用于大数据项目，所以将其文档和源码整理在 [bigdata-tutorial](https://dunwu.github.io/bigdata-tutorial/) 项目中。
-
-- [HBase 原理](https://github.com/dunwu/bigdata-tutorial/blob/master/docs/hbase/HBase原理.md) ⚡
-- [HBase 命令](https://github.com/dunwu/bigdata-tutorial/blob/master/docs/hbase/HBase命令.md)
-- [HBase 应用](https://github.com/dunwu/bigdata-tutorial/blob/master/docs/hbase/HBase应用.md)
-- [HBase 运维](https://github.com/dunwu/bigdata-tutorial/blob/master/docs/hbase/HBase运维.md)
+- [HBase 快速入门](06.列式数据库/01.HBase/01.HBase快速入门.md)
+- [HBase 数据模型](06.列式数据库/01.HBase/02.HBase数据模型.md)
+- [HBase Schema 设计](06.列式数据库/01.HBase/03.HBaseSchema设计.md)
+- [HBase 架构](06.列式数据库/01.HBase/04.HBase架构.md)
+- [HBase Java API 基础特性](06.列式数据库/01.HBase/10.HBaseJavaApi基础特性.md)
+- [HBase Java API 高级特性之过滤器](06.列式数据库/01.HBase/11.HBaseJavaApi高级特性之过滤器.md)
+- [HBase Java API 高级特性之协处理器](06.列式数据库/01.HBase/12.HBaseJavaApi高级特性之协处理器.md)
+- [HBase Java API 其他高级特性](06.列式数据库/01.HBase/13.HBaseJavaApi其他高级特性.md)
+- [HBase 运维](06.列式数据库/01.HBase/21.HBase运维.md)
+- [HBase 命令](06.列式数据库/01.HBase/22.HBase命令.md)
 
 ## 搜索引擎数据库
 

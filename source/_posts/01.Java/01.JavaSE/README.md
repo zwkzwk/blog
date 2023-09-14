@@ -37,7 +37,7 @@ hidden: true
 
 - [Java 正则从入门到精通](02.高级特性/01.Java正则.md) - 关键词：`Pattern`、`Matcher`、`捕获与非捕获`、`反向引用`、`零宽断言`、`贪婪与懒惰`、`元字符`、`DFA`、`NFA`
 - [Java 编码和加密](02.高级特性/02.Java编码和加密.md) - 关键词：`Base64`、`消息摘要`、`数字签名`、`对称加密`、`非对称加密`、`MD5`、`SHA`、`HMAC`、`AES`、`DES`、`DESede`、`RSA`
-- [Java 本地化](02.高级特性/03.Java本地化.md)
+- [Java 国际化](02.高级特性/03.Java国际化.md) - 关键词：`Locale`、`ResourceBundle`、`NumberFormat`、`DateFormat`、`MessageFormat`
 - [Java JDK8](02.高级特性/04.JDK8.md) - 关键词：`Stream`、`lambda`、`Optional`、`@FunctionalInterface`
 - [Java SPI](02.高级特性/05.JavaSPI.md) - 关键词：`SPI`、`ClassLoader`
 
@@ -84,8 +84,8 @@ hidden: true
 - [JVM 体系结构](06.JVM/01.JVM体系结构.md)
 - [JVM 内存区域](06.JVM/02.JVM内存区域.md) - 关键词：`程序计数器`、`虚拟机栈`、`本地方法栈`、`堆`、`方法区`、`运行时常量池`、`直接内存`、`OutOfMemoryError`、`StackOverflowError`
 - [JVM 垃圾收集](06.JVM/03.JVM垃圾收集.md) - 关键词：`GC Roots`、`Serial`、`Parallel`、`CMS`、`G1`、`Minor GC`、`Full GC`
-- [JVM 字节码](06.JVM/04.JVM字节码.md) - 关键词：`bytecode`、`asm`、`javassist`
-- [JVM 类加载](06.JVM/05.JVM类加载.md) - 关键词：`ClassLoader`、`双亲委派`
+- [JVM 类加载](06.JVM/04.JVM类加载.md) - 关键词：`ClassLoader`、`双亲委派`
+- [JVM 字节码](06.JVM/05.JVM字节码.md) - 关键词：`bytecode`、`asm`、`javassist`
 - [JVM 命令行工具](06.JVM/11.JVM命令行工具.md) - 关键词：`jps`、`jstat`、`jmap` 、`jstack`、`jhat`、`jinfo`
 - [JVM GUI 工具](06.JVM/12.JVM_GUI工具.md) - 关键词：`jconsole`、`jvisualvm`、`MAT`、`JProfile`、`Arthas`
 - [JVM 实战](06.JVM/21.JVM实战.md) - 关键词：`配置`、`调优`
